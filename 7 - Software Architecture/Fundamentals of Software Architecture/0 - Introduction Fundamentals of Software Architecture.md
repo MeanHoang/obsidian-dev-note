@@ -31,6 +31,7 @@ Kiến trúc không phải viết code theo pattern nào, mà là **đưa ra quy
 ### **"Most architecture decisions aren’t binary but rather exist on a spectrum between extremes."**
 Không có lựa chọn kiến trúc nào là đúng - sai rõ ràng; mọi quyết định đều nằm giữa hai thái cực và phải chọn điểm phù hợp nhất với bối cảnh.
 
+Software Architect cần có 
 - Architect hướng dẫn (guide) team về _định hướng kiến trúc_, không áp đặt công nghệ.
 - Team tự chọn công nghệ phù hợp trong phạm vi kiến trúc.
 - Trong một số trường hợp đặc biệt (performance, scalability…), architect phải chọn công nghệ cụ thể.
@@ -38,5 +39,15 @@ Không có lựa chọn kiến trúc nào là đúng - sai rõ ràng; mọi quy�
 - Liên tục phải kiểm tra xem kiến trúc có bị xuống cấp hay không 
 - Liên tục cập nhập công nghệ mới vì Không cập nhật → quyết định dễ lỗi thời → cả hệ thống dính hậu quả.
 - Một kiến trúc sư phải đảm bảo rằng **các team dev thực hiện đúng những quyết định và nguyên tắc kiến trúc** đã được đề ra.
-- Một **software architect** phải **quen thuộc với nhiều công nghệ, framework, ngôn ngữ, nền tảng** — không cần giỏi tất cả, nhưng phải hiểu chúng hoạt động thế nào và dùng khi nào.
+- Một **software architect** phải **quen thuộc với nhiều công nghệ, framework, ngôn ngữ, nền tảng** — không cần giỏi tất cả, nhưng phải hiểu chúng hoạt động thế nào và dùng khi nào. 
+- Cũng cần biết, có kiến thức trong lĩnh vực kinh doanh đó nữa để chọn kiến trúc chuẩn nhất
+- 👉 Một software architect giỏi = 50% kỹ thuật + 50% kỹ năng con người.
+
+Các phần của cuốn sách gồm 
+Phần [[1 - Foundations]] giúp bạn hiểu những nền tảng để phân tích trade-off trong kiến trúc:
+- chia hệ thống thành component như thế nào,
+- đảm bảo tính modular,
+- giảm coupling,
+- kiểm soát connascence,
+- từ đó chọn đúng architecture style (monolithic, microservices, event-driven,…).
 

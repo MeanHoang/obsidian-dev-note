@@ -47,3 +47,11 @@ agile: nhanh nhẹn
 quarterly: hàng quý, 3 tháng 1 lần 
 biannual: 2 năm 1 lần 
 compliance: tuân thủ 
+contract: hợp đồng 
+executives: giám đốc điều hành
+Conversely: ngược lại 
+Customer Relationship Management (CRM): Quan hệ quản lý khách hàng
+terminology: thuật ngữ
+modularity: tính mô đun
+coupling: kết nối, khớp nối
+connascence: sự kết nối
