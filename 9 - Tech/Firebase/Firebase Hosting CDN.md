@@ -1,0 +1,1 @@
+Firebase Hosting là CDN của Google, tự động phân phối assets qua mạng toàn cầu. Khi deploy, files được cache tại nhiều edge locations để giảm latency.

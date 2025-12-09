@@ -54,4 +54,13 @@ Customer Relationship Management (CRM): Quan hệ quản lý khách hàng
 terminology: thuật ngữ
 modularity: tính mô đun
 coupling: kết nối, khớp nối
-connascence: sự kết nối
+Nonsense: vô lý!
+Attitude: thái độ
+absolute: tuyệt đối 
+Principles: nguyên tắc
+Conclusion: kết luận 
+Disinformation: thông tin sai lệch 
+Consistent: tính nhất quán 
+destination: điểm đến, đích đến 
+Clarity: rõ ràng
+pun: chơi chữ
