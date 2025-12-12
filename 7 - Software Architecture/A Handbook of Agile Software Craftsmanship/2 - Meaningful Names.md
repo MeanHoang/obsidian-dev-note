@@ -1,6 +1,5 @@
 
 📌 **Tên trong code quan trọng hơn bạn nghĩ**
-
 # 1. Use Intention-Revealing Names 
 💡 Chọn tên tốt mất thời gian, nhưng tiết kiệm thời gian nhiều hơn rất nhiều
 ##  Một cái tên tốt phải trả lời được 3 câu hỏi
@@ -10,7 +9,6 @@ Tên của **biến / hàm / class** phải nói rõ:
 3. **How** – Nó được dùng như thế nào?
 👉 Nếu **cần comment để giải thích tên**, thì:
 > ❌ Tên đó **chưa đạt**
-
 ### Example
 #### ❌ Bad
 `int d; // elapsed time in days`
@@ -19,7 +17,6 @@ Tên của **biến / hàm / class** phải nói rõ:
 `int elapsedTimeInDays;
 `int daysSinceCreation;
 `int daysSinceModification;
-`int fileAgeInDays;`
 📌 Cùng kiểu dữ liệu  
 📌 Nhưng **ý nghĩa hoàn toàn khác → tên phải khác**
 
