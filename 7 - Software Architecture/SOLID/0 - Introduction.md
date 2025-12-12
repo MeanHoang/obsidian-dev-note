@@ -1,0 +1,1 @@
+**SOLID** là một bộ **5 nguyên tắc thiết kế hướng đối tượng** giúp code **dễ hiểu, dễ maintain, dễ mở rộng**, được Robert C. Martin (Uncle Bob) đặt ra. Đây là nền tảng rất quan trọng trước khi học **design pattern** hay viết **clean code**.

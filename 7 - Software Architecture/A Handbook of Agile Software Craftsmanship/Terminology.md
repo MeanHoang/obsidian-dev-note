@@ -33,3 +33,4 @@ if (request.status === STATUS.ACTIVE) {}
 **Stack trace**: (hay “dấu vết ngăn xếp”) là **bản ghi lại đường đi của chương trình** qua các hàm (function calls) **tại thời điểm xảy ra lỗi**.
 **pseudo-code**: giả mã) là **cách mô tả thuật toán bằng ngôn ngữ gần giống tiếng Anh + một chút cú pháp lập trình**, để diễn tả logic mà không phụ thuộc vào bất kỳ ngôn ngữ lập trình nào.
 **Boundaries**: (ranh giới) là **biên giới giữa các phần khác nhau của hệ thống**, nơi mà **một module, lớp, hoặc hệ thống giao tiếp với thế giới bên ngoài hoặc với module khác**.
+**SOLID:** Là bộ 5 nguyên tắc thiết kế hướng đối tượng giúp code dễ hiểu, dễ maintain, dễ mở rộng 

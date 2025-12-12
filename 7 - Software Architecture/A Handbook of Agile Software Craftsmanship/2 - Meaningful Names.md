@@ -19,7 +19,6 @@ Tên của **biến / hàm / class** phải nói rõ:
 `int daysSinceModification;
 📌 Cùng kiểu dữ liệu  
 📌 Nhưng **ý nghĩa hoàn toàn khác → tên phải khác**
-
 ### Example “khó hiểu dù code rất đơn giản”
 ### ❌ Code gốc
 ```js
@@ -33,7 +32,7 @@ public List<int[]> getThem() {
 ```
 👉 Code **không hề phức tạp**, nhưng **rất khó hiểu**
 
-Tại sao nó khó hiểu, không phải vì logic -> mà vì ngử cảnh bị ẩn 
+Tại sao nó khó hiểu, không phải vì logic -> mà vì ngữ cảnh bị ẩn 
 Người đọc phải tự hỏi:
 1. `theList` chứa cái gì?
 2. `x[0]` có ý nghĩa gì?
@@ -63,12 +62,12 @@ public List<int[]> getFlaggedCells() {
 ➡️ **Tên đã mang ý nghĩa thay cho comment**
 ## So sánh trực giác (rất quan trọng)
 
-| Bad Code             | Clean Code      |     |
-| -------------------- | --------------- | --- |
-| Đoán xem code làm gì | Đọc là hiểu     |     |
-| Phụ thuộc comment    | Tên tự nói      |     |
-| Dễ sai khi sửa       | Ít bug          |     |
-| Sợ đụng vào          | Tự tin refactor |     |
+| Bad Code             | Clean Code      |
+| -------------------- | --------------- |
+| Đoán xem code làm gì | Đọc là hiểu     |
+| Phụ thuộc comment    | Tên tự nói      |
+| Dễ sai khi sửa       | Ít bug          |
+| Sợ đụng vào          | Tự tin refactor |
 ❝ **Vấn đề không phải code phức tạp mà là code không nói rõ ngữ cảnh** ❞
 👉 Clean Code không làm code “thông minh hơn”  
 👉 Clean Code làm code **trung thực hơn về ý định**

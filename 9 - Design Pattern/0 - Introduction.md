@@ -4,7 +4,7 @@ Design pattern cung cấp những giải pháp đã được tối ưu hóa, đ�
 ### ✅ BẮT BUỘC (80% dùng ngoài đời)
 - **[[Module Pattern]]** ⭐⭐⭐⭐⭐
 - **[[Strategy]]** ⭐⭐⭐⭐⭐
-- **[[Observer / Pub–Sub]]** ⭐⭐⭐⭐
+- **[[Observer & Pub–Sub]]** ⭐⭐⭐⭐
 - **[[Factory Method]]** ⭐⭐⭐⭐
 - **[[Decorator]]** ⭐⭐⭐⭐
 - **[[Singleton]] (cẩn thận)** ⭐⭐⭐

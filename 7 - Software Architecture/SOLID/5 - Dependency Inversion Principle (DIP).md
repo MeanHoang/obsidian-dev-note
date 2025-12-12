@@ -1,0 +1,2 @@
+**Module cấp cao không nên phụ thuộc module cấp thấp. Cả hai nên phụ thuộc abstraction.**
+- Nghĩa là: **code logic không nên trực tiếp gọi implementation**, nên dùng **interface / abstraction / dependency injection**.
