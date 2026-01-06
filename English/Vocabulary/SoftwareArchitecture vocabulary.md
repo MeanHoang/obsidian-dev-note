@@ -67,3 +67,5 @@ pun: chơi chữ
 surge: sự biến động, gia tăng 
 Consequences: hậu quả
 segment: phân đoạn
+Clause: Điều khoản
+Aware: nhận thức

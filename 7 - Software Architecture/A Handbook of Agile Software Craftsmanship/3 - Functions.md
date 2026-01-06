@@ -181,8 +181,7 @@ function calculatePrice(order, user) {
 ✅ IF quyết định **dùng ai làm**
 #### ✅ Nguyên tắc
 IF **chỉ để chọn handler**, không xử lý nghiệp vụ
-#### ✅ Cách xử lý: [[Strategy]] Pattern (JS thuần, dễ 
-+hiểu)
+#### ✅ Cách xử lý: [[Strategy]] Pattern (JS thuần, dễ hiểu)
 #### 1️⃣ Mỗi loại user = 1 cách tính
 ```js
 const pricingStrategies = {
