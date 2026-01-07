@@ -1,0 +1,1 @@
+reverse không dùng đc với string nếu muốn thì phải split ra thành array rồi reverse
