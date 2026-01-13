@@ -22,11 +22,29 @@ for (i)
 
 ### 1️⃣ Hai con trỏ từ **hai đầu** (Opposite direction)
 ```
-L ---->.    <---- R
+L ---->    <---- R
 ```
 📌 Dùng khi:
 - Array đã **sorted**
 - Bài toán: tìm cặp, palindrome, tối ưu điều kiện
+Mã giả
+```js
+void left_right_boundary(seq)
+{
+    left = 0, right = seq.size() - 1;
+    while (left < right)
+    {
+        if ({left thỏa mãn điều kiện})	
+            left += 1;
+        if ({right thỏa mãn điều kiện})
+            right -= 1;
+		
+        // Xử lý logic, có thể trước hoặc sau khi dịch chuyển hai con trỏ.
+        {Xử lý logic};
+    }
+}
+
+```
 **Ví dụ**: kiểm tra palindrome
 ```c++
 let l = 0, r = s.length - 1;
@@ -45,6 +63,21 @@ fast ---->
 - Xóa phần tử
 - Detect cycle
 - Remove duplicates
+Mã giả 
+```js
+void slow_and_fast()
+{
+    pointer_1 = {chỉ số đầu};
+    for (pointer_2 = {chỉ số đầu}; pointer_2 <= {chỉ số cuối}; ++pointer_2)
+    {
+        // Con trỏ thứ nhất chỉ tăng lên khi thỏa mãn một điều kiện nào đó.
+        if ({pointer_1 thỏa mãn điều kiện})
+            {Tăng pointer_1};
+
+        {Xử lý logic sau khi tăng - giảm các con trỏ};
+    }
+}
+```
 **Ví dụ**: xóa phần tử trùng trong array sorted
 ```c++
 let slow = 0;
