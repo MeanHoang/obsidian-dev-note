@@ -6,9 +6,8 @@ Mình giải thích **từ bản chất → cách làm → code → khi nào dù
 > Cho mảng `nums` có `n` phần tử  
 > 👉 **Tìm phần tử xuất hiện nhiều hơn n/2 lần**  
 > 👉 **Luôn đảm bảo là có tồn tại** (theo giả thiết của thuật toán)
-
+ 
 Ví dụ:
-
 `[2,2,1,1,1,2,2] → 2`
 
 ---

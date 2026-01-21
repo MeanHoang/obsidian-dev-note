@@ -356,34 +356,53 @@ curl -X POST https://reviewrocket.qressy.com/api/verifyWebhook \
 
 Debug payload bắn về 
 ```js
->  🚀 [ReviewRocket] ===== WEBHOOK PAYLOAD DEBUG =====
->  🚀 [ReviewRocket] URL Path: /app/api/v1/review/create
+console.log('🚀 [ReviewRocket] ===== WEBHOOK PAYLOAD DEBUG =====');
+
+console.log('🚀 [ReviewRocket] URL Path:', ctx.request?.url || ctx.req?.url);
+
+console.log('🚀 [ReviewRocket] Method:', ctx.method || ctx.req?.method);
+
+console.log('🚀 [ReviewRocket] Query Params:', ctx.query || ctx.req?.query);
+
+console.log('🚀 [ReviewRocket] All Headers:', ctx.headers || ctx.req?.headers);
+
+console.log('🚀 [ReviewRocket] Payload Keys:', Object.keys(ctx.req?.body || {}));
+
+console.log('🚀 [ReviewRocket] Full Payload:', JSON.stringify(ctx.req?.body || {}, null, 2));
+
+console.log('🚀 [ReviewRocket] ctx.state:', ctx.state || {});
+
+console.log('🚀 [ReviewRocket] ===== END DEBUG =====');
+```
+```js
+🚀 [ReviewRocket] ===== WEBHOOK PAYLOAD DEBUG =====
+>  🚀 [ReviewRocket] URL Path: /app/api/v1/review/approve
 >  🚀 [ReviewRocket] Method: POST
->  🚀 [ReviewRocket] Query Params: [Object: null prototype] {}
+>  🚀 [ReviewRocket] Query Params: {}
 >  🚀 [ReviewRocket] All Headers: {
->    "x-forwarded-host": "contribute-attacked-flavor-shanghai.trycloudflare.com",
->    "x-original-url": "/app/api/v1/review/create",
->    "pragma": "no-cache",
->    "cache-control": "no-cache, no-store",
->    "cookie": "",
->    "user-agent": "node-fetch",
->    "content-length": "166",
->    "accept": "*/*",
->    "accept-encoding": "gzip",
->    "cdn-loop": "cloudflare; loops=1; subreqs=1",
->    "cf-connecting-ip": "3.6.18.15",
->    "cf-ew-via": "15",
->    "cf-ipcountry": "IN",
->    "cf-ray": "9b60f62b27773ae6-HKG",
->    "cf-visitor": "{\"scheme\":\"https\"}",
->    "cf-warp-tag-id": "c1ceef4e-bf68-48fa-aba1-626c397d3907",
->    "cf-worker": "trycloudflare.com",
->    "connection": "close",
->    "content-type": "application/json",
->    "x-forwarded-for": "3.6.18.15",
->    "x-forwarded-proto": "https",
->    "x-client-version": "FirebaseCLI/13.35.1",
->    "host": "127.0.0.1:5011"
+>    'x-forwarded-host': 'began-lindsay-election-andrea.trycloudflare.com',
+>    'x-original-url': '/app/api/v1/review/approve',
+>    pragma: 'no-cache',
+>    'cache-control': 'no-cache, no-store',
+>    cookie: '',
+>    'user-agent': 'node-fetch',
+>    'content-length': '173',
+>    accept: '*/*',
+>    'accept-encoding': 'gzip',
+>    'cdn-loop': 'cloudflare; loops=1; subreqs=1',
+>    'cf-connecting-ip': '3.6.18.15',
+>    'cf-ew-via': '15',
+>    'cf-ipcountry': 'IN',
+>    'cf-ray': '9beb922cb0f247ce-BOM',
+>    'cf-visitor': '{"scheme":"https"}',
+>    'cf-warp-tag-id': '9c1d175e-0409-4e61-80a7-5366944e937f',
+>    'cf-worker': 'trycloudflare.com',
+>    connection: 'close',
+>    'content-type': 'application/json',
+>    'x-forwarded-for': '3.6.18.15',
+>    'x-forwarded-proto': 'https',
+>    'x-client-version': 'FirebaseCLI/13.35.1',
+>    host: '127.0.0.1:5011'
 >  }
 >  🚀 [ReviewRocket] Payload Keys: [
 >    'id',
@@ -397,45 +416,18 @@ Debug payload bắn về
 >    'title'
 >  ]
 >  🚀 [ReviewRocket] Full Payload: {
->    "id": "8959",
->    "content": "123123",
+>    "id": "9390",
+>    "content": "213213",
 >    "rating": 5,
->    "email": "tesst@gmail.com",
+>    "email": "hoangtm@avadagroup.com",
 >    "verified_buyer": false,
 >    "images": [],
 >    "has_videos": false,
 >    "shop_domain": "ag-mh-shop2",
->    "title": "3123"
+>    "title": "2313"
 >  }
->  🚀 [ReviewRocket] ctx.req properties: [
->    '_events',              '_readableState',
->    '_maxListeners',        'socket',
->    'httpVersionMajor',     'httpVersionMinor',
->    'httpVersion',          'complete',
->    'rawHeaders',           'rawTrailers',
->    'joinDuplicateHeaders', 'aborted',
->    'upgrade',              'url',
->    'method',               'statusCode',
->    'statusMessage',        'client',
->    '_consuming',           '_dumped',
->    'next',                 'baseUrl',
->    'originalUrl',          '_parsedUrl',
->    'params',               'query',
->    'res',                  'body',
->    '_body',                'length',
->    '_eventsCount',         'rawBody',
->    'route'
->  ]
->  🚀 [ReviewRocket] ctx.request properties: [
->    'app',
->    'req',
->    'res',
->    'ctx',
->    'response',
->    'originalUrl',
->    '_querycache'
->  ]
->  🚀 [ReviewRocket] ctx.state: []
+>  🚀 [ReviewRocket] ctx.state: {}
 >  🚀 [ReviewRocket] ===== END DEBUG =====
-
 ```
+
+

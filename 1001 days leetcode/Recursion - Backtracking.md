@@ -146,7 +146,7 @@ Backtracking **rất chậm** nếu không cắt nhánh.
 ➡️ Dừng sớm → không đi nhánh vô ích
 
 ---
-# 🧠 11️⃣ Tư duy giải Backtracking (CÔNG THỨC VÀNG)
+# 🧠 1️⃣1️⃣ Tư duy giải Backtracking (CÔNG THỨC VÀNG)
 
 > 1️⃣ Mỗi bước bạn đang **chọn cái gì?**  
 > 2️⃣ Điều kiện nào **không hợp lệ?**  
@@ -154,7 +154,7 @@ Backtracking **rất chậm** nếu không cắt nhánh.
 > 4️⃣ Sau khi quay lại, **phải trả trạng thái về đâu?**
 
 ---
-# 📌 12️⃣ Phân biệt nhanh các dạng bài
+# 📌 1️⃣2️⃣ Phân biệt nhanh các dạng bài
 
 |Dạng|Đặc điểm|
 |---|---|

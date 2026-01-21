@@ -85,7 +85,7 @@ Tóm gọn **rất ngắn gọn** như sau:
 - Nếu chúng ta làm cho code sạch hơn mỗi khi chúng ta kiểm tra nó, nó sẽ không thể lên mùi. Việc dọn dẹp không phải là thứ gì đó to tát: đặt lại một cái tên khác tốt hơn cho biến, chia nhỏ một hàm quá lớn, đá đít vài sự trùng lặp không cần thiết, dọn dẹp vài điều kiện if,...
 - Đừng làm nó hoàn hảo hãy làm nó có trách nghiệm
 ## Prequel and Principles
-Đéo quan trọng lắm lq đến tác giả trình bày về kiếp trc sách của ổng
+Ko quan trọng lắm lq đến tác giả trình bày về kiếp trc sách của ổng
 ## Conclusion
 📚 **Sách không thể biến bạn thành nghệ sĩ — hay lập trình viên giỏi — ngay lập tức.**
 - Sách chỉ có thể:
