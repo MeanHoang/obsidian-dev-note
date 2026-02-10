@@ -1,0 +1,1 @@
+https://shopify.dev/docs/api/pos-ui-extensions/latest/polaris-web-components/media-and-visuals/image

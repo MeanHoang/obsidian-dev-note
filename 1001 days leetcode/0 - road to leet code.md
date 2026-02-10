@@ -1,9 +1,9 @@
 Brute Force
-→ Hashing
-→ Two Pointers
-→ Sliding Window
-→ Stack
-→ Recursion / Backtracking
+→ Hash table [[Hash map]] [[Map replace obj]]
+→ Two Pointers [[Two Pointers]]
+→ Sliding Window [[Two Pointers]]
+→ Stack [[Stack]]
+→ Recursion / Backtracking [[]]
 → Binary Search
 → Linked List
 → Tree
