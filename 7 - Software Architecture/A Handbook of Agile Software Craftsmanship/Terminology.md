@@ -48,3 +48,5 @@ Ví dụ làm 1 app quản lý sv có 3000 user và Dev B nói:
 **Domain business** (hay **business domain**) là **lĩnh vực nghiệp vụ cốt lõi mà hệ thống đang phục vụ** – tức **“business thực sự đang làm gì”**, không phải công nghệ.
 **Bottleneck Trap**: là một **anti-pattern trong tư duy thiết kế hệ thống**:  
 team **chăm chăm tối ưu hoặc xử lý “nút thắt cổ chai” tưởng tượng**, trong khi **bottleneck thật sự lại nằm ở chỗ khác (hoặc chưa tồn tại)**.
+**Performance tuning**:là quá trình tối ưu hệ thống (phần mềm, server, database, network…) để nó chạy **nhanh hơn, ổn định hơn và chịu tải tốt hơn**.
+**Separation of Concerns (SoC)** là nguyên tắc thiết kế phần mềm: Mỗi phần của hệ thống chỉ nên chịu trách nhiệm cho **một mối quan tâm (concern)** cụ thể, không ôm đồm nhiều việc.
