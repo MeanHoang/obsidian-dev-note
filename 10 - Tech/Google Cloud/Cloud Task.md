@@ -20,7 +20,6 @@ Nếu `sendEmail()`:
 👉 Server dễ bị treo khi nhiều request  
 👉 Nếu lỗi giữa chừng → mất email
 Đây là lỗi thiết kế hệ thống phổ biến.
-
 # ✅ Giải pháp: Tách việc nặng ra khỏi request chính
 Thay vì xử lý ngay, ta:
 1. Tạo user
