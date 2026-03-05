@@ -1,3 +1,4 @@
+https://dev.to/josephciullo/feature-driven-architecture-designing-scalable-applications-2ac6
 ## 📌 **Feature-Driven Architecture là gì?**
 **Feature-Driven Architecture (FDA)** là một cách tổ chức mã để **tạo ứng dụng lớn dễ mở rộng**, bằng cách **sắp xếp code theo _features_ (chức năng)** thay vì theo _technical layers_ như `components/`, `hooks/`, `services/`…
 Mục tiêu: **giảm sự phức tạp, tăng khả năng mở rộng & dễ bảo trì** khi ứng dụng lớn dần.
