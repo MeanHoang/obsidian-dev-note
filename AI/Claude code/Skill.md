@@ -84,10 +84,42 @@ Sau đó tổng hợp kết quả theo template trong `templates/report.md`.
 
 ---
 ## Tips hay
-
 - Giữ `SKILL.md` dưới 500 dòng. Chuyển tài liệu reference chi tiết sang các file riêng. [Claude](https://code.claude.com/docs/en/skills)
 - **Description** phải rõ ràng — đây là thứ Claude dùng để quyết định có invoke skill hay không.
 - Với workflows có side effects (deploy, send message...) nên dùng `disable-model-invocation: true` để tự kiểm soát timing.
+
+---
+## Built-in Slash Commands (lệnh cố định)
+
+Đây là các lệnh hardcoded, không phải skill — chúng thực thi logic cố định trực tiếp: [GitHub](https://github.com/hesreallyhim/awesome-claude-code)
+
+|Lệnh|Tác dụng|
+|---|---|
+|`/compact`|Nén lịch sử hội thoại khi context quá dài|
+|`/clear`|Xóa toàn bộ hội thoại|
+|`/diff`|Xem tất cả thay đổi Claude đã làm|
+|`/rewind`|Rollback về checkpoint trước (hoàn tác file + hội thoại)|
+|`/copy`|Copy response cuối vào clipboard|
+|`/context`|Kiểm tra context window còn bao nhiêu|
+|`/skills`|Liệt kê tất cả skills có sẵn|
+|`/model`|Đổi model (Sonnet, Haiku, Opus)|
+|`/hooks`|Cấu hình hooks qua menu|
+|`/help`|Xem tất cả lệnh|
+
+---
+## Bundled Skills (skills prompt-based có sẵn)
+
+Bundled skills đi kèm với Claude Code và có thể dùng trong mọi session. Khác với built-in commands chạy logic cố định, bundled skills dựa trên prompt — chúng cung cấp cho Claude một playbook chi tiết và để Claude điều phối công việc bằng tools của mình. [Claude](https://code.claude.com/docs/en/skills)
+
+Anthropic có các official skills cho pdf, docx, pptx, xlsx và nhiều hơn nữa. [Shipyard](https://shipyard.build/blog/claude-code-cheat-sheet/) Đây là các bundled skills nổi bật:
+
+|Skill|Tác dụng|
+|---|---|
+|`/review`|Code review tự động|
+|`/simplify`|Đơn giản hóa code phức tạp|
+|`/loop`|Chạy task lặp đi lặp lại|
+|`/batch`|Xử lý nhiều task song song|
+
 ---
 ### Project Joy hiện có ~40 skills, ví dụ:
 - `/plan` — Lập kế hoạch implementation

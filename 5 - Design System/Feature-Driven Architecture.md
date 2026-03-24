@@ -89,7 +89,7 @@ Khi user nói:
 - 🎯 **Mục tiêu rõ ràng** (Clear objective)
 - 🔄 **Hành vi hoàn chỉnh** (Complete behavior)
 - 📦 **Context rõ ràng** (Well-defined boundary)
--
+
 ---
 ## 🧱 **Cách tổ chức FDA**
 Thay vì tách theo kiểu kỹ thuật như:
