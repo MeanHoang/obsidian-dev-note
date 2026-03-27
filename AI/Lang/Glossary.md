@@ -5,6 +5,7 @@
 ---
 
 ## A
+**Autoregressive Generation** — Cách LLM tạo văn bản: sinh **từng token một**, mỗi token mới dựa trên tất cả token trước đó. Giống gõ tin nhắn mà bàn phím gợi ý từ tiếp theo — chọn 1 từ, rồi gợi ý tiếp, cứ thế cho đến hết câu.
 
 ## B
 
@@ -38,10 +39,12 @@
 **LLM (Large Language Model)** — Mô hình ngôn ngữ lớn, được train trên lượng text khổng lồ. Ví dụ: GPT-4, Claude, Gemini, Llama.
 
 ## M
+**Multimodal** — Model có khả năng hiểu nhiều loại input: text, hình ảnh, audio, video. Hầu hết LLM lớn hiện tại (GPT-4o, Claude, Gemini) đều multimodal.
 
 ## N
 
 ## O
+**Open-weights** — Model AI được phát hành công khai weights (trọng số), cho phép tải về chạy trên infra riêng. Ví dụ: LLaMA, Mistral, DeepSeek. Khác với "open-source" hoàn toàn vì training code/data thường không được chia sẻ.
 
 ## P
 **Prompt** — Câu lệnh/input bạn đưa cho LLM. Bao gồm system prompt + user prompt.
@@ -49,9 +52,15 @@
 ## Q
 
 ## R
+**Reasoning Model** — Model AI có khả năng "suy nghĩ" (chain-of-thought nội bộ) trước khi trả lời. Tốn nhiều token hơn nhưng chính xác hơn cho task logic, toán, code phức tạp. Ví dụ: OpenAI o1/o3, DeepSeek R1.
+
 **RAG (Retrieval Augmented Generation)** — Kỹ thuật cho LLM truy cập data bên ngoài (database, documents...) trước khi trả lời. Giúp giảm hallucination và trả lời đúng với data của mình.
 
 ## S
+**SDK (Software Development Kit)** — Thư viện code giúp gọi API dễ hơn thay vì tự viết HTTP request. Ví dụ: `openai` (Python), `anthropic` (Python).
+
+**Streaming** — Cách nhận response từ LLM **từng phần** thay vì đợi toàn bộ. Giống ChatGPT chữ hiện dần — không nhanh hơn nhưng UX tốt hơn.
+
 **System Prompt** — Prompt đặt ở đầu conversation để set behavior xuyên suốt. User không thấy nhưng ảnh hưởng mọi câu trả lời.
 
 ## T

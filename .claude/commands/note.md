@@ -34,7 +34,22 @@ Tạo note cho topic: $ARGUMENTS
 - Giải thích như đang nói cho bạn đồng nghiệp nghe — không quá formal, không quá casual
 - Mỗi ý phải trả lời được: "Cái này giúp gì cho mình khi đi làm?"
 
+### Research & Tham khảo
+- **Trước khi viết**, search web để tìm bài viết, blog, video trending/chất lượng liên quan đến topic
+- Thêm section `## 📚 Tham khảo` ở cuối note (trước Checklist) với format:
+  - Liệt kê 3-5 nguồn tham khảo chất lượng (blog, docs, video, tutorial)
+  - Mỗi nguồn gồm: **tiêu đề + link + 1-2 câu tóm tắt nội dung**
+  - Ưu tiên: docs chính thức, blog kỹ thuật uy tín, video có nhiều view
+  - Nếu có bài viết trending gần đây → đánh dấu `🔥`
+- Format:
+  ```
+  ## 📚 Tham khảo
+  - [Tiêu đề bài viết](link) — tóm tắt 1-2 câu
+  - 🔥 [Bài trending](link) — tóm tắt 1-2 câu
+  ```
+
 ### Trước khi viết
 1. Hỏi user muốn đặt file ở folder nào (nếu chưa rõ)
 2. Kiểm tra đã có file chưa — nếu có thì hỏi user muốn viết thêm hay viết lại
 3. Nếu topic liên quan đến folder AI/Lang, kiểm tra có thuật ngữ mới nào cần thêm vào [[Glossary]] không
+4. **Search web** để tìm nguồn tham khảo & kiến thức trending trước khi viết nội dung

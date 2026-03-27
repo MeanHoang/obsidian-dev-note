@@ -141,24 +141,70 @@ Gán **vai trò cụ thể** cho LLM để nó trả lời từ góc nhìn chuy�
 **Khi nào dùng:** Khi cần output từ 1 góc nhìn chuyên môn cụ thể.
 
 ---
-
 ## 🎛️ Các tham số quan trọng
 ### 🌡️ Temperature
-Kiểm soát **mức độ "sáng tạo"** của LLM.
-
-| Giá trị | Behavior | Dùng khi |
-|---|---|---|
-| **0** | Deterministic — luôn chọn từ có xác suất cao nhất | Code generation, factual Q&A, data extraction |
-| **0.3 - 0.7** | Cân bằng — có chút sáng tạo nhưng vẫn ổn định | Viết email, tóm tắt, chat thông thường |
-| **0.8 - 1.0** | Sáng tạo — output đa dạng, ít dự đoán được | Brainstorming, viết truyện, tạo ý tưởng |
+Kiểm soát **mức độ "sáng tạo"** (độ ngẫu nhiên) của LLM. Giá trị từ **0 → 2** (tùy provider).
 
 > [!note] 📝 So sánh dễ hiểu
-> Temperature 0 = nhân viên **làm đúng quy trình**, không sáng tạo.
-> Temperature 1 = nhân viên **tự do sáng tạo**, đôi khi ra ý hay, đôi khi ra ý lạ.
+> Tưởng tượng hỏi đầu bếp "nấu phở cho tôi":
+> - **Temperature 0** = nấu đúng công thức, lần nào cũng y chang
+> - **Temperature 0.5** = nấu theo công thức nhưng thỉnh thoảng thêm chút gia vị riêng
+> - **Temperature 1.0+** = sáng tạo lung tung — có khi cho phở vào blender làm smoothie 🍜
+
+#### Cách hoạt động
+LLM chọn token (từ) tiếp theo dựa trên **xác suất**. Temperature quyết định cách chọn:
+- **Thấp (0 - 0.3):** Luôn chọn token xác suất cao nhất → kết quả ổn định, lặp lại được
+- **Cao (0.8+):** Cho token xác suất thấp cơ hội được chọn → đa dạng, nhưng dễ lan man hoặc "ảo"
+#### Bảng chọn Temperature theo use case
+
+| Giá trị       | Behavior                                          | Dùng khi                                      |
+| ------------- | ------------------------------------------------- | --------------------------------------------- |
+| **0**         | Deterministic — luôn chọn từ có xác suất cao nhất | Code generation, factual Q&A, data extraction |
+| **0.3 - 0.7** | Cân bằng — có chút sáng tạo nhưng vẫn ổn định     | Viết email, tóm tắt, chat thông thường        |
+| **0.8 - 1.0** | Sáng tạo — output đa dạng, ít dự đoán được        | Brainstorming, viết truyện, tạo ý tưởng       |
+| **1.0+**      | Rất ngẫu nhiên — output khó kiểm soát             | Thí nghiệm, test edge case                    |
+
+#### Ví dụ code khi gọi API
+```python
+# ✅ Good — Temperature thấp cho coding task
+response = client.messages.create(
+    model="claude-sonnet-4-6-20250514",
+    temperature=0.2,        # thấp → code chính xác, ít lan man
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "Viết hàm binary search"}]
+)
+
+# ❌ Bad — Temperature cao cho coding task
+response = client.messages.create(
+    model="claude-sonnet-4-6-20250514",
+    temperature=1.5,        # cao → AI "sáng tạo" thêm code không cần thiết
+    max_tokens=4096,
+    messages=[{"role": "user", "content": "Viết hàm binary search"}]
+)
+```
+#### Mặc định của các tool phổ biến
+
+| Tool | Default temperature | User chỉnh được? |
+|---|---|---|
+| ChatGPT web | ~1.0 | Không |
+| Claude web | Tự chọn phù hợp | Không |
+| OpenAI API | 1.0 | Có (0 - 2) |
+| Anthropic API | 1.0 | Có (0 - 1) |
+| GitHub Copilot | ~0.2 | Không |
+
+> [!warning] ⚠️ AI coding trả lời lan man?
+> Không chỉ do temperature — còn vì:
+> 1. **`max_tokens` quá cao** — cho phép viết dài, nó sẽ viết dài
+> 2. **Prompt không rõ** — không nói "chỉ code, không giải thích" thì AI sẽ giải thích
+> 3. **Không có system prompt** — không đặt luật "ngắn gọn" thì AI mặc định nói nhiều
+>
+> **Fix:** Thêm system prompt: *"Trả lời ngắn gọn. Chỉ đưa code, không giải thích trừ khi được hỏi."*
+
+> [!tip] 💡
+> **Không cần set temperature trước khi dùng AI tool.** Mỗi tool đã có default phù hợp. Chỉ cần chỉnh khi dùng API và muốn kiểm soát chặt output.
 
 ### 🎯 Top-p (Nucleus Sampling)
 Giới hạn LLM chỉ chọn từ các token có **tổng xác suất ≤ p**.
-
 - `top_p = 0.1` → chỉ chọn từ top 10% token có xác suất cao nhất → output an toàn
 - `top_p = 0.9` → chọn từ top 90% → output đa dạng hơn
 
@@ -174,10 +220,8 @@ Bảo LLM **dừng lại** khi gặp chuỗi ký tự nhất định. Hữu ích
 ---
 
 ## ⚡ Kỹ thuật nâng cao
-
 ### 🔗 Prompt Chaining
 Chia task lớn thành **nhiều prompt nhỏ**, output prompt trước = input prompt sau.
-
 ```
 Prompt 1: "Phân tích requirements từ đoạn text này → trả ra JSON"
      ↓ output
@@ -185,22 +229,18 @@ Prompt 2: "Từ requirements này, thiết kế database schema"
      ↓ output
 Prompt 3: "Từ schema này, viết migration SQL"
 ```
-
 **Khi nào dùng:** Task quá phức tạp cho 1 prompt duy nhất. Chia nhỏ = kiểm soát tốt hơn, dễ debug hơn.
 
 ### 🧩 Self-Consistency
 Chạy **cùng 1 prompt nhiều lần**, lấy kết quả xuất hiện nhiều nhất (majority vote).
-
 ```
 Chạy 5 lần → 3 lần ra "A", 2 lần ra "B" → chọn "A"
 ```
-
 **Khi nào dùng:** Task quan trọng cần độ chính xác cao (phân loại, tính toán...).
 **Trade-off:** Tốn gấp N lần token/tiền.
 
 ### 🌳 Tree of Thought (ToT)
 Mở rộng CoT — thay vì 1 đường suy nghĩ, LLM **explore nhiều hướng**, đánh giá từng hướng, chọn hướng tốt nhất.
-
 ```
 Vấn đề: "Thiết kế database cho e-commerce"
 
@@ -213,7 +253,6 @@ Hướng 3: Hybrid → đánh giá: cân bằng cả 2 ✅
 
 ### 📐 Output Formatting
 Bắt LLM trả output theo **format cụ thể** — rất quan trọng khi build app.
-
 ```
 "Phân tích sentiment của review sau. Trả về JSON với format:
 {
@@ -229,17 +268,16 @@ Review: 'Sản phẩm đẹp nhưng giao hàng chậm quá'"
 > Luôn cho **ví dụ output mẫu** khi yêu cầu format cụ thể. LLM follow example tốt hơn follow mô tả.
 
 ---
-
 ## 🚫 Anti-patterns — những lỗi thường gặp
 
-| Lỗi | Ví dụ | Fix |
-|---|---|---|
-| 🙅 **Quá mơ hồ** | "Viết code cho tốt" | Cụ thể: "Viết REST API endpoint tạo order bằng Express + TypeScript" |
-| 📖 **Quá dài dòng** | Prompt 2000 từ cho task đơn giản | Ngắn gọn, chỉ giữ thông tin cần thiết |
-| 🤯 **Nhồi quá nhiều task** | "Viết code, test, deploy, viết doc" | Chia ra, mỗi prompt 1 task |
-| 🚫 **Chỉ nói "đừng"** | "Đừng viết code dở" | Nói rõ mình muốn gì: "Viết code có error handling, có type" |
-| 📋 **Không cho ví dụ** | "Trả về đúng format" | Cho 1-2 ví dụ output mẫu |
-| 🔄 **Không iterate** | Prompt đầu tiên không ổn → bỏ luôn | Sửa prompt, thêm context, thử lại |
+| Lỗi                        | Ví dụ                               | Fix                                                                  |
+| -------------------------- | ----------------------------------- | -------------------------------------------------------------------- |
+| 🙅 **Quá mơ hồ**           | "Viết code cho tốt"                 | Cụ thể: "Viết REST API endpoint tạo order bằng Express + TypeScript" |
+| 📖 **Quá dài dòng**        | Prompt 2000 từ cho task đơn giản    | Ngắn gọn, chỉ giữ thông tin cần thiết                                |
+| 🤯 **Nhồi quá nhiều task** | "Viết code, test, deploy, viết doc" | Chia ra, mỗi prompt 1 task                                           |
+| 🚫 **Chỉ nói "đừng"**      | "Đừng viết code dở"                 | Nói rõ mình muốn gì: "Viết code có error handling, có type"          |
+| 📋 **Không cho ví dụ**     | "Trả về đúng format"                | Cho 1-2 ví dụ output mẫu                                             |
+| 🔄 **Không iterate**       | Prompt đầu tiên không ổn → bỏ luôn  | Sửa prompt, thêm context, thử lại                                    |
 
 ---
 

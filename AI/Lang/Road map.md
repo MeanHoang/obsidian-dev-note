@@ -6,8 +6,8 @@
 ---
 ## Phase 1: 🧠 Nền tảng LLM (1-2 tuần)
 Mục tiêu: **gọi API trực tiếp, hiểu LLM hoạt động thế nào** — chưa dùng framework nào.
-- [ ] Hiểu token, context window, temperature, top-p
-- [ ] Gọi API trực tiếp (OpenAI / Anthropic) — không qua LangChain
+- [x] Hiểu token, context window, temperature, top-p
+- [x] Gọi API trực tiếp (OpenAI / Anthropic) — không qua LangChain
 - [ ] Prompt engineering: zero-shot, few-shot, chain-of-thought, system prompt
 - [ ] Structured output — bắt LLM trả JSON đúng format
 - [ ] Hiểu giới hạn: hallucination, context limit, latency, cost
