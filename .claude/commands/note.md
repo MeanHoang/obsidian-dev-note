@@ -24,6 +24,7 @@ Tạo note cho topic: $ARGUMENTS
   - `> [!danger] ⛔` — Tuyệt đối tránh
 - Dùng **bảng** cho so sánh nhiều option
 - Dùng **code block** với language tag (```js, ```python...)
+- **Ưu tiên JavaScript/TypeScript** cho code examples. Chỉ dùng Python khi topic đặc thù Python
 - Code comment bằng tiếng Việt
 - Dùng `---` ngăn cách giữa các section lớn
 - **Không cách dòng thừa** — compact, gọn gàng
@@ -48,8 +49,15 @@ Tạo note cho topic: $ARGUMENTS
   - 🔥 [Bài trending](link) — tóm tắt 1-2 câu
   ```
 
+### Đánh số file
+- Tên file **bắt đầu bằng số thứ tự** để dễ theo dõi thứ tự học: `0-Tên Topic.md`, `1-Tên Topic.md`, `2-Tên Topic.md`...
+- Kiểm tra các file đã có trong folder để xác định số tiếp theo
+- Ví dụ: folder đã có `0-LLM Overview.md`, `1-Structured Output.md` → file mới sẽ là `2-Tên Mới.md`
+- Khi reference bằng wiki link, dùng tên có số: `[[2-Prompt Engineering]]`
+
 ### Trước khi viết
 1. Hỏi user muốn đặt file ở folder nào (nếu chưa rõ)
 2. Kiểm tra đã có file chưa — nếu có thì hỏi user muốn viết thêm hay viết lại
-3. Nếu topic liên quan đến folder AI/Lang, kiểm tra có thuật ngữ mới nào cần thêm vào [[Glossary]] không
-4. **Search web** để tìm nguồn tham khảo & kiến thức trending trước khi viết nội dung
+3. **Kiểm tra số thứ tự** — đọc các file trong folder để xác định số tiếp theo cho tên file
+4. Nếu topic liên quan đến folder AI/Lang, kiểm tra có thuật ngữ mới nào cần thêm vào [[Glossary]] không
+5. **Search web** để tìm nguồn tham khảo & kiến thức trending trước khi viết nội dung

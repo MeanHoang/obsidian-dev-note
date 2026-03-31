@@ -122,7 +122,7 @@ print(response.usage)
 
 ---
 ## 💬 Messages — Cách hội thoại hoạt động
-LLM **stateless** ([[LLM Overview#LLM stateless — không nhớ gì giữa các request|không nhớ gì giữa các request]]). Muốn hội thoại nhiều lượt → gửi lại **toàn bộ lịch sử** mỗi lần.
+LLM **stateless** ([[0-LLM Overview#LLM stateless — không nhớ gì giữa các request|không nhớ gì giữa các request]]). Muốn hội thoại nhiều lượt → gửi lại **toàn bộ lịch sử** mỗi lần.
 
 ```python
 # ❌ Bad — nghĩ LLM tự nhớ
@@ -243,10 +243,10 @@ except APIError as e:
 
 ---
 ## 🔗 Concept liên quan
-- [[LLM Overview]] — LLM hoạt động thế nào
-- [[Prompt Engineering]] — cách viết prompt hiệu quả
+- [[0-LLM Overview]] — LLM hoạt động thế nào
+- [[2-Prompt Engineering]] — cách viết prompt hiệu quả
 - [[Glossary]] — bảng thuật ngữ
-- Structured Output — bắt LLM trả JSON đúng format (note tiếp theo)
+- [[1-Structured Output]] — bắt LLM trả JSON đúng format
 
 ---
 ## ✅ Checklist — Bạn đã nắm API Integration chưa?

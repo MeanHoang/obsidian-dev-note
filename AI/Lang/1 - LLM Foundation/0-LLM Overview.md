@@ -66,8 +66,8 @@ Bước 3: "...Hà Nội" → chọn "."
 ```
 Mỗi bước, LLM nhìn **tất cả token trước đó** → tính xác suất → chọn token tiếp theo.
 Các tham số ảnh hưởng đến cách chọn:
-- [[Prompt Engineering#🌡️ Temperature|Temperature]] — mức độ ngẫu nhiên khi chọn token
-- [[Prompt Engineering#🎯 Top-p (Nucleus Sampling)|Top-p]] — giới hạn pool token được chọn
+- [[2-Prompt Engineering#🌡️ Temperature|Temperature]] — mức độ ngẫu nhiên khi chọn token
+- [[2-Prompt Engineering#🎯 Top-p (Nucleus Sampling)|Top-p]] — giới hạn pool token được chọn
 - **Max tokens** — giới hạn độ dài output
 
 ### 3️⃣ Context Window — Bộ nhớ ngắn hạn
@@ -185,7 +185,7 @@ Các model mới (GPT-4o, Claude 3.5+) đã **multimodal** — hiểu cả hình
 
 ---
 ## 🔗 Concept liên quan
-- [[Prompt Engineering]] — cách viết prompt để LLM trả lời đúng ý
+- [[2-Prompt Engineering]] — cách viết prompt để LLM trả lời đúng ý
 - [[Glossary]] — bảng thuật ngữ AI/LLM
 - API Integration — cách gọi API để tương tác với LLM (note tiếp theo)
 

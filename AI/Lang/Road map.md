@@ -8,9 +8,9 @@
 Mục tiêu: **gọi API trực tiếp, hiểu LLM hoạt động thế nào** — chưa dùng framework nào.
 - [x] Hiểu token, context window, temperature, top-p
 - [x] Gọi API trực tiếp (OpenAI / Anthropic) — không qua LangChain
-- [ ] Prompt engineering: zero-shot, few-shot, chain-of-thought, system prompt
-- [ ] Structured output — bắt LLM trả JSON đúng format
-- [ ] Hiểu giới hạn: hallucination, context limit, latency, cost
+- [x] Prompt engineering: zero-shot, few-shot, chain-of-thought, system prompt
+- [x] Structured output — bắt LLM trả JSON đúng format
+- [x] Hiểu giới hạn: hallucination, context limit, latency, cost
 
 > [!tip] 💡
 > Phase này là quan trọng nhất về lâu dài. Framework đổi mỗi tháng, prompt engineering thì dùng mãi.
