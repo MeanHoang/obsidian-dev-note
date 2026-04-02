@@ -80,6 +80,8 @@
 
 **RAG (Retrieval Augmented Generation)** — Kỹ thuật cho LLM truy cập data bên ngoài (database, documents...) trước khi trả lời. Giúp giảm hallucination và trả lời đúng với data của mình.
 
+**Runnable** — Interface chung mà mọi component trong LangChain đều implement. Nhờ Runnable, mọi component (Prompt Template, ChatModel, Parser, Retriever...) ghép được với nhau bằng pipe `|` và tự động có `.invoke()`, `.batch()`, `.stream()`, `.ainvoke()`. Giống "chuẩn USB" — cứ implement Runnable thì cắm vào chain được.
+
 ## S
 **Sequential** — Làm từng việc **lần lượt**, xong cái này mới đến cái kia. Ngược với parallel. Dùng khi task B phụ thuộc kết quả task A.
 

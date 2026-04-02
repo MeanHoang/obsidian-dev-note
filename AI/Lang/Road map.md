@@ -18,11 +18,11 @@ Mục tiêu: **gọi API trực tiếp, hiểu LLM hoạt động thế nào** �
 ---
 ## Phase 2: 🔧 Tools & Function Calling (2 tuần) ← Quan trọng nhất
 Mục tiêu: **LLM không chỉ chat — mà làm được việc thật.**
-- [ ] Function calling — LLM chọn tool nào để gọi, với params gì
-- [ ] Tự build tool đơn giản: search, query database, gọi API bên ngoài
-- [ ] Tool chaining — LLM gọi tool A, lấy kết quả, gọi tiếp tool B
-- [ ] Error handling — tool fail thì agent xử lý thế nào
-- [ ] RAG (Retrieval Augmented Generation) — cho LLM đọc data của mình
+- [x] Function calling — LLM chọn tool nào để gọi, với params gì
+- [x] Tự build tool đơn giản: search, query database, gọi API bên ngoài
+- [x] Tool chaining — LLM gọi tool A, lấy kết quả, gọi tiếp tool B
+- [x] Error handling — tool fail thì agent xử lý thế nào
+- [x] RAG (Retrieval Augmented Generation) — cho LLM đọc data của mình
   - Embedding, vector store (Pinecone, Chroma, pgvector)
   - Chunking strategy — chia document thế nào cho hiệu quả
 

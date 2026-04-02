@@ -30,10 +30,10 @@
 
 **2 phase tách biệt:**
 
-| Phase | Khi nào | Làm gì |
-|---|---|---|
-| **Indexing** | 1 lần (hoặc khi data thay đổi) | Chia documents → tạo embeddings → lưu vào vector DB |
-| **Querying** | Mỗi lần user hỏi | Tìm chunks liên quan → đưa cho LLM → sinh câu trả lời |
+| Phase        | Khi nào                        | Làm gì                                                |
+| ------------ | ------------------------------ | ----------------------------------------------------- |
+| **Indexing** | 1 lần (hoặc khi data thay đổi) | Chia documents → tạo embeddings → lưu vào vector DB   |
+| **Querying** | Mỗi lần user hỏi               | Tìm chunks liên quan → đưa cho LLM → sinh câu trả lời |
 
 ---
 ## 🧩 4 thành phần chính
@@ -222,7 +222,6 @@ Tìm theo **từ khóa** — "error 404" tìm đúng document chứa "error 404"
 
 ### Hybrid Search — Best of both worlds
 **Kết hợp cả 2** → kết quả tốt nhất. Đây là **production standard 2026**.
-
 ```
 User query: "lỗi E001 khi đăng nhập"
     │
