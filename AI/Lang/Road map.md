@@ -32,10 +32,10 @@ Mục tiêu: **LLM không chỉ chat — mà làm được việc thật.**
 ---
 ## Phase 3: ⛓️ LangChain — biết dùng, đừng phụ thuộc (1-2 tuần)
 Mục tiêu: **hiểu abstraction của LangChain**, dùng khi nó tiết kiệm thời gian, bỏ khi nó cản đường.
-- [ ] Concept chính: Chain, Prompt Template, Output Parser, Memory
-- [ ] LCEL (LangChain Expression Language) — cách compose chain
-- [ ] Dùng LangChain cho RAG pipeline
-- [ ] So sánh: cùng 1 task, build bằng API trực tiếp vs LangChain → hiểu trade-off
+- [x] Concept chính: Chain, Prompt Template, Output Parser, Memory
+- [x] LCEL (LangChain Expression Language) — cách compose chain
+- [x] Dùng LangChain cho RAG pipeline
+- [x] So sánh: cùng 1 task, build bằng API trực tiếp vs LangChain → hiểu trade-off
 
 > [!warning] ⚠️
 > LangChain có nhiều abstraction layer gây khó debug. Học concept, nhưng **đừng để framework nghĩ thay mình**. Khi gặp lỗi, phải hiểu chuyện gì xảy ra bên dưới.

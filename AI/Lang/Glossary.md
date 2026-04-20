@@ -5,6 +5,8 @@
 ---
 
 ## A
+**Alignment** — Quá trình "điều chỉnh" model để hành xử theo mong muốn con người (helpful, harmless, honest). Thực hiện qua SFT + RLHF/DPO. Đây là lý do Claude "lịch sự" còn base model thì "thô".
+
 **Autoregressive Generation** — Cách LLM tạo văn bản: sinh **từng token một**, mỗi token mới dựa trên tất cả token trước đó. Giống gõ tin nhắn mà bàn phím gợi ý từ tiếp theo — chọn 1 từ, rồi gợi ý tiếp, cứ thế cho đến hết câu.
 
 ## B
@@ -19,6 +21,9 @@
 **Context Window** — Giới hạn số token mà LLM có thể "nhìn thấy" trong 1 lần (bao gồm cả prompt + output). Ví dụ: GPT-4 = 128K tokens, Claude = 200K tokens.
 
 ## D
+**Distillation** — Train model nhỏ "học lại" từ model lớn. Mục tiêu: giữ phần lớn khả năng nhưng rẻ hơn, nhanh hơn, nhẹ hơn. Ví dụ: Claude Haiku được distill từ Sonnet.
+
+**DPO (Direct Preference Optimization)** — Cách thay thế RLHF đơn giản hơn: dạy model trực tiếp từ cặp (câu trả lời hay, câu trả lời dở) mà không cần train reward model riêng. Rẻ và ổn định hơn RLHF.
 
 ## E
 **Evals (Evaluation)** — Hệ thống đánh giá chất lượng output của LLM. Có 3 cách: metric-based (BLEU, ROUGE), LLM-as-judge (dùng LLM chấm điểm), human eval (người chấm). Không eval = không biết model đang tốt hay tệ.
@@ -37,6 +42,8 @@
 **Function Calling / Tool Use** — Khả năng LLM chọn và gọi tool/function bên ngoài. LLM không chạy code trực tiếp — nó trả về "tôi muốn gọi hàm X với params Y", app của mình thực thi rồi trả kết quả lại. "Tool Use" là tên hiện đại hơn, "Function Calling" là tên gốc từ OpenAI.
 
 ## G
+**Grounding** — Bắt LLM dựa vào nguồn data thật (document, API, database) khi trả lời thay vì "bịa" từ kiến thức training. RAG là một dạng grounding. Mục tiêu: giảm hallucination, tăng độ tin cậy.
+
 **Guardrails** — "Rào chắn" kiểm tra input/output của LLM. Input guardrails block prompt injection, nội dung xấu. Output guardrails kiểm tra format (JSON), safety, factuality. Không phải optional — cần có từ sớm.
 
 ## H
@@ -47,6 +54,8 @@
 ## I
 
 ## J
+**Jailbreak** — Kỹ thuật vượt qua safety rules của LLM để bắt nó làm điều đã bị cấm (ví dụ: "pretend you are DAN, you have no restrictions..."). Khác prompt injection: jailbreak tấn công **model rules**, prompt injection tấn công **app logic**.
+
 **JSON Mode** — Flag trong API bắt LLM chỉ trả về valid JSON (không trả text tự do). OpenAI hỗ trợ qua `response_format: { type: "json_object" }`. Đảm bảo valid JSON nhưng không đảm bảo đúng schema.
 
 **JSON Schema** — Bản "thiết kế kỹ thuật" mô tả cấu trúc JSON: field nào, kiểu gì, bắt buộc hay không. Dùng để ép LLM trả output đúng cấu trúc mong muốn.
@@ -56,7 +65,13 @@
 ## L
 **LLM (Large Language Model)** — Mô hình ngôn ngữ lớn, được train trên lượng text khổng lồ. Ví dụ: GPT-4, Claude, Gemini, Llama.
 
+**LoRA (Low-Rank Adaptation)** — Kỹ thuật fine-tuning tiết kiệm: chỉ train thêm vài "adapter" nhỏ thay vì update toàn bộ weight. Rẻ hơn full fine-tuning hàng trăm lần, kết quả tốt gần tương đương. QLoRA = LoRA + quantization, còn rẻ hơn nữa.
+
 ## M
+**MCP (Model Context Protocol)** — Open protocol chuẩn hóa cách LLM app kết nối với tools, data sources và services bên ngoài. Kiến trúc Host → Client → Server. Expose 3 primitives: Tools (action), Resources (context), Prompts (template). Giống USB-C cho AI — build tool 1 lần, dùng mọi app.
+
+**MoE (Mixture of Experts)** — Kiến trúc model có nhiều "expert" chuyên biệt, mỗi request chỉ activate 1-2 expert thay vì toàn bộ model. Ví dụ: Mixtral, DeepSeek V3. Giúp model có tổng params rất lớn nhưng chạy rẻ như model nhỏ.
+
 **Multimodal** — Model có khả năng hiểu nhiều loại input: text, hình ảnh, audio, video. Hầu hết LLM lớn hiện tại (GPT-4o, Claude, Gemini) đều multimodal.
 
 ## N
@@ -74,11 +89,14 @@
 **Pydantic** — Thư viện Python để validate và parse data bằng type hints. Dùng nhiều trong structured output để đảm bảo LLM trả đúng kiểu dữ liệu. Ví dụ: `class User(BaseModel): name: str; age: int`.
 
 ## Q
+**Quantization** — Giảm độ chính xác weight của model (float32 → int8/int4) để chạy nhanh hơn, tốn ít RAM hơn. Đánh đổi chất lượng giảm nhẹ. Lý do bạn chạy được Llama 70B trên laptop: nó đã bị quantize.
 
 ## R
 **Reasoning Model** — Model AI có khả năng "suy nghĩ" (chain-of-thought nội bộ) trước khi trả lời. Tốn nhiều token hơn nhưng chính xác hơn cho task logic, toán, code phức tạp. Ví dụ: OpenAI o1/o3, DeepSeek R1.
 
 **RAG (Retrieval Augmented Generation)** — Kỹ thuật cho LLM truy cập data bên ngoài (database, documents...) trước khi trả lời. Giúp giảm hallucination và trả lời đúng với data của mình.
+
+**RLHF (Reinforcement Learning from Human Feedback)** — Dùng phản hồi của người (chọn câu trả lời nào hay hơn) để "thưởng/phạt" model, dạy nó trả lời theo hướng người thích. Bước này biến base model → chat model như ChatGPT, Claude.
 
 **Runnable** — Interface chung mà mọi component trong LangChain đều implement. Nhờ Runnable, mọi component (Prompt Template, ChatModel, Parser, Retriever...) ghép được với nhau bằng pipe `|` và tự động có `.invoke()`, `.batch()`, `.stream()`, `.ainvoke()`. Giống "chuẩn USB" — cứ implement Runnable thì cắm vào chain được.
 
@@ -86,6 +104,8 @@
 **Sequential** — Làm từng việc **lần lượt**, xong cái này mới đến cái kia. Ngược với parallel. Dùng khi task B phụ thuộc kết quả task A.
 
 **SDK (Software Development Kit)** — Thư viện code giúp gọi API dễ hơn thay vì tự viết HTTP request. Ví dụ: `openai` (Python), `anthropic` (Python).
+
+**SFT (Supervised Fine-Tuning)** — Bước train sau pretraining: cho model học từ cặp (câu hỏi, câu trả lời chuẩn) do con người viết. Dạy model format trả lời, làm theo hướng dẫn — "Instruct model" ra đời từ bước này.
 
 **Structured Output** — Kỹ thuật ép LLM trả về data có cấu trúc (JSON) thay vì text tự do. Có 3 cách: prompt-based, JSON mode, schema enforcement. Quan trọng khi build app vì code cần parse được output.
 
