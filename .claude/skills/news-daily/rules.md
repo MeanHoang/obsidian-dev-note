@@ -2,13 +2,42 @@
 
 ## 🚨 Anti-hallucination (ƯU TIÊN SỐ 1)
 
-- **Mỗi item BẮT BUỘC có 1 URL cụ thể lấy nguyên văn từ WebSearch.** Không sửa, không rút gọn, không đoán slug.
-- **Cấm bịa/đoán URL.** Không viết URL kiểu `example.com/blog/something` dù đoán rất hợp lý.
-- **Cấm tái sử dụng 1 URL chung** (vd `shopify.dev/changelog`) cho nhiều item khác nhau. Mỗi fact cần URL riêng tới bài viết gốc. Nếu không có URL riêng → gộp thành 1 entry tham chiếu URL tổng.
-- **Claim không có URL rõ → bỏ claim đó**, không cố điền. Ít item thật > nhiều item sai.
-- **Ngày/số/phiên bản** (vd "15/04", "v2026-04", "+500%") — chỉ ghi nếu snippet search nêu rõ. Không chắc → bỏ số, nói định tính.
-- **Nghi ngờ item quan trọng** → WebFetch verify URL + content trước khi đưa vào.
-- **Self-check trước khi ghi file:** quét lại mỗi URL, phải copy-paste từ 1 WebSearch result cụ thể. Không qua kiểm tra → không ghi.
+**Sự thật quan trọng:** WebSearch trả URL từ result list — nhưng **URL có thể đã 404, moved, hoặc fabricated bởi search index**. KHÔNG tin tuyệt đối URL từ WebSearch, phải verify.
+
+### URL Allowlist — không cần WebFetch verify
+Domain sau đã structured URL đáng tin, miễn verify khi chỉ lấy URL root / docs / changelog:
+- `shopify.dev`, `shopify.engineering`, `changelog.shopify.com`, `shopify.com/editions`, `shopify.com/news`
+- `cloud.google.com` (docs, blog), `firebase.google.com`, `firebase.blog`
+- `web.dev`, `developer.chrome.com`, `developer.mozilla.org`, `nodejs.org`, `v8.dev`
+- `github.com` (đường dẫn thật), `nextjs.org`
+- `anthropic.com`, `openai.com` (news, docs)
+- `techcrunch.com`, `theverge.com`, `arstechnica.com`, `news.ycombinator.com`
+- Vietnam: `vietstock.vn`, `cafef.vn`, `vneconomy.vn`, `vnexpress.net`, `sjc.com.vn`
+
+### URL cần WebFetch verify BẮT BUỘC trước khi ghi file
+- **Top 3 "đáng đọc nhất"** — luôn verify vì user sẽ click đầu tiên.
+- **Mọi URL thuộc domain ngoài allowlist** — đặc biệt:
+  - Blog cá nhân / medium.com / substack.com
+  - Dev platform posts: `dev.to/*`, `medium.com/@*`, `hashnode.com/*` (URL cá biệt dễ fabricate)
+  - Company blog không nổi tiếng (random `.ai`, `.io`, `.dev`)
+  - Aggregator/comparison sites (`*compare*`, `*vs*`, `*best*`)
+  - Listicle/SEO sites (`*top-*`, `*complete-guide*`)
+
+Verify bằng WebFetch với prompt `"Does this page exist? Title? If 404 say so."` — tối đa 6-8 URL parallel. URL 404 → **xóa item** hoặc **thay URL khác verified**.
+
+### Quy tắc chung
+- **Mỗi item có 1 URL cụ thể từ WebSearch.** Không sửa, không rút gọn, không đoán slug.
+- **Cấm bịa/đoán URL.** Không viết URL dạng `example.com/blog/something` dù đoán hợp lý.
+- **Cấm tái sử dụng 1 URL chung** cho nhiều fact khác nhau. Mỗi fact có URL riêng hoặc gộp thành 1 entry.
+- **Claim không URL rõ → bỏ claim.** Ít item thật > nhiều item sai.
+- **Ngày/số/phiên bản** — chỉ ghi nếu snippet nêu rõ. Không chắc → bỏ số.
+
+### Self-check cuối (bắt buộc trước ghi file)
+1. Liệt kê mọi URL trong digest.
+2. Đánh dấu URL nào thuộc allowlist.
+3. Verify WebFetch song song các URL không thuộc allowlist + Top 3.
+4. URL 404 → fix hoặc xóa item.
+5. Chỉ ghi file sau khi 100% URL đã pass check.
 
 ## Nội dung
 
