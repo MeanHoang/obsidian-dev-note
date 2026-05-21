@@ -83,6 +83,19 @@ Mỗi item gồm **3 phần bắt buộc**:
 - **ETH:** $X,XXX (+/-X% 24h) ([nguồn](url))
 - Tin đáng chú ý: [chỉ nếu có sự kiện lớn].
 
+### 🏦 Lãi suất ngân hàng (tiết kiệm VND)
+- **Vietcombank:** 6T X.XX% — 12T X.XX% ([nguồn](url))
+- **BIDV / VietinBank / Agribank:** 6T X.XX% — 12T X.XX%
+- **Top private (Techcombank/MB/ACB/VPBank…):** 6T X.XX% — 12T X.XX%
+- **Cao nhất thị trường:** [tên bank] 12T X.XX% (điều kiện nếu có).
+- Xu hướng: [tăng/giảm/đi ngang so tuần trước, chỉ note nếu có thay đổi].
+
+### 🧭 Đánh giá chung
+2-4 câu nhận định tổng quan, **dựa trên số liệu vừa render ở trên** (không bịa thêm dữ liệu):
+- **Bức tranh chung:** kênh nào đang hút tiền / đi ngang / giảm (vàng vs chứng vs crypto vs gửi tiết kiệm).
+- **Tín hiệu đáng chú ý:** điểm bất thường nếu có (vàng phá đỉnh, VN-Index thủng mốc, lãi suất đảo chiều, BTC biến động mạnh).
+- **Gợi ý cho người giữ VND có dư:** kênh nào đang hợp lý theo dữ liệu hôm nay (chỉ nhận định ngắn, **không phải lời khuyên đầu tư**).
+
 ---
 **Đề xuất đọc trước:** 2-3 item impact cao nhất với Joy Loyalty / skill dev của bạn.
 ```

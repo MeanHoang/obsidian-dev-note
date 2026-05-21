@@ -29,7 +29,7 @@ Nếu `$ARGUMENTS` có giá trị → chỉ tìm topic đó. Trống → tất c
 11. **📦 GitHub trending** — repo có giá trị học.
 
 ### 💰 Luôn có ở cuối — Tài chính VN
-Section luôn render: giá vàng (SJC/9999/thế giới), VN-Index, BTC/ETH.
+Section luôn render: giá vàng (SJC/9999/thế giới), VN-Index, BTC/ETH, lãi suất ngân hàng (top 3-5 bank tiêu biểu, kỳ hạn 6/12 tháng). Kết bằng **Đánh giá chung** 2-4 câu — chỉ nhận định dựa trên số liệu vừa render, không bịa data ngoài.
 
 ## Workflow
 

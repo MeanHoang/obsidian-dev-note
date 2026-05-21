@@ -43,6 +43,8 @@
 - `"giá vàng SJC hôm nay"`, `"giá vàng 9999 [day/month/year]"`
 - `"VN-Index hôm nay"`, `"chứng khoán Việt Nam [day/month/year]"`
 - `"bitcoin price today"`, `"ethereum price today"`
+- `"lãi suất ngân hàng hôm nay [month year]"`, `"lãi suất tiết kiệm Vietcombank BIDV [month year]"`
+- `"lãi suất huy động cao nhất [month year]"`, `"so sánh lãi suất ngân hàng [month year]"`
 
 ## Nguồn ưu tiên (theo mức tin cậy cho dev content)
 
@@ -80,3 +82,4 @@
 - cafef.vn, vietstock.vn, vneconomy.vn, sjc.com.vn
 - vnexpress.net/kinh-doanh, 24h.com.vn/gia-vang
 - coingecko.com, coinmarketcap.com (crypto)
+- **Lãi suất:** vietcombank.com.vn, bidv.com.vn, vietinbank.vn, techcombank.com.vn, thebank.vn, laisuat.vn, cafef.vn/lai-suat
