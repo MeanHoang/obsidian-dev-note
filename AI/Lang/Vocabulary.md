@@ -22,3 +22,4 @@
 | **utility**     | tiện ích, công cụ phụ trợ | "3 key utility classes in LCEL" — những class hỗ trợ giúp ghép nối component dễ hơn                                                       |
 | **alternatives** | lựa chọn thay thế       | "Lighter alternatives to LangChain" — các tool/framework khác có thể dùng thay LangChain                                                  |
 | **fork**         | rẽ nhánh, tách ra        | "Fork execution into parallel branches" — tách luồng xử lý thành nhiều nhánh chạy cùng lúc                                               |
+| **distribution** | phân phối, phát hành     | "Manual distribution of gift cards" — phát/gửi gift card tới từng người. "Custom-distribution app" — app cài riêng cho 1 merchant       |

@@ -1,5 +1,7 @@
 # Rules
 
+**Áp dụng cho MỌI agent.** Subagent không tự đọc được file này — main agent phải nhúng toàn bộ rules vào prompt của từng agent khi spawn.
+
 ## 🚨 Anti-hallucination (ƯU TIÊN SỐ 1)
 
 **Sự thật quan trọng:** WebSearch trả URL từ result list — nhưng **URL có thể đã 404, moved, hoặc fabricated bởi search index**. KHÔNG tin tuyệt đối URL từ WebSearch, phải verify.
@@ -15,7 +17,7 @@ Domain sau đã structured URL đáng tin, miễn verify khi chỉ lấy URL roo
 - Vietnam: `vietstock.vn`, `cafef.vn`, `vneconomy.vn`, `vnexpress.net`, `sjc.com.vn`
 
 ### URL cần WebFetch verify BẮT BUỘC trước khi ghi file
-- **Top 3 "đáng đọc nhất"** — luôn verify vì user sẽ click đầu tiên.
+- **Item ⭐ / nổi bật nhất của mỗi topic** — luôn verify (đằng nào cũng phải WebFetch để viết section Chi tiết) vì user sẽ click đầu tiên.
 - **Mọi URL thuộc domain ngoài allowlist** — đặc biệt:
   - Blog cá nhân / medium.com / substack.com
   - Dev platform posts: `dev.to/*`, `medium.com/@*`, `hashnode.com/*` (URL cá biệt dễ fabricate)
@@ -32,26 +34,27 @@ Verify bằng WebFetch với prompt `"Does this page exist? Title? If 404 say so
 - **Claim không URL rõ → bỏ claim.** Ít item thật > nhiều item sai.
 - **Ngày/số/phiên bản** — chỉ ghi nếu snippet nêu rõ. Không chắc → bỏ số.
 
-### Self-check cuối (bắt buộc trước ghi file)
-1. Liệt kê mọi URL trong digest.
+### Self-check cuối (mỗi agent bắt buộc làm trước khi Write file của mình)
+1. Liệt kê mọi URL trong file.
 2. Đánh dấu URL nào thuộc allowlist.
-3. Verify WebFetch song song các URL không thuộc allowlist + Top 3.
+3. Verify WebFetch song song các URL không thuộc allowlist + item ⭐.
 4. URL 404 → fix hoặc xóa item.
 5. Chỉ ghi file sau khi 100% URL đã pass check.
 
 ## Nội dung
 
-- **Skip section rỗng** — không viết "không tìm thấy tin" cho từng topic. (Trừ section Tài chính VN luôn có.)
-- Mỗi topic tối đa **3-5 item**, ưu tiên chất lượng.
-- Shopify + Loyalty: có thể **5-7 item** nếu ưu tiên cao.
-- Web Dev + System Design: **3-5 mỗi section**, ưu tiên bài có concept/pattern rõ, không listicle.
+- **Topic không có tin → không tạo file**, không viết "không tìm thấy tin". (Trừ `tai-chinh-vn.md` luôn có.)
+- Mỗi file topic **3-5 item**, ưu tiên chất lượng. Shopify: **5-7 item** nếu nhiều tin tốt.
+- **Ít item có Chi tiết sâu > nhiều item 1 dòng.** Mỗi file phải có ít nhất 1 item ⭐ được WebFetch bài gốc và viết **Chi tiết** 3-5 bullet thật (số liệu, pattern, trade-off, kết luận). Đây là điểm "nổi bật" của file — không được bỏ.
+- Web Dev + System Design: ưu tiên bài có concept/pattern rõ, không listicle.
 - **Bắt buộc giải thích "đây là gì"** cho mỗi item: định nghĩa thuật ngữ/framework/công ty nếu user có thể chưa biết. Không viết "Hydrogen 2026.4.0 ra" mà không nói Hydrogen là gì.
 - Tóm tắt đủ để user quyết định click, không copy nguyên đoạn.
+- Section **Chi tiết** chỉ chứa nội dung đã đọc được từ WebFetch/snippet — không suy diễn thêm.
 
 ## Filter dedupe
 
-- So khớp tiêu đề/chủ đề tin với list file đã note trong 7 ngày qua (bước 1).
-- Trùng → **bỏ hẳn khỏi digest**, không ghi chú.
+- Main agent scan file 7 ngày qua, nhúng list URL/tiêu đề đã xuất hiện vào prompt từng agent theo topic.
+- Mỗi agent so khớp tin tìm được với list đó. Trùng → **bỏ hẳn khỏi file**, không ghi chú.
 - Cùng chủ đề nhưng cũ >7 ngày → có thể giữ nếu có góc nhìn mới, ghi chú "(đã note tuần trước)".
 
 ## Context Joy Loyalty
