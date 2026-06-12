@@ -3,7 +3,7 @@
 > ⚠️ Tóm tắt khái niệm theo mục lục sách + kiến thức DDD chuẩn — không phải bản dịch nguyên văn. Đọc sách gốc để lấy case study chi tiết. Mọi ví dụ đời sống & Joy Loyalty là ví dụ của mình để minh hoạ, không phải từ sách.
 
 ## TL;DR
-Strategic design trả lời câu hỏi "chia hệ thống lớn thành các phần thế nào và các phần nói chuyện với nhau ra sao". Công cụ chính: **bounded context** (ranh giới của một model + ngôn ngữ), **subdomain types** (core/supporting/generic — để biết đầu tư effort vào đâu), và **context mapping** với 7 pattern quan hệ giữa các context. Tinh thần chung: *không cố xây một model duy nhất cho cả công ty* — chấp nhận nhiều model nhỏ, mỗi cái nhất quán trong ranh giới của nó, và thiết kế có chủ đích cách chúng nói chuyện.
+Strategic design trả lời câu hỏi "chia hệ thống lớn thành các phần thế nào và các phần nói chuyện với nhau ra sao". Công cụ chính: **[[Glossary - Thuật ngữ#Bounded context|bounded context]]** (ranh giới của một model + ngôn ngữ), **[[Glossary - Thuật ngữ#Subdomain|subdomain]] types** (core/supporting/generic — để biết đầu tư effort vào đâu), và **[[Glossary - Thuật ngữ#Context mapping|context mapping]]** với 7 pattern quan hệ giữa các context. Tinh thần chung: *không cố xây một model duy nhất cho cả công ty* — chấp nhận nhiều model nhỏ, mỗi cái nhất quán trong ranh giới của nó, và thiết kế có chủ đích cách chúng nói chuyện.
 
 ## Nội dung chính
 
@@ -13,11 +13,11 @@ Strategic design trả lời câu hỏi "chia hệ thống lớn thành các ph�
 
 Trong code, mỗi "cuốn sổ" đó là một **bounded context**:
 
-- **Bounded context** = ranh giới (thường là ranh giới team/codebase/module/service) mà bên trong đó một model và một ubiquitous language có nghĩa nhất quán. Ra khỏi ranh giới, cùng một từ có thể mang nghĩa khác — và *điều đó không sao cả*, miễn là ranh giới rõ.
-- Ví dụ Joy Loyalty: từ "member" trong context **Points** là *chủ thể có balance và lịch sử giao dịch điểm*; trong context **Tiers** là *người có hạng và tiến độ lên hạng*; trong context **Notifications** chỉ là *người nhận email với locale*. Cố nhét cả ba vào một class `Member` khổng lồ → God object — đúng cái "cuốn sổ chung" làm khổ cả bà chủ lẫn kế toán. Đây chính là bệnh của layered architecture một-model-cho-tất-cả.
+- **Bounded context** = ranh giới (thường là ranh giới team/codebase/module/service) mà bên trong đó một model và một [[Glossary - Thuật ngữ#Ubiquitous language|ubiquitous language]] có nghĩa nhất quán. Ra khỏi ranh giới, cùng một từ có thể mang nghĩa khác — và *điều đó không sao cả*, miễn là ranh giới rõ.
+- Ví dụ Joy Loyalty: từ "member" trong context **Points** là *chủ thể có balance và lịch sử giao dịch điểm*; trong context **Tiers** là *người có hạng và tiến độ lên hạng*; trong context **Notifications** chỉ là *người nhận email với locale*. Cố nhét cả ba vào một class `Member` khổng lồ → God object — đúng cái "cuốn sổ chung" làm khổ cả bà chủ lẫn kế toán. Đây chính là bệnh của [[Glossary - Thuật ngữ#Layered architecture|layered architecture]] một-model-cho-tất-cả.
 - Dấu hiệu nhận diện ranh giới:
   - Cùng một từ **đổi nghĩa khi đổi cuộc hội thoại** ("khách quen" của bà chủ ≠ "khách quen" của kế toán; "reward" với merchant ≠ "reward" với team billing).
-  - Cụm event trong EventStorming tách thành các **"đảo"** trên tường (chương 2).
+  - Cụm event trong [[Glossary - Thuật ngữ#EventStorming|EventStorming]] tách thành các **"đảo"** trên tường (chương 2).
   - Nhóm tính năng **thay đổi vì lý do khác nhau, nhịp khác nhau** — rule tính điểm đổi mỗi khi merchant nghĩ ra campaign mới, còn template email đổi theo mùa marketing.
 - Bounded context là khái niệm *thiết kế*, không bắt buộc là microservice — một codebase Cloud Run monolith vẫn có thể chia context rõ ràng bằng module/folder. Hai cuốn sổ của quán phở vẫn nằm chung một quán; quan trọng là *hai cuốn riêng*, không phải hai toà nhà riêng.
 
@@ -38,7 +38,7 @@ Trong domain cũng vậy — không phải phần nào cũng đáng đầu tư n
 🏪 **Ví dụ đời sống:** Trong bệnh viện, mỗi khoa có "ngôn ngữ" và sổ sách riêng: khoa khám, khoa xét nghiệm, khoa dược, phòng tài vụ. Nhưng bệnh nhân thì đi xuyên qua tất cả. Vậy phải có *quy ước giữa các khoa*: khoa khám ghi chỉ định theo mẫu nào để khoa xét nghiệm đọc được, kết quả trả về theo format nào, và — phần tế nhị — **khoa nào có tiếng nói hơn khoa nào** khi muốn đổi mẫu phiếu. Vẽ ra được tấm bản đồ "khoa nào nói chuyện với khoa nào, theo luật gì, ai phải chiều ai" — đó là context map.
 
 - **Context map** = bản đồ các bounded context và *quan hệ* giữa chúng — bao gồm cả **quan hệ quyền lực giữa các team** (ai phải theo ai khi model thay đổi). Đây là điểm hay bị bỏ sót: context map không chỉ là sơ đồ kỹ thuật, nó là sơ đồ *chính trị* — upstream/downstream là chuyện ai đổi trước, ai phải chạy theo.
-- Với hệ thống legacy, vẽ context map của *hiện trạng* (as-is) là bước đầu của refactoring: lộ ra chỗ nào hai context dính nhau qua shared database, chỗ nào một context đang "nuốt" model của context khác.
+- Với hệ thống [[Glossary - Thuật ngữ#Legacy system|legacy]], vẽ context map của *hiện trạng* (as-is) là bước đầu của refactoring: lộ ra chỗ nào hai context dính nhau qua shared database, chỗ nào một context đang "nuốt" model của context khác.
 - Map không tĩnh — khi refactor, ta chủ động dịch chuyển quan hệ (vd: từ shared kernel sang ACL) để gỡ coupling dần.
 
 ```mermaid

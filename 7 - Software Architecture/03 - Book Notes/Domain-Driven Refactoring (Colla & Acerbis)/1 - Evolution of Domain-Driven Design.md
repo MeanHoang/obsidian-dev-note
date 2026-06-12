@@ -11,7 +11,7 @@ Chương mở đầu trả lời câu hỏi: tại sao cách phát triển phầ
 
 Để hiểu DDD giải quyết gì, phải nhìn lại nó đứng trên vai những cách tiếp cận nào — và mỗi cách "gãy" ở đâu khi nghiệp vụ phức tạp lên.
 
-**1. Thời kỳ data-centric (database-first)**
+**1. Thời kỳ [[Glossary - Thuật ngữ#-centric|data-centric]] (database-first)**
 
 🏪 **Ví dụ đời sống:** Tưởng tượng mở quán phở mà việc đầu tiên là... thiết kế tủ đựng nguyên liệu. Ngăn nào để xương, ngăn nào để bánh phở, dán nhãn đâu ra đấy. Nhưng chưa ai trả lời: nước dùng nấu kiểu gì, khách gọi "tái nạm gầu" thì làm sao? Rồi khi khách đông lên, công thức nấu không được ghi ở đâu cả — nó nằm rải rác trong trí nhớ của từng người đứng bếp, mỗi người nấu một kiểu.
 
@@ -19,7 +19,7 @@ Trong code, đây chính là kiểu thiết kế bắt đầu từ database sche
 - Ổn khi app đơn giản (form nhập liệu, báo cáo). Đau khi business logic xuất hiện: rule không có "nhà", bị vương vãi trong controller, trong query, thậm chí trong UI — y như công thức phở nằm trong đầu mỗi người một mảnh.
 - Triệu chứng kinh điển: cùng một rule (vd: "điểm không được âm") bị copy-paste ở 4 chỗ, sửa 3 chỗ quên 1 chỗ → bug.
 
-**2. Layered architecture (n-tier)**
+**2. [[Glossary - Thuật ngữ#Layered architecture|Layered architecture]] (n-tier)**
 
 🏪 **Ví dụ đời sống:** Quán phở giờ chia khu hẳn hoi: khu order, khu bếp, khu kho. Trật tự hơn nhiều — ai cũng biết việc nào ở khu nào. Nhưng vẫn không có *cuốn sổ công thức*. Khu bếp chỉ là nơi "lấy nguyên liệu từ kho, làm theo lời khu order dặn" — kiến thức nấu phở vẫn không có chỗ ở chính thức, chỉ là chuyển từ miệng người order xuống tay người đứng bếp.
 
@@ -40,9 +40,9 @@ async function addPoints(memberId, amount, reason) {
 
 Hàm này chạy được, nhưng: rule "blocked thì không cộng điểm" sống lẫn với Firestore API; muốn test phải mock DB; và 6 tháng sau sẽ có hàm `addPointsFromCampaign` copy 80% logic này với một biến thể nhỏ.
 
-**3. OOP rồi Agile**
+**3. OOP rồi [[Glossary - Thuật ngữ#Agile|Agile]]**
 
-- OOP hứa hẹn model hoá thế giới thực, nhưng thực tế thường thoái hoá thành **anemic model**: class chỉ có getter/setter (hoặc object JS chỉ có data), behavior nằm hết ở service. Như tượng sáp trong bảo tàng — nhìn giống người thật nhưng không tự làm được gì cả; muốn "tượng cử động" phải có người bên ngoài cầm tay nó nhấc lên. Có "object" nhưng không có "orientation".
+- OOP hứa hẹn model hoá thế giới thực, nhưng thực tế thường thoái hoá thành **[[Glossary - Thuật ngữ#Anemic model|anemic model]]**: class chỉ có getter/setter (hoặc object JS chỉ có data), behavior nằm hết ở service. Như tượng sáp trong bảo tàng — nhìn giống người thật nhưng không tự làm được gì cả; muốn "tượng cử động" phải có người bên ngoài cầm tay nó nhấc lên. Có "object" nhưng không có "orientation".
 - Agile rút ngắn vòng phản hồi với business — rất tốt — nhưng Agile là *process*, không trả lời câu hỏi *thiết kế*: "model nghiệp vụ nên nằm ở đâu trong code?". Họp standup mỗi sáng không tự nhiên làm cuốn sổ công thức xuất hiện.
 
 **4. DDD (Eric Evans, 2003)**
@@ -71,7 +71,7 @@ DDD là cách tiếp cận thiết kế phần mềm cho **domain phức tạp**
 
 Với Joy Loyalty, domain là *loyalty & retention*: tích điểm, đổi thưởng, hạng thành viên, campaign. Merchant đã làm loyalty bằng thẻ giấy từ lâu — app chỉ là cách hiện thực hoá domain đó.
 
-**Ubiquitous language (ngôn ngữ chung)** — một bộ từ vựng thống nhất giữa dev và business, dùng *cả trong hội thoại lẫn trong code*.
+**[[Glossary - Thuật ngữ#Ubiquitous language|Ubiquitous language]] (ngôn ngữ chung)** — một bộ từ vựng thống nhất giữa dev và business, dùng *cả trong hội thoại lẫn trong code*.
 
 🏪 Trong gia đình, món canh của bà ngoại được cả nhà gọi là "canh bà ngoại". Một hôm cô con dâu mới về gọi nó là "canh rau tập tàng" — và thế là bữa đó nấu nhầm món. Khi mỗi người gọi cùng một thứ bằng một tên khác nhau, mỗi lần truyền đạt là một lần dịch, và mỗi lần dịch là một cơ hội hiểu nhầm.
 
@@ -83,9 +83,9 @@ Trong code: nếu PM/support/merchant nói "member **earn points** khi đặt h�
 
 Model không phải tài liệu Word để ngắm — model *là* code. Code đổi thì hiểu biết đổi, hiểu biết đổi thì code phải đổi theo.
 
-**Hai tầng pattern:**
-- *Strategic design* — chia hệ thống lớn thành các bounded context, xác định phần nào đáng đầu tư (chương 3). Như quy hoạch khu phố: khu nào để ở, khu nào buôn bán.
-- *Tactical design* — xây model bên trong từng context bằng entity, value object, aggregate, repository... (chương 4). Như thiết kế nội thất từng căn nhà.
+**Hai tầng pattern:** -Chưa hiểu lắm 
+- *Strategic design* — chia hệ thống lớn thành các [[Glossary - Thuật ngữ#Bounded context|bounded context]], xác định phần nào đáng đầu tư (chương 3). Như quy hoạch khu phố: khu nào để ở, khu nào buôn bán.
+- *Tactical design* — xây model bên trong từng context bằng [[Glossary - Thuật ngữ#Entity|entity]], [[Glossary - Thuật ngữ#Value object|value object]], [[Glossary - Thuật ngữ#Aggregate|aggregate]], [[Glossary - Thuật ngữ#Repository|repository]]... (chương 4). Như thiết kế nội thất từng căn nhà.
 - Thứ tự quan trọng: strategic trước, tactical sau. Nội thất đẹp đến mấy mà xây nhà nhầm khu công nghiệp thì vẫn sai — aggregate đẹp đến mấy mà đặt sai context thì vẫn sai.
 
 **Điểm nhấn riêng của cuốn này**: dùng DDD làm **kim chỉ nam cho refactoring** — không viết lại từ đầu (big rewrite hầu như luôn thất bại) mà cải tạo dần hệ thống cũ về phía domain model. Như sửa nhà *trong khi vẫn đang ở*: làm từng phòng, nhà vẫn có chỗ ngủ mỗi đêm — chứ không đập sạch rồi ra khách sạn ở "tạm 6 tháng" (mà ai sửa nhà rồi đều biết 6 tháng đó là bao lâu).
@@ -113,7 +113,7 @@ Cụ thể hơn:
 ## Sai lầm thường gặp
 
 - **Anemic domain model nhưng tự gọi là DDD**: có folder `models/` chứa object thuần data, toàn bộ rule vẫn trong `services/`. Như treo biển "Phở gia truyền" nhưng nước dùng nấu từ gói gia vị công nghiệp — đổi tên folder không phải DDD.
-- **DDD-hoá toàn bộ app**: áp aggregate/repository/factory lên cả trang settings CRUD → phức tạp gấp đôi, giá trị bằng không. Như mặc vest đi đổ rác. DDD chỉ đáng cho core domain.
+- **DDD-hoá toàn bộ app**: áp aggregate/repository/factory lên cả trang settings CRUD → phức tạp gấp đôi, giá trị bằng không. Như mặc vest đi đổ rác. DDD chỉ đáng cho [[Glossary - Thuật ngữ#Subdomain|core domain]].
 - **Coi DDD là chuyện thuần kỹ thuật của dev**: bỏ qua ubiquitous language và hội thoại với domain expert, chỉ lấy phần pattern — được bộ khung mà mất linh hồn. Như học thuộc động tác múa mà không nghe nhạc: đúng từng bước, sai cả bài.
 - **Ngôn ngữ trong code lệch ngôn ngữ business mà không ai sửa**: support nói "redeem", code viết `exchangeGift()` — mỗi lần trao đổi là một lần dịch, mỗi lần dịch là một cơ hội hiểu nhầm (nhớ món "canh bà ngoại").
 - **Big rewrite thay vì refactor**: "code cũ nát quá, đập đi viết lại theo DDD" — mất 6 tháng, hệ thống mới thiếu 1000 edge case mà code cũ đã âm thầm xử lý. Như đập nhà xây lại vì... bếp hơi chật: tốn gấp 10 và phát hiện ra cái nhà cũ chống thấm tốt hơn tưởng. Tinh thần cuốn sách: refactor *dần* về phía domain model.

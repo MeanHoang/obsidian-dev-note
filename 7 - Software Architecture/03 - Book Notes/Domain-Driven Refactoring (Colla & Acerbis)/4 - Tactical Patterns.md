@@ -3,7 +3,7 @@
 > ⚠️ Tóm tắt khái niệm theo mục lục sách + kiến thức DDD chuẩn — không phải bản dịch nguyên văn. Đọc sách gốc để lấy case study chi tiết. Mọi ví dụ đời sống & Joy Loyalty là ví dụ của mình để minh hoạ, không phải từ sách.
 
 ## TL;DR
-Tactical patterns là bộ "viên gạch" để xây domain model *bên trong* một bounded context: entity, value object, aggregate, repository, factory, service, module, và domain/integration event. Ý quan trọng nhất: **aggregate là đơn vị bảo vệ tính nhất quán** — mọi thay đổi state đi qua aggregate root, và đó là chỗ business rule sống. Tin vui cho stack JS thuần: tất cả pattern này làm được bằng function + closure + `Object.freeze`, không cần class cầu kỳ hay TypeScript.
+Tactical patterns là bộ "viên gạch" để xây domain model *bên trong* một [[Glossary - Thuật ngữ#Bounded context|bounded context]]: [[Glossary - Thuật ngữ#Entity|entity]], [[Glossary - Thuật ngữ#Value object|value object]], [[Glossary - Thuật ngữ#Aggregate|aggregate]], [[Glossary - Thuật ngữ#Repository|repository]], factory, service, module, và domain/integration event. Ý quan trọng nhất: **aggregate là đơn vị bảo vệ tính nhất quán** — mọi thay đổi state đi qua aggregate root, và đó là chỗ business rule sống. Tin vui cho stack JS thuần: tất cả pattern này làm được bằng function + closure + `Object.freeze`, không cần class cầu kỳ hay TypeScript.
 
 ## Nội dung chính
 
@@ -89,7 +89,7 @@ function createPointsAccount({ memberId, balance = 0, version = 0 }) {
 
 Giờ thì *không tồn tại* đường code nào làm balance âm — muốn trừ điểm bắt buộc qua `redeem()`, và `redeem()` đứng gác. So với hiện trạng "rule check âm rải trong 3 service", khác nhau như ngân hàng có quầy giao dịch vs hộp tiền chung để giữa chợ kèm tờ giấy "vui lòng không lấy quá số mình gửi".
 
-- Nguyên tắc thiết kế aggregate: **nhỏ nhất có thể**; reference aggregate khác bằng ID (lưu `rewardId`, đừng nhúng nguyên object `Reward` — như sổ tiết kiệm ghi số CMND chứ không kẹp luôn hộ khẩu vào sổ); **một transaction chỉ sửa một aggregate**; giữa các aggregate chấp nhận eventual consistency qua event.
+- Nguyên tắc thiết kế aggregate: **nhỏ nhất có thể**; reference aggregate khác bằng ID (lưu `rewardId`, đừng nhúng nguyên object `Reward` — như sổ tiết kiệm ghi số CMND chứ không kẹp luôn hộ khẩu vào sổ); **một transaction chỉ sửa một aggregate**; giữa các aggregate chấp nhận [[Glossary - Thuật ngữ#Eventual consistency|eventual consistency]] qua event.
 - Điều này khớp tự nhiên với Firestore: 1 aggregate ≈ 1 document (hoặc document + subcollection transactions), update root trong 1 Firestore transaction — đúng giới hạn atomic mà Firestore làm tốt.
 
 **Repository**
@@ -129,7 +129,7 @@ Trong code: **factory** đóng gói logic *tạo* aggregate phức tạp sao cho
 
 Trong code:
 
-- **Domain service** (bác sĩ): chứa business logic *không thuộc về riêng một entity/value object nào* — thường là logic dính nhiều aggregate. Stateless, tên đặt theo ubiquitous language. Vd: `tierCalculation` — quyết định tier dựa trên points history + tier rules (hai aggregate khác nhau, không nhét vừa vào cái nào).
+- **Domain service** (bác sĩ): chứa business logic *không thuộc về riêng một entity/value object nào* — thường là logic dính nhiều aggregate. Stateless, tên đặt theo [[Glossary - Thuật ngữ#Ubiquitous language|ubiquitous language]]. Vd: `tierCalculation` — quyết định tier dựa trên points history + tier rules (hai aggregate khác nhau, không nhét vừa vào cái nào).
 - **Application service** (lễ tân): điều phối use case — nhận request, load aggregate từ repository, gọi method domain, save, publish event. **Không chứa business rule.**
 
 ```js
@@ -147,7 +147,7 @@ async function redeemReward({ memberId, rewardId }, { accountRepo, rewardRepo, e
 }
 ```
 
-- Quy tắc kiểm tra nhanh: **nếu xoá application service đi mà business rule mất theo → rule đang đặt sai chỗ** (lễ tân đang kê đơn). Trong layered architecture cũ, "service layer" thường là application service và domain service trộn lẫn — refactor chính là gỡ rule ra khỏi orchestration, đẩy vào aggregate/domain service.
+- Quy tắc kiểm tra nhanh: **nếu xoá application service đi mà business rule mất theo → rule đang đặt sai chỗ** (lễ tân đang kê đơn). Trong [[Glossary - Thuật ngữ#Layered architecture|layered architecture]] cũ, "service layer" thường là application service và domain service trộn lẫn — refactor chính là gỡ rule ra khỏi orchestration, đẩy vào aggregate/domain service.
 
 ### Modules
 
@@ -165,7 +165,7 @@ Trong code:
 
 Trong code:
 
-- **Domain event**: ghi nhận một việc nghiệp vụ *đã xảy ra* bên trong bounded context, tên thì quá khứ: `points.earned`, `tier.upgraded`. Do aggregate phát ra khi state đổi (xem `_pendingEvents` ở trên); các handler **trong cùng context** phản ứng — "tiếng hét trong nhà", đổi format thoải mái vì mọi consumer cùng một codebase, sửa một PR là xong.
+- **[[Glossary - Thuật ngữ#Domain event|Domain event]]**: ghi nhận một việc nghiệp vụ *đã xảy ra* bên trong bounded context, tên thì quá khứ: `points.earned`, `tier.upgraded`. Do aggregate phát ra khi state đổi (xem `_pendingEvents` ở trên); các handler **trong cùng context** phản ứng — "tiếng hét trong nhà", đổi format thoải mái vì mọi consumer cùng một codebase, sửa một PR là xong.
 - **Integration event**: event đã được "đóng gói" để **vượt ranh giới context** — schema ổn định, versioned, là contract công khai (published language, chương 3) — "tấm thiệp gửi họ hàng". Bên trong đổi thoải mái, nhưng đổi integration event là đổi hợp đồng với context khác.
 - Phân biệt quan trọng khi refactor: **đừng bê nguyên domain event nội bộ ra làm message liên context** — sẽ khoá chặt model nội bộ vào consumer bên ngoài (gửi họ hàng tờ giấy nháp trong bếp, rồi từ đó không dám sửa giấy nháp nữa). Map domain event → integration event ở rìa context:
 

@@ -3,7 +3,7 @@
 > ⚠️ Tóm tắt khái niệm theo mục lục sách + kiến thức DDD chuẩn — không phải bản dịch nguyên văn. Đọc sách gốc để lấy case study chi tiết. Ví dụ đời sống & Joy Loyalty là ví dụ của mình, không phải từ sách.
 
 ## TL;DR
-Khi modular monolith đã có ranh giới, câu hỏi tiếp theo là: **các module giao tiếp bằng gì, và đọc/ghi dữ liệu thế nào cho khỏi dẫm chân nhau?** Chương này giới thiệu messaging (phân biệt command vs event — cái sai nhiều nhất trong thực tế), CQRS (tách đường ghi khỏi đường đọc), các pattern đồng bộ giữa write model và read model (kèm bài toán dual write + outbox), Event Sourcing như một lựa chọn lưu trữ, và specification testing — phần thưởng test "miễn phí" của kiến trúc message-based.
+Khi [[Glossary - Thuật ngữ#Modular monolith|modular monolith]] đã có ranh giới, câu hỏi tiếp theo là: **các module giao tiếp bằng gì, và đọc/ghi dữ liệu thế nào cho khỏi dẫm chân nhau?** Chương này giới thiệu messaging (phân biệt command vs event — cái sai nhiều nhất trong thực tế), [[Glossary - Thuật ngữ#CQRS|CQRS]] (tách đường ghi khỏi đường đọc), các pattern đồng bộ giữa write model và read model (kèm bài toán dual write + outbox), [[Glossary - Thuật ngữ#Event sourcing|Event Sourcing]] như một lựa chọn lưu trữ, và specification testing — phần thưởng test "miễn phí" của kiến trúc message-based.
 
 ## Nội dung chính
 
@@ -54,7 +54,7 @@ bus.on('reward.redeemed', sendRedemptionEmail);     // module notifications
 bus.on('reward.redeemed', updateMerchantDashboard); // projector (xem CQRS dưới)
 ```
 
-- Đặt tên theo ubiquitous language: event chính là sticky note từ buổi event storming ở chương 6.
+- Đặt tên theo [[Glossary - Thuật ngữ#Ubiquitous language|ubiquitous language]]: event chính là sticky note từ buổi [[Glossary - Thuật ngữ#EventStorming|event storming]] ở chương 6.
 
 ### Separating command and query responsibility — CQRS
 
@@ -108,7 +108,7 @@ flowchart LR
 Trong code:
 - **Dual write problem**: ghi DB và publish event là hai thao tác riêng — một trong hai có thể fail, để lại hệ thống lệch (điểm đã trừ nhưng event không phát, hoặc ngược lại).
 - **Outbox pattern**: ghi event vào collection `outbox` **trong cùng transaction** với dữ liệu; một worker riêng đọc outbox và publish (chi tiết code ở chương 8). Firestore trigger trên collection chính cũng là một dạng "outbox miễn phí" — vì trigger phát từ chính việc ghi DB thành công.
-- UI phải chấp nhận eventual consistency: sau khi redeem, balance trên dashboard có thể trễ một nhịp — dùng optimistic update phía client, hoặc đọc write model cho chính member vừa thao tác.
+- UI phải chấp nhận [[Glossary - Thuật ngữ#Eventual consistency|eventual consistency]]: sau khi redeem, balance trên dashboard có thể trễ một nhịp — dùng optimistic update phía client, hoặc đọc write model cho chính member vừa thao tác.
 
 ### Event Sourcing integration
 
@@ -117,7 +117,7 @@ Trong code:
 Trong code:
 - **Event Sourcing (ES)**: thay vì lưu **state hiện tại** (`balance: 520`), lưu **chuỗi event** (`points.earned +500`, `points.earned +100`, `points.redeemed -80`) — state là kết quả **replay** event. Event store là append-only, nguồn sự thật duy nhất.
 - Lợi ích: audit trail hoàn hảo (merchant hỏi "sao member này có 520 điểm?" → trả lời từng dòng), debug bằng replay, build read model **mới** từ lịch sử cũ (thêm dashboard mới mà có sẵn data từ 2 năm trước).
-- Chi phí: phức tạp hơn hẳn — replay, **snapshot** (chụp state định kỳ để khỏi replay từ đầu), versioning event schema. **Không áp ES toàn hệ thống** — chỉ cho aggregate nào lịch sử *là* nghiệp vụ.
+- Chi phí: phức tạp hơn hẳn — replay, **snapshot** (chụp state định kỳ để khỏi replay từ đầu), versioning event schema. **Không áp ES toàn hệ thống** — chỉ cho [[Glossary - Thuật ngữ#Aggregate|aggregate]] nào lịch sử *là* nghiệp vụ.
 - Nhận xét đắt giá cho Joy Loyalty: **points ledger bản chất đã là event sourcing** — `pointTransactions` là chuỗi event, balance là projection. Mình đã làm ES một cách tự phát; việc cần làm là chính thức hoá:
 
 ```js
@@ -190,6 +190,6 @@ specTest('reject redeem khi thiếu điểm', {
 ## Áp dụng cho mình (Joy Loyalty)
 - Chính thức hoá `pointTransactions` thành ledger append-only và nguồn sự thật duy nhất: balance là projection, có job reconcile định kỳ để phát hiện + sửa drift (ledger thắng) — đây là ES "bản địa" sẵn có của mình.
 - Áp CQRS nhẹ trước: tách query của merchant dashboard (leaderboard, member list, thống kê điểm) ra read model riêng trên Firestore — collection summary build bằng Firestore trigger/projector — khỏi đụng vào write path và khỏi đốt tiền document read.
-- Định nghĩa danh sách command/event của core domain (`RedeemReward`, `EarnPoints` / `points.earned`, `reward.redeemed`, `tier.upgraded`...) thành module `contracts` riêng — hợp đồng giữa các module, sau này tách service không phải đàm phán lại.
+- Định nghĩa danh sách command/event của [[Glossary - Thuật ngữ#Subdomain|core domain]] (`RedeemReward`, `EarnPoints` / `points.earned`, `reward.redeemed`, `tier.upgraded`...) thành module `contracts` riêng — hợp đồng giữa các module, sau này tách service không phải đàm phán lại.
 - Quy ước đặt tên cứng: command = mệnh lệnh PascalCase, event = `chuyện.đã.xảy.ra` thì quá khứ — vi phạm naming là review bắt ngay được phân loại sai.
 - Viết bộ specification test Given–When–Then cho rule điểm/tier — vừa là test vừa là tài liệu cho teammate và product owner.

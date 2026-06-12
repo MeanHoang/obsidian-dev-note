@@ -3,7 +3,7 @@
 > ⚠️ Tóm tắt khái niệm theo mục lục sách + kiến thức DDD chuẩn — không phải bản dịch nguyên văn. Đọc sách gốc để lấy case study chi tiết. Ví dụ đời sống & Joy Loyalty là ví dụ của mình để minh hoạ khái niệm, không phải ví dụ trong sách.
 
 ## TL;DR
-Chương này trả lời câu hỏi: **khi nào** việc tách monolith thành microservices là đáng làm, và **khi nào nó là cái bẫy**. Ý quan trọng nhất: microservices không phải đích đến mặc định — nó là một trade-off đổi độ phức tạp vận hành lấy khả năng scale team và deploy độc lập. Một modular monolith với bounded context rõ ràng thường là điểm dừng hợp lý, và cũng là bước đệm gần như bắt buộc nếu sau này muốn tách. Với team 1-2 người như Joy Loyalty hiện tại, gần như mọi tín hiệu đều chỉ về modular monolith — note này chủ yếu để **biết mà đánh giá đúng thời điểm**, không phải để làm ngay.
+Chương này trả lời câu hỏi: **khi nào** việc tách monolith thành microservices là đáng làm, và **khi nào nó là cái bẫy**. Ý quan trọng nhất: microservices không phải đích đến mặc định — nó là một trade-off đổi độ phức tạp vận hành lấy khả năng scale team và deploy độc lập. Một [[Glossary - Thuật ngữ#Modular monolith|modular monolith]] với [[Glossary - Thuật ngữ#Bounded context|bounded context]] rõ ràng thường là điểm dừng hợp lý, và cũng là bước đệm gần như bắt buộc nếu sau này muốn tách. Với team 1-2 người như Joy Loyalty hiện tại, gần như mọi tín hiệu đều chỉ về modular monolith — note này chủ yếu để **biết mà đánh giá đúng thời điểm**, không phải để làm ngay.
 
 ## Nội dung chính
 
@@ -25,13 +25,13 @@ So sánh bằng một thao tác cụ thể của Joy Loyalty — *"khi member đ
 | Khía cạnh | Monolith (ở chung nhà) | Microservices (ra ở riêng) |
 |---|---|---|
 | Gọi `points.earn()` từ webhook handler | Function call, ~nanosecond, không bao giờ "mất gói tin" | HTTP/Pub/Sub call, ~10-100ms, có thể timeout/fail/đến trùng |
-| Cộng điểm + update tier atomic | 1 Firestore transaction, hoặc ít nhất cùng process | Không có transaction xuyên service → eventual consistency + saga (ch12) |
+| Cộng điểm + update tier atomic | 1 Firestore transaction, hoặc ít nhất cùng process | Không có transaction xuyên service → [[Glossary - Thuật ngữ#Eventual consistency\|eventual consistency]] + [[Glossary - Thuật ngữ#Saga & Process manager\|saga]] (ch12) |
 | Deploy fix nhỏ ở `campaigns` | Deploy cả app (vài phút, risk thấp nếu CI tốt) | Deploy đúng service `campaigns`, service khác không động |
 | Debug "member này thiếu điểm" | Đọc log 1 service, stack trace liền mạch | Distributed tracing xuyên 3-4 service, cần correlation ID |
 | Hạ tầng | 1 Cloud Run service, 1 pipeline | N services, N pipelines, N bộ monitoring/alert, service-to-service auth |
 | Phù hợp team | 1-5 người | Nhiều team, mỗi team own vài service |
 
-- Monolith xấu không phải vì nó là monolith, mà vì nó là **big ball of mud** — module nào cũng thò tay vào ruột module khác, như nhà đông người mà đồ ai cũng vứt lẫn vào phòng nhau. Cái cần sửa là *coupling*, không phải *deploy unit*.
+- Monolith xấu không phải vì nó là monolith, mà vì nó là **[[Glossary - Thuật ngữ#Big ball of mud|big ball of mud]]** — module nào cũng thò tay vào ruột module khác, như nhà đông người mà đồ ai cũng vứt lẫn vào phòng nhau. Cái cần sửa là *coupling*, không phải *deploy unit*.
 - **Modular monolith** là trung gian được sách (và cộng đồng DDD) đề cao: vẫn ở chung một nhà, nhưng **mỗi người một phòng có cửa khoá** — vẫn 1 deploy unit, bên trong chia module theo bounded context, mỗi module có public interface rõ ràng, giao tiếp qua interface hoặc event nội bộ, cấm import chéo ruột nhau. Được 80% lợi ích kiến trúc với 20% chi phí vận hành. Đây chính là hướng Joy Loyalty nên đi trước.
 
 Trước/sau trong code Joy Loyalty — cùng một webhook handler:
@@ -136,7 +136,7 @@ Bài học: dùng Pub/Sub nghĩa là đã *thừa nhận* fallacy #1, #2 — mes
 
 ### Transition strategies — chuyển nhà từng món, đừng dọn một ngày
 
-🏪 **Ví dụ đời sống.** Chuyển nhà khôn ngoan không ai bê hết đồ trong một ngày rồi cầu trời mọi thứ ổn. Người ta chuyển dần: hôm nay mang quần áo sang, ở thử vài hôm; tuần sau mang bếp; thấy nhà mới dột thì đồ vẫn còn bên nhà cũ, quay về được. Strangler Fig đúng là chiến lược đó.
+🏪 **Ví dụ đời sống.** Chuyển nhà khôn ngoan không ai bê hết đồ trong một ngày rồi cầu trời mọi thứ ổn. Người ta chuyển dần: hôm nay mang quần áo sang, ở thử vài hôm; tuần sau mang bếp; thấy nhà mới dột thì đồ vẫn còn bên nhà cũ, quay về được. [[Glossary - Thuật ngữ#Strangler fig pattern|Strangler Fig]] đúng là chiến lược đó.
 
 **Map sang kỹ thuật:**
 - **Strangler Fig pattern** (đặt theo cây đa "bóp nghẹt" cây chủ): không big-bang rewrite. Dựng service mới cho **một** capability, đặt router/facade phía trước route traffic của capability đó sang service mới, phần còn lại vẫn vào monolith. Lặp lại cho đến khi monolith teo dần. Mỗi bước nhỏ, có đường lùi (route ngược lại nếu service mới lỗi).
@@ -171,7 +171,7 @@ Bài học: dùng Pub/Sub nghĩa là đã *thừa nhận* fallacy #1, #2 — mes
 
 ## Áp dụng cho mình (Joy Loyalty)
 - **Đừng tách service vội** — checklist readiness ở trên đang đỏ gần hết, và đỏ nhất là "team 1 người". Mục tiêu 2026: modular monolith trên Cloud Run — chia code thành module `points`, `rewards`, `tiers`, `members`, `campaigns`, mỗi module own nhóm collection Firestore riêng (prefix theo module), public API qua `index.js` của module, cấm import chéo ruột. Ở chung nhà nhưng mỗi người một phòng có khoá.
-- Giao tiếp giữa module bằng domain event ngay từ bây giờ (in-process emitter hoặc Pub/Sub) — sau này nếu tách, chỉ đổi transport, không đổi model.
+- Giao tiếp giữa module bằng [[Glossary - Thuật ngữ#Domain event|domain event]] ngay từ bây giờ (in-process emitter hoặc Pub/Sub) — sau này nếu tách, chỉ đổi transport, không đổi model.
 - Viết mọi Pub/Sub consumer hiện tại theo chuẩn **idempotent** (check idempotency key/event ID đã xử lý chưa, lưu trong Firestore) — trả nợ fallacy "network is reliable" từ sớm, vì at-least-once delivery là chuyện đang xảy ra rồi chứ không phải tương lai.
 - Webhook Shopify: ack nhanh (200 ngay) + đẩy việc nặng qua Pub/Sub — vừa đúng pattern Shopify khuyến nghị, vừa là bài tập tư duy async đúng đắn.
 - Nếu sau này có tín hiệu thật (thêm dev, hoặc widget API cần scale đo được), ứng viên tách đầu tiên là phần ngoại vi (notification, analytics export) theo Strangler Fig — **không bao giờ** bắt đầu từ points ledger. Chăn gối đi trước, két sắt đi sau cùng.

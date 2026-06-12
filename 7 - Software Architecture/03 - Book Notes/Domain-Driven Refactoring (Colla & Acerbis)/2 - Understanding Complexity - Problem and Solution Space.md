@@ -3,7 +3,7 @@
 > ⚠️ Tóm tắt khái niệm theo mục lục sách + kiến thức DDD chuẩn — không phải bản dịch nguyên văn. Đọc sách gốc để lấy case study chi tiết. Mọi ví dụ đời sống & Joy Loyalty là ví dụ của mình để minh hoạ, không phải từ sách.
 
 ## TL;DR
-Trước khi refactor phải hiểu mình đang đối mặt với *loại* phức tạp nào — vì mỗi loại đòi cách xử lý khác nhau. Chương này đưa ra: công cụ phân loại bối cảnh (**Cynefin**), công cụ khám phá domain (**EventStorming**), khung tách **problem space / solution space**, và cảnh báo các **cognitive bias** khiến ta refactor sai hướng. Thông điệp: phần lớn việc domain modeling nằm ở vùng Complex — phải thăm dò bằng thí nghiệm nhỏ, không "phân tích một lần là ra".
+Trước khi refactor phải hiểu mình đang đối mặt với *loại* phức tạp nào — vì mỗi loại đòi cách xử lý khác nhau. Chương này đưa ra: công cụ phân loại bối cảnh (**[[Glossary - Thuật ngữ#Cynefin|Cynefin]]**), công cụ khám phá domain (**[[Glossary - Thuật ngữ#EventStorming|EventStorming]]**), khung tách **problem space / solution space**, và cảnh báo các **cognitive bias** khiến ta refactor sai hướng. Thông điệp: phần lớn việc domain modeling nằm ở vùng Complex — phải thăm dò bằng thí nghiệm nhỏ, không "phân tích một lần là ra".
 
 ## Nội dung chính
 
@@ -51,12 +51,12 @@ Bài học cho refactoring: đừng áp "best practice" (tư duy Clear) lên bà
 
 EventStorming (Alberto Brandolini) chính là phiên bản cho phần mềm: dev + domain expert đứng chung trước một bức tường (hoặc Miro/FigJam) và dán sticky note theo dòng thời gian nghiệp vụ.
 
-- Viên gạch cơ bản: **domain event** — sự kiện nghiệp vụ *đã xảy ra*, viết ở **thì quá khứ**: `OrderPlaced`, `PointsEarned`, `RewardRedeemed`, `TierUpgraded`, `PointsExpired`, `CampaignActivated`. Thì quá khứ quan trọng: nó buộc mọi người nói về *sự thật nghiệp vụ* ("đã đặt cỗ") thay vì về chức năng phần mềm ("màn hình X", "API Y").
+- Viên gạch cơ bản: **[[Glossary - Thuật ngữ#Domain event|domain event]]** — sự kiện nghiệp vụ *đã xảy ra*, viết ở **thì quá khứ**: `OrderPlaced`, `PointsEarned`, `RewardRedeemed`, `TierUpgraded`, `PointsExpired`, `CampaignActivated`. Thì quá khứ quan trọng: nó buộc mọi người nói về *sự thật nghiệp vụ* ("đã đặt cỗ") thay vì về chức năng phần mềm ("màn hình X", "API Y").
 - Ba mức độ, từ thô đến tinh:
   1. **Big Picture**: quét toàn bộ flow nghiệp vụ bằng event (note cam). Mục tiêu là *coverage* và lộ ra **hotspot** (note tím/đỏ: chỗ mâu thuẫn, chỗ không ai chắc — chỗ "40 mâm vs 60 nhà").
   2. **Process Modeling**: thêm **command** (xanh dương — hành động gây ra event), **actor** (ai ra lệnh), **policy** (tím — "whenever X then Y", phản ứng tự động), **read model** (xanh lá — thông tin actor cần để quyết định).
-  3. **Software Design**: gom command + event quanh **aggregate** (vàng) — đầu ra nối thẳng sang tactical design chương 4.
-- Giá trị lớn nhất **không phải tấm sơ đồ mà là hội thoại**: chỗ hai người dán hai note mâu thuẫn chính là chỗ ubiquitous language chưa thống nhất.
+  3. **Software Design**: gom command + event quanh **[[Glossary - Thuật ngữ#Aggregate|aggregate]]** (vàng) — đầu ra nối thẳng sang tactical design chương 4.
+- Giá trị lớn nhất **không phải tấm sơ đồ mà là hội thoại**: chỗ hai người dán hai note mâu thuẫn chính là chỗ [[Glossary - Thuật ngữ#Ubiquitous language|ubiquitous language]] chưa thống nhất.
 
 Walk-through Joy Loyalty (Process Modeling một lát cắt):
 
@@ -72,14 +72,14 @@ Actor: Customer đặt hàng trên Shopify
 
 Ngay lát cắt nhỏ này đã lộ câu hỏi hotspot thực tế: *PointsEarned tính lúc đặt hàng hay lúc đơn fulfilled? Refund thì có event gì — PointsRevoked?* Đó chính là knowledge crunching.
 
-- Với hệ thống cũ cần refactor, EventStorming giúp dựng lại bức tranh nghiệp vụ đang bị chôn trong code — và **các cụm event tách thành "đảo" thường gợi ý ranh giới bounded context** (chương 3): cụm Points, cụm Rewards, cụm Tiers tự nhiên tách nhau trên tường.
+- Với hệ thống cũ cần refactor, EventStorming giúp dựng lại bức tranh nghiệp vụ đang bị chôn trong code — và **các cụm event tách thành "đảo" thường gợi ý ranh giới [[Glossary - Thuật ngữ#Bounded context|bounded context]]** (chương 3): cụm Points, cụm Rewards, cụm Tiers tự nhiên tách nhau trên tường.
 - Khi nào không cần: domain nhỏ và mọi người đã đồng thuận sẵn — workshop nửa ngày cho một trang settings là lãng phí (cả nhà họp khẩn cấp để quyết... mua loại nước rửa chén nào).
 
 ### Problem and solution space
 
 🏪 **Ví dụ đời sống:** Bệnh nhân bước vào tiệm thuốc: "Bán tôi hộp kháng sinh loại mạnh nhất." Dược sĩ giỏi sẽ hỏi lại: "Anh bị gì đã?" — "Đau đầu ba hôm nay." Hoá ra do mất ngủ vì nhà hàng xóm sửa nhà. Kháng sinh (solution) chẳng liên quan gì đến vấn đề thật (problem). Người ta rất hay *đến gặp mình bằng một giải pháp* — và việc của người thiết kế là hỏi ngược lại về vấn đề.
 
-- **Problem space**: vấn đề business cần giải — "merchant muốn khách quay lại mua nhiều hơn". Gồm domain và các **subdomain** (mảng vấn đề con): earning, redemption, tiering, campaign management, member profile.
+- **Problem space**: vấn đề business cần giải — "merchant muốn khách quay lại mua nhiều hơn". Gồm domain và các **[[Glossary - Thuật ngữ#Subdomain|subdomain]]** (mảng vấn đề con): earning, redemption, tiering, campaign management, member profile.
 - **Solution space**: cách ta giải bằng phần mềm — bounded context, model, service, schema, queue.
 
 Hai lỗi đối xứng nhau:

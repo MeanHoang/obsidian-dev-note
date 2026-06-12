@@ -3,7 +3,7 @@
 > ⚠️ Tóm tắt khái niệm theo mục lục sách + kiến thức DDD chuẩn — không phải bản dịch nguyên văn. Đọc sách gốc để lấy case study chi tiết. Ví dụ đời sống & Joy Loyalty là ví dụ của mình, không phải từ sách. Sách viết thiên về SQL — note này dịch thêm sang góc nhìn Firestore (NoSQL) của mình.
 
 ## TL;DR
-Code refactor được từng bước nhỏ thì database cũng phải vậy — chương này trả lời: **làm sao thay đổi schema/dữ liệu đang chạy production mà không downtime, và khi tách module/service thì dữ liệu chia thế nào?** Hai ý xương sống: (1) mọi thay đổi DB đi qua **expand → migrate → contract** — không bao giờ "đổi một phát ăn ngay"; (2) khi dữ liệu phân tán theo bounded context thì mất transaction chung, phải chọn có ý thức giữa gọi sync, replica qua event, saga + compensating action — và mọi dữ liệu duplicate phải biết **ai là nguồn sự thật**.
+Code refactor được từng bước nhỏ thì database cũng phải vậy — chương này trả lời: **làm sao thay đổi schema/dữ liệu đang chạy production mà không downtime, và khi tách module/service thì dữ liệu chia thế nào?** Hai ý xương sống: (1) mọi thay đổi DB đi qua **expand → migrate → contract** — không bao giờ "đổi một phát ăn ngay"; (2) khi dữ liệu phân tán theo [[Glossary - Thuật ngữ#Bounded context|bounded context]] thì mất transaction chung, phải chọn có ý thức giữa gọi sync, replica qua event, [[Glossary - Thuật ngữ#Saga & Process manager|saga]] + compensating action — và mọi dữ liệu duplicate phải biết **ai là nguồn sự thật**.
 
 ## Nội dung chính
 
@@ -60,7 +60,7 @@ Sách dựa trên catalog database refactoring kinh điển — các pattern ti�
 | **Rename column/field** | View/trigger trung gian | Expand (ghi cả `pts` lẫn `pointBalance`) → backfill → contract |
 | **Split table / Move column** | Tách bảng theo nghiệp vụ | Tách document to thành document/subcollection riêng — vd `members/{id}` phình to → tách `members/{id}` + `members/{id}/pointsAccount`; nhớ giới hạn **1MB/document** và write contention trên document nóng (1 write/giây/document là ngưỡng nên nhớ) |
 | **Introduce calculated field** | Computed column / materialized view | Field tính sẵn (`balance`, `tierPoints`) — chính là read model chương 7; phải có nguồn gốc rõ (derive từ ledger) + job recompute |
-| **Encapsulate database access** | Stored procedure / DAO | **Repository pattern** — mọi truy cập Firestore đi qua repo của module |
+| **Encapsulate database access** | Stored procedure / DAO | **[[Glossary - Thuật ngữ#Repository\|Repository]] pattern** — mọi truy cập Firestore đi qua repo của module |
 
 🏪 **Repository — ví dụ đời sống:** kho hàng chỉ nên có **một thủ kho giữ chìa khoá**. Khi ai cũng tự do vào kho lấy đồ, muốn sắp xếp lại kệ là bất khả thi — vì không biết ai đang quen lấy đồ ở kệ nào. Có thủ kho rồi thì đổi cách xếp kệ thoải mái: người ngoài vẫn chỉ cần nói "cho tôi món X".
 
@@ -79,7 +79,7 @@ Trong code:
   3. Fail? → compensating action: **hoàn điểm** + phát `points.refunded` (event riêng, có lý do — không phải "lén cộng lại")
 - Hai kiểu saga: **choreography** (các module tự nghe event của nhau, không nhạc trưởng — gọn khi ít bước) và **orchestration** (một orchestrator điều khiển từng bước — dễ trace khi luồng dài, nên dùng khi saga > 3 bước).
 - Kỹ thuật tách dữ liệu an toàn: giống strangler — module mới dual-write/sync từ collection cũ, chuyển reader dần, rồi cắt. **Đừng "chuyển dữ liệu một đêm"** — đó là cắt nước cả chung cư.
-- Lưu ý Firestore: transaction giới hạn 500 document và chỉ trong một database — thiết kế ranh giới aggregate sao cho **một command chỉ cần transaction trên một aggregate** (một document hoặc nhóm document nhỏ).
+- Lưu ý Firestore: transaction giới hạn 500 document và chỉ trong một database — thiết kế ranh giới [[Glossary - Thuật ngữ#Aggregate|aggregate]] sao cho **một command chỉ cần transaction trên một aggregate** (một document hoặc nhóm document nhỏ).
 
 #### Outbox pattern với Firestore + Pub/Sub
 
@@ -123,7 +123,7 @@ for (const doc of pending.docs) {
 Trong code — khi module A cần dữ liệu của module B, theo thứ tự coupling giảm dần:
 - **Gọi API/facade của B** (sync): đơn giản, dữ liệu luôn tươi, nhưng A chết theo B và chậm theo B.
 - **Local cache/replica**: A giữ **bản sao tối thiểu** dữ liệu của B, cập nhật qua event của B — vd module `rewards` giữ sẵn `memberTier` (update khi nghe `tier.upgraded`) để check eligibility mà không gọi `tiers` mỗi lần.
-- **Read model dùng chung cho query** (CQRS): query tổng hợp đa context (dashboard) đọc từ projection riêng, không gọi vòng quanh các module.
+- **Read model dùng chung cho query** ([[Glossary - Thuật ngữ#CQRS|CQRS]]): query tổng hợp đa context (dashboard) đọc từ projection riêng, không gọi vòng quanh các module.
 - Quy tắc chọn: dữ liệu cần **độ tươi tuyệt đối + tham gia quyết định nghiệp vụ** (balance khi redeem) → gọi sync/own data; dữ liệu **tham khảo, chấp nhận trễ** (tier để hiển thị, email để gửi mail) → replica qua event.
 
 ### Caching, replication, and synchronization strategies

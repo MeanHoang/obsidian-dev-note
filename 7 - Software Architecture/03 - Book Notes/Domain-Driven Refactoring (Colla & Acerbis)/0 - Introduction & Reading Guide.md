@@ -1,6 +1,6 @@
 # Domain-Driven Refactoring — Intro & Reading Guide
 
-> **Chủ đề:** Migrate từ layered architecture (monolith) sang DDD **từng bước**, không đập đi xây lại.
+> **Chủ đề:** Migrate từ [[Glossary - Thuật ngữ#Layered architecture|layered architecture]] (monolith) sang DDD **từng bước**, không đập đi xây lại.
 > **Tác giả:** Alessandro Colla & Alberto Acerbis · Packt, 2025
 > **Link:** [O'Reilly](https://www.oreilly.com/library/view/domain-driven-refactoring/9781835889107/) · [Amazon](https://www.amazon.com/Domain-Driven-Refactoring-hands-transforming-microservices/dp/1835889107)
 > **Trạng thái:** 📥 Chưa đọc — note này là guide trước khi đọc.
@@ -9,7 +9,7 @@
 
 - Đúng vấn đề đang gặp: codebase đang theo layer (controllers / services / repositories), muốn chuyển sang tổ chức theo domain mà không làm gãy hệ thống đang chạy.
 - Phần khó nhất của migration không phải là structure đích, mà là **chiến lược chuyển dần** — và đó là trọng tâm cuốn sách (refactor theo từng thay đổi nhỏ quản lý được, không all-at-once).
-- Áp dụng cho Joy Loyalty: khoanh vùng core domain (points, rewards, tiers?) để refactor trước, phần còn lại để sau.
+- Áp dụng cho Joy Loyalty: khoanh vùng [[Glossary - Thuật ngữ#Subdomain|core domain]] (points, rewards, tiers?) để refactor trước, phần còn lại để sau.
 
 ## Cấu trúc sách (3 phần, 12 chương) — note tóm tắt từng chương
 
@@ -17,21 +17,21 @@
 
 **Phần 1 — Vì sao dùng DDD để xử lý complexity (theory):**
 1. [[1 - Evolution of Domain-Driven Design]]
-2. [[2 - Understanding Complexity - Problem and Solution Space]] — Cynefin, EventStorming, cognitive biases
-3. [[3 - Strategic Patterns]] — bounded context, context mapping, subdomain
-4. [[4 - Tactical Patterns]] — entity, value object, aggregate, domain event
+2. [[2 - Understanding Complexity - Problem and Solution Space]] — [[Glossary - Thuật ngữ#Cynefin|Cynefin]], [[Glossary - Thuật ngữ#EventStorming|EventStorming]], cognitive biases
+3. [[3 - Strategic Patterns]] — [[Glossary - Thuật ngữ#Bounded context|bounded context]], [[Glossary - Thuật ngữ#Context mapping|context mapping]], subdomain
+4. [[4 - Tactical Patterns]] — [[Glossary - Thuật ngữ#Entity|entity]], [[Glossary - Thuật ngữ#Value object|value object]], [[Glossary - Thuật ngữ#Aggregate|aggregate]], [[Glossary - Thuật ngữ#Domain event|domain event]]
 
-**Phần 2 — Refactor hệ thống legacy (hands-on, phần quan trọng nhất):**
-5. [[5 - Introducing Refactoring Principles]] — hiểu trước khi sửa, testing pyramid, SOLID
-6. [[6 - Transitioning from Chaos]] — ⭐ chương trọng tâm: tìm core domain, map codebase hiện tại, build modular monolith
+**Phần 2 — Refactor hệ thống [[Glossary - Thuật ngữ#Legacy system|legacy]] (hands-on, phần quan trọng nhất):**
+5. [[5 - Introducing Refactoring Principles]] — hiểu trước khi sửa, [[Glossary - Thuật ngữ#Testing pyramid|testing pyramid]], SOLID
+6. [[6 - Transitioning from Chaos]] — ⭐ chương trọng tâm: tìm core domain, map codebase hiện tại, build [[Glossary - Thuật ngữ#Modular monolith|modular monolith]]
 7. [[7 - Integrating Events with CQRS]]
 8. [[8 - Refactoring the Database]]
 9. [[9 - DDD Patterns for CI and Continuous Refactoring]]
 
 **Phần 3 — Từ monolith sang microservices (đọc tham khảo, chưa cần áp ngay):**
 10. [[10 - When and Why Transition to Microservices]]
-11. [[11 - Dealing with Events and Their Evolution]] — event versioning, upcasting
-12. [[12 - Orchestrating Complexity - Business Processes]] — saga, process manager, compensating transaction
+11. [[11 - Dealing with Events and Their Evolution]] — [[Glossary - Thuật ngữ#Event versioning & upcasting|event versioning]], upcasting
+12. [[12 - Orchestrating Complexity - Business Processes]] — [[Glossary - Thuật ngữ#Saga & Process manager|saga]], process manager, compensating transaction
 
 ## ⚠️ Lưu ý khi đọc
 
@@ -58,5 +58,6 @@ So sánh trực diện 2 cách tổ chức code, để thấy "đích đến" tr
 
 ## Liên kết
 
+- [[Glossary - Thuật ngữ]] — thuật ngữ trong sách, file sống: gặp từ mới thì thêm vào.
 - [[7 - Software Architecture/02 - Design Principles/DDD|DDD notes]] — folder DDD trong Design Principles.
 - Liên quan: [[Refactoring (Martin Fowler)]] — refactoring mechanics ở mức code, cuốn này là refactoring ở mức architecture.

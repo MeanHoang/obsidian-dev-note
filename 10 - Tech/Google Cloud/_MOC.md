@@ -75,6 +75,9 @@ Index toàn bộ note về Firebase + Google Cloud, tổ chức theo 7 nhóm dù
 - [[1-Cloud Run cost]] — *(chưa viết)* — CPU vs memory tier, idle billing
 - [[2-Budget alerts]] — *(chưa viết)* — set 50/75/100% alert
 
+### 08 - AI Tooling (AI agent làm việc với GCP)
+- [[0-Google Agent Skills]] — repo `google/skills` + `firebase/agent-skills`: skill chính chủ cho Claude Code/Gemini CLI, cài gì cho stack Joy
+
 ---
 ## 🛒 Mapping với Joy Loyalty
 | Tính năng Joy | Service GCP | Note liên quan |
@@ -106,4 +109,5 @@ Index toàn bộ note về Firebase + Google Cloud, tổ chức theo 7 nhóm dù
 - [x] 1-Cloud Functions v2
 - [x] 0-Firebase Auth
 - [x] 1-Pub-Sub
+- [x] 0-Google Agent Skills (AI Tooling)
 - [ ] Còn lại (~14 file) — viết dần khi học topic cụ thể

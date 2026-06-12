@@ -3,7 +3,7 @@
 > ⚠️ Tóm tắt khái niệm theo mục lục sách + kiến thức DDD chuẩn — không phải bản dịch nguyên văn. Đọc sách gốc để lấy case study chi tiết. Ví dụ đời sống & Joy Loyalty là ví dụ của mình, không phải từ sách.
 
 ## TL;DR
-Chương này trả lời câu hỏi: **trước khi đụng vào code legacy, cần chuẩn bị gì để refactor an toàn?** Ý quan trọng nhất: refactoring không phải là "viết lại cho đẹp" mà là thay đổi cấu trúc code **mà không đổi hành vi**, và muốn làm được điều đó thì phải có lưới an toàn (test, CI/CD, observability) trước, rồi mới áp dụng các nguyên tắc thiết kế như SOLID. Thứ tự đúng: **hiểu → bảo vệ → mới sửa**. Làm ngược lại (sửa trước, test sau) là nguồn gốc của 90% tai nạn refactoring.
+Chương này trả lời câu hỏi: **trước khi đụng vào code [[Glossary - Thuật ngữ#Legacy system|legacy]], cần chuẩn bị gì để refactor an toàn?** Ý quan trọng nhất: refactoring không phải là "viết lại cho đẹp" mà là thay đổi cấu trúc code **mà không đổi hành vi**, và muốn làm được điều đó thì phải có lưới an toàn (test, CI/CD, observability) trước, rồi mới áp dụng các nguyên tắc thiết kế như SOLID. Thứ tự đúng: **hiểu → bảo vệ → mới sửa**. Làm ngược lại (sửa trước, test sau) là nguồn gốc của 90% tai nạn refactoring.
 
 ## Nội dung chính
 
@@ -190,7 +190,7 @@ function calculatePoints(order, campaign, ctx) {
 | Rewrite | Đập đi viết lại từ đầu — rủi ro cao vì mất hết edge case tích luỹ trong code cũ. |
 | Characterization test | Test ghi lại hành vi hiện tại của code legacy (kể cả bug) làm baseline trước khi sửa. |
 | Shadow run / parallel run | Chạy song song code cũ và mới trên production, dùng kết quả cũ, log diff để xác minh code mới. |
-| Testing pyramid | Mô hình phân bổ test: nhiều unit, vừa integration, ít E2E. |
+| [[Glossary - Thuật ngữ#Testing pyramid\|Testing pyramid]] | Mô hình phân bổ test: nhiều unit, vừa integration, ít E2E. |
 | Kim tự tháp ngược | Anti-pattern: toàn E2E/test tay, không unit test — dấu hiệu code không tách được dependency. |
 | CI | Merge thường xuyên + test tự động mỗi lần push. |
 | CD | Deploy nhỏ, thường xuyên, rollback nhanh — điều kiện để refactor từng bước. |

@@ -3,7 +3,7 @@
 > ⚠️ Tóm tắt khái niệm theo mục lục sách + kiến thức DDD chuẩn — không phải bản dịch nguyên văn. Đọc sách gốc để lấy case study chi tiết. Ví dụ đời sống & Joy Loyalty là ví dụ của mình, không phải từ sách.
 
 ## TL;DR
-Chương cốt lõi cho người đang ngồi trên một layered monolith rối: **làm sao đi từ "big ball of mud" sang kiến trúc có chủ đích mà không dừng ship feature?** Câu trả lời gói trong một lộ trình: tìm core domain (biết chỗ nào đáng đầu tư) → vẽ bản đồ code hiện tại (biết mình đang đứng đâu) → khoanh bounded context (vẽ ranh giới theo nghiệp vụ, không theo layer) → tổ chức lại thành **modular monolith** (chưa cần microservices) → cho các module nói chuyện có kỷ luật qua facade/mediator. Tinh thần xuyên suốt: như **sửa nhà đang ở** — từng phòng một, cả nhà vẫn sinh hoạt bình thường.
+Chương cốt lõi cho người đang ngồi trên một layered monolith rối: **làm sao đi từ "[[Glossary - Thuật ngữ#Big ball of mud|big ball of mud]]" sang kiến trúc có chủ đích mà không dừng ship feature?** Câu trả lời gói trong một lộ trình: tìm [[Glossary - Thuật ngữ#Subdomain|core domain]] (biết chỗ nào đáng đầu tư) → vẽ bản đồ code hiện tại (biết mình đang đứng đâu) → khoanh [[Glossary - Thuật ngữ#Bounded context|bounded context]] (vẽ ranh giới theo nghiệp vụ, không theo layer) → tổ chức lại thành **[[Glossary - Thuật ngữ#Modular monolith|modular monolith]]** (chưa cần microservices) → cho các module nói chuyện có kỷ luật qua facade/mediator. Tinh thần xuyên suốt: như **sửa nhà đang ở** — từng phòng một, cả nhà vẫn sinh hoạt bình thường.
 
 ## Nội dung chính
 
@@ -54,14 +54,14 @@ git log --since="12 months ago" --format='' --name-only \
   | grep -v '^$' | sort | uniq -c | sort -rn | head -20
 ```
 
-- **Event Storming / Domain Storytelling**: cùng team (kể cả non-dev) dán sticky note các **domain event** theo dòng thời gian ("Order created" → "Points earned" → "Tier upgraded" → "Reward redeemed") để lộ ra ranh giới nghiệp vụ thật, độc lập với cấu trúc code hiện tại. Giống cả nhà ngồi kể lại "một ngày của cái kho này được dùng như thế nào" — người kể chuyện không quan tâm đồ nằm góc nào, chỉ kể chuyện gì xảy ra theo thứ tự nào.
+- **[[Glossary - Thuật ngữ#EventStorming|Event Storming]] / Domain Storytelling**: cùng team (kể cả non-dev) dán sticky note các **[[Glossary - Thuật ngữ#Domain event|domain event]]** theo dòng thời gian ("Order created" → "Points earned" → "Tier upgraded" → "Reward redeemed") để lộ ra ranh giới nghiệp vụ thật, độc lập với cấu trúc code hiện tại. Giống cả nhà ngồi kể lại "một ngày của cái kho này được dùng như thế nào" — người kể chuyện không quan tâm đồ nằm góc nào, chỉ kể chuyện gì xảy ra theo thứ tự nào.
 - Điểm mấu chốt: bản đồ nghiệp vụ (từ event storming) và bản đồ code (từ dependency graph) thường **lệch nhau** — độ lệch đó chính là danh sách việc cần refactor. Nghiệp vụ nói "earning và redemption là hai câu chuyện khác nhau", code nói "tất cả nằm trong `orderService.js` 2000 dòng" → đó là việc phải làm.
 
 ### Identifying bounded contexts — khoanh ranh giới ngữ cảnh
 
 🏪 **Ví dụ đời sống:** trong một bệnh viện, từ **"hồ sơ" của cùng một con người** mang nghĩa khác nhau ở từng khoa: với phòng tài chính là công nợ và bảo hiểm; với bác sĩ điều trị là bệnh án và đơn thuốc; với bếp ăn là suất ăn kiêng gì. Không ai dại gì bắt cả ba bộ phận dùng chung MỘT tờ hồ sơ khổng lồ có đủ mọi thứ — mỗi khoa giữ hồ sơ riêng theo nhu cầu của mình, chỉ chia sẻ **mã bệnh nhân**. Và đó là điều bình thường, không phải "dữ liệu trùng lặp xấu xí".
 
-Trong code, cái này chính là **bounded context (BC)** = ranh giới mà trong đó một model và một **ubiquitous language** (ngôn ngữ chung giữa dev và business) nhất quán. Cùng một từ ở hai context có thể mang nghĩa khác nhau — đừng cố ép một model dùng chung.
+Trong code, cái này chính là **bounded context (BC)** = ranh giới mà trong đó một model và một **[[Glossary - Thuật ngữ#Ubiquitous language|ubiquitous language]]** (ngôn ngữ chung giữa dev và business) nhất quán. Cùng một từ ở hai context có thể mang nghĩa khác nhau — đừng cố ép một model dùng chung.
 
 - Ví dụ Joy Loyalty: "**Member**" trong context *Loyalty* là người có balance điểm + tier; "**Customer**" trong context *Shopify Sync* là bản ghi đồng bộ từ Shopify (email, tags, orders count). Layered app hay nhét hết vào một `customer model` to đùng — tách ra mỗi context giữ model riêng, chỉ chia sẻ ID.
 - Ba dấu hiệu tìm ranh giới:
@@ -69,7 +69,7 @@ Trong code, cái này chính là **bounded context (BC)** = ranh giới mà tron
   2. Chỗ nào **người care khác nhau** (rule điểm là product, billing là finance).
   3. Chỗ nào **dữ liệu đổi theo nhịp khác nhau** (settings đổi vài lần/tháng, transactions ghi nghìn lần/ngày).
 - Với Joy Loyalty có thể phác draft: `Points & Earning`, `Rewards & Redemption`, `Tiers`, `Campaigns`, `Shopify Integration`, `Merchant Settings/Billing`.
-- **Context map**: tài liệu mô tả các BC và quan hệ giữa chúng — ai upstream/downstream, ai phải conform theo ai, chỗ nào cần **anti-corruption layer (ACL)** — lớp dịch model bên ngoài sang model của mình. ACL giống **phiên dịch viên ở cửa khẩu**: đoàn khách nước ngoài (payload Shopify) nói gì cũng phải qua phiên dịch chuyển thành ngôn ngữ nội bộ, để cách nói của họ không lây lan vào tài liệu của mình:
+- **[[Glossary - Thuật ngữ#Context mapping|Context map]]**: tài liệu mô tả các BC và quan hệ giữa chúng — ai upstream/downstream, ai phải conform theo ai, chỗ nào cần **anti-corruption layer (ACL)** — lớp dịch model bên ngoài sang model của mình. ACL giống **phiên dịch viên ở cửa khẩu**: đoàn khách nước ngoài (payload Shopify) nói gì cũng phải qua phiên dịch chuyển thành ngôn ngữ nội bộ, để cách nói của họ không lây lan vào tài liệu của mình:
 
 ```js
 // modules/shopify-sync/translator.js — ACL: nơi DUY NHẤT hiểu shape Shopify
@@ -147,7 +147,7 @@ module.exports = {
 
 #### Lộ trình strangler fig cho module đầu tiên (ví dụ: `tiers`)
 
-🏪 **Ví dụ đời sống:** cây đa (strangler fig) không đốn cây chủ — nó mọc bám quanh, rễ lan dần, đến lúc tự đứng được thì cây chủ bên trong tự lụi đi. Áp vào sửa nhà: xây phòng mới bên cạnh, chuyển đồ sang dần dần, ở ổn rồi mới phá phòng cũ — không có đêm nào phải ngủ ngoài sân.
+🏪 **Ví dụ đời sống:** cây đa ([[Glossary - Thuật ngữ#Strangler fig pattern|strangler fig]]) không đốn cây chủ — nó mọc bám quanh, rễ lan dần, đến lúc tự đứng được thì cây chủ bên trong tự lụi đi. Áp vào sửa nhà: xây phòng mới bên cạnh, chuyển đồ sang dần dần, ở ổn rồi mới phá phòng cũ — không có đêm nào phải ngủ ngoài sân.
 
 Lộ trình từng bước cho `tiers` (chọn vì ít dependency nhất):
 
@@ -196,7 +196,7 @@ bus.on('points.earned', async (e) => tiers.evaluateTierChange(e.memberId));
 | Coupling | Trực tiếp giữa 2 module | Gần như zero |
 | Hợp với | Gọi **đồng bộ cần kết quả ngay** (redeem cần biết trừ điểm được không) | **Side effect / thông báo** (email, analytics, tier check) |
 
-- Thực dụng: dùng **cả hai** — facade cho command đồng bộ giữa module, mediator/event bus cho domain event. Đây chính là nền móng để sang chương 7 (commands/events + CQRS): hôm nay bus chạy in-process, mai cần tách service thì thay ruột bus bằng Pub/Sub, hợp đồng message giữ nguyên.
+- Thực dụng: dùng **cả hai** — facade cho command đồng bộ giữa module, mediator/event bus cho domain event. Đây chính là nền móng để sang chương 7 (commands/events + [[Glossary - Thuật ngữ#CQRS|CQRS]]): hôm nay bus chạy in-process, mai cần tách service thì thay ruột bus bằng Pub/Sub, hợp đồng message giữ nguyên.
 
 ## Sai lầm thường gặp
 1. **Chia module theo layer thay vì theo nghiệp vụ** — đổi `controllers/services/models` thành... `modules/api`, `modules/core`, `modules/db`. Vẫn là studio không vách ngăn, chỉ kê lại giường. Module phải mang tên nghiệp vụ: `points`, `rewards`, `tiers`.

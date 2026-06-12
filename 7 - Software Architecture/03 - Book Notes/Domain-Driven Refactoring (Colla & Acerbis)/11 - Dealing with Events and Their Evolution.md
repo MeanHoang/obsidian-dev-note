@@ -3,7 +3,7 @@
 > ⚠️ Tóm tắt khái niệm theo mục lục sách + kiến thức DDD chuẩn — không phải bản dịch nguyên văn. Đọc sách gốc để lấy case study chi tiết. Ví dụ đời sống & Joy Loyalty là ví dụ của mình để minh hoạ khái niệm, không phải ví dụ trong sách.
 
 ## TL;DR
-Khi hệ thống dựa trên event (CQRS, event sourcing, hoặc đơn giản là publish event qua Pub/Sub), event trở thành **contract lâu dài**: event đã ghi/đã gửi thì không sửa được, nhưng business thì đổi liên tục. Vấn đề trung tâm của chương: **hoá đơn mẫu cũ vẫn phải đọc được khi công ty đã đổi sang mẫu mới**. Lời giải: versioning có kỷ luật, upcasting (dịch bản cũ sang bản mới lúc đọc), và weak schema (người đọc khoan dung). Với Joy Loyalty: ledger `point_transactions` append-only đã là event sourcing nhẹ, và mọi event qua Pub/Sub nên theo luật "chỉ thêm field, không bao giờ xoá/đổi nghĩa".
+Khi hệ thống dựa trên event ([[Glossary - Thuật ngữ#CQRS|CQRS]], [[Glossary - Thuật ngữ#Event sourcing|event sourcing]], hoặc đơn giản là publish event qua Pub/Sub), event trở thành **contract lâu dài**: event đã ghi/đã gửi thì không sửa được, nhưng business thì đổi liên tục. Vấn đề trung tâm của chương: **hoá đơn mẫu cũ vẫn phải đọc được khi công ty đã đổi sang mẫu mới**. Lời giải: versioning có kỷ luật, [[Glossary - Thuật ngữ#Event versioning & upcasting|upcasting]] (dịch bản cũ sang bản mới lúc đọc), và weak schema (người đọc khoan dung). Với Joy Loyalty: ledger `point_transactions` append-only đã là event sourcing nhẹ, và mọi event qua Pub/Sub nên theo luật "chỉ thêm field, không bao giờ xoá/đổi nghĩa".
 
 ## Nội dung chính
 

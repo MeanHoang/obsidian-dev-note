@@ -3,7 +3,7 @@
 > ⚠️ Tóm tắt khái niệm theo mục lục sách + kiến thức DDD chuẩn — không phải bản dịch nguyên văn. Đọc sách gốc để lấy case study chi tiết. Ví dụ đời sống & Joy Loyalty là ví dụ của mình, không phải từ sách.
 
 ## TL;DR
-Refactoring không phải dự án có ngày kết thúc mà là **thói quen liên tục** — như đánh răng, không phải như đại tu nhà. Chương cuối phần này bàn cách nhúng DDD vào quy trình CI/CD: ranh giới bounded context được **enforce bằng máy** (fitness functions trong pipeline), ranh giới không bất biến — biết khi nào nên tách/gộp context, và dùng tooling (SonarQube, GitHub Actions/GitLab) để chất lượng kiến trúc không phụ thuộc vào trí nhớ và thiện chí của con người.
+Refactoring không phải dự án có ngày kết thúc mà là **thói quen liên tục** — như đánh răng, không phải như đại tu nhà. Chương cuối phần này bàn cách nhúng DDD vào quy trình CI/CD: ranh giới [[Glossary - Thuật ngữ#Bounded context|bounded context]] được **enforce bằng máy** (fitness functions trong pipeline), ranh giới không bất biến — biết khi nào nên tách/gộp context, và dùng tooling (SonarQube, GitHub Actions/GitLab) để chất lượng kiến trúc không phụ thuộc vào trí nhớ và thiện chí của con người.
 
 ## Nội dung chính
 
@@ -66,10 +66,10 @@ module.exports = {
 // PR nào vi phạm → pipeline đỏ → không merge được. Hết tranh luận miệng.
 ```
 
-- **Pipeline theo module**: modular monolith cho phép CI thông minh — path filter để chỉ chạy test của module bị ảnh hưởng → build nhanh → feedback nhanh → dám refactor thường xuyên hơn. Vòng lặp tốt tự nuôi chính nó.
+- **Pipeline theo module**: [[Glossary - Thuật ngữ#Modular monolith|modular monolith]] cho phép CI thông minh — path filter để chỉ chạy test của module bị ảnh hưởng → build nhanh → feedback nhanh → dám refactor thường xuyên hơn. Vòng lặp tốt tự nuôi chính nó.
 - **Trunk-based development + feature flags**: refactor lớn được chẻ thành các bước nhỏ merge sớm vào main, code mới ẩn sau flag — thay vì branch sống 3 tuần rồi merge conflict địa ngục. 🏪 Như dọn nhà mỗi ngày 15 phút thay vì để dồn thành "chiến dịch tổng vệ sinh" cuối năm — chiến dịch nghe hoành tráng nhưng thường bị hoãn vô thời hạn.
 - **Deployment an toàn**: canary/gradual rollout. 🏪 Như nếm một muỗng canh trước khi múc cho cả nhà — Cloud Run traffic splitting làm việc này rất gọn: đẩy 10% traffic sang revision mới, xem metrics (error rate + metrics nghiệp vụ từ structured logging chương 5), rồi tăng dần. Có vấn đề → vặn về 0% trong vài giây.
-- Ubiquitous language cũng đi vào CI được: spec test Given–When–Then (chương 7) chạy trong pipeline chính là "executable documentation" — tài liệu nghiệp vụ không bao giờ outdated vì outdated là pipeline đỏ.
+- [[Glossary - Thuật ngữ#Ubiquitous language|Ubiquitous language]] cũng đi vào CI được: spec test Given–When–Then (chương 7) chạy trong pipeline chính là "executable documentation" — tài liệu nghiệp vụ không bao giờ outdated vì outdated là pipeline đỏ.
 
 ### Splitting and merging bounded contexts
 
@@ -103,8 +103,8 @@ Trong code:
 - Vai trò của tooling trong continuous refactoring: biến "nên làm" thành "**không làm thì pipeline đỏ**" — kỷ luật kiến trúc không scale bằng review tay, chỉ scale bằng automation. Và metrics từ tooling (complexity trend, hotspot, coupled changes) là **la bàn chọn chỗ refactor tiếp theo** thay vì refactor theo cảm tính/theo chỗ mình ghét.
 
 ## Sai lầm thường gặp
-1. **Kiến trúc giữ bằng văn bản + thiện chí** — vẽ context map đẹp, viết wiki, rồi không có check nào trong CI. Sáu tháng sau ranh giới mục hết — như vạch kẻ đường không camera. Mỗi quy tắc kiến trúc phải có một fitness function tương ứng, hoặc chấp nhận nó sẽ bị vi phạm.
-2. **Quality gate áp lên toàn bộ nợ cũ** — bật SonarQube/coverage threshold cho cả codebase legacy → 4000 lỗi, team tê liệt, tắt tool sau 2 tuần. Gate chỉ áp trên **code mới/file thay đổi trong PR** — nợ cũ trả dần theo boy scout rule.
+1. **Kiến trúc giữ bằng văn bản + thiện chí** — vẽ [[Glossary - Thuật ngữ#Context mapping|context map]] đẹp, viết wiki, rồi không có check nào trong CI. Sáu tháng sau ranh giới mục hết — như vạch kẻ đường không camera. Mỗi quy tắc kiến trúc phải có một fitness function tương ứng, hoặc chấp nhận nó sẽ bị vi phạm.
+2. **Quality gate áp lên toàn bộ nợ cũ** — bật SonarQube/coverage threshold cho cả codebase [[Glossary - Thuật ngữ#Legacy system|legacy]] → 4000 lỗi, team tê liệt, tắt tool sau 2 tuần. Gate chỉ áp trên **code mới/file thay đổi trong PR** — nợ cũ trả dần theo boy scout rule.
 3. **Branch refactor sống lâu** — "để em làm xong hết rồi merge một thể" → conflict chồng chất, review bất khả thi, cuối cùng bỏ branch. Trunk-based + feature flag: merge nhỏ mỗi ngày, main luôn xanh.
 4. **Coi ranh giới context là bất biến** — đã vẽ rồi thì "đụng vào là phạm thượng", trong khi nghiệp vụ đã đổi. Ngược lại cũng sai: đổi ranh giới xoành xoạch theo mood. Nhịp hợp lý: review context map định kỳ (quý/lần) dựa trên số liệu coupled changes, không dựa cảm tính.
 5. **Deploy bản refactor 100% traffic một phát** — có Cloud Run traffic splitting miễn phí mà không dùng. Mọi deploy của bản refactor đáng kể đều nên canary: 10% → soi metrics → 100%. Múc cả nồi canh ra mâm rồi mới biết mặn thì đã muộn.

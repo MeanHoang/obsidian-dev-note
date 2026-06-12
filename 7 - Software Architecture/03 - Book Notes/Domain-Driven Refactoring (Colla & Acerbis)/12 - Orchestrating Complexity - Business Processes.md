@@ -3,7 +3,7 @@
 > ⚠️ Tóm tắt khái niệm theo mục lục sách + kiến thức DDD chuẩn — không phải bản dịch nguyên văn. Đọc sách gốc để lấy case study chi tiết. Ví dụ đời sống & Joy Loyalty là ví dụ của mình để minh hoạ khái niệm, không phải ví dụ trong sách.
 
 ## TL;DR
-Khi một business process chạm vào nhiều bounded context (đổi thưởng = trừ điểm + tạo discount code trên Shopify + gửi email), ta không còn transaction ACID bao trùm tất cả. Chương này so các cách điều phối process xuyên ranh giới: 2PC (gần như đã bị loại trong cloud), saga (choreography vs orchestration), process manager, compensating transaction, và durable execution để process sống sót qua crash. Hình ảnh xuyên suốt: **chuẩn bị đám cưới** — chuỗi việc đặt cọc nhà hàng → thuê áo → mời khách, nhà hàng huỷ thì phải gọi điện huỷ dây chuyền và đòi cọc, và cần một wedding planner cầm sổ để không quên đang làm tới đâu.
+Khi một business process chạm vào nhiều [[Glossary - Thuật ngữ#Bounded context|bounded context]] (đổi thưởng = trừ điểm + tạo discount code trên Shopify + gửi email), ta không còn transaction ACID bao trùm tất cả. Chương này so các cách điều phối process xuyên ranh giới: 2PC (gần như đã bị loại trong cloud), [[Glossary - Thuật ngữ#Saga & Process manager|saga]] (choreography vs orchestration), process manager, compensating transaction, và durable execution để process sống sót qua crash. Hình ảnh xuyên suốt: **chuẩn bị đám cưới** — chuỗi việc đặt cọc nhà hàng → thuê áo → mời khách, nhà hàng huỷ thì phải gọi điện huỷ dây chuyền và đòi cọc, và cần một wedding planner cầm sổ để không quên đang làm tới đâu.
 
 ## Nội dung chính
 
@@ -14,7 +14,7 @@ Khi một business process chạm vào nhiều bounded context (đổi thưởng
 **Map sang kỹ thuật:**
 - **2PC** = giao thức distributed transaction cổ điển: một coordinator hỏi mọi participant "commit được không?" (phase 1 — prepare, mỗi participant **giữ lock**), tất cả OK thì ra lệnh commit (phase 2), một bên từ chối thì rollback hết.
 - Nghe đẹp nhưng bị loại trong hệ hiện đại: coordinator chết giữa chừng thì participant bị **block giữ lock** (cả nhóm giữ lịch trống chờ trưởng nhóm mất tích); không scale, latency cao. Và quyết định nhất: hầu hết hạ tầng cloud — Firestore, Pub/Sub, REST API của Shopify — **không tham gia 2PC được**. Không thể bảo Shopify "giữ lock cái discount code chờ tôi xác nhận".
-- Bài học rút ra: giữa các bounded context, chấp nhận **eventual consistency** thay vì cố ép atomicity — tiền đề cho mọi pattern phía sau.
+- Bài học rút ra: giữa các bounded context, chấp nhận **[[Glossary - Thuật ngữ#Eventual consistency|eventual consistency]]** thay vì cố ép atomicity — tiền đề cho mọi pattern phía sau.
 
 ### Saga — đặt tiệc cưới và chuỗi huỷ dây chuyền
 
