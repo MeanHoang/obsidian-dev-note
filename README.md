@@ -6,3 +6,4 @@ Obsidian-dev-note
 3. https://roadmap.sh/full-stack
 4. https://roadmap.sh/design-system
 5. https://roadmap.sh/software-architect
+claude --dangerously-skip-permissions
