@@ -78,6 +78,34 @@ dig +short google.com A      # IPv4
 dig +short google.com AAAA   # IPv6  → có cả 2 = dual-stack
 ```
 
+### 1.3. Cloud xử lý IP thế nào (GFE anycast vs backend)
+
+Nhiều người tưởng "cloud IP nhảy loạn mỗi phút" — **sai.** Thực tế có **2 tầng IP** (lấy Cloud Run làm ví dụ, verify bằng `dig`):
+
+```
+api.myshop.com ─CNAME─► ghs.googlehosted.com ─► 142.251.8.121   ← IP client THẤY: ỔN ĐỊNH
+                                                    (Google Front End — anycast)
+                              │ routing anycast → GFE gần bạn nhất
+                              ▼
+                    Load balancer → phân request cho...
+                              ▼
+                    Container Cloud Run  ← IP backend: ĐỔI LIÊN TỤC (auto-scale 0→N)
+                       (code bạn chạy)      client KHÔNG thấy
+```
+
+| | IP client thấy (ngoài) | IP instance backend (trong) |
+|---|---|---|
+| Là gì | GFE / load balancer (anycast) | Máy chạy container của bạn |
+| Ổn định? | **Khá ổn định** (`142.251.8.121`) | **Đổi liên tục** (scale/dời máy) |
+| Client thấy? | ✅ qua DNS | ❌ ẩn hoàn toàn |
+
+- **"Đổi liên tục" chỉ đúng với backend** — thứ bạn không bao giờ thấy. IP client thấy (GFE) khá ổn định.
+- **Vẫn phải CNAME (không hardcode IP)** vì Google **giữ quyền đổi IP GFE** bất cứ lúc nào → cho bạn 1 **TÊN ổn định** (`ghs.googlehosted.com`), tự lo tên→IP.
+- **"Trỏ về máy nào?"** = ① **anycast routing** ([[01 - How does the internet work#6.2. Bước 2 — Định tuyến (routing): packet tự tìm đường tới IP|§6.2]]) đưa tới GFE gần bạn + ② **load balancer** chọn container rảnh (Cloud Run bật thêm nếu đông, giữ 0 máy nếu vắng → *cold start*).
+- **Serverless (Cloud Run/Functions):** scale-to-zero — không request thì 0 máy (không tốn tiền). Bạn chỉ đưa **code + tên miền**, không đụng IP nào.
+
+> 🔑 **Chốt cloud:** IP client thấy = **GFE anycast, ổn định**; backend mới đổi liên tục nhưng ẩn. CNAME tới tên vì provider giữ quyền đổi IP. Anycast + load balancer lo "trỏ máy nào". Bạn **không bao giờ đụng IP** — Google lo hết.
+
 ---
 
 ## 2. Bên trong hosting có gì? Web server
