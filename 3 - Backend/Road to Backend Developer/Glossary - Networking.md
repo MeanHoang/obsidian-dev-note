@@ -1,6 +1,6 @@
 # Glossary — Networking (Road to Backend)
 
-> File thuật ngữ dùng chung cho cả series. Mỗi từ: **định nghĩa ngắn + ví dụ đời sống**. Link ngược từ các bài, vd [[01 - How does the internet work?]].
+> File thuật ngữ dùng chung cho cả series. Mỗi từ: **định nghĩa ngắn + ví dụ đời sống**. Link ngược từ các bài, vd [[01 - How does the internet work]].
 >
 > 💡 Trong các note, thuật ngữ được link dạng `[[Glossary - Networking#DNS|DNS]]` → bấm vào là nhảy thẳng tới định nghĩa ở đây.
 

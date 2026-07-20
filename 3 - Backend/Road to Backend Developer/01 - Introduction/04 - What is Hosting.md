@@ -1,6 +1,6 @@
 # 04 — Hosting là gì?
 
-> Bài 4 series [Road to Backend Developer](https://roadmap.sh/backend). Nối tiếp [[01 - How does the internet work?]], [[02 - What is HTTP?]], [[03 - What is Domain Name?]].
+> Bài 4 series [Road to Backend Developer](https://roadmap.sh/backend). Nối tiếp [[01 - How does the internet work]], [[02 - What is HTTP]], [[03 - What is Domain Name]].
 >
 > 📖 Thuật ngữ: [[Glossary - Networking]].
 
@@ -16,7 +16,7 @@ Nhớ mạch 3 bài trước: **domain** (tên) → DNS dịch ra **IP** → IP 
 
 Web/app của bạn = **một đống file** (HTML, CSS, JS, ảnh, code backend, database). Muốn người khác xem, các file đó phải nằm trên **một máy:**
 - **Bật 24/7** (tắt máy = web sập).
-- **Nối Internet + có IP công khai** (để ai cũng tới được — nhớ [[01 - How does the internet work?|bài 01]]).
+- **Nối Internet + có IP công khai** (để ai cũng tới được — nhớ [[01 - How does the internet work|bài 01]]).
 - **Đủ mạnh** để phục vụ nhiều người cùng lúc.
 
 → Máy tính ở nhà bạn **không hợp**: tắt máy là web chết, IP nhà thường **đổi liên tục + bị NAT** (không public), đường mạng nhà yếu. Nên người ta **thuê hosting** — máy đặt trong **data center** (trung tâm dữ liệu: điện dự phòng, mạng cực mạnh, chạy 24/7).
@@ -25,7 +25,7 @@ Web/app của bạn = **một đống file** (HTML, CSS, JS, ảnh, code backend
 
 ### 1.1. Nhà mạng cấp IP cho máy bạn thế nào? (IP động + NAT) — và VÌ SAO
 
-Gốc rễ của cả 2 vấn đề ("IP đổi liên tục" + "bị NAT") là: **IPv4 chỉ có ~4 tỷ địa chỉ và đã CẠN** (nhớ [[01 - How does the internet work?#2.2. Ba loại địa chỉ (dễ lẫn nhau)|bài 01]]). Không đủ cấp cố định 1 IP công khai cho mỗi người → nhà mạng phải "xoay xở" bằng 2 kỹ thuật:
+Gốc rễ của cả 2 vấn đề ("IP đổi liên tục" + "bị NAT") là: **IPv4 chỉ có ~4 tỷ địa chỉ và đã CẠN** (nhớ [[01 - How does the internet work#2.2. Ba loại địa chỉ (dễ lẫn nhau)|bài 01]]). Không đủ cấp cố định 1 IP công khai cho mỗi người → nhà mạng phải "xoay xở" bằng 2 kỹ thuật:
 
 **① IP ĐỘNG (DHCP) — vì sao IP nhà đổi liên tục:**
 - Nhà mạng có **ít IP công khai hơn số khách** → không cấp cố định, mà **cho thuê tạm** từ 1 kho chung, mỗi IP có **thời hạn thuê (lease)**. Cơ chế này gọi là **DHCP**.
@@ -62,7 +62,7 @@ Gốc rễ của cả 2 vấn đề ("IP đổi liên tục" + "bị NAT") là: 
 
 Không có "luật" ép v4 hay v6 — server có thể có **IPv4, IPv6, hoặc CẢ HAI** (gọi *dual-stack*, **phổ biến nhất**). Đa số cloud (Google Cloud, AWS) cấp cả hai.
 
-**Cái "quy định" domain dùng loại nào = BẢN GHI DNS** (nhớ [[03 - What is Domain Name?#Ai quản lý? (chuỗi tổ chức)|A record bài 03]]):
+**Cái "quy định" domain dùng loại nào = BẢN GHI DNS** (nhớ [[03 - What is Domain Name#Ai quản lý? (chuỗi tổ chức)|A record bài 03]]):
 
 | Bản ghi DNS | Trỏ tới | Ví dụ |
 |---|---|---|
@@ -82,7 +82,7 @@ dig +short google.com AAAA   # IPv6  → có cả 2 = dual-stack
 
 ## 2. Bên trong hosting có gì? Web server
 
-Hosting = máy chủ, và trên máy đó chạy một phần mềm **web server** — thứ **nhận HTTP request → trả file/response** (nhớ [[02 - What is HTTP?|bài 02]]).
+Hosting = máy chủ, và trên máy đó chạy một phần mềm **web server** — thứ **nhận HTTP request → trả file/response** (nhớ [[02 - What is HTTP|bài 02]]).
 
 > MDN: *"A web server is a computer that stores a website's files (HTML, images, CSS, JS) and serves them via HTTP."*
 
@@ -124,7 +124,7 @@ Một nhánh của cloud: bạn **chỉ đưa code**, nhà cung cấp lo **toàn
 
 ## 4. Domain + DNS + Hosting ghép lại (bức tranh đầy đủ)
 
-3 mảnh của 1 website (nhớ [[03 - What is Domain Name?|bài 03]]):
+3 mảnh của 1 website (nhớ [[03 - What is Domain Name|bài 03]]):
 
 | Mảnh | Vai trò | Ví như |
 |---|---|---|
@@ -152,8 +152,8 @@ shop.com  ──DNS trỏ──►  IP của server hosting  ──►  file/app
 | **Cloud Storage** | Lưu trữ file | Chứa ảnh/asset (không phải "chạy code") |
 
 **Điểm thực tế nối với bài trước:**
-- **Deploy Cloud Run** → được URL `xxx.run.app` (hosting đã có IP + HTTPS sẵn). Gắn domain riêng → **trỏ DNS (A/CNAME)** như [[03 - What is Domain Name?|bài 03]].
-- **Serverless = không lo server:** không phải vá OS, không lo máy sập — Google lo. Bạn chỉ đẩy code. Hợp với **HTTP stateless** ([[02 - What is HTTP?#5. HTTP là STATELESS (không nhớ) — điểm CỐT LÕI ⭐|bài 02]]): mỗi request rơi vào instance nào cũng chạy → **tự scale thoải mái**, đừng lưu state trong RAM instance (để ở **Firestore**).
+- **Deploy Cloud Run** → được URL `xxx.run.app` (hosting đã có IP + HTTPS sẵn). Gắn domain riêng → **trỏ DNS (A/CNAME)** như [[03 - What is Domain Name|bài 03]].
+- **Serverless = không lo server:** không phải vá OS, không lo máy sập — Google lo. Bạn chỉ đẩy code. Hợp với **HTTP stateless** ([[02 - What is HTTP#5. HTTP là STATELESS (không nhớ) — điểm CỐT LÕI ⭐|bài 02]]): mỗi request rơi vào instance nào cũng chạy → **tự scale thoải mái**, đừng lưu state trong RAM instance (để ở **Firestore**).
 - **Trả tiền theo dùng:** Cloud Run/Functions **không request = gần như $0** — hợp app Shopify tải thất thường.
 - **Shopify app:** backend bạn (trên Cloud Run) là "hosting" nhận webhook/API call từ Shopify; frontend embed có thể trên Firebase Hosting.
 

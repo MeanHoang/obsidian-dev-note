@@ -1,6 +1,6 @@
 # 02 — HTTP là gì?
 
-> Bài 2 series [Road to Backend Developer](https://roadmap.sh/backend). Tiếp nối [[01 - How does the internet work?]] — giờ mổ xẻ **giao thức mà backend bạn dùng NHIỀU NHẤT**.
+> Bài 2 series [Road to Backend Developer](https://roadmap.sh/backend). Tiếp nối [[01 - How does the internet work]] — giờ mổ xẻ **giao thức mà backend bạn dùng NHIỀU NHẤT**.
 >
 > 📖 Thuật ngữ: [[Glossary - Networking]].
 
@@ -216,7 +216,7 @@ Nhớ bài 01 (keep-alive, connection): đây là lý do các version ra đời.
 | ------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
 | **HTTP/0.9** (1991) | Chỉ có `GET`, trả HTML trần                                  | Sơ khai                                                                                                                             |
 | **HTTP/1.0** (1996) | Thêm **headers**, status code, method khác                   | Mở rộng được                                                                                                                        |
-| **HTTP/1.1** (1997) | **Keep-alive** (giữ connection), pipelining                  | Khỏi bắt tay TCP lại mỗi request ([[01 - How does the internet work?#3.1. TCP vs UDP (tầng Transport) — điểm cốt lõi\|nhớ bài 01]]) |
+| **HTTP/1.1** (1997) | **Keep-alive** (giữ connection), pipelining                  | Khỏi bắt tay TCP lại mỗi request ([[01 - How does the internet work#3.1. TCP vs UDP (tầng Transport) — điểm cốt lõi\|nhớ bài 01]]) |
 | **HTTP/2** (2015)   | **Multiplexing** — nhiều request song song trên 1 connection | Hết cảnh xếp hàng (head-of-line)                                                                                                    |
 | **HTTP/3** (2022)   | Chạy trên **UDP (QUIC)** thay TCP                            | Nhanh hơn, ít trễ khi mạng chập chờn                                                                                                |
 
@@ -282,7 +282,7 @@ Máy vợ → FB:   (42.1.1.8 : 60111 , 157.240.1.1 : 443)   ← connection KHÁ
 ## 7. HTTP vs HTTPS (nhắc lại từ bài 01)
 
 - **HTTP** = đi **trần**, ai chặn đọc được.
-- **HTTPS** = HTTP + mã hóa **[[Glossary - Networking#TLS / SSL|TLS]]** → 🔒. (Chi tiết: [[01 - How does the internet work?#5.1. Web: HTTP vs HTTPS khác gì?\|bài 01 mục 5.1]].)
+- **HTTPS** = HTTP + mã hóa **[[Glossary - Networking#TLS / SSL|TLS]]** → 🔒. (Chi tiết: [[01 - How does the internet work#5.1. Web: HTTP vs HTTPS khác gì?\|bài 01 mục 5.1]].)
 
 Ngày nay **luôn dùng HTTPS**. Shopify bắt buộc HTTPS cho webhook/redirect.
 

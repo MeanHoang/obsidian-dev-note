@@ -623,7 +623,7 @@ Câu hỏi tinh: resolver **giao job** cho `a.gtld-servers.net` tìm hộ, hay *
 
 > Nguồn: [Fortinet — BGP](https://www.fortinet.com/resources/cyberglossary/bgp-border-gateway-protocol).
 
-**Định tuyến = quá trình các router chuyển packet qua nhiều mạng để tới đúng IP đích.** Nhớ [[01 - How does the internet work?#1.6. Cấu trúc phân tầng của ISP (Tier 1/2/3)|§1.6]] (hình chữ V): packet nhảy qua router nhà → ISP → (Tier 1 / cáp biển) → mạng Google.
+**Định tuyến = quá trình các router chuyển packet qua nhiều mạng để tới đúng IP đích.** Nhớ [[01 - How does the internet work#1.6. Cấu trúc phân tầng của ISP (Tier 1/2/3)|§1.6]] (hình chữ V): packet nhảy qua router nhà → ISP → (Tier 1 / cáp biển) → mạng Google.
 
 **Định tuyến = quá trình các router chuyển packet qua nhiều mạng để tới đúng IP đích.**
 IP có thể hiện vị trí thiết bị đúng không
@@ -666,7 +666,7 @@ Khi có nhiều đường tới cùng đích, BGP xét theo thứ tự (đơn gi
 
 ### 6.3. Bước 3 — TCP handshake: mở kết nối tin cậy
 
-Trước khi gửi dữ liệu, máy bạn & server **bắt tay 3 bước** (đã phân tích kỹ ở [[01 - How does the internet work?#3.1. TCP vs UDP (tầng Transport) — điểm cốt lõi|§3.1]]):
+Trước khi gửi dữ liệu, máy bạn & server **bắt tay 3 bước** (đã phân tích kỹ ở [[01 - How does the internet work#3.1. TCP vs UDP (tầng Transport) — điểm cốt lõi|§3.1]]):
 ```
 ① Bạn → Server:  SYN          "Tôi muốn kết nối (port 443)!"
 ② Server → Bạn:  SYN + ACK    "Nghe rồi, tôi cũng sẵn sàng"
@@ -674,7 +674,7 @@ Trước khi gửi dữ liệu, máy bạn & server **bắt tay 3 bước** (đ�
    → kết nối TCP thành lập, đáng tin (mất gói sẽ gửi lại)
 ```
 - **"Thuật toán" ở đây** không phải mã hóa — chỉ là **giao thức bắt tay** dùng 2 cờ **SYN** (xin kết nối) + **ACK** (xác nhận), kèm **số thứ tự (sequence number)** để sau này ráp gói đúng thứ tự & biết gói nào mất.
-- Cần đủ 3 bước để **cả 2 chiều đều xác nhận thông** (§3.1). Làm **1 lần/connection**, request sau tái dùng (nhớ [[02 - What is HTTP?#6.1. Multiplexing & Vòng đời Connection (đào sâu)|keep-alive bài 02]]).
+- Cần đủ 3 bước để **cả 2 chiều đều xác nhận thông** (§3.1). Làm **1 lần/connection**, request sau tái dùng (nhớ [[02 - What is HTTP#6.1. Multiplexing & Vòng đời Connection (đào sâu)|keep-alive bài 02]]).
 
 → Kết quả bước 3: có **đường ống TCP tin cậy** tới server.
 
@@ -721,7 +721,7 @@ Thay vì 1 chìa dùng chung, mỗi bên có **CẶP khóa gắn liền:**
 
 > ⚠️ Nếu chỉ mã hóa mà không xác thực → bạn có thể đang mã hóa để nói chuyện với... **kẻ giả mạo**. Certificate đảm bảo đúng server. Đó là lý do trình duyệt cảnh báo đỏ khi cert sai/hết hạn.
 
-> 🔑 **Chốt:** TLS handshake đặc biệt ở chỗ dùng **khóa bất đối xứng** để 2 bên **cùng thống nhất 1 chìa chung bí mật MÀ KHÔNG gửi chìa đó qua mạng** (kẻ nghe lén thấy hết vẫn không suy ra — nhờ toán "trộn dễ, tách khó"), rồi chuyển sang **khóa đối xứng** cho nhanh. Làm 1 lần/connection ([[02 - What is HTTP?#6.1. Multiplexing & Vòng đời Connection (đào sâu)|nhớ connection bài 02]]). Tác dụng: **bí mật + xác thực server thật + chống sửa.**
+> 🔑 **Chốt:** TLS handshake đặc biệt ở chỗ dùng **khóa bất đối xứng** để 2 bên **cùng thống nhất 1 chìa chung bí mật MÀ KHÔNG gửi chìa đó qua mạng** (kẻ nghe lén thấy hết vẫn không suy ra — nhờ toán "trộn dễ, tách khó"), rồi chuyển sang **khóa đối xứng** cho nhanh. Làm 1 lần/connection ([[02 - What is HTTP#6.1. Multiplexing & Vòng đời Connection (đào sâu)|nhớ connection bài 02]]). Tác dụng: **bí mật + xác thực server thật + chống sửa.**
 >
 > *Một câu khắc cốt:* **cái tài của TLS là cho 2 người lạ thống nhất mật mã chung ngay giữa đám đông đang nghe lén — mà không ai nghe được mật mã đó.**
 
@@ -729,7 +729,7 @@ Thay vì 1 chìa dùng chung, mỗi bên có **CẶP khóa gắn liền:**
 
 ### 6.5. Bước 5 — HTTP request: gửi yêu cầu
 
-Giờ đường ống đã mở + mã hóa xong, trình duyệt mới gửi **yêu cầu thật** theo luật HTTP (chi tiết [[02 - What is HTTP?|bài 02]]):
+Giờ đường ống đã mở + mã hóa xong, trình duyệt mới gửi **yêu cầu thật** theo luật HTTP (chi tiết [[02 - What is HTTP|bài 02]]):
 ```
 GET / HTTP/1.1
 Host: google.com
@@ -743,7 +743,7 @@ Accept: text/html
 
 ### 6.6. Bước 6 — Server xử lý & trả response
 
-Server Google nhận request → **xử lý** → trả về **response** (chi tiết [[02 - What is HTTP?#3. Response — server "đáp" cái gì?|bài 02 §3]]):
+Server Google nhận request → **xử lý** → trả về **response** (chi tiết [[02 - What is HTTP#3. Response — server "đáp" cái gì?|bài 02 §3]]):
 ```
 HTTP/1.1 200 OK
 Content-Type: text/html
@@ -762,7 +762,7 @@ Server trả **code thô** (HTML/CSS/JS), nhưng bạn thấy **trang đẹp** �
 1. **HTML** → dựng khung (chữ, nút, cấu trúc).
 2. **CSS** → tô màu, bố cục, font.
 3. **JavaScript** → chạy code cho trang tương tác được.
-4. Thấy cần thêm ảnh/CSS/JS → **quay lại bước 5** xin tiếp (nhiều request, đi chung connection — [[02 - What is HTTP?#6.1. Multiplexing & Vòng đời Connection (đào sâu)|multiplexing bài 02]]).
+4. Thấy cần thêm ảnh/CSS/JS → **quay lại bước 5** xin tiếp (nhiều request, đi chung connection — [[02 - What is HTTP#6.1. Multiplexing & Vòng đời Connection (đào sâu)|multiplexing bài 02]]).
 
 → Kết quả: trang google.com hiện ra trước mắt bạn. **Xong toàn bộ hành trình.**
 

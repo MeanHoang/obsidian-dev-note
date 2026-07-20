@@ -1,6 +1,6 @@
 # 03 — Domain Name (Tên miền) là gì?
 
-> Bài 3 series [Road to Backend Developer](https://roadmap.sh/backend). Nối tiếp [[01 - How does the internet work?]] (đã gặp DNS/IP) & [[02 - What is HTTP?]].
+> Bài 3 series [Road to Backend Developer](https://roadmap.sh/backend). Nối tiếp [[01 - How does the internet work]] (đã gặp DNS/IP) & [[02 - What is HTTP]].
 >
 > 📖 Thuật ngữ: [[Glossary - Networking]].
 
@@ -8,7 +8,7 @@
 
 > **Domain name (tên miền)** = **cái TÊN dễ nhớ cho con người** trỏ tới một server trên Internet (vd `google.com`), thay cho dãy số **[[Glossary - Networking#IP address|IP]]** khó nhớ (`142.250.66.14`).
 
-MDN: *"Domain names provide a human-readable address for any web server available on the Internet."* Máy tính thật ra dùng **IP** để tìm nhau; tên miền chỉ là **lớp tên dễ nhớ phủ lên trên**, và **[[Glossary - Networking#DNS|DNS]]** lo dịch tên → IP (đã học ở [[01 - How does the internet work?#5.3. Domain vs DNS vs IP khác gì? (hay lẫn nhất)|bài 01 mục 5.3]]).
+MDN: *"Domain names provide a human-readable address for any web server available on the Internet."* Máy tính thật ra dùng **IP** để tìm nhau; tên miền chỉ là **lớp tên dễ nhớ phủ lên trên**, và **[[Glossary - Networking#DNS|DNS]]** lo dịch tên → IP (đã học ở [[01 - How does the internet work#5.3. Domain vs DNS vs IP khác gì? (hay lẫn nhất)|bài 01 mục 5.3]]).
 
 **Vì sao cần tên miền?** IP **khó nhớ** và **có thể đổi** (đổi server, đổi hosting). Tên miền giữ nguyên (`shop.com`), chỉ cần cập nhật "tên này trỏ IP mới" là xong — người dùng không phải nhớ lại gì.
 
@@ -101,7 +101,7 @@ https :// blog.shop.com : 443 /products/123 ? ref=fb
 scheme     domain        port     path       query
 (HTTP/S)  (tên miền)   (cổng)  (đường dẫn)  (tham số)
 ```
-→ **Domain chỉ là 1 mảnh của URL.** URL = scheme + domain + (port) + path + query. (Nhớ [[02 - What is HTTP?|bài 02]]: server đọc path/query trong request.)
+→ **Domain chỉ là 1 mảnh của URL.** URL = scheme + domain + (port) + path + query. (Nhớ [[02 - What is HTTP|bài 02]]: server đọc path/query trong request.)
 
 ---
 
@@ -134,7 +134,7 @@ whois tenlala123.com  # nếu trả "NOT FOUND" = còn trống, đăng ký đư�
 
 ## 4. Chuyện gì xảy ra khi bạn gõ 1 domain? (nối bài 01)
 
-Tóm tắt (chi tiết ở [[01 - How does the internet work?#6. Ráp lại: gõ `google.com` + Enter thì sao? (câu phỏng vấn kinh điển)|bài 01 mục 6]]):
+Tóm tắt (chi tiết ở [[01 - How does the internet work#6. Ráp lại: gõ `google.com` + Enter thì sao? (câu phỏng vấn kinh điển)|bài 01 mục 6]]):
 
 1. Gõ `mozilla.org` → trình duyệt hỏi **cache local** trước ("máy mình biết IP chưa?").
 2. Chưa biết → hỏi **DNS server** → nó trả IP tương ứng.
@@ -154,7 +154,7 @@ Tóm tắt (chi tiết ở [[01 - How does the internet work?#6. Ráp lại: gõ
 - **Subdomain tách dịch vụ:** rất hay dùng — `api.myshop.com` (backend), `app.myshop.com` (dashboard), `cdn.myshop.com` (ảnh). Cùng 1 domain gốc, khỏi mua nhiều domain.
 - **Shopify custom domain:** merchant trỏ domain riêng (`shopcuatoi.com`) về store Shopify cũng bằng **A record / CNAME** y hệt cơ chế trên.
 - **DNS propagation:** đổi bản ghi DNS **không ăn ngay** — chờ vài phút đến vài giờ lan truyền. Đừng hoảng khi "đổi rồi mà chưa thấy".
-- **HTTPS + domain:** gắn custom domain xong, Cloud Run/Firebase thường **tự cấp chứng chỉ TLS** cho domain đó → ra 🔒 (nhớ [[02 - What is HTTP?#7. HTTP vs HTTPS (nhắc lại từ bài 01)|HTTPS bài 02]]).
+- **HTTPS + domain:** gắn custom domain xong, Cloud Run/Firebase thường **tự cấp chứng chỉ TLS** cho domain đó → ra 🔒 (nhớ [[02 - What is HTTP#7. HTTP vs HTTPS (nhắc lại từ bài 01)|HTTPS bài 02]]).
 
 ---
 
