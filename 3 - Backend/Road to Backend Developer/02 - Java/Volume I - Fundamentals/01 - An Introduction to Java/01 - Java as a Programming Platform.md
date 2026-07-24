@@ -91,6 +91,50 @@ Nhiều ngôn ngữ có 1 hoặc 2 chân → Java có cả 3 → **platform hoà
 
 ---
 
+### "Vast Library" — thư viện khổng lồ gồm những gì?
+
+Cần phân biệt **2 loại thư viện** trong hệ sinh thái Java:
+#### Standard Library — do Sun/Oracle xây, đi kèm JDK
+
+Cài JDK là có luôn, **không cần download thêm**:
+
+```java
+import java.util.ArrayList;    // Collections
+import java.io.FileReader;     // Đọc file
+import java.net.HttpClient;    // HTTP
+import java.sql.Connection;    // Database
+```
+
+Khoảng **~4000 class** — cover gần hết nhu cầu cơ bản: collections, I/O, networking, concurrency, database, security...
+
+> 💡 **So sánh JS:** Node.js built-in modules (`fs`, `http`, `path`...) chỉ có vài chục — rất ít so với Java. Nên JS phải **phụ thuộc npm** cho gần như mọi thứ.
+
+#### Ecosystem — do cộng đồng/công ty xây
+
+Thư viện bên thứ 3, cài qua Maven/Gradle (giống npm):
+- **Spring** — framework web (Pivotal/VMware)
+- **Hibernate** — ORM database (Red Hat)
+- **Apache Kafka** — message queue (LinkedIn → Apache)
+- **Hadoop/Spark** — big data (Yahoo → Apache)
+
+#### Tại sao Java có nhiều thư viện?
+
+Lâu đời (1995) + nhiều người dùng → **vòng lặp tự tăng trưởng**:
+
+```
+1995: Java ra đời
+  → Sun xây Standard Library lớn ngay từ đầu
+  → Doanh nghiệp lớn adopt (banking, telco, enterprise)
+  → Họ xây thư viện → open source → cộng đồng dùng
+  → Càng nhiều thư viện → càng nhiều người dùng
+  → Càng nhiều người dùng → càng nhiều thư viện
+  → Vòng lặp 30 năm
+```
+
+Nhưng điểm khác biệt mà Horstmann nhấn mạnh: Java **không chỉ thắng nhờ cộng đồng** — mà vì **Standard Library đã rất đầy đủ sẵn**. Nhiều ngôn ngữ khác cũng lâu đời, cũng có cộng đồng, nhưng thư viện chuẩn ít → phải phụ thuộc bên thứ 3 → kém ổn định hơn.
+
+---
+
 ### Editor bị sếp Sun "mắng" vì đoạn đầu
 
 > *"Our editor got a lot of flack for this paragraph from someone very high up at Sun Microsystems, the company that originally developed Java."*
