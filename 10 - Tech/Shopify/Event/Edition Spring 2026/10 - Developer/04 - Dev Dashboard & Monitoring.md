@@ -19,11 +19,52 @@ Dev store, client transfer store, và collaborator store giờ đều nằm tron
 
 Gửi **custom event** từ app về Shopify, monitor và quản lý performance trong Dev Dashboard.
 
-### Use cases
+### Endpoint
 
-- Track business-level event: user click CTA, widget render thành công, loyalty point earned
-- Xem dashboard tổng hợp thay vì build monitoring riêng
-- Debug app behavior qua event timeline
+```
+POST https://api.shopify.com/app/unstable/event
+```
+
+**Headers:**
+```
+Content-Type: application/json
+Authorization: Bearer {BEARER_TOKEN}
+```
+
+### Request format
+
+```json
+{
+  "shop_id": 23423423,
+  "event_handle": "bulk_import_failed",
+  "timestamp": "2026-05-08T14:30:00Z",
+  "idempotency_key": "evt_88012345",
+  "attributes": {
+    "item_count": 340,
+    "error_type": "csv_parse_error"
+  }
+}
+```
+
+### Event handle — tự define
+
+Không có danh sách fixed. Một số gợi ý:
+
+| Category | Ví dụ |
+|----------|-------|
+| Feature usage | `bulk_edit_completed`, `report_generated` |
+| Workflows | `onboarding_completed`, `campaign_sent` |
+| Performance | `sync_failed`, `api_timeout`, `rate_limit_hit` |
+| Conversion | `limit_hit`, `premium_viewed`, `milestone_achieved` |
+| Billable | `order_processed`, `email_sent`, `label_printed` |
+
+### Tích hợp billing
+
+Event powering usage-based charges không cần integration riêng — define meters trong Partner Dashboard match `event_handle`, Shopify handle invoicing tự động (xem [[09 - App Distribution - Pricing, Submission, Security]]).
+
+### Dashboard
+
+Events hiện trong **Dev Dashboard Logs** cùng với webhooks, Functions, GraphQL/REST requests. Filter theo `event_handle` và timeline.
 
 **Availability:** GA
 **Docs:** https://www.shopify.com/partners/blog/app-events
@@ -51,12 +92,18 @@ Webhook monitoring trong Dev Dashboard hỗ trợ:
 
 Monitor **admin web vitals** của app và trạng thái **Built for Shopify** trực tiếp trong Dev Dashboard.
 
-### Metrics tracked
+### Core Web Vitals tracked
 
-- App load time trong admin
-- Interaction delay
-- Built for Shopify compliance status
-- Performance trending theo thời gian
+| Metric | Đo gì |
+|--------|--------|
+| **LCP** (Largest Contentful Paint) | Loading performance |
+| **INP** (Interaction to Next Paint) | Interactivity (thay thế FID) |
+| **CLS** (Cumulative Layout Shift) | Visual stability |
+
+- Data hiển thị dạng **daily và 28-day P75 rollups** với pass/fail status
+- Thresholds dùng để đánh giá **Built for Shopify** — cùng metrics App Store dùng
+- Dashboard chuyển từ Partner Dashboard sang Dev Dashboard (legacy URLs tự redirect)
+- Không cần code changes — telemetry collection giữ nguyên
 
 **Impact:** Developer biết ngay app có đạt chuẩn Built for Shopify hay không, và cần optimize ở đâu.
 

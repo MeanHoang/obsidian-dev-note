@@ -13,7 +13,7 @@
 4. [[05 - APIs - Metafields, Metaobjects, Collections, Inventory]] — Streamlined metafield/metaobject API, ShopifyQL metafields, parallel bulk queries, Collections API, Inventory API idempotency, SKU sharing, webhook field triggers
 5. [[06 - Shopify Functions & Discounts]] — Metaobject trong functions, billing address/PO number, prerequisites, discount config UI extensions, bulk editing
 6. [[07 - Checkout & Customer Accounts]] — Branding API, AI Toolkit checkout, nested cart lines, customer account web component, login_hint, cartToOrderCopyable, standard events, Customer Account API requirement
-7. [[08 - Hydrogen moi]] — Agent-first rebuild, Vercel partnership, Next.js, framework-agnostic toolkit
+7. [[08 - Hydrogen moi|08 - Hydrogen moi]] — Agent-first rebuild, Vercel partnership, Next.js, framework-agnostic toolkit
 8. [[09 - App Distribution - Pricing, Submission, Security]] — Shopify App Pricing, streamlined submission, expiring tokens OAuth 2.0
 9. [[10 - POS UI Extensions]] — Activation status, offline support, localization, camera API, cash management
 10. [[11 - Shop Minis & Sales Channels]] — Minis surfaces/Intents, Sign-in with Shop, multi-channel sales channel, ship+pickup

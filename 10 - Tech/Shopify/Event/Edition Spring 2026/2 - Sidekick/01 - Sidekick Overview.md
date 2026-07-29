@@ -10,9 +10,10 @@ Theo docs chinh thuc, Sidekick la "an AI-enabled commerce assistant in your Shop
 
 - **Task handling:** phan tich data, quan ly orders, edit products
 - **Content creation:** blog posts, product descriptions, images
-- **Custom app generation:** tao app tu mo ta bang ngon ngu tu nhien
-- **Third-party app integration:** tich hop app ben thu 3 thong qua Sidekick app extensions
-- **Personalized responses:** nho lich su hoi thoai de tra loi theo context
+- **Custom app generation:** tao app tu mo ta bang ngon ngu tu nhien (yeu cau Grow plan tro len)
+- **Third-party app integration:** tich hop app ben thu 3 thong qua Sidekick app extensions (toi da 20 apps/user/store)
+- **Personalized responses:** nho lich su hoi thoai de tra loi theo context -- "remembers information from your conversations"
+- **Reusable skills:** save prompts thanh shortcuts de dung lai -- "save them as skills and run them again with a shortcut"
 
 ## Cach tuong tac
 
@@ -22,7 +23,7 @@ Theo docs chinh thuc, Sidekick la "an AI-enabled commerce assistant in your Shop
 | Voice mode | Co | Co | Co (duy nhat) |
 | Screen sharing | Co | Co | Khong |
 
-Tren desktop, giu **Shift + click Sidekick icon** de mo fullscreen mode. Tren mobile, tap maximize icon.
+Tren desktop, giu **Shift + click Sidekick icon** de mo fullscreen mode. Hoac truy cap truc tiep qua `admin.shopify.com/sidekick`. Tren mobile, tap maximize icon.
 
 ## Sidekick Pulse
 
@@ -56,6 +57,8 @@ Merchant co the truy cap Sidekick **tren bat ky man hinh nao** trong Shopify mob
 - Chi ho tro **voice mode**
 - "After you ask your question, your answer is spoken aloud, and a text summary is displayed on your watch."
 - Neu co nhieu stores, response dua tren active store (xac nhan tu complication label)
+- Data refresh moi **15 phut**
+- Co the bat privacy mode qua Settings > Passcode de an data khi locked
 
 **Gioi han Apple Watch:** "Sidekick on Apple Watch is designed for quick answers. It can't do the following: Navigate to pages in the Shopify admin, Make changes to your store, such as editing products or updating settings, Generate content or apps, Use screen sharing or type messages."
 
@@ -72,26 +75,56 @@ Home cards la "blocks of information that change regularly to adapt to your busi
 - Data-driven insights ve store performance
 - Guides cho recommended tasks
 
+**Dismiss:** hover + click X tren desktop, hoac swipe tren mobile (tru order task cards). Co the gui feedback ve ly do dismiss.
+
+**Permanent section:** "Discover more of Shopify" o cuoi feed, khong dismiss duoc.
+
 **Insights section:** tao daily cho stores trung binh 10+ orders/tuan (6 thang gan nhat), toi da 3 insights/ngay, het han sau 24 gio.
+
+3 loai insights:
+1. **Trends over time:** so sanh performance voi giai doan truoc
+2. **Streaks:** patterns tich cuc/tieu cuc lien tuc qua nhieu giai doan
+3. **Top 5 values:** thay doi giua cac dimensions hoat dong tot nhat
+
+Insights bao gom 3 linh vuc:
+- **Sales:** revenue, orders, product performance theo product/region/channel/vendor
+- **Sessions:** visitor changes, cart additions, checkout sessions, conversion rates theo city/country/device type/landing page
+- **Fulfillments:** shipping/delivery efficiency theo carrier/channel/shipping location
 
 ## Sidekick creates customers & fills forms
 
-Merchant mo ta customer bang ngon ngu tu nhien, Sidekick tu dong dien form. Fields do Sidekick dien se **highlight mau tim** de de review.
+Merchant mo ta customer bang ngon ngu tu nhien, Sidekick tu dong dien form. Fields do Sidekick dien se **highlight mau tim** de de review -- "Fields that Sidekick updates are highlighted in purple so you can review the changes."
 
 Ngoai customer, Sidekick con dien duoc:
-- **Products:** tao/edit products, discounts, collections
-- **B2B:** tao company moi
-- **Orders:** edit order -- them product, dieu chinh so luong, quan ly line item discounts, dieu chinh custom shipping fees, set edit reasons
-- **General forms:** dien field tren bat ky trang admin nao, dung reference images hoac direct instructions
+
+| Loai | Chi tiet |
+|------|---------|
+| Customers | Tao customer moi va them thong tin |
+| Products | Tao/edit products, discounts, collections |
+| B2B | "Create new companies with available information" |
+| Orders | Edit order: them product/custom items, dieu chinh so luong, quan ly line item discounts, dieu chinh custom shipping fees, set edit reasons, control customer notifications |
+| General forms | Dien field tren bat ky trang admin nao, dung reference images hoac direct instructions |
 
 "The order updates only after you review the changes and click **Update order**."
 
+Sidekick con tao **guided workflows** cho onboarding va custom task lists cho cong viec cu the -- "guides you through each item" khi tao products.
+
 ## Input features
 
-- Attach hoac upload files
-- **Target mode:** click icon target de chon phan cu the can Sidekick chinh sua
-- **Mention:** products, orders, customers, collections, hoac apps
+- Attach hoac upload files tu admin hoac device
+- **Target mode:** click icon target de chon phan cu the can Sidekick chinh sua -- "select specific admin elements"
+- **Mention:** @mention products, orders, customers, collections, hoac apps
 - **Reusable skills:** save prompts thanh shortcuts de dung lai
+- **Third-party apps:** tuong tac voi installed apps thong qua Sidekick app extensions
+
+## Response actions
+
+- Click right arrow icon de navigate den trang duoc chi dinh
+- Click **"Apply"** de ap dung generated content vao store
+
+## Feedback
+
+Rate responses voi thumbs up/down icons. Co the them chi tiet qua **Add comment** dialog.
 
 ## Limitations chung
 
@@ -100,14 +133,15 @@ Sidekick **khong the**:
 - Chia se private merchant data
 - Edit images trong themes
 - Thay doi bat ky gi ma khong co merchant approval
+- Hoat dong tren tablet devices
 
 ---
 
 ## Chi tiet
 
-- [[02 - Sidekick App Extensions]] -- cach app tich hop Sidekick (developer perspective), rat quan trong voi Shopify app dev
+- [[02 - Sidekick App Extensions]] -- cach app tich hop Sidekick (developer perspective), rat quan trong voi Shopify app dev; bao gom phan tich Smile da tich hop, co hoi cho Joy Loyalty
 - [[03 - Sidekick Admin & Mobile]] -- everywhere, Apple Watch, multi-task, follow-up questions, guidance, creates customers
-- [[04 - Sidekick-generated Apps]] -- tao/edit app bang Sidekick, limitations, version history
+- [[04 - Sidekick-generated Apps]] -- tao/edit app bang Sidekick, plan requirements, limitations, version history
 - [[05 - Sidekick voi Shopify Flow]] -- automation tests voi Sidekick
 
 ---

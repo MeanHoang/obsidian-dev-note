@@ -40,7 +40,24 @@ CLI tự động upgrade cho **minor và patch release**. Major version yêu c�
 | Minor (3.x.0) | Auto upgrade, transparent |
 | Major (4.0.0) | Yêu cầu confirm rõ ràng |
 
-**Impact cho CI/CD:** Pipeline luôn có bản CLI mới nhất với bug fix. Breaking change (major) vẫn cần xác nhận — an toàn cho production.
+### Auto-upgrade exclusions
+
+- **CI environments**: bỏ qua auto-upgrade
+- **Project-local installations**: bỏ qua auto-upgrade
+- **Manual disable**: `shopify config autoupgrade off`
+
+### Deprecated flags/commands removed trong CLI 4.0
+
+| Removed | Thay thế |
+|---------|----------|
+| `--force` flag (`app deploy`, `app release`) | `--allow-updates` + `--allow-deletes` |
+| `--shared-secret` (`app webhook trigger`) | (removed) |
+| `--type` (`app generate extension`) | (removed) |
+| `shopify webhook trigger` | `shopify app webhook trigger` |
+| `shopify theme serve` | `shopify theme dev` |
+| `shopify app generate schema` | `shopify app function schema` |
+
+**Impact cho CI/CD:** Pipeline luôn có bản CLI mới nhất với bug fix. Breaking change (major) vẫn cần xác nhận — an toàn cho production. CI/CD dùng `--force` cần migrate sang `--allow-updates`.
 
 **Availability:** GA
 **Docs:** https://shopify.dev/changelog/shopify-cli-40-semver-auto-updates-removing-deprecated-flags-and-commands

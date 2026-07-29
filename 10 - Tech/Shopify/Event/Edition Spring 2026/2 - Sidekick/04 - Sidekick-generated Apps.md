@@ -18,22 +18,22 @@ Staff members can quyen **"App development > Develop"** de generate hoac edit ap
 
 1. Mo ta app idea cho Sidekick bang ngon ngu tu nhien
 2. Sidekick tao plan va generate app
-3. Co the build complex applications theo tung giai doan (stages)
+3. Co the build complex applications theo tung giai doan (stages) -- Sidekick "may construct the app in multiple stages" cho app phuc tap
 
-**Luu y:** chi kha dung tren **desktop web browser** trong Shopify admin -- khong ho tro mobile devices hoac tablets.
+**Luu y:** chi kha dung tren **desktop web browser** trong Shopify admin -- khong ho tro mobile devices, tablets, hoac mobile web admin.
 
 ---
 
 ## App Editor features
 
 ### Chat-based refinement
-Mo ta thay doi trong chat, Sidekick cap nhat code tuong ung.
+Mo ta thay doi trong chat, Sidekick cap nhat code tuong ung. Merchant refine app thong qua feedback lien tuc.
 
 ### Code editor
 Chuyen doi giua che do xem **code** va **preview**.
 
 ### Targeted editing
-Click **icon target** de chon dung phan can Sidekick chinh sua.
+Click **icon target** de chon dung phan can Sidekick chinh sua -- "target specific sections using the selection tool."
 
 ### Cross-device preview
 Xem truoc app tren ca **Desktop** va **Mobile** view tai cac screen sizes khac nhau.
@@ -44,6 +44,7 @@ Xem truoc app tren ca **Desktop** va **Mobile** view tai cac screen sizes khac n
 
 - Sidekick tao **version moi** moi lan cap nhat app
 - Merchant co the chon giua cac versions va **restore version cu** neu can
+- Cho phep an toan thu nghiem thay doi ma khong mat code truoc do
 
 ---
 
@@ -61,28 +62,30 @@ Generated apps chi truy cap duoc **Admin API**, bao gom:
 
 ## Limitations
 
-- Apps chi hoat dong **trong Shopify admin** -- khong truy cap duoc:
+- Apps chi hoat dong **trong Shopify admin** -- "aren't visible to customers and can't access functions outside the Shopify admin":
   - Themes
   - Checkout
   - Customer account apps
   - Customer-facing functions
-- Co **usage limits theo gio va theo tuan** (tu refresh) -- dua tren app complexity
-- Chi hoat dong tren **desktop web browser**, khong kha dung tren Shopify mobile app hay mobile web admin
+- Co **usage limits theo gio va theo tuan** (tu refresh) -- dua tren app complexity. Merchant nhan thong bao khi gan dat limit.
+- Chi hoat dong tren **desktop web browser**, khong kha dung tren Shopify mobile app, mobile web admin, iPhone, Android, hay tablets
 
 ---
 
 ## Testing & Installation
 
 - **Truoc khi install:** test ky app vi chung co the modify customer-facing store data
-- Merchant co the review permissions
+- Merchant co the review permissions truoc khi install
+- Install qua nut **"Install"** trong editor
 - Uninstall nhu bat ky app thong thuong nao
 
 ---
 
 ## Edit app da co
 
-- Vao **Apps page** > menu options de edit installed apps
-- Hoac tiep tuc edit app dang lam do tu previous Sidekick conversations
+2 cach:
+1. Vao **Apps page** > menu options de edit installed apps
+2. Tiep tuc edit app dang lam do tu previous Sidekick conversations
 
 ---
 

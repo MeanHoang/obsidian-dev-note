@@ -25,7 +25,24 @@ claude mcp add --transport stdio shopify-dev-mcp -- npx -y @shopify/dev-mcp@late
 codex plugin add shopify@openai-curated
 ```
 
-**Cursor:** `/add-plugin shopify` trong Chat, hoặc MCP config:
+**Codex CLI** (`~/.codex/config.toml`):
+```toml
+[mcp_servers.shopify-dev-mcp]
+command = "npx"
+args = ["-y", "@shopify/dev-mcp@latest"]
+```
+
+**Antigravity CLI:**
+```bash
+agy plugin install https://github.com/Shopify/shopify-ai-toolkit
+```
+
+**Antigravity CLI MCP** (`~/.gemini/config/mcp_config.json`):
+```json
+{"mcpServers": {"shopify-dev-mcp": {"command": "npx", "args": ["-y", "@shopify/dev-mcp@latest"]}}}
+```
+
+**Cursor:** `/add-plugin shopify` trong Chat, hoặc MCP config (Settings > Tools and MCP > New MCP server):
 ```json
 {
   "mcpServers": {
@@ -37,8 +54,17 @@ codex plugin add shopify@openai-curated
 }
 ```
 
-**Manual skills:**
+**VS Code:** Command Palette > "MCP: Open User Configuration", thêm vào `mcp.json`:
+```json
+{"servers": {"shopify-dev-mcp": {"command": "npx", "args": ["-y", "@shopify/dev-mcp@latest"]}}}
+```
+
+**Manual skills (install all hoặc specific):**
 ```bash
+# Tất cả skills
+npx skills add Shopify/shopify-ai-toolkit
+
+# Chỉ Admin API skill
 npx skills add Shopify/shopify-ai-toolkit --skill shopify-admin
 ```
 
