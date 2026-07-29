@@ -1,4 +1,4 @@
-# Shopify Editions Spring '26 — Hydrogen moi
+# Shopify Editions Spring '26 — Hydrogen mới
 
 > Hydrogen viết lại từ đầu: từ opinionated Remix framework thành modular toolkit framework-agnostic. Agent-first, Vercel partnership, hỗ trợ Next.js + bất kỳ framework nào.
 

@@ -1,60 +1,60 @@
 # Sidekick App Extensions (Developer)
 
-Day la phan **quan trong nhat** voi Shopify app developer -- cach build Sidekick app extensions de app cua minh tich hop vao Sidekick. File nay viet KY vi lien quan truc tiep den cong viec tai Joy Loyalty.
+Đây là phần **quan trọng nhất** với Shopify app developer — cách build Sidekick app extensions để app của mình tích hợp vào Sidekick. File này viết KỸ vì liên quan trực tiếp đến công việc tại Joy Loyalty.
 
 ---
 
-## Tong quan
+## Tổng quan
 
-Sidekick app extensions cho phep app ben thu 3 expose data va workflows vao Sidekick. Khi merchant hoi Sidekick, no co the truy cap thong tin tu app va thuc hien thao tac.
+Sidekick app extensions cho phép app bên thứ 3 expose data và workflows vào Sidekick. Khi merchant hỏi Sidekick, nó có thể truy cập thông tin từ app và thực hiện thao tác.
 
 > "When a merchant invokes an app extension, Shopify's platform powers the interaction. The app extension is executed in the Shopify sandbox, and has access to the same APIs as your app."
 
 **Timeline:**
-- **13/05/2026:** Early access program bat dau voi 18 launch partners
-- **17/06/2026:** General availability cho tat ca app developers + App Store requirements co hieu luc
-- **18/06/2026:** Smile.io launch Sidekick extension (xem phan Smile analysis ben duoi)
+- **13/05/2026:** Early access program bắt đầu với 18 launch partners
+- **17/06/2026:** General availability cho tất cả app developers + App Store requirements có hiệu lực
+- **18/06/2026:** Smile.io launch Sidekick extension (xem phần Smile analysis bên dưới)
 
-**Gioi han:** toi da **20 apps** cho moi user tren 1 store.
+**Giới hạn:** tối đa **20 apps** cho mỗi user trên 1 store.
 
 ---
 
-## 2 loai extension
+## 2 loại extension
 
 ### 1. Data Extensions (`admin.app.tools.data`)
 
-Cho phep Sidekick **tim kiem va hien thi** data tu app. Headless execution -- khong render UI.
+Cho phép Sidekick **tìm kiếm và hiển thị** data từ app. Headless execution — không render UI.
 
-- Merchant hoi Sidekick, Sidekick goi tool cua app, tra ve ket qua dang resource links
-- Click ket qua navigate thang den trang tuong ung trong app
-- **Chi read-only** -- mutations thuoc ve action extensions
+- Merchant hỏi Sidekick, Sidekick gọi tool của app, trả về kết quả dạng resource links
+- Click kết quả navigate thẳng đến trang tương ứng trong app
+- **Chỉ read-only** — mutations thuộc về action extensions
 
 ### 2. Action Extensions
 
-Co 2 sub-types:
+Có 2 sub-types:
 
 **Admin Link** (`admin.app.intent.link`):
-- Navigate merchant den URL trong app
-- Khong yeu cau API version cu the
-- Ho tro App Home va standalone apps
+- Navigate merchant đến URL trong app
+- Không yêu cầu API version cụ thể
+- Hỗ trợ App Home và standalone apps
 
 **UI Extension** (`admin.app.intent.render`):
 - Render admin UI extension inline (trong modal)
-- Yeu cau **API version 2026-04** tro len
-- Focused UI -- merchant khong roi khoi admin
+- Yêu cầu **API version 2026-04** trở lên
+- Focused UI — merchant không rời khỏi admin
 
-Merchant luon giu quyen kiem soat -- Sidekick goi y thay doi nhung khong tu dong commit.
+Merchant luôn giữ quyền kiểm soát — Sidekick gợi ý thay đổi nhưng không tự động commit.
 
 ---
 
 ## Requirements
 
-- App dung Shopify scaffolding tools (`shopify app scaffold`)
+- App dùng Shopify scaffolding tools (`shopify app scaffold`)
 - Latest **App Bridge** version (cho App Home)
-- Authentication: **Shopify managed install + token exchange** (khong dung legacy OAuth)
-- Them `extensions_summary` vao `shopify.app.toml` (bat buoc)
-- **Shopify CLI 3.90.0** tro len (cho data extensions)
-- CORS allowlist phai bao gom `https://extensions.shopifycdn.com`
+- Authentication: **Shopify managed install + token exchange** (không dùng legacy OAuth)
+- Thêm `extensions_summary` vào `shopify.app.toml` (bắt buộc)
+- **Shopify CLI 3.90.0** trở lên (cho data extensions)
+- CORS allowlist phải bao gồm `https://extensions.shopifycdn.com`
 
 ## Performance limits
 
@@ -76,38 +76,38 @@ Merchant luon giu quyen kiem soat -- Sidekick goi y thay doi nhung khong tu dong
 
 ## Configuration: `extensions_summary`
 
-Them vao `shopify.app.toml` duoi `[sidekick]`:
+Thêm vào `shopify.app.toml` dưới `[sidekick]`:
 
 ```toml
 [sidekick]
 extensions_summary = "Search, Create, and Edit Email and SMS campaigns"
 ```
 
-- **Bat buoc** -- bo qua se bi validation error khi deploy
-- Gioi han **256 tokens**
-- Mo ta cu the actions va domain/entity types
-- Sidekick dung summary nay de route merchant questions den dung app
+- **Bắt buộc** — bỏ qua sẽ bị validation error khi deploy
+- Giới hạn **256 tokens**
+- Mô tả cụ thể actions và domain/entity types
+- Sidekick dùng summary này để route merchant questions đến đúng app
 
 ## Extension `description`
 
-Trong `shopify.extension.toml`, field `description` giup Sidekick xac dinh khi nao nen goi extension:
+Trong `shopify.extension.toml`, field `description` giúp Sidekick xác định khi nào nên gọi extension:
 
-- Gioi han **256 tokens**
-- Phai cu the ve domain (email campaigns, product reviews, loyalty program...)
-- Tranh generic nhu "Search extension for your app" hoac "Tools for your app"
+- Giới hạn **256 tokens**
+- Phải cụ thể về domain (email campaigns, product reviews, loyalty program...)
+- Tránh generic như "Search extension for your app" hoặc "Tools for your app"
 
-**Vi du tot:** "Search and view email campaign performance metrics"
-**Vi du xau:** "General tools for managing things in your app"
+**Ví dụ tốt:** "Search and view email campaign performance metrics"
+**Ví dụ xấu:** "General tools for managing things in your app"
 
 ## Instructions file (`instructions.md`)
 
-Optional nhung **recommended** -- giup Sidekick hieu cach dung tools cua app:
+Optional nhưng **recommended** — giúp Sidekick hiểu cách dùng tools của app:
 
-- Gioi han **2,048 tokens**
-- Mo ta khi nao dung tool nao, common workflows, important guidelines
-- **Khong duoc** chua behavioral overrides (chi guidance)
+- Giới hạn **2,048 tokens**
+- Mô tả khi nào dùng tool nào, common workflows, important guidelines
+- **Không được** chứa behavioral overrides (chỉ guidance)
 
-Vi du:
+Ví dụ:
 
 ```md
 ## When to Use Loyalty Tools
@@ -135,7 +135,7 @@ Use these tools when the merchant asks about:
 shopify app generate extension --template app_data --name search-campaigns
 ```
 
-### 2. Cau truc thu muc
+### 2. Cấu trúc thư mục
 
 ```
 extensions/search-campaigns/
@@ -164,10 +164,10 @@ tools = "./tools.json"
 instructions = "./instructions.md"
 ```
 
-**Luu y:**
-- Target `admin.app.tools.data` la headless, khong tie vao Shopify resources
-- `description` bat buoc, phai cu the ve domain va tasks
-- `instructions` optional nhung recommended
+**Lưu ý:**
+- Target `admin.app.tools.data` là headless, không tie vào Shopify resources
+- `description` bắt buộc, phải cụ thể về domain và tasks
+- `instructions` optional nhưng recommended
 
 ### 4. Implement tool handler (`src/index.js`)
 
@@ -189,11 +189,11 @@ export default () => {
 ```
 
 **Execution context:**
-- Chay **client-side** trong Shopify's sandboxed browser environment
-- Tu dong invoked khi extension duoc goi
-- Co access den Direct API (GraphQL) va App Authentication
-- Response phai la **JSON only**
-- Response phai duoi **1 second** va **4,000 tokens** -- vuot qua se bi reject hoac skip
+- Chạy **client-side** trong Shopify's sandboxed browser environment
+- Tự động invoked khi extension được gọi
+- Có access đến Direct API (GraphQL) và App Authentication
+- Response phải là **JSON only**
+- Response phải dưới **1 second** và **4,000 tokens** — vượt quá sẽ bị reject hoặc skip
 
 ### 5. Define `tools.json`
 
@@ -237,11 +237,11 @@ export default () => {
 - Tool `name`: max 64 characters
 - Tool `description`: max 512 characters
 - Max 20 tools per app (shared across data + action)
-- Tool schemas **cho phep** `required` fields (khac voi intent schemas)
+- Tool schemas **cho phép** `required` fields (khác với intent schemas)
 
 ### 6. Output format: Resource Links
 
-Dung **Model Context Protocol's Resource Links** format de ket noi data extension voi action extensions:
+Dùng **Model Context Protocol's Resource Links** format để kết nối data extension với action extensions:
 
 ```json
 {
@@ -261,19 +261,19 @@ Dung **Model Context Protocol's Resource Links** format de ket noi data extensio
 }
 ```
 
-| Field | Required | Muc dich |
+| Field | Required | Mục đích |
 |-------|----------|----------|
-| `type` | Co | Phai la `"resource_link"` |
-| `uri` | Co | Stable identifier (VD: `gid://application/email/123`) -- required cho GID substitution |
-| `name` | Co | Human-readable label |
-| `mimeType` | Co | Phai khop voi action extension's `type` (VD: `application/email`) |
-| `_meta` | Khong | Summary data cho model reasoning -- chi essential fields (status, dates, key metrics) |
+| `type` | Có | Phải là `"resource_link"` |
+| `uri` | Có | Stable identifier (VD: `gid://application/email/123`) — required cho GID substitution |
+| `name` | Có | Human-readable label |
+| `mimeType` | Có | Phải khớp với action extension's `type` (VD: `application/email`) |
+| `_meta` | Không | Summary data cho model reasoning — chỉ essential fields (status, dates, key metrics) |
 
 **Best practices cho `_meta`:**
-- Giu concise, chi essential fields
-- Dung `uri` cho complete resource details
-- Match `mimeType` voi intent `type` configuration de link data -> action
-- Dung stable URIs persist across sessions
+- Giữ concise, chỉ essential fields
+- Dùng `uri` cho complete resource details
+- Match `mimeType` với intent `type` configuration để link data -> action
+- Dùng stable URIs persist across sessions
 
 ### Alternative: Embedded App Links
 
@@ -287,13 +287,13 @@ Dung **Model Context Protocol's Resource Links** format de ket noi data extensio
 }
 ```
 
-Sidekick resolve `app://` URLs dua tren embedded app's base URL.
+Sidekick resolve `app://` URLs dựa trên embedded app's base URL.
 
 ### 7. Authentication
 
 **Client-side (sandbox context):**
-- Shopify tu dong attach `Authorization` header cho requests den app's configured auth domain (va subdomains)
-- Voi external domains: goi `auth.idToken()` va attach bearer token thu cong
+- Shopify tự động attach `Authorization` header cho requests đến app's configured auth domain (và subdomains)
+- Với external domains: gọi `auth.idToken()` và attach bearer token thủ công
 
 **Server-side (React Router template):**
 ```js
@@ -301,11 +301,11 @@ const {cors} = await authenticate.admin(request);
 return cors(json({...}));
 ```
 
-- Goi `authenticate.admin(request)` de validate session tokens
-- Cross-origin requests tu sandbox can CORS helper
-- Token exchange thay the legacy OAuth flow
+- Gọi `authenticate.admin(request)` để validate session tokens
+- Cross-origin requests từ sandbox cần CORS helper
+- Token exchange thay thế legacy OAuth flow
 
-**CORS config:** them `https://extensions.shopifycdn.com` vao allowlist.
+**CORS config:** thêm `https://extensions.shopifycdn.com` vào allowlist.
 
 ---
 
@@ -317,7 +317,7 @@ return cors(json({...}));
 shopify app generate extension --template app_action_link --name open-email
 ```
 
-### 2. Cau truc thu muc
+### 2. Cấu trúc thư mục
 
 ```
 extensions/open-email/
@@ -349,8 +349,8 @@ action = "edit"
 schema = "./email-schema.json"
 ```
 
-- `url` co the chua `{placeholder}` -- duoc thay the khi invocation
-- Placeholder can truong tuong ung trong schema voi `mapTo: "param"`
+- `url` có thể chứa `{placeholder}` — được thay thế khi invocation
+- Placeholder cần trường tương ứng trong schema với `mapTo: "param"`
 
 ### 4. Intent schema (`email-schema.json`)
 
@@ -388,10 +388,10 @@ schema = "./email-schema.json"
 ```
 
 **Schema rules:**
-- `inputSchema` bat buoc, phai reference schema matching `type`
-- **Khong co `required` fields** -- tat ca treated as optional (ca top level va nested)
-- Phai giu `$ref` cung voi `type` va `properties` (hop le trong JSON Schema 2020-12)
-- Declaring unsupported `type` (VD: `application/my-resource`) se bi reject khi deploy: `Intent is invalid: type '<value>' is not supported`
+- `inputSchema` bắt buộc, phải reference schema matching `type`
+- **Không có `required` fields** — tất cả treated as optional (cả top level và nested)
+- Phải giữ `$ref` cùng với `type` và `properties` (hợp lệ trong JSON Schema 2020-12)
+- Declaring unsupported `type` (VD: `application/my-resource`) sẽ bị reject khi deploy: `Intent is invalid: type '<value>' is not supported`
 
 ### 5. Tools (`tools.json`)
 
@@ -418,12 +418,12 @@ schema = "./email-schema.json"
 ]
 ```
 
-- Tools execute **sau khi** page mo, khong phai truoc -- "tools declared in this tools.json execute while the intent's destination page is open"
-- It nhat 1 tool per intent -- "Sidekick only supports invoking intents that have tools"
-- Moi tool phai register tai runtime qua `shopify.tools.register`
-- **Khong duplicate** intent's action trong tool -- tool bo sung chuc nang, khong lap lai
+- Tools execute **sau khi** page mở, không phải trước — "tools declared in this tools.json execute while the intent's destination page is open"
+- Ít nhất 1 tool per intent — "Sidekick only supports invoking intents that have tools"
+- Mỗi tool phải register tại runtime qua `shopify.tools.register`
+- **Không duplicate** intent's action trong tool — tool bổ sung chức năng, không lặp lại
 
-### 6. Bind tool handlers tai runtime
+### 6. Bind tool handlers tại runtime
 
 ```jsx
 import {useEffect} from 'react';
@@ -448,20 +448,20 @@ export default function CampaignEditor() {
 ```
 
 **Lifecycle:**
-- Handler chay khi page mount
-- Re-register khi dependencies thay doi
-- Goi cleanup function khi component unmount
-- `shopify.tools.register` tra ve cleanup function
+- Handler chạy khi page mount
+- Re-register khi dependencies thay đổi
+- Gọi cleanup function khi component unmount
+- `shopify.tools.register` trả về cleanup function
 
-### 7. Doc intent payload
+### 7. Đọc intent payload
 
 **Synchronous access:**
 ```js
 const request = shopify.intents.request?.value;
 if (request) {
-  // request.action: 'create' hoac 'edit'
+  // request.action: 'create' hoặc 'edit'
   // request.type: match type trong shopify.extension.toml
-  // request.data: fields tu inputSchema.properties
+  // request.data: fields từ inputSchema.properties
   // request.value: primary resource identifier (GID)
   hydrateForm(request);
 }
@@ -474,18 +474,18 @@ if (shopify.intents.request) {
 }
 ```
 
-**Query parameter access:** payload cung duoc append dang `?intent=<URL-encoded JSON>` query parameter -- truy cap dong bo truoc khi App Bridge load.
+**Query parameter access:** payload cũng được append dạng `?intent=<URL-encoded JSON>` query parameter — truy cập đồng bộ trước khi App Bridge load.
 
 ### 8. Resolve intent
 
 ```js
-// Thanh cong -- pass any data invoker needs
+// Thành công — pass any data invoker needs
 await shopify.intents.response.ok({campaignId: 'gid://shopify/EmailCampaign/123'});
 
-// Loi -- tra ve error message
+// Lỗi — trả về error message
 await shopify.intents.response.error('Could not save the campaign.');
 
-// Merchant huy
+// Merchant huỷ
 await shopify.intents.response.closed();
 ```
 
@@ -493,13 +493,13 @@ await shopify.intents.response.closed();
 
 ## Build Action Extension (UI Extension)
 
-Tuong tu Admin Link nhung render inline (trong modal) thay vi navigate:
+Tương tự Admin Link nhưng render inline (trong modal) thay vì navigate:
 
 ```bash
 shopify app generate extension --template app_action --name open-email
 ```
 
-### Config khac biet
+### Config khác biệt
 
 ```toml
 api_version = "2026-04"
@@ -522,10 +522,10 @@ action = "edit"
 schema = "./intent-schema.json"
 ```
 
-- `api_version = "2026-04"` bat buoc
-- `type = "ui_extension"` thay vi `admin_link`
-- `target = "admin.app.intent.render"` thay vi `admin.app.intent.link`
-- Dung `module` thay vi `url`
+- `api_version = "2026-04"` bắt buộc
+- `type = "ui_extension"` thay vì `admin_link`
+- `target = "admin.app.intent.render"` thay vì `admin.app.intent.link`
+- Dùng `module` thay vì `url`
 
 ### UI Extension component example
 
@@ -572,18 +572,18 @@ function OpenEmail() {
 }
 ```
 
-**Luu y UI Extension:**
-- "Don't make the callback itself async and don't await shopify.intents.response.ok" -- host callbacks khong await returned promises
-- Neu can async work, dung `event.waitUntil(promise)`
+**Lưu ý UI Extension:**
+- "Don't make the callback itself async and don't await shopify.intents.response.ok" — host callbacks không await returned promises
+- Nếu cần async work, dùng `event.waitUntil(promise)`
 
-### Navigation constraint quan trong
+### Navigation constraint quan trọng
 
 > "An intent is bound to exactly one pathname: the url declared on your extension's admin.app.intent.link target."
 
-- Navigation thay doi pathname se **dong modal** (silent, khong error)
-- Query string updates **khong** dong modal
-- Hash fragment updates **khong** dong modal
-- Dung query parameters hoac component state de xu ly nhieu UI states
+- Navigation thay đổi pathname sẽ **đóng modal** (silent, không error)
+- Query string updates **không** đóng modal
+- Hash fragment updates **không** đóng modal
+- Dùng query parameters hoặc component state để xử lý nhiều UI states
 
 ```jsx
 export async function loader({ request }) {
@@ -605,17 +605,17 @@ export default function Customers() {
 
 ## URL Parameter Mapping (mapTo)
 
-| Value | Effect | Vi du |
+| Value | Effect | Ví dụ |
 |-------|--------|-------|
-| `param` | Thay vao `{placeholder}` trong URL path | `/app/campaigns/{id}` -> `/app/campaigns/123` |
-| `query_param` | Append vao query string | `/app/campaigns?status=draft` |
-| `form_data` | Gui trong request body (default cho inputSchema properties) | |
-| `hash` | Append vao URL hash | `/app/campaigns#edit` |
+| `param` | Thay vào `{placeholder}` trong URL path | `/app/campaigns/{id}` -> `/app/campaigns/123` |
+| `query_param` | Append vào query string | `/app/campaigns?status=draft` |
+| `form_data` | Gửi trong request body (default cho inputSchema properties) | |
+| `hash` | Append vào URL hash | `/app/campaigns#edit` |
 
 **fieldName usage:**
-- Maps schema property key den destination parameter name
-- Required tren top-level `value` khi dung `mapTo: "param"` hoac `"query_param"`
-- Optional tren `inputSchema` properties khi key da match placeholder name
+- Maps schema property key đến destination parameter name
+- Required trên top-level `value` khi dùng `mapTo: "param"` hoặc `"query_param"`
+- Optional trên `inputSchema` properties khi key đã match placeholder name
 
 ```json
 "reviewId": {
@@ -624,13 +624,13 @@ export default function Customers() {
   "fieldName": "id"
 }
 ```
-Voi `url = "/app/reviews/{id}/edit"` -> `/app/reviews/<reviewId>/edit`
+Với `url = "/app/reviews/{id}/edit"` -> `/app/reviews/<reviewId>/edit`
 
-**GID handling:** khi value mapped to `param` la GID (bat dau bang `gid://`), Sidekick extract bare tail identifier sau `/` cuoi cung. VD: `gid://shopify/EmailCampaign/123` -> `123`. Route reads bare identifier tu path params (`useParams()`), khong phai full GID.
+**GID handling:** khi value mapped to `param` là GID (bắt đầu bằng `gid://`), Sidekick extract bare tail identifier sau `/` cuối cùng. VD: `gid://shopify/EmailCampaign/123` -> `123`. Route reads bare identifier từ path params (`useParams()`), không phải full GID.
 
 ## matchValue cho Intent Disambiguation
 
-Khi nhieu intents cung `type:action` pair, dung `matchValue` de phan biet:
+Khi nhiều intents cùng `type:action` pair, dùng `matchValue` để phân biệt:
 
 ```json
 // edit-sms-campaign/schema.json
@@ -646,7 +646,7 @@ Khi nhieu intents cung `type:action` pair, dung `matchValue` de phan biet:
 }
 ```
 
-Invoke truc tiep: `intents.invoke("edit:application/campaign", { data: { channel: "sms" } })`
+Invoke trực tiếp: `intents.invoke("edit:application/campaign", { data: { channel: "sms" } })`
 
 ---
 
@@ -676,41 +676,41 @@ Schema base URL: `https://extensions.shopifycdn.com/shopifycloud/schemas/v1/`
 | `shopify/order` | import, import+bulk | `shopify-intent.json` / `shopify-intent-bulk.json` |
 | `shopify/product` | import, import+bulk | `shopify-intent.json` / `shopify-intent-bulk.json` |
 
-**Phan biet:**
+**Phân biệt:**
 - `application/*`: app owns data shape
-- `shopify/*`: tao/import Shopify-native resources
-- Single imports (`import`): tra ve `id` trong `outputSchema`, dung meta-schema `shopify-intent.json`
-- Bulk imports (`import+bulk`): tra ve `ids` array, dung meta-schema `shopify-intent-bulk.json`
+- `shopify/*`: tạo/import Shopify-native resources
+- Single imports (`import`): trả về `id` trong `outputSchema`, dùng meta-schema `shopify-intent.json`
+- Bulk imports (`import+bulk`): trả về `ids` array, dùng meta-schema `shopify-intent-bulk.json`
 
 ---
 
 ## Content & Safety Policy
 
-### Kiem tra tai 2 thoi diem:
+### Kiểm tra tại 2 thời điểm:
 1. **At deployment:** extension descriptions, tool descriptions, instructions, input schemas
-2. **At runtime:** response data truoc khi dua vao conversation
+2. **At runtime:** response data trước khi đưa vào conversation
 
 ### Approved practices:
-- Mo ta ro rang, factual
+- Mô tả rõ ràng, factual
 - Return structured data match tool purpose
-- Data extensions chi **read-only**; mutations thuoc ve action extensions
+- Data extensions chỉ **read-only**; mutations thuộc về action extensions
 
 ### Prohibited practices:
-- Override Sidekick's decision-making hoac bypass merchant confirmation
-- Dung extensions de ban hang (upsells, plan nudges, false urgency)
-- Them promotional content khong lien quan
-- Embed credentials hoac unrequested customer data
+- Override Sidekick's decision-making hoặc bypass merchant confirmation
+- Dùng extensions để bán hàng (upsells, plan nudges, false urgency)
+- Thêm promotional content không liên quan
+- Embed credentials hoặc unrequested customer data
 
-## App Store requirements (hieu luc 17/06/2026)
+## App Store requirements (hiệu lực 17/06/2026)
 
-**Requirement 2.2.8 -- Functional Alignment:** "Sidekick app extensions must operate within the scope of your app's core functionality." Config, App Store listing, va behavior phai nhat quan -- "materially consistent."
+**Requirement 2.2.8 — Functional Alignment:** "Sidekick app extensions must operate within the scope of your app's core functionality." Config, App Store listing, và behavior phải nhất quán — "materially consistent."
 
-Developer phai audit 3 thu:
+Developer phải audit 3 thứ:
 1. Extension TOML configuration
 2. Runtime behavior within Sidekick
 3. Public App Store listing descriptions
 
-**Requirement 2.2.9 -- No Promotions:** "Don't use Sidekick app extensions to promote your app, promote related apps, or request reviews." Khong promotional content, advertisements, cross-sell.
+**Requirement 2.2.9 — No Promotions:** "Don't use Sidekick app extensions to promote your app, promote related apps, or request reviews." Không promotional content, advertisements, cross-sell.
 
 ---
 
@@ -718,47 +718,47 @@ Developer phai audit 3 thu:
 
 1. **Unmapped URL Placeholders:** "If your url contains a placeholder such as {id}, then something in the schema must map to it."
 2. **Removing `$ref` from `inputSchema`:** Error: `Intent is invalid: a $ref for the inputSchema matching the intent type must be present`
-3. **Adding `required` to Intent Schema:** Error: `Intent is invalid: inputSchema must not have required fields`. Chi apply cho intent schemas; tool schemas cho phep `required`.
-4. **Wrong Meta-schema cho Shopify Intents:** `import` yeu cau `shopify-intent.json`; `import+bulk` yeu cau `shopify-intent-bulk.json`
+3. **Adding `required` to Intent Schema:** Error: `Intent is invalid: inputSchema must not have required fields`. Chỉ apply cho intent schemas; tool schemas cho phép `required`.
+4. **Wrong Meta-schema cho Shopify Intents:** `import` yêu cầu `shopify-intent.json`; `import+bulk` yêu cầu `shopify-intent-bulk.json`
 5. **Missing GID `$ref` trong outputSchema:** Required cho Shopify resource intents
-6. **Dung `application/*` voi shopify-intent schemas:** Type mismatch se bi deploy error
+6. **Dùng `application/*` với shopify-intent schemas:** Type mismatch sẽ bị deploy error
 
 ---
 
 ## Testing & Development
 
-- Chay `shopify app dev` de start local dev server
-- Install app tren dev store, truy cap Sidekick qua admin -- **mo dev store truc tiep trong browser** (CLI's `p` shortcut khong ho tro cho Sidekick extensions)
-- **Sidekick Events** hien trong Dev Dashboard -- status `OK` hoac `Error`, scan target (`extensions/security_scan`), timestamp
-- Hot reload tu dong rerun scans sau khi fix -- khong can restart
-- Browser dev console hien execution logs va errors
-- Client-side logs/errors hien trong browser developer console
+- Chạy `shopify app dev` để start local dev server
+- Install app trên dev store, truy cập Sidekick qua admin — **mở dev store trực tiếp trong browser** (CLI's `p` shortcut không hỗ trợ cho Sidekick extensions)
+- **Sidekick Events** hiện trong Dev Dashboard — status `OK` hoặc `Error`, scan target (`extensions/security_scan`), timestamp
+- Hot reload tự động rerun scans sau khi fix — không cần restart
+- Browser dev console hiện execution logs và errors
+- Client-side logs/errors hiện trong browser developer console
 
 ## End-to-end workflow
 
-1. Data extension's tool tra ve resource links voi matching `mimeType`
-2. Sidekick hien ket qua, user chon 1
-3. Sidekick invoke intent voi resource's `uri` lam `value`
-4. App navigate den `url` voi substituted parameter (GID -> bare tail)
-5. Component mount va register tool handlers
-6. Merchant yeu cau tool action qua Sidekick
-7. Handler execute va tra ve result
-8. Merchant confirm/save (Sidekick khong auto-commit)
-9. Extension goi `shopify.intents.response.ok()` de resolve
+1. Data extension's tool trả về resource links với matching `mimeType`
+2. Sidekick hiện kết quả, user chọn 1
+3. Sidekick invoke intent với resource's `uri` làm `value`
+4. App navigate đến `url` với substituted parameter (GID -> bare tail)
+5. Component mount và register tool handlers
+6. Merchant yêu cầu tool action qua Sidekick
+7. Handler execute và trả về result
+8. Merchant confirm/save (Sidekick không auto-commit)
+9. Extension gọi `shopify.intents.response.ok()` để resolve
 
 ---
 
-## Phan tich doi thu: Smile.io da tich hop Sidekick
+## Phân tích đối thủ: Smile.io đã tích hợp Sidekick
 
 ### Smile's Sidekick App Extension
 
-**Launch date:** 18/06/2026 (1 ngay sau GA)
+**Launch date:** 18/06/2026 (1 ngày sau GA)
 
-Smile la mot trong 18 launch partners tham gia early access program. Extension cua ho la **data extension** (read-only), cho phep merchant query loyalty data qua Sidekick.
+Smile là một trong 18 launch partners tham gia early access program. Extension của họ là **data extension** (read-only), cho phép merchant query loyalty data qua Sidekick.
 
-### 5 linh vuc data Smile expose:
+### 5 lĩnh vực data Smile expose:
 
-| Linh vuc | Vi du cau hoi merchant co the hoi |
+| Lĩnh vực | Ví dụ câu hỏi merchant có thể hỏi |
 |----------|-----------------------------------|
 | **Business Growth** | "What's my loyalty-driven revenue over the last 30 days?" |
 | **Performance Benchmarks** | "What's my points redemption rate, and is it healthy?" |
@@ -766,7 +766,7 @@ Smile la mot trong 18 launch partners tham gia early access program. Extension c
 | **Points Activity** | Monthly points engagement metrics |
 | **Referrals** | "What's my referral revenue this month?" |
 
-### Data elements Smile tra ve:
+### Data elements Smile trả về:
 - Repeat purchase rate
 - Member lifetime value (LTV)
 - VIP status
@@ -776,20 +776,20 @@ Smile la mot trong 18 launch partners tham gia early access program. Extension c
 - Contextual notes khi program components inactive
 
 ### Format response:
-Sidekick tra ve natural language, bao gom merchant's currency, data freshness timestamps, va contextual notes.
+Sidekick trả về natural language, bao gồm merchant's currency, data freshness timestamps, và contextual notes.
 
 ---
 
-## Co hoi cho Joy Loyalty: Build Sidekick Extension
+## Cơ hội cho Joy Loyalty: Build Sidekick Extension
 
-### Tai sao can lam ngay
+### Tại sao cần làm ngay
 
-1. **Smile da co mat** -- doi thu truc tiep da launch, merchant dang quen hoi Sidekick ve loyalty data cua Smile
-2. **Intent type san co:** `application/loyalty-program` la supported type -- Shopify da design san cho loyalty apps
-3. **18 launch partners** da co -- cang cham cang mat competitive advantage
-4. **GA da mo** tu 17/06/2026 -- bat ky app developer nao deu co the build
+1. **Smile đã có mặt** — đối thủ trực tiếp đã launch, merchant đang quen hỏi Sidekick về loyalty data của Smile
+2. **Intent type sẵn có:** `application/loyalty-program` là supported type — Shopify đã design sẵn cho loyalty apps
+3. **18 launch partners** đã có — càng chậm càng mất competitive advantage
+4. **GA đã mở** từ 17/06/2026 — bất kỳ app developer nào đều có thể build
 
-### Loyalty Program Schema (tu Shopify CDN)
+### Loyalty Program Schema (từ Shopify CDN)
 
 ```json
 {
@@ -807,38 +807,38 @@ Sidekick tra ve natural language, bao gom merchant's currency, data freshness ti
 }
 ```
 
-Schema don gian, `additionalProperties: true` -- cho phep app tu dinh nghia them properties tuy y.
+Schema đơn giản, `additionalProperties: true` — cho phép app tự định nghĩa thêm properties tuỳ ý.
 
-### Ke hoach build (goi y)
+### Kế hoạch build (gợi ý)
 
-**Phase 1: Data Extension (nhanh nhat, bat kip Smile)**
+**Phase 1: Data Extension (nhanh nhất, bắt kịp Smile)**
 
-`extensions_summary` goi y:
+`extensions_summary` gợi ý:
 
 ```toml
 [sidekick]
 extensions_summary = "Search loyalty program performance, member segments, points activity, referral metrics, and VIP tier data"
 ```
 
-Tools goi y:
+Tools gợi ý:
 
-| Tool | Muc dich | Response time target |
+| Tool | Mục đích | Response time target |
 |------|----------|---------------------|
-| `get_loyalty_overview` | Tong quan: revenue, members, redemption rate | < 1s |
-| `get_member_segments` | So sanh member vs non-member (AOV, LTV, purchase frequency) | < 1s |
-| `get_points_activity` | Points earned/redeemed/expired theo thoi gian | < 1s |
+| `get_loyalty_overview` | Tổng quan: revenue, members, redemption rate | < 1s |
+| `get_member_segments` | So sánh member vs non-member (AOV, LTV, purchase frequency) | < 1s |
+| `get_points_activity` | Points earned/redeemed/expired theo thời gian | < 1s |
 | `get_referral_stats` | Referral revenue, conversion rate | < 1s |
 | `get_vip_tiers` | VIP tier distribution, tier-specific metrics | < 1s |
 | `get_reward_performance` | Reward catalog performance, popular rewards | < 1s |
 
-**Loi the hon Smile co the khai thac:**
-- Joy co VIP tiers chi tiet hon -> expose tier distribution, tier-specific AOV
-- Joy co reward catalog da dang hon -> expose reward performance metrics
-- Joy ho tro nhieu loai earning rules -> expose earning breakdown
+**Lợi thế hơn Smile có thể khai thác:**
+- Joy có VIP tiers chi tiết hơn -> expose tier distribution, tier-specific AOV
+- Joy có reward catalog đa dạng hơn -> expose reward performance metrics
+- Joy hỗ trợ nhiều loại earning rules -> expose earning breakdown
 
-**Phase 2: Action Extension (tao loi the)**
+**Phase 2: Action Extension (tạo lợi thế)**
 
-Dung `application/loyalty-program` intent type voi actions `create` va `edit`:
+Dùng `application/loyalty-program` intent type với actions `create` và `edit`:
 
 ```toml
 [[extensions.targeting.intents]]
@@ -847,13 +847,13 @@ action = "edit"
 schema = "./loyalty-schema.json"
 ```
 
-Merchant co the nho Sidekick: "Edit my loyalty program to add a new VIP tier" -> Sidekick navigate den Joy app voi context.
+Merchant có thể nhờ Sidekick: "Edit my loyalty program to add a new VIP tier" -> Sidekick navigate đến Joy app với context.
 
-**Luu y:** Smile hien tai chi co data extension (read-only). Neu Joy launch ca action extension, do la competitive advantage ro rang.
+**Lưu ý:** Smile hiện tại chỉ có data extension (read-only). Nếu Joy launch cả action extension, đó là competitive advantage rõ ràng.
 
 ---
 
-## Cac app da ho tro Sidekick extensions (18 launch partners)
+## Các app đã hỗ trợ Sidekick extensions (18 launch partners)
 
 | Category | Apps |
 |---|---|
@@ -863,11 +863,11 @@ Merchant co the nho Sidekick: "Edit my loyalty program to add a new VIP tier" ->
 | Products | Printful, Syncee Dropshipping |
 | Store Operations | Matrixify, Avia POS Traffic Counter |
 
-**Luu y:** Joy Loyalty chua co trong danh sach nay.
+**Lưu ý:** Joy Loyalty chưa có trong danh sách này.
 
 ---
 
-## Nguon
+## Nguồn
 
 - [Sidekick app extensions - shopify.dev](https://shopify.dev/docs/apps/build/sidekick)
 - [Build app data extensions](https://shopify.dev/docs/apps/build/sidekick/build-app-data)
