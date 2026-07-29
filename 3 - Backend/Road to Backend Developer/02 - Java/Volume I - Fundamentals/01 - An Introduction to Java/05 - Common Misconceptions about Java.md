@@ -9,7 +9,7 @@
 
 > *"Java is a programming language; HTML is a way to describe the structure of a web page. They have nothing in common except that there once were HTML extensions for placing Java applets on a web page."*
 
-**Dịch:** Java là **ngôn ngữ lập trình**; HTML là cách **mô tả cấu trúc trang web**. Chẳng liên quan gì nhau — ngoài chuyện xưa từng có thẻ HTML để nhúng applet (bài 03).
+**Dịch:** Java là **ngôn ngữ lập trình**; HTML là cách **mô tả cấu trúc trang web**. Chẳng liên quan gì nhau — ngoài chuyện xưa từng có thẻ HTML để nhúng [[03 - Java Applets and the Internet|applet]] (bài 03).
 
 Hiểu lầm này ra đời vì thời 1995, người thường chỉ thấy Java... hiện trong trang web.
 
@@ -29,7 +29,7 @@ Hiểu lầm này ra đời vì thời 1995, người thường chỉ thấy Jav
 
 **Dịch:** Không ngôn ngữ nào **mạnh cỡ Java mà dễ**. Phải phân biệt: viết **đồ chơi thì dễ** — làm **việc thật thì khó**. Cả sách chỉ có **7 chương về ngôn ngữ** — phần còn lại của 2 tập là về **thư viện**: hàng nghìn class, hàng chục nghìn function.
 
-Đây chính là ý "Simple ≠ Easy to learn" đã note ở bài 02 (mục 1.2.1) — giờ có nguồn chính thức. Ngôn ngữ chỉ là 10% — 90% công sức nằm ở học **thư viện + ecosystem**.
+Đây chính là ý "Simple ≠ Easy to learn" đã note ở [[02 - The Java White Paper Buzzwords#1.2.1 Simple|bài 02 (mục 1.2.1)]] — giờ có nguồn chính thức. Ngôn ngữ chỉ là 10% — 90% công sức nằm ở học **thư viện + ecosystem**.
 
 > 💡 **JS y hệt:** học cú pháp JS 1 tuần là xong — nhưng React, Node, build tools, browser API... mới là thứ học cả đời.
 
@@ -49,7 +49,7 @@ Chú ý câu *"Anything that happens in a browser is controlled by JavaScript"* 
 
 > *"Java is a nice programming language; most programmers prefer it to C, C++, or C#. But there have been hundreds of nice programming languages that never gained widespread popularity, whereas languages with obvious flaws, such as C++ and Visual Basic, have been wildly successful. Why? The success of a programming language is determined far more by the utility of the support system surrounding it than by the elegance of its syntax."*
 
-**Dịch:** Java là ngôn ngữ tốt — nhưng **hàng trăm ngôn ngữ tốt đã chết**, trong khi ngôn ngữ **đầy khuyết điểm** (C++, Visual Basic) lại cực thành công. Tại sao? Thành công của ngôn ngữ được quyết định bởi **hệ sinh thái xung quanh** nhiều hơn là **vẻ đẹp cú pháp**.
+**Dịch:** Java là ngôn ngữ tốt — nhưng **hàng trăm ngôn ngữ tốt đã chết**, trong khi ngôn ngữ **đầy khuyết điểm** (C++, Visual Basic) lại cực thành công. Tại sao? Thành công của ngôn ngữ được quyết định bởi **hệ sinh thái xung quanh** nhiều hơn là **vẻ đẹp cú pháp**. (Đúng luận điểm [[01 - Java as a Programming Platform|Java là platform]]).
 
 > *"Java is successful because its libraries let you easily do things such as networking, web applications, and concurrency. The fact that Java reduces pointer errors is a bonus... but these factors are not the source of its success."*
 
@@ -73,7 +73,7 @@ Chú ý câu *"Anything that happens in a browser is controlled by JavaScript"* 
 
 > *"In the early days of Java, the language was interpreted. Nowadays, the Java virtual machine uses a just-in-time compiler. The 'hot spots' of your code will run just as fast in Java as they would in C++, and in some cases even faster."*
 
-**Dịch:** Xưa đúng là interpret (chậm). Nay JVM dùng **JIT** — "hot spots" chạy **nhanh ngang C++, có chỗ còn nhanh hơn**.
+**Dịch:** Xưa đúng là interpret (chậm). Nay JVM dùng **[[02 - The Java White Paper Buzzwords#1.2.9 High-Performance|JIT]]** — "hot spots" chạy **nhanh ngang C++, có chỗ còn nhanh hơn**.
 
 Đã học kỹ toàn bộ ở bài 02 (mục 1.2.8 + 1.2.9): interpret trước → JIT hot path → warm-up.
 
@@ -91,7 +91,7 @@ Chú ý câu *"Anything that happens in a browser is controlled by JavaScript"* 
 
 > *"In the early days of Java, there were some well-publicized reports of failures in the Java security system... Browser manufacturers discontinued support for Java applets. The security manager architecture that made applets possible is now deprecated. These days, Java applications are no less secure than other applications. Due to the protections of the virtual machine, they are far more secure than applications written in C or C++."*
 
-**Dịch:** Tiếng xấu đến từ thời **applet** (câu chuyện đã học ở bài 02 mục Secure — Princeton, hacker, browser bỏ Java). Kiến trúc security manager của applet giờ **deprecated**. Ngày nay app Java **không kém an toàn hơn ai**, và nhờ JVM bảo vệ (no pointer, bounds checking) — **an toàn hơn hẳn C/C++**.
+**Dịch:** Tiếng xấu đến từ thời **applet** (câu chuyện đã học ở [[02 - The Java White Paper Buzzwords#1.2.5 Secure|bài 02 mục Secure]] — Princeton, hacker, browser bỏ Java). Kiến trúc security manager của applet giờ **deprecated**. Ngày nay app Java **không kém an toàn hơn ai**, và nhờ JVM bảo vệ (no pointer, bounds checking) — **an toàn hơn hẳn C/C++**.
 
 Phân biệt quan trọng: cái chết là **applet trên browser** — còn **Java trên server** chưa bao giờ dính vết đó.
 
@@ -101,7 +101,7 @@ Phân biệt quan trọng: cái chết là **applet trên browser** — còn **J
 
 > *"JavaScript, a scripting language that can be used inside web pages, was invented by Netscape and originally called LiveScript. JavaScript has a syntax that is reminiscent of Java, and the languages' names sound similar, but otherwise they are unrelated. In particularly, Java is strongly typed—the compiler catches many errors that arise from type misuse. In JavaScript, such errors are only found when the program runs, which makes their elimination far more laborious."*
 
-**Dịch:** JavaScript do **Netscape** phát minh, tên gốc **LiveScript**. Cú pháp gợi nhớ Java, tên nghe giống — nhưng **ngoài ra chẳng liên quan gì nhau**. Khác biệt cốt lõi: Java **strongly typed** — compiler bắt lỗi kiểu; JS thì lỗi **chạy mới lộ** → sửa cực nhọc hơn nhiều.
+**Dịch:** JavaScript do **Netscape** phát minh, tên gốc **LiveScript**. Cú pháp gợi nhớ Java, tên nghe giống — nhưng **ngoài ra chẳng liên quan gì nhau**. Khác biệt cốt lõi: Java **[[02 - The Java White Paper Buzzwords#1.2.4 Robust|strongly typed]]** — compiler bắt lỗi kiểu; JS thì lỗi **chạy mới lộ** → sửa cực nhọc hơn nhiều.
 
 Chính thức khép lại chuyện cái tên (đã nhắc từ bài 01): "JavaScript" = nước cờ marketing của Netscape năm 1995, đổi tên LiveScript để **ăn ké cơn sốt Java** (đúng đỉnh điểm cơn sốt applet ở bài 03-04). Còn khác biệt kỹ thuật = toàn bộ chủ đề "bắt lỗi sớm vs chạy mới biết sai" đã học kỹ.
 
@@ -113,7 +113,7 @@ Chính thức khép lại chuyện cái tên (đã nhắc từ bài 01): "JavaSc
 
 **Dịch:** Thời 1995 có người cá cược lớn vào "máy tính mạng" chạy Java (máy rẻ, không ổ cứng, mọi thứ tải từ mạng) — **thất bại**, user không bỏ desktop. Nhưng đời xoay vòng: ngày nay thiết bị quan trọng nhất với đa số người dùng là **điện thoại/tablet** — và phần lớn chạy **Android, nền tảng dựa trên Java**. Học Java = mở luôn cửa Android.
 
-Cú twist kết chương: giấc mơ "thiết bị gia dụng chạy Java" của Green project (bài 04 — TV box, remote \*7) **cuối cùng thành hiện thực** — chỉ là muộn 15 năm, dưới cái tên Android với hàng tỷ thiết bị. Không có thất bại nào là vĩnh viễn 😄
+Cú twist kết chương: giấc mơ "thiết bị gia dụng chạy Java" của [[04 - A Short History of Java#1991 — Dự án "Green": Java sinh ra KHÔNG phải cho web|Green project]] (bài 04 — TV box, remote \*7) **cuối cùng thành hiện thực** — chỉ là muộn 15 năm, dưới cái tên Android với hàng tỷ thiết bị. Không có thất bại nào là vĩnh viễn 😄
 
 ---
 

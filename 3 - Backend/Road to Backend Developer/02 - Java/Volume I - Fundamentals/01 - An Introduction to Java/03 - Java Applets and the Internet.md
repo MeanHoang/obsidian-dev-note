@@ -11,7 +11,7 @@
 
 > *"The idea here is simple: Users will download Java bytecodes from the Internet and run them on their own machines. Java programs that work on web pages are called applets. To use an applet, you only need a Java-enabled web browser, which will execute the bytecodes for you. You need not install any software. You get the latest version of the program whenever you visit the web page containing the applet. Most importantly, thanks to the security of the virtual machine, you never need to worry about attacks from hostile code."*
 
-**Dịch:** Ý tưởng đơn giản: user tải **bytecode Java từ Internet** về và chạy trên máy mình. Chương trình Java chạy trên web page gọi là **applet**. Chỉ cần browser hỗ trợ Java — **không cần cài phần mềm**, luôn được **version mới nhất** mỗi lần mở trang, và nhờ security của JVM — **không lo code độc hại**.
+**Dịch:** Ý tưởng đơn giản: user tải **[[02 - The Java White Paper Buzzwords#1.2.6 Architecture-Neutral|bytecode]] Java từ Internet** về và chạy trên máy mình. Chương trình Java chạy trên web page gọi là **applet**. Chỉ cần browser hỗ trợ Java — **không cần cài phần mềm**, luôn được **version mới nhất** mỗi lần mở trang, và nhờ [[02 - The Java White Paper Buzzwords#1.2.5 Secure|security]] của JVM — **không lo code độc hại**.
 
 Đây chính là mô hình "chạy code từ Internet" đã học ở bài 02:
 
@@ -67,7 +67,7 @@ Applet là **cách duy nhất** đưa "ứng dụng thật" lên web thời đó
 
 **Dịch + phân tích từng đòn:**
 
-**Đòn 1 — Phân mảnh version (fragmentation):** Netscape và IE mỗi browser chạy **1 version Java khác nhau**, có cái **lỗi thời nghiêm trọng**. Dev viết applet cho Java mới → user browser cũ không chạy được. Chính WORA bị phản bội ngay trên web: "Write Once, Run Anywhere" thành *"Write Once, Debug Everywhere"*.
+**Đòn 1 — Phân mảnh version (fragmentation):** Netscape và IE mỗi browser chạy **1 version Java khác nhau**, có cái **lỗi thời nghiêm trọng**. Dev viết applet cho Java mới → user browser cũ không chạy được. Chính [[02 - The Java White Paper Buzzwords#1.2.6 Architecture-Neutral|WORA]] bị phản bội ngay trên web: "Write Once, Run Anywhere" thành *"Write Once, Debug Everywhere"*.
 
 > 💡 **JS cũng từng khổ y hệt:** thời IE6 — mỗi browser 1 kiểu JS, dev phải viết code riêng cho từng browser (jQuery sinh ra chính để che sự phân mảnh đó). Khác biệt: JS **nằm sẵn trong browser** nên được browser vendor tự động update, còn Java là **plugin ngoài** — số phận nằm trong tay Netscape/Microsoft/Oracle.
 

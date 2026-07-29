@@ -28,7 +28,7 @@
 
 > *"Java was never just a language. There are lots of programming languages out there, but few of them make much of a splash. Java is a whole platform, with a huge library, containing lots of reusable code, and an execution environment that provides services such as security, portability across operating systems, and automatic garbage collection."*
 
-**Dịch:** Java **chưa bao giờ chỉ là ngôn ngữ**. Có rất nhiều ngôn ngữ ngoài kia, nhưng ít cái nào tạo được ảnh hưởng lớn. Java là **cả một platform**: thư viện khổng lồ chứa code tái dùng, cùng môi trường thực thi cung cấp bảo mật, chạy đa nền tảng, và tự động dọn bộ nhớ.
+**Dịch:** Java **chưa bao giờ chỉ là ngôn ngữ**. Có rất nhiều ngôn ngữ ngoài kia, nhưng ít cái nào tạo được ảnh hưởng lớn. Java là **cả một platform**: thư viện khổng lồ chứa code tái dùng, cùng môi trường thực thi cung cấp [[02 - The Java White Paper Buzzwords#1.2.5 Secure|bảo mật]], [[02 - The Java White Paper Buzzwords#1.2.7 Portable|chạy đa nền tảng]], và tự động dọn bộ nhớ.
 
 **Ví dụ đời sống:**
 - **Ngôn ngữ** = công thức nấu ăn (recipe) — hướng dẫn nấu món gì, bước nào trước sau.
@@ -55,13 +55,13 @@ Biết công thức (ngôn ngữ) mà không có căn bếp (platform) thì **n�
 └─────────────────────────────────┘
 ```
 
-| Thành phần | Vai trò | So sánh với JS |
-|---|---|---|
-| **Java Language** | Cú pháp, cách viết code | Bản thân ngôn ngữ JS |
-| **JVM** (Java Virtual Machine) | Máy ảo chạy bytecode — **trái tim** | Giống V8 engine |
-| **JRE** (Java Runtime Environment) | JVM + thư viện chuẩn để **chạy** app | Giống Node.js runtime |
-| **JDK** (Java Development Kit) | JRE + compiler + dev tools để **phát triển** | Giống Node.js + npm + dev tools |
-| **Standard Library** | ~4000 class sẵn: Collections, I/O, Networking, Concurrency... | Giống built-in modules của Node |
+| Thành phần                         | Vai trò                                                       | So sánh với JS                  |
+| ---------------------------------- | ------------------------------------------------------------- | ------------------------------- |
+| **Java Language**                  | Cú pháp, cách viết code                                       | Bản thân ngôn ngữ JS            |
+| **JVM** (Java Virtual Machine)     | Máy ảo chạy bytecode — **trái tim**                           | Giống V8 engine                 |
+| **JRE** (Java Runtime Environment) | JVM + thư viện chuẩn để **chạy** app                          | Giống Node.js runtime           |
+| **JDK** (Java Development Kit)     | JRE + compiler + dev tools để **phát triển**                  | Giống Node.js + npm + dev tools |
+| **Standard Library**               | ~4000 class sẵn: Collections, I/O, Networking, Concurrency... | Giống built-in modules của Node |
 
 ---
 
@@ -69,7 +69,7 @@ Biết công thức (ngôn ngữ) mà không có căn bếp (platform) thì **n�
 
 > *"As a programmer, you will want a language with a pleasant syntax and comprehensible semantics (i.e., not C++). Java fits the bill, as do dozens of other fine languages. Some languages give you portability, garbage collection, and the like, but they don't have much of a library, forcing you to roll your own if you want fancy graphics or networking or database access. Well, Java has everything—a good language, a high-quality execution environment, and a vast library. That combination is what makes Java an irresistible proposition to so many programmers."*
 
-**Dịch:** Lập trình viên muốn ngôn ngữ có cú pháp dễ chịu, ngữ nghĩa dễ hiểu (tức **không phải C++**). Java đáp ứng được, nhưng hàng chục ngôn ngữ khác cũng vậy. Một số ngôn ngữ cho bạn portability, GC, nhưng **không có thư viện** — bạn phải tự viết nếu muốn đồ hoạ, networking, database. Java thì **có tất cả**: ngôn ngữ tốt + môi trường chạy chất lượng cao + thư viện khổng lồ. **Tổ hợp đó** mới là thứ khiến Java hấp dẫn.
+**Dịch:** Lập trình viên muốn ngôn ngữ có cú pháp dễ chịu, ngữ nghĩa dễ hiểu (tức **không phải C++**). Java đáp ứng được, nhưng hàng chục ngôn ngữ khác cũng vậy. Một số ngôn ngữ cho bạn [[02 - The Java White Paper Buzzwords#1.2.7 Portable|portability]], GC, nhưng **không có thư viện** — bạn phải tự viết nếu muốn đồ hoạ, networking, database. Java thì **có tất cả**: ngôn ngữ tốt + môi trường chạy chất lượng cao + thư viện khổng lồ. **Tổ hợp đó** mới là thứ khiến Java hấp dẫn.
 
 **Tóm lại — 3 chân kiềng:**
 

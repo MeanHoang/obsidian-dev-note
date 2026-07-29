@@ -43,7 +43,7 @@ public class FirstSample
 
 **Dịch:** **Mọi thứ trong Java sống trong class.** Tạm hiểu class = **container chứa logic**. Class là **viên gạch** xây mọi ứng dụng Java.
 
-> 💡 **Khác JS lớn nhất về cấu trúc file:** JS cho code "trần" ở top-level (`console.log("hi")` một dòng là 1 file hợp lệ). Java **không có code trần** — hàm lẻ, biến lẻ đều không được phép đứng ngoài class. Đây là cam kết OOP triệt để từ bài 1.2.2.
+> 💡 **Khác JS lớn nhất về cấu trúc file:** JS cho code "trần" ở top-level (`console.log("hi")` một dòng là 1 file hợp lệ). Java **không có code trần** — hàm lẻ, biến lẻ đều không được phép đứng ngoài class. Đây là cam kết [[02 - The Java White Paper Buzzwords#1.2.2 Object-Oriented|OOP]] triệt để từ bài 1.2.2.
 
 ## Quy tắc đặt tên class + tên file
 
@@ -118,7 +118,7 @@ void main()
 // chạy: java --enable-preview --source 21 FirstSample.java
 ```
 
-**Dịch:** Sự phức tạp "byzantine" của `public static void main` sắp nhường chỗ cho thứ đơn giản hơn — thậm chí **bỏ luôn class** với chương trình 1 file. Nhưng vì còn **preview** nên sách không dùng. (Nối bài LTS: production tránh preview features. Và để ý — Java đang tiến dần về phía... trải nghiệm JS: ít nghi lễ hơn cho người mới.)
+**Dịch:** Sự phức tạp "byzantine" của `public static void main` sắp nhường chỗ cho thứ đơn giản hơn — thậm chí **bỏ luôn class** với chương trình 1 file. Nhưng vì còn **preview** nên sách không dùng. (Nối bài [[04 - A Short History of Java#Nhịp phát hành mới + LTS — quan trọng thực tế|LTS]]: production tránh preview features. Và để ý — Java đang tiến dần về phía... trải nghiệm JS: ít nghi lễ hơn cho người mới.)
 
 ## Dấu ngoặc `{}` và dấu chấm phẩy `;`
 
@@ -158,7 +158,7 @@ System.out.println("...")
 | Nhiều dòng | `/* ... */` | Block dài | ✅ Giống hệt |
 | **Documentation** | `/** ... */` | Tool **javadoc** đọc để sinh docs tự động (Chapter 4) | Tương đương JSDoc |
 
-> *"Comments in Java... do not show up in the executable program."* — comment không vào bytecode, viết bao nhiêu cũng không nặng chương trình.
+> *"Comments in Java... do not show up in the executable program."* — comment không vào [[02 - The Java White Paper Buzzwords#1.2.6 Architecture-Neutral|bytecode]], viết bao nhiêu cũng không nặng chương trình.
 
 ---
 

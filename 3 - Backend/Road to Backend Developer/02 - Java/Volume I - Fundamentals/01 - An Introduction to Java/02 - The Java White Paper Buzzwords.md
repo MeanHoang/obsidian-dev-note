@@ -108,7 +108,7 @@ Về "small":
 
 ### Bối cảnh — tại sao security lại quan trọng với Java?
 
-Năm 1995, Java có tham vọng: **code từ Internet tự động tải về và chạy trên máy bạn** (applets). Nghe rất nguy hiểm — tải code lạ từ mạng về chạy? Nhỡ nó là virus? Vì vậy Java **phải** giải quyết bài toán security từ gốc, không thì không ai dám dùng.
+Năm 1995, Java có tham vọng: **code từ Internet tự động tải về và chạy trên máy bạn** ([[03 - Java Applets and the Internet|applets]]). Nghe rất nguy hiểm — tải code lạ từ mạng về chạy? Nhỡ nó là virus? Vì vậy Java **phải** giải quyết bài toán security từ gốc, không thì không ai dám dùng.
 
 > *"Java is intended to be used in networked/distributed environments. Toward that end, a lot of emphasis has been placed on security. Java enables the construction of virus-free, tamper-free systems."*
 
@@ -211,9 +211,9 @@ Java applets **thua** không phải vì ý tưởng sai, mà vì: cần cài plu
 
 **Horstmann comment (phản bác):**
 
-> *"This was a real stretch. Anyone who has used Lisp, Smalltalk, Visual Basic, Python, R, or Scala knows what a "rapid and exploratory" development process is. You try out something, and you instantly see the result. For the first 20 years of Java's existence, development environments were not focused on that experience. It wasn't until Java 9 that the jshell tool supported rapid and exploratory programming."*
+> *"This was a real stretch. Anyone who has used Lisp, Smalltalk, Visual Basic, Python, R, or Scala knows what a "rapid and exploratory" development process is. You try out something, and you instantly see the result. For the first 20 years of Java's existence, development environments were not focused on that experience. It wasn't until Java 9 that the jshell tool supported rapid and exploratory programming."* ([[04 - JShell|xem bài JShell]])
 
-**Dịch:** "Nhanh và thử nghiệm" là **nói quá**. Ai dùng Python, Lisp, Smalltalk mới biết "rapid" thật sự là gì. Java **mất 20 năm** mới có JShell (Java 9) để hỗ trợ exploratory programming.
+**Dịch:** "Nhanh và thử nghiệm" là **nói quá**. Ai dùng Python, Lisp, Smalltalk mới biết "rapid" thật sự là gì. Java **mất 20 năm** mới có [[04 - JShell|JShell]] (Java 9) để hỗ trợ [[04 - JShell|exploratory programming]].
 
 ---
 

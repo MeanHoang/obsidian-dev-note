@@ -15,13 +15,13 @@
 
 **Dịch:** Tuỳ nhà cung cấp mà JDK mang tên thương hiệu: **Temurin** (Eclipse), **Corretto** (Amazon), **Zulu** (Azul). Tên thương hiệu **không quan trọng** với người lập trình — ruột đều là OpenJDK.
 
-**Vì sao lắm vendor thế?** Nối bài 05 (#6): Java **open source (GPL) từ 2007** → source OpenJDK ai cũng build được → mỗi hãng tự đóng gói + cam kết hỗ trợ riêng. Giống Linux có Ubuntu/Debian/RedHat — cùng kernel, khác nhà phân phối.
+**Vì sao lắm vendor thế?** Nối [[05 - Common Misconceptions about Java#6. "Java là hàng đóng (proprietary), nên tránh"|bài 05 (#6)]]: Java **open source (GPL) từ 2007** → source OpenJDK ai cũng build được → mỗi hãng tự đóng gói + cam kết hỗ trợ riêng. Giống Linux có Ubuntu/Debian/RedHat — cùng kernel, khác nhà phân phối.
 
 > 💡 **Map sang JS:** như Node.js chính chủ vs các bản đóng gói qua nvm/Volta/Homebrew — engine như nhau, khác kênh phân phối. Khác biệt duy nhất đáng chú ý bên Java: **license Oracle JDK** từng có giai đoạn thu phí production → doanh nghiệp đổ sang Temurin/Corretto cho lành.
 
 > *"You should use the Java SE 21 (LTS) JDK."*
 
-**Chốt của sách:** dùng **Java SE 21 (LTS)** — đúng bài LTS đã học (bài 04): production/học hành bám LTS.
+**Chốt của sách:** dùng **Java SE 21 ([[04 - A Short History of Java#Nhịp phát hành mới + LTS — quan trọng thực tế|LTS]])** — đúng bài LTS đã học (bài 04): production/học hành bám LTS.
 
 Tải tại: [adoptium.net](https://adoptium.net) (Temurin — khuyên dùng) hoặc [oracle.com/java/technologies/downloads](https://www.oracle.com/java/technologies/downloads).
 
@@ -45,8 +45,8 @@ Trang download Java đầy chữ viết tắt — sách cho bảng "phiên dịc
 | **Eclipse / Adoptium / Temurin** | Foundation / dự án / tên thương hiệu của bản OpenJDK họ phát | ✅ Nguồn tải khuyên dùng |
 
 Chú ý 2 dòng nối kiến thức cũ:
-- **JRE "chết" sau Java 8** — bài 01 từng học JRE như 1 tầng riêng; từ Java 9+ không còn phát hành JRE rời nữa (ai cũng tải JDK, hoặc tự đóng runtime gọn bằng module — Chapter 12)
-- **Hotspot** — giờ bạn biết tên thật của cái JIT đã học kỹ (bài 1.2.9): nó tên là **HotSpot** vì đúng nghĩa săn "hot spots" trong code
+- **JRE "chết" sau Java 8** — [[01 - Java as a Programming Platform|bài 01]] từng học JRE như 1 tầng riêng; từ Java 9+ không còn phát hành JRE rời nữa (ai cũng tải JDK, hoặc tự đóng runtime gọn bằng module — Chapter 12)
+- **Hotspot** — giờ bạn biết tên thật của cái [[02 - The Java White Paper Buzzwords#1.2.9 High-Performance|JIT]] đã học kỹ (bài 1.2.9): nó tên là **HotSpot** vì đúng nghĩa săn "hot spots" trong code
 - **GraalVM** — chính là cái tôi nhắc khi bạn hỏi deploy: AOT compile cho serverless, nhưng sách không dùng
 
 ---

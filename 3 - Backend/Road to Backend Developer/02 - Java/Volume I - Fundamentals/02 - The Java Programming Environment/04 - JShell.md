@@ -1,7 +1,7 @@
 # 04 — JShell
 
 > Chapter 2, Section 2.4 — Core Java Volume I, 13th Edition (Horstmann).
-> Bài cuối chương 2: **REPL của Java** — món "trả nợ" sau 22 năm (bài 1.2.8: Horstmann mỉa buzzword "Interpreted" vì thiếu đúng thứ này).
+> Bài cuối chương 2: **REPL của Java** — món "trả nợ" sau 22 năm ([[02 - The Java White Paper Buzzwords#1.2.8 Interpreted|bài 1.2.8]]: Horstmann mỉa buzzword "[[02 - The Java White Paper Buzzwords#1.2.8 Interpreted|Interpreted]]" vì thiếu đúng thứ này).
 
 ---
 

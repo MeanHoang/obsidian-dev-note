@@ -13,13 +13,13 @@
 
 > *"The requirements for small, tight, and platform-neutral code led the team to design a portable language that generated intermediate code for a virtual machine."*
 
-**Dịch:** Chính yêu cầu **nhỏ + gọn + không phụ thuộc CPU** dẫn đến thiết kế: ngôn ngữ portable sinh **mã trung gian chạy trên virtual machine**.
+**Dịch:** Chính yêu cầu **nhỏ + gọn + không phụ thuộc CPU** dẫn đến thiết kế: ngôn ngữ [[02 - The Java White Paper Buzzwords#1.2.7 Portable|portable]] sinh **mã trung gian chạy trên virtual machine**.
 
-⭐ **Điểm mấu chốt:** bytecode + JVM — thứ làm nên WORA — **không phải thiết kế cho web hay server**. Nó sinh ra vì... **cái TV box**: mỗi hãng TV 1 loại chip, không lẽ compile lại cho từng hãng? Sau này web có bài toán **y hệt** (mỗi user 1 loại máy) → Java "vô tình" có sẵn lời giải. May mắn của Java = giải đúng bài toán, nhầm khách hàng, rồi khách hàng đúng tự xuất hiện.
+⭐ **Điểm mấu chốt:** [[02 - The Java White Paper Buzzwords#1.2.6 Architecture-Neutral|bytecode]] + JVM — thứ làm nên [[02 - The Java White Paper Buzzwords#1.2.6 Architecture-Neutral|WORA]] — **không phải thiết kế cho web hay server**. Nó sinh ra vì... **cái TV box**: mỗi hãng TV 1 loại chip, không lẽ compile lại cho từng hãng? Sau này web có bài toán **y hệt** (mỗi user 1 loại máy) → Java "vô tình" có sẵn lời giải. May mắn của Java = giải đúng bài toán, nhầm khách hàng, rồi khách hàng đúng tự xuất hiện.
 
 > *"The Sun people came from a UNIX background, so they based their language on C++ rather than Lisp, Smalltalk, or Pascal. But, as Gosling says in the interview, 'All along, the language was a tool, not the end.'"*
 
-**Dịch:** Dân Sun gốc UNIX → chọn nền C++ (thay vì Lisp, Smalltalk, Pascal). Gosling: **"Ngôn ngữ luôn chỉ là công cụ, không phải đích đến."** (Nối bài 1.2.1: đây là lý do Java cố giống C++ hết mức — để dân C++ chuyển sang dễ.)
+**Dịch:** Dân Sun gốc UNIX → chọn nền C++ (thay vì Lisp, Smalltalk, Pascal). Gosling: **"Ngôn ngữ luôn chỉ là công cụ, không phải đích đến."** (Nối [[02 - The Java White Paper Buzzwords#1.2.1 Simple|bài 1.2.1]]: đây là lý do Java cố giống C++ hết mức — để dân C++ chuyển sang dễ.)
 
 ## Cái tên: Oak → Java
 
@@ -57,11 +57,11 @@
 
 **Dịch — khoảnh khắc "aha":** giữa 1994, nhóm nhận ra: *"Mình có thể xây 1 browser xịn. Browser là một trong số ít thứ mainstream **cần đúng những thứ kỳ quặc mình đã làm**: architecture-neutral, real-time, đáng tin, an toàn — những thứ chẳng ai cần ở thế giới workstation."*
 
-⭐ Đây là câu **đắt nhất bài**: 4 "thứ kỳ quặc" làm cho TV box = chính xác 4 thứ web cần (mọi máy khác nhau → architecture-neutral; tải code lạ → secure...). Bài toán TV box và bài toán web **là một** — chỉ khác vỏ.
+⭐ Đây là câu **đắt nhất bài**: 4 "thứ kỳ quặc" làm cho TV box = chính xác 4 thứ web cần (mọi máy khác nhau → [[02 - The Java White Paper Buzzwords#1.2.6 Architecture-Neutral|architecture-neutral]]; tải code lạ → [[02 - The Java White Paper Buzzwords#1.2.5 Secure|secure]]...). Bài toán TV box và bài toán web **là một** — chỉ khác vỏ.
 
 > *"The actual browser... evolved into the HotJava browser, which was designed to show off the power of Java. The browser was capable of executing Java code inside web pages. This 'proof of technology' was shown at SunWorld '95 on May 23, 1995, and inspired the Java craze that continues today."*
 
-**Dịch:** Họ xây browser **HotJava** — chạy được Java code **trong trang web** (= applet, bài 03). Demo tại SunWorld **23/5/1995** → châm ngòi **cơn sốt Java** kéo dài đến nay.
+**Dịch:** Họ xây browser **HotJava** — chạy được Java code **trong trang web** (= [[03 - Java Applets and the Internet|applet]], bài 03). Demo tại SunWorld **23/5/1995** → châm ngòi **cơn sốt Java** kéo dài đến nay.
 
 ---
 
@@ -83,11 +83,11 @@
 
 > *"During this time, much of the initial hype about Java applets and client-side applications abated, but Java became the platform of choice for server-side applications."*
 
-**Dịch:** Thời 1.3-1.4, cơn sốt applet/client **xẹp dần**, nhưng Java trở thành **lựa chọn số 1 cho server-side**. ⭐ Đây là khúc quanh đã nhắc ở bài 03: nổi nhờ applet, **sống nhờ server** — và ở lại đó đến nay.
+**Dịch:** Thời 1.3-1.4, cơn sốt [[03 - Java Applets and the Internet|applet]]/client **xẹp dần**, nhưng Java trở thành **lựa chọn số 1 cho server-side**. ⭐ Đây là khúc quanh đã nhắc ở bài 03: nổi nhờ applet, **sống nhờ server** — và ở lại đó đến nay.
 
 > *"Version 5.0 was the first release since version 1.1 that updated the Java language in significant ways... generic types (roughly comparable to C++ templates) have been added—the challenge was to add this feature without requiring changes in the virtual machine."*
 
-**Dịch:** Java 5.0 (2004) — nâng cấp ngôn ngữ lớn đầu tiên sau nhiều năm: **generics** (kiểu `List<String>`), for-each, autoboxing, annotations (mấy thứ này học từ Chapter 8, 11). Chú ý câu "thêm generics mà **không được đổi JVM**" — đây chính là gốc của **type erasure** đã nhắc ở bài 01 (backward compatibility đẻ ra thiết kế gượng ép).
+**Dịch:** Java 5.0 (2004) — nâng cấp ngôn ngữ lớn đầu tiên sau nhiều năm: **generics** (kiểu `List<String>`), for-each, autoboxing, annotations (mấy thứ này học từ Chapter 8, 11). Chú ý câu "thêm generics mà **không được đổi JVM**" — đây chính là gốc của **type erasure** đã nhắc ở [[01 - Java as a Programming Platform|bài 01]] (backward compatibility đẻ ra thiết kế gượng ép).
 
 ---
 
@@ -99,7 +99,7 @@
 
 > *"In 2014, the release of Java 8 followed, with the most significant changes to the Java language in almost two decades. Java 8 embraces a 'functional' style of programming that makes it easy to express computations that can be executed concurrently."*
 
-**Dịch:** **Java 8 (2014)** — thay đổi lớn nhất trong **gần 2 thập kỷ**: lambda, streams — phong cách **functional** giúp diễn đạt tính toán chạy **concurrent** dễ dàng. (Nối bài concurrency: Moore's law hết → cần code đa core dễ viết → functional style. Java 8 đến nay vẫn là version huyền thoại, nhiều công ty dùng mãi.)
+**Dịch:** **Java 8 (2014)** — thay đổi lớn nhất trong **gần 2 thập kỷ**: lambda, streams — phong cách **functional** giúp diễn đạt tính toán chạy **[[02 - The Java White Paper Buzzwords#1.2.10 Multithreaded|concurrent]]** dễ dàng. (Nối bài concurrency: Moore's law hết → cần code đa core dễ viết → functional style. Java 8 đến nay vẫn là version huyền thoại, nhiều công ty dùng mãi.)
 
 > 💡 **Với bạn:** lambda/stream của Java 8 chính là họ hàng của arrow function + `map/filter/reduce` bên JS — học Chapter 6 và Vol II Ch1 sẽ thấy quen thuộc.
 

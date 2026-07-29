@@ -12,7 +12,7 @@
 **Dịch:** Compile/run bằng terminal là kỹ năng hữu ích để **troubleshoot** — nhưng việc hằng ngày nên dùng IDE. IDE mạnh và tiện đến mức **không có lý do gì tự hành xác** mà không dùng.
 
 Phân vai rõ ràng:
-- **Terminal (bài 02):** hiểu bản chất, kiểm tra cài đặt, sửa sự cố
+- **Terminal ([[02 - Using the Command-Line Tools|bài 02]]):** hiểu bản chất, kiểm tra cài đặt, sửa sự cố
 - **IDE (bài này):** làm việc thật — vì nút Run của nó chính là `javac` + `java` đóng gói, giờ bạn đã biết bên trong là gì
 
 ## Chọn IDE nào?
@@ -53,7 +53,7 @@ Sách bảo thử **cố tình phá code**:
 
 **Dịch:** cạnh lỗi thường có **icon bóng đèn 💡** — click để xem **gợi ý sửa tự động** (quick fix).
 
-⭐ Đây là "kiểm tra lỗi sớm" (bài 1.2.4) đạt cực đại: pipeline bắt lỗi của Java giờ đầy đủ 3 tầng —
+⭐ Đây là "[[02 - The Java White Paper Buzzwords#1.2.4 Robust|kiểm tra lỗi sớm]]" (bài 1.2.4) đạt cực đại: pipeline bắt lỗi của Java giờ đầy đủ 3 tầng —
 
 ```
 GÕ CODE          COMPILE            RUNTIME

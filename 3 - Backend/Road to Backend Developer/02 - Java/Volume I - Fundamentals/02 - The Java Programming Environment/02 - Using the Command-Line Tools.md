@@ -30,7 +30,7 @@ java Welcome                  # ② RUN
 
 > *"What happened? The javac program is the Java compiler. It compiles the file Welcome.java into the file Welcome.class. The java program launches the Java virtual machine. It executes the bytecodes that the compiler placed in the class file."*
 
-**Dịch:** `javac` = compiler — dịch `Welcome.java` thành `Welcome.class`. `java` = **khởi động JVM** — thực thi bytecode trong file class.
+**Dịch:** `javac` = compiler — dịch `Welcome.java` thành `Welcome.class`. `java` = **khởi động JVM** — thực thi [[02 - The Java White Paper Buzzwords#1.2.6 Architecture-Neutral|bytecode]] trong file class.
 
 Đây là toàn bộ pipeline đã học suốt Chapter 1, giờ chạy thật dưới tay bạn:
 
