@@ -22,14 +22,14 @@
 
 ## Highlight cho Joy Loyalty
 
-| Update | Tại sao quan trọng |
-|--------|-------------------|
-| Expiring tokens + OAuth refresh | Mọi public app PHẢI migrate trước 1/1/2027 |
-| Customer Account API requirement | App returns/subscriptions cần integrate trước 1/12/2026 để giữ Built for Shopify |
-| Shopify App Pricing | Billing mới — cần evaluate có migrate hay giữ billing hiện tại |
-| cartToOrderCopyable | Loyalty data lưu trong cart metafield giờ tự động copy sang order |
-| Webhook field triggers | Giảm noise webhook, chỉ trigger khi field cụ thể thay đổi |
-| Metaobject trong Functions | Loyalty tier lưu trong metaobject, function đọc để áp discount — không cần redeploy |
+| Update                           | Tại sao quan trọng                                                                  |
+| -------------------------------- | ----------------------------------------------------------------------------------- |
+| Expiring tokens + OAuth refresh  | Mọi public app PHẢI migrate trước 1/1/2027                                          |
+| Customer Account API requirement | App returns/subscriptions cần integrate trước 1/12/2026 để giữ Built for Shopify    |
+| Shopify App Pricing              | Billing mới — cần evaluate có migrate hay giữ billing hiện tại                      |
+| cartToOrderCopyable              | Loyalty data lưu trong cart metafield giờ tự động copy sang order                   |
+| Webhook field triggers           | Giảm noise webhook, chỉ trigger khi field cụ thể thay đổi                           |
+| Metaobject trong Functions       | Loyalty tier lưu trong metaobject, function đọc để áp discount — không cần redeploy |
 
 ---
 
