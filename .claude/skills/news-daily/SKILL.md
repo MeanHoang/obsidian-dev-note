@@ -12,7 +12,7 @@ Nếu `$ARGUMENTS` có giá trị → chỉ chạy agent của topic đó. Trố
 ## Kiến trúc output — mỗi chủ đề 1 file riêng
 
 ```
-Learn something new every day./YYYY-MM/YYYY-MM-DD/
+Learn something new every day/YYYY-MM/YYYY-MM-DD/
 ├── YYYY-MM-DD-summary.md   ← index: Top 5 + highlight từng topic, link tới file con
 ├── system-design.md
 ├── firebase-gcp.md
@@ -39,7 +39,7 @@ Topic không có tin → **không tạo file đó** (trừ `tai-chinh-vn.md` lu�
 
 ### Bước 1 — Dedupe scan (main agent, trước khi spawn)
 ```bash
-find "Learn something new every day." -type f -name "*.md" -mtime -7 2>/dev/null
+find "Learn something new every day" -type f -name "*.md" -mtime -7 2>/dev/null
 ```
 `cat` các file topic 7 ngày gần nhất, rút ra **list URL + tiêu đề đã xuất hiện theo từng topic**. List này sẽ nhúng vào prompt của agent tương ứng.
 
@@ -70,7 +70,7 @@ Ghi `YYYY-MM-DD-summary.md` theo format index trong [template.md](template.md):
 
 ### Bước 4 — Confirm ngắn gọn
 ```
-✅ Đã lưu Learn something new every day./YYYY-MM/YYYY-MM-DD/ — N file:
+✅ Đã lưu Learn something new every day/YYYY-MM/YYYY-MM-DD/ — N file:
    📌 summary (index) · 🏗️ system-design (X tin) · 🔥 firebase-gcp (X) · …
    Top pick: <tiêu đề top 1>
 ```
