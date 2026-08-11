@@ -31,3 +31,7 @@ Ngày 3
 2. Vấn đề lên bộ khung plan hay cách thông báo vấn đề đang có vấn đề ấy. Bug không mô tả dễ hiểu kiểu do filed nào giá trị setting nào hay là flow nhưu nào ấy và đọc mọi thứ cứ khó heieur chung chung chả hiểu đc thiếu rõ ràng vừa dài dòng. Hãy sauwr lại skill plan và dùng để bộ khung dễ hiểu hơn cho 1 dev chưa bao giờ động đến luồng đó nhé 
 3. Bước review tôi thấy đang goi cod e review chứ không phải review của joy ấy 
 4. Việcc nhảy giữ work tree và main kiểu 1 branch muốn tự tay deploy extensio check out nó k cho check pahir xoá trên worktreee mới đc xử lý như nào nhỉ
+
+Ngày 4
+1. Tôi thấy calll giữa session napf text mà ko enter rồi cứ bị kẹt ở đó ấy do lý do gìg. có cần 1 cơ chế cho scout đi check tiến trình thực hiện không nhỉ 
+2. 
