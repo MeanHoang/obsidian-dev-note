@@ -34,4 +34,6 @@ Ngày 3
 
 Ngày 4
 1. Tôi thấy calll giữa session napf text mà ko enter rồi cứ bị kẹt ở đó ấy do lý do gìg. có cần 1 cơ chế cho scout đi check tiến trình thực hiện không nhỉ 
-2. 
+2. Thực ra tôi thấy việc để AI hiểu đc hoàn cảnh context từ đầu đến cuối rất quan trong tránh bị nhắc lại tôi thấy làm loyalty page v3 ấy AI rất ít ghi vào processs md nên rất khó track
+3. Cmux hay bị offf chết session kể cả đang chạy là do đâu nhỉ 
+4. Vấn đề compact tôi chưa thấy có có cmux đang quan lý như nào v nhỉ 
