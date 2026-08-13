@@ -1,4 +1,4 @@
- # Shopify Markets: Market, Region và Currency thực sự là gì?
+# Shopify Markets: Market, Region và Currency thực sự là gì?
 
 > [!summary] Kết luận ngắn
 > **Market không phải là country, region hay currency.** Market là một **nhóm khách hàng (audience)** mà Shopify xác định bằng các **conditions**, sau đó áp một bộ **customizations** cho nhóm đó.
