@@ -15,7 +15,13 @@ chapter: Final Takeaways & Summary
 
 ## Phần A — Lời tổng kết của Matt `[01:33-01:36]`
 
-Ông ấy tự nhận đã kiệt sức: *"We have nominally 17 minutes left. I don't know about you guys, but **I'm knackered.**"*
+Ông ấy tự nhận đã kiệt sức:
+
+> "We have nominally 17 minutes left. I don't know about you guys, but **I'm knackered.**"
+
+**Dịch:** *"Về danh nghĩa ta còn 17 phút. Không biết các bạn thế nào, chứ **tôi thì rã rời.**"*
+
+> 💡 "**knackered**" là tiếng lóng Anh-Anh: kiệt sức, mệt lử.
 
 ### Tóm tắt nguyên văn
 
@@ -31,13 +37,36 @@ chapter: Final Takeaways & Summary
 >
 > We implement it, and **we QA and code review the hell out of it**, and then keep going back to that implementation."
 
+**Dịch:** *"Về cơ bản đây là quy trình, trong đó **xuyên suốt cả quá trình, ta luôn giữ trong đầu hình dạng của codebase.***
+>
+> ***Đây không phải một trình biên dịch spec-thành-code. Đây không phải một con AI chỉ biết tuôn code ra.** Chúng ta **rất có chủ đích về loại module và hình dạng codebase mà mình muốn.***
+>
+> *Chúng ta đảm bảo rằng **mình đồng bộ nhất có thể bằng cách dùng phiên grilling**, bằng cách thực sự nện cho ra ý tưởng của mình.*
+>
+> ***Chúng ta không đầu tư quá mức vào PRD. Chúng ta không cố đọc từng phần của nó. Thậm chí chúng ta còn không nghĩ nhiều về nó.***
+>
+> *Rồi ta chỉ biến cái đó thành **một tập các issue song song hoá được**, để các agent làm cùng lúc.*
+>
+> *Ta implement nó, và **ta QA và code review nó tới nơi tới chốn**, rồi lại quay về cái implementation đó."*
+
+> 💡 Vài cụm đáng chú ý:
+> - "**over-indexing**" = đầu tư/coi trọng quá mức một yếu tố so với giá trị thật của nó.
+> - "**hammering out**" = nện búa cho ra hình, tức bàn thảo gay gắt cho tới khi ra được thứ rõ ràng.
+> - "**QA the hell out of it**" = QA cực kỳ kỹ, không nương tay.
+>
+> Để ý cấu trúc câu: ông ấy nhấn **"not... not... not..."** ba lần liên tiếp cho PRD, rồi **"the hell out of it"** cho QA. **Sự bất đối xứng đó chính là thông điệp.**
+
 Rồi bổ sung phần ông ấy quên nhắc:
 
 > "One thing I didn't really mention is that **the QA phase is for creating more issues for that Kanban board.** So while it's implementing even, **you can be QAing the stuff and going back, adding more issues.**"
 
+**Dịch:** *"Một điều tôi chưa thực sự nhắc tới là **giai đoạn QA là để tạo thêm issue cho cái Kanban board đó.** Nên ngay cả trong lúc nó đang implement, **bạn có thể đang QA và quay lại thêm issue mới.**"*
+
 Và bàn giao cho team:
 
 > "Once you've got work that you're happy with, then **you can share it with your team and you can get a full review.** So this is kind of **one developer, or maybe a couple of developers, managing this** — and then it's up to you to figure out how to merge it back in."
+
+**Dịch:** *"Một khi bạn có kết quả mình hài lòng, thì **bạn có thể chia sẻ với team và nhận một lượt review đầy đủ.** Nên đây kiểu như **một developer, hoặc vài developer, quản lý toàn bộ cái này** — rồi việc gộp nó ngược vào thế nào thì tuỳ bạn."*
 
 ### Lời khuyên chốt buổi
 
@@ -45,9 +74,15 @@ Và bàn giao cho team:
 
 > "**Of course all of this can be customized by you. This is just something that I have found works. I'm not trying to sell you on an approach here.**"
 
+**Dịch:** *"**Tất nhiên tất cả những thứ này bạn đều tuỳ chỉnh được. Đây chỉ là thứ tôi thấy nó chạy được. Tôi không cố bán cho các bạn một cách tiếp cận nào ở đây.**"*
+
+> 💡 **Ý là:** Nhất quán với "own your planning stack" ở [[03 - Grill Me - Đạt shared understanding]]. Ông ấy vừa dạy xong một quy trình 7 bước rồi nói ngay là **đừng coi nó là chân lý**. Đây không phải khiêm tốn xã giao — nó là hệ quả logic của luận điểm "chưa có winner rõ ràng, phải tự sở hữu stack".
+
 Rồi mới tới lời khuyên thật:
 
 > "**What I recommend, if you take one thing away from this session:** you should head back, you should **head to Amazon and just buy a ton of those old books.** Because I just found it **so enlightening** reading them. **Pre-AI writing is always really fun to read anyway.** I just — **on every single page I found that there was something useful and something interesting to read.**"
+
+**Dịch:** *"**Điều tôi khuyên, nếu bạn chỉ mang về một thứ từ buổi này:** bạn nên về, nên **lên Amazon và mua một đống mấy cuốn sách cũ đó.** Bởi vì tôi thấy đọc chúng **quá khai sáng.** **Văn viết thời tiền-AI lúc nào đọc cũng thú vị.** Tôi chỉ — **trang nào tôi cũng thấy có thứ gì đó hữu ích và thú vị để đọc.**"*
 
 *(Trước đó ở `[01:23]` ông ấy cũng nói "if you take one thing away from today" nhưng về skill `improve-codebase-architecture`. Hai lời khuyên "một thứ duy nhất" — cái thứ hai là lời kết chính thức.)*
 
@@ -70,7 +105,7 @@ Rồi mới tới lời khuyên thật:
 | Pull thay vì push cho implementer | [[09 - Parallelization - Sandcastle và Push vs Pull]] |
 | Mỗi agent song song một context riêng | [[09 - Parallelization - Sandcastle và Push vs Pull]] |
 
-→ **Tám kỹ thuật, một nguyên lý.**
+→ **Tám kỹ thuật, một nguyên lý.** Nếu chỉ hiểu smart zone thôi thì tự suy ra được phần lớn phần còn lại.
 
 ### 2. AI luôn thích chia mỏng và phẳng — phải chống lại
 
@@ -79,8 +114,9 @@ Rồi mới tới lời khuyên thật:
 | Chia việc | Cắt **ngang** theo layer | **Vertical slice** |
 | Viết test | Implement xong mới thêm test layer | **TDD** — test trước |
 | Kiến trúc | Nhiều module **shallow** | Ít module **deep** |
+| Module lớn | Tách FE và BE riêng | Bọc chung, test từ ngoài |
 
-Ba biểu hiện của cùng một xu hướng. Và **prompt nói rõ vẫn không đủ** — demo ở [[05 - Vertical Slices - Cắt issue thành tracer bullets]] chứng minh: skill đã ghi "vertical slices" mà nó vẫn đề xuất horizontal.
+Bốn biểu hiện của cùng một xu hướng. Và **prompt nói rõ vẫn không đủ** — demo ở [[05 - Vertical Slices - Cắt issue thành tracer bullets]] chứng minh: skill đã ghi "vertical slices" mà nó vẫn đề xuất horizontal.
 
 ### 3. Đầu tư hai đầu, bỏ trống ở giữa
 
@@ -92,17 +128,19 @@ Implement ▏              ← AFK
 QA        ████████████   ← taste, sinh issue mới
 ```
 
-Người mới thường làm ngược: viết PRD thật kỹ, rồi QA qua loa.
+Người mới thường làm ngược: viết PRD thật kỹ (vì trông giống "làm việc nghiêm túc"), rồi QA qua loa (vì chán).
 
 ### 4. Ranh giới human-in-the-loop rất rõ
 
-| Phase | Người | Đóng góp gì |
+| Phase | Người | Loại phán đoán |
 |---|---|---|
-| Grilling | ✅ | Quyết định nghiệp vụ |
+| Grilling | ✅ | **Nghiệp vụ** — có backfill không? |
 | PRD | ❌ | — |
-| Cắt issue | ✅ | Phán đoán kiến trúc |
+| Cắt issue | ✅ | **Cấu trúc** — slice này dọc hay ngang? |
 | Implement | ❌ AFK | — |
-| QA | ✅ | Taste |
+| QA | ✅ | **Chất lượng cảm nhận** — dùng có ổn không? |
+
+Ba loại phán đoán khác nhau, không loại nào thay được loại nào.
 
 ---
 
@@ -113,21 +151,32 @@ Slido, sắp theo chủ đề. Timestamp để tua.
 ### Về tool & model
 
 **Nếu không thích Claude Code thì thích cái nào?** `[00:36]`
+
 > "Have you ever heard the phrase: **democracy is the worst way to run a country apart from all the other ways?** That's how I feel about Claude Code."
+
+**Dịch:** *"Bạn từng nghe câu: **dân chủ là cách tệ nhất để điều hành một đất nước, ngoại trừ tất cả các cách khác** chưa? Tôi cảm thấy về Claude Code đúng như vậy."*
+
+> 💡 Câu gốc của Winston Churchill. Ý: **nó tệ, nhưng mọi lựa chọn khác còn tệ hơn.**
 
 Ông ấy nói thẳng nhiều lần: *"I'm using Claude, but **I don't like Claude very much**"* và *"**you don't need to use Claude Code. In fact, it's often nice not to use Claude Code.**"* Method không phụ thuộc tool.
 
 **Sao không dùng `AskUserQuestion` UI?** `[00:27-00:28]`
+
 > "**It's very pleasing when you first encounter it, but then you realize it is actually broken in a ton of different ways.**"
 
+**Dịch:** *"**Nó rất dễ chịu khi bạn gặp lần đầu, nhưng rồi bạn nhận ra nó thực sự hỏng theo cả tá cách khác nhau.**"*
+
 **Claude auto mode để tránh permission check?** `[01:23]`
-Được hỏi, không trả lời trực tiếp. Nhưng trong thực tế ông ấy dùng `--permission-mode acceptEdits` **trong Docker sandbox** — tức là giải bằng cách ly, không phải bằng cấp quyền bừa.
+Được hỏi, không trả lời trực tiếp. Nhưng trong thực tế ông ấy dùng `--permission-mode acceptEdits` **trong Docker sandbox** — tức là **giải bằng cách ly, không phải bằng cấp quyền bừa**.
 
 **1M context window có dùng không?** `[00:37-00:38]`
 Xem [[02 - Hai ràng buộc của LLM - Smart zone và Memento]]. Tóm: tốt cho **retrieval**, không tốt cho **coding**. *"They shipped a lot more dumb zone to you."*
 
 **BEADS framework?** `[01:25]`
+
 > "**I've not tested it**, but it seems like another way to manage Kanban boards and issues. Seems very good, but **I've not tried it.**"
+
+**Dịch:** *"**Tôi chưa thử nó**, nhưng có vẻ là một cách khác để quản lý Kanban board và issue. Trông rất tốt, nhưng **tôi chưa dùng.**"*
 
 **Spec Kit / OpenSpec / Taskmaster?** `[00:23-00:24]`
 Xem [[03 - Grill Me - Đạt shared understanding]]. Tóm: **own your planning stack** — vì không có winner rõ ràng, và không sở hữu thì không debug được.
@@ -143,7 +192,12 @@ Xem [[03 - Grill Me - Đạt shared understanding]]. Tóm: **own your planning s
 Không — **doc rot**. Ông ấy dùng GitHub issues và **close** thay vì xoá. Xem [[04 - PRD - Document điểm đến]].
 
 **Thế database migration có squash không?** `[01:25-01:26]`
-> "Database migrations are a **different thing** because you have a **running record of exactly what changed, and it's more deterministic.**" Rồi thừa nhận không chắc: *"Let's talk about it afterwards."*
+
+> "Database migrations are a **different thing** because you have a **running record of exactly what changed, and it's more deterministic.**"
+
+**Dịch:** *"Database migration là **chuyện khác** vì bạn có một **bản ghi liên tục về chính xác cái gì đã thay đổi, và nó deterministic hơn.**"*
+
+Rồi thừa nhận không chắc: *"Let's talk about it afterwards."*
 
 **Lưu quyết định phủ định ở đâu?** `[00:58]`
 Mục **out of scope** trong PRD. Quan trọng cho definition of done.
@@ -155,9 +209,12 @@ Không đáng. *"The place that you need to be putting the work is in **QA**."* 
 Đã bỏ. Tip đó có ích khi còn đọc plan; giờ không đọc plan nữa. Ông ấy cũng **gần như không dùng `CLAUDE.md`**.
 
 **AI grill hoài không dừng — có cách nào thông minh hơn không?** `[00:47-00:48]`
+
 > "Yeah, those grilling sessions can be super intense. And the thing about these skills is **you can tune them if you want to.** If you feel like the AI is just absolutely **hammering you, hammering you, hammering you**, then **you can just tell it to pull back a little bit**, or get it to do **stop points** and that kind of thing. **If that's a failure mode that you run into a lot, then you just change the skill.**"
 
-→ Nhất quán với "own your stack": skill là của bạn, sửa được.
+**Dịch:** *"Đúng, mấy phiên grilling đó có thể cực căng. Và điểm hay của những skill này là **bạn có thể tinh chỉnh chúng nếu muốn.** Nếu bạn thấy AI cứ **dội bạn, dội bạn, dội bạn**, thì **bạn cứ bảo nó lùi lại một chút**, hoặc bắt nó tạo các **điểm dừng**, đại loại vậy. **Nếu đó là một failure mode bạn gặp thường xuyên, thì bạn chỉ việc sửa skill.**"*
+
+> 💡 Nhất quán với "own your stack": **skill là của bạn, sửa được.** Đây là lợi ích cụ thể của việc skill chỉ dài 5 dòng.
 
 ---
 
@@ -170,15 +227,23 @@ Câu Q&A hay nhất buổi. Xem [[06 - AFK Agent - Ralph loop và TDD]]. Tóm: p
 Xem [[03 - Grill Me - Đạt shared understanding]]. *"Kind of like mob programming with AI."*
 
 **Nghĩ gì về PM / role không phải dev đi vibe code?** `[00:27]`
+
 > "**Hmm. I'm going to return to this later, I think. I'm going to leave this unanswered. A bit of mystery.**"
+
+**Dịch:** *"**Hmm. Tôi nghĩ tôi sẽ quay lại câu này sau. Tôi sẽ để nó không có câu trả lời. Chút bí ẩn.**"*
 
 Và ông ấy **không quay lại thật**. Câu này bỏ ngỏ.
 
 **Kết cục của cuộc "Mexican standoff" giữa vai trò PM và dev?** `[00:49-00:50]`
+
 > "**I've no idea. I'm not a pundit. I've no idea.**"
 
+**Dịch:** *"**Tôi chịu. Tôi không phải nhà bình luận. Tôi chịu.**"*
+
+> 💡 "**Mexican standoff**" = thế bế tắc ba bên, ai cũng chĩa súng vào nhau, không ai dám nổ trước. "**Pundit**" = chuyên gia bình luận trên báo đài.
+
 **Ba discipline nên học?** `[00:39]`
-Đùa: *"**Taekwondo is good, I've heard.** I've no idea how to answer this question."* Khán giả hô "plumbing" — *"the plumbers I've hired are **not usually very disciplined**."*
+Đùa: *"**Taekwondo is good, I've heard.** I've no idea how to answer this question."* Khán giả hô "plumbing" (nghề ống nước) — Matt: *"the plumbers I've hired are **not usually very disciplined**."* (chơi chữ: *discipline* = vừa "bộ môn" vừa "kỷ luật").
 
 ---
 
@@ -187,6 +252,8 @@ Và ông ấy **không quay lại thật**. Câu này bỏ ngỏ.
 **Agent sinh code nhanh hơn khả năng review — làm sao?** `[00:59-01:00]`
 **Chưa có lời giải.** Mâu thuẫn thật giữa loop dài và PR nhỏ. Xem [[06 - AFK Agent - Ralph loop và TDD]].
 
+*(Nhưng có một lời giải bán phần ở [[08 - Deep Modules - Thiết kế codebase cho AI]]: **gray box** — giảm lượng cần review bằng cách thiết kế ranh giới, thay vì cố đọc nhanh hơn.)*
+
 **Sao không để AI QA hết?** `[01:04-01:06]`
 Nên có automated review, **nhưng phải clear context trước**, và **không thay được QA người**. Xem [[07 - QA và Code Review - Nơi con người áp taste]].
 
@@ -194,7 +261,10 @@ Nên có automated review, **nhưng phải clear context trước**, và **khôn
 **Push vs pull.** Xem [[09 - Parallelization - Sandcastle và Push vs Pull]].
 
 **Dev có cần hiểu sâu TypeScript nữa không?** `[00:36-00:37]`
+
 > "**Bad code bases make bad agents.** If you have a garbage code base, you're going to get garbage out of the agent."
+
+**Dịch:** *"**Codebase tệ tạo ra agent tệ.** Nếu bạn có một codebase rác, bạn sẽ nhận về rác từ agent."*
 
 Hiểu sâu để **thiết kế và đánh giá**, không phải để gõ.
 
@@ -205,22 +275,48 @@ Hiểu sâu để **thiết kế và đánh giá**, không phải để gõ.
 Câu hỏi được hỏi 2 lần, đáng tách riêng.
 
 **Vấn đề:**
+
 > "**Front end is really sensitive to human eyes.** You need human eyes looking at the front end all the time to make sure that it looks good. **AI doesn't really have any eyes. It can look at code, but front end is multimodal.**"
 
+**Dịch:** *"**Front end cực kỳ nhạy với mắt người.** Bạn cần mắt người nhìn vào front end liên tục để đảm bảo nó trông ổn. **AI thì không thực sự có mắt. Nó nhìn được code, nhưng front end là đa phương thức.**"*
+
+> 💡 "**multimodal**" (đa phương thức) = liên quan tới nhiều loại giác quan/dữ liệu cùng lúc: hình ảnh, bố cục, màu sắc, chuyển động, cảm giác khi tương tác. Code chỉ là một phương thức trong số đó.
+
 **Về Playwright MCP / agent browser:**
+
 > "You can give it tools to allow it to look through a front end and look at images, but **in my experience it's not very good at that yet**, and **it can't create a nice front end in a mature code base.** It can sort of spit one out."
 
+**Dịch:** *"Bạn có thể cho nó công cụ để nó nhìn qua front end và xem hình ảnh, nhưng **theo kinh nghiệm của tôi thì nó chưa giỏi lắm ở khoản đó**, và **nó không tạo được một front end đẹp trong một codebase đã trưởng thành.** Nó kiểu như nhả đại ra một cái."*
+
+> 💡 "**spit one out**" = nhả đại ra, phun ra — hàm ý cẩu thả, không có sự chăm chút.
+
 **Cách làm thay thế — prototype:**
+
 > "What it *can* do is you say: *okay, I want some ideas on how this front end might look. **Give me three prototypes that I can click between in a throwaway route**, that I can decide which one looks best.*
 >
 > And **you take the asset of that prototype and you then feed it back into the grilling session**, or you get feedback on it."
 
+**Dịch:** *"Cái nó **làm được** là bạn nói: ok, tôi muốn vài ý tưởng về việc front end này có thể trông như thế nào. **Cho tôi ba prototype để tôi bấm qua lại được, trong một route dùng xong vứt**, để tôi quyết cái nào trông đẹp nhất.*
+>
+> *Rồi **bạn lấy chính cái prototype đó làm tài sản và đưa ngược nó vào phiên grilling**, hoặc bạn lấy feedback về nó."*
+
 **Về prototype nói chung:**
+
 > "**You don't need a PRD for your prototype.** The prototype is just — **it's messy. It's supposed to give you feedback earlier in the process.** So that's a great way of working with front end code, **great way of looking at software architecture in general.**"
 
-> 🔑 Pattern quan trọng: prototype **không phải bước đầu của implementation**. Nó là một **công cụ để sinh input cho grilling session**. Vòng đời của nó: sinh 3 bản → chọn → **ném ngược lên phase alignment** → vứt bản prototype đi.
+**Dịch:** *"**Bạn không cần PRD cho prototype.** Prototype chỉ là — **nó lộn xộn. Nó tồn tại để cho bạn feedback sớm hơn trong quy trình.** Nên đó là cách rất hay để làm việc với code front end, **và cũng là cách rất hay để nhìn vào kiến trúc phần mềm nói chung.**"*
+
+> 🔑 **Pattern quan trọng: prototype KHÔNG PHẢI bước đầu của implementation.**
 >
-> Đây cũng là chỗ duy nhất chapter "Phase 1: Research & Prototyping" thực sự được nói tới — và nó nằm ở phút 62, không phải phút 4.
+> Nó là một **công cụ để sinh input cho grilling session**. Vòng đời của nó:
+>
+> ```
+> sinh 3 bản → chọn 1 → ném NGƯỢC lên phase alignment → VỨT bản prototype đi
+> ```
+>
+> Chữ "**throwaway route**" (route dùng xong vứt) là chủ ý. Nếu bạn định giữ prototype lại làm nền cho code thật, bạn sẽ viết nó cẩn thận — và mất luôn tốc độ, thứ duy nhất khiến prototype có giá trị.
+>
+> Đây cũng là chỗ duy nhất chapter "Phase 1: Research & Prototyping" thực sự được nói tới — và nó nằm ở **phút 62**, không phải phút 4.
 
 ---
 
@@ -233,10 +329,13 @@ Câu hỏi được hỏi 2 lần, đáng tách riêng.
 | Review nhiều hơn khả năng review — giải thế nào? | *"I don't honestly know what the answer to this yet."* |
 | PR nhỏ vs loop dài — dung hoà? | Chưa có |
 | Migration có bị doc rot như PRD không? | *"I'm not sure. Let's talk about it afterwards."* |
-| PM / non-dev vibe coding? | Cố tình bỏ ngỏ |
+| PM / non-dev vibe coding? | **Cố tình bỏ ngỏ** |
+| Tương lai vai trò PM vs dev | *"I'm not a pundit. I've no idea."* |
 | Front end automation | *"not very good at that yet"* |
 | Hoà workflow 1-dev vào quy trình team | *"it's kind of up to you"* |
 | Vì sao lấy đúng **5** commit gần nhất trong `once.sh` | Hứa giải thích, **không quay lại** |
+
+> 💡 Danh sách này hữu ích theo hai cách: (1) đừng tốn thời gian tìm câu trả lời trong video, (2) đây chính là **danh sách vấn đề mở** đáng tự nghiên cứu.
 
 ---
 
@@ -253,7 +352,13 @@ Và lý do sâu hơn để đọc chúng, từ `[00:46]`:
 
 > "**We're really trying, in this day and age, to verbalize best software practices in English. And these 20-year-old books have already done that. It's an absolute gold mine if you want to throw that into prompts.**"
 
-→ Không chỉ để hiểu. Để có **từ vựng chính xác mà model đã biết** khi viết prompt.
+**Dịch:** *"**Thời buổi này chúng ta đang thực sự cố diễn đạt các best practice phần mềm ra thành tiếng Anh. Và những cuốn sách 20 năm tuổi này đã làm điều đó rồi. Nó là một mỏ vàng đúng nghĩa nếu bạn muốn ném chúng vào prompt.**"*
+
+> 🔑 **Ý là:** Không chỉ để hiểu. Để có **từ vựng chính xác mà model đã biết** khi viết prompt.
+>
+> `use vertical slices, tracer bullets` (4 từ) hiệu quả hơn 200 từ mô tả bằng lời của mình — vừa ngắn (tiết kiệm smart zone), vừa chính xác (model đã gắn từ đó với hàng nghìn trang giải thích trong training data).
+>
+> **Đọc sách cũ = mở rộng vốn từ để nói chuyện với model.**
 
 ---
 
@@ -262,12 +367,15 @@ Và lý do sâu hơn để đọc chúng, từ `[00:46]`:
 | | Là gì | Timestamp |
 |---|---|---|
 | **Dex Hardy / Human Layer** | Người nghĩ ra smart zone / dumb zone | `[00:03]` |
-| **Ralph Wiggum** | Tên một software practice: PRD + "make a small change" lặp mãi | `[00:06]` |
+| **Ralph Wiggum** | Tên một software practice: PRD + "make a small change" lặp mãi. Đặt theo nhân vật ngây ngô trong *The Simpsons* | `[00:06]` |
 | **Sandcastle** | TS library của Matt để chạy agent AFK song song | `[01:29]` |
 | **`mattpocock/course-video-manager`** | Repo thật của ông ấy, **744 closed issues** | `[00:34]` |
 | **Cadence** | Repo demo trong workshop (course platform) | `[00:11]` |
 | **AI Hero** | Website của Matt, có bài về status line đếm token | `[00:09]` |
 | **BEADS** | Framework quản lý Kanban/issue — ông ấy chưa thử | `[01:25]` |
+| **Slido** | Công cụ Q&A có vote dùng trong buổi | `[00:02]` |
+| **Sarah Chen** | Tên client giả trong `client-brief.md` — *"Claude always chooses Sarah Chen"* | `[00:14]` |
+| **Emma Wilson** | Tài khoản student dùng để QA | `[01:11]` |
 
 ---
 

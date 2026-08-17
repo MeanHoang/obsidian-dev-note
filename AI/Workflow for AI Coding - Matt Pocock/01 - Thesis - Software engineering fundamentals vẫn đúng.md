@@ -14,7 +14,13 @@ chapter: Introduction + The Thesis of AI Engineering
 
 ## Bối cảnh
 
-Matt Pocock tự giới thiệu: *"My name's Matt, I'm a teacher, and I suppose now I teach AI."* Phòng workshop kín chỗ, cửa đóng, không có điều hoà — chi tiết này sẽ quay lại nhiều lần trong buổi.
+Matt Pocock tự giới thiệu:
+
+> "My name's Matt, I'm a teacher, and I suppose now I teach AI."
+
+**Dịch:** *"Tôi tên Matt, tôi là giáo viên, và giờ chắc là tôi dạy AI."*
+
+Phòng workshop kín chỗ, cửa đóng, không có điều hoà — chi tiết này sẽ quay lại nhiều lần trong buổi.
 
 Ông ấy khảo sát phòng bằng cách giơ tay, và kết quả nói lên hiện trạng của cả ngành:
 
@@ -32,7 +38,11 @@ Matt Pocock tự giới thiệu: *"My name's Matt, I'm a teacher, and I suppose 
 
 > "The theory behind this talk, or at least the thesis under which I've been operating for the last kind of 6 months or so, is that **we all think that AI is a new paradigm**... And I feel that when we talk about AI being a new paradigm, we forget that actually **software engineering fundamentals, the stuff that's really crucial to working with humans, also works super well with [AI]**."
 
-Đọc kỹ câu này vì nó quyết định cách hiểu toàn bộ phần sau. Matt không nói "AI không thay đổi gì". Ông ấy nói: **những thứ khiến việc cộng tác giữa người với người hiệu quả, cũng khiến việc cộng tác với AI hiệu quả.**
+**Dịch:** *"Lý thuyết đằng sau bài nói này — hay ít nhất là luận điểm mà tôi đã vận hành theo suốt khoảng 6 tháng qua — là **tất cả chúng ta đều nghĩ AI là một paradigm mới**... Và tôi cảm thấy khi nói AI là paradigm mới, chúng ta quên mất rằng thực ra **những nền tảng của software engineering, những thứ cực kỳ quan trọng khi làm việc với con người, cũng hoạt động cực tốt với AI**."*
+
+> 💡 **Ý là:** Đọc kỹ câu này vì nó quyết định cách hiểu toàn bộ phần sau. Matt **không** nói "AI không thay đổi gì". Ông ấy nói: **những thứ khiến việc cộng tác giữa người với người hiệu quả, cũng khiến việc cộng tác với AI hiệu quả.**
+>
+> Vì sao? Vì cả hai đều là "một thực thể thông minh nhưng có giới hạn, không đọc được suy nghĩ của bạn, và làm việc tốt hơn khi có mục tiêu rõ ràng cùng feedback nhanh".
 
 Hệ quả thực tế: mọi kỹ thuật ông ấy dạy đều là kỹ thuật cũ, chỉ đổi đối tượng áp dụng.
 
@@ -48,6 +58,10 @@ Câu chốt cuối buổi `[01:36]` cũng chính là câu này:
 
 > "You should head to Amazon and just buy a ton of those old books... **pre-AI writing is always really fun to read anyway.** On every single page I found that there was something useful."
 
+**Dịch:** *"Bạn nên lên Amazon và mua một đống mấy cuốn sách cũ đó... **văn viết thời tiền-AI lúc nào đọc cũng thú vị.** Trang nào tôi cũng tìm thấy thứ gì đó hữu ích."*
+
+> 💡 **Ý là:** Cụm "pre-AI writing" hơi mỉa mai — hàm ý rằng văn viết bây giờ (nhiều bài blog do AI sinh ra) loãng hơn. Sách cũ được viết khi tác giả phải trả giá bằng thời gian cho từng câu, nên mật độ ý cao hơn.
+
 ---
 
 ## Cách tổ chức buổi workshop
@@ -57,6 +71,10 @@ Câu chốt cuối buổi `[01:36]` cũng chính là câu này:
 Matt **ghét format Q&A truyền thống**:
 
 > "I sort of have a hatred of Q&As cuz they're not very democratic. They're mostly the sort of most talkative people get to participate and share."
+
+**Dịch:** *"Tôi khá ghét mấy phiên Q&A vì chúng không dân chủ lắm. Đa phần chỉ những người nói nhiều nhất mới được tham gia và chia sẻ."*
+
+> 💡 **Ý là:** Q&A giơ tay chọn lọc theo **độ dạn dĩ**, không theo **chất lượng câu hỏi**. Người có câu hỏi hay nhất phòng có thể là người ngại nhất.
 
 → Ông ấy dùng **Slido**: mọi người post câu hỏi async, **vote cho nhau**, câu hay nhất nổi lên. Trong suốt buổi ông ấy trả lời theo thứ tự vote, xen kẽ lúc chờ AI chạy.
 
@@ -72,9 +90,17 @@ Matt hỏi phòng có ai nghe về "specs to code movement" không. Ông ấy m�
 
 > "People say: okay, the best way to build that app is to take some specifications, write some sort of document, and then turn that document into code. How do you do that? You pass it to AI. **If there's something wrong with the resulting code, you don't look at the code, you look back at the specs.** You change the specs and you sort of just keep going like this."
 
+**Dịch:** *"Người ta nói: ok, cách tốt nhất để xây app đó là lấy một số specification, viết ra một dạng tài liệu nào đó, rồi biến tài liệu đó thành code. Làm sao? Bạn đưa nó cho AI. **Nếu code sinh ra có vấn đề gì, bạn không nhìn vào code — bạn quay lại nhìn spec.** Bạn sửa spec rồi cứ thế tiếp tục."*
+
 Đánh giá của ông ấy, không vòng vo:
 
 > "This is kind of like **vibe coding by another name** where you're essentially ignoring the code... And I tried this. I really tried it. **And it sucks. It doesn't work.** Because you need to keep a handle on the code. You need to understand what's in it. You need to shape it because **the code is your battleground.**"
+
+**Dịch:** *"Đây kiểu như **vibe coding đổi tên** thôi, về cơ bản bạn đang phớt lờ code... Và tôi đã thử. Tôi thử thật sự. **Và nó tệ. Nó không hoạt động.** Bởi vì bạn cần nắm được code. Bạn cần hiểu trong đó có gì. Bạn cần định hình nó, vì **code mới là chiến trường của bạn.**"*
+
+> 💡 **Ý là:** "**battleground**" = chiến trường. Chọn từ này rất có chủ ý: chiến trường là nơi bạn **giao chiến khi có vấn đề**, không phải nơi bạn xuất phát.
+>
+> Cả specs-to-code lẫn Matt đều đi theo chiều `spec → code`. Khác nhau ở **chiều ngược lại**: khi code sai, specs-to-code quay về sửa spec; Matt sửa thẳng ở code.
 
 ### Tại sao điều này quan trọng
 
