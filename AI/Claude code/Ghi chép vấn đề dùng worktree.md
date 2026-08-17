@@ -37,3 +37,6 @@ Ngày 4
 2. Thực ra tôi thấy việc để AI hiểu đc hoàn cảnh context từ đầu đến cuối rất quan trong tránh bị nhắc lại tôi thấy làm loyalty page v3 ấy AI rất ít ghi vào processs md nên rất khó track
 3. Cmux hay bị offf chết session kể cả đang chạy là do đâu nhỉ 
 4. Vấn đề compact tôi chưa thấy có có cmux đang quan lý như nào v nhỉ 
+5. Phần 5 này đặc biện quan trọng sau khi t thấy đc 1 số vấn đề ở việc như đọc plan khó hiểu, AI check sai tôi đọc cungx không heieur gì thực chất việc cho agent đọc và lên plan hỏi lại khi có thắc mắc ấy có nhiều context khiến rơi vào vùng dump đần của agent nên cần các đầu việc 
+- Nên tách rõ từng phase ra nữa ở phần đầu đc không thực ra phần code rất nhanh thôi phần lên plan rất quan trọng này nên tách ra ra nhiều phase bé hơn nữa để k bị dump 
+- Thực ra câu chuyện đang có dùng agent nhiều muốn chạy nó long running app khiến agent bị dump quá việc này cần cải thiện lại có lẽ sẽ k cố để nó loop nữa đẫn reset cái này liên hệ trực tiếp đến. vấn đề này thực ra đến từ con người nhiểu hơn bn hay phân tích lại và so sánh nên đặt lại vấn đề trong work flow nên làm gì agent chỉ nên làm gì tách ra sao rõ ràng là phương án tốt nhất nhé  
