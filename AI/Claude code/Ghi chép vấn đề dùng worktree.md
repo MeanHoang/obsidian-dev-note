@@ -44,4 +44,5 @@ Ngày 4
 
 Ngày 5
 1. Đéo mẹ sub agent sao hay tự ý git stash thế nhỉ ảnh hưởng đến local đang chạy á check và tìm cách xử lý nhé 
-2. 
+2. Đéo mẹ sao agent giờ có việc commit nhầm file nhỉ kiểu chỉ commit file nó sửa thôi nó commit cả file mà difff local chạy sinh ra ấy 
+3. 

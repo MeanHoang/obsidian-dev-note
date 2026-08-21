@@ -15,6 +15,7 @@ Domain sau đã structured URL đáng tin, miễn verify khi chỉ lấy URL roo
 - `anthropic.com`, `openai.com` (news, docs)
 - `techcrunch.com`, `theverge.com`, `arstechnica.com`, `news.ycombinator.com`
 - Vietnam: `vietstock.vn`, `cafef.vn`, `vneconomy.vn`, `vnexpress.net`, `sjc.com.vn`
+- `digest.avada.net` (URL theo ngày `/d/YYYY-MM-DD` — luôn WebFetch để lấy nội dung, nhưng URL tự ghép theo ngày là hợp lệ)
 
 ### URL cần WebFetch verify BẮT BUỘC trước khi ghi file
 - **Item ⭐ / nổi bật nhất của mỗi topic** — luôn verify (đằng nào cũng phải WebFetch để viết section Chi tiết) vì user sẽ click đầu tiên.

@@ -69,6 +69,54 @@ Số lượng item mỗi file:
 - **Gợi ý cho người giữ VND có dư:** kênh nào đang hợp lý theo dữ liệu hôm nay (nhận định ngắn, **không phải lời khuyên đầu tư**).
 ```
 
+## 2b. Template avada-digest.md
+
+Mục tiêu: **bản tóm tắt đầy đủ** của `https://digest.avada.net/d/YYYY-MM-DD` — mọi section, mọi mục. Ngắn gọn nhưng không bỏ sót.
+
+```markdown
+# 📰 AVADA Digest — YYYY-MM-DD
+
+> Nguồn: [digest.avada.net/d/YYYY-MM-DD](https://digest.avada.net/d/YYYY-MM-DD) · 1 dòng: hôm nay digest có gì đáng chú ý nhất.
+
+## ⏰ Deadlines
+- **DD/MM:** nội dung deadline (ai bị ảnh hưởng).
+
+## 🛒 Shopify This Week
+### Official news
+- **[Tiêu đề](url)** — 1 câu tóm tắt.
+### Changelog
+- **Tên thay đổi** — thay đổi gì, ảnh hưởng ai.
+### Developer updates
+- …
+
+## 🚀 Launches
+- **[Tên sản phẩm](url)** (công ty) — là gì, dùng để làm gì.
+
+## 📦 GitHub Trending
+**Hôm nay:** `repo1` — mô tả 1 câu · `repo2` — … (liệt kê đủ)
+**Tuần này:** …
+**Shopify org:** …
+
+## 🐦 On X — SaaS, Ecom, DTC
+- **SaaS:** …
+- **Ecom/DTC:** …
+- **Shopify community:** …
+
+## 👽 On Reddit
+- **r/shopify:** thread 1 — chốt lại 1 câu; thread 2 — …
+- **r/shopifyDev:** …
+- **r/ecommerce:** …
+
+## 🧭 Analysis & Commentary
+- Ý chính 1.
+- Ý chính 2.
+
+## 💡 Liên quan Joy Loyalty
+2-3 bullet: mục nào trong digest hôm nay ảnh hưởng trực tiếp tới Joy Loyalty / app Shopify của user.
+```
+
+Section nào trang không có → bỏ heading đó. Section trang có → **bắt buộc xuất hiện**, không được rút gọn thành "và nhiều mục khác".
+
 ## 3. Template index (YYYY-MM-DD-summary.md — main agent ghi cuối)
 
 Ngắn gọn — index để điều hướng, KHÔNG lặp lại nội dung file con.
@@ -87,6 +135,7 @@ Ngắn gọn — index để điều hướng, KHÔNG lặp lại nội dung fil
 - 🌐 [[web-dev]] — X tin · highlight: …
 - 🛒 [[shopify]] — X tin · highlight: …
 - 🤖 [[ai-security]] — X tin · highlight: …
+- 📰 [[avada-digest]] — X mục · highlight: 1 câu về mục đáng chú ý nhất trong digest.
 - 💰 [[tai-chinh-vn]] — 1 câu chốt từ Đánh giá chung.
 
 (Topic không có file hôm nay → bỏ dòng đó.)
