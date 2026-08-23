@@ -22,8 +22,23 @@
               "icon": "file-text",
               "title": "Changelog"
             }
+          },
+          {
+            "id": "7074adc09bf26c75",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "5 - Design System/UX UI/01 - Nền tảng tư duy UX.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01 - Nền tảng tư duy UX"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -167,11 +182,9 @@
           {
             "id": "5101c7f6d36baa11",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "git-view",
               "state": {},
-              "pinned": true,
               "icon": "git-pull-request",
               "title": "Source Control"
             }
@@ -196,6 +209,46 @@
       "bases:Create new base": false
     }
   },
-  "active": "acd33fd3c3c15d2f",
-  "lastOpenFiles": []
+  "active": "7074adc09bf26c75",
+  "lastOpenFiles": [
+    "5 - Design System/UX UI/00 - UX-UI Roadmap (MOC).md",
+    "5 - Design System/UX UI/01 - Nền tảng tư duy UX.md",
+    "5 - Design System/UX UI/10 - Design Process & Tools.md.tmp.11960.eea7a506cf56",
+    "5 - Design System/UX UI/10 - Design Process & Tools.md.tmp.11960.831e25e920c3",
+    "5 - Design System/UX UI/08 - Accessibility (a11y).md.tmp.11960.c409d3f109c4",
+    "5 - Design System/UX UI/09 - UX cho SaaS.md.tmp.11960.496ab13114e6",
+    "5 - Design System/UX UI/07 - Components & Interaction Design.md.tmp.11960.c9769daa1fe4",
+    "5 - Design System/UX UI/04 - Typography.md.tmp.11960.89d0f66870ed",
+    "5 - Design System/UX UI/05 - Color & Theming.md.tmp.11960.f35aae1dacb3",
+    "5 - Design System/UX UI/06 - Spacing & Design Tokens.md.tmp.11960.313e9d7b8e45",
+    "5 - Design System/UX UI/01 - Nền tảng tư duy UX.md.tmp.11960.b435aba81e43",
+    "5 - Design System/UX UI/04 - Typography.md.tmp.11960.47884baacf7b",
+    "5 - Design System/UX UI/09 - UX cho SaaS.md",
+    "5 - Design System/UX UI/10 - Design Process & Tools.md",
+    "5 - Design System/UX UI/08 - Accessibility (a11y).md",
+    "5 - Design System/UX UI/07 - Components & Interaction Design.md",
+    "5 - Design System/UX UI/06 - Spacing & Design Tokens.md",
+    "5 - Design System/UX UI/05 - Color & Theming.md",
+    "5 - Design System/UX UI/04 - Typography.md",
+    "5 - Design System/UX UI/02 - Laws of UX - Nguyên tắc tâm lý học.md",
+    "5 - Design System/UX UI/03 - Visual Hierarchy & Layout.md",
+    "Linhtinh/Img/Pasted image 20260805150603.png",
+    "Linhtinh/Img/Pasted image 20260805150554.png",
+    "Linhtinh/Img/Pasted image 20260805145227.png",
+    "Linhtinh/Img/Pasted image 20260805145129.png",
+    "Learn something new every day/2026-08/2026-08-22/web-dev.md",
+    "Learn something new every day/2026-08/2026-08-22/tai-chinh-vn.md",
+    "Learn something new every day/2026-08/2026-08-22/system-design.md",
+    "Learn something new every day/2026-08/2026-08-22/shopify.md",
+    "Learn something new every day/2026-08/2026-08-22/firebase-gcp.md",
+    "Learn something new every day/2026-08/2026-08-22/avada-digest.md",
+    "Learn something new every day/2026-08/2026-08-22/ai-security.md",
+    "Learn something new every day/2026-08/2026-08-22/2026-08-22-summary.md",
+    "Learn something new every day/2026-08/2026-08-21/web-dev.md",
+    "Learn something new every day/2026-08/2026-08-21/tai-chinh-vn.md",
+    "Learn something new every day/2026-08/2026-08-21/system-design.md",
+    "Learn something new every day/2026-08/2026-08-21/shopify.md",
+    "Learn something new every day/2026-08/2026-08-21/firebase-gcp.md",
+    "Learn something new every day/2026-08/2026-08-21/avada-digest.md"
+  ]
 }
