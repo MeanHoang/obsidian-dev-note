@@ -31,6 +31,11 @@
 - `Shopify Checkout Extensibility news [year]`
 - `Shopify Editions [season year]`
 
+### AVADA Digest (đọc trực tiếp, không search)
+- WebFetch `https://digest.avada.net/d/<YYYY-MM-DD>` — **ngày nào đọc bản ngày đó**, ghép ngày hôm nay vào URL.
+- Fallback khi 404: WebFetch `https://digest.avada.net` để lấy bản mới nhất.
+- Anchor tham khảo: `#official-news` (Shopify official news). Các section khác: Deadlines, Changelog, Developer updates, Launches, GitHub Trending, On X, On Reddit, Analysis & Commentary.
+
 ### AI / Security
 - `"Claude Anthropic release this week"`, `"OpenAI announcement this week"`
 - `CVE Shopify vulnerability [year]`, `"security breach [month year]"`
@@ -68,6 +73,7 @@
 
 **Shopify:**
 - shopify.dev, shopify.com/partners/blog, shopify.engineering
+- digest.avada.net (bản digest theo ngày — agent 7)
 
 **AI:**
 - anthropic.com, openai.com/blog, blog chính thức

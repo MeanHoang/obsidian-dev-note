@@ -7,24 +7,25 @@ allowed-tools: WebSearch WebFetch Bash(find:*) Bash(mkdir:*) Bash(cat:*) Write A
 
 **Context user:** Shopify app developer tại Joy Loyalty. Stack: **JavaScript** (không TS), **Firebase**, **GCP**, React (vì Polaris), Shopify Admin API. Ưu tiên học architecture, coding craft, web dev, Firebase/GCP.
 
-Nếu `$ARGUMENTS` có giá trị → chỉ chạy agent của topic đó. Trống → chạy đủ 6 agent.
+Nếu `$ARGUMENTS` có giá trị → chỉ chạy agent của topic đó. Trống → chạy đủ 7 agent.
 
 ## Kiến trúc output — mỗi chủ đề 1 file riêng
 
 ```
-Learn something new every day./YYYY-MM/YYYY-MM-DD/
+Learn something new every day/YYYY-MM/YYYY-MM-DD/
 ├── YYYY-MM-DD-summary.md   ← index: Top 5 + highlight từng topic, link tới file con
 ├── system-design.md
 ├── firebase-gcp.md
 ├── web-dev.md
 ├── shopify.md
 ├── ai-security.md
+├── avada-digest.md
 └── tai-chinh-vn.md
 ```
 
 Topic không có tin → **không tạo file đó** (trừ `tai-chinh-vn.md` luôn có).
 
-## Phân công 6 agent (chạy song song)
+## Phân công 7 agent (chạy song song)
 
 | Agent | File | Phạm vi |
 |---|---|---|
@@ -34,16 +35,28 @@ Topic không có tin → **không tạo file đó** (trừ `tai-chinh-vn.md` lu�
 | 4. Shopify | `shopify.md` | GraphQL API, Functions, Checkout Extensibility, Polaris, metafields + Editions/BFCM/Built for Shopify |
 | 5. AI, Security & Khác | `ai-security.md` | AI (model/tool mới, AI cho dev workflow), CVE/breach, GitHub trending, loyalty competitors + tech companies (chỉ tin thực sự lớn) |
 | 6. Tài chính VN | `tai-chinh-vn.md` | vàng SJC/9999/thế giới, VN-Index, BTC/ETH, lãi suất ngân hàng + **Đánh giá chung** |
+| 7. AVADA Digest | `avada-digest.md` | đọc **toàn bộ** bản digest ngày hôm đó tại `https://digest.avada.net/d/YYYY-MM-DD` — tóm tắt tất cả section |
+
+### Agent 7 — AVADA Digest (bắt buộc chạy mỗi ngày)
+
+- URL **luôn theo ngày đang chạy**: `https://digest.avada.net/d/<YYYY-MM-DD>` (vd hôm nay `2026-08-19` → `https://digest.avada.net/d/2026-08-19`). Không hardcode ngày cũ, không dùng `https://digest.avada.net` trần trừ khi trang ngày trả 404.
+- Nếu trang ngày đó chưa có / 404 → WebFetch `https://digest.avada.net` để lấy link bản digest mới nhất, ghi rõ trong file là "digest ngày X (bản gần nhất, chưa có bản hôm nay)". Không có gì cả → `FILE: none`.
+- **Đọc và tóm tắt TẤT CẢ section** của bản digest, không chọn lọc bỏ bớt section. Trang có các section dạng: Shopify This Week (deadlines / official news `#official-news` / changelog / developer updates), Launches, GitHub Trending, On X (SaaS, Ecom, DTC), On Reddit (r/shopify, r/shopifyDev, r/ecommerce), Analysis & Commentary. Section nào có trong trang thì phải xuất hiện trong file.
+- Trong mỗi section: liệt kê **mọi mục** có trong trang (tiêu đề + link gốc nếu digest có link), mỗi mục 1 dòng tóm tắt tiếng Việt. Section dài (Reddit, GitHub Trending) được gộp bullet ngắn, nhưng không được bỏ mục.
+- Digest thường dài → nếu 1 lần WebFetch không lấy đủ, WebFetch lại cùng URL với prompt nhắm vào từng section còn thiếu (vd "liệt kê đầy đủ phần On Reddit"), cho tới khi đủ section.
+- Riêng phần **Deadlines** của Shopify This Week: giữ nguyên ngày deadline, đưa lên đầu file.
+- Chỉ dùng dữ liệu đọc được từ trang; không suy diễn thêm nội dung bài gốc chưa đọc.
+- Dedupe: mục trùng với tin agent khác đã có vẫn giữ trong file này (đây là bản ghi đầy đủ của digest), nhưng ở `TOP:` thì chọn mục chưa xuất hiện ở topic khác.
 
 ## Workflow
 
 ### Bước 1 — Dedupe scan (main agent, trước khi spawn)
 ```bash
-find "Learn something new every day." -type f -name "*.md" -mtime -7 2>/dev/null
+find "Learn something new every day" -type f -name "*.md" -mtime -7 2>/dev/null
 ```
 `cat` các file topic 7 ngày gần nhất, rút ra **list URL + tiêu đề đã xuất hiện theo từng topic**. List này sẽ nhúng vào prompt của agent tương ứng.
 
-### Bước 2 — Spawn 6 agent SONG SONG (1 message, 6 tool call Agent)
+### Bước 2 — Spawn 7 agent SONG SONG (1 message, 7 tool call Agent)
 Mỗi agent prompt phải chứa đầy đủ (agent không tự đọc được skill file, phải nhúng):
 1. **Ngày hôm nay** (lấy từ `currentDate`, không để agent đoán).
 2. **Phạm vi topic + file output path tuyệt đối** của nó.
@@ -62,7 +75,9 @@ Mỗi agent prompt phải chứa đầy đủ (agent không tự đọc được
    ```
    Topic không có tin → trả `FILE: none`.
 
-### Bước 3 — Main agent ghi index (sau khi 6 agent xong)
+Riêng agent 7: prompt phải nhúng **URL digest đã ghép sẵn theo ngày hôm nay** + toàn bộ mục "Agent 7 — AVADA Digest" ở trên + template `avada-digest.md`.
+
+### Bước 3 — Main agent ghi index (sau khi 7 agent xong)
 Ghi `YYYY-MM-DD-summary.md` theo format index trong [template.md](template.md):
 - **Top 5 đáng đọc nhất hôm nay** — chọn từ các `TOP:` agent trả về, xếp theo impact với Joy Loyalty / skill dev.
 - Mỗi topic 1 dòng: link Obsidian `[[file]]` + số item + highlight 1 câu.
@@ -70,7 +85,7 @@ Ghi `YYYY-MM-DD-summary.md` theo format index trong [template.md](template.md):
 
 ### Bước 4 — Confirm ngắn gọn
 ```
-✅ Đã lưu Learn something new every day./YYYY-MM/YYYY-MM-DD/ — N file:
+✅ Đã lưu Learn something new every day/YYYY-MM/YYYY-MM-DD/ — N file:
    📌 summary (index) · 🏗️ system-design (X tin) · 🔥 firebase-gcp (X) · …
    Top pick: <tiêu đề top 1>
 ```

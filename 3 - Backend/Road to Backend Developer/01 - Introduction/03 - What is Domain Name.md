@@ -8,7 +8,7 @@
 
 > **Domain name (tên miền)** = **cái TÊN dễ nhớ cho con người** trỏ tới một server trên Internet (vd `google.com`), thay cho dãy số **[[Glossary - Networking#IP address|IP]]** khó nhớ (`142.250.66.14`).
 
-MDN: *"Domain names provide a human-readable address for any web s`erver available on the Internet."* Máy tính thật ra dùng **IP** để tìm nhau; tên miền chỉ là **lớp tên dễ nhớ phủ lên trên**, và **[[Glossary - Networking#DNS|DNS]]** lo dịch tên → IP (đã học ở [[01 - How does the internet work#5.3. Domain vs DNS vs IP khác gì? (hay lẫn nhất)|bài 01 mục 5.3]]).
+MDN: *"Domain names provide a human-readable address for any web server available on the Internet."* Máy tính thật ra dùng **IP** để tìm nhau; tên miền chỉ là **lớp tên dễ nhớ phủ lên trên**, và **[[Glossary - Networking#DNS|DNS]]** lo dịch tên → IP (đã học ở [[01 - How does the internet work#5.3. Domain vs DNS vs IP khác gì? (hay lẫn nhất)|bài 01 mục 5.3]]).
 
 **Vì sao cần tên miền?** IP **khó nhớ** và **có thể đổi** (đổi server, đổi hosting). Tên miền giữ nguyên (`shop.com`), chỉ cần cập nhật "tên này trỏ IP mới" là xong — người dùng không phải nhớ lại gì.
 
@@ -32,7 +32,7 @@ MDN: *"Domain names provide a human-readable address for any web s`erver availab
 | **TLD** (Top-Level Domain) | Đuôi — cho biết "loại/mục đích" | `.com`, `.org`, `.vn` |
 | **SLD** (Second-Level Domain) | **Tên bạn đăng ký** (phần chính) | `shop` trong `shop.com` |
 | **Subdomain** (tên miền con) | Nhánh con bạn tự tạo thêm | `blog.`, `www.`, `api.` |
-
+ 
 **Vài lưu ý (nguồn [MDN](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_domain_name)):**
 - Mỗi **label** (đoạn giữa 2 dấu chấm) dài 1–63 ký tự, chỉ chữ A–Z, số 0–9, dấu gạch `-` (không đứng đầu/cuối). **Không phân biệt hoa thường.**
 - **Subdomain = một bản ghi DNS ĐỘC LẬP** dưới domain bạn sở hữu; **bạn tự trỏ nó tới IP bất kỳ.** Sở hữu `shop.com` → tạo bao nhiêu subdomain cũng được (`blog.`, `api.`, `dashboard.`...), **miễn phí** (khác với mua thêm domain).
