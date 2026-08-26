@@ -45,5 +45,11 @@ created: 2026-08-23
 - [ ] Giảm **cognitive load**: ít lựa chọn mỗi lúc (Hick's Law) ([[02 - Laws of UX - Nguyên tắc tâm lý học]])
 - [ ] Có **empty state** & **onboarding** dẫn tới "aha moment" ([[09 - UX cho SaaS]])
 
+## 🔍 Áp dụng thực tế
+
+| Note | Nội dung |
+|---|---|
+| [[11 - Audit - Loyalty Page V2]] | Rà soát Joy Loyalty Page V2 (admin editor + storefront) theo bộ nguyên tắc trên — 106 finding có `file:line`, bảng contrast tự tính, ma trận 4 trạng thái dữ liệu, checklist a11y modal |
+
 ---
 > 🤖 Bộ note được tổng hợp từ roadmap UX/UI 2026 (Laws of UX, Refactoring UI, UX Design Institute, NN/g) và review lại tính đúng đắn bởi agent kiểm định.
