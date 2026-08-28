@@ -1,0 +1,6 @@
+[     512ms] [LOG] %c Joy redeem inline initialized background: #054597; color: white @ https://avada-joy-staging-25.firebaseapp.com/scripttag/avada-joy-redeem-inline.min.js?v=1787891161332:0
+[     608ms] [LOG] %c Joy blocks initialized background: #054597; color: white @ https://avada-joy-staging-25.firebaseapp.com/scripttag/avada-joy-blocks.min.js?v=1787891161332:363
+[     642ms] [LOG] %c AVADA Joy has initialized background: #054597; color: white @ https://avada-joy-staging-25.firebaseapp.com/scripttag/avada-joy-main.min.js?v=1787891161456:0
+[     673ms] [LOG] %c AVADA Joy has initialized background: #054597; color: white @ https://avada-joy-staging-25.firebaseapp.com/scripttag/avada-joy-main.min.js?v=1787891161477:0
+[     688ms] [LOG] %c Joy point calculator initialized background: #054597; color: white @ https://avada-joy-staging-25.firebaseapp.com/scripttag/avada-joy-points-calculator.min.js?v=1787891161332:0
+[     689ms] [LOG] No elements found for selectors: .joy-points-calculator__block,.joy-points-calculator__blockitem @ https://avada-joy-staging-25.firebaseapp.com/scripttag/avada-joy-points-calculator-points-calculator_managers_DisplayManager_js.57d9b2e1c5518ec1.bundle.js:0

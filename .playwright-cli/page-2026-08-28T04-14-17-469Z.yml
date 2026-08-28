@@ -1,0 +1,627 @@
+- generic [ref=e1]:
+  - img "index"
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - text: SHOP OUR
+          - strong [ref=e8]: BEST SELLERS
+        - link "BUY NOW" [ref=e9] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - strong [ref=e13]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e14] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e17]:
+        - strong [ref=e18]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e19]: RM39!
+      - generic [ref=e22]:
+        - strong [ref=e23]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e24]: RM49!
+      - generic [ref=e27]:
+        - text: Now delivering to
+        - strong [ref=e28]: Singapore!
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - text: SHOP OUR
+          - strong [ref=e33]: BEST SELLERS
+        - link "BUY NOW" [ref=e34] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - strong [ref=e38]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e39] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e42]:
+        - strong [ref=e43]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e44]: RM39!
+      - generic [ref=e47]:
+        - strong [ref=e48]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e49]: RM49!
+      - generic [ref=e52]:
+        - text: Now delivering to
+        - strong [ref=e53]: Singapore!
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - text: SHOP OUR
+          - strong [ref=e58]: BEST SELLERS
+        - link "BUY NOW" [ref=e59] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - strong [ref=e63]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e64] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e67]:
+        - strong [ref=e68]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e69]: RM39!
+      - generic [ref=e72]:
+        - strong [ref=e73]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e74]: RM49!
+      - generic [ref=e77]:
+        - text: Now delivering to
+        - strong [ref=e78]: Singapore!
+    - generic [ref=e80]:
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - text: SHOP OUR
+          - strong [ref=e83]: BEST SELLERS
+        - link "BUY NOW" [ref=e84] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - strong [ref=e88]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e89] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e92]:
+        - strong [ref=e93]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e94]: RM39!
+      - generic [ref=e97]:
+        - strong [ref=e98]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e99]: RM49!
+      - generic [ref=e102]:
+        - text: Now delivering to
+        - strong [ref=e103]: Singapore!
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - text: SHOP OUR
+          - strong [ref=e108]: BEST SELLERS
+        - link "BUY NOW" [ref=e109] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - strong [ref=e113]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e114] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e117]:
+        - strong [ref=e118]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e119]: RM39!
+      - generic [ref=e122]:
+        - strong [ref=e123]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e124]: RM49!
+      - generic [ref=e127]:
+        - text: Now delivering to
+        - strong [ref=e128]: Singapore!
+    - generic [ref=e130]:
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - text: SHOP OUR
+          - strong [ref=e133]: BEST SELLERS
+        - link "BUY NOW" [ref=e134] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e136]:
+        - generic [ref=e137]:
+          - strong [ref=e138]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e139] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e142]:
+        - strong [ref=e143]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e144]: RM39!
+      - generic [ref=e147]:
+        - strong [ref=e148]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e149]: RM49!
+      - generic [ref=e152]:
+        - text: Now delivering to
+        - strong [ref=e153]: Singapore!
+    - generic [ref=e155]:
+      - generic [ref=e156]:
+        - generic [ref=e157]:
+          - text: SHOP OUR
+          - strong [ref=e158]: BEST SELLERS
+        - link "BUY NOW" [ref=e159] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e161]:
+        - generic [ref=e162]:
+          - strong [ref=e163]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e164] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e167]:
+        - strong [ref=e168]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e169]: RM39!
+      - generic [ref=e172]:
+        - strong [ref=e173]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e174]: RM49!
+      - generic [ref=e177]:
+        - text: Now delivering to
+        - strong [ref=e178]: Singapore!
+    - generic [ref=e180]:
+      - generic [ref=e181]:
+        - generic [ref=e182]:
+          - text: SHOP OUR
+          - strong [ref=e183]: BEST SELLERS
+        - link "BUY NOW" [ref=e184] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e186]:
+        - generic [ref=e187]:
+          - strong [ref=e188]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e189] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e192]:
+        - strong [ref=e193]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e194]: RM39!
+      - generic [ref=e197]:
+        - strong [ref=e198]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e199]: RM49!
+      - generic [ref=e202]:
+        - text: Now delivering to
+        - strong [ref=e203]: Singapore!
+    - generic [ref=e205]:
+      - generic [ref=e206]:
+        - generic [ref=e207]:
+          - text: SHOP OUR
+          - strong [ref=e208]: BEST SELLERS
+        - link "BUY NOW" [ref=e209] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e211]:
+        - generic [ref=e212]:
+          - strong [ref=e213]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e214] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e217]:
+        - strong [ref=e218]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e219]: RM39!
+      - generic [ref=e222]:
+        - strong [ref=e223]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e224]: RM49!
+      - generic [ref=e227]:
+        - text: Now delivering to
+        - strong [ref=e228]: Singapore!
+    - generic [ref=e230]:
+      - generic [ref=e231]:
+        - generic [ref=e232]:
+          - text: SHOP OUR
+          - strong [ref=e233]: BEST SELLERS
+        - link "BUY NOW" [ref=e234] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e236]:
+        - generic [ref=e237]:
+          - strong [ref=e238]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e239] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e242]:
+        - strong [ref=e243]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e244]: RM39!
+      - generic [ref=e247]:
+        - strong [ref=e248]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e249]: RM49!
+      - generic [ref=e252]:
+        - text: Now delivering to
+        - strong [ref=e253]: Singapore!
+  - generic [ref=e255]:
+    - banner [ref=e256]:
+      - generic [ref=e261]:
+        - generic [ref=e262]:
+          - button "Navigation" [ref=e263] [cursor=pointer]:
+            - img [ref=e264]
+            - generic [ref=e266]: Navigation
+          - img [ref=e268]
+        - generic:
+          - generic:
+            - generic:
+              - link "ag-mh-shop-staging25":
+                - /url: /
+        - generic [ref=e271]:
+          - generic:
+            - generic:
+              - generic:
+                - button "Search"
+                - dialog "Search" [ref=e272]:
+                  - generic [ref=e274]:
+                    - generic [ref=e275]:
+                      - generic [ref=e276]: WHAT ARE YOU LOOKING FOR?
+                      - button "Close" [ref=e277] [cursor=pointer]:
+                        - generic [ref=e278]: 
+                    - search [ref=e279]:
+                      - generic [ref=e280]:
+                        - combobox "Search" [ref=e281]
+                        - generic [ref=e282] [cursor=pointer]: Search
+                        - button "Search" [ref=e283] [cursor=pointer]:
+                          - img [ref=e284]
+                      - status [ref=e287]
+          - generic [ref=e288] [cursor=pointer]:
+            - generic "Your Cart" [ref=e289]:
+              - generic [ref=e290]: Cart
+              - img [ref=e291]
+              - generic [ref=e293]: "0"
+            - generic [ref=e294]:
+              - generic [ref=e296]:
+                - generic [ref=e297]:
+                  - generic [ref=e298]: Cart
+                  - generic [ref=e299]: "0"
+                - button "close" [ref=e301]
+              - generic [ref=e304]:
+                - img [ref=e306]
+                - generic [ref=e310]: No products in the cart.
+                - link "Shop our products" [ref=e311]:
+                  - /url: /collections/all
+    - text: 
+  - main [ref=e313]:
+    - generic [ref=e316]:
+      - generic [ref=e318]:
+        - generic "Wellness on Repeat, Now With Rewards" [ref=e322]:
+          - generic [ref=e323]:
+            - img [ref=e325]
+            - generic [ref=e327]:
+              - heading "Wellness on Repeat, Now With Rewards" [level=1] [ref=e328]
+              - paragraph [ref=e329]: Every order earns points towards the next one. Joining is free and takes about a minute.
+              - generic [ref=e331]:
+                - link "Join Arrae Rewards" [ref=e520] [cursor=pointer]:
+                  - /url: /customer_authentication/login?return_to=%2Fpages%2Fcontact%23joy-open&locale=en&ui_hint=full
+                - link "See What Points Get You" [ref=e521] [cursor=pointer]:
+                  - /url: /customer_authentication/login?return_to=%2Fpages%2Fcontact&locale=en&ui_hint=full
+        - status
+      - generic [ref=e335]:
+        - generic "How It Works" [ref=e339]:
+          - generic [ref=e341]:
+            - generic [ref=e342]:
+              - heading "How It Works" [level=2] [ref=e343]
+              - paragraph [ref=e344]: Three steps, and then it runs quietly in the background.
+            - generic [ref=e345]:
+              - generic [ref=e347]:
+                - img [ref=e350]
+                - heading "Create Your Account" [level=3] [ref=e351]
+                - paragraph [ref=e352]: It is free, and it takes about a minute. You start earning on your very next order.
+              - generic [ref=e354]:
+                - img [ref=e357]
+                - heading "Earn On Everything" [level=3] [ref=e358]
+                - paragraph [ref=e359]: Every order earns. So do reviews, referrals, and the week of your birthday.
+              - generic [ref=e361]:
+                - img [ref=e364]
+                - heading "Redeem At Checkout" [level=3] [ref=e365]
+                - paragraph [ref=e366]: Turn points into money off, free shipping, or a product on us.
+        - status
+      - generic [ref=e368]:
+        - generic [ref=e523]:
+          - generic [ref=e524]:
+            - heading "Ways to Earn" [level=2] [ref=e525]
+            - paragraph [ref=e526]: Orders earn automatically at your tier rate. The rest are one-off, and each takes about a minute.
+          - generic [ref=e527]:
+            - img "Ways to Earn" [ref=e529]
+            - generic [ref=e530]:
+              - button "Sign Up Earn 50 points +50 points" [ref=e532] [cursor=pointer]:
+                - generic [ref=e535]:
+                  - generic:
+                    - generic [ref=e537]:
+                      - generic: Sign Up
+                    - generic [ref=e539]:
+                      - generic: Earn 50 points
+                - generic [ref=e543]:
+                  - generic: +50 points
+              - button "Celebrate a birthday Earn 100 points +100 points" [ref=e545] [cursor=pointer]:
+                - generic [ref=e548]:
+                  - generic:
+                    - generic [ref=e550]:
+                      - generic: Celebrate a birthday
+                    - generic [ref=e552]:
+                      - generic: Earn 100 points
+                - generic [ref=e556]:
+                  - generic: +100 points
+              - button "Follow on Instagram Earn 100 points +100 points" [ref=e558] [cursor=pointer]:
+                - generic [ref=e561]:
+                  - generic:
+                    - generic [ref=e563]:
+                      - generic: Follow on Instagram
+                    - generic [ref=e565]:
+                      - generic: Earn 100 points
+                - generic [ref=e569]:
+                  - generic: +100 points
+              - button "Fill out a survey Complete a survey to earn 100 points +100 points" [ref=e571] [cursor=pointer]:
+                - generic [ref=e574]:
+                  - generic:
+                    - generic [ref=e576]:
+                      - generic: Fill out a survey
+                    - generic [ref=e578]:
+                      - generic: Complete a survey to earn 100 points
+                - generic [ref=e582]:
+                  - generic: +100 points
+              - button "Place an order Earn 1 point for every $1 spent +1 point / $1" [ref=e584] [cursor=pointer]:
+                - generic [ref=e587]:
+                  - generic:
+                    - generic [ref=e589]:
+                      - generic: Place an order
+                    - generic [ref=e591]:
+                      - generic: Earn 1 point for every $1 spent
+                - generic [ref=e595]:
+                  - generic: +1 point / $1
+              - button "Member anniversary Earn 50 points +50 points" [ref=e597] [cursor=pointer]:
+                - generic [ref=e600]:
+                  - generic:
+                    - generic [ref=e602]:
+                      - generic: Member anniversary
+                    - generic [ref=e604]:
+                      - generic: Earn 50 points
+                - generic [ref=e608]:
+                  - generic: +50 points
+              - button "Google reviews Earn 50 points +50 points" [ref=e610] [cursor=pointer]:
+                - generic [ref=e613]:
+                  - generic:
+                    - generic [ref=e615]:
+                      - generic: Google reviews
+                    - generic [ref=e617]:
+                      - generic: Earn 50 points
+                - generic [ref=e621]:
+                  - generic: +50 points
+        - status
+      - generic [ref=e380]:
+        - generic [ref=e623]:
+          - generic [ref=e624]:
+            - heading "What Points Get You" [level=2] [ref=e625]
+            - paragraph [ref=e626]: Points come off at checkout, on one-off orders and subscriptions alike.
+          - generic [ref=e627]:
+            - button "Points for discounts Discount $5 for 100 points 100 points" [ref=e629] [cursor=pointer]:
+              - generic [ref=e632]:
+                - generic:
+                  - generic [ref=e634]:
+                    - generic: Points for discounts
+                  - generic [ref=e636]:
+                    - generic: Discount $5 for 100 points
+              - generic [ref=e640]:
+                - generic: 100 points
+            - button "Points for discounts Discount $10 for 200 points 200 points" [ref=e642] [cursor=pointer]:
+              - generic [ref=e645]:
+                - generic:
+                  - generic [ref=e647]:
+                    - generic: Points for discounts
+                  - generic [ref=e649]:
+                    - generic: Discount $10 for 200 points
+              - generic [ref=e653]:
+                - generic: 200 points
+            - button "Points for discounts Discount $20 for 400 points 400 points" [ref=e655] [cursor=pointer]:
+              - generic [ref=e658]:
+                - generic:
+                  - generic [ref=e660]:
+                    - generic: Points for discounts
+                  - generic [ref=e662]:
+                    - generic: Discount $20 for 400 points
+              - generic [ref=e666]:
+                - generic: 400 points
+            - button "Free Shipping Free shipping off entire order 100 points" [ref=e668] [cursor=pointer]:
+              - generic [ref=e671]:
+                - generic:
+                  - generic [ref=e673]:
+                    - generic: Free Shipping
+                  - generic [ref=e675]:
+                    - generic: Free shipping off entire order
+              - generic [ref=e679]:
+                - generic: 100 points
+            - button "Free product 200 points 200 points" [ref=e681] [cursor=pointer]:
+              - generic [ref=e684]:
+                - generic:
+                  - generic [ref=e686]:
+                    - generic: Free product
+                  - generic [ref=e688]:
+                    - generic: 200 points
+              - generic [ref=e692]:
+                - generic: 200 points
+        - status
+      - generic [ref=e392]:
+        - generic "The More You Repeat, The More It Gives" [ref=e694]:
+          - generic [ref=e695]:
+            - generic [ref=e696]:
+              - heading "The More You Repeat, The More It Gives" [level=2] [ref=e697]
+              - paragraph [ref=e698]: Tiers are set by what you spend over a rolling twelve months, and you keep yours for a year after you reach it.
+            - generic [ref=e699]:
+              - group "The More You Repeat, The More It Gives" [ref=e700]:
+                - generic [ref=e701]:
+                  - generic [ref=e702]:
+                    - img [ref=e703]
+                    - generic [ref=e704]: Bronze
+                    - generic [ref=e705]: Free to join
+                  - generic [ref=e706]:
+                    - generic [ref=e707]:
+                      - generic [ref=e709]:
+                        - img [ref=e712]
+                        - generic [ref=e716]: Member discount
+                      - generic [ref=e717]: 5%
+                    - generic [ref=e718]:
+                      - generic [ref=e720]:
+                        - img [ref=e723]
+                        - generic [ref=e728]: Free shipping
+                      - generic "Not included" [ref=e730]:
+                        - img [ref=e732]
+                    - generic [ref=e733]:
+                      - generic [ref=e735]:
+                        - img [ref=e738]
+                        - generic [ref=e742]: Birthday bonus points
+                      - generic "Not included" [ref=e744]:
+                        - img [ref=e746]
+                - generic [ref=e747]:
+                  - generic [ref=e748]:
+                    - img [ref=e749]
+                    - generic [ref=e750]: Silver
+                    - generic [ref=e751]: 200+ points
+                  - generic [ref=e752]:
+                    - generic [ref=e753]:
+                      - generic [ref=e755]:
+                        - img [ref=e758]
+                        - generic [ref=e762]: Member discount
+                      - generic [ref=e763]: 10%
+                    - generic [ref=e764]:
+                      - generic [ref=e766]:
+                        - img [ref=e769]
+                        - generic [ref=e774]: Free shipping
+                      - generic "Included" [ref=e776]:
+                        - img [ref=e778]
+                    - generic [ref=e780]:
+                      - generic [ref=e782]:
+                        - img [ref=e785]
+                        - generic [ref=e789]: Birthday bonus points
+                      - generic "Not included" [ref=e791]:
+                        - img [ref=e793]
+                - generic [ref=e794]:
+                  - generic [ref=e795]:
+                    - img [ref=e796]
+                    - generic [ref=e797]: Gold
+                    - generic [ref=e798]: 500+ points
+                  - generic [ref=e799]:
+                    - generic [ref=e800]:
+                      - generic [ref=e802]:
+                        - img [ref=e805]
+                        - generic [ref=e809]: Member discount
+                      - generic [ref=e810]: 15%
+                    - generic [ref=e811]:
+                      - generic [ref=e813]:
+                        - img [ref=e816]
+                        - generic [ref=e821]: Free shipping
+                      - generic "Included" [ref=e823]:
+                        - img [ref=e825]
+                    - generic [ref=e827]:
+                      - generic [ref=e829]:
+                        - img [ref=e832]
+                        - generic [ref=e836]: Birthday bonus points
+                      - generic [ref=e837]: 200 points
+              - button "Previous tiers" [disabled] [ref=e838]:
+                - img [ref=e840]
+              - button "Next tiers" [ref=e842] [cursor=pointer]:
+                - img [ref=e844]
+              - generic [ref=e846]:
+                - button "Bronze" [ref=e847] [cursor=pointer]
+                - button "Silver" [ref=e848] [cursor=pointer]
+                - button "Gold" [ref=e849] [cursor=pointer]
+        - status
+      - generic [ref=e404]:
+        - generic [ref=e853]:
+          - generic [ref=e854]:
+            - heading "Tell a Friend Who Needs This" [level=2] [ref=e855]
+            - paragraph [ref=e856]: They get their first order discounted. You get points when it ships.
+            - generic [ref=e857]:
+              - generic [ref=e858]:
+                - generic [ref=e859]: You get
+                - generic [ref=e860]: 100 points
+              - generic [ref=e861]:
+                - generic [ref=e862]: They get
+                - generic [ref=e863]: 10%
+            - generic [ref=e866]:
+              - generic [ref=e867]: Your email address
+              - textbox "Your email address" [ref=e868]:
+                - /placeholder: Their email address
+              - button "Send Invite" [ref=e869] [cursor=pointer]
+            - paragraph [ref=e870]: Points land once their first order ships.
+          - img "An arrae MB-1 jar in its coral label, resting on a mirrored plinth with a tape measure draped over it." [ref=e873]
+        - status
+      - generic:
+        - generic:
+          - status
+      - generic [active] [ref=e416]:
+        - generic "Questions, Answered" [ref=e420]:
+          - generic [ref=e421]:
+            - generic [ref=e422]:
+              - heading "Questions, Answered" [level=2] [ref=e423]
+              - paragraph [ref=e424]: If it is not here, our team is one message away.
+            - generic [ref=e425]:
+              - generic [ref=e426]:
+                - button "What does it cost to join?" [expanded] [ref=e427] [cursor=pointer]:
+                  - generic [ref=e428]: What does it cost to join?
+                  - img [ref=e431]
+                - region "What does it cost to join?" [ref=e874]:
+                  - paragraph [ref=e433]: Nothing. Creating an account is free and you start earning on your next order.
+              - generic [ref=e434]:
+                - button "Do my points expire?" [ref=e435] [cursor=pointer]:
+                  - generic [ref=e436]: Do my points expire?
+                  - img [ref=e439]
+                - paragraph [ref=e441]: Points stay put for 12 months from the last time you earned or redeemed. Anything you do resets the clock.
+              - generic [ref=e442]:
+                - button "How do I move up a tier?" [ref=e443] [cursor=pointer]:
+                  - generic [ref=e444]: How do I move up a tier?
+                  - img [ref=e447]
+                - paragraph [ref=e449]: Tiers are based on what you spend in a rolling 12 months. You move up the moment you cross the line, and you keep the tier for a full year after that.
+              - generic [ref=e450]:
+                - button "Can I use points on a subscription order?" [ref=e451] [cursor=pointer]:
+                  - generic [ref=e452]: Can I use points on a subscription order?
+                  - img [ref=e455]
+                - paragraph [ref=e457]: Yes. Points apply at checkout the same way on a one-off order and a recurring one.
+              - generic [ref=e458]:
+                - button "What happens if I return something?" [ref=e459] [cursor=pointer]:
+                  - generic [ref=e460]: What happens if I return something?
+                  - img [ref=e463]
+                - paragraph [ref=e465]: The points from that order come back off your balance. If you already spent them, the balance can go to zero but never below it.
+              - generic [ref=e466]:
+                - button "What does it cost to join?" [ref=e467] [cursor=pointer]:
+                  - generic [ref=e468]: What does it cost to join?
+                  - img [ref=e471]
+                - paragraph [ref=e473]: Nothing. Creating an account is free and you start earning on your next order.
+              - generic [ref=e474]:
+                - button "Do my points expire?" [ref=e475] [cursor=pointer]:
+                  - generic [ref=e476]: Do my points expire?
+                  - img [ref=e479]
+                - paragraph [ref=e481]: Points stay put for 12 months from the last time you earned or redeemed. Anything you do resets the clock.
+              - generic [ref=e482]:
+                - button "How do I move up a tier?" [ref=e483] [cursor=pointer]:
+                  - generic [ref=e484]: How do I move up a tier?
+                  - img [ref=e487]
+                - paragraph [ref=e489]: Tiers are based on what you spend in a rolling 12 months. You move up the moment you cross the line, and you keep the tier for a full year after that.
+              - generic [ref=e490]:
+                - button "Can I use points on a subscription order?" [ref=e491] [cursor=pointer]:
+                  - generic [ref=e492]: Can I use points on a subscription order?
+                  - img [ref=e495]
+                - paragraph [ref=e497]: Yes. Points apply at checkout the same way on a one-off order and a recurring one.
+              - generic [ref=e498]:
+                - button "What happens if I return something?" [ref=e499] [cursor=pointer]:
+                  - generic [ref=e500]: What happens if I return something?
+                  - img [ref=e503]
+                - paragraph [ref=e505]: The points from that order come back off your balance. If you already spent them, the balance can go to zero but never below it.
+        - status
+  - generic [ref=e876] [cursor=pointer]:
+    - img [ref=e877]
+    - img [ref=e880]
+  - text: 
+  - button "Rewards" [ref=e509] [cursor=pointer]:
+    - img [ref=e510]
+    - generic [ref=e513]: Rewards
+  - button "Rewards" [ref=e515] [cursor=pointer]:
+    - img [ref=e516]
+    - generic [ref=e519]: Rewards

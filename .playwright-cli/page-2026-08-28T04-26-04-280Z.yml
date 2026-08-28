@@ -1,0 +1,375 @@
+- generic [active] [ref=e1]:
+  - img "index"
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - text: SHOP OUR
+          - strong [ref=e8]: BEST SELLERS
+        - link "BUY NOW" [ref=e9] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - strong [ref=e13]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e14] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e17]:
+        - strong [ref=e18]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e19]: RM39!
+      - generic [ref=e22]:
+        - strong [ref=e23]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e24]: RM49!
+      - generic [ref=e27]:
+        - text: Now delivering to
+        - strong [ref=e28]: Singapore!
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - text: SHOP OUR
+          - strong [ref=e33]: BEST SELLERS
+        - link "BUY NOW" [ref=e34] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - strong [ref=e38]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e39] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e42]:
+        - strong [ref=e43]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e44]: RM39!
+      - generic [ref=e47]:
+        - strong [ref=e48]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e49]: RM49!
+      - generic [ref=e52]:
+        - text: Now delivering to
+        - strong [ref=e53]: Singapore!
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - text: SHOP OUR
+          - strong [ref=e58]: BEST SELLERS
+        - link "BUY NOW" [ref=e59] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - strong [ref=e63]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e64] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e67]:
+        - strong [ref=e68]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e69]: RM39!
+      - generic [ref=e72]:
+        - strong [ref=e73]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e74]: RM49!
+      - generic [ref=e77]:
+        - text: Now delivering to
+        - strong [ref=e78]: Singapore!
+    - generic [ref=e80]:
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - text: SHOP OUR
+          - strong [ref=e83]: BEST SELLERS
+        - link "BUY NOW" [ref=e84] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - strong [ref=e88]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e89] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e92]:
+        - strong [ref=e93]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e94]: RM39!
+      - generic [ref=e97]:
+        - strong [ref=e98]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e99]: RM49!
+      - generic [ref=e102]:
+        - text: Now delivering to
+        - strong [ref=e103]: Singapore!
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - text: SHOP OUR
+          - strong [ref=e108]: BEST SELLERS
+        - link "BUY NOW" [ref=e109] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - strong [ref=e113]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e114] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e117]:
+        - strong [ref=e118]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e119]: RM39!
+      - generic [ref=e122]:
+        - strong [ref=e123]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e124]: RM49!
+      - generic [ref=e127]:
+        - text: Now delivering to
+        - strong [ref=e128]: Singapore!
+    - generic [ref=e130]:
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - text: SHOP OUR
+          - strong [ref=e133]: BEST SELLERS
+        - link "BUY NOW" [ref=e134] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e136]:
+        - generic [ref=e137]:
+          - strong [ref=e138]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e139] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e142]:
+        - strong [ref=e143]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e144]: RM39!
+      - generic [ref=e147]:
+        - strong [ref=e148]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e149]: RM49!
+      - generic [ref=e152]:
+        - text: Now delivering to
+        - strong [ref=e153]: Singapore!
+    - generic [ref=e155]:
+      - generic [ref=e156]:
+        - generic [ref=e157]:
+          - text: SHOP OUR
+          - strong [ref=e158]: BEST SELLERS
+        - link "BUY NOW" [ref=e159] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e161]:
+        - generic [ref=e162]:
+          - strong [ref=e163]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e164] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e167]:
+        - strong [ref=e168]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e169]: RM39!
+      - generic [ref=e172]:
+        - strong [ref=e173]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e174]: RM49!
+      - generic [ref=e177]:
+        - text: Now delivering to
+        - strong [ref=e178]: Singapore!
+    - generic [ref=e180]:
+      - generic [ref=e181]:
+        - generic [ref=e182]:
+          - text: SHOP OUR
+          - strong [ref=e183]: BEST SELLERS
+        - link "BUY NOW" [ref=e184] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e186]:
+        - generic [ref=e187]:
+          - strong [ref=e188]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e189] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e192]:
+        - strong [ref=e193]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e194]: RM39!
+      - generic [ref=e197]:
+        - strong [ref=e198]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e199]: RM49!
+      - generic [ref=e202]:
+        - text: Now delivering to
+        - strong [ref=e203]: Singapore!
+    - generic [ref=e205]:
+      - generic [ref=e206]:
+        - generic [ref=e207]:
+          - text: SHOP OUR
+          - strong [ref=e208]: BEST SELLERS
+        - link "BUY NOW" [ref=e209] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e211]:
+        - generic [ref=e212]:
+          - strong [ref=e213]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e214] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e217]:
+        - strong [ref=e218]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e219]: RM39!
+      - generic [ref=e222]:
+        - strong [ref=e223]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e224]: RM49!
+      - generic [ref=e227]:
+        - text: Now delivering to
+        - strong [ref=e228]: Singapore!
+    - generic [ref=e230]:
+      - generic [ref=e231]:
+        - generic [ref=e232]:
+          - text: SHOP OUR
+          - strong [ref=e233]: BEST SELLERS
+        - link "BUY NOW" [ref=e234] [cursor=pointer]:
+          - /url: /collections/best-selling
+      - generic [ref=e236]:
+        - generic [ref=e237]:
+          - strong [ref=e238]: "New User Exclusive:"
+          - text: RM5 off min. spend RM50
+        - 'link "PROMO CODE: BHY5" [ref=e239] [cursor=pointer]':
+          - /url: /collections/all
+      - generic [ref=e242]:
+        - strong [ref=e243]: "West Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e244]: RM39!
+      - generic [ref=e247]:
+        - strong [ref=e248]: "East Malaysia:"
+        - text: Free shipping over
+        - strong [ref=e249]: RM49!
+      - generic [ref=e252]:
+        - text: Now delivering to
+        - strong [ref=e253]: Singapore!
+  - generic [ref=e255]:
+    - banner [ref=e256]:
+      - generic [ref=e261]:
+        - generic [ref=e262]:
+          - button "Navigation" [ref=e263] [cursor=pointer]:
+            - img [ref=e264]
+            - generic [ref=e266]: Navigation
+          - img [ref=e268]
+        - generic:
+          - generic:
+            - generic:
+              - link "ag-mh-shop-staging25":
+                - /url: /
+        - generic [ref=e271]:
+          - generic:
+            - generic:
+              - generic:
+                - button "Search"
+                - dialog "Search" [ref=e272]:
+                  - generic [ref=e274]:
+                    - generic [ref=e275]:
+                      - generic [ref=e276]: WHAT ARE YOU LOOKING FOR?
+                      - button "Close" [ref=e277] [cursor=pointer]:
+                        - generic [ref=e278]: 
+                    - search [ref=e279]:
+                      - generic [ref=e280]:
+                        - combobox "Search" [ref=e281]
+                        - generic [ref=e282] [cursor=pointer]: Search
+                        - button "Search" [ref=e283] [cursor=pointer]:
+                          - img [ref=e284]
+                      - status [ref=e287]
+          - generic [ref=e288] [cursor=pointer]:
+            - generic "Your Cart" [ref=e289]:
+              - generic [ref=e290]: Cart
+              - img [ref=e291]
+              - generic [ref=e293]: "0"
+            - generic [ref=e294]:
+              - generic [ref=e296]:
+                - generic [ref=e297]:
+                  - generic [ref=e298]: Cart
+                  - generic [ref=e299]: "0"
+                - button "close" [ref=e301]
+              - generic [ref=e304]:
+                - img [ref=e306]
+                - generic [ref=e310]: No products in the cart.
+                - link "Shop our products" [ref=e311]:
+                  - /url: /collections/all
+    - text: 
+  - main [ref=e313]:
+    - generic [ref=e316]:
+      - generic [ref=e318]:
+        - generic "Wellness on Repeat, Now With Rewards" [ref=e322]:
+          - generic [ref=e323]:
+            - img [ref=e325]
+            - generic [ref=e327]:
+              - heading "Wellness on Repeat, Now With Rewards" [level=1] [ref=e328]
+              - paragraph [ref=e329]: Every order earns points towards the next one. Joining is free and takes about a minute.
+              - generic [ref=e331]:
+                - button "Join Arrae Rewards" [ref=e332] [cursor=pointer]
+                - button "See What Points Get You" [ref=e333] [cursor=pointer]
+        - status
+      - generic [ref=e335]:
+        - generic "How It Works" [ref=e339]:
+          - generic [ref=e341]:
+            - generic [ref=e342]:
+              - heading "How It Works" [level=2] [ref=e343]
+              - paragraph [ref=e344]: Three steps, and then it runs quietly in the background.
+            - generic [ref=e345]:
+              - generic [ref=e347]:
+                - img [ref=e350]
+                - heading "Create Your Account" [level=3] [ref=e351]
+                - paragraph [ref=e352]: It is free, and it takes about a minute. You start earning on your very next order.
+              - generic [ref=e354]:
+                - img [ref=e357]
+                - heading "Earn On Everything" [level=3] [ref=e358]
+                - paragraph [ref=e359]: Every order earns. So do reviews, referrals, and the week of your birthday.
+              - generic [ref=e361]:
+                - img [ref=e364]
+                - heading "Redeem At Checkout" [level=3] [ref=e365]
+                - paragraph [ref=e366]: Turn points into money off, free shipping, or a product on us.
+        - status
+      - generic [ref=e368]:
+        - status
+      - generic [ref=e380]:
+        - status
+      - generic [ref=e392]:
+        - status
+      - generic [ref=e404]:
+        - status
+      - generic:
+        - generic:
+          - status
+      - generic [ref=e416]:
+        - generic "Questions, Answered" [ref=e420]:
+          - generic [ref=e421]:
+            - generic [ref=e422]:
+              - heading "Questions, Answered" [level=2] [ref=e423]
+              - paragraph [ref=e424]: If it is not here, our team is one message away.
+            - generic [ref=e425]:
+              - generic [ref=e426]:
+                - button "What does it cost to join?" [ref=e427] [cursor=pointer]:
+                  - generic [ref=e428]: What does it cost to join?
+                  - img [ref=e431]
+                - paragraph [ref=e433]: Nothing. Creating an account is free and you start earning on your next order.
+              - generic [ref=e434]:
+                - button "Do my points expire?" [ref=e435] [cursor=pointer]:
+                  - generic [ref=e436]: Do my points expire?
+                  - img [ref=e439]
+                - paragraph [ref=e441]: Points stay put for 12 months from the last time you earned or redeemed. Anything you do resets the clock.
+              - generic [ref=e442]:
+                - button "How do I move up a tier?" [ref=e443] [cursor=pointer]:
+                  - generic [ref=e444]: How do I move up a tier?
+                  - img [ref=e447]
+                - paragraph [ref=e449]: Tiers are based on what you spend in a rolling 12 months. You move up the moment you cross the line, and you keep the tier for a full year after that.
+              - generic [ref=e450]:
+                - button "Can I use points on a subscription order?" [ref=e451] [cursor=pointer]:
+                  - generic [ref=e452]: Can I use points on a subscription order?
+                  - img [ref=e455]
+                - paragraph [ref=e457]: Yes. Points apply at checkout the same way on a one-off order and a recurring one.
+              - generic [ref=e458]:
+                - button "What happens if I return something?" [ref=e459] [cursor=pointer]:
+                  - generic [ref=e460]: What happens if I return something?
+                  - img [ref=e463]
+                - paragraph [ref=e465]: The points from that order come back off your balance. If you already spent them, the balance can go to zero but never below it.
+        - status
+  - text: 
+  - button "Rewards" [ref=e469] [cursor=pointer]:
+    - img [ref=e470]
+    - generic [ref=e473]: Rewards
+  - button "Rewards" [ref=e475] [cursor=pointer]:
+    - img [ref=e476]
+    - generic [ref=e479]: Rewards
