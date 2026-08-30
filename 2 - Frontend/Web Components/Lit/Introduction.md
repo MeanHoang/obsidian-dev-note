@@ -2,7 +2,7 @@
 
 **Lit** là một thư viện nhẹ giúp bạn viết **Web Components dễ hơn, gọn hơn, có state “xịn” hơn**.
 👉 Hiểu đơn giản:
- Lit = Web Components + syntax giống React (nhưng nhẹ hơn rất nhiều)
+ Lit = Web Components + reactive state + template gọn — cả thư viện chỉ **~5 KB** (minified + gzip, theo lit.dev)
  
 ---
 ## 🧠 Vấn đề Lit giải quyết
@@ -26,10 +26,13 @@ class Counter extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = `<button>${this.count}</button>`;
+    this.innerHTML = `<button>${this.count}</button>`;   // ⚠️ ghi đè cả cây con → mất listener
   }
 }
+
+customElements.define('my-counter-vanilla', Counter);   // ⚠️ thiếu dòng này thì tag không chạy
 ```
+👉 Và `count++` cũng **không** tự gọi lại `render()` — phải tự gọi tay.
 ### ✅ Lit (gọn + sạch hơn nhiều)
 ```js
 import { LitElement, html } from 'lit';
@@ -56,6 +59,6 @@ class Counter extends LitElement {
 customElements.define('my-counter', Counter);
 ```
 👉 Điểm khác biệt:
-- `count` → reactive (tự update UI)
-- Không cần `render()` thủ công lại
-- Code giống JSX nhẹ
+- `count` → reactive property: đổi giá trị là Lit tự schedule re-render
+- Không phải tự gọi `render()`, và Lit chỉ update đúng phần expression thay đổi chứ không ghi đè cả cây con
+- Template là **tagged template literal** (`` html`...` ``) — không phải JSX, không cần build step

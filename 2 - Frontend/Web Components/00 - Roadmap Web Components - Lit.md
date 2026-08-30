@@ -7,6 +7,8 @@
 > **Prereq:** JS ES6+ (class, module, arrow fn, destructuring, template literal), DOM API cơ bản, CSS.
 >
 > Note nền đã có: [[Introduction]] · [[Lit/Introduction|Lit — Introduction]]
+>
+> 🧱 **Thấy series này khó?** Đọc [[00 - Roadmap - Tu HTML den Pixel]] trước — nó giải thích browser hoạt động thế nào (DOM, script, render) rồi so sánh React vs Web Components ở tầng đó.
 
 ---
 
@@ -16,7 +18,7 @@
 Web Components  =  TIÊU CHUẨN của browser (không phải thư viện)
                    → Custom Elements + Shadow DOM + Template/Slot
 
-Lit             =  THƯ VIỆN mỏng (~5KB) ngồi trên tiêu chuẩn đó
+Lit             =  THƯ VIỆN mỏng (~5KB min+gzip) ngồi trên tiêu chuẩn đó
                    → thêm: reactive state + template engine + styling tiện
 ```
 
@@ -32,6 +34,36 @@ flowchart TD
     P5 --> P6["Phase 6<br/>Tooling · Test · Publish"]
     P6 --> P7["Phase 7<br/>Chuyên sâu<br/>SSR · i18n · Design System"]
 ```
+
+---
+
+## 🗂 Bản đồ note (MOC)
+
+> Mỗi phase có note chi tiết riêng, bám sát doc chính thức (MDN + lit.dev).
+
+### 📘 Core — Web Components thuần
+
+| # | Note | Nội dung chính |
+| --- | --- | --- |
+| 01 | [[01 - Web Components la gi - Lich su va Tong quan]] ⭐ | Định nghĩa, ai xây dựng, lịch sử spec v0→v1, điểm mạnh/yếu, ai đang dùng |
+| 02 | [[02 - Custom Elements]] | Lifecycle callbacks, attribute vs property, element upgrade |
+| 03 | [[03 - Shadow DOM]] | Encapsulation, open/closed, event retargeting |
+| 04 | [[04 - Template va Slot]] | `<template>`, slot, light DOM vs flattened tree |
+| 05 | [[05 - Styling - CSS API cua Component]] | CSS var, `::part`, `::slotted`, `:host`, Tailwind |
+| 06 | [[06 - Events va giao tiep]] | CustomEvent, `composed`, props down/events up |
+| 07 | [[07 - API nang cao - ElementInternals, Form-associated, DSD]] | Form, ARIA, `:state()`, Declarative Shadow DOM |
+
+### 🔥 Lit
+
+| # | Note | Nội dung chính |
+| --- | --- | --- |
+| — | [[Lit/Introduction\|Lit — Introduction]] | Lit là gì, so sánh với WC thuần |
+| 01 | [[01 - Lit co ban - LitElement va Reactive Properties]] | Reactive properties, lifecycle, styles |
+| 02 | [[02 - Templates va Directives]] | 6 kiểu binding, directives, custom directive |
+| 03 | [[03 - Composition - Mixin va Reactive Controller]] | Mixin vs Controller (≈ React hooks) |
+| 04 | [[04 - Quan ly data - Context, Task, Signals]] | `@lit/context`, `@lit/task`, Signals (Labs) |
+| 05 | [[05 - Tooling, Testing va Publishing]] | Vite/WDS, `@web/test-runner`, publish npm |
+| 06 | [[06 - Chuyen sau - SSR, Localization, React, A11y]] | SSR, i18n, `@lit/react`, a11y, perf |
 
 ---
 
@@ -66,8 +98,9 @@ Không dùng thư viện gì cả. Chỉ 1 file HTML + browser.
 | `attributeChangedCallback()` | attribute đổi | sync attribute → property |
 
 - `static observedAttributes = ['label', 'disabled']`
-- **Attribute vs Property** ⭐ — attribute là string trong HTML, property là giá trị JS. Hiểu chỗ này = hiểu 50% Web Components
-- `:defined` — style element trước khi nó được define (chống nhấp nháy / FOUC)
+- **Attribute vs Property** ⭐ — attribute luôn là string trong HTML, property là giá trị JS (giữ được object/array/function)
+- **`element upgrade`** — element đã có trong DOM trước khi `customElements.define()` chạy → xem [[02 - Custom Elements]]
+- `:defined` — `my-el:not(:defined) { visibility: hidden }` để chặn FOUC lúc chưa define xong
 
 ### 1.2 Shadow DOM
 - `this.attachShadow({ mode: 'open' })` vs `'closed'`
@@ -89,7 +122,9 @@ Không dùng thư viện gì cả. Chỉ 1 file HTML + browser.
 | CSS variables | `--btn-bg: red` | ⭐ cách chính, linh hoạt nhất |
 | `::part()` | `<x-btn part="label">` → `x-btn::part(label)` | mở "cửa sổ" style có chủ đích |
 | `::slotted()` | `::slotted(span)` | style content người dùng nhét vào |
-| `:host`, `:host()`, `:host-context()` | style chính element | biến thể theo attribute |
+| `:host`, `:host()` | `:host([disabled])` | style chính element, biến thể theo attribute |
+
+> ⚠️ `:host-context()` đã bị CSSWG gỡ khỏi spec, Firefox/Safari không hỗ trợ — **đừng dùng cho project mới** ([MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:host-context)).
 
 ### 1.5 Events
 - `CustomEvent` + `dispatchEvent`
@@ -114,7 +149,7 @@ Tự làm, **không copy-paste**:
 
 ## 🟣 Phase 2 — Lit cơ bản (tuần 3)
 
-Setup: `npm create vite@latest` → vanilla-ts, rồi `npm i lit` (Lit 3).
+Setup: `npm create vite@latest` → chọn template **Lit**, hoặc `npm i lit` vào project sẵn có (Lit 3.x).
 
 - `LitElement` = `HTMLElement` + reactive + auto render
 - `render()` trả về ``html`...` ``
@@ -127,26 +162,32 @@ Setup: `npm create vite@latest` → vanilla-ts, rồi `npm i lit` (Lit 3).
   ```
   - `type` · `attribute` (đổi tên / tắt) · `reflect` (property → attribute) · `state: true` (internal) · `converter` · `hasChanged`
   - Dùng TypeScript thì có `@property()` / `@state()`
-- **Styles**: ``static styles = css`...` `` — share chung cho mọi instance (nhanh)
-- **Template syntax** — 5 kiểu binding, học thuộc bảng này:
+- **Styles**: ``static styles = css`...` `` — expression trong CSS chỉ evaluate **1 lần** rồi dùng lại cho mọi instance
+- **Template syntax** — 6 kiểu binding ([doc](https://lit.dev/docs/templates/expressions/)):
 
 | Cú pháp | Ý nghĩa | Ví dụ |
 | --- | --- | --- |
-| `${x}` | text / child | `<p>${this.name}</p>` |
-| `attr=${x}` | attribute | `<div id=${this.id}>` |
+| `${x}` | child (text / template / list) | `<p>${this.name}</p>` |
+| `attr=${x}` | attribute | `<div class=${this.cls}>` |
 | `.prop=${x}` | **property** ⭐ | `<input .value=${this.v}>` |
-| `?attr=${x}` | boolean attribute | `<button ?disabled=${this.busy}>` |
+| `?attr=${x}` | boolean attribute (có/không có attr) | `<button ?disabled=${this.busy}>` |
 | `@event=${fn}` | event listener | `<button @click=${this.onClick}>` |
+| `${directive()}` | element expression — chỉ nhận directive | `<div ${ref(this.r)}>` |
 
-- **Lifecycle của Lit** ⭐:
+- **Lifecycle** ⭐ — tách 2 nhóm ([doc](https://lit.dev/docs/components/lifecycle/)):
   ```
-  constructor → connectedCallback → willUpdate → update → render
-              → firstUpdated → updated → (await this.updateComplete)
+  Custom element (chuẩn browser):
+    constructor → connectedCallback → disconnectedCallback → adoptedCallback
+                                    → attributeChangedCallback
+
+  Reactive update cycle (Lit) — chạy ở microtask, lặp mỗi lần property đổi:
+    requestUpdate → shouldUpdate → willUpdate → update → render
+                  → firstUpdated (chỉ lần đầu) → updated → updateComplete
   ```
-  - `requestUpdate()`, `shouldUpdate()`
+  - Update cycle đầu tiên được kích hoạt trong `connectedCallback()`
   - `firstUpdated()` = chỗ đụng DOM lần đầu (query element con)
 - Conditional: ``${cond ? html`...` : html`...`}`` · List: `${items.map(...)}`, dùng **`repeat()`** khi cần key
-- `createRenderRoot()` — cách tắt Shadow DOM nếu muốn xài Tailwind global
+- `createRenderRoot() { return this }` — render vào light DOM (vd để xài Tailwind global). Lit khuyến cáo hạn chế: mất DOM scoping, style scoping và khả năng compose nội bộ
 
 ### ✅ Checkpoint Phase 2
 Viết lại `<my-counter>` và `<my-card>` bằng Lit → đếm số dòng, so với Phase 1.
@@ -167,15 +208,18 @@ Built-in directives — biết khi nào dùng cái nào:
 | `ifDefined()` | bỏ hẳn attribute khi value `undefined` |
 | `when()`, `choose()` | conditional gọn |
 | `cache()` | giữ DOM khi switch qua lại giữa 2 template |
-| `guard()` | chặn re-render khi dependency không đổi (perf) |
-| `live()` | ép sync với DOM thật (input) |
+| `guard()` | chỉ re-evaluate template khi dependency đổi |
+| `keyed()` | gắn value với 1 key — key đổi thì ép render lại DOM mới |
+| `live()` | so sánh với giá trị DOM thật thay vì giá trị render lần trước (input) |
 | `ref()` | lấy reference tới element |
-| `until()`, `asyncAppend()` | render giá trị async |
-| `unsafeHTML()` | ⚠️ render HTML thô — nhớ sanitize |
+| `until()`, `asyncAppend()`, `asyncReplace()` | render giá trị async / AsyncIterable |
+| `unsafeHTML()` | ⚠️ render string thành HTML thay vì text — nhớ sanitize |
+
+> Tất cả import từ `lit/directives/<tên>.js`. Danh sách đầy đủ: [lit.dev/docs/templates/directives](https://lit.dev/docs/templates/directives/)
 
 - **Custom directive**: `directive()`, `Directive`, `AsyncDirective` (nắm khái niệm là đủ)
-- `static-html` (`literal`) — khi cần đổi tag name động
-- Hiểu **vì sao lit-html nhanh**: template được cache theo *strings array*, mỗi lần render chỉ update đúng phần `${}` thay đổi
+- `lit/static-html.js` (`literal`, `unsafeStatic`) — khi cần đổi tag name động
+- **Cơ chế lit-html**: mỗi tagged template có một *strings array* với identity cố định → lit-html parse & cache `<template>` theo array đó, mỗi lần render chỉ ghi lại đúng những vị trí `${}` có giá trị đổi
 
 ---
 
@@ -185,7 +229,7 @@ Built-in directives — biết khi nào dùng cái nào:
 
 - **Component composition** — chia nhỏ, giao tiếp: property đi xuống, event đi lên
 - **Mixins** — `const Foo = (Base) => class extends Base { ... }` → tái dùng behavior (vd `ClickOutsideMixin`)
-- **Reactive Controllers** ⭐ — pattern hay nhất của Lit, tương đương "custom hook" của React:
+- **Reactive Controllers** ⭐ — object gắn vào lifecycle của host, tương đương "custom hook" của React:
   ```js
   class ClockController {
     hostConnected() { /* start timer */ }
@@ -201,25 +245,29 @@ Built-in directives — biết khi nào dùng cái nào:
 
 ## 🔴 Phase 5 — Quản lý data (tuần 6)
 
-- **`@lit/context`** — DI / provide–inject, thay cho prop drilling (giống React Context)
-  - `createContext()`, `@provide()`, `@consume()` — hợp cho theme, i18n, store
-- **`@lit/task`** — quản lý async: state `pending / complete / error`, tự re-run khi args đổi
-- **Signals (Labs)** — `@lit-labs/signals` (tích hợp TC39 Signals Proposal) và `@lit-labs/preact-signals`
-  - ⚠️ Labs = có thể breaking change / ngừng support → cân nhắc trước khi lên production
+- **`@lit/context`** (stable) — DI / provide–inject, thay cho prop drilling (giống React Context)
+  - `createContext()`, `@provide()`, `@consume()`, `ContextProvider` / `ContextConsumer` — hợp cho theme, i18n, store
+- **`@lit/task`** (stable) — quản lý async: `TaskStatus` = `INITIAL / PENDING / COMPLETE / ERROR`, tự re-run khi `args` đổi
+  - `task.render({ initial, pending, complete, error })`
+- **Signals** — `@lit-labs/signals` (dựa trên [TC39 Signals Proposal](https://github.com/tc39/proposal-signals)) hoặc `@lit-labs/preact-signals`
+  - ⚠️ **Labs** = experimental, có thể breaking change / ngừng support → cân nhắc trước khi lên production
 - State ngoài (Redux / Zustand / Nanostores): subscribe bằng một Reactive Controller
 
 ---
 
 ## ⚫ Phase 6 — Tooling · Testing · Publishing (tuần 7)
 
-- **Dev server**: Vite (nhanh, quen) hoặc `@web/dev-server` (chuẩn Lit, no-bundle)
-- **TypeScript**: bật decorators, và ⚠️ `"useDefineForClassFields": false` — bẫy kinh điển làm mất reactivity
-- **Testing**: `@web/test-runner` + `@open-wc/testing` — chạy trong browser thật, không dùng jsdom
+- **Dev server**: Vite (hệ plugin lớn) hoặc `@web/dev-server` (no-bundle, phục vụ ES module gốc)
+- **TypeScript** ⚠️ — tuỳ loại decorator, chọn đúng một trong hai:
+  - `experimentalDecorators: true` → **bắt buộc** `useDefineForClassFields: false` (khi `target` ≥ ES2022)
+  - standard decorators (TS 5.2+) → `useDefineForClassFields: true`
+  - Sai cặp này = class field ghi đè accessor → **mất reactivity** ([doc](https://lit.dev/docs/components/decorators/))
+- **Testing**: `@web/test-runner` + `@open-wc/testing` — chạy trong **browser thật** (Puppeteer / Playwright / Selenium / WebdriverIO), không dùng jsdom
   - Luôn `await el.updateComplete` trước khi assert ⭐
 - **Lint**: `eslint-plugin-lit`, `lit-analyzer` (check template ngay trong IDE)
-- **Custom Elements Manifest** (`custom-elements.json`) → sinh docs + autocomplete cho VSCode
-- **Publish npm**: build ESM, không bundle dependency, `"type": "module"`, `"exports"` map, khai báo `"customElements"` trong `package.json`
-- **Production**: `@lit-labs/compiler` (compile template), lazy-load component, đặt budget bundle size
+- **Custom Elements Manifest** — `@custom-elements-manifest/analyzer` sinh file `custom-elements.json`, trỏ tới nó bằng field `"customElements"` trong `package.json` → docs + autocomplete cho IDE
+- **Publish npm** ([doc](https://lit.dev/docs/tools/publishing/)): xuất ES module cú pháp ES2021, `"type": "module"`, **không bundle / không minify** (đó là việc của app, bundle sẽ nhân bản Lit), import có đuôi `.js`, kèm `.d.ts` + entry `HTMLElementTagNameMap`
+- **Production**: bundle + minify + brotli ở tầng app, lazy-load component; `@lit-labs/compiler` (Labs) compile template trước runtime
 
 ---
 
@@ -248,14 +296,14 @@ Built-in directives — biết khi nào dùng cái nào:
 
 ## ⚠️ Bẫy thường gặp (đọc trước, đỡ mất một buổi tối)
 
-1. **Sửa object/array mà không re-render** → Lit so sánh `===`. Phải tạo mới: `this.items = [...this.items, x]`
-2. Đụng DOM trong `constructor()` → chuyển sang `firstUpdated()`
-3. Quên `composed: true` → event không thoát khỏi shadow root
-4. Quên cleanup trong `disconnectedCallback()` → memory leak
-5. `useDefineForClassFields: true` trong TS → class field ghi đè accessor, mất reactivity
-6. `reflect: true` cho object → ra `[object Object]` trong attribute
-7. Tailwind + Shadow DOM không ăn → dùng CSS variable, hoặc tắt shadow (`createRenderRoot`), hoặc inject stylesheet vào shadow root
-8. Test assert trước khi `await el.updateComplete` → flaky
+1. **Mutate object/array tại chỗ → không re-render** — `hasChanged` mặc định so sánh reference (`!Object.is()` trong source `reactive-element.ts`; prose lit.dev viết `!==`), sửa in-place giữ nguyên reference. Phải gán mới: `this.items = [...this.items, x]`. Chi tiết: [[01 - Lit co ban - LitElement va Reactive Properties]]
+2. Đọc/ghi attribute hay children trong `constructor()` → spec custom element cấm; chuyển sang `connectedCallback()` / `firstUpdated()`
+3. Quên `composed: true` → event không vượt được shadow boundary (`bubbles` một mình là chưa đủ)
+4. Quên cleanup trong `disconnectedCallback()` / `hostDisconnected()` → memory leak (timer, listener, observer)
+5. `experimentalDecorators` + `useDefineForClassFields: true` → class field ghi đè accessor mà Lit tạo → mất reactivity
+6. `reflect: true` trên property không khai `type` → mặc định là `type: String` nên attribute ra `[object Object]`. Khai `type: Object` thì reflect ra `JSON.stringify` — nhưng nói chung **đừng reflect object/array**
+7. Tailwind + Shadow DOM không ăn → dùng CSS variable, inject stylesheet vào shadow root, hoặc bỏ shadow DOM bằng `createRenderRoot() { return this }` (đánh đổi: mất DOM scoping + style scoping)
+8. Test assert trước khi `await el.updateComplete` → flaky, vì update chạy ở microtask sau khi property đổi
 
 ---
 
@@ -269,7 +317,7 @@ Built-in directives — biết khi nào dùng cái nào:
 
 **Cộng đồng / đọc source thật**
 - [Open WC](https://open-wc.org) — best practice, testing, linting
-- [Shoelace](https://shoelace.style) — design system viết bằng Lit, source rất đáng đọc
+- [Shoelace](https://shoelace.style) — design system viết bằng Lit, source rất đáng đọc. ⚠️ Đã sunset, kế tục bởi [Web Awesome](https://webawesome.com)
 - [Material Web](https://github.com/material-components/material-web) — Google, Lit
 - [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) — Adobe
 - [custom-elements-everywhere.com](https://custom-elements-everywhere.com) — độ tương thích với từng framework

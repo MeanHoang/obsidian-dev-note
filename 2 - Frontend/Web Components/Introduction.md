@@ -10,7 +10,7 @@ Nói đơn giản:
 | **Custom Elements** | Đăng ký tag HTML mới, ví dụ `<joy-button>`                                     |
 | **Shadow DOM**      | Tạo "hộp kín" cho CSS — style bên trong không ảnh hưởng bên ngoài và ngược lại |
 | **HTML Templates**  | Khuôn mẫu HTML có thể tái sử dụng                                              |
-## 🔧 4 thành phần chính của Web Components
+## 🔧 3 thành phần chính của Web Components
 ### 1. **Custom Elements**
 Cho phép bạn tạo thẻ HTML riêng
 ```html
@@ -24,6 +24,8 @@ this.innerHTML = `<button>Click me</button>`;
 }  
 customElements.define("my-button", MyButton);
 ```
+⚠️ Ví dụ trên chỉ để cho dễ hiểu, **đừng bê vào production**: `connectedCallback` chạy lại **mỗi lần** element được gắn lại vào DOM (kể cả khi bị `appendChild` sang chỗ khác), nên `innerHTML` sẽ ghi đè lại toàn bộ → mất mọi event listener và state đã gắn bên trong.
+👉 Cách đúng: dựng DOM **một lần** trong `constructor` (hoặc dùng cờ đánh dấu đã render), rồi chỉ update phần thay đổi.
 ### 2. **Shadow DOM**
 Tạo **DOM riêng biệt**, không bị CSS bên ngoài ảnh hưởng
 👉 Giống kiểu “style riêng, không sợ bị đè”
@@ -31,6 +33,7 @@ Tạo **DOM riêng biệt**, không bị CSS bên ngoài ảnh hưởng
 this.attachShadow({ mode: "open" });
 this.shadowRoot.innerHTML = `<style>button { color: red }</style><button>Click</button>`;
 ```
+👉 Không kín 100%: các property **kế thừa** (`color`, `font`, `line-height`…) và **CSS custom property** (`--xxx`) vẫn xuyên từ ngoài vào — đó là cách chủ động để cho phép theme component.
 ### 3. **HTML Templates**
 Tạo template sẵn, dùng lại nhiều lần
 ```html
@@ -44,21 +47,21 @@ Tạo template sẵn, dùng lại nhiều lần
 - Không phụ thuộc framework
 - Tái sử dụng cao
 - Encapsulation tốt (nhờ Shadow DOM)
-- Native browser (performance ổn)
+- Chạy thẳng bằng API của browser → không phải tải runtime của framework
 ---
 ## ❌ Nhược điểm
 - Code hơi verbose (dài hơn React)
-- Không tiện bằng framework khi app lớn
-- Ecosystem ít hơn React
+- Không có reactive state / diffing sẵn — phải tự viết hoặc dùng Lit
+- Ecosystem nhỏ hơn React: có Lit, Shoelace, Material Web… nhưng ít component library và ít tài liệu/tooling hơn nhiều
 ---
 ## 🧠 So sánh nhanh
 
-|                  | Web Components | React  |
-| ---------------- | -------------- | ------ |
-| Framework        | ❌              | ✅      |
-| Reusable         | ✅              | ✅      |
-| State management | ❌ tự làm       | ✅      |
-| Learning curve   | Trung bình     | Dễ hơn |
+|                        | Web Components               | React                          |
+| ---------------------- | ---------------------------- | ------------------------------ |
+| Cần runtime/build tool | ❌ không                      | ✅ có                           |
+| Reusable               | ✅                            | ✅                              |
+| Reactive state         | ❌ tự làm (hoặc dùng Lit)     | ✅ có sẵn (`useState`…)         |
+| Style encapsulation    | ✅ Shadow DOM (native)        | ❌ tự lo (CSS Modules, CSS-in-JS) |
 ## 📌 Khi nào nên dùng?
 👉 Dùng Web Components khi:
 - Muốn tạo **UI library dùng chung nhiều project**
