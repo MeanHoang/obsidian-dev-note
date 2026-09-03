@@ -35,6 +35,9 @@ created: 2026-08-23
 - Trang Pricing 6 gói khiến khách "tê liệt lựa chọn" → rút còn 3 gói và **highlight 1 gói "recommended"** để dẫn hướng.
 - Onboarding: hỏi từng bước một (progressive disclosure) thay vì bày cả form 20 field cùng lúc.
 
+![[uxui-02-hicks-law.svg]]
+*Thời gian quyết định tăng theo số lựa chọn; rút Pricing từ 6 gói xuống 3 gói kèm nhãn "Recommended" giúp người dùng chọn nhanh hơn.*
+
 > [!tip] Đừng lạm dụng
 > Hick's Law không có nghĩa "luôn ít lựa chọn hơn". Gộp quá tay khiến mỗi bước lại nhiều bước con. Mục tiêu là giảm **độ phức tạp cảm nhận tại mỗi thời điểm**, không phải giảm tổng số tính năng.
 
@@ -47,6 +50,9 @@ created: 2026-08-23
 - Nút hành động nguy hiểm (Delete) nên **để xa** nút thường dùng, tránh bấm nhầm.
 - Trên mobile, target nên tối thiểu ~44px để ngón tay chạm trúng.
 - Menu ngữ cảnh (right-click) xuất hiện **ngay tại con trỏ** → khoảng cách gần bằng 0 → thao tác cực nhanh.
+
+![[uxui-02-fitts-law.jpg]]
+*Đồ thị thực nghiệm của Fitts's Law: thời gian di chuyển (MT) tăng tuyến tính theo chỉ số khó (ID) — tức là mục tiêu càng nhỏ và càng xa thì càng lâu trúng — (nguồn: Wikimedia Commons)*
 
 Liên kết: kích thước & vùng click của component xem thêm ở [[07 - Components & Interaction Design]].
 
@@ -64,6 +70,9 @@ Liên kết: kích thước & vùng click của component xem thêm ở [[07 - C
 - Form dài chia thành các **section có tiêu đề** (thông tin cá nhân / thanh toán / xác nhận).
 - Đừng bắt user nhớ dữ liệu từ màn trước — hiển thị lại (recognition over recall).
 
+![[uxui-02-millers-law.svg]]
+*Cùng một lượng thông tin nhưng chia thành chunk (số điện thoại 3-3-4, form tách section có tiêu đề) thì nhẹ tải trí nhớ làm việc hơn hẳn.*
+
 ### 👥 Jakob's Law (Định luật Jakob)
 
 **Phát biểu:** Người dùng dành **phần lớn thời gian trên các sản phẩm KHÁC**. Vì vậy họ mong sản phẩm của bạn **hoạt động giống những gì họ đã quen**.
@@ -72,6 +81,9 @@ Liên kết: kích thước & vùng click của component xem thêm ở [[07 - C
 - Logo góc trên-trái click về trang chủ; giỏ hàng góc trên-phải; icon bánh răng = settings. Đừng "sáng tạo" phá vỡ những quy ước này.
 - Dùng pattern quen thuộc cho login, search, filter, table — người dùng không phải học lại.
 - Khi buộc phải làm khác chuẩn (vì lý do chính đáng), hãy có chỉ dẫn rõ ràng để giảm cú sốc.
+
+![[uxui-02-jakobs-law.svg]]
+*Giữ đúng quy ước (logo trái-trên, giỏ hàng/settings phải-trên) thì dùng được ngay; đảo vị trí "cho khác biệt" làm vỡ mental model của người dùng.*
 
 Đây là lý do dùng **design pattern & convention** thay vì phát minh lại — liên quan tới mental model ở [[01 - Nền tảng tư duy UX]].
 
@@ -127,6 +139,9 @@ Liên kết: kích thước & vùng click của component xem thêm ở [[07 - C
 - Trong danh sách tính năng, để tính năng "đinh" ở đầu và một tính năng mạnh ở cuối.
 - Thanh tab: item hay dùng nhất đặt ở hai đầu.
 
+![[uxui-02-serial-position.png]]
+*Đường cong trí nhớ hình chữ U: tỉ lệ nhớ cao ở đầu chuỗi (primacy) và cuối chuỗi (recency), thấp nhất ở phần giữa — (nguồn: Wikimedia Commons)*
+
 ### 🌈 Von Restorff Effect (Hiệu ứng Von Restorff — Isolation Effect / Hiệu ứng nổi bật)
 
 **Phát biểu:** Khi có nhiều phần tử **giống nhau**, phần tử **khác biệt** sẽ được chú ý và ghi nhớ nhiều nhất.
@@ -135,6 +150,9 @@ Liên kết: kích thước & vùng click của component xem thêm ở [[07 - C
 - Nút CTA chính có màu nổi, các nút phụ để dạng ghost/outline → mắt bị hút vào CTA.
 - Gói "Pro" trên trang Pricing được **viền màu + badge "Popular"** để bật khỏi các gói còn lại.
 - Nhãn "New" hay chấm đỏ notification làm mục đó nổi bật.
+
+![[uxui-02-von-restorff.svg]]
+*Khi cả ba gói cùng nổi thì mắt không biết nhìn đâu; chỉ cần một gói có viền màu + badge "Popular" là điểm nhấn lập tức rõ ràng.*
 
 > [!tip] Đừng làm loãng
 > Nếu **mọi thứ đều nổi bật** thì chẳng gì nổi bật cả. Chỉ chọn 1 điểm nhấn cho mỗi ngữ cảnh. Xem thêm về emphasis ở [[03 - Visual Hierarchy & Layout]].
@@ -147,6 +165,9 @@ Liên kết: kích thước & vùng click của component xem thêm ở [[07 - C
 - **Progress bar / checklist onboarding** kiểu "Hồ sơ của bạn hoàn thành 60%" thúc user hoàn tất các bước còn thiếu.
 - Hiển thị số bước còn lại trong một quy trình nhiều bước.
 - Badge "còn 2 bước để kích hoạt tài khoản" tận dụng cảm giác muốn "đóng vòng lặp".
+
+![[uxui-02-zeigarnik.svg]]
+*Progress bar "hoàn thành 60%" kèm checklist các bước còn thiếu biến việc dang dở thành động lực quay lại hoàn tất.*
 
 ### ✨ Aesthetic-Usability Effect (Hiệu ứng Thẩm mỹ–Khả dụng)
 
@@ -184,6 +205,9 @@ Liên quan tới feedback & micro-interaction ở [[07 - Components & Interactio
 **Ví dụ SaaS:**
 - Nhãn (label) đặt sát ô input tương ứng → user hiểu chúng đi cùng nhau; khoảng cách giữa các cặp field thì rộng hơn.
 - Nhóm các nút liên quan lại gần; tách nút "Cancel" xa "Delete".
+![[uxui-02-proximity.jpg]]
+*Chỉ thay đổi khoảng cách — không đổi màu, hình dạng hay thêm đường kẻ — là đã phân nhóm được các phần tử — (nguồn: Wikimedia Commons)*
+
 - Đây là lý do **spacing quan trọng hơn đường kẻ**: chỉ cần chỉnh khoảng cách là đã phân nhóm được. Xem [[06 - Spacing & Design Tokens]].
 
 ### 🎨 Law of Similarity (Định luật Tương đồng)

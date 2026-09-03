@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="470" viewBox="0 0 860 470" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="430" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#111827">Bon khai niem o BON TANG khac nhau — vi du: trang Settings cua app quan ly team</text>
+
+  <!-- nested layers -->
+  <rect x="24" y="48" width="420" height="330" rx="14" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="38" y="70" font-size="14" font-weight="700" fill="#3730a3">UX — toan bo cam nhan (rong nhat)</text>
+  <text x="38" y="88" font-size="11" fill="#4338ca">Tu luc nghe quang cao → dang ky → dung → lien he support</text>
+
+  <rect x="44" y="100" width="380" height="258" rx="12" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+  <text x="58" y="122" font-size="14" font-weight="700" fill="#155e75">IxD — hanh vi khi tuong tac</text>
+  <text x="58" y="140" font-size="11" fill="#0e7490">Bam nut thi chuyen gi xay ra, loading/error hien the nao</text>
+
+  <rect x="64" y="152" width="340" height="188" rx="10" fill="#fdf4ff" stroke="#a855f7" stroke-width="2"/>
+  <text x="78" y="174" font-size="14" font-weight="700" fill="#6b21a8">UI — lop be mat nhin &amp; cham duoc</text>
+  <text x="78" y="192" font-size="11" fill="#7e22ce">Mau, font, nut, khoang cach, icon, layout</text>
+
+  <!-- fake settings UI -->
+  <rect x="84" y="204" width="300" height="120" rx="8" fill="#ffffff" stroke="#d1d5db"/>
+  <text x="98" y="224" font-size="12" font-weight="600" fill="#111827">Settings — Bao mat</text>
+  <line x1="84" y1="232" x2="384" y2="232" stroke="#e5e7eb"/>
+  <text x="98" y="252" font-size="11" fill="#374151">Xac thuc 2 buoc (2FA)</text>
+  <rect x="330" y="242" width="40" height="20" rx="10" fill="#22c55e"/>
+  <circle cx="360" cy="252" r="8" fill="#ffffff"/>
+  <rect x="98" y="270" width="272" height="26" rx="5" fill="#f9fafb" stroke="#9ca3af"/>
+  <text x="108" y="287" font-size="11" fill="#6b7280">Nhap ma 6 so tu app...</text>
+  <rect x="98" y="302" width="86" height="14" rx="3" fill="#e5e7eb"/>
+
+  <!-- usability as a ruler on the side -->
+  <rect x="470" y="48" width="366" height="330" rx="14" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <text x="486" y="72" font-size="14" font-weight="700" fill="#92400e">Usability — THUOC DO (khong phai 1 tang)</text>
+  <text x="486" y="92" font-size="11" fill="#a16207">Do xem san pham de dung den dau:</text>
+  <g font-size="11.5" fill="#78350f">
+    <text x="492" y="116">• Hoc nhanh khong?</text>
+    <text x="492" y="138">• Thao tac co nhanh khong?</text>
+    <text x="492" y="160">• Co hay gay loi khong?</text>
+    <text x="492" y="182">• Vai ngay sau con nho cach dung khong?</text>
+  </g>
+  <rect x="486" y="198" width="334" height="60" rx="8" fill="#ffffff" stroke="#fcd34d"/>
+  <text x="498" y="220" font-size="12" font-weight="600" fill="#111827">Cau hoi do duoc:</text>
+  <text x="498" y="242" font-size="12" fill="#374151">"User lan dau co tu bat 2FA trong 30 giay khong?"</text>
+  <rect x="486" y="272" width="334" height="90" rx="8" fill="#ffffff" stroke="#fcd34d"/>
+  <text x="498" y="294" font-size="12" font-weight="700" fill="#b91c1c">Nho:</text>
+  <text x="498" y="318" font-size="14" font-weight="700" fill="#111827">dep ≠ de dung ≠ dung nhu cau</text>
+  <text x="498" y="342" font-size="11" fill="#6b7280">Chi chinh mau va bo goc = moi dung toi UI thoi.</text>
+
+  <!-- bottom mapping -->
+  <g font-size="11.5">
+    <rect x="24" y="396" width="196" height="54" rx="8" fill="#fdf4ff" stroke="#a855f7"/>
+    <text x="34" y="416" font-weight="700" fill="#6b21a8">UI</text>
+    <text x="34" y="436" fill="#374151">mau nut, co chu, khoang cach</text>
+
+    <rect x="230" y="396" width="196" height="54" rx="8" fill="#ecfeff" stroke="#0891b2"/>
+    <text x="240" y="416" font-weight="700" fill="#155e75">IxD</text>
+    <text x="240" y="436" fill="#374151">bat 2FA → hien o nhap ma ngay</text>
+
+    <rect x="436" y="396" width="196" height="54" rx="8" fill="#fffbeb" stroke="#f59e0b"/>
+    <text x="446" y="416" font-weight="700" fill="#92400e">Usability</text>
+    <text x="446" y="436" fill="#374151">bat duoc trong 30s, khong doc HD</text>
+
+    <rect x="642" y="396" width="194" height="54" rx="8" fill="#eef2ff" stroke="#6366f1"/>
+    <text x="652" y="416" font-weight="700" fill="#3730a3">UX</text>
+    <text x="652" y="436" fill="#374151">ca hanh trinh co thay an tam?</text>
+  </g>
+</svg>

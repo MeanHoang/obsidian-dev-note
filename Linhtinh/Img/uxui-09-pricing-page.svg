@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="380" viewBox="0 0 860 380" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="430" y="36" font-size="19" font-weight="700" fill="#111827" text-anchor="middle">Pricing Page — giup nguoi dung tu tin chon dung goi</text>
+
+  <!-- toggle -->
+  <rect x="330" y="54" width="200" height="32" rx="16" fill="#f3f4f6" stroke="#e5e7eb"/>
+  <rect x="333" y="57" width="97" height="26" rx="13" fill="#ffffff" stroke="#d1d5db"/>
+  <text x="381" y="74" font-size="11.5" font-weight="600" fill="#111827" text-anchor="middle">Monthly</text>
+  <text x="479" y="74" font-size="11.5" fill="#6b7280" text-anchor="middle">Annual −20%</text>
+  <text x="430" y="102" font-size="11" fill="#6b7280" text-anchor="middle">Toggle chu ky giup thay ro tiet kiem khi tra nam</text>
+
+  <!-- plans -->
+  <g>
+    <rect x="30" y="116" width="250" height="204" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="52" y="146" font-size="14" font-weight="700" fill="#111827">Starter</text>
+    <text x="52" y="182" font-size="26" font-weight="700" fill="#111827">$9</text>
+    <text x="90" y="182" font-size="11.5" fill="#6b7280">/ user / thang</text>
+    <rect x="52" y="198" width="206" height="1" fill="#e5e7eb"/>
+    <text x="52" y="222" font-size="11.5" fill="#374151">✓ 3 project</text>
+    <text x="52" y="244" font-size="11.5" fill="#374151">✓ Bao cao co ban</text>
+    <text x="52" y="266" font-size="11.5" fill="#9ca3af">– Khong co SSO</text>
+    <rect x="52" y="282" width="206" height="30" rx="7" fill="#ffffff" stroke="#d1d5db"/>
+    <text x="155" y="302" font-size="12" font-weight="600" fill="#374151" text-anchor="middle">Chon goi</text>
+  </g>
+
+  <g>
+    <rect x="298" y="104" width="264" height="228" rx="12" fill="#ffffff" stroke="#4f46e5" stroke-width="3"/>
+    <rect x="366" y="92" width="128" height="24" rx="12" fill="#4f46e5"/>
+    <text x="430" y="108" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">MOST POPULAR</text>
+    <text x="322" y="152" font-size="14" font-weight="700" fill="#3730a3">Growth</text>
+    <text x="322" y="190" font-size="28" font-weight="700" fill="#111827">$29</text>
+    <text x="366" y="190" font-size="11.5" fill="#6b7280">/ user / thang</text>
+    <rect x="322" y="206" width="216" height="1" fill="#e5e7eb"/>
+    <text x="322" y="230" font-size="11.5" fill="#374151">✓ Project khong gioi han</text>
+    <text x="322" y="252" font-size="11.5" fill="#374151">✓ Bao cao nang cao</text>
+    <text x="322" y="274" font-size="11.5" fill="#374151">✓ SSO</text>
+    <rect x="322" y="290" width="216" height="32" rx="7" fill="#4f46e5"/>
+    <text x="430" y="311" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Bat dau dung thu</text>
+  </g>
+
+  <g>
+    <rect x="580" y="116" width="250" height="204" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="602" y="146" font-size="14" font-weight="700" fill="#111827">Enterprise</text>
+    <text x="602" y="182" font-size="26" font-weight="700" fill="#111827">$99</text>
+    <text x="660" y="182" font-size="11.5" fill="#6b7280">/ user / thang</text>
+    <rect x="602" y="198" width="206" height="1" fill="#e5e7eb"/>
+    <text x="602" y="222" font-size="11.5" fill="#374151">✓ Tat ca cua Growth</text>
+    <text x="602" y="244" font-size="11.5" fill="#374151">✓ Audit log, SLA</text>
+    <text x="602" y="266" font-size="11.5" fill="#374151">✓ Ho tro rieng</text>
+    <rect x="602" y="282" width="206" height="30" rx="7" fill="#ffffff" stroke="#d1d5db"/>
+    <text x="705" y="302" font-size="12" font-weight="600" fill="#374151" text-anchor="middle">Lien he sales</text>
+  </g>
+
+  <text x="30" y="352" font-size="11.5" fill="#6b7280">3-4 goi (tranh Hick's Law)  •  goi khuyen nghi noi bat  •  goi cao lam "mo neo" (anchoring)  •  minh bach gia, khong phu phi an</text>
+  <text x="30" y="372" font-size="11.5" fill="#6b7280">FAQ ve huy / hoan tien / doi goi dat ngay tren trang de giai dap lo lang tai cho</text>
+</svg>

@@ -43,6 +43,9 @@ Refactoring UI khuyên: **bắt đầu bằng NHIỀU khoảng trắng hơn bạ
 ### 💡 Ví dụ mô tả
 Một card thông tin user: avatar, tên, email, nút "Chỉnh sửa". Nếu mọi thứ cách nhau đều tăm tắp cùng một khoảng, nó trông như một đống. Nếu tên và email sát nhau (nhóm "danh tính"), rồi cách một khoảng lớn hơn tới nút hành động, mắt lập tức thấy hai cụm rõ ràng.
 
+![[uxui-06-whitespace-proximity.svg]]
+*Cùng một card: khi khoảng cách trong nhóm nhỏ hơn khoảng cách giữa các nhóm, mắt tự tách ra hai cụm.*
+
 ### ⚠️ Sai lầm hay gặp
 - Dùng cùng một khoảng cách cho MỌI thứ → không phân biệt được nhóm.
 - Nhồi nội dung cho "đỡ phí chỗ" → giao diện ngột ngạt.
@@ -66,6 +69,9 @@ Một card thông tin user: avatar, tên, email, nút "Chỉnh sửa". Nếu m�
 ### 💡 Ví dụ mô tả
 Một nút bấm: padding dọc 8px, padding ngang 16px, bo góc 8px, icon cách chữ 8px. Tất cả đều là bội số của 8 → cả bộ nút trong app trông "cùng một gia đình".
 
+![[uxui-06-8pt-grid.svg]]
+*Giải phẫu một nút đặt trên lưới 8px, kèm tập giá trị hợp lệ và các số lẻ phá vỡ hệ thống.*
+
 ### ⚠️ Sai lầm hay gặp
 - Áp 8pt một cách máy móc cho **typography line-height** hay **border 1px** — border, hairline, và một số giá trị font không cần theo grid. Grid dành cho *spacing & sizing*, không phải mọi con số.
 - Dùng 8pt cho spacing nhưng vẫn gõ font-size tùy hứng → xem [[04 - Typography]] để có type scale riêng.
@@ -87,6 +93,9 @@ Khi bạn có scale, mọi thành viên (kể cả bạn của 3 tháng sau) đ�
 ### 💡 Ví dụ mô tả
 Một scale mẫu diễn đạt bằng lời: bước cực nhỏ 4px, nhỏ 8px, cơ bản 16px, vừa 24px, lớn 32px, rất lớn 48px, khổng lồ 64px. Khi cần khoảng cách giữa hai section, bạn chọn 48 hoặc 64, không bao giờ gõ 50 hay 55.
 
+![[uxui-06-spacing-scale.svg]]
+*Thang 4 / 8 / 16 / 24 / 32 / 48 / 64 vẽ đúng tỉ lệ — bước nhảy lớn dần để mỗi bậc tạo khác biệt nhìn thấy được.*
+
 ### ⚠️ Sai lầm hay gặp
 - Scale có quá **nhiều bước gần nhau** → mất tác dụng, lại quay về "chọn số tùy hứng".
 - Định nghĩa scale nhưng đội ngũ vẫn hard-code số lẻ ngoài scale → scale trở thành trang trí.
@@ -105,6 +114,9 @@ Nguyên tắc "scale hữu hạn" áp dụng cho: font-size, line-height, màu (
 
 ### 💡 Ví dụ mô tả
 Border-radius chỉ có 3 lựa chọn: nhỏ (4px cho input), vừa (8px cho card), tròn hẳn (999px cho avatar/pill). Bạn không bao giờ phải nghĩ "bo 6px hay 7px?" nữa — chỉ có 3 cửa để chọn.
+
+![[uxui-06-constrained-scale.svg]]
+*Từ vô hạn lựa chọn border-radius về đúng 3 cửa: input 4px, card 8px, avatar/pill 999px.*
 
 ### Lợi ích thực tế cho dev
 - **Ít quyết định = code nhanh hơn.**
@@ -141,6 +153,9 @@ Biến CSS chỉ sống trong CSS. Token là khái niệm **platform-agnostic** 
 ### 💡 Ví dụ chuỗi tham chiếu bằng lời
 `button.background` (component) → trỏ tới `color.action.primary` (alias) → trỏ tới `blue-500` (global) → giá trị thật là một mã màu xanh. Khi cần đổi màu thương hiệu, bạn chỉ sửa `blue-500` một chỗ, mọi thứ phía trên tự cập nhật.
 
+![[uxui-06-token-3-tang.svg]]
+*Chuỗi tham chiếu 3 tầng cho cả màu lẫn spacing, kèm anti-pattern component trỏ thẳng vào global token.*
+
 ### ⚠️ Sai lầm hay gặp
 - **Component dùng thẳng global token** (ví dụ nút trỏ trực tiếp vào blue-500) → mất tầng alias, không theme được, đổi màu phải sửa hàng loạt.
 - **Tạo alias cho mọi thứ dù không cần** → quá nhiều tầng gián tiếp, khó lần theo. Chỉ tạo alias khi nó mang ý nghĩa tái dùng thật sự.
@@ -171,6 +186,9 @@ Ví dụ mô tả bằng lời: `color.action.primary.hover` = màu, dùng cho h
 ### 💡 Ví dụ mô tả
 Cùng một sắc xanh: ở tầng global gọi `blue-600`; ở tầng alias gọi `color.action.primary` (trỏ về blue-600); ở tầng component gọi `button.primary.background` (trỏ về color.action.primary). Ba cái tên, ba mức trừu tượng, nhưng ai nhìn cũng hiểu nó dùng để làm gì.
 
+![[uxui-06-token-naming.svg]]
+*Tách `color.action.primary.hover` thành từng tầng ý nghĩa, kèm đối chiếu đặt tên theo mục đích và theo giá trị.*
+
 ### ⚠️ Sai lầm hay gặp
 - Đặt tên theo màu/số ở tầng semantic → khóa cứng, mất khả năng đổi theme.
 - Tên quá dài hoặc quá tắt: vừa đủ để hiểu, đừng viết tắt bí hiểm (`clr.act.pr`).
@@ -193,6 +211,9 @@ Tất cả những gì ở trên — scale, token, naming — chỉ thực sự 
 ### 💡 Ví dụ mô tả
 Thương hiệu đổi màu chủ đạo từ xanh sang tím. Với SSOT: sửa một token global, build lại → web, iOS, Android, Figma đổi màu cùng lúc. Không có SSOT: bạn phải tìm-và-thay ở từng codebase, chắc chắn sót một chỗ.
 
+![[uxui-06-ssot.svg]]
+*Một nguồn token chuẩn W3C, qua build/transform sinh ra CSS variable, XML, Swift và biến Figma.*
+
 ### ⚠️ Sai lầm hay gặp
 - **Copy-paste giá trị** giữa web và mobile "cho nhanh" → hai bên trôi dạt (drift) theo thời gian.
 - Coi file Figma và code là hai nguồn ngang hàng, mỗi bên tự sửa → không bao giờ khớp. Phải chọn *một* nguồn làm gốc.
@@ -212,6 +233,9 @@ Có thể hình dung theo lớp:
 4. **Guidelines:** khi nào dùng cái gì.
 
 Nếu tầng token vững, các tầng trên tự nhiên nhất quán. Nếu token lộn xộn, xây bao nhiêu component cũng vẫn "lệch pha".
+
+![[uxui-06-design-system-layers.svg]]
+*Bốn tầng của Design System: Tokens làm nền, rồi Components, Patterns & Layout, cuối cùng là Guidelines.*
 
 ### Vì sao dev SaaS đặc biệt cần điều này
 SaaS sống lâu, nhiều màn hình, nhiều người cùng code qua nhiều năm. Không có token + SSOT, mỗi feature mới lại thêm một biến thể spacing/màu → "UI debt" (nợ giao diện) tích tụ. Có hệ thống token, feature mới chỉ việc *lắp ráp* từ nguyên liệu có sẵn — nhanh hơn và nhất quán hơn.

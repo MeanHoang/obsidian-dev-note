@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="330" viewBox="0 0 860 330" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="38" font-size="20" font-weight="700" fill="#111827">Viet alt text theo VAI TRO cua anh</text>
+
+  <rect x="30" y="58" width="256" height="200" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="46" y="84" font-size="14" font-weight="700" fill="#1d4ed8">1. Anh mang thong tin</text>
+  <rect x="46" y="96" width="224" height="56" rx="6" fill="#ffffff" stroke="#bfdbfe"/>
+  <polyline points="60,144 100,128 140,112 180,100 220,90 256,84" fill="none" stroke="#3b82f6" stroke-width="3"/>
+  <text x="46" y="176" font-size="12.5" fill="#1e3a8a">Mo ta noi dung / y nghia:</text>
+  <rect x="46" y="186" width="224" height="30" rx="6" fill="#111827"/>
+  <text x="56" y="206" font-size="11.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#a5f3fc">alt="Doanh thu tang deu T1-T6"</text>
+  <text x="46" y="236" font-size="12" fill="#b91c1c">X  alt="hinh anh"</text>
+
+  <rect x="302" y="58" width="256" height="200" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+  <text x="318" y="84" font-size="14" font-weight="700" fill="#374151">2. Anh chi trang tri</text>
+  <rect x="318" y="96" width="224" height="56" rx="6" fill="#ffffff" stroke="#e5e7eb"/>
+  <path d="M330 138 q20 -26 40 0 t40 0 t40 0 t40 0" fill="none" stroke="#d1d5db" stroke-width="3"/>
+  <text x="318" y="176" font-size="12.5" fill="#4b5563">De alt RONG de bo qua:</text>
+  <rect x="318" y="186" width="224" height="30" rx="6" fill="#111827"/>
+  <text x="328" y="206" font-size="11.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#a5f3fc">alt=""</text>
+  <text x="318" y="236" font-size="12" fill="#b91c1c">X  thieu han alt -&gt; doc ca ten file</text>
+
+  <rect x="574" y="58" width="256" height="200" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <text x="590" y="84" font-size="14" font-weight="700" fill="#047857">3. Anh la link / nut</text>
+  <rect x="590" y="96" width="224" height="56" rx="6" fill="#ffffff" stroke="#a7f3d0"/>
+  <rect x="660" y="110" width="84" height="28" rx="6" fill="#047857"/>
+  <text x="702" y="129" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">LOGO</text>
+  <text x="590" y="176" font-size="12.5" fill="#065f46">Mo ta dich den / hanh dong:</text>
+  <rect x="590" y="186" width="224" height="30" rx="6" fill="#111827"/>
+  <text x="600" y="206" font-size="11.5" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#a5f3fc">alt="Trang chu"</text>
+  <text x="590" y="236" font-size="12" fill="#b91c1c">X  alt="logo cong ty"</text>
+
+  <rect x="30" y="276" width="800" height="42" rx="8" fill="#f3f4f6"/>
+  <text x="46" y="294" font-size="13" fill="#374151">Khong bat dau bang "Hinh anh cua..." - screen reader da tu thong bao "image" roi.</text>
+  <text x="46" y="312" font-size="13" fill="#6b7280">Khong nhoi tu khoa SEO vao alt.</text>
+</svg>

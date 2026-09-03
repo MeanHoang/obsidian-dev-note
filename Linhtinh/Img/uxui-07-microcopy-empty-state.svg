@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="300" viewBox="0 0 860 300" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="38" font-size="19" font-weight="700" fill="#1f2933">Microcopy: trang Projects khi chua co du lieu</text>
+
+  <!-- bad -->
+  <rect x="30" y="58" width="390" height="220" rx="10" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="50" y="86" font-size="13.5" font-weight="700" fill="#991b1b">X  Empty state trong tron</text>
+  <line x1="50" y1="98" x2="400" y2="98" stroke="#e5e7eb"/>
+  <text x="50" y="120" font-size="13" font-weight="600" fill="#1f2933">Projects</text>
+  <rect x="50" y="132" width="350" height="120" rx="8" fill="#fafafa" stroke="#f0f0f0" stroke-dasharray="4 4"/>
+  <text x="225" y="198" font-size="13" fill="#b6bcc6" text-anchor="middle">(khong co gi)</text>
+
+  <!-- good -->
+  <rect x="440" y="58" width="390" height="220" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="460" y="86" font-size="13.5" font-weight="700" fill="#166534">OK  Empty state co huong dan</text>
+  <line x1="460" y1="98" x2="810" y2="98" stroke="#e5e7eb"/>
+  <text x="460" y="120" font-size="13" font-weight="600" fill="#1f2933">Projects</text>
+  <rect x="460" y="132" width="350" height="120" rx="8" fill="#f7fbf8"/>
+  <rect x="612" y="146" width="46" height="34" rx="5" fill="#ffffff" stroke="#9bbfa8" stroke-width="1.6"/>
+  <line x1="623" y1="158" x2="647" y2="158" stroke="#9bbfa8" stroke-width="1.6"/>
+  <line x1="623" y1="168" x2="640" y2="168" stroke="#9bbfa8" stroke-width="1.6"/>
+  <text x="635" y="202" font-size="12.5" font-weight="600" fill="#1f2933" text-anchor="middle">Chua co project nao</text>
+  <text x="635" y="220" font-size="11.5" fill="#6b7280" text-anchor="middle">tao cai dau tien de bat dau</text>
+  <rect x="573" y="228" width="124" height="32" rx="7" fill="#2563eb"/>
+  <text x="635" y="249" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle">Create project</text>
+
+  <!-- button copy row -->
+  <text x="30" y="298" font-size="12.5" fill="#6b7280">Chu tren nut: "Submit" / "OK"  -&gt;  "Get started free" / "Delete 3 files"  (dong tu mo ta ket qua)</text>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="360" viewBox="0 0 860 360" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="32" font-size="18" font-weight="700" fill="#111827">Contrast ratio: tu 1:1 (khong phan biet duoc) toi 21:1 (den tren trang)</text>
+  <text x="30" y="54" font-size="13" fill="#6b7280">Nguong WCAG AA: text thuong 4.5:1 · text lon (>=18pt, hoac >=14pt bold) 3:1 · AAA: 7:1 / 4.5:1</text>
+
+  <!-- scale bar -->
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+  </defs>
+  <rect x="30" y="72" width="800" height="18" fill="url(#g)" stroke="#e5e7eb"/>
+  <line x1="196" y1="68" x2="196" y2="98" stroke="#B91C1C" stroke-width="2"/>
+  <text x="196" y="112" font-size="11" font-weight="700" fill="#B91C1C" text-anchor="middle">3:1</text>
+  <line x1="270" y1="68" x2="270" y2="98" stroke="#B45309" stroke-width="2"/>
+  <text x="270" y="112" font-size="11" font-weight="700" fill="#B45309" text-anchor="middle">4.5:1 (AA)</text>
+  <line x1="400" y1="68" x2="400" y2="98" stroke="#047857" stroke-width="2"/>
+  <text x="400" y="112" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">7:1 (AAA)</text>
+  <text x="36" y="112" font-size="11" fill="#9CA3AF">1:1</text>
+  <text x="824" y="112" font-size="11" fill="#9CA3AF" text-anchor="end">21:1</text>
+
+  <!-- samples -->
+  <g>
+    <rect x="30" y="134" width="256" height="96" rx="8" fill="#ffffff" stroke="#FCA5A5" stroke-width="2"/>
+    <text x="46" y="164" font-size="15" fill="#999999">Chu xam nhat #999 tren nen trang</text>
+    <text x="46" y="188" font-size="13" fill="#999999">Trong "sang" nhung kho doc</text>
+    <text x="46" y="215" font-size="13" font-weight="700" fill="#B91C1C">X 2.85:1 — truot AA</text>
+  </g>
+  <g>
+    <rect x="302" y="134" width="256" height="96" rx="8" fill="#ffffff" stroke="#FCD34D" stroke-width="2"/>
+    <text x="318" y="164" font-size="15" fill="#767676">Chu xam #767676 tren trang</text>
+    <text x="318" y="188" font-size="13" fill="#767676">Muc toi thieu chap nhan duoc</text>
+    <text x="318" y="215" font-size="13" font-weight="700" fill="#B45309">~ 4.54:1 — vua du AA</text>
+  </g>
+  <g>
+    <rect x="574" y="134" width="256" height="96" rx="8" fill="#ffffff" stroke="#6EE7B7" stroke-width="2"/>
+    <text x="590" y="164" font-size="15" fill="#374151">Chu xam dam #374151</text>
+    <text x="590" y="188" font-size="13" fill="#374151">De doc voi ca nguoi thi luc kem</text>
+    <text x="590" y="215" font-size="13" font-weight="700" fill="#047857">OK 10.3:1 — dat AAA</text>
+  </g>
+
+  <line x1="30" y1="254" x2="830" y2="254" stroke="#e5e7eb"/>
+  <text x="30" y="280" font-size="13" font-weight="700" fill="#374151">Mau nen cung tinh — nut primary phai du tuong phan voi chu tren no</text>
+  <rect x="30" y="292" width="170" height="44" rx="6" fill="#93C5FD"/>
+  <text x="115" y="320" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Luu thay doi</text>
+  <text x="212" y="312" font-size="12" font-weight="700" fill="#B91C1C">X 1.8:1 — chu trang tren xanh nhat</text>
+  <text x="212" y="330" font-size="11" fill="#9CA3AF">danh gia bang mat rat de sai — luon kiem bang contrast checker</text>
+
+  <rect x="530" y="292" width="170" height="44" rx="6" fill="#2563EB"/>
+  <text x="615" y="320" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Luu thay doi</text>
+  <text x="712" y="318" font-size="12" font-weight="700" fill="#047857">OK 5.17:1</text>
+</svg>

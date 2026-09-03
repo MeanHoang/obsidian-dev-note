@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="400" viewBox="0 0 860 400" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="34" font-size="17" font-weight="700" fill="#111827">Spacing Scale — bo gia tri huu han, gian dan ve phia tren</text>
+  <text x="30" y="56" font-size="12.5" fill="#6b7280">4 / 8 / 16 / 24 / 32 / 48 / 64 px — chieu dai thanh ve dung ti le</text>
+
+  <g font-size="13">
+    <!-- rows: y, label, value, width = value*4 -->
+    <text x="30" y="94" fill="#374151">cuc nho</text>
+    <rect x="132" y="82" width="16" height="16" rx="3" fill="#93c5fd"/>
+    <text x="160" y="95" fill="#1d4ed8" font-weight="700">4</text>
+
+    <text x="30" y="128" fill="#374151">nho</text>
+    <rect x="132" y="116" width="32" height="16" rx="3" fill="#93c5fd"/>
+    <text x="176" y="129" fill="#1d4ed8" font-weight="700">8</text>
+
+    <text x="30" y="162" fill="#374151">co ban</text>
+    <rect x="132" y="150" width="64" height="16" rx="3" fill="#60a5fa"/>
+    <text x="208" y="163" fill="#1d4ed8" font-weight="700">16</text>
+
+    <text x="30" y="196" fill="#374151">vua</text>
+    <rect x="132" y="184" width="96" height="16" rx="3" fill="#60a5fa"/>
+    <text x="240" y="197" fill="#1d4ed8" font-weight="700">24</text>
+
+    <text x="30" y="230" fill="#374151">lon</text>
+    <rect x="132" y="218" width="128" height="16" rx="3" fill="#3b82f6"/>
+    <text x="272" y="231" fill="#1d4ed8" font-weight="700">32</text>
+
+    <text x="30" y="264" fill="#374151">rat lon</text>
+    <rect x="132" y="252" width="192" height="16" rx="3" fill="#2563eb"/>
+    <text x="336" y="265" fill="#1d4ed8" font-weight="700">48</text>
+
+    <text x="30" y="298" fill="#374151">khong lo</text>
+    <rect x="132" y="286" width="256" height="16" rx="3" fill="#1d4ed8"/>
+    <text x="400" y="299" fill="#1d4ed8" font-weight="700">64</text>
+  </g>
+
+  <!-- gap growth note -->
+  <path d="M440 92 L440 296" stroke="#cbd5e1" stroke-dasharray="4 4"/>
+  <text x="452" y="120" font-size="12.5" fill="#374151">Buoc nhay lon dan:</text>
+  <text x="452" y="140" font-size="12.5" fill="#6b7280">+4, +8, +8, +8, +16, +16</text>
+  <text x="452" y="168" font-size="12.5" fill="#374151">Moi buoc phai tao khac biet</text>
+  <text x="452" y="188" font-size="12.5" fill="#374151">NHIN THAY DUOC.</text>
+
+  <rect x="452" y="212" width="378" height="86" rx="8" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="468" y="236" font-size="13" font-weight="700" fill="#b91c1c">Scale xau: qua nhieu buoc gan nhau</text>
+  <text x="468" y="258" font-size="12.5" fill="#991b1b">14 · 15 · 16 · 17 · 18 · 20 · 22 ...</text>
+  <text x="468" y="282" font-size="12.5" fill="#991b1b">Mat khong phan biet duoc → quay lai chon so tuy hung.</text>
+
+  <text x="30" y="344" font-size="12.5" fill="#374151">Can khoang cach giua hai section? Chon <tspan font-weight="700" fill="#1d4ed8">48</tspan> hoac <tspan font-weight="700" fill="#1d4ed8">64</tspan> — khong bao gio go 50 hay 55.</text>
+</svg>

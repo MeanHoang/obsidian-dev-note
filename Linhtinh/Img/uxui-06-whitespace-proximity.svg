@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="380" viewBox="0 0 860 380" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="34" font-size="17" font-weight="700" fill="#111827">Proximity: khoang cach TRONG nhom &lt; khoang cach GIUA cac nhom</text>
+
+  <!-- LEFT: bad -->
+  <text x="30" y="70" font-size="14" font-weight="700" fill="#b91c1c">Truoc — moi thu cach deu tam tap</text>
+  <rect x="30" y="84" width="370" height="260" rx="10" fill="#fef2f2" stroke="#fecaca"/>
+  <circle cx="76" cy="130" r="22" fill="#e5e7eb" stroke="#9ca3af"/>
+  <text x="66" y="136" font-size="13" fill="#6b7280">av</text>
+
+  <rect x="112" y="118" width="150" height="14" rx="4" fill="#9ca3af"/>
+  <text x="112" y="114" font-size="11" fill="#6b7280">Ten user</text>
+
+  <rect x="112" y="156" width="200" height="12" rx="4" fill="#d1d5db"/>
+  <text x="112" y="152" font-size="11" fill="#6b7280">Email</text>
+
+  <rect x="112" y="192" width="110" height="30" rx="6" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="130" y="212" font-size="12" fill="#374151">Chinh sua</text>
+
+  <!-- equal gap markers -->
+  <line x1="340" y1="132" x2="340" y2="162" stroke="#dc2626" stroke-width="2"/>
+  <text x="348" y="152" font-size="11" fill="#dc2626">16</text>
+  <line x1="340" y1="168" x2="340" y2="198" stroke="#dc2626" stroke-width="2"/>
+  <text x="348" y="188" font-size="11" fill="#dc2626">16</text>
+  <text x="52" y="322" font-size="12" fill="#b91c1c">Mat khong biet cai gi thuoc cai gi — nhin nhu mot dong.</text>
+
+  <!-- RIGHT: good -->
+  <text x="460" y="70" font-size="14" font-weight="700" fill="#15803d">Sau — nhom lai bang khoang cach</text>
+  <rect x="460" y="84" width="370" height="260" rx="10" fill="#f0fdf4" stroke="#bbf7d0"/>
+  <circle cx="506" cy="130" r="22" fill="#e5e7eb" stroke="#9ca3af"/>
+  <text x="496" y="136" font-size="13" fill="#6b7280">av</text>
+
+  <rect x="542" y="118" width="150" height="14" rx="4" fill="#374151"/>
+  <rect x="542" y="140" width="200" height="12" rx="4" fill="#d1d5db"/>
+  <rect x="536" y="108" width="216" height="54" rx="7" fill="none" stroke="#22c55e" stroke-dasharray="4 3"/>
+  <text x="536" y="102" font-size="11" fill="#15803d">nhom "danh tinh" — gap 8</text>
+
+  <rect x="542" y="214" width="110" height="32" rx="6" fill="#16a34a"/>
+  <text x="560" y="235" font-size="12" fill="#ffffff">Chinh sua</text>
+
+  <line x1="770" y1="132" x2="770" y2="140" stroke="#15803d" stroke-width="2"/>
+  <text x="778" y="140" font-size="11" fill="#15803d">8</text>
+  <line x1="770" y1="162" x2="770" y2="214" stroke="#15803d" stroke-width="2"/>
+  <text x="778" y="192" font-size="11" fill="#15803d">32</text>
+  <text x="482" y="322" font-size="12" fill="#15803d">Hai cum ro rang: danh tinh / hanh dong.</text>
+</svg>

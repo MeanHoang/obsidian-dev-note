@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="400" viewBox="0 0 860 400" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <text x="430" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#111827">Emphasis by De-emphasis — cung mot dong "Trang thai: Dang hoat dong"</text>
+
+  <!-- ================= LEFT: WRONG ================= -->
+  <rect x="20" y="50" width="390" height="300" rx="10" fill="#fdf3f2" stroke="#e8b4ae" stroke-width="1.5"/>
+  <text x="40" y="80" font-size="15" font-weight="700" fill="#b3261e">&#10007; CACH SAI — tang do manh cho phan chinh</text>
+
+  <!-- card mockup -->
+  <rect x="44" y="98" width="342" height="96" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="66" y="140" font-size="19" font-weight="700" fill="#111827">Trang thai:</text>
+  <text x="176" y="140" font-size="19" font-weight="700" fill="#111827">Dang hoat dong</text>
+  <text x="66" y="170" font-size="13" fill="#9ca3af">Ca hai phan deu 700 / deu den #111827</text>
+
+  <!-- weight bars -->
+  <text x="44" y="222" font-size="12" font-weight="600" fill="#6b7280">Do "nang" thi giac</text>
+  <text x="60" y="250" font-size="12" fill="#6b7280">Trang thai:</text>
+  <rect x="150" y="238" width="200" height="14" rx="7" fill="#111827"/>
+  <text x="60" y="280" font-size="12" fill="#6b7280">Dang hoat dong</text>
+  <rect x="150" y="268" width="210" height="14" rx="7" fill="#111827"/>
+
+  <text x="44" y="318" font-size="13" fill="#b3261e">Hai phan gan bang nhau &#8594; khong co gi noi bat.</text>
+  <text x="44" y="338" font-size="13" fill="#b3261e">Muon nhan them thi phai to hon, dam hon... het cho tang.</text>
+
+  <!-- ================= RIGHT: CORRECT ================= -->
+  <rect x="450" y="50" width="390" height="300" rx="10" fill="#f1f9f4" stroke="#a8d5b9" stroke-width="1.5"/>
+  <text x="470" y="80" font-size="15" font-weight="700" fill="#1e7e45">&#10003; CACH DUNG — ha tong phan phu</text>
+
+  <rect x="474" y="98" width="342" height="96" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="496" y="140" font-size="19" font-weight="400" fill="#c3c8d0">Trang thai:</text>
+  <text x="600" y="140" font-size="19" font-weight="500" fill="#111827">Dang hoat dong</text>
+  <text x="496" y="170" font-size="13" fill="#9ca3af">Chi lam nhat "Trang thai:" &#8212; khong dung gi phan con lai</text>
+
+  <text x="474" y="222" font-size="12" font-weight="600" fill="#6b7280">Do "nang" thi giac</text>
+  <text x="490" y="250" font-size="12" fill="#6b7280">Trang thai:</text>
+  <rect x="580" y="238" width="70" height="14" rx="7" fill="#d5d9e0"/>
+  <text x="490" y="280" font-size="12" fill="#6b7280">Dang hoat dong</text>
+  <rect x="580" y="268" width="210" height="14" rx="7" fill="#111827"/>
+
+  <text x="474" y="318" font-size="13" fill="#1e7e45">Chenh lech xuat hien ngay, ma nhin van nhe nhang.</text>
+  <text x="474" y="338" font-size="13" fill="#1e7e45">Phan chinh "tu noi len" vi phan phu da lui xuong.</text>
+
+  <!-- arrow between -->
+  <path d="M 414 200 L 444 200" stroke="#6b7280" stroke-width="2" fill="none"/>
+  <path d="M 444 200 l -8 -5 l 0 10 z" fill="#6b7280"/>
+
+  <text x="430" y="382" text-anchor="middle" font-size="13" font-style="italic" fill="#6b7280">Muon cai gi noi bat? Thu LAM MO cai ben canh no truoc, thay vi to dam chinh no.</text>
+</svg>

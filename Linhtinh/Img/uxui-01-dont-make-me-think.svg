@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="430" viewBox="0 0 860 430" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="430" y="26" text-anchor="middle" font-size="17" font-weight="700" fill="#111827">"We don't read pages. We scan them." — trang Pricing phai de LIEC</text>
+
+  <!-- LEFT bad -->
+  <text x="20" y="56" font-size="13.5" font-weight="700" fill="#b91c1c">❌ Doan van dai giai thich goi</text>
+  <rect x="20" y="66" width="390" height="260" rx="8" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="34" y="90" font-size="13" font-weight="600" fill="#111827">Bang gia</text>
+  <g fill="#cbd5e1">
+    <rect x="34" y="102" width="362" height="8" rx="4"/><rect x="34" y="116" width="362" height="8" rx="4"/>
+    <rect x="34" y="130" width="340" height="8" rx="4"/><rect x="34" y="144" width="362" height="8" rx="4"/>
+    <rect x="34" y="158" width="300" height="8" rx="4"/><rect x="34" y="176" width="362" height="8" rx="4"/>
+    <rect x="34" y="190" width="362" height="8" rx="4"/><rect x="34" y="204" width="318" height="8" rx="4"/>
+    <rect x="34" y="218" width="362" height="8" rx="4"/><rect x="34" y="232" width="270" height="8" rx="4"/>
+    <rect x="34" y="250" width="362" height="8" rx="4"/><rect x="34" y="264" width="330" height="8" rx="4"/>
+  </g>
+  <text x="34" y="296" font-size="11.5" fill="#7f1d1d">Gia va khac biet giua cac goi nam lan trong chu.</text>
+  <text x="34" y="314" font-size="11.5" fill="#7f1d1d">User phai DUNG LAI SUY NGHI → hao nang luong, thoat trang.</text>
+
+  <!-- RIGHT good -->
+  <text x="450" y="56" font-size="13.5" font-weight="700" fill="#15803d">✅ Bang so sanh, tieu de ro, CTA noi bat</text>
+  <rect x="450" y="66" width="390" height="260" rx="8" fill="#f0fdf4" stroke="#86efac"/>
+
+  <g>
+    <rect x="464" y="82" width="118" height="196" rx="8" fill="#ffffff" stroke="#d1d5db"/>
+    <text x="523" y="106" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Free</text>
+    <text x="523" y="134" text-anchor="middle" font-size="20" font-weight="700" fill="#111827">0đ</text>
+    <text x="523" y="160" text-anchor="middle" font-size="10.5" fill="#4b5563">✓ 100 don/thang</text>
+    <text x="523" y="178" text-anchor="middle" font-size="10.5" fill="#4b5563">✓ 1 nguoi dung</text>
+    <text x="523" y="196" text-anchor="middle" font-size="10.5" fill="#9ca3af">✗ Bao cao</text>
+    <rect x="478" y="230" width="90" height="30" rx="6" fill="#ffffff" stroke="#2563eb"/>
+    <text x="523" y="250" text-anchor="middle" font-size="11.5" font-weight="600" fill="#2563eb">Chon goi nay</text>
+  </g>
+  <g>
+    <rect x="590" y="76" width="118" height="208" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+    <rect x="612" y="66" width="74" height="18" rx="9" fill="#2563eb"/>
+    <text x="649" y="79" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ffffff">PHO BIEN</text>
+    <text x="649" y="110" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Pro</text>
+    <text x="649" y="138" text-anchor="middle" font-size="20" font-weight="700" fill="#111827">490k</text>
+    <text x="649" y="164" text-anchor="middle" font-size="10.5" fill="#4b5563">✓ Khong gioi han</text>
+    <text x="649" y="182" text-anchor="middle" font-size="10.5" fill="#4b5563">✓ 5 nguoi dung</text>
+    <text x="649" y="200" text-anchor="middle" font-size="10.5" fill="#4b5563">✓ Bao cao day du</text>
+    <rect x="604" y="234" width="90" height="30" rx="6" fill="#2563eb"/>
+    <text x="649" y="254" text-anchor="middle" font-size="11.5" font-weight="600" fill="#ffffff">Chon goi nay</text>
+  </g>
+  <g>
+    <rect x="716" y="82" width="110" height="196" rx="8" fill="#ffffff" stroke="#d1d5db"/>
+    <text x="771" y="106" text-anchor="middle" font-size="13" font-weight="700" fill="#111827">Business</text>
+    <text x="771" y="134" text-anchor="middle" font-size="20" font-weight="700" fill="#111827">1.9tr</text>
+    <text x="771" y="160" text-anchor="middle" font-size="10.5" fill="#4b5563">✓ Khong gioi han</text>
+    <text x="771" y="178" text-anchor="middle" font-size="10.5" fill="#4b5563">✓ Khong gioi han</text>
+    <text x="771" y="196" text-anchor="middle" font-size="10.5" fill="#4b5563">✓ Ho tro rieng</text>
+    <rect x="726" y="230" width="90" height="30" rx="6" fill="#ffffff" stroke="#2563eb"/>
+    <text x="771" y="250" text-anchor="middle" font-size="11.5" font-weight="600" fill="#2563eb">Chon goi nay</text>
+  </g>
+  <text x="464" y="300" font-size="11.5" fill="#14532d">Liec 3 giay la hieu: gia bao nhieu, khac nhau cho nao, bam vao dau.</text>
+
+  <!-- naming -->
+  <rect x="20" y="344" width="820" height="72" rx="8" fill="#f9fafb" stroke="#d1d5db"/>
+  <text x="34" y="366" font-size="12.5" font-weight="700" fill="#374151">Ten menu: ro nghia thang &gt; "keu" ma mo ho</text>
+  <g font-size="12">
+    <rect x="34" y="378" width="118" height="26" rx="13" fill="#fef2f2" stroke="#fca5a5"/>
+    <text x="93" y="396" text-anchor="middle" fill="#b91c1c">❌ Kham pha</text>
+    <rect x="164" y="378" width="130" height="26" rx="13" fill="#fef2f2" stroke="#fca5a5"/>
+    <text x="229" y="396" text-anchor="middle" fill="#b91c1c">❌ Trai nghiem</text>
+    <text x="316" y="396" fill="#6b7280">→</text>
+    <rect x="342" y="378" width="118" height="26" rx="13" fill="#f0fdf4" stroke="#86efac"/>
+    <text x="401" y="396" text-anchor="middle" fill="#15803d">✅ Bang gia</text>
+    <rect x="472" y="378" width="118" height="26" rx="13" fill="#f0fdf4" stroke="#86efac"/>
+    <text x="531" y="396" text-anchor="middle" fill="#15803d">✅ Tai lieu</text>
+  </g>
+  <text x="614" y="396" font-size="11" fill="#6b7280">Moi lan phai "ngam" = mot chut thien cam bi hao di.</text>
+</svg>

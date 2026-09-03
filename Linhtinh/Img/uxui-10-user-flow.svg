@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="360" viewBox="0 0 860 360" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="g" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#16a34a"/></marker>
+    <marker id="r" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#dc2626"/></marker>
+  </defs>
+  <text x="30" y="32" font-size="18" font-weight="700" fill="#111827">User Flow: happy path + edge case (vi du "Quen mat khau")</text>
+
+  <rect x="30" y="60" width="140" height="46" rx="8" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="100" y="82" font-size="13.5" font-weight="600" fill="#111827" text-anchor="middle">Man dang nhap</text>
+  <text x="100" y="98" font-size="12" fill="#4b5563" text-anchor="middle">bam "Quen mat khau"</text>
+
+  <line x1="170" y1="83" x2="212" y2="83" stroke="#16a34a" stroke-width="2" marker-end="url(#g)"/>
+
+  <rect x="220" y="60" width="140" height="46" rx="8" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="290" y="82" font-size="13.5" font-weight="600" fill="#111827" text-anchor="middle">Nhap email</text>
+  <text x="290" y="98" font-size="12" fill="#4b5563" text-anchor="middle">bam Gui</text>
+
+  <line x1="360" y1="83" x2="402" y2="83" stroke="#16a34a" stroke-width="2" marker-end="url(#g)"/>
+
+  <path d="M480 52 L546 83 L480 114 L414 83 z" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="480" y="80" font-size="12.5" font-weight="600" fill="#713f12" text-anchor="middle">Email co</text>
+  <text x="480" y="96" font-size="12.5" font-weight="600" fill="#713f12" text-anchor="middle">ton tai?</text>
+
+  <text x="556" y="76" font-size="12" fill="#15803d">co</text>
+  <line x1="546" y1="83" x2="588" y2="83" stroke="#16a34a" stroke-width="2" marker-end="url(#g)"/>
+
+  <rect x="596" y="60" width="150" height="46" rx="8" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="671" y="82" font-size="13.5" font-weight="600" fill="#111827" text-anchor="middle">Gui email chua link</text>
+  <text x="671" y="98" font-size="12" fill="#4b5563" text-anchor="middle">user bam link</text>
+
+  <line x1="671" y1="106" x2="671" y2="146" stroke="#16a34a" stroke-width="2" marker-end="url(#g)"/>
+
+  <path d="M671 152 L737 183 L671 214 L605 183 z" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="671" y="180" font-size="12.5" font-weight="600" fill="#713f12" text-anchor="middle">Link con</text>
+  <text x="671" y="196" font-size="12.5" font-weight="600" fill="#713f12" text-anchor="middle">han?</text>
+
+  <line x1="671" y1="214" x2="671" y2="250" stroke="#16a34a" stroke-width="2" marker-end="url(#g)"/>
+  <text x="680" y="238" font-size="12" fill="#15803d">con han</text>
+  <rect x="596" y="256" width="150" height="44" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="671" y="283" font-size="13.5" font-weight="700" fill="#166534" text-anchor="middle">Dat mat khau moi</text>
+
+  <line x1="605" y1="183" x2="500" y2="183" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#r)"/>
+  <text x="512" y="176" font-size="12" fill="#b91c1c">het han</text>
+  <rect x="340" y="160" width="150" height="46" rx="8" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="415" y="182" font-size="13" font-weight="600" fill="#991b1b" text-anchor="middle">Bao link het han</text>
+  <text x="415" y="198" font-size="12" fill="#7f1d1d" text-anchor="middle">+ nut gui lai</text>
+
+  <line x1="480" y1="114" x2="480" y2="146" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4"/>
+  <line x1="480" y1="146" x2="290" y2="146" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4"/>
+  <line x1="290" y1="146" x2="290" y2="158" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#r)"/>
+  <text x="380" y="140" font-size="12" fill="#b91c1c">khong ton tai</text>
+  <rect x="215" y="164" width="150" height="46" rx="8" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="290" y="186" font-size="13" font-weight="600" fill="#991b1b" text-anchor="middle">Thong bao trung tinh</text>
+  <text x="290" y="202" font-size="12" fill="#7f1d1d" text-anchor="middle">(tranh lo email nao co)</text>
+
+  <rect x="30" y="240" width="330" height="90" rx="8" fill="#f9fafb" stroke="#d1d5db"/>
+  <text x="46" y="264" font-size="13.5" font-weight="700" fill="#111827">Dev nghi theo trang thai (state)</text>
+  <text x="46" y="288" font-size="12.5" fill="#16a34a">&#9679; happy path: duong xanh lien net</text>
+  <text x="46" y="308" font-size="12.5" fill="#dc2626">&#9679; edge case: duong do dut net (loi mang, du lieu trong, het quyen)</text>
+
+  <text x="30" y="350" font-size="13" fill="#374151">Liet ke du: loading &#183; empty &#183; error &#183; success &#8594; do UI di sua lai sau khi da code</text>
+</svg>

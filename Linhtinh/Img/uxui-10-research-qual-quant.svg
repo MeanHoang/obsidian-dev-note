@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="330" viewBox="0 0 860 330" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="34" font-size="18" font-weight="700" fill="#111827">UX Research: hai kieu du lieu</text>
+
+  <rect x="30" y="52" width="390" height="240" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="50" y="82" font-size="16" font-weight="700" fill="#1d4ed8">Qualitative (dinh tinh)</text>
+  <text x="50" y="106" font-size="14" fill="#1e3a8a">Tra loi: "TAI SAO?"</text>
+  <rect x="50" y="122" width="350" height="46" rx="8" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="66" y="142" font-size="14" font-weight="600" fill="#111827">User Interview - noi chuyen 1-1</text>
+  <text x="66" y="160" font-size="12.5" fill="#4b5563">30-45 phut, hoi mo, ve hanh vi qua khu</text>
+  <text x="50" y="192" font-size="13" fill="#1f2937">Dung khi: chua hieu van de</text>
+  <text x="50" y="214" font-size="13" fill="#1f2937">Ket qua: 3-5 pain point, hieu chieu sau</text>
+  <text x="50" y="236" font-size="13" fill="#1f2937">Team nho: phong van 5 khach hien tai</text>
+  <text x="50" y="266" font-size="12.5" fill="#b91c1c">Tranh: cau hoi dan dat (leading question)</text>
+
+  <rect x="440" y="52" width="390" height="240" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="460" y="82" font-size="16" font-weight="700" fill="#15803d">Quantitative (dinh luong)</text>
+  <text x="460" y="106" font-size="14" fill="#14532d">Tra loi: "BAO NHIEU?"</text>
+  <rect x="460" y="122" width="350" height="46" rx="8" fill="#ffffff" stroke="#86efac"/>
+  <text x="476" y="142" font-size="14" font-weight="600" fill="#111827">Survey - bang cau hoi gui hang loat</text>
+  <text x="476" y="160" font-size="12.5" fill="#4b5563">Thu ve con so, %</text>
+  <text x="460" y="192" font-size="13" fill="#1f2937">Dung khi: DA co gia thuyet, muon do dien rong</text>
+  <text x="460" y="214" font-size="13" fill="#1f2937">Ket qua: van de cua so dong hay vai nguoi</text>
+  <text x="460" y="236" font-size="13" fill="#1f2937">Team nho: in-app survey / email 3 cau</text>
+  <text x="460" y="266" font-size="12.5" fill="#b91c1c">Tranh: dung survey de KHAM PHA</text>
+
+  <text x="30" y="316" font-size="13.5" fill="#374151">Thu tu tu nhien: phong van de hieu "tai sao" &#8594; survey de do "bao nhieu nguoi bi nhu vay"</text>
+</svg>

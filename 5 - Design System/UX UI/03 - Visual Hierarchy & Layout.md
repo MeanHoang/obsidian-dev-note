@@ -30,6 +30,9 @@ Là dev, khi build một màn hình SaaS bạn thường ném hết dữ liệu 
 - Trong một dashboard hiển thị doanh thu: con số "$42,000" nên to và đậm, còn chữ "Tổng doanh thu tháng này" bên trên nên nhỏ và nhạt màu hơn. Người dùng liếc mắt là thấy con số trước — đúng thứ họ quan tâm.
 - Nút hành động chính (vd "Tạo dự án") nên là nút đặc, màu nổi; nút phụ ("Hủy") nên là chữ xám hoặc viền mờ. Không để hai nút "cùng cân nặng".
 
+![[uxui-03-visual-hierarchy.svg]]
+*Cùng một card doanh thu: bên trái mọi thứ "cùng cân nặng", bên phải con số to đậm còn nhãn và SKU lùi lại — mắt biết nhìn vào đâu trước.*
+
 **Sai lầm hay gặp:** Làm mọi thứ *nổi bật như nhau*. Khi tất cả đều in đậm, đều màu đậm, đều to — thì thực chất *không có gì nổi bật cả*. Hierarchy bị "phẳng", mắt người dùng phải tự vật lộn để tìm điểm quan trọng.
 
 > Xem thêm nền tảng tâm lý về việc mắt bị hút vào đâu ở [[02 - Laws of UX - Nguyên tắc tâm lý học]].
@@ -46,6 +49,9 @@ Là dev, khi build một màn hình SaaS bạn thường ném hết dữ liệu 
 - Một dòng thông tin "Trạng thái: Đang hoạt động". Thay vì tô đậm chữ "Đang hoạt động", hãy làm chữ "Trạng thái:" nhạt màu xám đi. Tự nhiên "Đang hoạt động" nổi lên mà không cần đụng gì tới nó.
 - Trong menu điều hướng: mục đang được chọn để màu chữ bình thường/đậm, còn các mục khác để màu xám nhạt. Không cần vẽ khung hay tô nền chói cho mục đang chọn.
 
+![[uxui-03-emphasis-de-emphasis.svg]]
+*Dòng "Trạng thái: Đang hoạt động": bên trái tô đậm phần chính nên hai vế nặng ngang nhau; bên phải chỉ làm nhạt chữ "Trạng thái:" — phần còn lại tự nổi lên mà không đụng gì tới nó.*
+
 **Sai lầm hay gặp:** Cứ dồn hết năng lượng vào việc "làm cho nó to hơn, đậm hơn, đỏ hơn" cho tới khi giao diện trở nên ồn ào, chói mắt. Quên mất rằng *hạ tông phần phụ* là cách nhẹ nhàng và hiệu quả hơn.
 
 ---
@@ -60,6 +66,9 @@ Là dev, khi build một màn hình SaaS bạn thường ném hết dữ liệu 
 - Tiêu đề trang nên lớn và đậm hơn *hẳn* so với đoạn văn — đủ để nhìn phát biết ngay đâu là tiêu đề. Nếu hai cái xấp xỉ nhau, hãy mạnh dạn kéo giãn khoảng cách size.
 - Đừng chỉ dùng size để tạo tương phản. Refactoring UI khuyên: kết hợp *nhiều tín hiệu* — size + độ đậm (font weight) + màu. Ví dụ một label phụ có thể vừa nhỏ, vừa nhạt màu, vừa mảnh; nhờ đó nó lùi hẳn ra sau mà không cần thu nhỏ đến mức khó đọc.
 - Với **weight**: dùng đậm để nhấn, dùng màu nhạt để lùi — tránh dùng chữ mảnh (thin/light) cho chữ nhỏ vì sẽ khó đọc.
+
+![[uxui-03-contrast-scale.svg]]
+*Bên trái tiêu đề chỉ nhỉnh hơn nội dung 1px nên phân cấp vô hình; bên phải kết hợp size + weight + màu tạo ba mức rõ rệt: tiêu đề → nội dung → ghi chú.*
 
 **Sai lầm hay gặp:**
 - Tương phản *nửa vời*: chênh lệch quá nhỏ khiến hierarchy vô hình.
@@ -80,6 +89,9 @@ Là dev, khi build một màn hình SaaS bạn thường ném hết dữ liệu 
 - Khoảng trống cũng *mã hóa quan hệ*: nếu label nằm sát trường input của nó nhưng cách xa trường phía trên, mắt tự hiểu label thuộc về trường bên dưới. Khoảng cách trong-nhóm phải nhỏ hơn khoảng cách giữa-các-nhóm.
 - Không cần nhồi cho đầy chiều rộng màn hình. Một khối nội dung text giới hạn bề ngang (không kéo dài hết màn hình) sẽ dễ đọc hơn.
 
+![[uxui-03-whitespace.svg]]
+*Cùng một form đăng ký: bên trái sát mép và khoảng cách đều tăm tắp gây ngột ngạt; bên phải có lề rộng và khoảng cách trong-nhóm (6) nhỏ hơn khoảng cách giữa-các-nhóm (28).*
+
 **Sai lầm hay gặp:**
 - Sợ khoảng trống, cố lấp đầy mọi pixel → giao diện ngột ngạt.
 - Dùng khoảng cách *đồng đều* khắp nơi khiến các phần tử không liên quan trông như một nhóm, còn nhóm thật thì bị xé lẻ.
@@ -99,6 +111,9 @@ Là dev, khi build một màn hình SaaS bạn thường ném hết dữ liệu 
 - Hạn chế trộn nhiều kiểu căn trong cùng một khối. Một card mà tiêu đề căn giữa, nội dung căn trái, nút căn phải sẽ trông rối. Chọn một trục chủ đạo (thường là căn trái với ngôn ngữ đọc từ trái sang) và bám theo.
 - Text dài nên căn trái, không nên căn giữa — căn giữa làm mỗi dòng bắt đầu ở một vị trí khác nhau, mắt khó tìm điểm đầu dòng.
 
+![[uxui-03-alignment.svg]]
+*Bên trái một card trộn tiêu đề căn giữa, nội dung căn trái, nút căn phải nên có tới 4 "đường căn ngầm" lộn xộn; bên phải mọi thứ bám chung một trục căn trái.*
+
 **Sai lầm hay gặp:**
 - Căn giữa những đoạn văn dài nhiều dòng → khó đọc.
 - Có những "đường căn" ngầm khác nhau lộn xộn khắp trang, tạo cảm giác cẩu thả dù từng phần tử đều đẹp.
@@ -114,6 +129,9 @@ Là dev, khi build một màn hình SaaS bạn thường ném hết dữ liệu 
 **Ví dụ mô tả bằng lời:**
 - Một trang dashboard: sidebar chiếm 3 cột bên trái, khu vực nội dung chính chiếm 9 cột bên phải. Bên trong khu 9 cột đó lại chia tiếp thành các card 3 cột mỗi cái (4 card một hàng).
 - Khi responsive: trên màn hình nhỏ, các cột "gộp lại" — thay vì 4 card một hàng thì thành 1 card mỗi hàng (mỗi card chiếm đủ 12 cột).
+
+![[uxui-03-grid-12-column.svg]]
+*Lưới 12 cột với sidebar chiếm 3 cột (nên để rộng cố định) và khu nội dung 9 cột, bên trong chia tiếp thành 4 card 3 cột mỗi cái.*
 
 **Lưu ý quan trọng (Refactoring UI):** Đừng thần thánh hóa việc "mọi thứ phải chia theo %". Một số phần tử nên có *kích thước cố định* (ví dụ sidebar nên rộng cố định để menu không bị bóp méo khi màn hình co giãn), chỉ phần nội dung chính mới co giãn theo grid. Grid là công cụ, không phải luật cứng.
 
@@ -133,6 +151,9 @@ Là dev, khi build một màn hình SaaS bạn thường ném hết dữ liệu 
 - Một danh sách thông tin liên hệ: nhóm "tên + chức danh" đặt sát nhau, rồi chừa một khoảng trống rõ, rồi mới đến nhóm "email + số điện thoại". Mắt lập tức hiểu đây là hai cụm thông tin.
 - Label của một trường input phải nằm *gần trường của nó* và *xa* trường phía trên. Nếu khoảng cách trên–dưới bằng nhau, người dùng sẽ bối rối không biết label thuộc trường nào.
 - Nút "Lưu" và "Hủy" của một dialog nên nằm gần nhau (cùng nhóm hành động), tách khỏi nội dung phía trên.
+
+![[uxui-03-proximity.svg]]
+*Cùng một khối thông tin liên hệ: bên trái khoảng cách đều nhau nên 5 dòng rời rạc như nhau; bên phải chỉ đổi khoảng cách là mắt tự tách thành 3 cụm, không cần kẻ đường hay vẽ khung.*
 
 **Sai lầm hay gặp:**
 - Dùng khoảng cách đều tăm tắp cho mọi thứ → phá vỡ khả năng phân nhóm, mọi phần tử trông rời rạc như nhau.
@@ -154,6 +175,9 @@ Là dev, khi build một màn hình SaaS bạn thường ném hết dữ liệu 
 - Landing page theo Z-Pattern: logo đặt góc trên-trái, nút "Đăng ký" đặt góc trên-phải, thông điệp chính ở giữa, nút hành động chính (call-to-action) đặt ở vùng dưới-phải nơi mắt kết thúc hành trình.
 - Trang blog theo F-Pattern: đặt thông tin quan trọng (tiêu đề, câu mở đầu, từ khóa) dồn về *đầu dòng bên trái* và *phần trên của trang*, vì mắt quét dọc mép trái và ít khi đọc kỹ phần cuối các dòng.
 
+![[uxui-03-z-f-pattern.svg]]
+*Bên trái: landing page với logo góc trên-trái, nút "Đăng ký" góc trên-phải và CTA ở vùng dưới-phải nơi chữ Z kết thúc; bên phải: trang nhiều chữ với mắt quét hai dòng đầu rồi trượt dọc mép trái thành chữ F.*
+
 **Sai lầm hay gặp:**
 - Giấu nút call-to-action ở vị trí mắt không đi qua (ví dụ góc dưới-trái trong bố cục Z).
 - Nhồi thông tin quan trọng vào cuối các dòng dài trong trang nhiều text (F-Pattern) — nơi mắt lướt qua mà không đọc.
@@ -171,6 +195,9 @@ Là dev, khi build một màn hình SaaS bạn thường ném hết dữ liệu 
 - Một card thông thường có bóng rất nhẹ, gần như dán sát mặt nền. Khi người dùng rê chuột vào (hover) hoặc kéo thả, bóng lớn hơn và mềm hơn — tạo cảm giác nó "nhấc lên khỏi mặt bàn".
 - Dropdown menu, modal, tooltip là những thứ "nổi cao nhất" (chúng đè lên nội dung khác), nên có bóng rõ và lớn để thể hiện rằng chúng ở lớp trên cùng.
 - Ngược lại, một ô input có thể trông như "lõm xuống" nhẹ để mời gọi người dùng điền vào.
+
+![[uxui-03-depth-elevation.svg]]
+*Bên trái bóng đen đặc và cứng dùng chung cho mọi thứ; bên phải là thang độ nổi nhất quán (card nghỉ → card hover → modal), mỗi mức dùng hai lớp bóng mờ, còn ô input thì "lõm xuống".*
 
 **Sai lầm hay gặp:**
 - Bóng đen đặc, cứng, không mờ → trông giả và rẻ tiền. Bóng thật gần như luôn *mờ và hơi trong suốt*.

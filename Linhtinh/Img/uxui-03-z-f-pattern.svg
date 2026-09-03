@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="400" viewBox="0 0 860 400" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="430" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#111827">Duong di cua mat: Z-Pattern (trang it chu) vs F-Pattern (trang nhieu chu)</text>
+
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 z" fill="#e07b39"/>
+    </marker>
+  </defs>
+
+  <!-- LEFT: Z pattern landing page -->
+  <rect x="20" y="46" width="390" height="300" rx="10" fill="#fafbfc" stroke="#d8dde5" stroke-width="1.5"/>
+  <text x="40" y="72" font-size="15" font-weight="700" fill="#111827">Z-Pattern &#8212; landing page</text>
+  <rect x="44" y="84" width="342" height="230" rx="6" fill="#ffffff" stroke="#e5e7eb"/>
+  <!-- logo top-left -->
+  <rect x="62" y="100" width="70" height="22" rx="4" fill="#374151"/>
+  <text x="97" y="115" text-anchor="middle" font-size="11" fill="#ffffff">LOGO</text>
+  <!-- signup top-right -->
+  <rect x="292" y="100" width="78" height="22" rx="4" fill="#2f6fed"/>
+  <text x="331" y="115" text-anchor="middle" font-size="11" fill="#ffffff">Dang ky</text>
+  <!-- headline center -->
+  <text x="215" y="185" text-anchor="middle" font-size="17" font-weight="700" fill="#111827">Thong diep chinh</text>
+  <rect x="120" y="198" width="190" height="7" rx="3" fill="#e5e7eb"/>
+  <rect x="146" y="212" width="138" height="7" rx="3" fill="#e5e7eb"/>
+  <!-- CTA bottom-right -->
+  <rect x="270" y="262" width="100" height="30" rx="5" fill="#2f6fed"/>
+  <text x="320" y="282" text-anchor="middle" font-size="12" font-weight="600" fill="#ffffff">Bat dau ngay</text>
+  <!-- Z path -->
+  <path d="M 78 111 L 340 111 L 78 277 L 330 277" stroke="#e07b39" stroke-width="2.5" fill="none" stroke-dasharray="7 5" marker-end="url(#ar)" opacity="0.85"/>
+  <text x="44" y="336" font-size="12.5" fill="#4b5563">CTA dat o vung duoi-phai &#8212; noi mat ket thuc hanh trinh.</text>
+
+  <!-- RIGHT: F pattern blog -->
+  <rect x="450" y="46" width="390" height="300" rx="10" fill="#fafbfc" stroke="#d8dde5" stroke-width="1.5"/>
+  <text x="470" y="72" font-size="15" font-weight="700" fill="#111827">F-Pattern &#8212; blog / danh sach ket qua</text>
+  <rect x="474" y="84" width="342" height="230" rx="6" fill="#ffffff" stroke="#e5e7eb"/>
+  <!-- text lines, heat shading strongest at left -->
+  <g>
+    <rect x="500" y="102" width="290" height="10" rx="4" fill="#f0a05a"/>
+    <rect x="500" y="122" width="250" height="8" rx="4" fill="#f6c79b"/>
+    <rect x="500" y="140" width="270" height="8" rx="4" fill="#eceff3"/>
+    <rect x="500" y="158" width="240" height="8" rx="4" fill="#eceff3"/>
+    <rect x="500" y="180" width="200" height="9" rx="4" fill="#f6c79b"/>
+    <rect x="500" y="198" width="265" height="8" rx="4" fill="#eceff3"/>
+    <rect x="500" y="216" width="255" height="8" rx="4" fill="#eceff3"/>
+    <rect x="500" y="238" width="150" height="8" rx="4" fill="#eceff3"/>
+    <rect x="500" y="256" width="245" height="8" rx="4" fill="#eceff3"/>
+    <rect x="500" y="274" width="215" height="8" rx="4" fill="#eceff3"/>
+  </g>
+  <!-- F path -->
+  <path d="M 500 107 L 786 107 M 500 107 L 500 184 M 500 184 L 700 184 M 500 184 L 500 280" stroke="#e07b39" stroke-width="2.5" fill="none" stroke-dasharray="7 5" opacity="0.9"/>
+  <path d="M 500 280 l -5 -8 l 10 0 z" fill="#e07b39" transform="rotate(180 500 276)"/>
+  <text x="474" y="336" font-size="12.5" fill="#4b5563">Mat quet 2 dong dau roi truot doc mep TRAI &#8212; don tu khoa ve dau dong.</text>
+
+  <text x="430" y="380" text-anchor="middle" font-size="12.5" font-style="italic" fill="#6b7280">Day la xu huong thong ke, khong phai luat: hierarchy manh van co the dan mat theo y ban.</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="380" viewBox="0 0 860 380" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="32" font-size="18" font-weight="700" fill="#111827">60-30-10: mau nhan phai HIEM thi moi con suc nhan</text>
+
+  <!-- ratio bar -->
+  <rect x="30" y="48" width="480" height="26" fill="#F9FAFB" stroke="#e5e7eb"/>
+  <rect x="510" y="48" width="240" height="26" fill="#D1D5DB"/>
+  <rect x="750" y="48" width="80" height="26" fill="#2563EB"/>
+  <text x="270" y="66" font-size="12" font-weight="700" fill="#6b7280" text-anchor="middle">60% nen trung tinh</text>
+  <text x="630" y="66" font-size="12" font-weight="700" fill="#374151" text-anchor="middle">30% khoi phu</text>
+  <text x="790" y="66" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">10%</text>
+
+  <!-- GOOD mock -->
+  <text x="30" y="108" font-size="14" font-weight="700" fill="#047857">OK Dung ty le</text>
+  <rect x="30" y="118" width="390" height="230" rx="8" fill="#F9FAFB" stroke="#e5e7eb"/>
+  <rect x="30" y="118" width="110" height="230" rx="8" fill="#E5E7EB"/>
+  <rect x="46" y="136" width="78" height="10" rx="3" fill="#9CA3AF"/>
+  <rect x="46" y="158" width="66" height="8" rx="3" fill="#B6BCC5"/>
+  <rect x="46" y="176" width="72" height="8" rx="3" fill="#B6BCC5"/>
+  <rect x="46" y="194" width="58" height="8" rx="3" fill="#B6BCC5"/>
+  <rect x="156" y="136" width="120" height="12" rx="3" fill="#6B7280"/>
+  <rect x="156" y="166" width="120" height="70" rx="6" fill="#ffffff" stroke="#E5E7EB"/>
+  <rect x="288" y="166" width="120" height="70" rx="6" fill="#ffffff" stroke="#E5E7EB"/>
+  <rect x="170" y="182" width="60" height="8" rx="3" fill="#D1D5DB"/>
+  <rect x="170" y="200" width="80" height="8" rx="3" fill="#E5E7EB"/>
+  <rect x="302" y="182" width="60" height="8" rx="3" fill="#D1D5DB"/>
+  <rect x="302" y="200" width="80" height="8" rx="3" fill="#E5E7EB"/>
+  <rect x="156" y="256" width="252" height="60" rx="6" fill="#ffffff" stroke="#E5E7EB"/>
+  <rect x="170" y="272" width="150" height="8" rx="3" fill="#E5E7EB"/>
+  <rect x="170" y="290" width="110" height="8" rx="3" fill="#E5E7EB"/>
+  <rect x="322" y="272" width="72" height="28" rx="5" fill="#2563EB"/>
+  <text x="358" y="290" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Tao du an</text>
+  <text x="156" y="338" font-size="11" fill="#9CA3AF">Mat di thang toi nut xanh duy nhat</text>
+
+  <!-- BAD mock -->
+  <text x="440" y="108" font-size="14" font-weight="700" fill="#B91C1C">X Mau brand tran lan</text>
+  <rect x="440" y="118" width="390" height="230" rx="8" fill="#DBEAFE" stroke="#93C5FD"/>
+  <rect x="440" y="118" width="110" height="230" rx="8" fill="#2563EB"/>
+  <rect x="456" y="136" width="78" height="10" rx="3" fill="#BFDBFE"/>
+  <rect x="456" y="158" width="66" height="8" rx="3" fill="#93C5FD"/>
+  <rect x="456" y="176" width="72" height="8" rx="3" fill="#93C5FD"/>
+  <rect x="456" y="194" width="58" height="8" rx="3" fill="#93C5FD"/>
+  <rect x="566" y="136" width="120" height="12" rx="3" fill="#1D4ED8"/>
+  <rect x="566" y="166" width="120" height="70" rx="6" fill="#3B82F6"/>
+  <rect x="698" y="166" width="120" height="70" rx="6" fill="#8B5CF6"/>
+  <rect x="580" y="182" width="60" height="8" rx="3" fill="#BFDBFE"/>
+  <rect x="580" y="200" width="80" height="8" rx="3" fill="#BFDBFE"/>
+  <rect x="712" y="182" width="60" height="8" rx="3" fill="#EDE9FE"/>
+  <rect x="712" y="200" width="80" height="8" rx="3" fill="#EDE9FE"/>
+  <rect x="566" y="256" width="252" height="60" rx="6" fill="#F97316"/>
+  <rect x="580" y="272" width="150" height="8" rx="3" fill="#FFEDD5"/>
+  <rect x="580" y="290" width="110" height="8" rx="3" fill="#FFEDD5"/>
+  <rect x="732" y="272" width="72" height="28" rx="5" fill="#2563EB"/>
+  <text x="768" y="290" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Tao du an</text>
+  <text x="566" y="338" font-size="11" fill="#B91C1C">Mau nao cung doi chu y = khong gi noi bat</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="400" viewBox="0 0 860 400" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="430" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#111827">Whitespace — cung mot form dang ky</text>
+
+  <rect x="20" y="46" width="390" height="315" rx="10" fill="#fdf3f2" stroke="#e8b4ae" stroke-width="1.5"/>
+  <text x="40" y="74" font-size="15" font-weight="700" fill="#b3261e">&#10007; Nhoi nhet, sat mep, khoang cach deu</text>
+  <rect x="44" y="88" width="342" height="212" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="48" y="106" font-size="12" fill="#6b7280">Ho va ten</text>
+  <rect x="48" y="112" width="334" height="26" rx="4" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="48" y="156" font-size="12" fill="#6b7280">Email</text>
+  <rect x="48" y="162" width="334" height="26" rx="4" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="48" y="206" font-size="12" fill="#6b7280">Mat khau</text>
+  <rect x="48" y="212" width="334" height="26" rx="4" fill="#f3f4f6" stroke="#d1d5db"/>
+  <rect x="48" y="252" width="334" height="30" rx="4" fill="#2f6fed"/>
+  <text x="215" y="272" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">Dang ky</text>
+  <text x="44" y="326" font-size="13" fill="#b3261e">Le 4px, moi khoang cach deu 18px.</text>
+  <text x="44" y="346" font-size="13" fill="#b3261e">Ngot ngat, mat khong co cho "tho".</text>
+
+  <rect x="450" y="46" width="390" height="315" rx="10" fill="#f1f9f4" stroke="#a8d5b9" stroke-width="1.5"/>
+  <text x="470" y="74" font-size="15" font-weight="700" fill="#1e7e45">&#10003; Le rong, cach nhom &gt; cach trong nhom</text>
+  <rect x="474" y="88" width="342" height="212" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="514" y="116" font-size="12" fill="#6b7280">Ho va ten</text>
+  <rect x="514" y="124" width="262" height="30" rx="5" fill="#ffffff" stroke="#d1d5db"/>
+  <text x="514" y="186" font-size="12" fill="#6b7280">Email</text>
+  <rect x="514" y="194" width="262" height="30" rx="5" fill="#ffffff" stroke="#d1d5db"/>
+  <rect x="514" y="252" width="130" height="32" rx="5" fill="#2f6fed"/>
+  <text x="579" y="273" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">Dang ky</text>
+  <!-- spacing annotations -->
+  <line x1="492" y1="116" x2="492" y2="124" stroke="#1e7e45" stroke-width="2"/>
+  <text x="484" y="122" text-anchor="end" font-size="10" fill="#1e7e45">6</text>
+  <line x1="492" y1="154" x2="492" y2="186" stroke="#1e7e45" stroke-width="2"/>
+  <text x="484" y="174" text-anchor="end" font-size="10" fill="#1e7e45">28</text>
+  <line x1="790" y1="88" x2="790" y2="300" stroke="#a8d5b9" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="500" y1="88" x2="500" y2="300" stroke="#a8d5b9" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="474" y="326" font-size="13" fill="#1e7e45">Label sat input cua no, xa input phia tren</text>
+  <text x="474" y="346" font-size="13" fill="#1e7e45">&#8594; mat tu hieu cai nao thuoc cai nao.</text>
+</svg>

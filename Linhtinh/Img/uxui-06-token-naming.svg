@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="360" viewBox="0 0 860 360" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="34" font-size="17" font-weight="700" fill="#111827">Naming Convention — ghep cac tang y nghia, khai quat → cu the</text>
+
+  <!-- anatomy -->
+  <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="18">
+    <rect x="40" y="66" width="112" height="42" rx="7" fill="#dbeafe" stroke="#93c5fd"/>
+    <text x="62" y="94" fill="#1e40af">color</text>
+    <text x="158" y="94" fill="#9ca3af">.</text>
+    <rect x="172" y="66" width="118" height="42" rx="7" fill="#dcfce7" stroke="#86efac"/>
+    <text x="192" y="94" fill="#166534">action</text>
+    <text x="296" y="94" fill="#9ca3af">.</text>
+    <rect x="310" y="66" width="128" height="42" rx="7" fill="#fef3c7" stroke="#fcd34d"/>
+    <text x="326" y="94" fill="#92400e">primary</text>
+    <text x="444" y="94" fill="#9ca3af">.</text>
+    <rect x="458" y="66" width="110" height="42" rx="7" fill="#fce7f3" stroke="#f9a8d4"/>
+    <text x="476" y="94" fill="#9d174d">hover</text>
+  </g>
+
+  <g font-size="11.5">
+    <text x="40" y="128" fill="#1e40af" font-weight="700">Category</text>
+    <text x="40" y="146" fill="#6b7280">color, spacing,</text>
+    <text x="40" y="162" fill="#6b7280">font, radius, shadow</text>
+
+    <text x="172" y="128" fill="#166534" font-weight="700">Concept / Role</text>
+    <text x="172" y="146" fill="#6b7280">action, surface,</text>
+    <text x="172" y="162" fill="#6b7280">text, border</text>
+
+    <text x="310" y="128" fill="#92400e" font-weight="700">Property / Variant</text>
+    <text x="310" y="146" fill="#6b7280">background,</text>
+    <text x="310" y="162" fill="#6b7280">primary, danger</text>
+
+    <text x="458" y="128" fill="#9d174d" font-weight="700">State</text>
+    <text x="458" y="146" fill="#6b7280">default, hover,</text>
+    <text x="458" y="162" fill="#6b7280">disabled, active</text>
+
+    <text x="600" y="128" fill="#4338ca" font-weight="700">Scale (bac)</text>
+    <text x="600" y="146" fill="#6b7280">100 · 200 ... 500</text>
+    <text x="600" y="162" fill="#6b7280">hoac sm · md · lg</text>
+  </g>
+  <text x="40" y="190" font-size="12.5" fill="#374151">Doc ten la hieu cong dung: mau, dung cho hanh dong, loai primary, o trang thai hover.</text>
+
+  <!-- good vs bad -->
+  <rect x="40" y="212" width="380" height="126" rx="9" fill="#f0fdf4" stroke="#bbf7d0"/>
+  <text x="58" y="236" font-size="13.5" font-weight="700" fill="#15803d">Dat ten theo MUC DICH</text>
+  <g font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#166534">
+    <text x="58" y="262">color.text.danger</text>
+    <text x="58" y="286">spacing.card-padding</text>
+    <text x="58" y="310">button.primary.background</text>
+  </g>
+  <text x="58" y="330" font-size="11.5" fill="#15803d">Doi "danger" sang cam van dung ten.</text>
+
+  <rect x="450" y="212" width="380" height="126" rx="9" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="468" y="236" font-size="13.5" font-weight="700" fill="#b91c1c">Dat ten theo GIA TRI (o tang semantic)</text>
+  <g font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#991b1b">
+    <text x="468" y="262">color.red</text>
+    <text x="468" y="286">clr.act.pr</text>
+    <text x="468" y="310">space / spacing / colour lan lon</text>
+  </g>
+  <text x="468" y="330" font-size="11.5" fill="#b91c1c">Khoa cung, viet tat bi hiem, khong nhat quan.</text>
+</svg>

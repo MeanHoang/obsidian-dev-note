@@ -26,6 +26,9 @@ created: 2026-08-23
 
 **Ví dụ SaaS:** Team làm dashboard analytics. Thay vì tự quyết "cho 20 biểu đồ lên trang chủ cho hoành tráng", họ phỏng vấn 5 khách hàng và phát hiện người dùng chỉ mở dashboard để trả lời đúng 1 câu: "Hôm nay doanh thu tăng hay giảm?". Kết quả: trang chủ chỉ để 1 con số lớn + xu hướng, phần còn lại ẩn vào tab. Đó là UCD.
 
+![[uxui-01-ucd-loop.svg]]
+*Cùng một dashboard: bên trái là "20 biểu đồ cho hoành tráng" (tự quyết), bên phải là kết quả sau khi phỏng vấn user — 1 con số lớn + xu hướng, phần còn lại ẩn vào tab; dưới cùng là vòng lặp UCD.*
+
 **Sai lầm hay gặp:** Nhầm "ý kiến của mình" thành "nhu cầu của user" (kiểu "tôi thấy thế này tiện mà"). Dev đặc biệt dễ dính vì bản thân đã quá quen sản phẩm — cái hiển nhiên với bạn thường là rối rắm với người mới.
 
 ---
@@ -51,6 +54,9 @@ Là **thước đo** một sản phẩm dễ dùng đến đâu: học nhanh kh�
 - **IxD:** khi bật toggle "2FA" thì hiện ngay ô nhập mã, không reload trang.
 - **Usability:** người dùng lần đầu có tự bật được 2FA trong 30 giây mà không cần đọc hướng dẫn không?
 - **UX:** cả hành trình bảo mật tài khoản có khiến họ thấy an tâm và không bực mình không?
+
+![[uxui-01-ux-ui-ixd-usability.svg]]
+*UX bọc ngoài cùng, trong đó có IxD rồi tới UI (lớp bề mặt), còn Usability là thước đo bên cạnh — minh hoạ bằng đúng ví dụ trang Settings bật 2FA.*
 
 **Sai lầm hay gặp:** Nói "làm UX/UI" nhưng thực chất chỉ chăm chăm chỉnh màu và bo góc (chỉ đụng UI). Hoặc nghĩ "UX = UI đẹp". Nhớ: **đẹp ≠ dễ dùng ≠ đúng nhu cầu.**
 
@@ -95,6 +101,9 @@ Là **giới hạn có chủ đích để ngăn người dùng làm sai**. Thay 
 
 *Sai lầm:* Lạm dụng ràng buộc đến mức trói tay người dùng (disable nút mà không nói vì sao) → họ bối rối không biết phải làm gì để "mở khóa".
 
+![[uxui-01-norman-principles.svg]]
+*Năm nguyên tắc của Don Norman đặt cạnh nhau theo cặp "sai lầm hay gặp" và "làm đúng", dùng lại đúng các ví dụ SaaS trong bài (nút Save, vùng upload nét đứt, toast phản hồi, thanh trượt, nút disabled).*
+
 > 💡 Liên quan chặt tới tâm lý học nhận thức — xem thêm [[02 - Laws of UX - Nguyên tắc tâm lý học]].
 
 ---
@@ -110,6 +119,9 @@ Khoảng cách giữa hai cái này càng lớn thì người dùng càng nhầm
 
 **Ví dụ SaaS:** Trong app quản lý file, người dùng có mental model "kéo file vào thư mục = di chuyển vào đó". Nếu app của bạn lại xử lý kéo-thả thành "copy" mà không nói gì, họ sẽ ngạc nhiên và làm sai. Giải pháp khớp mental model: kéo là move, giữ Ctrl mới copy (giống hệ điều hành họ đã quen).
 
+![[uxui-01-mental-model.svg]]
+*Khoảng cách giữa cái user nghĩ ("kéo file = di chuyển") và cái app thực sự làm ("kéo file = copy") chính là nguồn gây nhầm lẫn; khớp lại với thói quen của hệ điều hành là cách đóng khoảng cách đó.*
+
 **Sai lầm hay gặp:** Dev sáng tạo ra một cách vận hành "hợp lý về mặt kỹ thuật" nhưng lạ với người dùng (ví dụ đặt tên menu theo tên module trong code chứ không theo cách user gọi). Luôn ưu tiên ngôn ngữ và logic của **người dùng**, không phải của hệ thống.
 
 ---
@@ -121,6 +133,9 @@ Khoảng cách giữa hai cái này càng lớn thì người dùng càng nhầm
 Một ý phụ nổi tiếng của Krug: **"We don't read pages. We scan them."** — người dùng không đọc kỹ từng chữ, họ **liếc (scan)** để tìm cái cần. Nên thiết kế phải dễ liếc: tiêu đề rõ, phân cấp rõ, nút hành động nổi bật.
 
 **Ví dụ SaaS:** Trên trang pricing, thay vì đoạn văn dài giải thích gói, dùng bảng so sánh với tiêu đề gói rõ ràng và nút "Chọn gói này" nổi bật ở mỗi cột. Người dùng liếc 3 giây là hiểu.
+
+![[uxui-01-dont-make-me-think.svg]]
+*Cùng một trang pricing: đoạn văn dài bắt user dừng lại đọc, còn bảng so sánh với tiêu đề gói rõ và nút "Chọn gói này" nổi bật thì liếc 3 giây là hiểu.*
 
 **Sai lầm hay gặp:** Đặt tên menu "kêu" nhưng mơ hồ ("Khám phá", "Trải nghiệm") thay vì rõ nghĩa ("Bảng giá", "Tài liệu"). Hoặc nhồi quá nhiều lựa chọn ngang hàng khiến user tê liệt vì không biết chọn gì (liên quan Hick's Law — xem [[02 - Laws of UX - Nguyên tắc tâm lý học]]).
 
@@ -144,6 +159,9 @@ Một ý phụ nổi tiếng của Krug: **"We don't read pages. We scan them."*
 - *Credible:* hiện chứng chỉ bảo mật, logo đối tác lớn, badge tuân thủ pháp lý → tạo niềm tin.
 - *Accessible:* dùng được bằng bàn phím và trình đọc màn hình.
 Thiếu **Credible**, dù dễ dùng đến mấy, khách vẫn ngại ký giấy tờ quan trọng.
+
+![[uxui-01-ux-honeycomb.png]]
+*Bảy mặt của trải nghiệm tốt xếp thành tổ ong, với Valuable nằm ở giữa — nhìn là nhớ được đủ 7 yếu tố, không chỉ mỗi Usable — (nguồn: Wikimedia Commons)*
 
 **Sai lầm hay gặp:** Chỉ chăm chăm **Usable** mà quên **Credible** và **Desirable** — thường gặp ở sản phẩm dev tự làm: chạy tốt, dễ bấm, nhưng trông "cây nhà lá vườn" nên khách không tin để trả tiền.
 
@@ -169,6 +187,9 @@ Thiếu **Credible**, dù dễ dùng đến mấy, khách vẫn ngại ký giấ
 - *Develop:* thử vài cách — thêm tooltip onboarding, đưa report lên menu chính, gửi email giới thiệu.
 - *Deliver:* chọn phương án hiệu quả nhất qua A/B test rồi tung chính thức.
 Nếu bỏ qua kim cương 1, có thể bạn đã tốn hàng tuần "làm report dễ dùng hơn" — sai vấn đề ngay từ đầu.
+
+![[uxui-01-double-diamond.png]]
+*Hai viên kim cương: viên 1 đi từ "Problem" qua Discover → Define để chốt đúng vấn đề, viên 2 đi qua Develop → Deliver để ra "Solution"; mỗi viên đều mở rộng rồi mới thu hẹp — (nguồn: Wikimedia Commons)*
 
 **Sai lầm hay gặp:** Bỏ pha Discover/Define vì "thấy rõ rồi" → xây rất nhanh một thứ không ai cần. Đây là bẫy kinh điển của team thiên về kỹ thuật. Chi tiết cách áp dụng quy trình và công cụ xem [[10 - Design Process & Tools]].
 

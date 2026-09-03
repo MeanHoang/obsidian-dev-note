@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="360" viewBox="0 0 860 360" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="430" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#111827">Alignment — cung mot card, tron kieu can vs mot truc chung</text>
+
+  <rect x="20" y="46" width="390" height="270" rx="10" fill="#fdf3f2" stroke="#e8b4ae" stroke-width="1.5"/>
+  <text x="40" y="74" font-size="15" font-weight="700" fill="#b3261e">&#10007; Tieu de giua, noi dung trai, nut phai</text>
+  <rect x="44" y="88" width="342" height="176" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="215" y="118" text-anchor="middle" font-size="17" font-weight="700" fill="#111827">Chi tiet don hang</text>
+  <text x="76" y="150" font-size="13" fill="#4b5563">Ma don: #10248</text>
+  <text x="60" y="174" font-size="13" fill="#4b5563">Khach hang: Nguyen Van A</text>
+  <text x="215" y="198" text-anchor="middle" font-size="13" fill="#4b5563">Tong tien: 1.250.000d</text>
+  <rect x="256" y="216" width="112" height="30" rx="5" fill="#2f6fed"/>
+  <text x="312" y="236" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">Xem don</text>
+  <!-- messy align lines -->
+  <line x1="60" y1="130" x2="60" y2="256" stroke="#d97a70" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="76" y1="130" x2="76" y2="256" stroke="#d97a70" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="215" y1="100" x2="215" y2="256" stroke="#d97a70" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="256" y1="130" x2="256" y2="256" stroke="#d97a70" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="44" y="292" font-size="13" fill="#b3261e">4 duong can ngam khac nhau &#8594; trong cau tha.</text>
+
+  <rect x="450" y="46" width="390" height="270" rx="10" fill="#f1f9f4" stroke="#a8d5b9" stroke-width="1.5"/>
+  <text x="470" y="74" font-size="15" font-weight="700" fill="#1e7e45">&#10003; Mot truc chu dao: can trai</text>
+  <rect x="474" y="88" width="342" height="176" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="506" y="118" font-size="17" font-weight="700" fill="#111827">Chi tiet don hang</text>
+  <text x="506" y="150" font-size="13" fill="#4b5563">Ma don: #10248</text>
+  <text x="506" y="174" font-size="13" fill="#4b5563">Khach hang: Nguyen Van A</text>
+  <text x="506" y="198" font-size="13" fill="#4b5563">Tong tien: 1.250.000d</text>
+  <rect x="506" y="216" width="112" height="30" rx="5" fill="#2f6fed"/>
+  <text x="562" y="236" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">Xem don</text>
+  <line x1="506" y1="100" x2="506" y2="256" stroke="#3f9e63" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="474" y="292" font-size="13" fill="#1e7e45">Chi 1 duong &#8594; mat luot doc mot mach, gon gang.</text>
+</svg>

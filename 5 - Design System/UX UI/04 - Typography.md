@@ -29,6 +29,9 @@ Chữ "modular" nghĩa là các cỡ có quan hệ theo một **tỉ lệ** (rat
 
 **Ví dụ một thang thực dụng:** 12, 14, 16, 18, 20, 24, 30, 36, 48, 60, 72px. Bạn thấy khoảng cách giữa các cỡ nhỏ thì sít, cỡ lớn thì thưa dần — đúng như mắt cần.
 
+![[uxui-04-type-scale.svg]]
+*Trái: chọn cỡ chữ tùy tiện mỗi chỗ một kiểu; phải: thang cỡ cố định 12/14/16/18/20/24/30/36/48px.*
+
 **Sai lầm hay gặp:**
 - Dùng cỡ chữ tùy tiện mỗi component một kiểu (15px chỗ này, 17px chỗ kia) → giao diện trông lộn xộn mà không hiểu vì sao.
 - Định nghĩa thang bằng đơn vị `em` lồng nhau khiến cỡ chữ bị nhân chồng theo cây DOM, cuối cùng không kiểm soát được. Nên định nghĩa thang bằng giá trị tuyệt đối (px) hoặc `rem`.
@@ -51,6 +54,9 @@ Chữ "modular" nghĩa là các cỡ có quan hệ theo một **tỉ lệ** (rat
 
 **Ví dụ:** Một SaaS dashboard dùng Inter cho toàn bộ giao diện, chỉ đổi sang một font monospace (như JetBrains Mono) ở chỗ hiển thị mã lệnh và ID. Đó là ghép font "an toàn và có mục đích".
 
+![[uxui-04-serif-vs-sans.jpg]]
+*Cặp chữ "Sy": font serif (đỏ) có phần "chân" ở đầu/cuối nét, sans-serif thì trơn — (nguồn: Wikimedia Commons)*
+
 **Sai lầm hay gặp:**
 - Dùng 3-4 font khác nhau trong một trang → rối, thiếu chuyên nghiệp.
 - Chọn font quá "cá tính"/trang trí cho body text → khó đọc khi hiển thị nhiều dòng.
@@ -70,6 +76,9 @@ Hai lời khuyên thực dụng theo Refactoring UI:
 
 **Ví dụ:** Trong một card thống kê: con số "1,204" dùng weight 600, nhãn "Người dùng mới" bên dưới dùng weight 400 và cỡ nhỏ hơn. Chỉ hai mức đậm là đủ tạo phân cấp rõ ràng.
 
+![[uxui-04-font-weight.svg]]
+*Card "1,204 / Người dùng mới": bôi đậm tất cả thì không gì nổi bật; và weight dưới 400 làm chữ nhỏ mờ nhạt.*
+
 **Sai lầm hay gặp:**
 - Dùng quá nhiều mức độ đậm (400, 500, 600, 700, 800 lẫn lộn) → mất kiểm soát phân cấp. Thực tế 2-3 mức là đủ.
 - Bôi đậm quá nhiều thứ → khi mọi thứ đều nổi bật thì chẳng có gì nổi bật (liên quan [[03 - Visual Hierarchy & Layout]]).
@@ -80,6 +89,9 @@ Hai lời khuyên thực dụng theo Refactoring UI:
 
 **Line Height** (tiếng in ấn cổ gọi là **Leading**, đọc là "led-ding") là khoảng cách giữa các dòng chữ, tính từ đường baseline dòng này tới baseline dòng kế.
 
+![[uxui-04-line-terms.png]]
+*Các đường chuẩn của một dòng chữ: baseline, x-height, ascender, descender — line-height đo từ baseline dòng này tới baseline dòng kế — (nguồn: Wikimedia Commons)*
+
 **Giải thích dễ hiểu:** Nếu các dòng quá sát nhau, mắt dễ bị "lạc" khi nhảy từ cuối dòng này sang đầu dòng sau, đọc mệt. Nếu quá thưa, các dòng rời rạc, không còn cảm giác là một khối văn bản liền mạch.
 
 Quy tắc thực dụng:
@@ -87,6 +99,12 @@ Quy tắc thực dụng:
 - Có mối quan hệ nghịch quan trọng: **dòng càng dài thì cần line-height càng lớn**, và **chữ càng nhỏ cũng cần line-height lớn hơn** tương đối. Ngược lại, tiêu đề cỡ lớn cần line-height nhỏ hơn (khoảng 1.0-1.25) vì để 1.5 sẽ khiến các dòng tiêu đề rời nhau quá xa.
 
 **Ví dụ:** Đoạn mô tả trong bảng giá dùng cỡ 16px, line-height 1.5. Tiêu đề section 36px thì hạ line-height xuống khoảng 1.1 cho gọn khối.
+
+![[uxui-04-line-spacing.png]]
+*Cùng một đoạn văn với các mức giãn dòng khác nhau — quá sít thì mắt lạc dòng, quá thưa thì rời rạc — (nguồn: Wikimedia Commons)*
+
+![[uxui-04-line-height-ui.svg]]
+*Đúng ví dụ trong bài: mô tả bảng giá 16px nên để 1.5, còn tiêu đề section 36px phải hạ xuống ~1.1.*
 
 **Sai lầm hay gặp:**
 - Đặt một line-height cố định (ví dụ luôn 1.5) cho cả tiêu đề lẫn body → tiêu đề bị "banh" ra.
@@ -103,6 +121,9 @@ Quy tắc thực dụng:
 Con số vàng: **khoảng 45-75 ký tự mỗi dòng** cho văn bản đọc dài, lý tưởng quanh **66 ký tự** (theo cả Butterick và các giáo trình typography). Butterick nêu vùng 45-90 ký tự, thực dụng nhất là nhắm 50-75.
 
 **Ví dụ:** Bạn không kiểm soát điều này bằng cách đếm ký tự thủ công, mà bằng cách giới hạn **chiều rộng tối đa** của khối văn bản (max-width). Một đoạn văn body 16px giới hạn bề rộng cỡ 600-700px thường cho ra khoảng 60-75 ký tự/dòng.
+
+![[uxui-04-measure.svg]]
+*Ba trường hợp: dòng ~150 ký tự chạy hết màn hình, cột sidebar dưới 40 ký tự, và khối vừa ~66 ký tự nhờ max-width 600-700px.*
 
 **Sai lầm hay gặp:**
 - Để đoạn văn dài chạy hết chiều ngang màn hình lớn (dòng dài cả 150 ký tự) → cực khó đọc. Đây là lỗi phổ biến nhất trên trang tài liệu (docs) và blog trong app.
@@ -123,6 +144,9 @@ Ba khái niệm liên quan tới khoảng cách ngang giữa các chữ cái:
 
 **Ví dụ:** Nhãn danh mục viết hoa cỡ 12px trong sidebar → tăng letter-spacing nhẹ. Tiêu đề hero 60px → giảm letter-spacing nhẹ.
 
+![[uxui-04-tracking-kerning.png]]
+*Phân biệt tracking (giãn đều toàn khối) với kerning (chỉnh riêng từng cặp ký tự như "AV") — (nguồn: Wikimedia Commons)*
+
 **Sai lầm hay gặp:**
 - Giãn letter-spacing cho body text thường (không hoa) → làm chữ khó đọc hơn, phá nhịp mà font đã cân.
 - Nhầm rằng phải tự chỉnh kerning bằng tay — với web app gần như không bao giờ cần.
@@ -141,6 +165,9 @@ Ba cấp cơ bản nhất:
 **Giải thích dễ hiểu:** Bạn tạo phân cấp bằng **ba đòn bẩy** kết hợp: **cỡ chữ** (size), **độ đậm** (weight), và **màu/độ tương phản** (color/contrast). Mẹo quan trọng từ Refactoring UI: đừng chỉ dựa vào cỡ chữ. Nhiều khi giảm độ đậm và làm chữ phụ nhạt màu hơn còn hiệu quả hơn là phóng to chữ chính. Ba mức tương phản màu thường dùng cho chữ: **màu chính (primary, đậm nhất) cho nội dung quan trọng, màu phụ (secondary) cho nội dung thường, màu mờ (tertiary/muted) cho thông tin phụ trợ.**
 
 **Ví dụ:** Một dòng trong danh sách thông báo: tiêu đề thông báo dùng màu primary weight 600, nội dung tóm tắt dùng màu secondary weight 400, thời gian "2 giờ trước" dùng caption cỡ 12px màu muted. Ba cấp rõ ràng chỉ trong một dòng.
+
+![[uxui-04-hierarchy.svg]]
+*Dòng thông báo với "2 giờ trước" làm caption, và ba đòn bẩy tạo phân cấp: cỡ chữ, độ đậm, màu.*
 
 **Sai lầm hay gặp:**
 - Tạo phân cấp chỉ bằng cỡ chữ, khiến phải dùng chữ rất to mới phân biệt được → tốn diện tích.
@@ -161,6 +188,9 @@ Hai từ tiếng Anh nghe giống nhau nhưng nghĩa khác nhau:
 
 **Ví dụ với SaaS:** Chọn font legibility cao đặc biệt quan trọng ở dashboard vì có nhiều **số, ID, mã**. Nếu người dùng không phân biệt được `0` và `O` trong một API key thì đó là lỗi legibility nghiêm trọng. Nhiều font (như Inter, JetBrains Mono) có tính năng "slashed zero" (số 0 có gạch chéo) để giải quyết đúng vấn đề này.
 
+![[uxui-04-legibility-readability.svg]]
+*Legibility là chuyện của font (phân biệt 0/O, 1/l/I trong API key); readability là chuyện của cách sắp đặt (dòng dài, line-height 1.0, chữ xám nhạt).*
+
 **Sai lầm hay gặp:**
 - Chọn font trông đẹp trên poster nhưng có các ký tự dễ nhầm → tệ cho app hiển thị dữ liệu.
 - Nghĩ rằng "chọn font tốt là xong" mà bỏ qua sắp đặt (readability). Font tốt là điều kiện cần, không đủ.
@@ -180,6 +210,9 @@ Tổng hợp các mẹo thực dụng riêng cho web app dữ liệu:
 - **Giữ số lượng font tối thiểu.** Lý tưởng: một sans-serif cho UI + một monospace cho code. Thêm font là thêm cân nặng tải về và rủi ro layout shift.
 - **Chú ý web font loading.** Font tải chậm gây nhấp nháy chữ (FOUT/FOIT) và nhảy layout. Dùng cơ chế `font-display: swap` và khai báo fallback stack cùng metric gần giống để giảm giật (đây là mô tả kỹ thuật, không cần thuộc lòng con số).
 - **Body 14-16px là chuẩn web app.** Dashboard mật độ cao thường dùng 14px cho body và bảng; landing/marketing thường 16-18px. Đừng nhỏ hơn 12px cho bất kỳ chữ nào cần đọc.
+
+![[uxui-04-tabular-figures.svg]]
+*Bảng doanh thu: chữ số tỉ lệ làm cột số lệch nhau, tabular figures giúp mọi số rộng bằng nhau và thẳng cột.*
 
 ---
 

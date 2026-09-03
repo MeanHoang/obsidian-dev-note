@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="360" viewBox="0 0 860 360" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="34" font-size="18" font-weight="700" fill="#111827">Mot mau = MOT THANG 50-900, khong phai 1 gia tri</text>
+
+  <text x="30" y="66" font-size="13" font-weight="700" fill="#374151">Thang do (red)</text>
+  <g>
+    <rect x="30" y="76" width="88" height="52" fill="#FEF2F2" stroke="#e5e7eb"/>
+    <rect x="118" y="76" width="88" height="52" fill="#FEE2E2" stroke="#e5e7eb"/>
+    <rect x="206" y="76" width="88" height="52" fill="#FECACA" stroke="#e5e7eb"/>
+    <rect x="294" y="76" width="88" height="52" fill="#FCA5A5"/>
+    <rect x="382" y="76" width="88" height="52" fill="#F87171"/>
+    <rect x="470" y="76" width="88" height="52" fill="#EF4444"/>
+    <rect x="558" y="76" width="88" height="52" fill="#DC2626"/>
+    <rect x="646" y="76" width="88" height="52" fill="#B91C1C"/>
+    <rect x="734" y="76" width="96" height="52" fill="#7F1D1D"/>
+    <text x="74" y="99" font-size="12" font-weight="700" fill="#7F1D1D" text-anchor="middle">50</text>
+    <text x="162" y="99" font-size="12" font-weight="700" fill="#7F1D1D" text-anchor="middle">100</text>
+    <text x="250" y="99" font-size="12" font-weight="700" fill="#7F1D1D" text-anchor="middle">200</text>
+    <text x="338" y="99" font-size="12" font-weight="700" fill="#7F1D1D" text-anchor="middle">300</text>
+    <text x="426" y="99" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">400</text>
+    <text x="514" y="99" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">500</text>
+    <text x="602" y="99" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">600</text>
+    <text x="690" y="99" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">700</text>
+    <text x="782" y="99" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">900</text>
+    <text x="74" y="118" font-size="10" fill="#9CA3AF" text-anchor="middle">tint (nhat)</text>
+    <text x="514" y="118" font-size="10" fill="#FECACA" text-anchor="middle">mau goc</text>
+    <text x="782" y="118" font-size="10" fill="#FCA5A5" text-anchor="middle">shade (dam)</text>
+  </g>
+
+  <text x="30" y="164" font-size="13" font-weight="700" fill="#374151">Cung 1 alert loi dung 4 bac khac nhau cua CUNG mot thang</text>
+  <g>
+    <rect x="30" y="176" width="480" height="76" rx="10" fill="#FEF2F2" stroke="#FECACA" stroke-width="2"/>
+    <circle cx="62" cy="214" r="13" fill="#EF4444"/>
+    <path d="M56 208 l12 12 M68 208 l-12 12" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+    <text x="88" y="209" font-size="14" font-weight="700" fill="#B91C1C">Thanh toan that bai</text>
+    <text x="88" y="230" font-size="12" fill="#B91C1C">The cua ban bi tu choi. Thu the khac.</text>
+  </g>
+  <g font-size="12" fill="#6b7280">
+    <rect x="534" y="180" width="16" height="16" fill="#FEF2F2" stroke="#e5e7eb"/>
+    <text x="558" y="193">nen = red-50</text>
+    <rect x="534" y="204" width="16" height="16" fill="#FECACA"/>
+    <text x="558" y="217">vien = red-200</text>
+    <rect x="534" y="228" width="16" height="16" fill="#EF4444"/>
+    <text x="558" y="241">icon = red-500</text>
+    <rect x="534" y="252" width="16" height="16" fill="#B91C1C"/>
+    <text x="558" y="265">chu = red-700</text>
+  </g>
+
+  <line x1="30" y1="286" x2="830" y2="286" stroke="#e5e7eb"/>
+  <text x="30" y="310" font-size="13" font-weight="700" fill="#B91C1C">X Chi van Lightness</text>
+  <text x="30" y="331" font-size="12" fill="#6b7280">bac sang bi "bac mau", bac toi bi "bun"</text>
+  <text x="30" y="349" font-size="12" fill="#6b7280">Cach dung: xoay nhe Hue (~20-30 do) + tang nhe Saturation o hai dau thang</text>
+  <rect x="420" y="296" width="60" height="22" fill="#f0e6e6"/>
+  <rect x="480" y="296" width="60" height="22" fill="#EF4444"/>
+  <rect x="540" y="296" width="60" height="22" fill="#4a2020"/>
+  <text x="610" y="311" font-size="11" fill="#9CA3AF">chi Lightness</text>
+  <rect x="420" y="326" width="60" height="22" fill="#FEE2E2"/>
+  <rect x="480" y="326" width="60" height="22" fill="#EF4444"/>
+  <rect x="540" y="326" width="60" height="22" fill="#7F1D1D"/>
+  <text x="610" y="341" font-size="11" fill="#047857">co xoay Hue + Saturation</text>
+</svg>

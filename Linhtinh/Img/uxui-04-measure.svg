@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="400" viewBox="0 0 860 400" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="24" y="32" font-size="16" font-weight="700" fill="#1f2937">Do dai dong (measure): nham 50-75 ky tu, ly tuong ~66</text>
+
+  <rect x="24" y="46" width="812" height="104" rx="10" fill="#fdf1f1" stroke="#e35d5d" stroke-width="2"/>
+  <text x="40" y="70" font-size="13" font-weight="700" fill="#c62828">Qua DAI (~150 ky tu) - chay het chieu ngang man hinh, mat de nhay hut dong</text>
+  <text x="40" y="94" font-size="12.5" fill="#111">Ban khong kiem soat do dai dong bang cach dem ky tu thu cong ma bang cach gioi han chieu rong toi da cua khoi van ban bang max-width</text>
+  <text x="40" y="114" font-size="12.5" fill="#111">Day la loi pho bien nhat tren trang tai lieu docs va blog trong app khi doan van duoc tha tu do chay het be ngang cua man hinh rong</text>
+  <text x="40" y="138" font-size="11.5" fill="#9b3b3b">|&lt;--------------------------------- mot dong ~150 ky tu --------------------------------&gt;|</text>
+
+  <rect x="24" y="164" width="200" height="130" rx="10" fill="#fdf6ec" stroke="#e0a03c" stroke-width="2"/>
+  <text x="38" y="188" font-size="12" font-weight="700" fill="#a1651a">Qua NGAN (&lt;40)</text>
+  <text x="38" y="212" font-size="12.5" fill="#111">Nhoi van ban vao</text>
+  <text x="38" y="230" font-size="12.5" fill="#111">cot qua hep trong</text>
+  <text x="38" y="248" font-size="12.5" fill="#111">sidebar khien ngat</text>
+  <text x="38" y="266" font-size="12.5" fill="#111">dong lon xon nhieu</text>
+  <text x="38" y="284" font-size="12.5" fill="#111">dau gach noi</text>
+
+  <rect x="244" y="164" width="592" height="130" rx="10" fill="#f1faf3" stroke="#2e9e5b" stroke-width="2"/>
+  <text x="260" y="188" font-size="12" font-weight="700" fill="#1e7a42">VUA (~60-75 ky tu) - body 16px, max-width 600-700px</text>
+  <text x="260" y="214" font-size="13" fill="#111">Khi mat doc het mot dong no phai nhay nguoc ve dau dong duoi.</text>
+  <text x="260" y="238" font-size="13" fill="#111">Neu dong qua dai cu nhay nay de truot. Neu dong qua ngan mat</text>
+  <text x="260" y="262" font-size="13" fill="#111">phai nhay lien tuc, met va mat nhip khi doc.</text>
+  <text x="260" y="284" font-size="11.5" fill="#3f7a55">|&lt;------------------------ ~66 ky tu ------------------------&gt;|</text>
+
+  <rect x="24" y="308" width="812" height="72" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="44" y="334" font-size="14" font-weight="700" fill="#1f2937">Cach lam trong code</text>
+  <text x="44" y="360" font-size="14" fill="#374151">Khong dem ky tu - chi can dat max-width cho khoi van ban (vd 600-700px voi body 16px)</text>
+</svg>

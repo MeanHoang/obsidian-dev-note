@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="430" viewBox="0 0 860 430" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <text x="430" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#111827">UCD: quyet dinh di tu nhu cau user, khong tu y thich noi bo</text>
+
+  <!-- LEFT: wrong -->
+  <text x="30" y="62" font-size="14" font-weight="700" fill="#b91c1c">❌ Tu quyet: "cho 20 bieu do len trang chu cho hoanh trang"</text>
+  <rect x="30" y="74" width="380" height="230" rx="8" fill="#fef2f2" stroke="#fca5a5"/>
+  <rect x="42" y="86" width="356" height="22" rx="4" fill="#fecaca"/>
+  <text x="52" y="101" font-size="11" fill="#7f1d1d">Dashboard</text>
+  <g fill="#ffffff" stroke="#fca5a5">
+    <rect x="42" y="118" width="82" height="52" rx="4"/><rect x="134" y="118" width="82" height="52" rx="4"/>
+    <rect x="226" y="118" width="82" height="52" rx="4"/><rect x="316" y="118" width="82" height="52" rx="4"/>
+    <rect x="42" y="178" width="82" height="52" rx="4"/><rect x="134" y="178" width="82" height="52" rx="4"/>
+    <rect x="226" y="178" width="82" height="52" rx="4"/><rect x="316" y="178" width="82" height="52" rx="4"/>
+    <rect x="42" y="238" width="82" height="52" rx="4"/><rect x="134" y="238" width="82" height="52" rx="4"/>
+    <rect x="226" y="238" width="82" height="52" rx="4"/><rect x="316" y="238" width="82" height="52" rx="4"/>
+  </g>
+  <g fill="#fca5a5">
+    <rect x="50" y="150" width="10" height="14"/><rect x="64" y="140" width="10" height="24"/><rect x="78" y="132" width="10" height="32"/>
+    <rect x="142" y="150" width="10" height="14"/><rect x="156" y="136" width="10" height="28"/><rect x="170" y="144" width="10" height="20"/>
+    <rect x="234" y="146" width="10" height="18"/><rect x="248" y="134" width="10" height="30"/><rect x="262" y="152" width="10" height="12"/>
+    <rect x="324" y="140" width="10" height="24"/><rect x="338" y="150" width="10" height="14"/><rect x="352" y="134" width="10" height="30"/>
+  </g>
+  <text x="220" y="322" text-anchor="middle" font-size="12" fill="#7f1d1d">User mo len, khong biet nhin vao dau</text>
+
+  <!-- arrow -->
+  <path d="M418 190 L442 190" stroke="#9ca3af" stroke-width="2"/>
+  <path d="M442 190 l-8 -5 v10 z" fill="#9ca3af"/>
+
+  <!-- RIGHT: right -->
+  <text x="450" y="62" font-size="14" font-weight="700" fill="#15803d">✅ Phong van 5 khach: ho chi hoi 1 cau</text>
+  <rect x="450" y="74" width="380" height="230" rx="8" fill="#f0fdf4" stroke="#86efac"/>
+  <rect x="462" y="86" width="356" height="22" rx="4" fill="#bbf7d0"/>
+  <text x="472" y="101" font-size="11" fill="#14532d">Dashboard</text>
+  <text x="640" y="140" text-anchor="middle" font-size="13" fill="#4b5563">Tong doanh thu hom nay</text>
+  <text x="640" y="196" text-anchor="middle" font-size="46" font-weight="700" fill="#111827">142.500.000đ</text>
+  <text x="640" y="224" text-anchor="middle" font-size="17" font-weight="600" fill="#15803d">▲ +12% so voi hom qua</text>
+  <g fill="#ffffff" stroke="#86efac">
+    <rect x="470" y="248" width="110" height="26" rx="13"/>
+    <rect x="588" y="248" width="110" height="26" rx="13"/>
+    <rect x="706" y="248" width="104" height="26" rx="13"/>
+  </g>
+  <text x="525" y="265" text-anchor="middle" font-size="11" fill="#166534">Chi tiet</text>
+  <text x="643" y="265" text-anchor="middle" font-size="11" fill="#166534">Don hang</text>
+  <text x="758" y="265" text-anchor="middle" font-size="11" fill="#166534">Kenh ban</text>
+  <text x="640" y="322" text-anchor="middle" font-size="12" fill="#14532d">Phan con lai an vao tab — liec 3 giay la hieu</text>
+
+  <!-- UCD loop -->
+  <g font-size="12">
+    <rect x="120" y="352" width="120" height="34" rx="17" fill="#eff6ff" stroke="#93c5fd"/>
+    <text x="180" y="374" text-anchor="middle" fill="#1e3a8a">Hieu user</text>
+    <rect x="272" y="352" width="120" height="34" rx="17" fill="#eff6ff" stroke="#93c5fd"/>
+    <text x="332" y="374" text-anchor="middle" fill="#1e3a8a">Thiet ke</text>
+    <rect x="424" y="352" width="120" height="34" rx="17" fill="#eff6ff" stroke="#93c5fd"/>
+    <text x="484" y="374" text-anchor="middle" fill="#1e3a8a">Cho dung thu</text>
+    <rect x="576" y="352" width="150" height="34" rx="17" fill="#eff6ff" stroke="#93c5fd"/>
+    <text x="651" y="374" text-anchor="middle" fill="#1e3a8a">Hoc tu phan hoi</text>
+  </g>
+  <g stroke="#93c5fd" stroke-width="2" fill="none">
+    <path d="M240 369 L266 369"/><path d="M392 369 L418 369"/><path d="M544 369 L570 369"/>
+    <path d="M726 369 q 40 0 40 22 L766 402 L140 402 q -20 0 -20 -16 L120 369"/>
+  </g>
+  <g fill="#93c5fd">
+    <path d="M266 369 l-8 -4 v8 z"/><path d="M418 369 l-8 -4 v8 z"/><path d="M570 369 l-8 -4 v8 z"/><path d="M120 369 l-4 8 h8 z"/>
+  </g>
+  <text x="453" y="418" text-anchor="middle" font-size="11" fill="#6b7280">Lap lai — khong phai lam 1 lan roi thoi</text>
+</svg>

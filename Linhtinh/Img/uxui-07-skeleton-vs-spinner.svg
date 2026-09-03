@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="320" viewBox="0 0 860 320" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="38" font-size="19" font-weight="700" fill="#1f2933">Dashboard analytics dang tai: spinner vs skeleton</text>
+
+  <!-- spinner -->
+  <rect x="30" y="60" width="255" height="200" rx="10" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="48" y="88" font-size="13.5" font-weight="700" fill="#991b1b">X  Spinner toan man hinh</text>
+  <circle cx="157" cy="165" r="22" fill="none" stroke="#d1d5db" stroke-width="4"/>
+  <path d="M157 143 A22 22 0 0 1 179 165" stroke="#6b7280" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <text x="157" y="212" font-size="11.5" fill="#7f1d1d" text-anchor="middle">quay vo dinh, khong biet</text>
+  <text x="157" y="229" font-size="11.5" fill="#7f1d1d" text-anchor="middle">sap hien ra cai gi</text>
+
+  <!-- skeleton -->
+  <rect x="305" y="60" width="255" height="200" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="323" y="88" font-size="13.5" font-weight="700" fill="#166534">OK  Skeleton screen</text>
+  <rect x="323" y="100" width="105" height="42" rx="6" fill="#e5e7eb"/>
+  <rect x="437" y="100" width="105" height="42" rx="6" fill="#e5e7eb"/>
+  <rect x="323" y="152" width="219" height="70" rx="6" fill="#eef0f3"/>
+  <rect x="335" y="196" width="14" height="16" fill="#dcdfe4"/>
+  <rect x="357" y="182" width="14" height="30" fill="#dcdfe4"/>
+  <rect x="379" y="172" width="14" height="40" fill="#dcdfe4"/>
+  <rect x="401" y="188" width="14" height="24" fill="#dcdfe4"/>
+  <text x="432" y="243" font-size="11.5" fill="#14532d" text-anchor="middle">thay cau truc dang thanh hinh</text>
+
+  <!-- loaded -->
+  <rect x="580" y="60" width="250" height="200" rx="10" fill="#ffffff" stroke="#d1d5db"/>
+  <text x="598" y="88" font-size="13.5" font-weight="700" fill="#1f2933">Khi du lieu ve</text>
+  <rect x="598" y="100" width="103" height="42" rx="6" fill="#eef4ff" stroke="#bfd4f7"/>
+  <text x="649" y="118" font-size="11" fill="#6b7280" text-anchor="middle">Orders</text>
+  <text x="649" y="134" font-size="14" font-weight="700" fill="#1f2933" text-anchor="middle">1,284</text>
+  <rect x="709" y="100" width="103" height="42" rx="6" fill="#eef4ff" stroke="#bfd4f7"/>
+  <text x="760" y="118" font-size="11" fill="#6b7280" text-anchor="middle">Points</text>
+  <text x="760" y="134" font-size="14" font-weight="700" fill="#1f2933" text-anchor="middle">92.4k</text>
+  <rect x="598" y="152" width="214" height="70" rx="6" fill="#f8fafc" stroke="#e5e7eb"/>
+  <rect x="610" y="196" width="14" height="16" fill="#60a5fa"/>
+  <rect x="632" y="182" width="14" height="30" fill="#60a5fa"/>
+  <rect x="654" y="172" width="14" height="40" fill="#60a5fa"/>
+  <rect x="676" y="188" width="14" height="24" fill="#60a5fa"/>
+  <text x="705" y="243" font-size="11.5" fill="#166534" text-anchor="middle">"lap" dung cho, khong nhay layout</text>
+
+  <line x1="30" y1="276" x2="830" y2="276" stroke="#e5e7eb"/>
+  <text x="30" y="300" font-size="12.5" fill="#6b7280">Spinner: cho ngan, cho nho (nut, widget).  Skeleton: tai ca trang/khoi lon.  Duoi ~1 giay: dung hien gi ca.</text>
+</svg>

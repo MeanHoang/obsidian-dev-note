@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="330" viewBox="0 0 860 330" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="24" y="34" font-size="16" font-weight="700" fill="#1f2937">Font weight: 2 muc la du de tao phan cap</text>
+
+  <rect x="24" y="54" width="386" height="150" rx="10" fill="#fdf1f1" stroke="#e35d5d" stroke-width="2"/>
+  <text x="44" y="80" font-size="13" font-weight="700" fill="#c62828">Boi dam qua nhieu -&gt; khong gi noi bat</text>
+  <rect x="44" y="94" width="346" height="94" rx="8" fill="#ffffff" stroke="#e5c9c9"/>
+  <text x="64" y="132" font-size="30" font-weight="800" fill="#111">1,204</text>
+  <text x="64" y="160" font-size="15" font-weight="800" fill="#111">Nguoi dung moi</text>
+  <text x="64" y="180" font-size="12" font-weight="700" fill="#111">HOM NAY</text>
+
+  <rect x="450" y="54" width="386" height="150" rx="10" fill="#f1faf3" stroke="#2e9e5b" stroke-width="2"/>
+  <text x="470" y="80" font-size="13" font-weight="700" fill="#1e7a42">600 cho so + 400 cho nhan</text>
+  <rect x="470" y="94" width="346" height="94" rx="8" fill="#ffffff" stroke="#c9e5d3"/>
+  <text x="490" y="132" font-size="30" font-weight="600" fill="#111">1,204</text>
+  <text x="490" y="160" font-size="15" font-weight="400" fill="#4b5563">Nguoi dung moi</text>
+  <text x="490" y="180" font-size="12" font-weight="400" fill="#9ca3af">HOM NAY</text>
+
+  <text x="24" y="240" font-size="14" font-weight="700" fill="#1f2937">Weight &lt; 400 cho chu nho = mo nhat, kho doc</text>
+  <rect x="24" y="252" width="386" height="58" rx="8" fill="#fdf1f1" stroke="#e35d5d"/>
+  <text x="44" y="278" font-size="14" font-weight="200" fill="#111">14px weight 200 - net qua manh</text>
+  <text x="44" y="299" font-size="12" fill="#c62828">Tren man hinh do phan giai thap gan nhu bien mat</text>
+
+  <rect x="450" y="252" width="386" height="58" rx="8" fill="#f1faf3" stroke="#2e9e5b"/>
+  <text x="470" y="278" font-size="14" font-weight="400" fill="#111">14px weight 400 - doc thoai mai</text>
+  <text x="470" y="299" font-size="12" fill="#1e7a42">Weight manh chi dung cho tieu de rat lon (60px)</text>
+</svg>

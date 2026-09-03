@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="400" viewBox="0 0 860 400" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="20" y="30" font-size="18" font-weight="700" fill="#111827">Hick's Law: cang nhieu lua chon, cang lau quyet dinh</text>
+
+  <!-- Chart -->
+  <g transform="translate(20,60)">
+    <rect x="0" y="0" width="380" height="290" fill="#f9fafb" stroke="#e5e7eb"/>
+    <line x1="60" y1="240" x2="345" y2="240" stroke="#374151" stroke-width="2"/>
+    <line x1="60" y1="240" x2="60" y2="30" stroke="#374151" stroke-width="2"/>
+    <!-- log curve points -->
+    <path d="M60 235 L100 190 L145 160 L200 138 L260 122 L330 110" fill="none" stroke="#2563eb" stroke-width="3"/>
+    <circle cx="100" cy="190" r="4" fill="#2563eb"/>
+    <circle cx="200" cy="138" r="4" fill="#2563eb"/>
+    <circle cx="330" cy="110" r="4" fill="#2563eb"/>
+    <text x="105" y="182" font-size="12" fill="#1f2937">3 lua chon</text>
+    <text x="205" y="130" font-size="12" fill="#1f2937">8 lua chon</text>
+    <text x="250" y="102" font-size="12" fill="#1f2937">15 lua chon</text>
+    <text x="150" y="266" font-size="13" fill="#374151">So luong lua chon (n)</text>
+    <text x="52" y="140" font-size="13" fill="#374151" transform="rotate(-90 52 140)" text-anchor="middle">Thoi gian quyet dinh</text>
+    <text x="70" y="60" font-size="12" fill="#6b7280">T = a + b · log2(n + 1)</text>
+  </g>
+
+  <!-- Pricing example -->
+  <g transform="translate(430,60)">
+    <text x="0" y="14" font-size="14" font-weight="600" fill="#b91c1c">✗ Pricing 6 goi</text>
+    <g fill="#ffffff" stroke="#d1d5db">
+      <rect x="0" y="26" width="60" height="70" rx="6"/>
+      <rect x="66" y="26" width="60" height="70" rx="6"/>
+      <rect x="132" y="26" width="60" height="70" rx="6"/>
+      <rect x="198" y="26" width="60" height="70" rx="6"/>
+      <rect x="264" y="26" width="60" height="70" rx="6"/>
+      <rect x="330" y="26" width="60" height="70" rx="6"/>
+    </g>
+    <g font-size="11" fill="#6b7280" text-anchor="middle">
+      <text x="30" y="66">Goi 1</text><text x="96" y="66">Goi 2</text><text x="162" y="66">Goi 3</text>
+      <text x="228" y="66">Goi 4</text><text x="294" y="66">Goi 5</text><text x="360" y="66">Goi 6</text>
+    </g>
+    <text x="0" y="118" font-size="12" fill="#b91c1c">Te liet lua chon → roi trang</text>
+
+    <text x="0" y="160" font-size="14" font-weight="600" fill="#047857">✓ Rut con 3 goi + highlight</text>
+    <rect x="0" y="190" width="120" height="90" rx="6" fill="#ffffff" stroke="#d1d5db"/>
+    <rect x="132" y="184" width="120" height="102" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+    <rect x="264" y="190" width="120" height="90" rx="6" fill="#ffffff" stroke="#d1d5db"/>
+    <rect x="152" y="172" width="80" height="20" rx="10" fill="#2563eb"/>
+    <text x="192" y="186" font-size="11" fill="#ffffff" text-anchor="middle">Recommended</text>
+    <g font-size="12" fill="#374151" text-anchor="middle">
+      <text x="60" y="234">Basic</text><text x="192" y="234" font-weight="700" fill="#1d4ed8">Pro</text><text x="324" y="234">Enterprise</text>
+    </g>
+    <text x="0" y="308" font-size="12" fill="#047857">Co duong dan mac dinh → quyet dinh nhanh</text>
+  </g>
+</svg>

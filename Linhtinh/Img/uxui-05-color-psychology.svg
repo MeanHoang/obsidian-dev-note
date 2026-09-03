@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="300" viewBox="0 0 860 300" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="32" font-size="18" font-weight="700" fill="#111827">Color psychology: mot GOI Y MEM, khong phai quy luat cung</text>
+
+  <g>
+    <rect x="30" y="52" width="155" height="86" rx="8" fill="#2563EB"/>
+    <text x="107" y="86" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Xanh duong</text>
+    <text x="107" y="108" font-size="12" fill="#DBEAFE" text-anchor="middle">tin cay / on dinh</text>
+    <text x="107" y="126" font-size="11" fill="#BFDBFE" text-anchor="middle">fintech, SaaS</text>
+  </g>
+  <g>
+    <rect x="195" y="52" width="155" height="86" rx="8" fill="#059669"/>
+    <text x="272" y="86" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Xanh la</text>
+    <text x="272" y="108" font-size="12" fill="#D1FAE5" text-anchor="middle">thanh cong / tang truong</text>
+  </g>
+  <g>
+    <rect x="360" y="52" width="155" height="86" rx="8" fill="#DC2626"/>
+    <text x="437" y="86" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Do</text>
+    <text x="437" y="108" font-size="12" fill="#FEE2E2" text-anchor="middle">khan cap / nguy hiem</text>
+  </g>
+  <g>
+    <rect x="525" y="52" width="155" height="86" rx="8" fill="#F59E0B"/>
+    <text x="602" y="86" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Vang</text>
+    <text x="602" y="108" font-size="12" fill="#FEF3C7" text-anchor="middle">chu y / lac quan</text>
+  </g>
+  <g>
+    <rect x="690" y="52" width="140" height="86" rx="8" fill="#7C3AED"/>
+    <text x="760" y="86" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Tim</text>
+    <text x="760" y="108" font-size="12" fill="#EDE9FE" text-anchor="middle">sang tao / cao cap</text>
+  </g>
+
+  <line x1="30" y1="162" x2="830" y2="162" stroke="#e5e7eb"/>
+
+  <text x="30" y="190" font-size="14" font-weight="700" fill="#B91C1C">X Khong nen tin</text>
+  <rect x="30" y="200" width="380" height="72" rx="8" fill="#FEF2F2" stroke="#FCA5A5"/>
+  <text x="46" y="226" font-size="13" fill="#991B1B">"Doi nut sang mau cam tang 30% chuyen doi"</text>
+  <text x="46" y="248" font-size="12" fill="#B91C1C">huyen thoai marketing, khong co co so vung</text>
+  <text x="46" y="266" font-size="12" fill="#B91C1C">lien tuong mau con PHU THUOC VAN HOA</text>
+
+  <text x="440" y="190" font-size="14" font-weight="700" fill="#047857">OK Nen tin</text>
+  <rect x="440" y="200" width="390" height="72" rx="8" fill="#ECFDF5" stroke="#6EE7B7"/>
+  <text x="456" y="226" font-size="13" fill="#065F46">Hieu qua cua nut den tu TUONG PHAN + NGU CANH</text>
+  <text x="456" y="248" font-size="12" fill="#047857">(kich thuoc, vi tri, khoang trang quanh no)</text>
+  <text x="456" y="266" font-size="12" fill="#047857">Mau "dung tam ly" ma truot contrast van la mau SAI</text>
+</svg>

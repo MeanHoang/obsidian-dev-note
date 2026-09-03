@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="300" viewBox="0 0 860 300" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="38" font-size="19" font-weight="700" fill="#1f2933">Ba moc thoi gian phan hoi (NN/g)</text>
+
+  <!-- timeline -->
+  <line x1="60" y1="120" x2="820" y2="120" stroke="#d1d5db" stroke-width="3"/>
+  <g>
+    <circle cx="120" cy="120" r="7" fill="#16a34a"/>
+    <text x="120" y="100" font-size="13.5" font-weight="700" fill="#166534" text-anchor="middle">0.1 giay</text>
+    <text x="120" y="150" font-size="12.5" fill="#1f2933" text-anchor="middle">Tuc thi</text>
+    <text x="120" y="168" font-size="11.5" fill="#6b7280" text-anchor="middle">khong can bao gi</text>
+  </g>
+  <g>
+    <circle cx="400" cy="120" r="7" fill="#f59e0b"/>
+    <text x="400" y="100" font-size="13.5" font-weight="700" fill="#b45309" text-anchor="middle">1 giay</text>
+    <text x="400" y="150" font-size="12.5" fill="#1f2933" text-anchor="middle">Van lien mach</text>
+    <text x="400" y="168" font-size="11.5" fill="#6b7280" text-anchor="middle">nhung da thay tre</text>
+  </g>
+  <g>
+    <circle cx="720" cy="120" r="7" fill="#dc2626"/>
+    <text x="720" y="100" font-size="13.5" font-weight="700" fill="#991b1b" text-anchor="middle">10 giay</text>
+    <text x="720" y="150" font-size="12.5" fill="#1f2933" text-anchor="middle">Mat tap trung</text>
+    <text x="720" y="168" font-size="11.5" fill="#6b7280" text-anchor="middle">phai hien tien trinh</text>
+  </g>
+
+  <!-- comparison -->
+  <g>
+    <rect x="30" y="196" width="390" height="82" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="48" y="222" font-size="13.5" font-weight="700" fill="#991b1b">X  Khong phan hoi</text>
+    <rect x="48" y="234" width="140" height="32" rx="7" fill="#2563eb"/>
+    <text x="118" y="255" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle">Save settings</text>
+    <text x="204" y="248" font-size="12" fill="#7f1d1d">2 giay im lang</text>
+    <text x="204" y="265" font-size="11.5" fill="#7f1d1d">-&gt; user bam lai 3 lan</text>
+  </g>
+  <g>
+    <rect x="440" y="196" width="390" height="82" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="458" y="222" font-size="13.5" font-weight="700" fill="#166534">OK  Phan hoi ngay</text>
+    <rect x="458" y="234" width="140" height="32" rx="7" fill="#5b8def"/>
+    <circle cx="482" cy="250" r="7" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-dasharray="11 7"/>
+    <text x="540" y="255" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle">Saving...</text>
+    <text x="614" y="248" font-size="12" fill="#14532d">nut doi ngay &lt; 0.1s</text>
+    <text x="614" y="265" font-size="11.5" fill="#14532d">-&gt; user yen tam cho</text>
+  </g>
+</svg>

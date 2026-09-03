@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="330" viewBox="0 0 860 330" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <rect x="24" y="20" width="386" height="290" rx="10" fill="#f4f7fd" stroke="#4a72b8" stroke-width="2"/>
+  <text x="44" y="46" font-size="16" font-weight="700" fill="#284b86">LEGIBILITY</text>
+  <text x="44" y="66" font-size="12.5" fill="#3c5c94">Nhin MOT ky tu co ro khong - thuoc tinh cua FONT</text>
+
+  <rect x="44" y="80" width="346" height="94" rx="8" fill="#ffffff" stroke="#c9d6ea"/>
+  <text x="60" y="102" font-size="12" font-weight="700" fill="#c62828">Font legibility kem - de nham</text>
+  <text x="60" y="134" font-size="28" font-family="Georgia, Times New Roman, serif" fill="#111">I l 1  |  O 0</text>
+  <text x="60" y="160" font-size="12" fill="#9b3b3b">API key: sk_l1IO0O - doc kieu gi day?</text>
+
+  <rect x="44" y="188" width="346" height="106" rx="8" fill="#ffffff" stroke="#c9d6ea"/>
+  <text x="60" y="210" font-size="12" font-weight="700" fill="#1e7a42">Font legibility tot - phan biet ro</text>
+  <text x="60" y="244" font-size="28" font-family="Menlo, Consolas, monospace" fill="#111">I l 1  |  O 0</text>
+  <text x="60" y="270" font-size="12" fill="#3f7a55">Monospace + slashed zero cho API key, ID, ma</text>
+  <text x="60" y="288" font-size="12" fill="#3f7a55">Quan trong voi dashboard day so lieu</text>
+
+  <rect x="450" y="20" width="386" height="290" rx="10" fill="#fdf7f2" stroke="#c17f3a" stroke-width="2"/>
+  <text x="470" y="46" font-size="16" font-weight="700" fill="#9a5f20">READABILITY</text>
+  <text x="470" y="66" font-size="12.5" fill="#8a6237">Doc CA DOAN co met khong - thuoc ve CACH SAP DAT</text>
+
+  <rect x="470" y="80" width="346" height="94" rx="8" fill="#ffffff" stroke="#ead6c2"/>
+  <text x="486" y="102" font-size="12" font-weight="700" fill="#c62828">Sap dat kem: dong dai, line-height 1.0, chu xam nhat</text>
+  <text x="486" y="122" font-size="11.5" fill="#c9c9c9">Mot font co legibility tot van co the bi ban sap dat kem</text>
+  <text x="486" y="134" font-size="11.5" fill="#c9c9c9">khien readability te di rat nhieu vi du dong dai 150 ky</text>
+  <text x="486" y="146" font-size="11.5" fill="#c9c9c9">tu line-height 1.0 va chu mau xam nhat tren nen trang</text>
+  <text x="486" y="164" font-size="11.5" fill="#9b3b3b">Cung font do, chi khac cach sap dat</text>
+
+  <rect x="470" y="188" width="346" height="106" rx="8" fill="#ffffff" stroke="#ead6c2"/>
+  <text x="486" y="210" font-size="12" font-weight="700" fill="#1e7a42">Sap dat tot: dong vua, line-height 1.5, tuong phan du</text>
+  <text x="486" y="234" font-size="12.5" fill="#111">Mot font co legibility tot van co the bi</text>
+  <text x="486" y="254" font-size="12.5" fill="#111">ban sap dat kem khien readability te.</text>
+  <text x="486" y="274" font-size="12.5" fill="#111">Font tot la dieu kien can, khong du.</text>
+</svg>

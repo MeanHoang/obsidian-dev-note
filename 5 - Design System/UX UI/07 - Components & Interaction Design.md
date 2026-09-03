@@ -36,6 +36,9 @@ Các trạng thái phổ biến cần lo:
 
 **Ví dụ SaaS:** Nút "Invite member" trong trang team settings: default (xanh) → hover (xanh đậm hơn) → active (lún xuống) → loading (spinner + chữ "Inviting...") → thành công đổi thành toast xanh, hoặc error nếu email trùng.
 
+![[uxui-07-component-states.svg]]
+*Bảy trạng thái của cùng một nút "Invite member" — thiếu bất kỳ cái nào là component chưa xong.*
+
 **Sai lầm hay gặp:** Chỉ thiết kế mỗi trạng thái default rồi coi như xong. Kết quả: nút bấm không có hover, không có loading, người dùng bấm 3 lần vì tưởng máy đơ → gửi 3 lời mời trùng nhau. Một component "chưa xong" là component thiếu state.
 
 ---
@@ -47,6 +50,9 @@ Các trạng thái phổ biến cần lo:
 Có mấy mốc thời gian đáng nhớ (theo NN/g): dưới ~0.1 giây cảm giác **tức thì**; tới ~1 giây người dùng vẫn thấy liền mạch nhưng nhận ra có độ trễ; quá ~10 giây là mất tập trung, nên hiển thị tiến trình rõ ràng.
 
 **Ví dụ SaaS:** Bấm "Save settings" mà mất 2 giây gọi API → phải đổi ngay nút sang loading. Bật/tắt một toggle → nó phải nhảy ngay lập tức chứ không đợi server (xem thêm Optimistic UI bên dưới). Kéo thả một card trong bảng Kanban → card phải "dính" theo con trỏ tức thì.
+
+![[uxui-07-feedback-timing.svg]]
+*Ba mốc 0.1s / 1s / 10s, và khác biệt giữa nút im lặng 2 giây với nút đổi sang loading ngay lập tức.*
 
 **Sai lầm hay gặp:** Bấm nút xong "không có gì xảy ra" trong 1-2 giây rồi mới nhảy. Trong khoảng im lặng đó, người dùng nghĩ là hỏng và bấm lại. Luôn lấp đầy khoảng trống giữa "hành động" và "kết quả" bằng một dấu hiệu.
 
@@ -62,6 +68,9 @@ Có mấy mốc thời gian đáng nhớ (theo NN/g): dưới ~0.1 giây cảm g
 Nói ngắn: affordance là "làm được gì", signifier là "làm sao người dùng biết mình làm được".
 
 **Ví dụ SaaS:** Trong một bảng dữ liệu, một ô text có thể click để sửa tại chỗ (inline edit). Nếu nhìn y hệt text thường thì không ai biết bấm được (thiếu signifier). Thêm một icon bút chì mờ hiện khi hover, hoặc gạch chân nét đứt → người dùng hiểu ngay "sửa được".
+
+![[uxui-07-affordance-signifier.svg]]
+*Ô inline edit vẫn sửa được ở cả hai bên, nhưng chỉ bên phải có signifier để người dùng biết điều đó.*
 
 **Sai lầm hay gặp:** Chạy theo thẩm mỹ "phẳng, tối giản" đến mức nút không còn trông như nút, link không trông như link. Đẹp nhưng người dùng không biết đâu là thứ bấm được — gọi là "flat design gây mù tương tác". Giữ đủ signifier: màu, viền, con trỏ, gạch chân cho link.
 
@@ -80,6 +89,9 @@ Các cấp thường dùng:
 
 **Ví dụ SaaS:** Trong modal xác nhận xóa project: "Delete project" là hành động chính của modal nhưng lại **nguy hiểm**, nên thường làm màu đỏ (destructive primary); "Cancel" làm ghost hoặc secondary để không cạnh tranh sự chú ý. Ngược lại trong form tạo mới: "Create" là primary xanh, "Cancel" là ghost.
 
+![[uxui-07-button-hierarchy.svg]]
+*Bốn cấp nút, và modal xóa project khi ba nút cùng nổi so với khi có thứ bậc rõ ràng.*
+
 **Sai lầm hay gặp:** Để hai, ba nút primary cạnh nhau cùng nổi như nhau. Người dùng bị "tê liệt lựa chọn", không biết nên bấm cái nào — vi phạm nguyên tắc giảm tải nhận thức ở [[02 - Laws of UX - Nguyên tắc tâm lý học]]. Quy tắc vàng: nếu mọi thứ đều nổi bật thì chẳng có gì nổi bật.
 
 ---
@@ -95,6 +107,9 @@ Các cấp thường dùng:
 
 **Ví dụ SaaS:** Form đăng ký: ô email có label "Work email" ở trên, placeholder "you@company.com" bên trong, khi rời ô mà sai định dạng thì viền đỏ + dòng chữ "Email này chưa đúng định dạng" ngay bên dưới, và nút "Create account" chỉ bật khi mọi ô hợp lệ.
 
+![[uxui-07-form-label-validation.svg]]
+*Placeholder biến mất khi gõ chữ, còn label riêng ở trên thì luôn nhìn thấy và lỗi được báo ngay cạnh ô.*
+
 **Sai lầm hay gặp:** Dùng placeholder làm label (lỗi kinh điển), báo lỗi chung chung, hoặc bắt người dùng đoán yêu cầu mật khẩu rồi mới báo sai sau khi bấm Submit. Hãy nói trước yêu cầu, và báo lỗi đúng chỗ đúng lúc.
 
 ---
@@ -106,6 +121,9 @@ Các cấp thường dùng:
 Nguyên tắc: viết như đang nói với một con người, **rõ ràng hơn là "kêu"**. Chữ trên nút nên là **động từ mô tả kết quả** thay vì chung chung.
 
 **Ví dụ SaaS:** Nút "Get started free" tốt hơn "Submit". Trong dialog xóa: nút "Delete 3 files" (nói rõ hậu quả) tốt hơn "OK". Empty state của trang Projects: thay vì để trống trơn, viết "Chưa có project nào — tạo cái đầu tiên để bắt đầu" kèm nút tạo. Thông báo thành công: "Đã lưu thay đổi" thay vì "Success".
+
+![[uxui-07-microcopy-empty-state.svg]]
+*Empty state trống trơn không nói gì, còn empty state có microcopy thì vừa giải thích vừa chỉ bước tiếp theo.*
 
 **Sai lầm hay gặp:** Dùng "OK / Yes / Submit" ở khắp nơi khiến người dùng phải đọc lại câu hỏi mới biết mình đang đồng ý cái gì. Nút nên tự mô tả hành động của chính nó, đọc rời ra vẫn hiểu.
 

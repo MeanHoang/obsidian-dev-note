@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="620" viewBox="0 0 860 620" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="430" y="26" text-anchor="middle" font-size="17" font-weight="700" fill="#111827">5 nguyen tac Don Norman — moi hang: ❌ sai lam hay gap  vs  ✅ lam dung</text>
+
+  <!-- row 1 AFFORDANCE -->
+  <text x="20" y="58" font-size="14" font-weight="700" fill="#111827">1. Affordance — nhin la biet lam duoc gi</text>
+  <rect x="20" y="66" width="400" height="86" rx="8" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="32" y="86" font-size="11" font-weight="600" fill="#b91c1c">❌ Nut trong giong chu tinh</text>
+  <text x="120" y="122" font-size="13" fill="#2563eb">Luu thay doi</text>
+  <text x="32" y="144" font-size="10.5" fill="#7f1d1d">Khong nen, khong vien → user khong biet bam duoc</text>
+
+  <rect x="440" y="66" width="400" height="86" rx="8" fill="#f0fdf4" stroke="#86efac"/>
+  <text x="452" y="86" font-size="11" font-weight="600" fill="#15803d">✅ Nut co nen, co bong, co con tro</text>
+  <rect x="560" y="98" width="140" height="32" rx="6" fill="#2563eb"/>
+  <text x="630" y="119" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">Luu thay doi</text>
+  <text x="452" y="144" font-size="10.5" fill="#14532d">Hinh dang goi y "bam duoc"</text>
+
+  <!-- row 2 SIGNIFIER -->
+  <text x="20" y="182" font-size="14" font-weight="700" fill="#111827">2. Signifier — dau hieu mach cho biet lam o dau, lam the nao</text>
+  <rect x="20" y="190" width="400" height="96" rx="8" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="32" y="210" font-size="11" font-weight="600" fill="#b91c1c">❌ "Toi gian" qua da — giau het dau hieu</text>
+  <rect x="90" y="220" width="260" height="50" rx="6" fill="#ffffff" stroke="#f3f4f6"/>
+  <text x="220" y="250" text-anchor="middle" font-size="11" fill="#d1d5db">(vung trang, khong chu, khong vien)</text>
+  <text x="32" y="282" font-size="10.5" fill="#7f1d1d">"mystery meat navigation" — dep ma khong biet bam dau</text>
+
+  <rect x="440" y="190" width="400" height="96" rx="8" fill="#f0fdf4" stroke="#86efac"/>
+  <text x="452" y="210" font-size="11" font-weight="600" fill="#15803d">✅ Vien net dut + dong chu chi dan</text>
+  <rect x="510" y="220" width="260" height="50" rx="6" fill="#f8fafc" stroke="#3b82f6" stroke-dasharray="6 4" stroke-width="2"/>
+  <text x="640" y="243" text-anchor="middle" font-size="11.5" fill="#1d4ed8">⬆ Keo &amp; tha file vao day</text>
+  <text x="640" y="260" text-anchor="middle" font-size="10.5" fill="#64748b">hoac bam de chon</text>
+  <text x="452" y="282" font-size="10.5" fill="#14532d">Vien net dut + chu chinh la signifier</text>
+
+  <!-- row 3 FEEDBACK -->
+  <text x="20" y="316" font-size="14" font-weight="700" fill="#111827">3. Feedback — hanh dong da duoc ghi nhan chua, ket qua ra sao</text>
+  <rect x="20" y="324" width="400" height="86" rx="8" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="32" y="344" font-size="11" font-weight="600" fill="#b91c1c">❌ Bam xong im ru / bao loi mo ho</text>
+  <rect x="32" y="354" width="90" height="28" rx="5" fill="#e5e7eb"/>
+  <text x="77" y="373" text-anchor="middle" font-size="12" fill="#374151">Save</text>
+  <text x="140" y="373" font-size="12" fill="#9ca3af">... khong co gi xay ra</text>
+  <text x="32" y="400" font-size="10.5" fill="#7f1d1d">User bam lai nhieu lan hoac tuong hong</text>
+
+  <rect x="440" y="324" width="400" height="86" rx="8" fill="#f0fdf4" stroke="#86efac"/>
+  <text x="452" y="344" font-size="11" font-weight="600" fill="#15803d">✅ Loading → toast ket qua cu the</text>
+  <rect x="452" y="354" width="100" height="28" rx="5" fill="#93c5fd"/>
+  <circle cx="474" cy="368" r="6" fill="none" stroke="#1e3a8a" stroke-width="2" stroke-dasharray="9 5"/>
+  <text x="512" y="373" text-anchor="middle" font-size="12" fill="#1e3a8a">Dang luu</text>
+  <rect x="576" y="352" width="200" height="32" rx="6" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="676" y="373" text-anchor="middle" font-size="12" fill="#166534">✓ Da luu thanh cong</text>
+  <text x="452" y="400" font-size="10.5" fill="#14532d">Phan hoi nhanh va ro</text>
+
+  <!-- row 4 MAPPING -->
+  <text x="20" y="440" font-size="14" font-weight="700" fill="#111827">4. Mapping — bo tri dieu khien khop voi ket qua thuc te</text>
+  <rect x="20" y="448" width="400" height="76" rx="8" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="32" y="468" font-size="11" font-weight="600" fill="#b91c1c">❌ Nut "tang" o duoi, "giam" o tren</text>
+  <rect x="150" y="476" width="34" height="20" rx="4" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="167" y="491" text-anchor="middle" font-size="12" fill="#374151">▲</text>
+  <text x="200" y="491" font-size="11" fill="#7f1d1d">= giam</text>
+  <rect x="150" y="498" width="34" height="20" rx="4" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="167" y="513" text-anchor="middle" font-size="12" fill="#374151">▼</text>
+  <text x="200" y="513" font-size="11" fill="#7f1d1d">= tang  → truc giac doan sai</text>
+
+  <rect x="440" y="448" width="400" height="76" rx="8" fill="#f0fdf4" stroke="#86efac"/>
+  <text x="452" y="468" font-size="11" font-weight="600" fill="#15803d">✅ Keo sang phai = to hon (khop truc giac)</text>
+  <line x1="466" y1="500" x2="800" y2="500" stroke="#d1d5db" stroke-width="5" stroke-linecap="round"/>
+  <line x1="466" y1="500" x2="700" y2="500" stroke="#22c55e" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="700" cy="500" r="9" fill="#ffffff" stroke="#22c55e" stroke-width="3"/>
+  <text x="466" y="519" font-size="10.5" fill="#14532d">nho</text>
+  <text x="800" y="519" text-anchor="end" font-size="10.5" fill="#14532d">to</text>
+
+  <!-- row 5 CONSTRAINT -->
+  <text x="20" y="554" font-size="14" font-weight="700" fill="#111827">5. Constraint — chan loi tu dau, nhung phai noi ly do</text>
+  <rect x="20" y="562" width="400" height="50" rx="8" fill="#fef2f2" stroke="#fca5a5"/>
+  <rect x="32" y="574" width="80" height="26" rx="5" fill="#e5e7eb"/>
+  <text x="72" y="591" text-anchor="middle" font-size="12" fill="#9ca3af">Gui</text>
+  <text x="124" y="585" font-size="11" font-weight="600" fill="#b91c1c">❌ Mo tit ma khong noi vi sao</text>
+  <text x="124" y="602" font-size="10.5" fill="#7f1d1d">User boi roi, khong biet lam gi de "mo khoa"</text>
+
+  <rect x="440" y="562" width="400" height="50" rx="8" fill="#f0fdf4" stroke="#86efac"/>
+  <rect x="452" y="574" width="80" height="26" rx="5" fill="#e5e7eb"/>
+  <text x="492" y="591" text-anchor="middle" font-size="12" fill="#9ca3af">Gui</text>
+  <text x="544" y="585" font-size="11" font-weight="600" fill="#15803d">✅ Kem ly do ro rang</text>
+  <text x="544" y="602" font-size="10.5" fill="#14532d">"Con thieu: Email cong ty" — biet ngay phai lam gi</text>
+</svg>

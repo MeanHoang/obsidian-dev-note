@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="420" viewBox="0 0 860 420" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="430" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#111827">Mental model (user NGHI) vs Conceptual model (he thong THUC SU lam)</text>
+
+  <!-- user head -->
+  <rect x="20" y="48" width="360" height="150" rx="10" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="34" y="70" font-size="13" font-weight="700" fill="#1e3a8a">🧠 Mental model — trong dau nguoi dung</text>
+  <text x="34" y="94" font-size="12" fill="#1f2937">"Keo file vao thu muc = DI CHUYEN vao do"</text>
+  <text x="34" y="114" font-size="11" fill="#4b5563">(hoc duoc tu he dieu hanh da quen)</text>
+  <g>
+    <rect x="46" y="128" width="34" height="42" rx="4" fill="#ffffff" stroke="#93c5fd"/>
+    <text x="63" y="155" text-anchor="middle" font-size="16">📄</text>
+    <path d="M92 149 L146 149" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5 4"/>
+    <path d="M146 149 l-8 -5 v10 z" fill="#3b82f6"/>
+    <text x="160" y="155" font-size="26">📁</text>
+    <text x="205" y="145" font-size="11.5" fill="#1e40af">file bien mat o cho cu,</text>
+    <text x="205" y="162" font-size="11.5" fill="#1e40af">nam trong thu muc</text>
+  </g>
+
+  <!-- system -->
+  <rect x="480" y="48" width="360" height="150" rx="10" fill="#fdf4ff" stroke="#a855f7"/>
+  <text x="494" y="70" font-size="13" font-weight="700" fill="#6b21a8">⚙️ Conceptual model — app that su lam</text>
+  <text x="494" y="94" font-size="12" fill="#1f2937">Keo-tha duoc xu ly thanh COPY, khong bao gi</text>
+  <text x="494" y="114" font-size="11" fill="#4b5563">(hop ly ve mat ky thuat, la voi nguoi dung)</text>
+  <g>
+    <rect x="506" y="128" width="34" height="42" rx="4" fill="#ffffff" stroke="#d8b4fe"/>
+    <text x="523" y="155" text-anchor="middle" font-size="16">📄</text>
+    <path d="M552 149 L606 149" stroke="#a855f7" stroke-width="2" stroke-dasharray="5 4"/>
+    <path d="M606 149 l-8 -5 v10 z" fill="#a855f7"/>
+    <text x="620" y="155" font-size="26">📁</text>
+    <text x="665" y="145" font-size="11.5" fill="#6b21a8">file VAN CON o cho cu</text>
+    <text x="665" y="162" font-size="11.5" fill="#6b21a8">→ user ngac nhien, lam sai</text>
+  </g>
+
+  <!-- gap -->
+  <path d="M382 123 L470 123" stroke="#dc2626" stroke-width="2"/>
+  <path d="M382 123 l8 -5 v10 z" fill="#dc2626"/>
+  <path d="M470 123 l-8 -5 v10 z" fill="#dc2626"/>
+  <text x="426" y="112" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">GAP</text>
+  <text x="426" y="146" text-anchor="middle" font-size="10" fill="#dc2626">cang xa</text>
+  <text x="426" y="160" text-anchor="middle" font-size="10" fill="#dc2626">cang nham</text>
+
+  <!-- solution -->
+  <rect x="20" y="220" width="820" height="80" rx="10" fill="#f0fdf4" stroke="#22c55e"/>
+  <text x="36" y="244" font-size="13" font-weight="700" fill="#15803d">✅ Giai phap: khop voi mental model co san — dong GAP lai</text>
+  <text x="36" y="270" font-size="12.5" fill="#1f2937">Keo = MOVE (giong OS)   ·   giu Ctrl moi COPY   →  user khong phai hoc lai tu dau</text>
+  <text x="36" y="290" font-size="11" fill="#166534">Cung logic: dat ten menu theo cach USER goi, khong theo ten module trong code.</text>
+
+  <!-- icons known by convention -->
+  <rect x="20" y="318" width="820" height="86" rx="10" fill="#f9fafb" stroke="#d1d5db"/>
+  <text x="36" y="340" font-size="12" font-weight="600" fill="#374151">Mental model = kinh nghiem tu san pham khac. Ai cung "biet san":</text>
+  <g font-size="11" fill="#4b5563">
+    <text x="70" y="376" text-anchor="middle" font-size="26">🛒</text>
+    <text x="70" y="396" text-anchor="middle">gio hang</text>
+    <text x="230" y="376" text-anchor="middle" font-size="26">⚙️</text>
+    <text x="230" y="396" text-anchor="middle">cai dat</text>
+    <text x="400" y="376" text-anchor="middle" font-size="26">🔍</text>
+    <text x="400" y="396" text-anchor="middle">tim kiem</text>
+    <text x="570" y="376" text-anchor="middle" font-size="26">💾</text>
+    <text x="570" y="396" text-anchor="middle">luu (du chua ai thay dia mem that)</text>
+    <text x="780" y="376" text-anchor="middle" font-size="26">🏠</text>
+    <text x="780" y="396" text-anchor="middle">trang chu</text>
+  </g>
+</svg>

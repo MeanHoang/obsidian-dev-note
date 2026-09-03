@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="380" viewBox="0 0 860 380" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="430" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#111827">Visual Hierarchy — cung mot card doanh thu + 2 nut</text>
+
+  <!-- LEFT wrong -->
+  <rect x="20" y="46" width="390" height="290" rx="10" fill="#fdf3f2" stroke="#e8b4ae" stroke-width="1.5"/>
+  <text x="40" y="74" font-size="15" font-weight="700" fill="#b3261e">&#10007; Moi thu "cung can nang"</text>
+  <rect x="44" y="90" width="342" height="130" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="66" y="128" font-size="20" font-weight="700" fill="#111827">Tong doanh thu thang nay</text>
+  <text x="66" y="162" font-size="20" font-weight="700" fill="#111827">$42,000</text>
+  <text x="66" y="194" font-size="20" font-weight="700" fill="#111827">SKU-10248</text>
+  <rect x="44" y="240" width="150" height="44" rx="6" fill="#2f6fed"/>
+  <text x="119" y="268" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Tao du an</text>
+  <rect x="212" y="240" width="150" height="44" rx="6" fill="#2f6fed"/>
+  <text x="287" y="268" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Huy</text>
+  <text x="44" y="312" font-size="13" fill="#b3261e">Deu to, deu dam &#8594; mat khong biet nhin dau truoc.</text>
+
+  <!-- RIGHT correct -->
+  <rect x="450" y="46" width="390" height="290" rx="10" fill="#f1f9f4" stroke="#a8d5b9" stroke-width="1.5"/>
+  <text x="470" y="74" font-size="15" font-weight="700" fill="#1e7e45">&#10003; Phan cap ro bang size + weight + mau</text>
+  <rect x="474" y="90" width="342" height="130" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="496" y="118" font-size="13" font-weight="500" fill="#9ca3af">Tong doanh thu thang nay</text>
+  <text x="496" y="164" font-size="34" font-weight="800" fill="#111827">$42,000</text>
+  <text x="496" y="192" font-size="12" fill="#c3c8d0">SKU-10248</text>
+  <rect x="474" y="240" width="150" height="44" rx="6" fill="#2f6fed"/>
+  <text x="549" y="268" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Tao du an</text>
+  <text x="700" y="268" text-anchor="middle" font-size="15" font-weight="500" fill="#9ca3af">Huy</text>
+  <text x="474" y="312" font-size="13" fill="#1e7e45">Liec mat la thay con so, roi moi den nhan va SKU.</text>
+</svg>
