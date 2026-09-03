@@ -54,6 +54,9 @@ Hai công cụ nghiên cứu phổ biến nhất với team nhỏ:
 
 **Dev solo/team nhỏ áp dụng tối giản:** Nhúng 1 câu hỏi ngắn trong app (in-app survey) hoặc gửi email 3 câu. Tránh bảng 20 câu — tỉ lệ trả lời sẽ rất thấp.
 
+![[uxui-10-research-qual-quant.svg]]
+*Phỏng vấn trả lời "tại sao", survey trả lời "bao nhiêu" — dùng đúng công cụ cho đúng giai đoạn.*
+
 ---
 
 ## 👤 Personas (Chân dung người dùng)
@@ -61,6 +64,9 @@ Hai công cụ nghiên cứu phổ biến nhất với team nhỏ:
 **Là gì:** Một nhân vật *hư cấu nhưng dựa trên dữ liệu thật*, đại diện cho một nhóm người dùng điển hình. Persona gói gọn: mục tiêu, bối cảnh công việc, và nỗi đau chính. Ví dụ: "Minh — trưởng nhóm marketing ở startup 10 người, cần xuất báo cáo nhanh cuối tuần, ghét phần mềm nhiều bước".
 
 **Khi nào dùng:** Khi team cần một "ngôn ngữ chung" để nhắc nhau đang thiết kế *cho ai*. Thay vì cãi nhau chung chung, cả team hỏi "cái này có giúp Minh không?".
+
+![[uxui-10-persona.svg]]
+*Persona đi ra từ dữ liệu research thật; với SaaS B2B thì nghĩ theo role (admin/member/viewer) chứ không theo nhân khẩu học.*
 
 **Sai lầm hay gặp:**
 - Tạo persona **bịa hoàn toàn** từ trí tưởng tượng (ảnh đẹp, tên hay, nhưng không dựa trên research nào). Persona bịa còn nguy hiểm hơn không có, vì tạo cảm giác an tâm giả.
@@ -76,6 +82,9 @@ Hai công cụ nghiên cứu phổ biến nhất với team nhỏ:
 
 **Khi nào dùng:** Khi trải nghiệm trải dài nhiều bước/nhiều kênh và bạn muốn nhìn bức tranh tổng thể. Ví dụ hành trình: nghe về sản phẩm → đăng ký → onboarding → dùng lần đầu → nâng cấp trả phí.
 
+![[uxui-10-journey-map.png]]
+*Một journey map thật: hàng STEPS (các bước) → GOALS → ACTIVITIES & EMOTIONS (đường cảm xúc lên xuống lộ ra pain point) → OPPORTUNITIES — (nguồn: Wikimedia Commons)*
+
 **Sai lầm hay gặp:** Vẽ journey map cho một quy trình *bạn tưởng tượng* thay vì quy trình *thực tế người dùng trải qua*. Map phải dựa trên research, nếu không nó chỉ là sơ đồ đẹp treo tường.
 
 **Dev solo/team nhỏ áp dụng tối giản:** Tập trung vào hành trình **onboarding** (từ lúc đăng ký đến "aha moment" — khoảnh khắc user nhận ra giá trị sản phẩm). Đây là đoạn quyết định giữ chân hay mất khách trong SaaS. Vẽ bằng bảng đơn giản: hàng = bước, cột = hành động / cảm xúc / cơ hội cải thiện.
@@ -87,6 +96,9 @@ Hai công cụ nghiên cứu phổ biến nhất với team nhỏ:
 **Là gì:** Cách **tổ chức, sắp xếp và đặt tên** cho nội dung/chức năng sao cho người dùng tìm được thứ họ cần và hiểu mình đang ở đâu. Nói nôm na: IA là "sơ đồ tủ hồ sơ" — quyết định cái gì nằm trong ngăn nào, ngăn tên gì, menu có mấy tầng.
 
 **Khi nào dùng:** Trước khi vẽ giao diện. Nếu cấu trúc sai (menu lộn xộn, đặt tên khó hiểu), thì màn hình đẹp đến mấy user vẫn lạc.
+
+![[uxui-10-ia-sitemap.svg]]
+*Sitemap của một SaaS: mọi thứ user cần nằm trong 1–2 click từ Dashboard, kiểm chứng bằng Card Sorting / Tree Testing.*
 
 **Sai lầm hay gặp:**
 - Đặt tên menu theo **cấu trúc nội bộ công ty** (theo phòng ban, theo tên module code) thay vì theo cách người dùng nghĩ.
@@ -104,6 +116,9 @@ Hai công cụ nghiên cứu phổ biến nhất với team nhỏ:
 
 **Khi nào dùng:** Khi thiết kế một tính năng có nhiều bước hoặc nhiều trường hợp rẽ nhánh. Ví dụ: flow "quên mật khẩu" phải xử lý cả trường hợp email không tồn tại, link hết hạn…
 
+![[uxui-10-user-flow.svg]]
+*Flow "quên mật khẩu": đường xanh là happy path, đường đỏ đứt nét là các nhánh edge case mà code buộc phải xử lý.*
+
 **Sai lầm hay gặp:** Chỉ vẽ **happy path** (đường đi lý tưởng khi mọi thứ suôn sẻ) mà quên **edge case** (lỗi mạng, dữ liệu trống, hết quyền). Dev thường thấy điều này rõ hơn designer — đây là chỗ dev đóng góp cực mạnh.
 
 **Dev solo/team nhỏ áp dụng tối giản:** Vì bạn đã tư duy bằng logic code, hãy tận dụng: vẽ flow như vẽ flowchart, liệt kê đủ các trạng thái (loading, empty, error, success). Điều này giúp bạn không phải sửa UI đi sửa lại sau.
@@ -116,6 +131,9 @@ Hai công cụ nghiên cứu phổ biến nhất với team nhỏ:
 
 **Khi nào dùng:** Ngay sau khi có User Flow, để nhanh chóng thử vài phương án bố cục với chi phí gần như bằng 0.
 
+![[uxui-10-wireframe-example.png]]
+*Wireframe thật của một trang web: chỉ hộp, đường và chữ giả — cố tình thô để bàn về cấu trúc và luồng — (nguồn: Wikimedia Commons)*
+
 **Sai lầm hay gặp:** Đánh bóng wireframe quá sớm (thêm màu, thêm chi tiết) → biến nó thành mockup, làm mất đi ưu điểm "nhanh và dễ vứt bỏ". Wireframe *nên* trông thô.
 
 **Dev solo/team nhỏ áp dụng tối giản:** Nhiều dev thích nhảy thẳng vào code luôn. Nhưng vẽ wireframe 10 phút trên giấy/Figma trước khi code sẽ tiết kiệm hàng giờ refactor. Vẽ tay cũng hoàn toàn ổn.
@@ -127,6 +145,9 @@ Hai công cụ nghiên cứu phổ biến nhất với team nhỏ:
 **Là gì:** Bản mô phỏng gần giống sản phẩm thật — có màu, font, nội dung thật, và **bấm được** (interactive): click nút thì chuyển màn, mở popup… nhưng phía sau **không có logic/backend thật**, chỉ là các màn hình nối với nhau. "High-fidelity" = *độ chi tiết cao*, trông như thật.
 
 **Khi nào dùng:** Khi cần trình bày cho khách/nhà đầu tư, hoặc để đem đi **Usability Testing** — cho user bấm thử trước khi tốn công code.
+
+![[uxui-10-fidelity.svg]]
+*Từ low-fi sang high-fi: độ chi tiết càng cao thì càng giống thật, nhưng chi phí thay đổi cũng càng lớn.*
 
 **Sai lầm hay gặp:**
 - Đầu tư prototype quá công phu đến mức *tiếc công* và ngại thay đổi khi nhận feedback xấu (sunk cost).
@@ -151,6 +172,9 @@ Jakob Nielsen (NN/g) nêu: **kiểm thử với 5 người dùng thường tìm 
 **Sắc thái quan trọng (đừng hiểu máy móc):**
 - Con số 85% và "5 người" là *ước lượng thống kê* (dựa trên mô hình toán của Nielsen & Landauer, 1993), không phải luật cứng. Sản phẩm phức tạp hoặc có **nhiều nhóm người dùng khác nhau** (ví dụ admin và end-user hành vi rất khác) thì cần test cho *từng nhóm*: NN/g gợi ý khoảng **3–4 người mỗi nhóm** khi có 2 nhóm, và **~3 người mỗi nhóm** khi từ 3 nhóm trở lên (do các nhóm vẫn có phần trùng lặp về vấn đề).
 - Tinh thần cốt lõi không phải "chỉ cần 5 người rồi thôi", mà là: **thà test nhiều đợt nhỏ (5 người) rồi sửa liên tục, còn hơn một đợt lớn tốn kém rồi mới sửa một lần**. Test → sửa → test lại.
+
+![[uxui-10-five-users.svg]]
+*Tinh thần của quy tắc 5 users: test từng đợt nhỏ rồi sửa liên tục, và test riêng cho từng nhóm người dùng.*
 
 **Sai lầm hay gặp:**
 - Người quan sát *gợi ý/giải cứu* khi thấy user loay hoay ("Bạn bấm nút góc trên kia kìa"). Làm vậy là phá kết quả — phải để họ tự vật lộn.
@@ -189,6 +213,9 @@ Jakob Nielsen (NN/g) nêu: **kiểm thử với 5 người dùng thường tìm 
 
 **Khi nào dùng:** Khi bạn *đã có lượng traffic đủ lớn* và muốn tối ưu một thay đổi cụ thể có thể đo được (màu nút, tiêu đề, vị trí CTA).
 
+![[uxui-10-ab-testing.png]]
+*Hai nửa người dùng thấy hai phiên bản chỉ khác nhau một điểm (nút xanh dương vs. xanh lá), rồi so tỉ lệ click thật — (nguồn: Wikimedia Commons)*
+
 **Sai lầm hay gặp:**
 - **Kết luận quá sớm** khi số mẫu còn nhỏ (chưa đạt statistical significance — ý nghĩa thống kê), dẫn tới tin vào kết quả may rủi.
 - Test A/B khi *chưa hiểu vấn đề*. A/B giỏi tối ưu ("cái nào tốt hơn"), nhưng dở khám phá ("tại sao user bỏ đi") — cái đó cần Usability Testing/phỏng vấn.
@@ -220,6 +247,9 @@ Vài khái niệm trong hệ sinh thái Figma đáng biết:
 **Là gì:** Bước chuyển thiết kế từ Figma sang cho dev triển khai. Ở đây designer cung cấp: spec (thông số spacing, màu, font), asset (icon, ảnh), và mô tả các **trạng thái** cùng **hành vi tương tác**.
 
 **Khi nào dùng:** Sau khi thiết kế được duyệt, trước khi code.
+
+![[uxui-10-handoff-states.svg]]
+*Mỗi màn hình có nhiều trạng thái — empty, loading, error, success, overflow — thiếu cái nào là dev phải tự đoán cái đó.*
 
 **Sai lầm hay gặp (bạn là dev nên sẽ thấy rõ):**
 - Bàn giao chỉ có **happy path**, thiếu các state mà code bắt buộc phải xử lý: **empty state** (chưa có dữ liệu), **loading**, **error**, **trạng thái quá dài/tràn** (tên 100 ký tự thì hiển thị sao?).

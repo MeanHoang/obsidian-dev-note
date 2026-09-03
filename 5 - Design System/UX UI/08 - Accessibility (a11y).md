@@ -38,6 +38,9 @@ WCAG xây trên 4 nguyên tắc gốc, viết tắt là **POUR**:
 > [!example] Ví dụ dễ nhớ
 > Một cái nút "Mua hàng" đạt POUR khi: nhìn thấy rõ (P), Tab tới bấm Enter được (O), chữ ghi rõ hành động (U), và screen reader đọc đúng là "nút Mua hàng" (R).
 
+![[uxui-08-pour.svg]]
+*Bốn nguyên tắc POUR — thiếu bất kỳ cột nào thì nút vẫn fail a11y.*
+
 > [!warning] Sai lầm hay gặp
 > Nghĩ a11y là "thêm alt text cho ảnh là xong". Alt text chỉ là 1 phần của chữ P trong POUR. Bỏ quên O (bàn phím) và R (semantic đúng) mới là lỗi phổ biến nhất.
 
@@ -53,6 +56,9 @@ WCAG chia tiêu chí thành 3 mức độ khó tăng dần:
 
 > [!tip] Chốt cho dev SaaS
 > Đặt mục tiêu **AA**. Đây là con số bạn cần khi khách hàng doanh nghiệp hỏi "sản phẩm có accessible không?" — họ thường đòi bản **VPAT/AA compliance**.
+
+![[uxui-08-contrast-thresholds.png]]
+*Vùng màu đạt từng ngưỡng contrast 3:1 / 4.5:1 / 7:1 — càng lên mức AAA (7:1) thì lựa chọn màu càng bị bó hẹp — (nguồn: Wikimedia Commons)*
 
 > [!warning] Sai lầm hay gặp
 > Cố ép AAA cho toàn site rồi kiệt sức bỏ cuộc. WCAG chính thức khuyến nghị không nên coi AAA là mục tiêu cho toàn bộ nội dung.
@@ -74,6 +80,9 @@ Mức **AAA** khắt khe hơn: 7:1 cho text thường, 4.5:1 cho text lớn.
 > [!example] Ví dụ
 > Nút primary màu xanh nhạt với chữ trắng trông "sang" nhưng có thể chỉ đạt 2:1 → fail. Đậm màu nền lên một chút là đạt 4.5:1.
 
+![[uxui-08-contrast.svg]]
+*Cùng một nút: contrast thấp thì fail, đậm nền lên một chút là đạt 4.5:1.*
+
 > [!warning] Sai lầm hay gặp
 > - Dùng **placeholder màu xám nhạt** làm nhãn chính cho input → gần như luôn fail contrast, và biến mất khi gõ chữ.
 > - Đặt **chữ đè lên ảnh** mà không có lớp phủ tối → contrast thay đổi tùy vùng ảnh, chỗ đạt chỗ không.
@@ -92,6 +101,9 @@ Ba khái niệm cốt lõi:
 - **Skip link (liên kết bỏ qua):** Một link ẩn, hiện ra khi Tab lần đầu, cho phép nhảy thẳng "Bỏ qua menu, tới nội dung chính". Không có nó, người dùng bàn phím phải Tab qua 30 mục menu trên *mọi* trang mới tới nội dung.
 
 **Focus management** đặc biệt quan trọng với **modal/dialog**: khi mở popup, focus phải nhảy vào trong popup và **bị "nhốt" (focus trap)** ở đó cho tới khi đóng — nếu không, người dùng Tab ra ngoài popup vào phần nền bị che mà không biết.
+
+![[uxui-08-focus-tab.svg]]
+*Xóa focus ring là làm mù người dùng bàn phím; tab order đi theo trình tự đọc, modal thì focus trap.*
 
 > [!warning] Sai lầm hay gặp
 > - `outline: none` cho "đẹp" mà không thay thế → lỗi a11y kinh điển nhất.
@@ -115,6 +127,9 @@ Ba khái niệm cốt lõi:
 > [!example] Ví dụ
 > Người khiếm thị nhấn phím tắt "liệt kê các heading" để lướt nhanh trang, y như người sáng mắt liếc qua các tiêu đề. Nếu bạn giả heading bằng `<div>` in đậm cỡ lớn, tính năng đó không hoạt động — với họ trang thành một khối chữ phẳng.
 
+![[uxui-08-semantic-html.svg]]
+*Cùng nhìn giống nút, nhưng `<div>` thì screen reader không biết đó là nút và Tab không tới được.*
+
 > [!warning] Sai lầm hay gặp
 > - `<div class="button">` thay cho `<button>`.
 > - Chọn cấp heading theo **cỡ chữ mong muốn** thay vì theo cấu trúc (nhảy từ `h1` sang `h4` cho "nhỏ hơn") — hãy chọn cấp theo logic, rồi chỉnh cỡ bằng CSS. Xem [[04 - Typography]].
@@ -137,6 +152,9 @@ Thứ tự ưu tiên nên nhớ:
 > [!example] Ví dụ đúng
 > `aria-label` để đặt tên cho **nút chỉ có icon** (vd nút icon thùng rác không có chữ) → screen reader đọc "nút Xóa" thay vì im lặng. Đây là một trong số ít ca ARIA thật sự cần và đơn giản.
 
+![[uxui-08-aria-priority.svg]]
+*Thứ tự ưu tiên: HTML chuẩn trước, ARIA chỉ khi thiếu, và luôn kèm xử lý bàn phím.*
+
 > [!warning] Sai lầm hay gặp
 > - Rắc `role="button"` lên `<div>` rồi tưởng đã xong — vẫn thiếu xử lý phím và focus. Chi bằng dùng thẳng `<button>`.
 > - Gắn ARIA thừa lên thẻ vốn đã có ngữ nghĩa (vd `role="navigation"` cho `<nav>`) → dư thừa, dễ gây nhiễu.
@@ -152,6 +170,9 @@ Cách viết alt text đúng tùy **vai trò của ảnh**:
 - **Ảnh mang thông tin:** mô tả *nội dung/ý nghĩa*, ngắn gọn. Vd ảnh biểu đồ doanh thu → "Biểu đồ doanh thu tăng đều từ tháng 1 đến tháng 6", không phải "hình ảnh".
 - **Ảnh chỉ trang trí** (icon nền, đường kẻ, hoa văn): để **alt rỗng** (`alt=""`) để screen reader **bỏ qua**, tránh đọc rác làm phiền người dùng.
 - **Ảnh là link/nút** (logo bấm về trang chủ): alt mô tả *đích đến/hành động*, vd "Trang chủ", không phải "logo công ty".
+
+![[uxui-08-alt-text.svg]]
+*Ba vai trò của ảnh ứng với ba cách viết alt khác nhau.*
 
 > [!warning] Sai lầm hay gặp
 > - Nhồi từ khóa SEO vào alt → phản tác dụng và gây phiền.
@@ -172,6 +193,9 @@ Các con số cần nhớ (lưu ý chúng khác nhau):
 
 Nói gọn: **24px là mức tối thiểu để đạt AA, còn ~44–48px là mức "nên làm" cho UX tốt.** Nếu target buộc phải nhỏ, WCAG cho phép bù bằng **khoảng cách (spacing)** đủ rộng giữa các target để không bấm nhầm.
 
+![[uxui-08-touch-target.svg]]
+*Giữ icon nhỏ về mặt hình nhưng nới vùng bấm bằng padding — 24px là sàn AA, ~44–48px là mức nên làm.*
+
 > [!warning] Sai lầm hay gặp
 > - Icon 16px nằm sát nhau (vd nút edit/xóa trong bảng) → ngón tay bấm nhầm liên tục. Giữ icon nhỏ về mặt hình, nhưng nới **vùng bấm** (padding) ra ≥ mức tối thiểu.
 > - Link text trong đoạn văn nằm quá sát nhau trên mobile.
@@ -188,6 +212,9 @@ Hệ điều hành cho phép người dùng bật tùy chọn **"Reduce Motion"*
 
 > [!example] Ví dụ
 > Trang có hiệu ứng cuộn parallax mạnh: khi phát hiện `prefers-reduced-motion`, bạn cho nội dung hiện ra tĩnh, bỏ parallax — vẫn đẹp mà không gây chóng mặt.
+
+![[uxui-08-reduced-motion.svg]]
+*Khi người dùng bật Reduce Motion, thay hiệu ứng bay/nảy bằng fade nhẹ hoặc đổi tức thì.*
 
 > [!warning] Sai lầm hay gặp
 > - Nhồi animation "cho xịn" và **không** hề tôn trọng `prefers-reduced-motion` → một nhóm người dùng thực sự không dùng nổi sản phẩm.
@@ -206,6 +233,9 @@ Cách phân biệt dễ nhớ: **Inclusive Design là *quá trình* (cách bạn
 
 > [!example] Ví dụ "khuyết tật tạm thời & hoàn cảnh" (Microsoft Inclusive Design)
 > Cùng nhu cầu "dùng một tay": người **cụt tay** (vĩnh viễn), người **gãy tay bó bột** (tạm thời), và người **đang bế em bé** (hoàn cảnh). Thiết kế cho một tay giúp *cả ba* — đó là tinh thần inclusive design: giải pháp cho nhóm rìa thường nâng trải nghiệm cho tất cả.
+
+![[uxui-08-inclusive.svg]]
+*Inclusive Design là quá trình, Accessibility là kết quả — vĩnh viễn/tạm thời/hoàn cảnh dùng chung một giải pháp.*
 
 > [!warning] Sai lầm hay gặp
 > Coi a11y là "chạy tool audit, sửa cho hết lỗi đỏ là xong". Tool tự động chỉ bắt được ~30–40% vấn đề; phần còn lại (alt text *có ý nghĩa* không, tab order *có hợp lý* không) cần con người kiểm và tư duy inclusive.

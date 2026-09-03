@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="320" viewBox="0 0 860 320" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="38" font-size="20" font-weight="700" fill="#111827">prefers-reduced-motion: ton trong co nguoi dung da bat</text>
+
+  <rect x="30" y="58" width="800" height="44" rx="10" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="46" y="86" font-size="13.5" fill="#374151">He dieu hanh: nguoi dung bat "Reduce Motion"</text>
+  <rect x="600" y="70" width="60" height="22" rx="11" fill="#10b981"/>
+  <circle cx="649" cy="81" r="9" fill="#ffffff"/>
+  <text x="676" y="86" font-size="13" fill="#047857">ON</text>
+  <text x="46" y="120" font-size="13" fill="#6b7280">Trinh duyet truyen tin hieu nay xuong CSS qua media query prefers-reduced-motion.</text>
+
+  <rect x="30" y="134" width="390" height="150" rx="10" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+  <text x="50" y="162" font-size="15" font-weight="700" fill="#b91c1c">X  Bo qua co, van chay animation manh</text>
+  <rect x="50" y="176" width="350" height="66" rx="6" fill="#ffffff" stroke="#fecaca"/>
+  <path d="M64 232 q60 -46 120 0 t120 0 t80 -20" fill="none" stroke="#ef4444" stroke-width="3"/>
+  <rect x="330" y="188" width="56" height="26" rx="5" fill="#ef4444" fill-opacity="0.3"/>
+  <text x="358" y="206" font-size="12" fill="#b91c1c" text-anchor="middle">zoom!</text>
+  <text x="64" y="196" font-size="12.5" fill="#b91c1c">parallax + bay + nhay + chop nhay</text>
+  <text x="50" y="264" font-size="12.5" fill="#7f1d1d">Gay chong mat, buon non, dau dau (vestibular disorder);</text>
+  <text x="50" y="280" font-size="12.5" fill="#7f1d1d">chop nhay con co the gay co giat voi nguoi dong kinh.</text>
+
+  <rect x="440" y="134" width="390" height="150" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <text x="460" y="162" font-size="15" font-weight="700" fill="#047857">V  Giam / tat animation khong thiet yeu</text>
+  <rect x="460" y="176" width="350" height="66" rx="6" fill="#ffffff" stroke="#a7f3d0"/>
+  <rect x="474" y="190" width="120" height="38" rx="5" fill="#10b981" fill-opacity="0.15" stroke="#10b981"/>
+  <text x="534" y="214" font-size="12.5" fill="#047857" text-anchor="middle">fade nhe</text>
+  <rect x="620" y="190" width="120" height="38" rx="5" fill="#10b981" fill-opacity="0.3" stroke="#10b981"/>
+  <text x="680" y="214" font-size="12.5" fill="#047857" text-anchor="middle">hoac doi tuc thi</text>
+  <text x="460" y="264" font-size="12.5" fill="#065f46">Noi dung hien ra tinh, bo parallax - van dep ma khong gay chong mat.</text>
+  <text x="460" y="280" font-size="12.5" fill="#047857">Tinh than cua WCAG SC 2.3.3 Animation from Interactions.</text>
+
+  <text x="30" y="308" font-size="12.5" fill="#6b7280">Tranh noi dung nhap nhay qua 3 lan/giay. Co nay la nguoi dung chu dong khai bao nhu cau y te - can ton trong.</text>
+</svg>

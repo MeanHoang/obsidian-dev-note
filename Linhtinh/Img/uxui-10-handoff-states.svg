@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="330" viewBox="0 0 860 330" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="32" font-size="18" font-weight="700" fill="#111827">Handoff: mot man hinh khong chi co 1 trang thai</text>
+  <text x="30" y="54" font-size="13" fill="#4b5563">Ban giao chi co happy path &#8594; dev thieu du lieu de code. Soi moi man theo checklist state.</text>
+
+  <g>
+    <rect x="30" y="72" width="150" height="110" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="105" y="96" font-size="13" font-weight="700" fill="#6b7280" text-anchor="middle">EMPTY</text>
+    <rect x="52" y="110" width="106" height="34" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-dasharray="4 3"/>
+    <text x="105" y="132" font-size="11.5" fill="#9ca3af" text-anchor="middle">Chua co du lieu</text>
+    <text x="105" y="166" font-size="11.5" fill="#4b5563" text-anchor="middle">can gi de bat dau?</text>
+
+    <rect x="196" y="72" width="150" height="110" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="271" y="96" font-size="13" font-weight="700" fill="#1d4ed8" text-anchor="middle">LOADING</text>
+    <circle cx="271" cy="128" r="16" fill="none" stroke="#dbeafe" stroke-width="5"/>
+    <path d="M271 112 a16 16 0 0 1 16 16" fill="none" stroke="#3b82f6" stroke-width="5" stroke-linecap="round"/>
+    <text x="271" y="166" font-size="11.5" fill="#4b5563" text-anchor="middle">skeleton hay spinner?</text>
+
+    <rect x="362" y="72" width="150" height="110" rx="8" fill="#ffffff" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="437" y="96" font-size="13" font-weight="700" fill="#b91c1c" text-anchor="middle">ERROR</text>
+    <rect x="384" y="110" width="106" height="34" rx="6" fill="#fef2f2" stroke="#fecaca"/>
+    <text x="437" y="132" font-size="11.5" fill="#991b1b" text-anchor="middle">Sai gi + sua sao</text>
+    <text x="437" y="166" font-size="11.5" fill="#4b5563" text-anchor="middle">co nut thu lai khong?</text>
+
+    <rect x="528" y="72" width="150" height="110" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+    <text x="603" y="96" font-size="13" font-weight="700" fill="#15803d" text-anchor="middle">SUCCESS</text>
+    <path d="M586 128 l12 12 l22 -24" fill="none" stroke="#16a34a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="603" y="166" font-size="11.5" fill="#4b5563" text-anchor="middle">bao xong roi di dau?</text>
+
+    <rect x="694" y="72" width="136" height="110" rx="8" fill="#ffffff" stroke="#fdba74" stroke-width="1.5"/>
+    <text x="762" y="96" font-size="13" font-weight="700" fill="#c2410c" text-anchor="middle">OVERFLOW</text>
+    <rect x="710" y="110" width="104" height="34" rx="6" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="762" y="132" font-size="11" fill="#7c2d12" text-anchor="middle">Ten dai 100 ky tu...</text>
+    <text x="762" y="166" font-size="11.5" fill="#4b5563" text-anchor="middle">cat bot hay xuong dong?</text>
+  </g>
+
+  <rect x="30" y="204" width="390" height="100" rx="8" fill="#f9fafb" stroke="#d1d5db"/>
+  <text x="46" y="228" font-size="13.5" font-weight="700" fill="#111827">Con phai noi ro</text>
+  <text x="46" y="252" font-size="12.5" fill="#374151">Spec: spacing, mau, font &#183; Asset: icon, anh</text>
+  <text x="46" y="274" font-size="12.5" fill="#374151">Hanh vi tuong tac (hover, click, keo tha)</text>
+  <text x="46" y="294" font-size="12.5" fill="#374151">Responsive o man nho hoat dong the nao</text>
+
+  <rect x="440" y="204" width="390" height="100" rx="8" fill="#eff6ff" stroke="#93c5fd"/>
+  <text x="456" y="228" font-size="13.5" font-weight="700" fill="#1d4ed8">Handoff tot = doi thoai hai chieu</text>
+  <text x="456" y="252" font-size="12.5" fill="#1e3a8a">Khong phai nem file Figma qua roi bien mat</text>
+  <text x="456" y="278" font-size="12.5" fill="#1e3a8a">Solo (vua design vua code): tu hoi minh du 5 state tren</text>
+  <text x="456" y="296" font-size="12.5" fill="#1e3a8a">ngay tu khau thiet ke</text>
+</svg>

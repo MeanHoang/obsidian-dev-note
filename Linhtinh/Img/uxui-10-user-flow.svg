@@ -47,12 +47,12 @@
   <text x="415" y="198" font-size="12" fill="#7f1d1d" text-anchor="middle">+ nut gui lai</text>
 
   <line x1="480" y1="114" x2="480" y2="146" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4"/>
-  <line x1="480" y1="146" x2="290" y2="146" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4"/>
-  <line x1="290" y1="146" x2="290" y2="158" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#r)"/>
-  <text x="380" y="140" font-size="12" fill="#b91c1c">khong ton tai</text>
-  <rect x="215" y="164" width="150" height="46" rx="8" fill="#fee2e2" stroke="#dc2626"/>
-  <text x="290" y="186" font-size="13" font-weight="600" fill="#991b1b" text-anchor="middle">Thong bao trung tinh</text>
-  <text x="290" y="202" font-size="12" fill="#7f1d1d" text-anchor="middle">(tranh lo email nao co)</text>
+  <line x1="480" y1="146" x2="115" y2="146" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4"/>
+  <line x1="115" y1="146" x2="115" y2="158" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#r)"/>
+  <text x="300" y="140" font-size="12" fill="#b91c1c">khong ton tai</text>
+  <rect x="40" y="164" width="150" height="46" rx="8" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="115" y="186" font-size="13" font-weight="600" fill="#991b1b" text-anchor="middle">Thong bao trung tinh</text>
+  <text x="115" y="202" font-size="12" fill="#7f1d1d" text-anchor="middle">(tranh lo email nao co)</text>
 
   <rect x="30" y="240" width="330" height="90" rx="8" fill="#f9fafb" stroke="#d1d5db"/>
   <text x="46" y="264" font-size="13.5" font-weight="700" fill="#111827">Dev nghi theo trang thai (state)</text>

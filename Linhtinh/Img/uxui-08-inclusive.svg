@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="350" viewBox="0 0 860 350" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="38" font-size="20" font-weight="700" fill="#111827">Inclusive Design (qua trinh)  vs  Accessibility (ket qua)</text>
+
+  <rect x="30" y="58" width="390" height="96" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="50" y="86" font-size="15" font-weight="700" fill="#1d4ed8">Inclusive Design = QUA TRINH</text>
+  <text x="50" y="110" font-size="13" fill="#1e3a8a">Phuong phap / tu duy lam viec: chu dong thiet ke cho</text>
+  <text x="50" y="130" font-size="13" fill="#1e3a8a">dai nguoi dung da dang nhat ngay tu dau.</text>
+
+  <rect x="440" y="58" width="390" height="96" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <text x="460" y="86" font-size="15" font-weight="700" fill="#047857">Accessibility = KET QUA</text>
+  <text x="460" y="110" font-size="13" fill="#065f46">Thuoc tinh do duoc cua san pham: co dung duoc voi</text>
+  <text x="460" y="130" font-size="13" fill="#065f46">nguoi khuyet tat khong, co dat WCAG (AA) khong.</text>
+
+  <path d="M420 106 L440 106" stroke="#9ca3af" stroke-width="2"/>
+
+  <text x="30" y="186" font-size="15" font-weight="700" fill="#111827">Cung nhu cau "dung mot tay" - 3 hoan canh, 1 giai phap</text>
+
+  <rect x="30" y="200" width="256" height="110" rx="10" fill="#faf5ff" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="46" y="226" font-size="14" font-weight="700" fill="#6d28d9">Vinh vien</text>
+  <text x="46" y="250" font-size="13" fill="#5b21b6">Nguoi cut tay</text>
+  <text x="46" y="280" font-size="12.5" fill="#6b7280">1 tay - suot doi</text>
+
+  <rect x="302" y="200" width="256" height="110" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <text x="318" y="226" font-size="14" font-weight="700" fill="#b45309">Tam thoi</text>
+  <text x="318" y="250" font-size="13" fill="#92400e">Nguoi gay tay bo bot</text>
+  <text x="318" y="280" font-size="12.5" fill="#6b7280">1 tay - vai tuan</text>
+
+  <rect x="574" y="200" width="256" height="110" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <text x="590" y="226" font-size="14" font-weight="700" fill="#047857">Hoan canh</text>
+  <text x="590" y="250" font-size="13" fill="#065f46">Nguoi dang be em be</text>
+  <text x="590" y="280" font-size="12.5" fill="#6b7280">1 tay - vai phut</text>
+
+  <text x="30" y="336" font-size="13" fill="#374151">Thiet ke cho mot tay giup ca ba - giai phap cho nhom ria thuong nang trai nghiem cho tat ca.</text>
+</svg>

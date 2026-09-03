@@ -37,6 +37,9 @@ Ba ý cốt lõi cần nhớ:
 
 **Ví dụ mô tả bằng lời:** Hình dung 3 thanh trượt. Bạn kéo thanh Lightness từ 50% lên 90% → cùng một màu xanh nhưng nhạt dần thành xanh pastel dùng làm nền. Kéo xuống 25% → xanh đậm dùng làm chữ trên nền sáng. Hue và Saturation không đổi nên cả họ màu vẫn "cùng gia đình".
 
+![[uxui-05-hsl-hsv-cylinder.png]]
+*Ba "núm vặn" của HSL (trái) so với HSB/HSV (phải): Hue quay quanh trục, Saturation đi từ tâm ra, còn núm thứ ba là Lightness vs Value — cùng ý tưởng nhưng khác nhau, đừng copy số qua lại — (nguồn: Wikimedia Commons)*
+
 > [!warning] Sai lầm hay gặp
 > - Nghĩ rằng cứ giảm Lightness là màu sẽ "đẹp hơn". Thực tế khi tăng/giảm Lightness ở hai đầu thang, bạn thường phải **tinh chỉnh cả Saturation và Hue nhẹ** để màu không bị xỉn hoặc "chết" (xem mục Color Shades & Tints).
 > - Tưởng HSL và HSB/HSV là một. Chúng khác nhau ở núm thứ ba (Lightness vs Brightness); cùng ý tưởng "vặn núm" nhưng đừng copy số qua lại giữa hai hệ.
@@ -52,6 +55,9 @@ Ba ý cốt lõi cần nhớ:
 - **Accent (màu nhấn):** màu dùng rất tiết chế để làm nổi bật một điểm cần chú ý (badge "mới", highlight).
 
 **Ví dụ mô tả bằng lời:** Một dashboard SaaS: nút "Tạo dự án" dùng xanh primary; nút "Hủy" bên cạnh dùng xám (không cần màu); một nhãn "Beta" nhỏ dùng màu accent tím để thu hút mắt đúng một điểm.
+
+![[uxui-05-palette-roles.svg]]
+*Mỗi màu trong palette có một vai trò rõ ràng — nút chính dùng primary, nút "Hủy" chỉ cần xám, nhãn "Beta" là accent xuất hiện đúng một điểm.*
 
 > [!warning] Sai lầm hay gặp
 > - **Chỉ chọn đúng 1 giá trị cho mỗi màu.** Mỗi vai trò (primary...) cần **cả một thang sắc độ** (xem mục shades), không chỉ 1 màu.
@@ -69,6 +75,9 @@ Ba ý cốt lõi cần nhớ:
 - **Info (thông tin) — xanh dương:** thông báo trung tính, gợi ý.
 
 **Ví dụ mô tả bằng lời:** Form đăng ký: ô email sai định dạng viền đỏ + chữ lỗi đỏ (error); sau khi lưu thành công hiện toast xanh lá (success); banner nhắc "Bản dùng thử còn 3 ngày" màu vàng (warning).
+
+![[uxui-05-semantic-colors.svg]]
+*Bốn màu ngữ nghĩa gắn với trạng thái, và luôn đi kèm icon + chữ để không phụ thuộc riêng vào màu.*
 
 > [!warning] Sai lầm hay gặp
 > - **Chỉ dùng màu để truyền đạt trạng thái.** Người mù màu (color blindness) sẽ không phân biệt được đỏ/xanh lá. Luôn kèm **icon hoặc chữ** — đây là yêu cầu của [[08 - Accessibility (a11y)]].
@@ -88,6 +97,9 @@ Có cả thang giúp bạn luôn có sẵn "màu nền nhạt", "màu viền", "
 
 **Ví dụ mô tả bằng lời:** Một alert lỗi: nền dùng đỏ-50 (rất nhạt), viền đỏ-200, icon đỏ-500, chữ đỏ-700 (đậm để đọc rõ). Tất cả cùng một Hue nên trông thống nhất, nhưng đủ tương phản để chữ dễ đọc.
 
+![[uxui-05-color-scale.svg]]
+*Thang đỏ 50-900 và cách một alert lỗi dùng 4 bậc khác nhau của cùng thang: nền 50, viền 200, icon 500, chữ 700.*
+
 > [!warning] Sai lầm hay gặp
 > - **Tạo thang chỉ bằng cách vặn Lightness lên/xuống.** Nếu chỉ đổi Lightness, các bậc rất sáng sẽ trông "bạc màu" và bậc rất tối trông "bùn". Kỹ thuật đúng (Refactoring UI): **xoay nhẹ Hue** (khi làm sáng thì xoay về phía màu "sáng" gần nhất trong ba mốc vàng 60° / lục-lam 180° / hồng cánh sen 300°; khi làm tối thì xoay về phía màu "tối" gần nhất trong ba mốc đỏ 0° / lục 120° / lam 240°), và **tăng nhẹ Saturation ở cả hai đầu sáng lẫn tối** để màu không bị "bạc" — mỗi lần xoay Hue chỉ nên trong khoảng ~20-30°.
 > - Đặt số bậc lung tung (blue-1, blue-2, blue-max). Bám theo chuẩn 50-900 để đồng bộ với thư viện và người khác đọc hiểu ngay.
@@ -99,6 +111,9 @@ Có cả thang giúp bạn luôn có sẵn "màu nền nhạt", "màu viền", "
 **Là gì:** Một quy tắc tỷ lệ phân bổ màu mượn từ thiết kế nội thất: **60% màu chủ đạo (thường là nền trung tính), 30% màu phụ, 10% màu nhấn.** Nó giúp bố cục có sự cân bằng và điểm nhấn thay vì "màu nào cũng đòi được chú ý".
 
 **Ví dụ mô tả bằng lời:** Một trang SaaS: 60% là nền trắng/xám rất nhạt; 30% là các khối card, sidebar màu trung tính đậm hơn; 10% là các nút primary xanh và vài accent — chính 10% này dẫn mắt user tới hành động quan trọng.
+
+![[uxui-05-60-30-10.svg]]
+*Bên trái giữ đúng tỷ lệ nên mắt đi thẳng tới nút xanh duy nhất; bên phải màu brand tràn lan nên không còn gì nổi bật.*
 
 > [!warning] Sai lầm hay gặp
 > - Hiểu máy móc thành "phải đo đúng 60/30/10 phần trăm pixel". Đây là **tỷ lệ cảm nhận, mang tính hướng dẫn**, không phải công thức toán. Ý cốt lõi: màu nhấn phải **hiếm** thì mới còn sức nhấn.
@@ -113,6 +128,9 @@ Có cả thang giúp bạn luôn có sẵn "màu nền nhạt", "màu viền", "
 **Vì sao hiệu quả:** Nếu giao diện đã rõ ràng, có hierarchy tốt khi chỉ dùng xám (chỗ nào quan trọng thì đậm/to hơn, chỗ nào phụ thì nhạt hơn), thì thêm màu chỉ tăng thêm sức mạnh. Ngược lại, nếu bạn **phải** dùng màu để phân biệt các phần thì đó là dấu hiệu spacing, kích thước, độ đậm chữ đang chưa làm tốt việc của chúng — vấn đề thuộc về [[03 - Visual Hierarchy & Layout]].
 
 **Ví dụ mô tả bằng lời:** Dựng dashboard hoàn toàn bằng trắng-xám-đen: dùng độ đậm chữ và khoảng cách để làm nổi tiêu đề, làm mờ chú thích. Khi bố cục đã đọc được rõ ràng, mới tô xanh cho nút chính và đỏ cho cảnh báo.
+
+![[uxui-05-grayscale-first.svg]]
+*Bước 1 dựng hierarchy hoàn toàn bằng thang xám; bước 2 thêm màu chỉ để làm mạnh thêm những gì đã rõ.*
 
 > [!warning] Sai lầm hay gặp
 > - Chọn màu brand ngay từ phút đầu và dựng layout quanh nó → khi đổi màu brand là vỡ trận.
@@ -131,6 +149,12 @@ Chuẩn **WCAG (Web Content Accessibility Guidelines)** mức **AA**:
 - (Mức AAA cao hơn: 7:1 cho text thường, 4.5:1 cho text lớn — tham khảo khi cần chặt chẽ hơn.)
 
 **Ví dụ mô tả bằng lời:** Chữ xám nhạt (#999) trên nền trắng trông "sang" nhưng thường chỉ đạt ~2.8:1 → trượt AA, người dùng lớn tuổi đọc không nổi. Đậm lên tới mức đạt 4.5:1 mới hợp lệ.
+
+![[uxui-05-contrast-ratio.svg]]
+*Cùng nền trắng: #999 chỉ đạt 2.85:1 (trượt AA), #767676 vừa đủ 4.54:1, #374151 đạt 10.31:1.*
+
+![[uxui-05-color-blind-schemes.jpg]]
+*Cùng một bảng màu nhìn qua các dạng mù màu khác nhau — nhiều nhãn không còn phân biệt được nếu chỉ dựa vào màu — (nguồn: Wikimedia Commons)*
 
 > [!warning] Sai lầm hay gặp
 > - Đánh giá tương phản bằng mắt. Luôn **kiểm bằng tool** (contrast checker).
@@ -154,6 +178,9 @@ Chuẩn **WCAG (Web Content Accessibility Guidelines)** mức **AA**:
 
 **Ví dụ mô tả bằng lời:** Nền app là xám-đen #121212, card đặt lên trên sáng hơn thành #1E1E1E để tách lớp, chữ chính là xám #E0E0E0 thay vì trắng tinh, nút primary dùng xanh nhạt hơn so với ở light mode.
 
+![[uxui-05-dark-mode.svg]]
+*Invert cứng (#000 + #FFF) so với dark theme thiết kế lại: nền #121212, card #1E1E1E nổi lên bằng độ sáng, chữ #E0E0E0, màu brand giảm saturation.*
+
 > [!warning] Sai lầm hay gặp
 > - **Invert cứng** (lật ngược mọi màu) — cho ra kết quả xấu và sai tương phản.
 > - Quên rằng màu semantic cũng phải chỉnh cho dark mode; đỏ/xanh lá của light mode có thể quá tối hoặc quá chói trên nền tối.
@@ -166,6 +193,9 @@ Chuẩn **WCAG (Web Content Accessibility Guidelines)** mức **AA**:
 **Là gì:** Ý tưởng rằng màu gợi lên cảm xúc và liên tưởng nhất định: xanh dương → tin cậy/ổn định (nên nhiều app tài chính, SaaS dùng), xanh lá → thành công/tăng trưởng, đỏ → khẩn cấp/nguy hiểm, vàng → chú ý/lạc quan, tím → sáng tạo/cao cấp.
 
 **Cách dùng hợp lý:** Xem đây là **một gợi ý mềm** để chọn tông brand phù hợp ngành, và để tận dụng kỳ vọng có sẵn (đỏ = lỗi). Nó KHÔNG phải quy luật cứng.
+
+![[uxui-05-color-psychology.svg]]
+*Liên tưởng màu chỉ là gợi ý mềm để chọn tông brand; hiệu quả thực tế đến từ tương phản và ngữ cảnh, không phải bản thân màu.*
 
 > [!warning] Sai lầm hay gặp (tránh nói quá)
 > - **Thổi phồng** kiểu "màu cam làm tăng 30% chuyển đổi". Các con số này phần lớn là huyền thoại marketing, không có cơ sở khoa học vững; hiệu quả nút bấm phụ thuộc **tương phản và ngữ cảnh** hơn là bản thân màu.

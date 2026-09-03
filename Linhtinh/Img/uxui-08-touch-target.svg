@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="330" viewBox="0 0 860 330" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="30" y="38" font-size="20" font-weight="700" fill="#111827">Touch target size - vung bam thuc te, khong phai co icon</text>
+
+  <rect x="30" y="58" width="256" height="220" rx="10" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+  <text x="46" y="84" font-size="14.5" font-weight="700" fill="#b91c1c">X  Icon 16px nam sat nhau</text>
+  <rect x="46" y="96" width="224" height="70" rx="6" fill="#ffffff" stroke="#fecaca"/>
+  <rect x="150" y="122" width="16" height="16" fill="#6b7280"/>
+  <rect x="172" y="122" width="16" height="16" fill="#6b7280"/>
+  <rect x="194" y="122" width="16" height="16" fill="#6b7280"/>
+  <text x="60" y="135" font-size="12.5" fill="#374151">Don hang #1024</text>
+  <circle cx="182" cy="130" r="30" fill="#ef4444" fill-opacity="0.28" stroke="#ef4444" stroke-dasharray="4 3"/>
+  <text x="46" y="196" font-size="12.5" fill="#7f1d1d">Dau ngon tay to hon con tro chuot</text>
+  <text x="46" y="216" font-size="12.5" fill="#7f1d1d">-&gt; bam nham edit / xoa lien tuc</text>
+  <text x="46" y="244" font-size="12.5" fill="#b91c1c">Anh huong nang nhat toi nguoi run tay,</text>
+  <text x="46" y="262" font-size="12.5" fill="#b91c1c">nguoi lon tuoi, nguoi dang di bo.</text>
+
+  <rect x="302" y="58" width="256" height="220" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <text x="318" y="84" font-size="14.5" font-weight="700" fill="#047857">V  Noi vung bam bang padding</text>
+  <rect x="318" y="96" width="224" height="90" rx="6" fill="#ffffff" stroke="#a7f3d0"/>
+  <rect x="352" y="106" width="70" height="70" rx="8" fill="#10b981" fill-opacity="0.18" stroke="#10b981"/>
+  <rect x="379" y="133" width="16" height="16" fill="#374151"/>
+  <rect x="438" y="106" width="70" height="70" rx="8" fill="#10b981" fill-opacity="0.18" stroke="#10b981"/>
+  <rect x="465" y="133" width="16" height="16" fill="#374151"/>
+  <text x="318" y="206" font-size="12.5" fill="#065f46">Icon van nho ve mat HINH,</text>
+  <text x="318" y="226" font-size="12.5" fill="#065f46">nhung VUNG BAM duoc noi rong ra.</text>
+  <text x="318" y="254" font-size="12.5" fill="#047857">Neu buoc phai nho, WCAG cho phep bu</text>
+  <text x="318" y="272" font-size="12.5" fill="#047857">bang khoang cach (spacing) du rong.</text>
+
+  <rect x="574" y="58" width="256" height="220" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+  <text x="590" y="84" font-size="14.5" font-weight="700" fill="#111827">Cac con so can nho</text>
+  <rect x="590" y="98" width="224" height="42" rx="6" fill="#fffbeb" stroke="#f59e0b"/>
+  <text x="602" y="116" font-size="12.5" font-weight="700" fill="#b45309">24 x 24 px - WCAG 2.2 SC 2.5.8</text>
+  <text x="602" y="133" font-size="12" fill="#92400e">muc AA, san toi thieu de khong fail</text>
+  <rect x="590" y="148" width="224" height="42" rx="6" fill="#faf5ff" stroke="#8b5cf6"/>
+  <text x="602" y="166" font-size="12.5" font-weight="700" fill="#6d28d9">44 x 44 px - WCAG 2.2 SC 2.5.5</text>
+  <text x="602" y="183" font-size="12" fill="#5b21b6">muc AAA, khat khe hon</text>
+  <rect x="590" y="198" width="224" height="58" rx="6" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="602" y="216" font-size="12.5" font-weight="700" fill="#047857">Apple HIG ~44x44pt</text>
+  <text x="602" y="234" font-size="12.5" font-weight="700" fill="#047857">Google Material ~48x48dp</text>
+  <text x="602" y="250" font-size="12" fill="#065f46">khuyen nghi cua hang, khong phai WCAG</text>
+  <text x="590" y="272" font-size="12" fill="#374151">24px = san AA  |  ~44-48px = nen lam</text>
+</svg>

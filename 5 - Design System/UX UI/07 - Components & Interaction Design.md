@@ -137,6 +137,9 @@ Chúng nhỏ nhưng làm sản phẩm "có hồn" và cho phản hồi tức th�
 
 **Ví dụ SaaS:** Toggle bật tính năng: khi bấm, nút trượt mượt từ trái sang phải và đổi màu — đó là feedback trực quan xác nhận trạng thái đã đổi. Icon chuông thông báo rung nhẹ một cái khi có notification mới. Nút "Copy API key" bấm xong đổi thành dấu tích "Copied!" trong 2 giây rồi trở lại.
 
+![[uxui-07-microinteraction-copy.svg]]
+*Nút "Copy API key" tách ra đúng bốn phần trigger — rules — feedback — loop của Dan Saffer.*
+
 **Sai lầm hay gặp:** Nhồi micro-interaction ở mọi nơi cho "vui mắt" khiến giao diện rối và chậm. Micro-interaction tốt phải **phục vụ một mục đích** (xác nhận, hướng dẫn, cho biết trạng thái), không phải trang trí.
 
 ---
@@ -150,6 +153,9 @@ Chúng nhỏ nhưng làm sản phẩm "có hồn" và cho phản hồi tức th�
 - **Purpose (mục đích):** mỗi animation phải trả lời "nó giúp người dùng hiểu điều gì?". Ví dụ: modal trượt lên từ nút vừa bấm → cho thấy mối liên hệ giữa nút và modal.
 
 **Ví dụ SaaS:** Menu dropdown mở ra với hiệu ứng trượt xuống + mờ dần trong ~200ms → mắt kịp theo dõi nó xuất hiện từ đâu. Một dòng vừa được thêm vào bảng thì highlight vàng nhạt rồi phai đi → mắt biết ngay dòng nào mới.
+
+![[uxui-07-motion-easing.svg]]
+*Thang thời lượng animation và ba đường cong easing: linear máy móc, ease-out cho thứ xuất hiện, ease-in-out cho di chuyển.*
 
 **Sai lầm hay gặp:** Lạm dụng animation dài, nảy tưng tưng, hoặc chạy ở mọi thao tác lặp lại nhiều lần (ví dụ mỗi lần chuyển tab) → gây khó chịu và làm chậm cảm giác thao tác. Ngoài ra phải tôn trọng cài đặt "reduced motion" của người dùng (xem [[08 - Accessibility (a11y)]]) vì animation mạnh có thể gây chóng mặt. Nguyên tắc: animation nên **mờ nhạt đến mức người dùng gần như không nhận ra**, chỉ cảm thấy mọi thứ mượt.
 
@@ -166,6 +172,9 @@ Có nguyên tắc quan trọng: với chờ **rất ngắn (dưới ~1 giây)**,
 
 **Ví dụ SaaS:** Mở dashboard analytics: thay vì spinner giữa màn hình trống, hiện skeleton của các thẻ số liệu và biểu đồ (các khối xám) → khi dữ liệu về thì "lấp" vào đúng chỗ, chuyển tiếp mượt mà.
 
+![[uxui-07-skeleton-vs-spinner.svg]]
+*Spinner giữa màn hình trống không cho biết gì, còn skeleton chiếm đúng chỗ nội dung thật nên khi dữ liệu về không bị nhảy layout.*
+
 **Sai lầm hay gặp:** Dùng spinner toàn màn hình cho mọi thứ (kể cả khi chỉ đổi một phần nhỏ). Hoặc để layout "nhảy giật" (layout shift) khi nội dung load xong đẩy mọi thứ xuống — skeleton nên chiếm đúng kích thước của nội dung thật để tránh nhảy. Vấn đề khoảng cách/kích thước liên quan [[06 - Spacing & Design Tokens]].
 
 ---
@@ -177,6 +186,9 @@ Có nguyên tắc quan trọng: với chờ **rất ngắn (dưới ~1 giây)**,
 Lợi ích: giao diện phản hồi tức thì, cảm giác cực nhanh — dù mạng có độ trễ. Đây là một dạng cao cấp của Interactive Feedback ở trên.
 
 **Ví dụ SaaS:** Bấm "thích" một comment → tim đỏ lên ngay và số đếm tăng ngay, không đợi API. Kéo một task từ cột "To do" sang "Done" trong Kanban → task nhảy sang ngay. Nếu chẳng may server lỗi, nó lặng lẽ quay về chỗ cũ kèm một thông báo nhỏ "Không lưu được, thử lại".
+
+![[uxui-07-optimistic-ui.svg]]
+*Kéo task sang "Done": bên trên đợi API mới cập nhật, bên dưới cập nhật ngay rồi rollback nếu server báo lỗi.*
 
 **Sai lầm hay gặp:** Dùng optimistic UI cho hành động **có hậu quả nặng hoặc dễ thất bại** (ví dụ thanh toán, thao tác tiền bạc) — nếu rollback sẽ gây hoang mang và mất niềm tin. Chỉ nên dùng cho thao tác nhẹ, khả năng thành công cao (thích, đổi trạng thái, sắp xếp). Ngoài ra phải xử lý rollback tử tế; nếu "báo thành công giả" rồi âm thầm mất dữ liệu thì còn tệ hơn không dùng.
 

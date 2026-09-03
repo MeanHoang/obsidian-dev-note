@@ -41,6 +41,9 @@ Ví dụ SaaS (mô tả bằng lời, đây là các hành vi công khai của s
 
 Điểm chung: họ đưa người dùng **chạm vào giá trị**, không phải đọc hướng dẫn về giá trị.
 
+![[uxui-09-onboarding-aha-moment.svg]]
+*Onboarding là đường ngắn nhất dẫn người dùng tới Aha Moment — mỗi sản phẩm có một Aha Moment khác nhau.*
+
 > [!warning] Sai lầm hay gặp
 > - **Coi onboarding = tour giới thiệu UI.** Chỉ vào từng nút không giúp người dùng hiểu *tại sao* nên dùng.
 > - **Không xác định được Aha Moment**, nên onboarding dàn trải, không có đích.
@@ -63,6 +66,9 @@ Cách rút ngắn TTV trong thực tế:
 - **Làm sẵn giúp người dùng**: import dữ liệu tự động, template, hoặc AI điền trước.
 
 Ví dụ: **Linear** nổi tiếng vì tốc độ và việc dựng một workspace rất nhanh; **Vercel** cho deploy một project chỉ với vài bước kết nối repo — cả hai đều tối ưu để người dùng thấy "nó chạy" cực nhanh.
+
+![[uxui-09-time-to-value.svg]]
+*Đặt tường thành trước value làm TTV dài ra; cho dùng thử với sample data rồi cấu hình sau thì TTV ngắn lại.*
 
 > [!warning] Sai lầm hay gặp
 > - **Đặt tường thành trước value**: bắt điền form dài, xác minh, tạo team... trước khi cho thấy bất cứ điều gì hữu ích.
@@ -89,6 +95,9 @@ Có thể phân biệt các loại empty state:
 - **User-cleared** (đã xong hết việc, ví dụ inbox zero): dịp để khen/động viên.
 - **No results / error** (tìm không ra, hoặc lỗi tải): cần nói rõ lý do và cách xử lý.
 
+![[uxui-09-empty-states.svg]]
+*Empty state tốt có giải thích ngắn + CTA rõ ràng, và mỗi loại empty state cần một thông điệp riêng.*
+
 > [!warning] Sai lầm hay gặp
 > - **Màn hình trắng trơn** hoặc chỉ có chữ "No data" — người dùng không biết làm gì tiếp.
 > - **Dùng chung một empty state** cho cả "chưa có dữ liệu" lẫn "tìm kiếm không ra" — hai tình huống cần thông điệp khác nhau.
@@ -111,6 +120,9 @@ Biểu hiện trong SaaS:
 
 Ví dụ: **Stripe** ẩn hàng loạt cấu hình nâng cao (webhooks, radar rules, API chi tiết) khỏi luồng chính; người dùng phổ thông làm việc với giao diện gọn, còn developer cần thì đào sâu vào phần nâng cao. **Figma** giấu bớt thuộc tính nâng cao trong các panel có thể mở/gập.
 
+![[uxui-09-progressive-disclosure.svg]]
+*Cài đặt cơ bản hiện sẵn, phần nâng cao nằm sau nhãn "Advanced" — nhưng luôn có tín hiệu cho biết còn tùy chọn phía sau.*
+
 > [!warning] Sai lầm hay gặp
 > - **Giấu quá tay**: ẩn cả những chức năng người dùng cần thường xuyên, khiến họ không tìm ra.
 > - **Nhầm progressive disclosure với "chôn sâu 5 lớp menu"** — hé lộ dần khác với làm khó tiếp cận.
@@ -130,6 +142,9 @@ Các dạng thường gặp:
 Ví dụ: nhiều SaaS như **Asana**, **Slack** dùng checklist "hãy hoàn thành các bước này" ở lần đăng nhập đầu; các công cụ như Intercom/Appcues phổ biến chính vì cung cấp tooltip và tour dạng này.
 
 Nguyên tắc vàng: **dạy đúng lúc người dùng cần, không phải đúng lúc bạn muốn nói.** Một tooltip xuất hiện ngay khi người dùng chuẩn bị dùng tính năng đó hữu ích hơn nhiều so với một tour 8 bước lúc chưa hiểu gì.
+
+![[uxui-09-progressive-onboarding.svg]]
+*Onboarding checklist tận dụng thanh tiến độ, còn tooltip ngữ cảnh dạy đúng lúc người dùng sắp dùng tính năng.*
 
 > [!warning] Sai lầm hay gặp
 > - **Tour ép buộc, dài dòng** ngay lần đầu, không cho skip — người dùng bấm loạn để thoát và không nhớ gì.
@@ -151,6 +166,9 @@ Các yếu tố UX quan trọng:
 - **Giải đáp lo lắng ngay tại chỗ**: FAQ về hủy, hoàn tiền, đổi gói, giới hạn.
 
 Ví dụ: **Stripe**, **Linear**, **Notion** đều dùng bố cục bảng giá gọn với vài cột, cột được khuyến nghị nổi bật hơn, và có toggle chu kỳ thanh toán. Nhiều SaaS đặt gói cao cấp bên cạnh làm "mỏ neo" khiến gói tầm trung trông hợp lý hơn — đây là kỹ thuật hợp pháp *miễn là không đánh lừa*.
+
+![[uxui-09-pricing-page.svg]]
+*Bảng giá 3 cột với gói khuyến nghị nổi bật, toggle chu kỳ thanh toán và giá minh bạch giúp người dùng quyết định nhanh.*
 
 > [!warning] Sai lầm hay gặp
 > - **Giấu giá** ("Contact us" cho mọi gói) khi không cần thiết — tăng ma sát, mất niềm tin.
@@ -175,6 +193,9 @@ Nguyên tắc thiết kế:
 
 Ví dụ: **Linear** làm giao diện dày đặc issue nhưng vẫn dễ quét nhờ typography chặt chẽ và tương phản tinh tế; **Stripe Dashboard** trình bày lượng dữ liệu giao dịch lớn với phân cấp rõ giữa chỉ số tổng quan và chi tiết; **Datadog / analytics tools** cho mật độ rất cao nhưng có cấu trúc grid nhất quán.
 
+![[uxui-09-dashboard-data-heavy.svg]]
+*Mật độ dữ liệu cao vẫn quét được nhờ visual hierarchy, số căn lề theo cột, filter/sort mạnh và mở chi tiết theo hàng.*
+
 > [!warning] Sai lầm hay gặp
 > - **Nhồi dữ liệu không phân cấp**: mọi thứ cùng cỡ chữ, cùng độ đậm → không thấy cái gì quan trọng.
 > - **"Dumbing down" cho power user**: ép người dùng chuyên nghiệp click nhiều lần cho việc họ muốn thấy ngay.
@@ -196,6 +217,9 @@ Nguyên tắc giảm ma sát:
 - **Nút submit nói rõ hành động** ("Tạo tài khoản" thay vì "Submit").
 
 Ví dụ: nhiều SaaS hiện đại (**Vercel**, **Linear**, **Notion**) cho đăng ký bằng Google/GitHub một chạm; các công cụ B2B thường hoãn việc hỏi thông tin công ty đến *sau* khi người dùng đã vào trong sản phẩm.
+
+![[uxui-09-signup-friction.svg]]
+*Form đăng ký dài nhiều cột tạo ma sát lớn; form một cột hỏi ít nhất có thể, có SSO và inline validation thì mượt hơn hẳn.*
 
 > [!warning] Sai lầm hay gặp
 > - **Form đăng ký dài** hỏi cả tên công ty, số điện thoại, vai trò... ngay từ đầu.
@@ -249,6 +273,9 @@ Các dạng phản hồi phổ biến:
 Khi nào dùng gì:
 - Hành động **nhẹ, đảo ngược được** → làm ngay + Undo (toast).
 - Hành động **nặng, khó/không đảo ngược được** (xóa vĩnh viễn, thanh toán lớn) → confirmation rõ ràng.
+
+![[uxui-09-feedback-undo.svg]]
+*Việc nhẹ và đảo ngược được thì làm ngay kèm toast "Hoàn tác"; chỉ dùng confirmation dialog cho hành động nặng.*
 
 > [!warning] Sai lầm hay gặp
 > - **Không có phản hồi**: người dùng bấm nút, không biết có ăn không → bấm lại nhiều lần.
