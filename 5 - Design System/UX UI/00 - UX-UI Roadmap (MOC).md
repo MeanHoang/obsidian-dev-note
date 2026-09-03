@@ -35,6 +35,7 @@ created: 2026-08-23
 | 8 | [[08 - Accessibility (a11y)]] | WCAG, Contrast Ratio, Keyboard Nav, ARIA, Focus |
 | 9 | [[09 - UX cho SaaS]] | Onboarding, Empty State, Pricing, Dashboard, Activation |
 | 10 | [[10 - Design Process & Tools]] | Research, Wireframe, Prototype, Usability Test, Figma |
+| 11 | [[11 - Design for Agent (Agentic UX)]] | GEO, agent đọc a11y tree, ARIA states, prompt injection, UCP/agentic commerce |
 
 ## ✅ Checklist "app của tôi có đẹp & dễ dùng không?"
 

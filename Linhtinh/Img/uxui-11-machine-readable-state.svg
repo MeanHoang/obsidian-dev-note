@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="370" viewBox="0 0 860 370" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="430" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="#111827">Trang thai loading: trong CSS class hay trong attribute?</text>
+  <text x="430" y="46" text-anchor="middle" font-size="11.5" fill="#6b7280">MDN: "ARIA only modifies the accessibility tree" — doi mau bang CSS thi a11y tree khong doi gi ca</text>
+
+  <!-- BAD -->
+  <rect x="20" y="64" width="390" height="278" rx="10" fill="#fdf3f2" stroke="#e8b4ae" stroke-width="1.5"/>
+  <text x="40" y="92" font-size="14.5" font-weight="700" fill="#b3261e">&#10007; Spinner bang CSS class</text>
+
+  <rect x="40" y="106" width="350" height="56" rx="6" fill="#ffffff" stroke="#f0d3d0"/>
+  <text x="54" y="126" font-size="10.5" font-family="monospace" fill="#374151">&lt;button class="btn is-loading"&gt;</text>
+  <text x="64" y="144" font-size="10.5" font-family="monospace" fill="#374151">&lt;span class="spinner"&gt;&lt;/span&gt;</text>
+
+  <text x="40" y="186" font-size="11.5" fill="#6b7280">Nguoi nhin:</text>
+  <rect x="130" y="172" width="80" height="30" rx="6" fill="#eceff3" stroke="#dfe3e8"/>
+  <path d="M162 179 a8 8 0 1 1 -6 3" fill="none" stroke="#8a929c" stroke-width="2.5"/>
+  <text x="222" y="192" font-size="11.5" fill="#4b5563">a, dang chay</text>
+
+  <text x="40" y="234" font-size="11.5" fill="#6b7280">Agent doc a11y tree:</text>
+  <rect x="40" y="244" width="350" height="52" rx="6" fill="#fbe9e7" stroke="#e8b4ae" stroke-dasharray="4 3"/>
+  <text x="215" y="266" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b3261e">role: button — name: (khong co)</text>
+  <text x="215" y="286" text-anchor="middle" font-size="11.5" fill="#b3261e">KHONG co tin hieu nao noi "dang chay"</text>
+
+  <text x="40" y="322" font-size="12" fill="#b3261e">Nut dang loading va nut binh thuong, voi no, la MOT.</text>
+
+  <!-- GOOD -->
+  <rect x="450" y="64" width="390" height="278" rx="10" fill="#f1f9f4" stroke="#a8d5b9" stroke-width="1.5"/>
+  <text x="470" y="92" font-size="14.5" font-weight="700" fill="#1e7e45">&#10003; Trang thai nam trong attribute</text>
+
+  <rect x="470" y="106" width="350" height="56" rx="6" fill="#ffffff" stroke="#cfe6d8"/>
+  <text x="484" y="126" font-size="10.5" font-family="monospace" fill="#374151">&lt;button aria-busy="true"</text>
+  <text x="494" y="144" font-size="10.5" font-family="monospace" fill="#374151">aria-disabled="true"&gt; Saving tier&#8230;</text>
+
+  <text x="470" y="186" font-size="11.5" fill="#6b7280">Nguoi nhin:</text>
+  <rect x="560" y="172" width="130" height="30" rx="6" fill="#eceff3" stroke="#dfe3e8"/>
+  <text x="625" y="192" text-anchor="middle" font-size="12" fill="#5c636c">Saving tier&#8230;</text>
+  <text x="702" y="192" font-size="11.5" fill="#4b5563">y het</text>
+
+  <text x="470" y="234" font-size="11.5" fill="#6b7280">Agent doc a11y tree:</text>
+  <rect x="470" y="244" width="350" height="52" rx="6" fill="#ffffff" stroke="#a8d5b9"/>
+  <text x="486" y="264" font-size="11.5" font-family="monospace" fill="#1e7e45">role: button · name: "Saving tier&#8230;"</text>
+  <text x="486" y="284" font-size="11.5" font-family="monospace" fill="#1e7e45">busy: true · disabled: true</text>
+
+  <text x="470" y="322" font-size="12" fill="#1e7e45">Tin hieu "khoan, dang chay" den duoc agent.</text>
+</svg>

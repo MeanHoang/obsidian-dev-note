@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="380" viewBox="0 0 860 380" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="430" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="#111827">3 cach agent tri giac mot trang web</text>
+  <text x="430" y="46" text-anchor="middle" font-size="11.5" fill="#6b7280">Agent hien dai ket hop ca ba — nhung khong phai agent nao cung co ca ba</text>
+
+  <!-- col 1 -->
+  <rect x="20" y="64" width="266" height="270" rx="10" fill="#fff8ec" stroke="#e8c99a" stroke-width="1.5"/>
+  <text x="40" y="92" font-size="14.5" font-weight="700" fill="#92400e">1. Screenshot (pixel)</text>
+  <rect x="40" y="106" width="226" height="76" rx="6" fill="#ffffff" stroke="#e6d5b8"/>
+  <rect x="56" y="120" width="90" height="16" rx="3" fill="#d9dde3"/>
+  <rect x="56" y="144" width="150" height="24" rx="5" fill="#c9d3e0"/>
+  <text x="101" y="160" text-anchor="middle" font-size="10" fill="#7c8794">?? chu mo</text>
+  <text x="40" y="204" font-size="12.5" fill="#374151">Chup man hinh roi "nhin" nhu nguoi.</text>
+  <text x="40" y="228" font-size="12.5" font-weight="600" fill="#1e7e45">+ Thay dung nhung gi nguoi thay</text>
+  <text x="40" y="252" font-size="12.5" font-weight="600" fill="#b3261e">&#8722; Phai OCR &#8594; doc sai chuoi kho</text>
+  <text x="40" y="274" font-size="11.5" fill="#6b7280">Claude computer use: toa do tinh theo</text>
+  <text x="40" y="292" font-size="11.5" fill="#6b7280">screenshot pixel, khong co DOM.</text>
+  <text x="40" y="316" font-size="11.5" fill="#6b7280">Operator co task fail 0/10 vi OCR.</text>
+
+  <!-- col 2 -->
+  <rect x="298" y="64" width="266" height="270" rx="10" fill="#eef4fd" stroke="#a9c4ea" stroke-width="1.5"/>
+  <text x="318" y="92" font-size="14.5" font-weight="700" fill="#1a4d8f">2. HTML / DOM</text>
+  <rect x="318" y="106" width="226" height="76" rx="6" fill="#ffffff" stroke="#cddcf0"/>
+  <text x="332" y="126" font-size="10.5" font-family="monospace" fill="#374151">&lt;div class="sc-1x9k2j"&gt;</text>
+  <text x="342" y="142" font-size="10.5" font-family="monospace" fill="#374151">&lt;button id="redeem"&gt;</text>
+  <text x="352" y="158" font-size="10.5" font-family="monospace" fill="#374151">Redeem 500 points</text>
+  <text x="342" y="174" font-size="10.5" font-family="monospace" fill="#374151">&lt;/button&gt;</text>
+  <text x="318" y="204" font-size="12.5" fill="#374151">Doc thang ma nguon cua trang.</text>
+  <text x="318" y="228" font-size="12.5" font-weight="600" fill="#1e7e45">+ Chinh xac, khong doan</text>
+  <text x="318" y="252" font-size="12.5" font-weight="600" fill="#b3261e">&#8722; Rat dai, lan nhieu nhieu</text>
+  <text x="318" y="274" font-size="11.5" fill="#6b7280">Claude in Chrome doc duoc DOM —</text>
+  <text x="318" y="292" font-size="11.5" fill="#6b7280">phat hien duoc form field an.</text>
+
+  <!-- col 3 -->
+  <rect x="576" y="64" width="264" height="270" rx="10" fill="#f1f9f4" stroke="#a8d5b9" stroke-width="1.5"/>
+  <text x="596" y="92" font-size="14.5" font-weight="700" fill="#1e7e45">3. Accessibility tree</text>
+  <rect x="596" y="106" width="224" height="76" rx="6" fill="#ffffff" stroke="#cfe6d8"/>
+  <text x="610" y="128" font-size="11" font-family="monospace" fill="#374151">button</text>
+  <text x="610" y="146" font-size="11" font-family="monospace" fill="#374151">  name: "Redeem 500 points"</text>
+  <text x="610" y="164" font-size="11" font-family="monospace" fill="#374151">  focusable: true</text>
+  <text x="596" y="204" font-size="12.5" fill="#374151">Cay ngu nghia trinh duyet dung cho</text>
+  <text x="596" y="222" font-size="12.5" fill="#374151">screen reader.</text>
+  <text x="596" y="248" font-size="12.5" font-weight="600" fill="#1e7e45">+ Bo het nhieu thi giac cua CSS</text>
+  <text x="596" y="272" font-size="12.5" font-weight="600" fill="#b3261e">&#8722; Chi thay cai ban khai bao dung</text>
+  <text x="596" y="296" font-size="11.5" fill="#6b7280">Chrome goi day la "primary data</text>
+  <text x="596" y="314" font-size="11.5" fill="#6b7280">model" cua agent.</text>
+
+  <text x="20" y="362" font-size="11.5" fill="#6b7280">Moi thong tin ban CHI truyen tai bang mau sac hoac icon la thong tin ban dang giau khoi agent.</text>
+</svg>

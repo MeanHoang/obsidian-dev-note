@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="400" viewBox="0 0 860 400" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="430" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#111827">Hai loai agent hoan toan khac nhau — dung lan</text>
+
+  <!-- left: discovery -->
+  <rect x="20" y="48" width="390" height="330" rx="10" fill="#eef4fd" stroke="#a9c4ea" stroke-width="1.5"/>
+  <text x="40" y="76" font-size="15" font-weight="700" fill="#1a4d8f">1. Agent GIOI THIEU app (discovery)</text>
+  <text x="40" y="98" font-size="12" fill="#4b5563">Muc 1-4 cua bai</text>
+
+  <rect x="44" y="112" width="342" height="60" rx="8" fill="#ffffff" stroke="#c9d8ef"/>
+  <text x="62" y="136" font-size="13" fill="#111827">User: "app loyalty nao tot cho Shopify?"</text>
+  <text x="62" y="158" font-size="13" fill="#6b7280">→ agent tra loi bang MOT doan van</text>
+
+  <text x="430" y="196" text-anchor="middle" font-size="12" fill="#1a4d8f">no doc gi</text>
+  <path d="M215 178 L215 196" stroke="#7fa5d8" stroke-width="1.5"/>
+
+  <rect x="44" y="200" width="342" height="86" rx="8" fill="#ffffff" stroke="#c9d8ef"/>
+  <text x="62" y="224" font-size="13" font-weight="600" fill="#111827">Noi dung web noi VE ban</text>
+  <text x="62" y="246" font-size="12.5" fill="#4b5563">Reddit, Wikipedia, bai bao, forum, docs...</text>
+  <text x="62" y="268" font-size="12.5" fill="#4b5563">Khong phai giao dien cua ban</text>
+
+  <text x="44" y="312" font-size="13" font-weight="600" fill="#1a4d8f">Toi uu bang:</text>
+  <text x="44" y="334" font-size="12.5" fill="#374151">cach viet noi dung, duoc nhac ten o dau,</text>
+  <text x="44" y="354" font-size="12.5" fill="#374151">khong chan nham search bot</text>
+
+  <!-- right: operability -->
+  <rect x="450" y="48" width="390" height="330" rx="10" fill="#f3f0fb" stroke="#c0b3e8" stroke-width="1.5"/>
+  <text x="470" y="76" font-size="15" font-weight="700" fill="#5b3fa8">2. Agent THAO TAC app (operability)</text>
+  <text x="470" y="98" font-size="12" fill="#4b5563">Muc 5-9 cua bai</text>
+
+  <rect x="474" y="112" width="342" height="60" rx="8" fill="#ffffff" stroke="#d5cbf0"/>
+  <text x="492" y="136" font-size="13" fill="#111827">User: "vao app do bat tier VIP cho toi"</text>
+  <text x="492" y="158" font-size="13" fill="#6b7280">→ agent thay user click, dien form</text>
+
+  <path d="M645 178 L645 196" stroke="#a292d8" stroke-width="1.5"/>
+  <text x="645" y="196" text-anchor="middle" font-size="12" fill="#5b3fa8">no doc gi</text>
+
+  <rect x="474" y="200" width="342" height="86" rx="8" fill="#ffffff" stroke="#d5cbf0"/>
+  <text x="492" y="224" font-size="13" font-weight="600" fill="#111827">Giao dien CUA ban</text>
+  <text x="492" y="246" font-size="12.5" fill="#4b5563">screenshot (pixel) / DOM / accessibility tree</text>
+  <text x="492" y="268" font-size="12.5" fill="#4b5563">Khong nhin bang mat nguoi</text>
+
+  <text x="474" y="312" font-size="13" font-weight="600" fill="#5b3fa8">Toi uu bang:</text>
+  <text x="474" y="334" font-size="12.5" fill="#374151">semantic HTML, ARIA, selector on dinh,</text>
+  <text x="474" y="354" font-size="12.5" fill="#374151">trang thai may doc duoc</text>
+</svg>

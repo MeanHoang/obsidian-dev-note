@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="360" viewBox="0 0 860 360" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="430" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="#111827">Cai gi tuong quan manh nhat voi viec duoc AI nhac ten</text>
+  <text x="430" y="46" text-anchor="middle" font-size="11.5" fill="#6b7280">Ahrefs, 75.000 brand, AI Overview response (26/05/2025) — he so tuong quan Spearman</text>
+
+  <!-- axis -->
+  <line x1="240" y1="66" x2="240" y2="296" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="240" y1="296" x2="820" y2="296" stroke="#d1d5db" stroke-width="1"/>
+  <text x="240" y="314" text-anchor="middle" font-size="10.5" fill="#9ca3af">0</text>
+  <text x="472" y="314" text-anchor="middle" font-size="10.5" fill="#9ca3af">0,4</text>
+  <text x="704" y="314" text-anchor="middle" font-size="10.5" fill="#9ca3af">0,8</text>
+
+  <!-- bars: scale 580px per 0.8 => 725 px per 1.0 -->
+  <text x="228" y="87" text-anchor="end" font-size="12.5" font-weight="700" fill="#111827">Branded web mentions</text>
+  <rect x="240" y="74" width="481" height="22" rx="4" fill="#1a5fb4"/>
+  <text x="731" y="90" font-size="12.5" font-weight="700" fill="#1a5fb4">0,664</text>
+
+  <text x="228" y="123" text-anchor="end" font-size="12.5" fill="#374151">Branded anchors</text>
+  <rect x="240" y="110" width="382" height="22" rx="4" fill="#4a86d8"/>
+  <text x="632" y="126" font-size="12.5" fill="#374151">0,527</text>
+
+  <text x="228" y="159" text-anchor="end" font-size="12.5" fill="#374151">Branded search volume</text>
+  <rect x="240" y="146" width="284" height="22" rx="4" fill="#7aa9e4"/>
+  <text x="534" y="162" font-size="12.5" fill="#374151">0,392</text>
+
+  <text x="228" y="195" text-anchor="end" font-size="12.5" fill="#374151">Domain Rating</text>
+  <rect x="240" y="182" width="236" height="22" rx="4" fill="#9bbfeb"/>
+  <text x="486" y="198" font-size="12.5" fill="#374151">0,326</text>
+
+  <text x="228" y="231" text-anchor="end" font-size="12.5" fill="#374151">Referring domains</text>
+  <rect x="240" y="218" width="214" height="22" rx="4" fill="#b6d0f1"/>
+  <text x="464" y="234" font-size="12.5" fill="#374151">0,295</text>
+
+  <text x="228" y="267" text-anchor="end" font-size="12.5" font-weight="700" fill="#111827">Backlinks</text>
+  <rect x="240" y="254" width="158" height="22" rx="4" fill="#cfd8e3"/>
+  <text x="408" y="270" font-size="12.5" font-weight="700" fill="#4b5563">0,218</text>
+
+  <!-- comparison bracket -->
+  <path d="M760 74 L780 74 L780 276 L760 276" fill="none" stroke="#b3261e" stroke-width="1.5"/>
+  <text x="790" y="168" font-size="12" font-weight="700" fill="#b3261e">manh</text>
+  <text x="790" y="184" font-size="12" font-weight="700" fill="#b3261e">gap 3x</text>
+
+  <text x="20" y="336" font-size="11.5" fill="#6b7280">Duoc nguoi khac nhac ten &gt;&gt; di mua backlink. Luu y: day la TUONG QUAN, khong phai nhan qua — moi he so deu o muc "trung binh den rat yeu".</text>
+</svg>
