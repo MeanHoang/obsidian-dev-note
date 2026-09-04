@@ -5,6 +5,47 @@
 
 ---
 
+## ⚡ Phát hiện quan trọng: Drive CÓ sẵn đáp án
+
+File `IMG_0292.PNG` nằm trong `AUDIO DAY 1 / 2. HOMEWORK` — lúc import đầu tiên bị **bỏ qua** vì tưởng ảnh rác. Mở ra thì đó là **bảng đáp án**:
+
+| | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **HOMEWORK 1** | C | D | A | D | C | A | A | B | A | B |
+| **HOMEWORK 2** | C | C | B | A | D | B | A | B | C | D |
+
+**Hệ quả — rủi ro lớn nhất của tính năng 3 bị xoá bỏ.** Trước đó phải để AI nhìn ảnh đoán đáp án rồi soát tay 20 câu. Giờ 20 câu homework có đáp án **chính thức từ tài liệu gốc**, không cần đoán, không cần soát.
+
+Còn thiếu đáp án của: Practice 1.2 (3 câu) và Practice 2.2 (4 câu) — phần làm trên lớp. 7 câu này vẫn cần AI nhìn ảnh + soát tay, nhưng 7 dễ hơn 27 rất nhiều.
+
+**Bài học cho importer:** đừng bỏ qua file ảnh lẻ trong folder audio. Sửa `import-day.mjs` để giữ lại mọi ảnh và cho agent xem nội dung, thay vì lọc theo đuôi file.
+
+---
+
+## Bài tập ngữ pháp — có sẵn, nằm trong PDF
+
+Không có file bài tập ngữ pháp riêng trong Drive (đã crawl hết 11 folder, 46 file). Nhưng bài tập ngữ pháp **nằm trong `DAY 1.pdf`** và bản mockup đầu tiên bỏ sót:
+
+**1. TRANSLATION (trang 22) — 10 câu, đây chính là bài tập ngữ pháp.**
+
+Yêu cầu: *"Gạch câu thành từng phần S/V/O, rồi dịch các câu sang tiếng Việt."*
+
+Ví dụ: `The whole company is planning to go on vacation next Friday`
+
+Đây là bài luyện **nhận diện thành phần câu** — nền tảng để làm Part 5/6 sau này, và để hiểu 6 grammar corner ở đầu buổi. Hai bước rõ rệt: gạch S/V/O trước, dịch sau.
+
+**2. `Picture for Part 1.pdf` — 3 bài tập từ vựng qua hình, 51 ảnh.**
+
+- Trang 1: *Types of clothes* — 20 ảnh, tự điền tên
+- Trang 2–3: *Positions / Locations* — điền giới từ và địa điểm
+- Trang 4: tổng hợp
+
+Bài này khớp thẳng với **bảng giới từ** trong phần lý thuyết. Nó biến bảng chữ chi chít thành bài tập nhìn hình chọn giới từ — đúng chỗ app hơn hẳn PDF.
+
+→ Cả 2 bài này thêm thành **màn riêng** trong app.
+
+---
+
 ## Trước hết: 2 lỗ hổng dữ liệu phải xử lý
 
 Cả 4 tính năng đều đụng phải 2 chỗ này. Không giải quyết thì không tính năng nào chạy được đủ.

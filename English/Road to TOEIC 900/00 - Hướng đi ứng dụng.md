@@ -173,7 +173,7 @@ Drive folder (link)
 
 ## Lưu ý bản quyền
 
-Tài liệu ghi footer **"MS. THU LINH LE – TOEIC THAY LONG"** — là tài liệu có tác giả. App này để **học cá nhân**, nên:
+Tài liệu là của một trung tâm, có tác giả. App này để **học cá nhân**, nên:
 
 - Repo để **private**.
 - Nếu deploy Vercel thì bật bảo vệ truy cập, đừng để index công khai.
