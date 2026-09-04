@@ -35,15 +35,32 @@ Bạn muốn "thẻ hình ảnh". Nhưng ảnh trong PDF là **ảnh đề bài 
 
 Nhưng các từ như `assembly line`, `microscope`, `refreshments` thì không có ảnh nào.
 
-**3 lựa chọn, cần bạn chốt:**
+**Chốt: phương án B — thẻ lai.** Từ nào có ảnh thì mặt sau hiện ảnh, từ nào không có thì mặt sau chỉ có nghĩa. Vì ảnh nằm ở mặt sau nên mặt trước mọi thẻ đều giống nhau, không có chuyện lệch giao diện.
 
-| Cách | Ưu | Nhược |
-|---|---|---|
-| **A. Thẻ chữ, không ảnh** | Làm được ngay, không thiếu từ nào | Mất phần "thẻ hình ảnh" bạn muốn |
-| **B. Thẻ lai** — từ nào có ảnh thì hiện ảnh, không có thì hiện chữ to + IPA | Cân bằng, dùng được ảnh đang có | Giao diện không đồng đều |
-| **C. Bổ sung ảnh ngoài** cho đủ 46 từ | Đúng ý nhất | Phải tải ảnh từ nguồn khác, vướng bản quyền, mất công |
+### Agent chuẩn bị ảnh được tới đâu
 
-→ **Đề xuất B.** Có ảnh thì dùng, không có thì chữ to — vẫn học được, không phải đi xin ảnh.
+Có, nhưng phải tách rõ **2 việc khác nhau**:
+
+**Việc 1 — Gán nhãn 95 ảnh đang có. Agent làm được, làm tốt.**
+
+95 ảnh đã bóc ra từ 2 file PDF. Agent nhìn từng ảnh rồi map vào từ tương ứng:
+
+- `Picture for Part 1.pdf` trang 1 → 20 ảnh quần áo → map vào nhóm *clothes*
+- trang 2–4 → ảnh positions / locations → map vào nhóm giới từ vị trí
+- `DAY 1.pdf` → ảnh đề bài, dùng cho tính năng 3 chứ không dùng làm thẻ
+
+Ưu điểm: ảnh **đã nằm sẵn trong tài liệu**, không phải đi xin ở đâu, không phát sinh vấn đề bản quyền mới. Chạy 1 lần lúc import, ghi vào `content/day-1.json`, soát lại bằng mắt.
+
+**Việc 2 — Kiếm ảnh mới cho từ chưa có. Đây mới là chỗ vướng.**
+
+Agent **không tự vẽ được ảnh** (không có công cụ sinh ảnh trong luồng này). Chỉ còn cách tải từ Internet, mà tải ảnh về commit vào repo thì:
+
+- Vướng bản quyền ảnh — đúng cái đang cố tránh
+- Chất lượng lung tung, nền không đồng nhất, thẻ trông xấu
+
+Mà thật ra **phần lớn từ còn thiếu cũng không cần ảnh**: `relax`, `adjust`, `sort out`, `direction`, `kind` — đây là động từ và danh từ trừu tượng, vẽ ra cũng không rõ nghĩa hơn chữ. Ảnh chỉ thật sự có ích với danh từ cụ thể (`microscope`, `glove`, `guitar`).
+
+**Đề xuất:** agent gán nhãn hết ảnh có sẵn trước. Xong rồi nhìn danh sách từ còn thiếu ảnh, nếu thấy ít và toàn từ cụ thể thì lúc đó tính tiếp — đừng quyết trước khi biết còn thiếu bao nhiêu.
 
 ---
 
@@ -63,10 +80,25 @@ Nhưng các từ như `assembly line`, `microscope`, `refreshments` thì không 
 
 **Lưu ở đâu.** `localStorage`, key theo từng DAY. Không cần backend, không cần đăng nhập. Nhược: đổi máy là mất tiến độ — chấp nhận được ở giai đoạn này.
 
+### Ảnh phải nằm ở MẶT SAU
+
+Sửa sau khi duyệt mockup lần 1. Ban đầu đặt ảnh ở mặt trước — **sai**.
+
+Ảnh chính là nghĩa của từ được vẽ ra. Để ảnh ở mặt trước thì nhìn cái mũ là biết ngay `cap`, không cần nhớ gì cả. Thành ra không phải học từ vựng mà là đoán hình — thẻ mất tác dụng.
+
+Đúng phải là:
+
+| | Nội dung |
+|---|---|
+| **Mặt trước** | Từ tiếng Anh + IPA UK/US + 2 nút loa 🔊. **Không có ảnh.** Buộc phải tự nhớ nghĩa |
+| **Mặt sau** | Ảnh (nếu có) + nghĩa tiếng Việt + loại từ + câu ví dụ |
+
+Hệ quả tốt: mặt trước của **mọi thẻ đều giống nhau**, dù từ đó có ảnh hay không. Nên không còn chuyện "giao diện không đồng đều" như lo ở lỗ hổng 2 — phương án B hết nhược điểm.
+
 ### Chốt phạm vi
 
-- Mặt trước: ảnh (nếu có) / từ tiếng Anh, IPA UK + US, 2 nút loa 🔊 UK / US
-- Mặt sau: nghĩa tiếng Việt, loại từ (n/v/adj)
+- Mặt trước: từ tiếng Anh, IPA UK + US, 2 nút loa 🔊 UK / US — **không ảnh**
+- Mặt sau: ảnh (nếu có), nghĩa tiếng Việt, loại từ (n/v/adj), câu ví dụ
 - Bấm thẻ = lật. Kéo hoặc bấm nút = đánh dấu
 - Thanh tiến độ: `đã biết / tổng`
 - Nút "Học lại tất cả"
