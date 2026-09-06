@@ -1,0 +1,10 @@
+{
+  "name": "news-video-renderer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "description": "Render 1 video TikTok dọc từ script tiếng Việt: Edge TTS + phụ đề + b-roll, ghép bằng ffmpeg.",
+  "main": "render.js",
+  "scripts": { "render": "node render.js" },
+  "dependencies": { "node-edge-tts": "^1.2.10" }
+}

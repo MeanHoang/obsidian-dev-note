@@ -1,0 +1,18 @@
+{
+  "slug": "vi-du-slug",
+  "title": "Tiêu đề video",
+  "script": "Câu một. Câu hai. Câu ba.",
+  "terms": ["developer typing laptop", "server room", "ai chip closeup", "person using laptop"],
+  "outDir": "D:/obsidian/dev-note/Learn something new every day/2026-09/2026-09-06/video",
+
+  "voice": "vi-VN-NamMinhNeural",
+  "rate": "+8%",
+  "clipDuration": 4,
+  "perTerm": 3,
+  "font": "Segoe UI",
+  "fontSize": 76,
+  "subtitleMarginV": 520,
+  "maxChars": 26,
+  "bgmVolume": 0.12,
+  "crf": 22
+}
