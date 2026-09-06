@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xuất logo ngẫm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;800&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+:root{--ground:#FAFAFB;--surface:#fff;--ink:#16171C;--muted:#6E7080;--line:#E4E4EA;--accent:#2563EB}
+@media (prefers-color-scheme:dark){:root{--ground:#0F1014;--surface:#191A20;--ink:#EEEFF3;--muted:#9799A6;--line:#2A2B33}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:"Be Vietnam Pro",system-ui,sans-serif;font-size:15px;line-height:1.55}
+.wrap{max-width:1000px;margin:0 auto;padding:44px 24px 80px}
+h1{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:0 0 8px}
+.sub{color:var(--muted);max-width:64ch;margin:0 0 24px}
+.sub b{color:var(--ink);font-weight:500}
+.spec{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.tag{font-family:"JetBrains Mono",monospace;font-size:12px;padding:5px 10px;border:1px solid var(--line);
+  border-radius:7px;background:var(--surface);color:var(--muted)}
+.tag b{color:var(--ink);font-weight:400}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+canvas{width:100%;max-width:180px;height:auto;border-radius:50%;display:block;margin:0 auto 6px}
+.mini{display:flex;gap:10px;align-items:center;justify-content:center;margin:10px 0 12px}
+.mini canvas{border-radius:50%;margin:0}
+.c48{width:48px!important;height:48px}
+.c32{width:32px!important;height:32px}
+.nm{font-weight:800;font-size:16px;margin:8px 0 2px}
+.fn{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);margin-bottom:12px;word-break:break-all}
+a.dl,button.dl{display:block;width:100%;font:inherit;font-size:13.5px;font-weight:500;text-decoration:none;
+  padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+a.dl:hover,button.dl:hover{border-color:var(--accent);color:var(--accent)}
+.all{margin-top:22px;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.all button{font:inherit;font-size:14px;font-weight:600;padding:10px 18px;border-radius:8px;
+  border:none;background:var(--ink);color:var(--ground);cursor:pointer}
+.all span{color:var(--muted);font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Xuất logo ngẫm</h1>
+<p class="sub">Bốn avatar <b>800×800 PNG</b> đúng chuẩn YouTube. Ảnh là hình vuông đầy khung — YouTube tự cắt tròn, nên trông sẽ y hệt bản xem trước. Dùng luôn được cho TikTok.</p>
+
+<div class="spec">
+  <span class="tag">Kiểu: <b>Vệt loang rộng</b></span>
+  <span class="tag">Độ sáng: <b>+8</b></span>
+  <span class="tag">Icon mờ: <b>26%</b></span>
+  <span class="tag">Font: <b>Be Vietnam Pro 800</b></span>
+  <span class="tag">Kích thước: <b>800×800</b></span>
+</div>
+
+<div class="row" id="row"></div>
+
+<div class="all">
+  <span>Tải cả bốn file một lượt (trình duyệt có thể hỏi cho phép tải nhiều file).</span>
+  <button id="dlAll">Tải tất cả 4 file</button>
+</div>
+</div>
+
+<script>
+var S=800, BRI=8, GOP=.26, STOP=70, ALPHA=1;
+
+var CH=[
+ {key:"code",   nm:"Ngẫm Code",   base:[226,80,42], g:["40,200,255","175,125,255"],
+  svg:'<path d="M35 28 L13 50 L35 72"/><path d="M65 28 L87 50 L65 72"/><path d="M58 20 L42 80"/>', sw:11},
+ {key:"chuyen", nm:"Ngẫm Chuyện", base:[262,76,44], g:["115,155,255","250,125,235"],
+  svg:'<path d="M24 15 H76"/><path d="M24 85 H76"/><path d="M32 15 V27 L50 50 L32 73 V85"/><path d="M68 15 V27 L50 50 L68 73 V85"/>', sw:11},
+ {key:"sach",   nm:"Ngẫm Sách",   base:[28,88,36],  g:["255,195,55","255,135,120"],
+  svg:'<path d="M14 26 L50 37 L86 26 L86 74 L50 85 L14 74 Z"/><path d="M50 37 V85"/>', sw:10},
+ {key:"phim",   nm:"Ngẫm Phim",   base:[356,68,44], g:["255,155,85","255,125,180"],
+  svg:'<path d="M14 44 H86 V82 H14 Z"/><path d="M16 33 L82 18 L86 32 L20 47 Z"/>', sw:10}
+];
+
+function hsl(b){ return "hsl("+b[0]+","+b[1]+"%,"+Math.min(72,b[2]+BRI)+"%)"; }
+
+function iconURL(c){
+  var s='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="600" height="600">'+
+        '<g fill="none" stroke="#fff" stroke-width="'+c.sw+'" stroke-linecap="round" stroke-linejoin="round">'+
+        c.svg+'</g></svg>';
+  return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(s);
+}
+
+function paintGlow(ctx,rgb,cx,cy,stopPct,a){
+  var far=Math.sqrt(S*S+S*S);            /* farthest-corner, giống CSS */
+  var r=far*stopPct/100;
+  var g=ctx.createRadialGradient(cx,cy,0,cx,cy,r);
+  g.addColorStop(0,   "rgba("+rgb+","+a+")");
+  g.addColorStop(.42, "rgba("+rgb+","+(a*.5)+")");
+  g.addColorStop(1,   "rgba("+rgb+",0)");
+  ctx.fillStyle=g; ctx.fillRect(0,0,S,S);
+}
+
+function draw(cv,c,img){
+  cv.width=S; cv.height=S;
+  var ctx=cv.getContext("2d");
+  ctx.clearRect(0,0,S,S);
+
+  ctx.fillStyle=hsl(c.base); ctx.fillRect(0,0,S,S);      /* nền */
+  paintGlow(ctx,c.g[0],0,S,STOP+2,ALPHA);                 /* vệt dưới-trái */
+  paintGlow(ctx,c.g[1],S,0,STOP,ALPHA);                   /* vệt trên-phải */
+
+  var inset=S*.13, box=S-inset*2;                         /* icon mờ */
+  ctx.globalAlpha=GOP; ctx.drawImage(img,inset,inset,box,box); ctx.globalAlpha=1;
+
+  ctx.font='800 '+(S*.27)+'px "Be Vietnam Pro", sans-serif';
+  try{ ctx.letterSpacing=(-.03*S*.27)+"px"; }catch(e){}
+  ctx.textAlign="center"; ctx.textBaseline="middle"; ctx.fillStyle="#fff";
+  ctx.shadowColor="rgba(0,0,0,.22)"; ctx.shadowBlur=S*.0038; ctx.shadowOffsetY=S*.00125;
+  ctx.fillText("ngẫm",S/2,S/2+S*.012);
+  ctx.shadowColor="transparent";
+}
+
+function mini(src,dst,size){
+  dst.width=size; dst.height=size;
+  dst.getContext("2d").drawImage(src,0,0,size,size);
+}
+
+var row=document.getElementById("row");
+row.innerHTML=CH.map(function(c){
+  return '<div class="item">'+
+    '<canvas id="cv-'+c.key+'"></canvas>'+
+    '<div class="mini"><canvas class="c48" id="m48-'+c.key+'"></canvas>'+
+      '<canvas class="c32" id="m32-'+c.key+'"></canvas></div>'+
+    '<p class="nm">'+c.nm+'</p>'+
+    '<p class="fn">ngam-'+c.key+'-800.png</p>'+
+    '<a class="dl" id="a-'+c.key+'" download="ngam-'+c.key+'-800.png">Tải PNG 800×800</a>'+
+  '</div>';
+}).join("");
+
+function build(){
+  CH.forEach(function(c){
+    var img=new Image();
+    img.onload=function(){
+      var cv=document.getElementById("cv-"+c.key);
+      draw(cv,c,img);
+      mini(cv,document.getElementById("m48-"+c.key),48);
+      mini(cv,document.getElementById("m32-"+c.key),32);
+      document.getElementById("a-"+c.key).href=cv.toDataURL("image/png");
+    };
+    img.src=iconURL(c);
+  });
+}
+
+if(document.fonts && document.fonts.load){
+  document.fonts.load('800 216px "Be Vietnam Pro"',"ngẫm").then(function(){
+    return document.fonts.ready;
+  }).then(build).catch(build);
+}else{ setTimeout(build,600); }
+
+document.getElementById("dlAll").addEventListener("click",function(){
+  CH.forEach(function(c,i){
+    setTimeout(function(){ document.getElementById("a-"+c.key).click(); }, i*350);
+  });
+});
+</script>
+</body>
+</html>

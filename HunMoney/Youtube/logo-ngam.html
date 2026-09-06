@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gradient vệt góc ngẫm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;800&family=Lexend:wght@400;500;800&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+:root{
+  --ground:#FAFAFB;--surface:#FFFFFF;--surface-2:#F1F1F4;
+  --ink:#16171C;--muted:#6E7080;--line:#E4E4EA;--accent:#2563EB;
+  --face:"Be Vietnam Pro";--gop:.26;
+}
+:root[data-theme="dark"]{
+  --ground:#0F1014;--surface:#191A20;--surface-2:#22232B;
+  --ink:#EEEFF3;--muted:#9799A6;--line:#2A2B33;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Be Vietnam Pro",system-ui,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto;padding:44px 24px 80px}
+h1{font-size:31px;font-weight:800;letter-spacing:-.02em;margin:0 0 8px}
+.sub{color:var(--muted);max-width:66ch;margin:0}
+.sub b{color:var(--ink);font-weight:500}
+
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:22px 0 28px;
+  padding:11px 13px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.lbl{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.t+.lbl,.rngv+.lbl{margin-left:14px}
+button.t{font:inherit;font-size:13px;font-weight:500;padding:6px 13px;border-radius:7px;
+  cursor:pointer;background:transparent;color:var(--muted);border:1px solid var(--line)}
+button.t[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+button.t:focus-visible,.rng:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.rng{width:104px;accent-color:var(--accent)}
+.rngv{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted);min-width:38px}
+
+.grid{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px;
+  display:grid;grid-template-columns:250px 1fr;gap:28px;align-items:center;
+  cursor:pointer;text-align:left;width:100%;font:inherit;color:inherit}
+.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+@media (max-width:880px){.card{grid-template-columns:1fr;gap:20px}}
+.name{font-size:19px;font-weight:800;letter-spacing:-.01em;margin:0 0 5px;display:flex;align-items:center;gap:9px}
+.pick{font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;
+  background:var(--ink);color:var(--ground);padding:3px 7px;border-radius:5px;display:none}
+.card[aria-pressed="true"] .pick{display:inline-block}
+.why{color:var(--muted);font-size:13.5px;margin:0}
+
+.right{display:flex;flex-wrap:wrap;align-items:center;gap:26px}
+.set{display:flex;gap:12px;align-items:center}
+.true{display:flex;gap:14px;align-items:center;padding-left:26px;border-left:1px dashed var(--line)}
+@media (max-width:880px){.true{padding-left:0;border-left:0;border-top:1px dashed var(--line);padding-top:16px;width:100%}}
+.tcol{display:flex;flex-direction:column;align-items:center;gap:6px}
+.cap{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--muted)}
+
+.av{width:var(--s);height:var(--s);border-radius:50%;flex:none;background:var(--bg);color:#fff;
+  position:relative;display:grid;place-items:center;overflow:hidden;
+  font-family:var(--face),"Be Vietnam Pro",sans-serif;font-weight:800;
+  letter-spacing:-.03em;line-height:1;user-select:none}
+.sq .av{border-radius:22%}
+.ghost{position:absolute;inset:13%;opacity:var(--gop);pointer-events:none}
+.ghost svg{width:100%;height:100%;display:block;fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round}
+.tx{position:relative;z-index:1;text-shadow:0 1px 3px rgba(0,0,0,.22)}
+
+footer{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+footer b{color:var(--ink);font-weight:600}
+.note{margin-top:14px;padding:13px 15px;background:var(--surface-2);border-radius:9px;font-size:13.5px;color:var(--muted)}
+.note b{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-code" viewBox="0 0 100 100">
+  <path d="M35 28 L13 50 L35 72" stroke-width="11"/><path d="M65 28 L87 50 L65 72" stroke-width="11"/>
+  <path d="M58 20 L42 80" stroke-width="11"/></symbol>
+<symbol id="i-chuyen" viewBox="0 0 100 100">
+  <path d="M24 15 H76" stroke-width="11"/><path d="M24 85 H76" stroke-width="11"/>
+  <path d="M32 15 V27 L50 50 L32 73 V85" stroke-width="11"/>
+  <path d="M68 15 V27 L50 50 L68 73 V85" stroke-width="11"/></symbol>
+<symbol id="i-sach" viewBox="0 0 100 100">
+  <path d="M14 26 L50 37 L86 26 L86 74 L50 85 L14 74 Z" stroke-width="10"/>
+  <path d="M50 37 V85" stroke-width="10"/></symbol>
+<symbol id="i-phim" viewBox="0 0 100 100">
+  <path d="M14 44 H86 V82 H14 Z" stroke-width="10"/>
+  <path d="M16 33 L82 18 L86 32 L20 47 Z" stroke-width="10"/></symbol>
+</defs></svg>
+
+<div class="wrap">
+<header>
+  <h1>Gradient vệt góc ngẫm</h1>
+  <p class="sub">Vẫn công thức <b>nền + hai vệt sáng góc đối</b> của icon tham chiếu, nhưng đã kéo sáng lên hẳn một bậc. Thanh <b>Độ sáng</b> để bạn tự dò tiếp — kéo tới đâu thấy chữ bắt đầu chìm ở cột 32px thì lùi lại một nấc.</p>
+</header>
+
+<div class="bar">
+  <span class="lbl">Độ sáng</span>
+  <input class="rng" id="bri" type="range" min="-16" max="18" value="0" aria-label="Độ sáng nền">
+  <span class="rngv" id="briv">0</span>
+  <span class="lbl">Icon mờ</span>
+  <input class="rng" id="gop" type="range" min="6" max="46" value="26" aria-label="Độ mờ icon">
+  <span class="rngv" id="gopv">26%</span>
+  <span class="lbl">Khung</span>
+  <button class="t" id="bCir" aria-pressed="true">Tròn</button>
+  <button class="t" id="bSq" aria-pressed="false">Bo vuông</button>
+  <span class="lbl">Font</span>
+  <button class="t" id="bBVP" aria-pressed="true">Be Vietnam Pro</button>
+  <button class="t" id="bLex" aria-pressed="false">Lexend</button>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="note"><b>Vì sao Ngẫm Sách khởi điểm tối hơn ba kênh kia:</b> ở cùng một mức sáng, màu cam luôn trông sáng hơn xanh và tím rất nhiều, nên chữ trắng trên cam chìm trước tiên. Nền của nó được đặt thấp hơn một bậc để bốn kênh nhìn ngang nhau. Kéo thanh Độ sáng thì cả bốn cùng lên, giữ nguyên khoảng cách đó.</div>
+
+<footer id="foot">Bấm vào một kiểu để đánh dấu. <b>Chưa chọn kiểu nào.</b></footer>
+</div>
+
+<script>
+/* nền theo kênh: [hue, sat%, light%] — light là thứ thanh Độ sáng chỉnh */
+var BASE=[[226,80,42],[262,76,44],[28,88,36],[356,68,44]];
+var ICON=["i-code","i-chuyen","i-sach","i-phim"];
+
+/* vệt sáng theo tông từng kênh: [dưới-trái, trên-phải] */
+var TONE=[
+  ["40,200,255","175,125,255"],
+  ["115,155,255","250,125,235"],
+  ["255,195,55","255,135,120"],
+  ["255,155,85","255,125,180"]
+];
+/* vệt dùng chung, lấy từ icon tham chiếu */
+var SHARED=["40,200,255","255,125,115"];
+
+var bri=0;
+
+function baseCss(ci){
+  var b=BASE[ci], L=Math.max(16,Math.min(72,b[2]+bri));
+  return "hsl("+b[0]+","+b[1]+"%,"+L+"%)";
+}
+function glow(rgb,pos,stop,a){
+  return "radial-gradient(circle at "+pos+", rgba("+rgb+","+a+") 0%, rgba("+rgb+","+(a*.5).toFixed(2)+") "+
+         (stop*.42).toFixed(0)+"%, rgba("+rgb+",0) "+stop+"%)";
+}
+function bg(ci,cfg){
+  var g=cfg.shared?SHARED:TONE[ci], p=[glow(g[1],"100% 0%",cfg.stop,cfg.a)];
+  p.push(glow(g[0],"0% 100%",cfg.stop+(cfg.one?10:2),cfg.a));
+  p.push(baseCss(ci));
+  return p.join(",");
+}
+
+var OPTS=[
+ {ten:"Vệt góc chuẩn", cfg:{shared:true,stop:48,a:.95},
+  why:"Đúng công thức icon tham chiếu: cyan góc dưới-trái, đỏ san hô góc trên-phải, dùng chung cho cả 4 kênh. Kênh nhận diện bằng màu nền. <b>Gắn kết thành một họ mạnh nhất.</b>"},
+ {ten:"Vệt theo tông kênh", cfg:{shared:false,stop:48,a:.95},
+  why:"Mỗi kênh có cặp vệt riêng đi theo tông của nó — Code ngả cyan/tím, Sách ngả cam/san hô. Từng kênh cá tính hơn, đổi lại bớt cảm giác cùng một bộ."},
+ {ten:"Một vệt duy nhất", cfg:{shared:false,stop:46,a:.95,one:true},
+  why:"Chỉ giữ vệt góc dưới-trái, góc còn lại để trơn. Trầm và tối giản nhất, gần logo doanh nghiệp hơn là app store."},
+ {ten:"Vệt loang rộng", cfg:{shared:false,stop:70,a:1},
+  why:"Vệt lan sâu vào giữa, màu chiếm gần hết diện tích. <b>Sáng và rực nhất trong năm kiểu</b> — nhưng lõi giữa sáng lên nên soi kỹ cột 32px."},
+ {ten:"Vệt dịu", cfg:{shared:false,stop:36,a:.72},
+  why:"Vệt nhỏ và nhạt, chỉ gợi ánh sáng ở góc. Nền gần như một màu trơn. <b>Chữ nổi nhất.</b>"}
+];
+
+function av(oi,ci,s){
+  return '<span class="av" style="--bg:'+bg(ci,OPTS[oi].cfg)+';--s:'+s+'px">'+
+    '<span class="ghost"><svg viewBox="0 0 100 100"><use href="#'+ICON[ci]+'"/></svg></span>'+
+    '<span class="tx" style="font-size:'+(s*.27)+'px">ngẫm</span></span>';
+}
+
+var grid=document.getElementById("grid"),foot=document.getElementById("foot"),cur=null;
+
+function render(){
+  grid.innerHTML=OPTS.map(function(o,oi){
+    var set=[0,1,2,3].map(function(ci){return av(oi,ci,76);}).join("");
+    var on=(cur===o.ten);
+    return '<button class="card" type="button" aria-pressed="'+on+'" data-ten="'+o.ten+'">'+
+     '<div><p class="name">'+o.ten+' <span class="pick">Đã chọn</span></p><p class="why">'+o.why+'</p></div>'+
+     '<div class="right"><div class="set">'+set+'</div><div class="true">'+
+       '<div class="tcol">'+av(oi,0,48)+'<span class="cap">48px</span></div>'+
+       '<div class="tcol">'+av(oi,0,32)+'<span class="cap">32px</span></div>'+
+     '</div></div></button>';
+  }).join("");
+}
+render();
+
+grid.addEventListener("click",function(e){
+  var card=e.target.closest(".card"); if(!card) return;
+  cur = (cur===card.dataset.ten) ? null : card.dataset.ten;
+  render();
+  foot.innerHTML = cur
+    ? 'Đang chọn: <b>'+cur+'</b> (độ sáng '+(bri>0?"+":"")+bri+') — nhắn lại cho tôi để chốt.'
+    : 'Bấm vào một kiểu để đánh dấu. <b>Chưa chọn kiểu nào.</b>';
+});
+
+var briEl=document.getElementById("bri"),briV=document.getElementById("briv");
+briEl.addEventListener("input",function(){
+  bri=+briEl.value; briV.textContent=(bri>0?"+":"")+bri; render();
+  if(cur) foot.innerHTML='Đang chọn: <b>'+cur+'</b> (độ sáng '+(bri>0?"+":"")+bri+') — nhắn lại cho tôi để chốt.';
+});
+var gop=document.getElementById("gop"),gopv=document.getElementById("gopv");
+gop.addEventListener("input",function(){
+  document.documentElement.style.setProperty("--gop",gop.value/100);
+  gopv.textContent=gop.value+"%";
+});
+
+function pair(a,b,fn){
+  a.addEventListener("click",function(){a.setAttribute("aria-pressed","true");b.setAttribute("aria-pressed","false");fn(true);});
+  b.addEventListener("click",function(){b.setAttribute("aria-pressed","true");a.setAttribute("aria-pressed","false");fn(false);});
+}
+pair(bCir,bSq,function(v){document.body.classList.toggle("sq",!v);});
+pair(bBVP,bLex,function(v){document.documentElement.style.setProperty("--face",v?'"Be Vietnam Pro"':'"Lexend"');});
+</script>
+</body>
+</html>
