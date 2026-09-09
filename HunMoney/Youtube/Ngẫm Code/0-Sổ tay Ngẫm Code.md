@@ -8,7 +8,10 @@
 
 **Trụ uy tín & doanh thu.** RPM cao nhất trong 4 kênh, hợp Search nhất, và là kênh duy nhất dẫn thẳng tới freelance / tư vấn / cơ hội nghề. Khi bí thời gian, **kênh này được ưu tiên**.
 
-- Nhịp: **2 video/tuần** (T2, T3) — gấp đôi các kênh khác
+- Nhịp: **2 video/tuần** — gấp đôi các kênh khác, và là **hai loại khác nhau**:
+  - **T2 — bài giảng 15–18′** (~3 tiếng): rút từ note có sẵn trong vault, có series để người xem theo
+  - **T3 — bài ngắn 6–8′** (~80 phút): bug thật gặp trong tuần, giữ đúng ngách "người đang đi làm"
+  - Đệm tụt dưới 3 → bỏ T3 trước, giữ T2. Chi tiết: [[3-Lịch sản xuất hàng tuần]]
 - Màu: 🔵 `#2563EB` · Handle: `@ngamcode`
 - Đo bằng: **cơ hội inbound** và **% traffic từ Search**
 

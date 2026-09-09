@@ -1,0 +1,11 @@
+Cái cục wifi nhà bạn không phải một thiết bị đâu. Nó là bốn thứ nhét chung vào một cái vỏ.
+Thứ nhất là switch, lo cho mấy cái máy trong nhà nói chuyện được với nhau.
+Thứ hai là router, đứng ở cửa, quyết định gói dữ liệu nào đi ra đường.
+Thứ ba là modem, phiên dịch tín hiệu trong nhà ra sợi cáp quang ngoài kia.
+Thứ tư là cái phát sóng, thứ tạo ra bốn vạch trên điện thoại bạn.
+Nên bốn vạch đầy chỉ nói được đúng một điều thôi. Máy bạn nối được tới cái vỏ.
+Nó chả nói gì về ba thằng còn lại bên trong, càng không nói gì về nhà mạng ngoài đường.
+Bốn vạch đầy mà vẫn mất mạng, chả có gì mâu thuẫn cả.
+Thế rút điện cắm lại thì sao? Cái cục nó quên sạch mọi thứ đang nhớ dở, rồi dựng lại phiên với nhà mạng từ đầu.
+Trò đấy chữa được hai chỗ. Trong nhà, với ra ngõ.
+Còn nếu chết cái danh bạ, tức là DNS, thì rút cả ngày cũng thế thôi.

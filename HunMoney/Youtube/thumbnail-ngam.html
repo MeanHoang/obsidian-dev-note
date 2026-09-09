@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template thumbnail — hệ Ngẫm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;800;900&family=JetBrains+Mono:wght@400;700&display=swap">
+<style>
+:root{
+  --ground:#FAFAFB;--surface:#FFFFFF;--surface-2:#F1F1F4;
+  --ink:#16171C;--muted:#6E7080;--line:#E4E4EA;--accent:#2563EB;
+}
+:root[data-theme="dark"]{
+  --ground:#0F1014;--surface:#191A20;--surface-2:#22232B;
+  --ink:#EEEFF3;--muted:#9799A6;--line:#2A2B33;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0F1014;--surface:#191A20;--surface-2:#22232B;
+    --ink:#EEEFF3;--muted:#9799A6;--line:#2A2B33;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Be Vietnam Pro",system-ui,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:40px 24px 80px}
+h1{font-size:29px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px}
+.sub{color:var(--muted);max-width:70ch;margin:0 0 26px}
+.sub b{color:var(--ink);font-weight:500}
+
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 22px;
+  padding:11px 13px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.lbl{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.lbl+.lbl{margin-left:12px}
+button.t{font:inherit;font-size:13px;font-weight:500;padding:6px 13px;border-radius:7px;
+  cursor:pointer;background:transparent;color:var(--muted);border:1px solid var(--line)}
+button.t[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+button.t .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:-1px}
+button.go{font:inherit;font-size:13px;font-weight:800;padding:8px 16px;border-radius:8px;cursor:pointer;
+  background:var(--ink);color:var(--ground);border:1px solid var(--ink)}
+button.t:focus-visible,button.go:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.cols{display:grid;grid-template-columns:340px 1fr;gap:26px;align-items:start}
+@media (max-width:1000px){.cols{grid-template-columns:1fr}}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.field{margin-bottom:15px}
+.field:last-child{margin-bottom:0}
+.field label{display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.field input[type=text],.field textarea{width:100%;font:inherit;font-size:14px;padding:8px 11px;border-radius:8px;
+  background:var(--ground);color:var(--ink);border:1px solid var(--line)}
+.field textarea{resize:vertical;min-height:58px;font-weight:800;letter-spacing:-.01em}
+.hint{font-size:12px;color:var(--muted);margin:5px 0 0}
+.drop{border:1.5px dashed var(--line);border-radius:10px;padding:16px;text-align:center;color:var(--muted);
+  font-size:13px;cursor:pointer;background:var(--ground)}
+.drop.on{border-color:var(--accent);color:var(--accent)}
+
+.stage{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+canvas#full{width:100%;height:auto;display:block;border-radius:8px;background:#000}
+.checkrow{display:flex;gap:26px;align-items:flex-start;margin-top:22px;padding-top:20px;border-top:1px dashed var(--line);flex-wrap:wrap}
+.tcol{display:flex;flex-direction:column;gap:7px}
+.cap{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted)}
+canvas#tiny{width:210px;height:118px;border-radius:4px;background:#000;image-rendering:auto}
+.verdict{font-size:13px;color:var(--muted);max-width:38ch}
+.verdict b{color:var(--ink)}
+
+.rules{margin-top:28px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 24px}
+.rules h2{font-size:15px;font-weight:800;margin:0 0 12px}
+.rules ul{margin:0;padding-left:20px;color:var(--muted);font-size:13.5px}
+.rules li{margin-bottom:6px}
+.rules b{color:var(--ink)}
+.bad{color:#DC2626;font-weight:700}
+.good{color:#16A34A;font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Template thumbnail — hệ Ngẫm</h1>
+  <p class="sub">Một layout dùng chung cho <b>cả 4 kênh</b>, chỉ đổi màu. Xuất PNG <b>1280×720</b>, kèm ô kiểm tra ở <b>210×118px</b> — kích thước thật người xem nhìn thấy trên điện thoại.</p>
+
+  <div class="bar">
+    <span class="lbl">Kênh</span>
+    <button class="t" data-ch="code" aria-pressed="true"><span class="dot" style="background:#2563EB"></span>Ngẫm Code</button>
+    <button class="t" data-ch="chuyen" aria-pressed="false"><span class="dot" style="background:#7C3AED"></span>Ngẫm Chuyện</button>
+    <button class="t" data-ch="sach" aria-pressed="false"><span class="dot" style="background:#D97706"></span>Ngẫm Sách</button>
+    <button class="t" data-ch="phim" aria-pressed="false"><span class="dot" style="background:#DC2626"></span>Ngẫm Phim</button>
+    <span class="lbl">Chủ đề</span>
+    <button class="t" id="themeBtn" aria-pressed="false">Sáng / Tối</button>
+  </div>
+
+  <div class="cols">
+    <div class="panel">
+      <div class="field">
+        <label for="l1">Dòng 1 — bối cảnh</label>
+        <input type="text" id="l1" value="ĐẦY SÓNG." maxlength="22">
+      </div>
+      <div class="field">
+        <label for="l2">Dòng 2 — cú lật (chữ to nhất)</label>
+        <input type="text" id="l2" value="KHÔNG MẠNG." maxlength="22">
+        <p class="hint">Hai dòng, mỗi dòng ≤ 14 ký tự là đọc được ở 210px. Dài hơn thì chữ tự co lại.</p>
+      </div>
+      <div class="field">
+        <label for="chip">Chip — số đo hoặc dòng lỗi <span style="text-transform:none;letter-spacing:0">(để trống nếu không có)</span></label>
+        <input type="text" id="chip" value="VÌ SAO NÓ ĂN?" maxlength="26">
+        <p class="hint">Sổ tay Ngẫm Code: thumbnail phải có <b>con số</b> hoặc <b>dòng lỗi</b>. VD <code>4s → 40ms</code>.</p>
+      </div>
+      <div class="field">
+        <label>Ảnh bên phải</label>
+        <div class="drop" id="drop">Kéo ảnh vào đây, hoặc bấm để chọn<br><span style="font-size:11.5px">ảnh chụp màn hình · cục wifi · mặt mình</span></div>
+        <input type="file" id="file" accept="image/*" hidden>
+        <p class="hint">Bỏ trống thì phần bên phải là hoạ tiết gợn sóng của hệ Ngẫm.</p>
+      </div>
+      <div class="field">
+        <button class="go" id="dl">⬇︎ Tải PNG 1280×720</button>
+      </div>
+    </div>
+
+    <div class="stage">
+      <canvas id="full" width="1280" height="720"></canvas>
+      <div class="checkrow">
+        <div class="tcol">
+          <canvas id="tiny" width="210" height="118"></canvas>
+          <span class="cap">210×118 — kích thước thật trên điện thoại</span>
+        </div>
+        <p class="verdict" id="verdict"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="rules">
+    <h2>Luật của hệ — đã nhúng sẵn vào template</h2>
+    <ul>
+      <li><b>Đi ngược liên tưởng "quote".</b> Nền đặc màu kênh, chữ sans-serif <b>900</b>, tương phản tối đa. <span class="bad">Không</span> pastel, <span class="bad">không</span> thư pháp, <span class="bad">không</span> ảnh thiên nhiên mờ — nếu không người ta tưởng đây là kênh trích dẫn triết lý.</li>
+      <li><b>Cùng layout, đổi màu.</b> Người xem nhận ra "cùng một người" khi gặp ở kênh khác.</li>
+      <li><b>Kiểm tra ở 210px, không phải màn hình lớn.</b> Ô nhỏ bên trên là bài kiểm tra thật.</li>
+      <li><b>Ngẫm Code:</b> phải có con số hoặc dòng lỗi đọc được ở 210px — tự nó đã là cái hook.</li>
+      <li><b>Không chữ tên kênh trên thumbnail</b> — tên kênh đã hiện ngay bên cạnh rồi, thêm vào chỉ tốn chỗ.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+const CH = {
+  code:   {bg:'#2563EB', name:'Ngẫm Code'},
+  chuyen: {bg:'#7C3AED', name:'Ngẫm Chuyện'},
+  sach:   {bg:'#D97706', name:'Ngẫm Sách'},
+  phim:   {bg:'#DC2626', name:'Ngẫm Phim'},
+};
+let ch = 'code', img = null;
+
+const full = document.getElementById('full'), fx = full.getContext('2d');
+const tiny = document.getElementById('tiny'), tx = tiny.getContext('2d');
+const $ = id => document.getElementById(id);
+
+/* chọn cỡ chữ lớn nhất mà vẫn vừa bề ngang cho phép */
+function fit(ctx, text, maxW, start, weight){
+  let s = start;
+  while (s > 20){
+    ctx.font = `${weight} ${s}px "Be Vietnam Pro", system-ui, sans-serif`;
+    if (ctx.measureText(text).width <= maxW) break;
+    s -= 2;
+  }
+  return s;
+}
+
+function draw(){
+  const c = CH[ch], W = 1280, H = 720;
+  const l1 = $('l1').value.trim(), l2 = $('l2').value.trim(), chip = $('chip').value.trim();
+
+  fx.fillStyle = c.bg; fx.fillRect(0,0,W,H);
+
+  /* hoạ tiết gợn sóng lan — mark của hệ Ngẫm, đặt lệch phải */
+  fx.save();
+  fx.globalAlpha = .13; fx.strokeStyle = '#fff';
+  for (let i=1;i<=7;i++){ fx.lineWidth = 14 - i; fx.beginPath(); fx.arc(1010, 360, i*68, 0, Math.PI*2); fx.stroke(); }
+  fx.restore();
+
+  /* ảnh: bo tròn ở nửa phải */
+  if (img){
+    const bx = 720, by = 96, bw = 480, bh = 528, r = 26;
+    const scale = Math.max(bw/img.width, bh/img.height);
+    const dw = img.width*scale, dh = img.height*scale;
+    fx.save();
+    fx.beginPath();
+    fx.moveTo(bx+r,by); fx.arcTo(bx+bw,by,bx+bw,by+bh,r); fx.arcTo(bx+bw,by+bh,bx,by+bh,r);
+    fx.arcTo(bx,by+bh,bx,by,r); fx.arcTo(bx,by,bx+bw,by,r); fx.closePath();
+    fx.clip();
+    fx.drawImage(img, bx+(bw-dw)/2, by+(bh-dh)/2, dw, dh);
+    fx.restore();
+    fx.save(); fx.globalAlpha=.35; fx.strokeStyle='#fff'; fx.lineWidth=3;
+    fx.beginPath();
+    fx.moveTo(bx+r,by); fx.arcTo(bx+bw,by,bx+bw,by+bh,r); fx.arcTo(bx+bw,by+bh,bx,by+bh,r);
+    fx.arcTo(bx,by+bh,bx,by,r); fx.arcTo(bx,by,bx+bw,by,r); fx.closePath();
+    fx.stroke(); fx.restore();
+  }
+
+  /* khối chữ trái */
+  const maxW = img ? 610 : 900;
+  fx.fillStyle = '#fff'; fx.textBaseline = 'alphabetic';
+
+  const s1 = fit(fx, l1 || ' ', maxW, 92, 900);
+  const s2 = fit(fx, l2 || ' ', maxW, 112, 900);
+  let y = chip ? 300 : 340;
+
+  fx.save(); fx.globalAlpha = .82;
+  fx.font = `900 ${s1}px "Be Vietnam Pro", system-ui, sans-serif`;
+  fx.fillText(l1, 76, y);
+  fx.restore();
+
+  y += s2 + 12;
+  fx.font = `900 ${s2}px "Be Vietnam Pro", system-ui, sans-serif`;
+  fx.fillText(l2, 76, y);
+
+  /* chip số đo / dòng lỗi */
+  if (chip){
+    const cs = fit(fx, chip, maxW - 46, 52, 800);
+    fx.font = `800 ${cs}px "JetBrains Mono", ui-monospace, monospace`;
+    const tw = fx.measureText(chip).width, ph = cs + 30, pw = tw + 46;
+    const px = 76, py = y + 44;
+    fx.fillStyle = '#fff';
+    fx.beginPath();
+    const r = 12;
+    fx.moveTo(px+r,py); fx.arcTo(px+pw,py,px+pw,py+ph,r); fx.arcTo(px+pw,py+ph,px,py+ph,r);
+    fx.arcTo(px,py+ph,px,py,r); fx.arcTo(px,py,px+pw,py,r); fx.closePath(); fx.fill();
+    fx.fillStyle = c.bg;
+    fx.fillText(chip, px+23, py + ph - (ph-cs)/2 - 4);
+  }
+
+  /* thanh màu dưới cùng — dấu nhận diện chung của hệ */
+  fx.fillStyle = '#fff'; fx.globalAlpha = .9;
+  fx.fillRect(76, 646, 132, 9); fx.globalAlpha = 1;
+
+  /* bản 210px */
+  tx.clearRect(0,0,210,118);
+  tx.drawImage(full, 0, 0, 210, 118);
+
+  /* chấm điểm tự động */
+  const longest = Math.max(l1.length, l2.length);
+  const v = [];
+  if (longest > 16) v.push(`<b>Dòng dài ${longest} ký tự</b> — chữ đang phải co lại. Cắt còn ≤14 để đọc được ở 210px.`);
+  if (!chip && ch === 'code') v.push(`<b>Thiếu chip số đo.</b> Sổ tay Ngẫm Code đòi con số hoặc dòng lỗi.`);
+  if (!img) v.push(`Chưa có ảnh — đang dùng hoạ tiết gợn sóng. Ảnh màn hình thật thường ăn hơn.`);
+  $('verdict').innerHTML = v.length
+    ? '⚠️ ' + v.join('<br>⚠️ ')
+    : '✅ Qua hết. Nheo mắt nhìn ô 210px — vẫn đọc được thì dùng được.';
+}
+
+/* ---- sự kiện ---- */
+document.querySelectorAll('button.t[data-ch]').forEach(b => b.onclick = () => {
+  document.querySelectorAll('button.t[data-ch]').forEach(x => x.setAttribute('aria-pressed','false'));
+  b.setAttribute('aria-pressed','true'); ch = b.dataset.ch; draw();
+});
+['l1','l2','chip'].forEach(id => $(id).oninput = draw);
+
+$('themeBtn').onclick = e => {
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+  e.currentTarget.setAttribute('aria-pressed', String(!dark));
+};
+
+const drop = $('drop'), file = $('file');
+drop.onclick = () => file.click();
+drop.ondragover = e => { e.preventDefault(); drop.classList.add('on'); };
+drop.ondragleave = () => drop.classList.remove('on');
+drop.ondrop = e => { e.preventDefault(); drop.classList.remove('on'); load(e.dataTransfer.files[0]); };
+file.onchange = e => load(e.target.files[0]);
+
+function load(f){
+  if (!f || !f.type.startsWith('image/')) return;
+  const r = new FileReader();
+  r.onload = ev => { const i = new Image(); i.onload = () => { img = i; drop.textContent = f.name + ' — bấm để đổi'; draw(); }; i.src = ev.target.result; };
+  r.readAsDataURL(f);
+}
+
+$('dl').onclick = () => {
+  const a = document.createElement('a');
+  a.download = `thumb-${ch}-${$('l2').value.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') || 'ngam'}.png`;
+  a.href = full.toDataURL('image/png');
+  a.click();
+};
+
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+draw();
+</script>
+</body>
+</html>

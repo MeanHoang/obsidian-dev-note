@@ -8,8 +8,8 @@
 
 | Thứ | Kênh | Đầu vào (học cái gì) |
 |---|---|---|
-| **T2** | 🔵 Ngẫm Code | vấn đề gặp ở công việc / note trong vault |
-| **T3** | 🔵 Ngẫm Code | thứ hai của tuần — kiến trúc, tool, bug đã sửa |
+| **T2** | 🔵 Ngẫm Code — **bài giảng 15–18′** | note có sẵn trong vault (đang chạy series Internet Fundamentals) |
+| **T3** | 🔵 Ngẫm Code — **bài ngắn 6–8′** | bug thật / quyết định kiến trúc gặp trong tuần |
 | **T4** | 🟣 Ngẫm Chuyện | lịch sử, case study, câu chuyện con người |
 | **T5** | 🟠 Ngẫm Sách | **một ý** từ cuốn đang đọc |
 | **T6** | 🔴 Ngẫm Phim | phim xem trong tuần |
@@ -62,6 +62,21 @@ Lịch này chỉ sống nếu một video làm xong trong khoảng 80 phút. Ph
 | **Tổng** | **80 phút** |
 
 5 ngày × 80 phút ≈ **6,7 tiếng/tuần**. Con số này khả thi. Nhưng nó chỉ đúng khi hai điều kiện dưới được giữ.
+
+> [!warning] ⚠️ Ngoại lệ: T2 là bài giảng dài, không nằm trong ngân sách 80 phút
+> Ngẫm Code chạy **hai loại video**, không phải hai video giống nhau:
+>
+> | | T2 — bài giảng | T3 — bài ngắn |
+> |---|---|---|
+> | Thời lượng | 15–18 phút | 6–8 phút |
+> | Công | ~3 tiếng | ~80 phút |
+> | Nguyên liệu | note có sẵn trong vault | việc đang làm trong tuần |
+>
+> Riêng Ngẫm Code ăn ~4,5 tiếng/tuần. Cả tuần khoảng **9 tiếng** thay vì 6,7. Chấp nhận có ý thức, không phải vỡ kế hoạch.
+>
+> Hai loại này cố tình khác nhau: bài giảng xây nền và có series để người xem theo, bài ngắn giữ đúng ngách **"vấn đề của người đang đi làm"**. Chỉ làm bài giảng thì kênh trôi về tệp người mới học — đúng cái bẫy [[0-Sổ tay Ngẫm Code]] cảnh báo.
+>
+> **Van xả:** đệm tụt dưới 3 → bỏ **T3** trước, giữ T2. Series đứt giữa chừng là mất cả mạch.
 
 ### Điều kiện 1 — video 7–9 phút
 
