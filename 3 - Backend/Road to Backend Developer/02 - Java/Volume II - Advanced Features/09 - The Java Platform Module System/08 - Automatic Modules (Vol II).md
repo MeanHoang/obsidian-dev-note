@@ -69,7 +69,7 @@ Automatic-Module-Name: org.apache.commons.csv
 >
 > **Dịch:** Kế hoạch migration sang module là **một thí nghiệm xã hội lớn**, và **chẳng ai biết nó sẽ kết thúc tốt đẹp hay không**. Trước khi đặt JAR bên thứ ba lên module path, **kiểm tra xem chúng đã modular chưa**, nếu chưa thì **manifest có tên module không**. Nếu không có, bạn **vẫn biến JAR thành automatic module được**, nhưng **hãy chuẩn bị tinh thần cập nhật lại tên module về sau**.
 
-### Listing 9.x — `v2ch09.automod/com/horstmann/places/CSVDemo.java`
+### `v2ch09.automod/com/horstmann/places/CSVDemo.java`
 
 > *"As this book is being written, version 1.5 of the Commons CSV JAR file does not have a module descriptor or an automatic module name. Nevertheless, it will work fine on the module path. You can download the library from https://commons.apache.org/proper/commons-csv. Uncompress and place the commons-csv-1.5.jar file into the directory of the v2ch9.automod module. That module contains a simple program that reads a CSV file with country data:"*
 
@@ -98,7 +98,7 @@ public class CSVDemo
 
 **Dịch:** Lúc sách được viết, JAR Commons CSV bản 1.5 **không có module descriptor cũng không có automatic module name**. Dù vậy nó **vẫn chạy tốt trên module path**.
 
-### Listing 9.x — `v2ch09.automod/module-info.java`
+### `v2ch09.automod/module-info.java`
 
 > *"Since we will use commons-csv-1.5.jar as an automatic module, we need to require it:"*
 

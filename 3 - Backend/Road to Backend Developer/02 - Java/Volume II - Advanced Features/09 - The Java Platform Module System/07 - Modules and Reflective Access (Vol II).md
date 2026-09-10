@@ -34,7 +34,7 @@ f.setDouble(obj, value * 1.1);
 
 **Dịch:** Nếu bạn dùng thư viện kiểu đó mà cũng muốn dùng module thì **phải cẩn thận**. Để minh hoạ, đặt class `ObjectAnalyzer` (từ chương 5 Volume I) vào module `com.horstmann.util`. Class đó có method `toString` **in ra các field của một object bằng reflection**.
 
-### Listing 9.x — `v2ch09.openpkg/com/horstmann/places/Country.java`
+### `v2ch09.openpkg/com/horstmann/places/Country.java`
 
 > *"A separate v2ch09.openpkg module contains a simple Country class:"*
 
@@ -56,7 +56,7 @@ public class Country
 }
 ```
 
-### Listing 9.x — `v2ch09.openpkg/com/horstmann/places/Demo.java`
+### `v2ch09.openpkg/com/horstmann/places/Demo.java`
 
 > *"A short program demonstrates how to analyze a Country object:"*
 

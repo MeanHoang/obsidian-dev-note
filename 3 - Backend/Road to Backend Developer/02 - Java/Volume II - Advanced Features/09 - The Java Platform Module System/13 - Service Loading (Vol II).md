@@ -97,7 +97,7 @@ module java.base
 
 > *"In our code example, we provide implementations for a German and French greeter in the package com.horstmann.greetsvc.internal. The service module exports the com.horstmann.greetsvc package, but not the package with the implementations. The provides statement declares the service and its implementing classes in the unexported package:"*
 
-### Listing 9.x — `com.horstmann.greetsvc/module-info.java`
+### `com.horstmann.greetsvc/module-info.java`
 
 ```java
 module com.horstmann.greetsvc
@@ -111,7 +111,7 @@ module com.horstmann.greetsvc
 
 **Dịch:** Trong ví dụ, ta cung cấp implementation cho **greeter tiếng Đức và tiếng Pháp** trong package `com.horstmann.greetsvc.internal`. Module service **export package `com.horstmann.greetsvc`** nhưng **không export package chứa implementation**. Statement `provides` **khai báo service và các class implement nằm trong package không được export**.
 
-### Listing 9.x — `v2ch09.useservice/com/horstmann/hello/HelloWorld.java`
+### `v2ch09.useservice/com/horstmann/hello/HelloWorld.java`
 
 > *"The v2ch09.useservice module consumes the service. Using the ServiceLoader facility, we iterate over the provided services and pick the one matching the desired language:"*
 
@@ -142,7 +142,7 @@ public class HelloWorld
 }
 ```
 
-### Listing 9.x — `v2ch09.useservice/module-info.java`
+### `v2ch09.useservice/module-info.java`
 
 > *"The module declaration requires the service module and declares that the GreeterService is being used."*
 

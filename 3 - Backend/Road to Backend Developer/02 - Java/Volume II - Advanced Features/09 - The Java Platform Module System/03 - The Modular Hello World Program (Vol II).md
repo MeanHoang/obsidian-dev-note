@@ -40,7 +40,7 @@ v2ch09.hellomod/
 
 **Dịch:** Tới đây **chưa có gì thay đổi**. Để tạo module `v2ch09.hellomod` chứa package này, bạn cần thêm một **module declaration**, đặt trong file tên **`module-info.java`**, nằm ở **base directory** (tức thư mục chứa thư mục `com`). Theo quy ước, **tên base directory trùng tên module**.
 
-### Listing — `v2ch09.hellomod/module-info.java`
+### `v2ch09.hellomod/module-info.java`
 
 > *"The module-info.java file contains the module declaration:"*
 

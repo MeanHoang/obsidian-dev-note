@@ -47,7 +47,7 @@ module java.xml
 
 **Dịch:** Áp dụng `exports` vào một tình huống đơn giản. Ta chuẩn bị module `com.horstmann.greet` **export package cũng tên `com.horstmann.greet`**, theo quy ước **module cung cấp code cho người khác nên đặt tên theo top-level package bên trong nó**. Còn có package `com.horstmann.greet.internal` mà ta **không export**.
 
-### Listing 9.x — `com.horstmann.greet/com/horstmann/greet/Greeter.java`
+### `com.horstmann.greet/com/horstmann/greet/Greeter.java`
 
 > *"A public Greeter interface is in the first package."*
 
@@ -65,7 +65,7 @@ public interface Greeter
 }
 ```
 
-### Listing 9.x — `com.horstmann.greet/com/horstmann/greet/internal/GreeterImpl.java`
+### `com.horstmann.greet/com/horstmann/greet/internal/GreeterImpl.java`
 
 > *"The second package has a class that implements the interface. The class is public since it is accessed in the first package."*
 
@@ -85,7 +85,7 @@ public class GreeterImpl implements Greeter
 
 **Dịch:** Package thứ hai chứa class **implement interface**. Class này để **`public`** vì nó **được truy cập từ package thứ nhất**.
 
-### Listing 9.x — `com.horstmann.greet/module-info.java`
+### `com.horstmann.greet/module-info.java`
 
 > *"The com.horstmann.greet module contains both packages but only exports the first:"*
 
@@ -100,7 +100,7 @@ module com.horstmann.greet
 
 **Dịch:** Module `com.horstmann.greet` **chứa cả hai package nhưng chỉ export package thứ nhất**. Package thứ hai **không truy cập được từ ngoài module**.
 
-### Listing 9.x — `v2ch09.exportedpkg/module-info.java`
+### `v2ch09.exportedpkg/module-info.java`
 
 > *"We put our application into a second module, which will require the first module:"*
 
@@ -120,7 +120,7 @@ module v2ch09.exportedpkg
 | `exports` | **tên package** |
 | `requires` | **tên module** |
 
-### Listing 9.x — `v2ch09.exportedpkg/com/horstmann/hello/HelloWorld.java`
+### `v2ch09.exportedpkg/com/horstmann/hello/HelloWorld.java`
 
 > *"Our application now uses a Greeter to obtain a greeting:"*
 
