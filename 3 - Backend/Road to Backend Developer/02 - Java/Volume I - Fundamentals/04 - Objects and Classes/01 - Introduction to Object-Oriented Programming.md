@@ -1,15 +1,35 @@
 # 01 — Introduction to Object-Oriented Programming
 
 > Chapter 4, Section 4.1 — Core Java Volume I, 13th Edition (Horstmann).
-> Trích nguyên văn + dịch. Không thêm diễn giải ngoài sách.
+> Trích nguyên văn + dịch. Phần bổ sung ngoài sách được đánh dấu rõ bằng callout "Ngoài sách".
 
 ---
 
-## 4.1. Introduction to Object-Oriented Programming
+## 4.1. Introduction to Object-Oriented Programming 
 
 > *"Object-oriented programming, or OOP for short, is the dominant programming paradigm these days, having replaced the "structured" or procedural programming techniques that were developed in the 1970s. Since Java is object-oriented, you have to be familiar with OOP to become productive with Java."*
 
 **Dịch:** OOP là paradigm thống trị hiện nay, thay thế cho kỹ thuật lập trình "structured" hay procedural phát triển từ thập niên 1970. Java là ngôn ngữ object-oriented, nên phải quen với OOP mới làm việc hiệu quả được.
+
+> [!note] Ngoài sách — paradigm là gì?
+> Sách dùng chữ "paradigm" mà không định nghĩa. Định nghĩa lấy từ Wikipedia, *Programming paradigm*:
+>
+> > *"A programming paradigm is a relatively high-level way to conceptualize and structure the implementation of a computer program."*
+>
+> **Dịch:** Paradigm là một cách **ở mức tương đối cao** để hình dung và tổ chức việc implement một chương trình. Tức nó nói về **cách cấu trúc chương trình**, không phải cú pháp của một ngôn ngữ cụ thể.
+>
+> Các paradigm phổ biến, mô tả nguyên văn theo cùng trang đó:
+>
+> | Paradigm | Nguyên văn | Dịch |
+> |---|---|---|
+> | **Imperative** | *"code directly controls execution flow and state change, explicit statements that change a program state"* | code điều khiển trực tiếp luồng chạy và việc đổi state, bằng các câu lệnh tường minh làm thay đổi state chương trình |
+> | **Procedural** | *"organized as procedures that call each other"* | tổ chức thành các procedure gọi lẫn nhau |
+> | **Object-oriented** | *"organized as objects that contain both data structure and associated behavior"* | tổ chức thành các object chứa **cả** data structure lẫn behavior đi kèm |
+> | **Declarative** | *"code declares properties of the desired result, but not how to compute it"* | code khai báo **tính chất của kết quả mong muốn**, không khai báo cách tính ra nó |
+> | **Functional** | *"a desired result is declared as the value of a series of function evaluations"* | kết quả mong muốn được khai báo như giá trị của một chuỗi lời gọi hàm |
+>
+> Nguồn: [Programming paradigm — Wikipedia](https://en.wikipedia.org/wiki/Programming_paradigm)
+
 
 > *"An object-oriented program is made of objects. Each object has a specific functionality, exposed to its users, and a hidden implementation. Many objects in your programs will be taken "off-the-shelf" from a library; others will be custom-designed. Whether you build an object or use a pre-built one it might depend on your budget or time. But, basically, as long as an object satisfies your specifications, you don't care how the functionality is implemented."*
 
