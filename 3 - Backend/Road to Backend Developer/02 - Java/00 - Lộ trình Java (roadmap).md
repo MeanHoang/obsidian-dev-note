@@ -2,7 +2,7 @@
 
 > Phần 2 series [Road to Backend Developer](https://roadmap.sh/backend) — chọn **Java** làm ngôn ngữ backend.
 >
-> **Nguồn chính:** sách **"Core Java" — Cay S. Horstmann** (Volume I: 13th Ed, Java 21 | Volume II: 12th Ed, Java 17).
+> **Nguồn chính:** sách **"Core Java" — Cay S. Horstmann** (Volume I: 13th Ed, Java 21 | Volume II: 11th Ed, Java 11).
 >
 > Mục tiêu: **hiểu bản chất Java** (JVM, memory model, concurrency, WORA) + **tư duy OOP bài bản** + chuẩn bị phỏng vấn — không phải stack công việc hằng ngày (JS/Node).
 
@@ -134,7 +134,7 @@
 
 ---
 
-## 📖 Volume II — Advanced Features (12th Edition)
+## 📖 Volume II — Advanced Features (11th Edition)
 
 > Đọc sau khi xong Volume I — chủ yếu khi cần Streams, Database, Networking.
 
@@ -267,5 +267,5 @@
 
 ## Nguồn tham khảo
 - **Core Java, Volume I — Fundamentals, 13th Edition** — Cay S. Horstmann (Java 21)
-- **Core Java, Volume II — Advanced Features, 12th Edition** — Cay S. Horstmann (Java 17)
+- **Core Java, Volume II — Advanced Features, 11th Edition** — Cay S. Horstmann (Java 11)
 - [roadmap.sh — Java](https://roadmap.sh/java)
