@@ -415,6 +415,26 @@ public class Manager extends Employee
 
 **Dịch:** Inheritance **không dừng ở một tầng**. Ta có thể có class `Executive` extends `Manager`. Tập hợp **mọi class extend chung một superclass** gọi là **inheritance hierarchy**. **Đường đi từ một class cụ thể lên tổ tiên** của nó trong hierarchy gọi là **inheritance chain**.
 
+**Figure 5.1: Employee inheritance hierarchy**
+
+```
+                       ┌────────────┐
+                       │  Employee  │
+                       └─────△──────┘
+                             │
+        ┌────────────────────┼────────────────────┐
+        │                    │                    │
+  ┌─────┴─────┐        ┌─────┴─────┐       ┌──────┴─────┐
+  │  Manager  │        │ Secretary │       │ Programmer │
+  └─────△─────┘        └───────────┘       └────────────┘
+        │
+  ┌─────┴─────┐
+  │ Executive │
+  └───────────┘
+```
+
+*△ + nét liền = quan hệ extends, mũi tên trỏ lên superclass.*
+
 > *"There is usually more than one chain of descent from a distant ancestor class. You could form subclasses Programmer or Secretary that extend Employee, and they would have nothing to do with the Manager class (or with each other). This process can continue as long as is necessary."*
 
 **Dịch:** Thường có **nhiều hơn một nhánh hậu duệ** từ một class tổ tiên xa. Bạn có thể tạo subclass `Programmer` hoặc `Secretary` extends `Employee`, và chúng **chẳng liên quan gì** tới `Manager` (hay tới nhau). Quá trình này **tiếp diễn được bao lâu tuỳ nhu cầu**.

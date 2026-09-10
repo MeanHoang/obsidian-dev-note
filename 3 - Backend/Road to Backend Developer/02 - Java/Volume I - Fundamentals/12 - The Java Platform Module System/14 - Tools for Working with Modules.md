@@ -32,13 +32,22 @@ junit-4.12.jar -> java.management
 
 **Dịch:** Công cụ `jdeps` **phân tích dependency của một tập file JAR cho trước**. Giả sử bạn muốn **modular hoá JUnit 4**. Flag **`-s`** sinh ra **output tóm tắt**. Đó chính là **module graph**.
 
-*(Figure 12.3: The JUnit4 Module Graph — hình ảnh, không có trong bản trích text.)*
+**Figure 12.3: The JUnit4 Module Graph**
 
 ```
-junit-4.12.jar ──► hamcrest-core-1.3.jar ──► java.base
-      │
-      ├──────────► java.base
-      └──────────► java.management
+                      ╭───────────╮
+                      │   junit   │
+                      ╰─┬───┬───┬─╯
+              ┌─────────┘   │   └─────────┐
+              ▼             │             ▼
+    ╭─────────────────╮     │    ╭──────────────────╮
+    │  hamcrest-core  │     │    │  java.management │
+    ╰────────┬────────╯     │    ╰─────────┬────────╯
+             └──────────┐   │   ┌──────────┘
+                        ▼   ▼   ▼
+                    ╭───────────────╮
+                    │   java.base   │
+                    ╰───────────────╯
 ```
 
 > *"If you omit the -s flag, you get the module summary followed by a mapping from packages to required packages and modules. If you add the v flag, the listing maps classes to required packages and modules."*
@@ -71,7 +80,25 @@ jdeps --generate-module-info /tmp/junit junit-4.12.jar hamcrest-core-1.3.jar
 >
 > **Dịch:** Còn có một option **sinh output đồ hoạ ở ngôn ngữ "dot"** dùng để mô tả graph. Giả sử bạn đã cài công cụ `dot`, hãy chạy các lệnh trên; khi đó `summary.png` trông như hình trong sách.
 
-*(Figure 12.4: The Dot Output of jdeps — hình ảnh, không có trong bản trích text.)*
+**Figure 12.4: The Dot Output of `jdeps`**
+
+```
+                         ╭──────────────────╮
+                         │  junit-4.12.jar  │
+                         ╰──┬─────┬───────┬─╯
+             ┌──────────────┘     │       └──────────────┐
+             ▼                    │                      ▼
+  ╭────────────────────────╮      │      ╭──────────────────────────────────╮
+  │  hamcrest-core-1.3.jar │      │      │ java.management (java.management) │
+  ╰───────────┬────────────╯      │      ╰────────────────┬─────────────────╯
+              └───────────┐       │      ┌────────────────┘
+                          ▼       ▼      ▼
+                    ╭──────────────────────────╮
+                    │  java.base (java.base)   │
+                    ╰──────────────────────────╯
+```
+
+Cùng graph như Figure 12.3, nhưng node ghi **tên file JAR** và trong ngoặc là **tên module**.
 
 ### `jlink`
 

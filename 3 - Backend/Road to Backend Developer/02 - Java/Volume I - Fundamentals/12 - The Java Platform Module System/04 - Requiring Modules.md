@@ -68,6 +68,8 @@ module v1ch12.requiremod
 
 **Dịch:** Figure 12.1 cho thấy **module graph** với **node là các module**. **Cạnh của graph** (các mũi tên nối node) hoặc là **requirement được khai báo**, hoặc — khi không khai báo requirement nào — là **requirement ngầm định tới `java.base`**.
 
+**Figure 12.1: A module graph**
+
 ```
         v1ch12.requiremod
                 │ requires

@@ -11,23 +11,6 @@
 
 **Dịch:** Các section sau bàn về **một loạt hạn chế** bạn cần cân nhắc khi làm việc với generic của Java. **Phần lớn các hạn chế này là hệ quả của type erasure** — xem [[05 - Generic Code and the Virtual Machine]].
 
-### Bảng tóm tắt các hạn chế (theo đầu đề section của sách)
-
-| Section | Hạn chế |
-|---|---|
-| 8.8.1 | **Type parameter không instantiate được bằng primitive type** |
-| 8.8.2 | **Truy vấn type lúc runtime chỉ hoạt động với raw type** |
-| 8.8.3 | **Không tạo được array của parameterized type** |
-| 8.8.4 | **Cảnh báo varargs** |
-| 8.8.5 | **Generic varargs không trải (spread) array primitive** |
-| 8.8.6 | **Không instantiate được type variable** |
-| 8.8.7 | **Không dựng được generic array** |
-| 8.8.8 | **Type variable không hợp lệ trong static context của generic class** |
-| 8.8.9 | **Không throw cũng không catch được instance của generic class** |
-| 8.8.10 | **Có thể vô hiệu hoá việc kiểm tra checked exception** |
-| 8.8.11 | **Coi chừng đụng độ (clash) sau erasure** |
-| 8.8.12 | **Type inference trong generic record pattern bị hạn chế** |
-
 ---
 
 ## 8.8.1. Type Parameters Cannot Be Instantiated with Primitive Types

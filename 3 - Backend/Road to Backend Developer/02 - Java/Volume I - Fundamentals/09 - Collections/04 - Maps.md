@@ -399,6 +399,30 @@ for (Map.Entry<String, Integer> entry : counts.entrySet())
 
 **Dịch:** Class **`LinkedHashSet`** và **`LinkedHashMap`** **nhớ thứ tự bạn chèn các item vào**. Nhờ vậy bạn **tránh được thứ tự trông có vẻ ngẫu nhiên** của item trong hash table. Khi entry được chèn vào table, chúng **được nối lại thành một doubly linked list**.
 
+**Figure 9.11: A linked hash table**
+
+```
+   bucket table                entries
+   ┌────────┐
+   │        │──────────► ┌───┬───┬───┬───┐
+   ├────────┤            │ ② │   │   │   │
+   │        │            └───┴───┴───┴───┘
+   ├────────┤
+   │        │──────────► ┌───┬───┬───┬───┐    ┌───┬───┬───┬───┐
+   ├────────┤            │ ① │   │   │   │───►│ ③ │   │   │   │
+   │        │            └───┴───┴───┴───┘    └───┴───┴───┴───┘
+   ├────────┤                (cùng một bucket → chain)
+   │        │──────────► ┌───┬───┬───┬───┐
+   └────────┘            │ ④ │   │   │   │
+                         └───┴───┴───┴───┘
+
+   thứ tự chèn (doubly linked list xuyên qua mọi bucket):
+
+        ① ⇄ ② ⇄ ③ ⇄ ④
+```
+
+Bucket table quyết định **vị trí lưu** (thứ tự "ngẫu nhiên"); ngoài ra mọi entry còn được xâu thành một **doubly linked list theo thứ tự chèn** ① → ② → ③ → ④.
+
 > *"For example, consider the following map insertions from Listing 9.6:"*
 
 ```java

@@ -39,6 +39,17 @@
 
 **Dịch:** Một queue interface quy định rằng bạn có thể **thêm element ở đuôi**, **xoá ở đầu**, và **biết được queue đang có bao nhiêu element**. Bạn dùng queue khi cần thu thập object rồi lấy lại theo kiểu **"first in, first out"**.
 
+**Figure 9.1: A queue**
+
+```
+   ┌─────┐   ┌─────┐   ┌─────┐   ┌─────┐
+   │  ❶  │   │  ❷  │   │  ❸  │   │  ❹  │
+   └─────┘   └─────┘   └─────┘   └─────┘
+      ▲                              ▲
+      │                              │
+    first                          last
+```
+
 > *"A minimal form of a queue interface might look like this:"*
 
 ```java
@@ -53,6 +64,41 @@ public interface Queue<E> // a simplified form of the interface in the Java API
 > *"The interface tells you nothing about how the queue is implemented. Of the two common implementations of a queue, one uses a "circular array" and one uses a linked list (see Figure 9.2)."*
 
 **Dịch:** Interface **không nói gì về việc queue được implement thế nào**. Trong hai implementation phổ biến của queue, một cái dùng **"circular array"**, một cái dùng **linked list**.
+
+**Figure 9.2: Queue implementations**
+
+```
+        ┌───────────┐
+        │     ③     │
+        ├───────────┤
+        │     ②     │
+        ├───────────┤
+        │     ①     │◄────── first
+        ├───────────┤
+        │           │
+        ├───────────┤
+        │           │
+        ├───────────┤
+        │           │
+        ├───────────┤
+        │     ④     │◄────── last
+        └───────────┘
+         Circular Array
+
+
+   ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
+   │   Node   │    │   Node   │    │   Node   │    │   Node   │
+   ├──────────┤    ├──────────┤    ├──────────┤    ├──────────┤
+   │ item  ①  │    │ item  ②  │    │ item  ③  │    │ item  ④  │
+   ├──────────┤    ├──────────┤    ├──────────┤    ├──────────┤
+   │ next  ●──┼───►│ next  ●──┼───►│ next  ●──┼───►│ next     │
+   └──────────┘    └──────────┘    └──────────┘    └──────────┘
+    Linked List                                          ▲
+        ▲                                                │
+      first                                            last
+```
+
+Cùng một `Queue` interface, hai cách chứa dữ liệu khác hẳn nhau bên trong.
 
 > *"Each implementation can be expressed by a class that implements the Queue interface. In the Java API, these classes are called ArrayDeque and LinkedList."*
 
@@ -228,17 +274,25 @@ iter.forEachRemaining(element -> do something with element);
 
 **Dịch:** Thay vào đó, hãy nghĩ iterator của Java là **nằm giữa các element**. Khi gọi `next`, iterator **nhảy qua element kế tiếp** và **trả về reference tới chính element vừa nhảy qua**.
 
-```
-        |  A  |  B  |  C  |
-        ^
-     iterator (trước A)
+**Figure 9.3: Advancing an iterator**
 
-  gọi next()  →  trả về A, iterator nhảy qua A
-
-        |  A  |  B  |  C  |
-              ^
-        iterator (giữa A và B)
 ```
+                ┌────────────────┐
+                │   next() nhảy  │
+                │    qua element │
+                ▼                ▼
+        ┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐
+        │     │ │     │ │     │ │     │ │     │
+        │     │ │     │ │     │ │     │ │     │
+        └─────┘ └─────┘ └─────┘ └─────┘ └─────┘
+                   ▲   ▲
+                    ╲  │
+                     ╲ │
+        returned ─────╯ └───── iterator
+        element
+```
+
+Iterator nằm **giữa** các element; sau `next()` nó đứng ở khe phía sau element vừa trả về.
 
 > **Note (sách):** *"Here is another useful analogy. You can think of Iterator.next as the equivalent of InputStream.read. Reading a byte from a stream automatically "consumes" the byte. The next call to read consumes and returns the next byte from the input. Similarly, repeated calls to next let you read all elements in a collection."*
 >

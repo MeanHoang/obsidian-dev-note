@@ -17,13 +17,14 @@ Pair<Employee> buddies = new Pair<Manager>(ceo, cfo); // illegal
 
 **Dịch:** Khi làm việc với generic class, bạn cần học vài quy tắc về **inheritance và subtype**. Hãy bắt đầu bằng một tình huống mà **nhiều lập trình viên thấy phản trực giác**. Xét một class và một subclass, ví dụ `Employee` và `Manager`. **`Pair<Manager>` có phải subtype của `Pair<Employee>` không?** Có lẽ hơi bất ngờ: câu trả lời là **"không"**. Nói chung, **không có quan hệ nào giữa `Pair<S>` và `Pair<T>`, bất kể `S` và `T` liên hệ với nhau ra sao**.
 
+**Figure 8.1: No inheritance relationship between `Pair` classes**
+
 ```
-Figure 8.1 — không có quan hệ inheritance giữa các class Pair
-
-     Pair<Employee>          Pair<Manager>
-          ✗ ────── không có quan hệ ────── ✗
-
-     (trong khi   Manager  ──is-a──►  Employee)
+    Employee            Pair<Employee> ┐
+       △                               │
+       │ extends                       ├─▷ no relationship!
+       │                               │
+    Manager             Pair<Manager>  ┘
 ```
 
 > *"This seems like a cruel restriction, but it is necessary for type safety. Suppose we were allowed to convert a Pair<Manager> to a Pair<Employee>. Consider this code:"*
@@ -80,13 +81,26 @@ rawBuddies.setFirst(new File(". . .")); // only a compile-time warning
 
 **Dịch:** Cuối cùng, generic class **extend hoặc implement được generic class khác**. Ở khía cạnh này, chúng **không khác gì class thường**. Ví dụ, class `ArrayList<T>` implement interface `List<T>`. Nghĩa là một `ArrayList<Manager>` **chuyển được thành `List<Manager>`**. Tuy nhiên, như vừa thấy, một `ArrayList<Manager>` **không phải là `ArrayList<Employee>` cũng không phải `List<Employee>`**.
 
+**Figure 8.2: Subtype relationships among generic list types**
+
 ```
-Figure 8.2 — quan hệ subtype giữa các generic list type
+                        «interface»
+                         List (raw)
+                        ▲    △    ▲
+             ───────────┘    │    └───────────
+             │                                │
+      «interface»                       «interface»
+      List<Manager>                    List<Employee>
+             △                                △
+             ┊ implements                     ┊ implements
+             ┊         ArrayList (raw)        ┊
+             ┊            ▲     ▲             ┊
+             ┊     ┌──────┘     └──────┐      ┊
+             ┊     │                   │      ┊
+      ArrayList<Manager>  ┐      ArrayList<Employee>
+                          └─▷ no relationship! ◁─┘
 
-   ArrayList<Manager>  ──►  List<Manager>      ✅ hợp lệ
-
-   ArrayList<Manager>  ──►  ArrayList<Employee>  ❌
-   ArrayList<Manager>  ──►  List<Employee>       ❌
+   ──▶ chuyển sang raw type      ┈▷ implements
 ```
 
 ---

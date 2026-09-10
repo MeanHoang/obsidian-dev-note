@@ -24,7 +24,7 @@ public interface Callable<V>
 }
 ```
 
-**Dịch:** [[01 - Running Threads|`Runnable`]] đóng gói một task chạy **bất đồng bộ**; bạn có thể hình dung nó như một **method bất đồng bộ không có parameter và không có giá trị trả về**. **`Callable` tương tự `Runnable`, nhưng nó trả về một giá trị.** [[01 - Interfaces|Interface]] `Callable` là một **parameterized type** ([[08 - Generic Programming|generic]]), **chỉ có một method là `call`**.
+**Dịch:** [[01 - Running Threads|`Runnable`]] đóng gói một task chạy **bất đồng bộ**; bạn có thể hình dung nó như một **method bất đồng bộ không có parameter và không có giá trị trả về**. **`Callable` tương tự `Runnable`, nhưng nó trả về một giá trị.** [[01 - Interfaces|Interface]] `Callable` là một **parameterized type** ([[01 - Why Generic Programming|generic]]), **chỉ có một method là `call`**.
 
 > *"The type parameter is the type of the returned value. For example, a Callable<Integer> represents an asynchronous task that eventually returns an Integer object."*
 

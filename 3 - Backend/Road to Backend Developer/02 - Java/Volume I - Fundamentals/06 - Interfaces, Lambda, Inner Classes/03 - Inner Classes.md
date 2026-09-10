@@ -107,6 +107,27 @@ public class TimePrinter implements ActionListener
 
 **Dịch:** Để làm được vậy, **object của inner class LUÔN nhận một reference ngầm tới object đã tạo ra nó**. *(Figure 6.3 trong sách: object inner class có một reference trỏ tới object outer class.)*
 
+**Figure 6.3: An inner class object has a reference to an outer class object.**
+
+```
+ ┌──────────────────────────┐
+ │       TimePrinter        │
+ │                          │
+ │  outer = ┌──────────┐    │
+ │          └──────────┘────┼──┐
+ └──────────────────────────┘  │
+                               │   ┌──────────────────────────┐
+                               └──►│      TalkingClock        │
+                                   │                          │
+                                   │  interval = ┌────────┐   │
+                                   │             │  1000  │   │
+                                   │             └────────┘   │
+                                   │  beep     = ┌────────┐   │
+                                   │             │  true  │   │
+                                   │             └────────┘   │
+                                   └──────────────────────────┘
+```
+
 > *"This reference is invisible in the definition of the inner class. However, to illuminate the concept, let us call the reference to the outer object outer. Then the actionPerformed method is equivalent to the following:"*
 
 ```java

@@ -115,6 +115,25 @@ if (ts != null && ts.includeName()) . . .
 
 **Dịch:** Lưu ý method **tự gọi chính nó theo kiểu đệ quy**. Hễ một object **thuộc về một class không được annotate**, thì **method `toString` thông thường của nó được dùng và đệ quy dừng lại**.
 
+**Figure 11.2: Processing annotations at runtime**
+
+```
+                                                    ┌──────────────────────┐
+                                                    │ Program uses         │
+                                                    │ reflection API       │
+                                                    │ to process           │
+                                                    │ annotations          │
+                                                    └───────────┬──────────┘
+                                                                │
+   ┌────────────┐    ┌───────────────┐    ┌────────────┐    ┌───┴──────────────┐
+   │ @ToString  │───►│ Java Compiler │───►│ @ToString  │───►│ Java Virtual     │
+   │            │    │               │    │            │    │ Machine          │
+   └────────────┘    └───────────────┘    └────────────┘    └──────────────────┘
+    Source File                            Class File
+```
+
+Annotation `@ToString` **sống sót qua compiler** và nằm trong class file, để JVM/reflection đọc lúc runtime.
+
 > *"This is a simple but typical use of the runtime annotation API. Look up classes, fields, and so on, using reflection; call getAnnotation or getAnnotationsByType on the potentially annotated elements to retrieve the annotations; then, invoke the methods of the annotation interfaces to obtain the element values."*
 
 **Dịch:** Đây là một cách dùng **đơn giản nhưng điển hình** của runtime annotation API:

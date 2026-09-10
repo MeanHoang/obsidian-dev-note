@@ -90,25 +90,41 @@
 
 > *"Figure 10.1 shows the states that a thread can have and the possible transitions from one state to another."*
 
+**Figure 10.1: Thread states**
+
 ```
-                    new Thread(r)
-                          │
-                          ▼
-                      ┌───────┐
-                      │  NEW  │
-                      └───┬───┘
-                          │ start()
-                          ▼
-   ┌──────────────►  ┌──────────┐
-   │                 │ RUNNABLE │ ──── run() thoát / uncaught exception ──► TERMINATED
-   │                 └────┬─────┘
-   │                      │
-   │    acquire intrinsic lock đang bị giữ  → BLOCKED
-   │    wait() / join() / Lock, Condition   → WAITING
-   │    sleep() / các bản có timeout        → TIMED WAITING
-   │                      │
-   └── reactivate (lock lấy được / timeout hết / được notify) ──┘
+    ┌───────┐
+    │  new  │
+    └───┬───┘
+        │                                        ┌───────────┐
+        │ start                                  │  blocked  │
+        │                                        └───────────┘
+        │                              waiting for lock  ▲ │
+        │                            ┌────────────────────┘ │
+        │                            │  ┌───────────────────┘
+        ▼                            │  ▼   lock acquired
+    ┌────────────┐   waiting for notification    ┌───────────┐
+    │            │ ────────────────────────────► │           │
+    │  runnable  │                               │  waiting  │
+    │            │ ◄──────────────────────────── │           │
+    └────────────┘    notification occurred      └───────────┘
+        │   │  ▲   waiting for timeout or notification
+        │   │  └──────────────────────────────┐  ┌───────────────┐
+        │   └─────────────────────────────────┼─►│               │
+        │       timeout or notification       └──│ timed waiting │
+        │            occurred                    └───────────────┘
+        │ run
+        │ method
+        │ exits
+        ▼
+    ┌──────────────┐
+    │  terminated  │
+    └──────────────┘
 ```
+
+Sáu state của thread và các transition giữa chúng.
+
+Sáu state của thread và các transition giữa chúng.
 
 > *"In practice, the difference between the blocked and waiting states is not usually significant. We will often say that a thread is blocked when it is in the blocked, waiting, or timed waiting state. When a thread is blocked or waiting (or, of course, when it terminates), another thread will be scheduled to run."*
 

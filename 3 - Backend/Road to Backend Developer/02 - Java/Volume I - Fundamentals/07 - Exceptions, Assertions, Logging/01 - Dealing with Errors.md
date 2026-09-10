@@ -117,6 +117,8 @@
 
 **Dịch:** Mọi exception đều **kế thừa từ `Throwable`**, nhưng hierarchy **lập tức chia làm hai nhánh: `Error` và `Exception`**.
 
+**Figure 7.1: Exception hierarchy in Java**
+
 ```
                     Throwable
                         │

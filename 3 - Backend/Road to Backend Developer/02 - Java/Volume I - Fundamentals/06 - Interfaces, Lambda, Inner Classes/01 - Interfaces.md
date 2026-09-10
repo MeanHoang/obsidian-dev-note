@@ -999,6 +999,31 @@ copy.raiseSalary(10); // oops--also changed original
 
 **Dịch:** Nhớ lại chuyện gì xảy ra khi bạn **copy một biến giữ object reference**: bản gốc và bản copy **là reference tới cùng một object**. Nghĩa là **thay đổi ở biến nào cũng ảnh hưởng tới biến kia**.
 
+**Figure 6.1: Copying and cloning**
+
+```
+ Copying
+   original = ┌────────┐──┐
+              └────────┘  │      ┌────────────┐
+                          ├─────►│  Employee  │
+   copy     = ┌────────┐  │      │            │
+              └────────┘──┘      └────────────┘
+
+
+ Cloning
+   original = ┌────────┐         ┌────────────┐
+              └────────┘────────►│  Employee  │
+                                 │            │
+                                 └────────────┘
+
+   copy     = ┌────────┐         ┌────────────┐
+              └────────┘────────►│  Employee  │
+                                 │            │
+                                 └────────────┘
+```
+
+*Copying: hai biến trỏ chung một object. Cloning: mỗi biến trỏ tới một object riêng.*
+
 > *"If you would like copy to be a new object that begins its life being identical to original but whose state can diverge over time, use the clone method."*
 
 ```java
@@ -1016,19 +1041,25 @@ copy.raiseSalary(10); // OK--original unchanged
 
 **Dịch:** Thao tác cloning mặc định là **"shallow" (nông)** — nó **không clone những object được tham chiếu bên trong object khác**. (Hình minh hoạ cho thấy một object `Date` **được dùng chung**. Ví dụ này dùng phiên bản `Employee` biểu diễn ngày vào làm bằng **`Date`**.)
 
+**Figure 6.2: A shallow copy**
+
 ```
- original ──►┌──────────────────┐        ┌────────────┐
-             │ name             │        │            │
-             │ salary           │   ┌───►│ Date object│  ← subobject DÙNG CHUNG
-             │ hireDay ─────────┼───┤    │            │
-             └──────────────────┘   │    └────────────┘
- clone ─────►┌──────────────────┐   │
-             │ name             │   │
-             │ salary           │   │
-             │ hireDay ─────────┼───┘
-             └──────────────────┘
-                shallow copy
+ original = ┌──────┐    ┌─────────────────────┐        ┌──────────┐
+            └──────┘───►│      Employee       │   ┌───►│  String  │
+                        │ name    = ──────────┼───┤    │          │
+                        │ salary  = 50000.0   │   │    └──────────┘
+                        │ hireDay = ──────────┼─┐ │
+                        └─────────────────────┘ │ │
+                                                │ │
+ copy     = ┌──────┐    ┌─────────────────────┐ │ │    ┌──────────┐
+            └──────┘───►│      Employee       │ ├─┼───►│   Date   │
+                        │ name    = ──────────┼─┼─┘    │          │
+                        │ salary  = 50000.0   │ │      └──────────┘
+                        │ hireDay = ──────────┼─┘
+                        └─────────────────────┘
 ```
+
+*Hai object `Employee` riêng biệt, nhưng cùng trỏ tới một `String` và một `Date` — subobject bị dùng chung.*
 
 > *"Does it matter if the copy is shallow? It depends. If the subobject shared between the original and the shallow clone is immutable, then the sharing is safe. This certainly happens if the subobject belongs to an immutable class, such as String. Alternatively, the subobject may simply remain constant throughout the lifetime of the object, with no mutators touching it and no methods yielding a reference to it."*
 

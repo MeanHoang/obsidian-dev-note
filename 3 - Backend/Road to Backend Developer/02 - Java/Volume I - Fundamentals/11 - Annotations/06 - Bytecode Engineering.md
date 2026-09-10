@@ -437,6 +437,23 @@ java -javaagent:EntryLoggingAgent.jar=set.Item -classpath .:asm/\* set.SetTest
 
 **Dịch:** Listing 11.8 cho thấy code của agent. Agent **cài đặt một class file transformer**. Transformer **trước hết kiểm tra xem tên class có khớp với argument của agent hay không**. Nếu khớp, nó **dùng class `EntryLogger` ở section trước để sửa bytecode**. Tuy nhiên, **bytecode đã sửa không được lưu ra file**. Thay vào đó, transformer **trả chúng về để load vào virtual machine** (xem Figure 11.3). Nói cách khác, kỹ thuật này **thực hiện việc sửa bytecode "just in time"**.
 
+**Figure 11.3: Modifying classes at load time**
+
+```
+                                            ┌──────────────────┐
+                                            │ Java Virtual     │
+                                            │ Machine          │
+                                            └──┬────────────▲──┘
+                                     launches  ┊            ┊  loads
+                                               ▼            ┊
+  ┌───────────┐   ┌───────────────┐   ┌───────────┐   ┌─────────┐   ┌────────────────┐
+  │ @LogEntry │──►│ Java Compiler │──►│ @LogEntry │──►│  Agent  │──►│ (no annotations)│
+  └───────────┘   └───────────────┘   └───────────┘   └─────────┘   └────────────────┘
+   Source File                         Class File                    Modified Bytecodes
+```
+
+JVM **launch** agent; agent sửa class file rồi JVM **load** thẳng bytecode đã sửa (annotation không còn trong đó).
+
 ---
 
 ### Listing 11.8 — `bytecodeAnnotations/EntryLoggingAgent.java`

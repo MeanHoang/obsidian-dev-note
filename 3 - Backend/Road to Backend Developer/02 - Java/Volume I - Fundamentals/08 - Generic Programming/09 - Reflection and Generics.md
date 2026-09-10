@@ -140,12 +140,25 @@ Xem [[04 - Bounds for Type Variables]] và [[07 - Wildcard Types]].
 
 **Dịch:** Lưu ý **bốn subtype cuối là interface** — **virtual machine instantiate các class phù hợp implement những interface này**.
 
+**Figure 8.5: The `Type` interface and its descendants**
+
+**Figure 8.5: The `Type` interface and its descendants**
+
 ```
-                 Type
-                  │
-   ┌──────┬───────┼──────────────┬───────────────┐
- Class  TypeVariable  WildcardType  ParameterizedType  GenericArrayType
+                        «interface»
+                            Type
+                       △              △
+          implements ┈┈┘              │ extends
+                     ┊     ┌──────┬───┴──┬──────────────┐
+                     ┊     │      │      │              │
+                  Class<T> │      │      │              │
+                           │      │      │              │
+                  «interface»  «interface»  «interface»  «interface»
+                  TypeVariable WildcardType Parameterized GenericArray
+                                                Type          Type
 ```
+
+> Bốn subtype cuối là **interface**, riêng `Class<T>` là **class** — nối bằng nét đứt (implements).
 
 > *"Listing 8.4 uses the generic reflection API to print out what it discovers about a given class. If you run it with the Pair class, you get this report:"*
 

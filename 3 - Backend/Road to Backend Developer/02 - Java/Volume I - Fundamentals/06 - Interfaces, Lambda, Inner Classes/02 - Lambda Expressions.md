@@ -463,10 +463,12 @@ s -> s.length() == 0
 | `separator::equals` | `x -> separator.equals(x)` | Method expression với **một object và một instance method**. Parameter của lambda được **truyền vào làm explicit parameter** của method. |
 | `String::strip` | `x -> x.strip()` | Method expression với **một class và một instance method**. Parameter của lambda **trở thành implicit parameter**. |
 | `String::concat` | `(x, y) -> x.concat(y)` | Lại là instance method, nhưng lần này **có explicit parameter**. Như trên, **parameter đầu của lambda thành implicit parameter**, **các parameter còn lại được truyền vào method**. |
-| `Integer::valueOf` | `x -> Integer.valueOf(x)` | Method expression với **một static method**. Parameter của lambda **được truyền cho static method**. |
-| `Integer::sum` | `(x, y) -> Integer.sum(x, y)` | Một static method khác, lần này **hai parameter**. **Cả hai parameter của lambda được truyền cho static method.** Method `Integer.sum` **được tạo ra chính là để dùng làm method reference**; viết dạng lambda thì chỉ cần `(x, y) -> x + y`. |
+| `Integer.valueOf` | `x -> Integer.valueOf(x)` | Method expression với **một static method**. Parameter của lambda **được truyền cho static method**. |
+| `Integer.sum` | `(x, y) -> Integer.sum(x, y)` | Một static method khác, lần này **hai parameter**. **Cả hai parameter của lambda được truyền cho static method.** Method `Integer.sum` **được tạo ra chính là để dùng làm method reference**; viết dạng lambda thì chỉ cần `(x, y) -> x + y`. |
 | `String::new` | `x -> new String(x)` | Đây là **constructor reference** — xem mục 6.2.6. Các parameter của lambda **được truyền cho constructor**. |
 | `String[]::new` | `n -> new String[n]` | Đây là **array constructor reference** — xem mục 6.2.6. Parameter của lambda là **độ dài array**. |
+
+> *(Chép nguyên văn bản in trang 468: hai dòng static method sách in là `Integer.valueOf` và `Integer.sum` với **dấu chấm** — theo cú pháp method reference thì phải là `Integer::valueOf` và `Integer::sum`. Đây là typo của bản in.)*
 
 > **Note (sách):** *"When there are multiple overloaded methods with the same name, the compiler will try to find from the context which one you mean. For example, there are two versions of the Math.max method, one for integers and one for double values. Which one gets picked depends on the method parameters of the functional interface to which Math::max is converted. Just like lambda expressions, method references don’t live in isolation. They are always turned into instances of functional interfaces."*
 >

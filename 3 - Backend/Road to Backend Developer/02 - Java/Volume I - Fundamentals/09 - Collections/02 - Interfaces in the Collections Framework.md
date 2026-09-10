@@ -151,24 +151,29 @@ SequencedCollection<E> reversed()
 
 ---
 
-## Quan hệ giữa các interface (dựng lại từ phần chữ)
-
-> Figure 9.4 là ảnh, bản trích text không có. Sơ đồ dưới đây **chỉ gồm những quan hệ được nêu thành lời trong sách** (Section 9.1.3, 9.2 và 9.3.5).
+**Figure 9.4: The interfaces of the Java Collections Framework**
 
 ```
-        Iterable
-           │  (Collection extends Iterable — §9.1.3)
-       Collection                              Map
-        │      │                                │
-      List    Set                            SortedMap
-                │                                │
-            SortedSet                      NavigableMap
-                │
-          NavigableSet
-
-  SequencedCollection (21)  ──► List, Set cũng extend (§9.3.5)
-        └── SequencedSet (21) — thu hẹp kiểu trả về của reversed()
-  SequencedMap (21) — các method tương tự cho map
+   Iterable                                  Iterator      RandomAccess
+      △                                          △
+      │                                          │
+  Collection                                ListIterator
+   △   △   △
+   │   │   └──────────────┐
+   │   └──────┐           │
+   │          │           │
+  Set   SequencedCollection   Queue              Map
+   △        △    △    △        △                  △
+   │        │    │    │        │                  │
+   └────┬───┘    │    └───┬────┘             SequencedMap
+        │        │        │                       △
+   SequencedSet List    Deque                     │
+        △                                     SortedMap
+        │                                         △
+    SortedSet                                     │
+        △                                    NavigableMap
+        │
+   NavigableSet
 ```
 
 ---

@@ -11,6 +11,20 @@
 
 **Dịch:** Càng đi lên [[01 - Classes, Superclasses, and Subclasses|inheritance hierarchy]], class càng **tổng quát hơn** và **có lẽ trừu tượng hơn**. Tới một điểm nào đó, class tổ tiên **tổng quát tới mức bạn nghĩ về nó như một nền tảng cho các class khác**, hơn là một class có **instance cụ thể mà bạn muốn dùng**. Ví dụ: mở rộng hierarchy `Employee`. **Một employee là một person, và một student cũng vậy.** Ta mở rộng hierarchy để có thêm class `Person` và `Student`.
 
+**Figure 5.2: Inheritance diagram for Person and its subclasses**
+
+```
+                  ┌──────────┐
+                  │  Person  │
+                  └────△─────┘
+                       │
+          ┌────────────┴────────────┐
+          │                         │
+   ┌──────┴─────┐            ┌──────┴────┐
+   │  Employee  │            │  Student  │
+   └────────────┘            └───────────┘
+```
+
 > *"Why bother with so high a level of abstraction? There are some attributes that make sense for every person, such as a name. Both students and employees have names, and introducing a common superclass lets us factor out the getName method to a higher level in the inheritance hierarchy."*
 
 **Dịch:** Sao phải bận tâm tới **mức trừu tượng cao như vậy**? Vì có **một số thuộc tính có nghĩa với mọi person**, chẳng hạn **name**. Cả student lẫn employee đều có tên, và **đưa vào một superclass chung cho phép ta rút method `getName` lên mức cao hơn trong hierarchy**.

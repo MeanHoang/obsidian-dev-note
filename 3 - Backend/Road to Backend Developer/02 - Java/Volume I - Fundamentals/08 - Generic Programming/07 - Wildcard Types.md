@@ -46,11 +46,16 @@ public static void printBuddies(Pair<? extends Employee> p)
 
 **Dịch:** Như đã thấy ở section trước — [[06 - Inheritance Rules for Generic Types]] — bạn **không truyền được `Pair<Manager>` vào method đó**, khá là gò bó. Nhưng cách giải quyết rất đơn giản: **dùng một wildcard type**. Type `Pair<Manager>` **là subtype của `Pair<? extends Employee>`**.
 
+**Figure 8.3: Subtype relationships with wildcards**
+
 ```
-        Pair<? extends Employee>
-                  ▲
-                  │  (subtype)
-            Pair<Manager>
+                Pair (raw)
+                    △
+                    │
+         Pair<? extends Employee>
+                    △
+          ┌─────────┴─────────┐
+   Pair<Manager>        Pair<Employee>
 ```
 
 > *"Can we use wildcards to corrupt a Pair<Manager> through a Pair<? extends Employee> reference?"*
@@ -131,10 +136,19 @@ public static void minmaxBonus(Manager[] a, Pair<? super Manager> result)
 
 **Dịch:** Một ví dụ điển hình: ta có một array manager và muốn **đặt manager có bonus thấp nhất và cao nhất vào một object `Pair`**. `Pair` loại nào? `Pair<Manager>` là lựa chọn hiển nhiên, nhưng **còn khả năng khác**: `Pair<Employee>` cũng hợp lệ, mà `Pair<Object>` cũng vậy. Method trên **chấp nhận mọi `Pair` phù hợp**.
 
+**Figure 8.4: A wildcard with a supertype bound**
+
 ```
-Pair<Object>    ─┐
-Pair<Employee>  ─┼──  đều là  Pair<? super Manager>
-Pair<Manager>   ─┘
+                  Pair (raw)
+                      △
+                      │
+                   Pair<?>
+                      △
+                      │
+            Pair<? super Manager>
+                      △
+        ┌─────────────┼─────────────┐
+ Pair<Manager>  Pair<Employee>  Pair<Object>
 ```
 
 > *"Intuitively speaking, wildcards with supertype bounds let you write to a generic object, while wildcards with subtype bounds let you read from a generic object."*

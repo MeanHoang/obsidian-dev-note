@@ -53,6 +53,36 @@
 | `WeakHashMap` | Một map có **value có thể bị garbage collector thu hồi** nếu không còn chỗ nào khác dùng |
 | `IdentityHashMap` | Một map có **key được so sánh bằng `==` chứ không phải `equals`** |
 
+> *"Figure 9.5 shows the relationships between these classes."*
+
+**Dịch:** Figure 9.5 cho thấy **quan hệ giữa các class này**.
+
+**Figure 9.5: Classes in the Java Collections Framework**
+
+```
+                          AbstractCollection
+                        △        △        △        △
+            ┌───────────┘        │        │        └──────────┐
+       AbstractList         AbstractSet  AbstractQueue     ArrayDeque
+         △        △          △    △   △        △
+    ┌────┘        │      ┌───┘    │   └───┐    │
+AbstractSequentialList ArrayList  │       │  PriorityQueue
+         △                        │       │
+         │                HashSet EnumSet TreeSet
+    LinkedList                △
+                              │
+                       LinkedHashSet
+
+
+                            AbstractMap
+                    △     △      △       △        △
+             ┌──────┘     │      │       │        └────────┐
+          HashMap     TreeMap EnumMap WeakHashMap   IdentityHashMap
+             △
+             │
+       LinkedHashMap
+```
+
 ---
 
 ## 9.3.1. Linked Lists
@@ -61,18 +91,67 @@
 
 **Dịch:** Ta đã dùng [[09 - Arrays|array]] và người anh em động của nó là [[03 - Generic Array Lists|`ArrayList`]] ở nhiều ví dụ. Nhưng array và array list có **một nhược điểm lớn**: **xoá một element ở giữa array rất đắt**, vì **mọi element phía sau phải dịch về đầu array**. **Chèn element ở giữa cũng vậy.**
 
+**Figure 9.6: Removing an element from an array**
+
+```
+                  ┌─────────┐
+                  │         │
+                  ├─────────┤
+ removed element  │/////////│ ←┐
+                  ├─────────┤  │
+                  │         │ ─┘  mọi element phía sau
+                  ├─────────┤     phải dịch lên một ô
+                  │         │ ─┐
+                  ├─────────┤  │
+                  │         │ ─┘
+                  ├─────────┤
+                  │         │
+                  └─────────┘
+```
+
 > *"Another well-known data structure, the linked list, solves this problem. Where an array stores object references in consecutive memory locations, a linked list stores each object in a separate link. Each link also stores a reference to the next link in the sequence. In the Java Collections Framework, all linked lists are actually doubly linked; that is, each link also stores a reference to its predecessor (see Figure 9.7)."*
 
 **Dịch:** Một data structure nổi tiếng khác — **linked list** — giải quyết vấn đề này. Trong khi array lưu object reference ở **các ô nhớ liên tiếp**, linked list lưu **mỗi object trong một link riêng**. Mỗi link còn lưu **reference tới link kế tiếp**. Trong Java Collections Framework, **mọi linked list thực chất là doubly linked**: mỗi link **lưu thêm reference tới link đứng trước**.
 
+**Figure 9.7: A doubly linked list**
+
 ```
-  null <- [ A ] <-> [ B ] <-> [ C ] -> null
-           first              last
+  ┌──────────────┐
+  │  LinkedList  │
+  │  first  ─────┼───────────┐
+  │  last   ─────┼───────────┼───────────────────────────────┐
+  └──────────────┘           ▼                               ▼
+                    ┌────────────────┐   ┌────────────────┐   ┌────────────────┐
+                    │      Node      │   │      Node      │   │      Node      │
+                    │ item  [░░░░░]  │   │ item  [░░░░░]  │   │ item  [░░░░░]  │
+                    │ next     ──────┼──►│ next     ──────┼──►│ next   (null)  │
+                    │ previous(null) │◄──┼── previous     │◄──┼── previous     │
+                    └────────────────┘   └────────────────┘   └────────────────┘
 ```
 
 > *"Removing an element from the middle of a linked list is an inexpensive operation—only the links around the element to be removed need to be updated (see Figure 9.8)."*
 
 **Dịch:** Xoá một element ở giữa linked list là thao tác **rẻ** — **chỉ cần cập nhật các link xung quanh** element bị xoá.
+
+**Figure 9.8: Removing an element from a linked list**
+
+```
+  ┌──────────────┐
+  │  LinkedList  │
+  │  first  ─────┼───────────┐
+  │  last   ─────┼───────────┼───────────────────────────────────────┐
+  └──────────────┘           ▼                                       ▼
+                    ┌────────────────┐  ┌////////////////┐  ┌────────────────┐
+                    │      Node      │  │//// Node //////│  │      Node      │
+                    │ item  [ Amy ]  │  │// item [Bob] //│  │ item  [ Carl ] │
+                    │ next     ──────┼──┼────────────────┼─►│ next   (null)  │
+                    │ previous(null) │◄─┼────────────────┼──┼── previous     │
+                    └────────────────┘  └////////////////┘  └────────────────┘
+                                          (đã bị gỡ khỏi
+                                             chuỗi link)
+```
+
+Node "Bob" bị gạch bỏ: chỉ `next` của Amy và `previous` của Carl được nối lại với nhau.
 
 > *"Perhaps you once took a data structures course in which you learned how to implement linked lists. You may have bad memories of tangling up the links when removing or adding elements in the linked list. If so, you will be pleased to learn that the Java Collections Framework supplies a class LinkedList ready for you to use."*
 
@@ -139,6 +218,31 @@ iter.add("Juliet");
 ```
 
 **Dịch:** Method `add` thêm element mới **trước vị trí iterator**. Đoạn code trên **nhảy qua element đầu** rồi **thêm `"Juliet"` trước element thứ hai**.
+
+**Figure 9.9: Adding an element to a linked list**
+
+```
+  ┌──────────────┐
+  │  LinkedList  │
+  │  first  ─────┼───────────┐
+  │  last   ─────┼───────────┼───────────────────────────────────────┐
+  └──────────────┘           ▼                                       ▼
+                    ┌────────────────┐   ┌────────────────┐   ┌────────────────┐
+                    │      Node      │   │      Node      │   │      Node      │
+                    │ item  [ Amy ]  │   │ item  [ Bob ]  │   │ item  [ Carl ] │
+                    │ next  → Juliet │   │ next     ──────┼──►│ next   (null)  │
+                    │ previous(null) │   │ prev  → Juliet │◄──┼── previous     │
+                    └────────┬───────┘   └───────▲────────┘   └────────────────┘
+                             │                   │
+                             │  ┌────────────────┴───┐
+                             └─►│        Node        │
+                                │ item   [ Juliet ]  │
+                                │ next     → Bob     │
+                                │ previous → Amy     │
+                                └────────────────────┘
+```
+
+Thứ tự sau khi thêm: **Amy → Juliet → Bob → Carl**; chỉ các link quanh vị trí chèn bị đổi.
 
 > *"If you call the add method multiple times, the elements are simply added in the order in which you supplied them. They are all added in turn before the current iterator position."*
 
@@ -407,12 +511,23 @@ public class LinkedListTest
 
 **Dịch:** Trong Java, hash table được implement thành **array các linked list**. Mỗi list gọi là một **bucket**. Để tìm chỗ của một object trong table, **tính hash code rồi lấy modulo tổng số bucket**. Số thu được là **index của bucket chứa element**. Ví dụ, object có hash code **76268** và có **128 bucket** thì object nằm ở **bucket 108** (vì `76268 % 128` bằng 108). Có thể may mắn là **bucket đó rỗng** — cứ chèn element vào. Nhưng đôi khi **trúng bucket không rỗng** — gọi là **hash collision**. Khi đó **so object mới với mọi object trong bucket** xem đã có chưa. Nếu hash code **phân bố ngẫu nhiên tương đối tốt** và **số bucket đủ lớn** thì **chỉ cần vài phép so sánh**.
 
+**Figure 9.10: A hash table**
+
 ```
-  bucket 0  -> [   ]
-  bucket 1  -> [ x ] -> [ y ]      (hash collision)
-  bucket 2  -> [   ]
-  ...
-  bucket 108-> [ "Lee" ]           (76268 % 128 == 108)
+   ┌────────┐
+   │        ├────────►┌────┬───┐    ┌────┬───┐
+   ├────────┤         │ ░░ │ ──┼───►│ ░░ │   │
+   │        ├────────►┌────┬───┐    └────┴───┘
+   ├────────┤         │ ░░ │   │
+   │        ├────────►┌────┬───┐    ┌────┬───┐
+   ├────────┤         │ ░░ │ ──┼───►│ ░░ │   │
+   ┊        ┊         └────┴───┘    └────┴───┘
+   ├────────┤
+   │        ├────────►┌────┬───┐
+   └────────┘         │ ░░ │   │
+                      └────┴───┘
+    array các          bucket = linked list
+    bucket             (nhiều phần tử ⇒ hash collision)
 ```
 
 > **Note (sách):** *"In the HashMap implementation, a bucket changes from a linked list into a balanced binary tree when its size exceeds a threshold. This improves performance if a hash function was poorly chosen and yields many collisions, or if malicious code tries to flood a hash table with many values that have identical hash codes."*
