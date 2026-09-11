@@ -244,7 +244,7 @@ Arrays.sort(words,
     (first, second) -> first.length() - second.length());
 ```
 
-> *"Behind the scenes, the Arrays.sort method receives an object of some class that implements Comparator<String>. Invoking the compare method on that object executes the body of the lambda expression. The management of these objects and classes is completely implementation-dependent, and it can be much more efficient than using traditional inner classes. It is best to think of a lambda expression as a function, not an object, and to accept that it can be passed to a functional interface."*
+> *"Behind the scenes, the Arrays.sort method receives an object of some class that implements Comparator\<String>. Invoking the compare method on that object executes the body of the lambda expression. The management of these objects and classes is completely implementation-dependent, and it can be much more efficient than using traditional inner classes. It is best to think of a lambda expression as a function, not an object, and to accept that it can be passed to a functional interface."*
 
 **Dịch:** Đằng sau hậu trường, `Arrays.sort` **nhận về object của một class nào đó implement `Comparator<String>`**. Gọi method `compare` lên object đó thì **thân của lambda expression được chạy**. Việc quản lý các object và class này **hoàn toàn phụ thuộc implementation**, và **có thể hiệu quả hơn nhiều so với dùng inner class truyền thống**. Tốt nhất hãy **nghĩ về lambda expression như một hàm, không phải một object**, và chấp nhận rằng **nó truyền được vào một functional interface**.
 
@@ -306,7 +306,7 @@ list.removeIf(e -> e == null);
 
 **Dịch:** Một interface **đặc biệt hữu ích** trong `java.util.function` là **`Predicate`**. Class `ArrayList` có method **`removeIf`** nhận parameter kiểu `Predicate`, **được thiết kế riêng để truyền lambda expression** vào.
 
-> *"Another useful functional interface is Supplier<T>:"*
+> *"Another useful functional interface is Supplier\<T>:"*
 
 ```java
 public interface Supplier<T>
@@ -342,7 +342,7 @@ LocalDate hireDay = Objects.requireNonNullElseGet(day,
 
 **Dịch:** Supplier được dùng cho **lazy evaluation** (tính lười). Lời gọi đầu **không tối ưu**: ta kỳ vọng `day` **hiếm khi null**, nên **chỉ muốn dựng `LocalDate` mặc định khi cần thiết**. Dùng supplier thì **hoãn được phép tính**: `requireNonNullElseGet` **chỉ gọi supplier khi giá trị thực sự cần đến**.
 
-> *"Functional interfaces that involve primitive types are a little cumbersone. Consider a function consuming an int and yielding an object of type T. You could use a Function<Integer, T>, but then the argument must be boxed in each call. Instead, there is a functional interface IntFunction<T>. Conversely, if a function has a return value of type int, the ToIntFunction<T> interface is more efficient than Function<T, Integer>. Finally, if both argument and return value are int, there is an IntUnaryOperator interface."*
+> *"Functional interfaces that involve primitive types are a little cumbersone. Consider a function consuming an int and yielding an object of type T. You could use a Function<Integer, T>, but then the argument must be boxed in each call. Instead, there is a functional interface IntFunction\<T>. Conversely, if a function has a return value of type int, the ToIntFunction\<T> interface is more efficient than Function<T, Integer>. Finally, if both argument and return value are int, there is an IntUnaryOperator interface."*
 
 **Dịch:** Functional interface dính tới **[[02 - Data Types|kiểu primitive]] thì hơi lằng nhằng**. Xét một hàm **nhận `int`** và **sinh object kiểu `T`**: dùng `Function<Integer, T>` được, nhưng **argument phải bị box ở mỗi lời gọi**. Thay vào đó có **`IntFunction<T>`**. Ngược lại, nếu hàm **trả về `int`** thì **`ToIntFunction<T>` hiệu quả hơn** `Function<T, Integer>`. Cuối cùng, nếu **cả argument lẫn giá trị trả về đều là `int`** thì có **`IntUnaryOperator`**.
 
@@ -775,7 +775,7 @@ repeat(10, i -> System.out.println("Countdown: " + (9 - i)));
 | `Predicate<T>` | `T` | `boolean` | `test` | Một hàm **trả về giá trị boolean** | `and`, `or`, `negate`, `isEqual`, `not` |
 | `BiPredicate<T, U>` | `T, U` | `boolean` | `test` | Một hàm **trả về giá trị boolean** với **hai parameter** | `and`, `or`, `negate` |
 
-> *"Table 6.3 lists the 34 available specializations for primitive types int, long, and double. As you will see in Chapter 8, it is more efficient to use these specializations than the generic interfaces. For that reason, I used an IntConsumer instead of a Consumer<Integer> in the example of the preceding section."*
+> *"Table 6.3 lists the 34 available specializations for primitive types int, long, and double. As you will see in Chapter 8, it is more efficient to use these specializations than the generic interfaces. For that reason, I used an IntConsumer instead of a Consumer\<Integer> in the example of the preceding section."*
 
 **Dịch:** Table 6.3 liệt kê **34 bản chuyên biệt hoá** cho kiểu primitive **`int`, `long`, `double`**. Như sẽ thấy ở Chapter 8, **dùng các bản chuyên biệt này hiệu quả hơn interface generic**. Vì vậy tác giả dùng **`IntConsumer`** thay vì `Consumer<Integer>` ở ví dụ mục trước.
 
@@ -799,7 +799,7 @@ repeat(10, i -> System.out.println("Countdown: " + (9 - i)));
 | `PBinaryOperator` | `p, p` | `p` | `applyAsP` |
 | `PPredicate` | `p` | `boolean` | `test` |
 
-> **Tip (sách):** *"Use the standard interfaces for function types whenever you can. For example, suppose you write a method to process files that match a certain criterion. There is a legacy interface java.io.FileFilter. But if you use the standard Predicate<File> interface, you can take advantage of methods for creating, adapting, and combining predicates. The only reason not to do so would be if you already have many useful methods producing FileFilter instances."*
+> **Tip (sách):** *"Use the standard interfaces for function types whenever you can. For example, suppose you write a method to process files that match a certain criterion. There is a legacy interface java.io.FileFilter. But if you use the standard Predicate\<File> interface, you can take advantage of methods for creating, adapting, and combining predicates. The only reason not to do so would be if you already have many useful methods producing FileFilter instances."*
 >
 > **Dịch:** **Hãy dùng interface chuẩn cho kiểu hàm bất cứ khi nào có thể.** Ví dụ khi viết method xử lý file khớp một tiêu chí nào đó: có interface cũ `java.io.FileFilter`, nhưng nếu dùng interface chuẩn **`Predicate<File>`** thì bạn **tận dụng được các method tạo, thích nghi và kết hợp predicate**. **Lý do duy nhất để không làm vậy** là khi bạn **đã có sẵn nhiều method hữu ích sinh ra instance `FileFilter`**.
 
@@ -899,7 +899,7 @@ Arrays.sort(people, Comparator.comparingInt(p -> p.getName().length()));
 
 **Dịch:** Nếu hàm key **có thể trả về `null`**, bạn sẽ thích hai adapter **`nullsFirst`** và **`nullsLast`**. Hai static method này **nhận một comparator có sẵn và sửa nó** để **không ném exception khi gặp giá trị `null`**, mà **xếp `null` là nhỏ hơn hoặc lớn hơn giá trị thường**.
 
-> *"The nullsFirst method needs a comparator—in this case, one that compares two strings. The naturalOrder method makes a comparator for any class implementing Comparable. A Comparator.<String>naturalOrder() is what we need. (See Chapter 8 for an explanation of this syntax. Fortunately, the generic type can usually be inferred.) Here is the complete call for sorting by potentially null middle names. I use a static import of java.util.Comparator.*, to make the expression more legible."*
+> *"The nullsFirst method needs a comparator—in this case, one that compares two strings. The naturalOrder method makes a comparator for any class implementing Comparable. A Comparator.\<String>naturalOrder() is what we need. (See Chapter 8 for an explanation of this syntax. Fortunately, the generic type can usually be inferred.) Here is the complete call for sorting by potentially null middle names. I use a static import of java.util.Comparator.*, to make the expression more legible."*
 
 ```java
 Arrays.sort(people, comparing(Person::getMiddleName,

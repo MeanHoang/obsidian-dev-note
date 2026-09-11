@@ -47,7 +47,7 @@ LocalDate backToWork = today.with(NEXT_WORKDAY);
 
 ### Tránh cast bằng ofDateAdjuster
 
-> *"Note that the parameter of the lambda expression has type Temporal, and it must be cast to LocalDate. You can avoid this cast with the ofDateAdjuster method that expects a lambda of type UnaryOperator<LocalDate>."*
+> *"Note that the parameter of the lambda expression has type Temporal, and it must be cast to LocalDate. You can avoid this cast with the ofDateAdjuster method that expects a lambda of type UnaryOperator\<LocalDate>."*
 
 ```java
 TemporalAdjuster NEXT_WORKDAY = TemporalAdjusters.ofDateAdjuster(w ->

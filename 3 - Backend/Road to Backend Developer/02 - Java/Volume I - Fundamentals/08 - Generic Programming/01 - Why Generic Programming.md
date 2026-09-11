@@ -108,7 +108,7 @@ String filename = files.get(0);
 
 **Dịch:** Compiler cũng **tận dụng tốt thông tin type**. **Không cần cast** khi gọi `get`. Compiler biết return type là `String`, **không phải `Object`**.
 
-> *"The compiler also knows that the add method of an ArrayList<String> has a parameter of type String. That is a lot safer than having an Object parameter. Now the compiler can check that you don't insert objects of the wrong type. For example, the statement"*
+> *"The compiler also knows that the add method of an ArrayList\<String> has a parameter of type String. That is a lot safer than having an Object parameter. Now the compiler can check that you don't insert objects of the wrong type. For example, the statement"*
 
 ```java
 files.add(new File(". . .")); // can only add String objects to an ArrayList<String>
@@ -131,7 +131,7 @@ files.add(new File(". . .")); // can only add String objects to an ArrayList<Str
 
 ## 8.1.2. Who Wants to Be a Generic Programmer?
 
-> *"It is easy to use a generic class such as ArrayList. Most Java programmers will simply use types such as ArrayList<String> as if they had been built into the language, just like String[] arrays. (Of course, array lists are better than arrays because they can expand automatically.)"*
+> *"It is easy to use a generic class such as ArrayList. Most Java programmers will simply use types such as ArrayList\<String> as if they had been built into the language, just like String[] arrays. (Of course, array lists are better than arrays because they can expand automatically.)"*
 
 **Dịch:** **Dùng** một generic class như `ArrayList` thì dễ. Đa số lập trình viên Java cứ dùng type kiểu `ArrayList<String>` **như thể nó có sẵn trong ngôn ngữ**, giống array `String[]` vậy. (Dĩ nhiên array list tốt hơn array vì **tự động nở ra được**.)
 
@@ -139,7 +139,7 @@ files.add(new File(". . .")); // can only add String objects to an ArrayList<Str
 
 **Dịch:** Tuy nhiên, **implement** một generic class thì **không dễ chút nào**. Lập trình viên dùng code của bạn sẽ muốn cắm **đủ loại class** vào type parameter của bạn. Họ mong mọi thứ chạy được mà **không kèm hạn chế nặng nề hay thông báo lỗi khó hiểu**. Nhiệm vụ của bạn với tư cách generic programmer là **lường trước mọi cách dùng có thể có trong tương lai** cho class của mình.
 
-> *"How hard can this get? Here is a typical issue that the designers of the standard class library had to grapple with. The ArrayList class has a method addAll to add all elements of another collection. A programmer may want to add all elements from an ArrayList<Manager> to an ArrayList<Employee>. But, of course, doing it the other way round should not be legal. How do you allow one call and disallow the other? The Java language designers invented an ingenious new concept, the wildcard type, to solve this problem. Wildcard types are rather abstract, but they allow a library builder to make methods as flexible as possible."*
+> *"How hard can this get? Here is a typical issue that the designers of the standard class library had to grapple with. The ArrayList class has a method addAll to add all elements of another collection. A programmer may want to add all elements from an ArrayList\<Manager> to an ArrayList\<Employee>. But, of course, doing it the other way round should not be legal. How do you allow one call and disallow the other? The Java language designers invented an ingenious new concept, the wildcard type, to solve this problem. Wildcard types are rather abstract, but they allow a library builder to make methods as flexible as possible."*
 
 **Dịch:** Khó tới mức nào? Đây là một vấn đề điển hình mà người thiết kế thư viện chuẩn phải vật lộn. Class `ArrayList` có method `addAll` để thêm mọi element của một collection khác. Một lập trình viên có thể muốn thêm mọi element từ `ArrayList<Manager>` vào `ArrayList<Employee>`. Nhưng dĩ nhiên **chiều ngược lại thì không được phép**. Làm sao **cho phép lời gọi này mà cấm lời gọi kia**? Người thiết kế ngôn ngữ Java đã phát minh một khái niệm mới rất tài tình — **wildcard type** — để giải quyết. Wildcard type khá **trừu tượng**, nhưng nó cho phép người xây thư viện làm method **linh hoạt nhất có thể**.
 

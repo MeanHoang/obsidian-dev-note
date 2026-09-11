@@ -11,7 +11,7 @@
 
 **Dịch:** Thỉnh thoảng bạn cần **chuyển một [[02 - Data Types|primitive type]] như `int` thành object**. **Mọi primitive type đều có class đối ứng** — ví dụ class `Integer` ứng với primitive type `int`. Loại class này thường được gọi là **wrapper**. Tên các wrapper class **rõ ràng**: `Integer`, `Long`, `Float`, `Double`, `Short`, `Byte`, `Character`, `Boolean`. (**Sáu cái đầu kế thừa từ superclass chung `Number`**.) Wrapper class là **immutable** — **không đổi được giá trị đã gói sau khi wrapper được dựng**. Chúng cũng **`final`**, nên **không tạo subclass được**.
 
-> *"Suppose we want an array list of integers. Unfortunately, the type argument inside the angle brackets cannot be a primitive type. It is not possible to form an ArrayList<int>. Here, the Integer wrapper class comes in. It is OK to declare an array list of Integer objects."*
+> *"Suppose we want an array list of integers. Unfortunately, the type argument inside the angle brackets cannot be a primitive type. It is not possible to form an ArrayList\<int>. Here, the Integer wrapper class comes in. It is OK to declare an array list of Integer objects."*
 
 ```java
 var list = new ArrayList<Integer>();
@@ -19,11 +19,11 @@ var list = new ArrayList<Integer>();
 
 **Dịch:** Giả sử ta muốn một [[03 - Generic Array Lists|array list]] chứa số nguyên. Tiếc là **type argument trong ngoặc nhọn không được là primitive type** — **không tạo được `ArrayList<int>`**. Đây là chỗ **wrapper class `Integer`** vào cuộc: **khai báo một array list chứa object `Integer` thì được**.
 
-> **Caution (sách):** *"An ArrayList<Integer> is far less efficient than an int[] array because each value is separately wrapped inside an object. You would only want to use this construct for small collections when programmer convenience is more important than efficiency."*
+> **Caution (sách):** *"An ArrayList\<Integer> is far less efficient than an int[] array because each value is separately wrapped inside an object. You would only want to use this construct for small collections when programmer convenience is more important than efficiency."*
 >
 > **Dịch:** `ArrayList<Integer>` **kém hiệu quả hơn nhiều so với mảng `int[]`** vì **mỗi giá trị được gói riêng trong một object**. Bạn chỉ nên dùng cấu trúc này cho **collection nhỏ**, khi **sự tiện lợi của lập trình viên quan trọng hơn hiệu năng**.
 
-> *"Fortunately, there is a useful feature that makes it easy to add an element of type int to an ArrayList<Integer>. The call"*
+> *"Fortunately, there is a useful feature that makes it easy to add an element of type int to an ArrayList\<Integer>. The call"*
 
 ```java
 list.add(3);

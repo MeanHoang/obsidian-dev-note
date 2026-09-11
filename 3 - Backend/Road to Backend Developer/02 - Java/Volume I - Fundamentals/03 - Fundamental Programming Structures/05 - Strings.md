@@ -414,7 +414,7 @@ Thực tế JS engine hiện đại tối ưu `+` rất tốt, nên pattern này
 
 ## 3.6.10 Text Blocks (Java 15+) — Chuỗi nhiều dòng
 
-> *"A text block starts with \"\"\", followed by a line feed. The block ends with another \"\"\"."*
+> *"A text block starts with """, followed by a line feed. The block ends with another """."*
 
 ```java
 String greeting = """

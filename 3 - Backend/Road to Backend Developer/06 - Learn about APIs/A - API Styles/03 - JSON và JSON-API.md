@@ -259,11 +259,11 @@ Database quan hệ cũng lưu trực tiếp được JSON. Xem lại [[11 - NULL
 > "A logical collection of resources MUST be represented as an array, even if it only contains one item or is empty."
 
 🇻🇳 **Dịch**
-> ""Primary data" của document là một representation của resource hoặc collection resource mà request nhắm tới.
+> "Primary data" của document là một representation của resource hoặc collection resource mà request nhắm tới.
 > Primary data PHẢI là một trong các dạng:
 > - một resource object đơn lẻ, một resource identifier object đơn lẻ, hoặc `null`, với các request nhắm tới một resource đơn
 > - một array các resource object, một array các resource identifier object, hoặc một array rỗng (`[]`), với các request nhắm tới collection resource"
-> "Một collection resource về mặt logic PHẢI được biểu diễn bằng array, kể cả khi nó chỉ có một phần tử hoặc rỗng."
+> "Một collection resource về mặt logic PHẢI được biểu diễn bằng array, kể cả khi nó chỉ có một phần tử hoặc rỗng.
 
 📖 **Nguyên văn** — ví dụ primary data là một resource object đơn
 ```
@@ -300,7 +300,7 @@ Database quan hệ cũng lưu trực tiếp được JSON. Xem lại [[11 - NULL
 ## Resource Objects
 
 📖 **Nguyên văn**
-> ""Resource objects" appear in a JSON:API document to represent resources.
+> "Resource objects" appear in a JSON:API document to represent resources.
 >
 > A resource object MUST contain at least the following top-level members:
 > - id
@@ -312,17 +312,17 @@ Database quan hệ cũng lưu trực tiếp được JSON. Xem lại [[11 - NULL
 > - attributes: an attributes object representing some of the resource's data.
 > - relationships: a relationships object describing relationships between the resource and other JSON:API resources.
 > - links: a links object containing links related to the resource.
-> - meta: a meta object containing non-standard meta-information about a resource that can not be represented as an attribute or relationship."
+> - meta: a meta object containing non-standard meta-information about a resource that can not be represented as an attribute or relationship.
 
 🇻🇳 **Dịch**
-> ""Resource object" xuất hiện trong một JSON:API document để biểu diễn các resource.
+> "Resource object" xuất hiện trong một JSON:API document để biểu diễn các resource.
 > Một resource object PHẢI chứa ít nhất các top-level member sau: `id`, `type`.
 > Ngoại lệ: member `id` không bắt buộc khi resource object xuất phát từ phía client và biểu diễn một resource mới sắp được tạo trên server. Trong trường hợp đó, client CÓ THỂ kèm theo một member `lid` để định danh duy nhất resource theo `type`, cục bộ trong phạm vi document.
 > Ngoài ra, một resource object CÓ THỂ chứa bất kỳ top-level member nào sau đây:
 > - `attributes`: một attributes object biểu diễn một phần dữ liệu của resource.
 > - `relationships`: một relationships object mô tả các quan hệ giữa resource này và các resource JSON:API khác.
 > - `links`: một links object chứa các link liên quan tới resource.
-> - `meta`: một meta object chứa meta-information phi tiêu chuẩn về resource mà không thể biểu diễn được dưới dạng attribute hay relationship."
+> - `meta`: một meta object chứa meta-information phi tiêu chuẩn về resource mà không thể biểu diễn được dưới dạng attribute hay relationship.
 
 📖 **Nguyên văn** — "Here's how an article (i.e. a resource of type "articles") might appear in a document:"
 ```

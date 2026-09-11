@@ -521,7 +521,7 @@ public void processItems(Collection<Item> items)
 
 **Dịch:** Hãy tự hỏi: **interface collection tổng quát nhất có thể làm được việc này là gì?** **Có quan tâm thứ tự không?** Nếu có thì **nhận một `List`**. Nếu **thứ tự không quan trọng** thì **nhận collection loại nào cũng được**.
 
-> **Tip (sách):** *"In this case, you can do even better by accepting an Iterable<Item>. The Iterable interface has a single abstract method iterator which the enhanced for loop uses behind the scenes. The Collection interface extends Iterable."*
+> **Tip (sách):** *"In this case, you can do even better by accepting an Iterable\<Item>. The Iterable interface has a single abstract method iterator which the enhanced for loop uses behind the scenes. The Collection interface extends Iterable."*
 >
 > **Dịch:** Trong trường hợp này bạn còn **làm tốt hơn được nữa** bằng cách **nhận một `Iterable<Item>`**. Interface `Iterable` có **đúng một abstract method `iterator`** — thứ mà **vòng for mở rộng dùng ở hậu trường**. Interface **`Collection` extends `Iterable`** (xem [[01 - The Java Collections Framework]]).
 

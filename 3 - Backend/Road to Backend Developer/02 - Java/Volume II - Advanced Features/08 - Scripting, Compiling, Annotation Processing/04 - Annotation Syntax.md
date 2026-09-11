@@ -342,7 +342,7 @@ public User getUser(@NonNull String userId)
 >
 > **Dịch:** Annotation `@NonNull` thuộc **Checker Framework**. Với framework đó, bạn **đưa assertion vào chương trình** — ví dụ một parameter là non-null, hay một `String` chứa một regular expression. Rồi một **công cụ static analysis kiểm tra xem các assertion có hợp lệ** trong một khối source code hay không.
 
-> *"Now, suppose we have a parameter of type List<String>, and we want to express that all of the strings are non-null. That is where type use annotations come in. Place the annotation before the type argument: List<@NonNull String>."*
+> *"Now, suppose we have a parameter of type List\<String>, and we want to express that all of the strings are non-null. That is where type use annotations come in. Place the annotation before the type argument: List<@NonNull String>."*
 
 **Dịch:** Giả sử có một parameter kiểu `List<String>` và ta muốn diễn đạt rằng **mọi string đều non-null**. Đó là lúc **type use annotation** vào cuộc: **đặt annotation trước type argument**.
 

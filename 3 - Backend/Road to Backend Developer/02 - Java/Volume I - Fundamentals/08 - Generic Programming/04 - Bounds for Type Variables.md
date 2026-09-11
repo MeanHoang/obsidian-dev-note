@@ -83,7 +83,7 @@ T extends Comparable & Serializable
 | Số interface bound | **bao nhiêu tuỳ ý** |
 | Số class bound | **tối đa 1**, và **phải đứng đầu** danh sách |
 
-> *"In the next sample program (Listing 8.2), we rewrite the minmax method to be generic. The method computes the minimum and maximum of a generic array, returning a Pair<T>."*
+> *"In the next sample program (Listing 8.2), we rewrite the minmax method to be generic. The method computes the minimum and maximum of a generic array, returning a Pair\<T>."*
 
 **Dịch:** Ở chương trình mẫu tiếp theo (Listing 8.2), method `minmax` được viết lại thành generic. Method tính min và max của một **generic array**, trả về `Pair<T>`.
 

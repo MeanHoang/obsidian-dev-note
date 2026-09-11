@@ -1003,7 +1003,7 @@ public class Bank
 
 ### Client-side locking
 
-> *"Sometimes, programmers use the lock of an object to implement additional atomic operations—a practice known as client-side locking. Consider, for example, the Vector class, which is a list whose methods are synchronized. Now suppose we stored our bank balances in a Vector<Double>. Here is a naive implementation of a transfer method:"*
+> *"Sometimes, programmers use the lock of an object to implement additional atomic operations—a practice known as client-side locking. Consider, for example, the Vector class, which is a list whose methods are synchronized. Now suppose we stored our bank balances in a Vector\<Double>. Here is a naive implementation of a transfer method:"*
 
 ```java
 public void transfer(Vector<Double> accounts, int from, int to, int amount) // ERROR

@@ -41,7 +41,7 @@ Stream<String> silence = Stream.empty();
 
 ## Infinite stream: `generate` và `iterate`
 
-> *"The Stream interface has two static methods for making infinite streams. The generate method takes a function with no arguments (or, technically, an object of the Supplier<T> interface). Whenever a stream value is needed, that function is called to produce a value. You can get a stream of constant values as"*
+> *"The Stream interface has two static methods for making infinite streams. The generate method takes a function with no arguments (or, technically, an object of the Supplier\<T> interface). Whenever a stream value is needed, that function is called to produce a value. You can get a stream of constant values as"*
 
 ```java
 Stream<String> echos = Stream.generate(() -> "Echo");
@@ -55,7 +55,7 @@ Stream<Double> randoms = Stream.generate(Math::random);
 
 **Dịch:** Interface `Stream` có **hai static method để tạo stream vô hạn**. Method `generate` nhận **một function không có argument** (chính xác hơn là một object của interface `Supplier<T>`). **Mỗi khi cần một giá trị của stream**, function đó được gọi để sinh ra giá trị. Bạn có được stream các **giá trị hằng**, hoặc stream các **số ngẫu nhiên** như trên.
 
-> *"To produce sequences such as 0 1 2 3 . . ., use the iterate method instead. It takes a "seed" value and a function (technically, a UnaryOperator<T>) and repeatedly applies the function to the previous result. For example,"*
+> *"To produce sequences such as 0 1 2 3 . . ., use the iterate method instead. It takes a "seed" value and a function (technically, a UnaryOperator\<T>) and repeatedly applies the function to the previous result. For example,"*
 
 ```java
 Stream<BigInteger> integers

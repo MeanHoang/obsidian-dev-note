@@ -15,7 +15,7 @@
 
 ## 8.9.1. The Generic Class `Class`
 
-> *"The Class class has a type parameter. For example, String.class is actually an object (in fact, the sole object) of the class Class<String>. The type parameter is useful because it allows the methods of Class<T> to be more specific about their return types. The following methods of Class<T> take advantage of the type parameter:"*
+> *"The Class class has a type parameter. For example, String.class is actually an object (in fact, the sole object) of the class Class\<String>. The type parameter is useful because it allows the methods of Class\<T> to be more specific about their return types. The following methods of Class\<T> take advantage of the type parameter:"*
 
 ```java
 T cast(Object obj)
@@ -27,7 +27,7 @@ Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes)
 
 **Dịch:** **Class `Class` có một type parameter.** Ví dụ `String.class` thực chất là **một object (thực ra là object duy nhất) của class `Class<String>`**. Type parameter này hữu ích vì nó **cho phép các method của `Class<T>` nói cụ thể hơn về return type của chúng**. Các method trên **tận dụng type parameter đó**.
 
-> *"The getConstructor method returns an instance of Constructor<T>, so that no cast is required in"*
+> *"The getConstructor method returns an instance of Constructor\<T>, so that no cast is required in"*
 
 ```java
 Class<T> cl = . . .;
@@ -54,7 +54,7 @@ T noArgInstance = cl.getConstructor().newInstance();
 
 ## 8.9.2. Using `Class<T>` Parameters for Type Matching
 
-> *"It is sometimes useful to match the type variable of a Class<T> parameter in a generic method. Here is the canonical example:"*
+> *"It is sometimes useful to match the type variable of a Class\<T> parameter in a generic method. Here is the canonical example:"*
 
 ```java
 public static <T> Pair<T> makePair(Class<T> c) throws ReflectiveOperationException
@@ -70,7 +70,7 @@ public static <T> Pair<T> makePair(Class<T> c) throws ReflectiveOperationExcepti
 makePair(String.class)
 ```
 
-> *"then String.class is an object of type Class<String>. The type parameter T of the makePair method matches String, and the compiler can infer that the method returns a Pair<String>."*
+> *"then String.class is an object of type Class\<String>. The type parameter T of the makePair method matches String, and the compiler can infer that the method returns a Pair\<String>."*
 
 **Dịch:** Đôi khi **khớp type variable của một parameter `Class<T>` trong một generic method** là điều hữu ích. Trên là **ví dụ kinh điển**. Nếu bạn gọi `makePair(String.class)` thì `String.class` là **một object type `Class<String>`**. **Type parameter `T` của method `makePair` khớp với `String`**, và compiler **suy ra được rằng method trả về một `Pair<String>`**. Xem [[03 - Generic Methods]].
 
@@ -78,7 +78,7 @@ makePair(String.class)
 
 ## 8.9.3. Generic Type Information in the Virtual Machine
 
-> *"One of the notable features of Java generics is the erasure of generic types in the virtual machine. Perhaps surprisingly, the erased classes still retain some faint memory of their generic origin. For example, the raw Pair class knows that it originated from the generic class Pair<T>, even though an object of type Pair can't tell whether it was constructed as a Pair<String> or Pair<Employee>."*
+> *"One of the notable features of Java generics is the erasure of generic types in the virtual machine. Perhaps surprisingly, the erased classes still retain some faint memory of their generic origin. For example, the raw Pair class knows that it originated from the generic class Pair\<T>, even though an object of type Pair can't tell whether it was constructed as a Pair\<String> or Pair\<Employee>."*
 
 **Dịch:** Một trong những đặc điểm đáng chú ý của generic Java là **việc erase generic type trong virtual machine** — xem [[05 - Generic Code and the Virtual Machine]]. Có lẽ hơi bất ngờ: **các class đã bị erase vẫn giữ lại chút ký ức mờ nhạt về gốc gác generic của mình**. Ví dụ, **raw class `Pair` biết rằng nó bắt nguồn từ generic class `Pair<T>`**, dù một object type `Pair` **không cho biết được nó được dựng ra như `Pair<String>` hay `Pair<Employee>`**.
 
@@ -308,7 +308,7 @@ public class GenericReflectionTest
 
 > *"Sometimes, you want to drive program behavior by the type of a value. For example, in a persistence mechanism, you may want the user to specify a way of saving an object of a particular class. This is typically implemented by associating the Class object with an action."*
 
-> *"However, with generic classes, erasure poses a problem. How can you have different actions for, say, ArrayList<Integer> and ArrayList<String> when both erase to the same raw ArrayList type?"*
+> *"However, with generic classes, erasure poses a problem. How can you have different actions for, say, ArrayList\<Integer> and ArrayList\<String> when both erase to the same raw ArrayList type?"*
 
 **Dịch:** Đôi khi bạn muốn **điều khiển hành vi chương trình dựa theo type của một giá trị**. Ví dụ trong một cơ chế lưu trữ (persistence), bạn có thể muốn người dùng **chỉ định cách lưu object của một class cụ thể**. Việc này thường được implement bằng cách **gắn object `Class` với một hành động**. Tuy nhiên **với generic class thì erasure gây ra vấn đề**: làm sao có hành động khác nhau cho, chẳng hạn, `ArrayList<Integer>` và `ArrayList<String>`, khi **cả hai đều erase về cùng một raw type `ArrayList`**?
 
@@ -344,7 +344,7 @@ class TypeLiteral<T>
 
 > *"Injection frameworks such as CDI and Guice use type literals to control injection of generic types. The example program in the book's companion code shows a simpler example. Given an object, we enumerate its fields, whose generic types are available, and look up associated formatting actions."*
 
-> *"We format an ArrayList<Integer> by separating the values with spaces, an ArrayList<Character> by joining the characters to a string. Any other array lists are formatted by ArrayList.toString."*
+> *"We format an ArrayList\<Integer> by separating the values with spaces, an ArrayList\<Character> by joining the characters to a string. Any other array lists are formatted by ArrayList.toString."*
 
 **Dịch:** Các injection framework như **CDI và Guice dùng type literal để điều khiển việc inject generic type**. Chương trình ví dụ đi kèm sách cho thấy một ví dụ đơn giản hơn: **cho trước một object, ta liệt kê các field của nó** — vốn có sẵn generic type — **rồi tra ra hành động format tương ứng**. Ta format một `ArrayList<Integer>` bằng cách **ngăn các giá trị bằng khoảng trắng**, format một `ArrayList<Character>` bằng cách **nối các ký tự lại thành một string**. **Mọi array list khác được format bằng `ArrayList.toString`.**
 

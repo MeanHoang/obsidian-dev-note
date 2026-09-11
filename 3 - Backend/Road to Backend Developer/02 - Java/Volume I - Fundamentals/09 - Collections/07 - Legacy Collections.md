@@ -363,7 +363,7 @@ bucketOfBits.clear(i)
 
 **Dịch:** `get(i)` trả về `true` nếu **bit thứ i đang bật**; `set(i)` **bật bit thứ i**; `clear(i)` **tắt bit thứ i**.
 
-> *"You can use a BitSet to represent a set of nonnegative integers with an upper bound. Set the ith bit to indicate that the integer i is in the set. This is more efficient than using a Set<Integer> if the upper bound is not too large and the set has many elements."*
+> *"You can use a BitSet to represent a set of nonnegative integers with an upper bound. Set the ith bit to indicate that the integer i is in the set. This is more efficient than using a Set\<Integer> if the upper bound is not too large and the set has many elements."*
 
 **Dịch:** Bạn dùng `BitSet` để **biểu diễn một set các số nguyên không âm có cận trên**. **Bật bit thứ i để báo rằng số nguyên i nằm trong set.** Cách này **hiệu quả hơn dùng `Set<Integer>`** nếu **cận trên không quá lớn** và **set có nhiều element**.
 

@@ -322,7 +322,7 @@ Với **HTTP cache** thì ngược lại — RFC 9111 quy định rất chặt:
 > "Một cache **MUST** (bắt buộc) invalidate target URI khi nó nhận được một status code không phải lỗi để đáp lại một unsafe request method (kể cả những method chưa rõ có an toàn hay không)."
 
 📖 **Nguyên văn** — RFC 9111 §4.4, định nghĩa "invalidate"
-> ""Invalidate" means that the cache will either remove all stored responses whose target URI matches the given URI or mark them as "invalid" and in need of a mandatory validation before they can be sent in response to a subsequent request."
+> "Invalidate" means that the cache will either remove all stored responses whose target URI matches the given URI or mark them as "invalid" and in need of a mandatory validation before they can be sent in response to a subsequent request.
 >
 > "A "non-error response" is one with a 2xx (Successful) or 3xx (Redirection) status code."
 

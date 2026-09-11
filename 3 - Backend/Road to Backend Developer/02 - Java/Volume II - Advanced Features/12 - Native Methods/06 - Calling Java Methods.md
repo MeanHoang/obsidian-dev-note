@@ -152,7 +152,7 @@ jobject obj_new = (*env)->NewObject(env, class, methodID, construction parameter
 
 **Dịch:** Một native method **tạo được object Java mới bằng cách gọi constructor của nó**. Gọi constructor bằng function **`NewObject`**.
 
-> *"You can obtain the method ID needed for this call from the GetMethodID function by specifying the method name as "<init>" and the encoded signature of the constructor (with return type void). For example, here is how a native method can create a FileOutputStream object:"*
+> *"You can obtain the method ID needed for this call from the GetMethodID function by specifying the method name as "\<init>" and the encoded signature of the constructor (with return type void). For example, here is how a native method can create a FileOutputStream object:"*
 
 ```c
 const char[] fileName = ". . .";
@@ -321,7 +321,7 @@ JNIEXPORT void JNICALL Java_Printf3_fprint(JNIEnv* env, jclass cl,
 | `Xxx CallNonvirtualXxxMethod(JNIEnv *env, jobject obj, jclass cl, jmethodID id, args)`<br>`Xxx CallNonvirtualXxxMethodA(...jvalue args[])`<br>`Xxx CallNonvirtualXxxMethodV(...va_list args)` | *"calls a method, bypassing dynamic dispatch."* — Gọi một method, **bỏ qua dynamic dispatch**. |
 | `jmethodID GetStaticMethodID(JNIEnv *env, jclass cl, const char name[], const char methodSignature[])` | *"returns the identifier of a static method in a class."* — Trả về identifier của một static method trong class. |
 | `Xxx CallStaticXxxMethod(JNIEnv *env, jclass cl, jmethodID id, args)`<br>`Xxx CallStaticXxxMethodA(...jvalue args[])`<br>`Xxx CallStaticXxxMethodV(...va_list args)` | *"calls a static method."* — Gọi một static method. |
-| `jobject NewObject(JNIEnv *env, jclass cl, jmethodID id, args)`<br>`jobject NewObjectA(...jvalue args[])`<br>`jobject NewObjectV(...va_list args)` | *"calls a constructor. The method ID is obtained from GetMethodID with a method name of "<init>" and a return type of void."* — Gọi một constructor. Method ID lấy từ `GetMethodID` với **tên method `"<init>"`** và **kiểu trả về `void`**. |
+| `jobject NewObject(JNIEnv *env, jclass cl, jmethodID id, args)`<br>`jobject NewObjectA(...jvalue args[])`<br>`jobject NewObjectV(...va_list args)` | *"calls a constructor. The method ID is obtained from GetMethodID with a method name of "\<init>" and a return type of void."* — Gọi một constructor. Method ID lấy từ `GetMethodID` với **tên method `"<init>"`** và **kiểu trả về `void`**. |
 
 ### `jvalue` — union
 

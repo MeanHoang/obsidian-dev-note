@@ -188,7 +188,7 @@ logger.log(WARNING, bundle, "file.bad", filename);
 System.Logger logger = System.getLogger("com.mycompany.myapp", bundle);
 ```
 
-> *"When calling one of the logger methods with a String parameter for the message or format, the argument is interpreted as a key in the bundle. The methods with Object or Supplier<String> parameters are unaffected."*
+> *"When calling one of the logger methods with a String parameter for the message or format, the argument is interpreted as a key in the bundle. The methods with Object or Supplier\<String> parameters are unaffected."*
 
 **Dịch:** Log message **localize được sang các ngôn ngữ khác nhau**, dùng **cơ chế resource bundle** giới thiệu ở Volume II. Hãy **đưa vào bundle và key của format string**. Hoặc **lấy logger kèm bundle** như trên.
 

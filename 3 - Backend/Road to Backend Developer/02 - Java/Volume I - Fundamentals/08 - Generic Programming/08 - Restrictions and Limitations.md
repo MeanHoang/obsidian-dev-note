@@ -15,7 +15,7 @@
 
 ## 8.8.1. Type Parameters Cannot Be Instantiated with Primitive Types
 
-> *"You cannot substitute a primitive type for a type parameter. Thus, there is no Pair<double>, only Pair<Double>. The reason is, of course, type erasure. After erasure, the Pair class has fields of type Object, and you can't use them to store double values."*
+> *"You cannot substitute a primitive type for a type parameter. Thus, there is no Pair\<double>, only Pair\<Double>. The reason is, of course, type erasure. After erasure, the Pair class has fields of type Object, and you can't use them to store double values."*
 
 **Dịch:** Bạn **không thay được một primitive type vào chỗ type parameter**. Do đó **không có `Pair<double>`, chỉ có `Pair<Double>`**. Lý do dĩ nhiên là **type erasure**: sau erasure, class `Pair` có các field type `Object`, và **không dùng chúng để lưu giá trị `double` được**. Xem [[02 - Data Types]] và [[04 - Object Wrappers and Autoboxing]].
 
@@ -93,7 +93,7 @@ objarray[0] = new Pair<Employee>();
 
 **Dịch:** Bạn **không instantiate được array của parameterized type**. Vấn đề ở đâu? **Sau erasure, type của `table` là `Pair[]`**, và bạn **chuyển được nó thành `Object[]`**. Một array **nhớ component type của nó** và **ném `ArrayStoreException`** nếu bạn cố lưu phần tử sai type. **Nhưng erasure làm cơ chế này mất tác dụng với generic type**: phép gán `objarray[0] = new Pair<Employee>()` **qua được kiểm tra array store nhưng vẫn dẫn tới type error**. Vì lý do đó, **array của parameterized type bị cấm**. Xem [[09 - Arrays]].
 
-> *"Note that only the creation of these arrays is outlawed. You can declare a variable of type Pair<String>[]. But you can't initialize it with a new Pair<String>[10]."*
+> *"Note that only the creation of these arrays is outlawed. You can declare a variable of type Pair\<String>[]. But you can't initialize it with a new Pair\<String>[10]."*
 
 **Dịch:** Lưu ý rằng **chỉ việc TẠO các array này bị cấm**. Bạn **khai báo được một biến type `Pair<String>[]`**, nhưng **không khởi tạo nó bằng `new Pair<String>[10]` được**.
 
@@ -103,11 +103,11 @@ objarray[0] = new Pair<Employee>();
 > var table = (Pair<String>[]) new Pair<?>[10];
 > ```
 >
-> *"The result is not safe. If you store a Pair<Employee> in table[0] and then call a String method on table[0].getFirst(), you get a ClassCastException."*
+> *"The result is not safe. If you store a Pair\<Employee> in table[0] and then call a String method on table[0].getFirst(), you get a ClassCastException."*
 >
 > **Dịch:** Bạn **khai báo được array của wildcard type rồi cast chúng**. Kết quả **không an toàn**: nếu bạn lưu một `Pair<Employee>` vào `table[0]` rồi gọi một method của `String` lên `table[0].getFirst()`, bạn **nhận `ClassCastException`**.
 
-> **Tip (sách):** *"If you need to collect parameterized type objects, simply use an ArrayList: ArrayList<Pair<String>> is safe and effective."*
+> **Tip (sách):** *"If you need to collect parameterized type objects, simply use an ArrayList: ArrayList<Pair\<String>> is safe and effective."*
 >
 > **Dịch:** Nếu bạn cần **gom các object thuộc parameterized type**, đơn giản là **dùng `ArrayList`**: `ArrayList<Pair<String>>` **an toàn và hiệu quả**. Xem [[03 - Generic Array Lists]].
 
@@ -139,7 +139,7 @@ addAll(table, pair1, pair2);
 
 **Dịch:** Section trước cho thấy Java **không hỗ trợ array của generic type**. Section này bàn vấn đề liên quan: **truyền instance của một generic type vào method có số lượng argument thay đổi**. Nhắc lại rằng parameter `elements` **thực chất là một array chứa mọi argument được cung cấp**.
 
-> *"In order to call this method, the Java virtual machine must make an array of Pair<String>, which is against the rules. However, the rules have been relaxed for this situation, and you only get a warning at the call site, not an error. You can suppress that warning by adding the annotation @SuppressWarnings("unchecked") to the method containing the call to addAll. However, this is an annoying burden for the callers of the addAll method. For that reason, there is another warning about "possible heap pollution" at the declaration site."*
+> *"In order to call this method, the Java virtual machine must make an array of Pair\<String>, which is against the rules. However, the rules have been relaxed for this situation, and you only get a warning at the call site, not an error. You can suppress that warning by adding the annotation @SuppressWarnings("unchecked") to the method containing the call to addAll. However, this is an annoying burden for the callers of the addAll method. For that reason, there is another warning about "possible heap pollution" at the declaration site."*
 
 **Dịch:** Để gọi method này, Java virtual machine **phải tạo một array của `Pair<String>`** — điều **trái quy tắc**. Tuy nhiên **quy tắc đã được nới lỏng cho tình huống này**: bạn **chỉ nhận warning tại chỗ gọi, không phải error**. Bạn **dập được warning đó** bằng cách thêm annotation `@SuppressWarnings("unchecked")` vào method chứa lời gọi `addAll`. Nhưng đó là **gánh nặng phiền phức cho người gọi `addAll`**. Vì thế **có thêm một warning nữa về "possible heap pollution" tại chỗ khai báo**.
 
@@ -234,7 +234,7 @@ List.of(moreNumbers)
 
 ## 8.8.6. You Cannot Instantiate Type Variables
 
-> *"You cannot use type variables in an expression such as new T(. . .). For example, the following Pair<T> constructor is illegal:"*
+> *"You cannot use type variables in an expression such as new T(. . .). For example, the following Pair\<T> constructor is illegal:"*
 
 ```java
 public Pair() { first = new T(); second = new T(); } // ERROR
@@ -250,7 +250,7 @@ public Pair() { first = new T(); second = new T(); } // ERROR
 Pair<String> p = Pair.makePair(String::new);
 ```
 
-> *"The makePair method receives a Supplier<T>, the functional interface for a function with no parameters and a result of type T:"*
+> *"The makePair method receives a Supplier\<T>, the functional interface for a function with no parameters and a result of type T:"*
 
 ```java
 public static <T> Pair<T> makePair(Supplier<T> constr)
@@ -287,7 +287,7 @@ public static <T> Pair<T> makePair(Class<T> cl) throws ReflectiveOperationExcept
 Pair<String> p = Pair.makePair(String.class);
 ```
 
-> *"Note that the Class class is itself generic. For example, String.class is an instance (indeed, the sole instance) of Class<String>. Therefore, the makePair method can infer the type of the pair that it is making."*
+> *"Note that the Class class is itself generic. For example, String.class is an instance (indeed, the sole instance) of Class\<String>. Therefore, the makePair method can infer the type of the pair that it is making."*
 
 **Dịch:** Khi gọi method, hãy **cung cấp một class literal**. Lưu ý **class `Class` bản thân nó là generic**: `String.class` là **một instance (thực ra là instance duy nhất) của `Class<String>`**. Do đó method `makePair` **suy ra được type của pair mà nó đang tạo**.
 
@@ -406,7 +406,7 @@ public class Singleton<T>
 }
 ```
 
-> *"If this could be done, then a program could declare a Singleton<Random> to share a random number generator and a Singleton<JFileChooser> to share a file chooser dialog. But it can't work. After type erasure there is only one Singleton class, and only one singleInstance field. For that reason, static fields and methods with type variables are simply outlawed."*
+> *"If this could be done, then a program could declare a Singleton\<Random> to share a random number generator and a Singleton\<JFileChooser> to share a file chooser dialog. But it can't work. After type erasure there is only one Singleton class, and only one singleInstance field. For that reason, static fields and methods with type variables are simply outlawed."*
 
 **Dịch:** Bạn **không tham chiếu được type variable trong static field hoặc static method**. **Ý tưởng thông minh** ở trên **không chạy được**. Nếu làm được, một chương trình có thể khai báo `Singleton<Random>` để chia sẻ một bộ sinh số ngẫu nhiên, và `Singleton<JFileChooser>` để chia sẻ một hộp thoại chọn file. **Nhưng không thể được**: sau type erasure **chỉ còn một class `Singleton` duy nhất, và chỉ một field `singleInstance` duy nhất**. Vì lý do đó, **static field và static method có type variable đơn giản là bị cấm**. Xem [[04 - Static Fields and Methods]].
 
@@ -559,7 +559,7 @@ public class Pair<T>
 }
 ```
 
-> *"Consider a Pair<String>. Conceptually, it has two equals methods:"*
+> *"Consider a Pair\<String>. Conceptually, it has two equals methods:"*
 
 ```java
 boolean equals(String) // defined in Pair<T>
@@ -591,7 +591,7 @@ class Employee implements Comparable<Employee> { . . . }
 class Manager extends Employee implements Comparable<Manager> { . . . } // ERROR
 ```
 
-> *"Manager would then implement both Comparable<Employee> and Comparable<Manager>, which are different parameterizations of the same interface."*
+> *"Manager would then implement both Comparable\<Employee> and Comparable\<Manager>, which are different parameterizations of the same interface."*
 
 **Dịch:** Bản đặc tả generic **nêu thêm một quy tắc nữa**: *"Để hỗ trợ việc dịch bằng erasure, chúng tôi áp đặt hạn chế rằng **một class hay type variable không được đồng thời là subtype của hai interface type vốn là hai parameterization khác nhau của cùng một interface**."* Ví dụ đoạn trên là **bất hợp lệ**: khi đó `Manager` **implement cả `Comparable<Employee>` lẫn `Comparable<Manager>`**, vốn là **hai parameterization khác nhau của cùng một interface**.
 
@@ -602,7 +602,7 @@ class Employee implements Comparable { . . . }
 class Manager extends Employee implements Comparable { . . . }
 ```
 
-> *"is legal. The reason is far more subtle. There would be a conflict with the synthesized bridge methods. A class that implements Comparable<X> gets a bridge method"*
+> *"is legal. The reason is far more subtle. There would be a conflict with the synthesized bridge methods. A class that implements Comparable\<X> gets a bridge method"*
 
 ```java
 public int compareTo(Object other) { return compareTo((X) other); }
@@ -648,7 +648,7 @@ public static <T> double toNumber(JSONPrimitive<T> v)
 }
 ```
 
-> *"At first glance, it appears as if there might be an unbounded number of classes implementing JSONPrimitive<T>, but the compiler can track that there are only three of them."*
+> *"At first glance, it appears as if there might be an unbounded number of classes implementing JSONPrimitive\<T>, but the compiler can track that there are only three of them."*
 
 **Dịch:** Khi có generic type tham gia, **compiler có thể phải làm việc khá vất vả để xác minh tính bao phủ hết trường hợp (exhaustiveness)**. Trong ví dụ trên, `switch` là **exhaustive**. Thoạt nhìn **có vẻ như có thể có vô số class implement `JSONPrimitive<T>`**, nhưng **compiler theo dõi được rằng chỉ có ba class**. Xem [[07 - Records]].
 
@@ -725,7 +725,7 @@ sum(Pair.of(new JSONNumber(42), new JSONString("Fred")))
 > }
 > ```
 >
-> *"The Java compiler does not know how to prove that the cast from Pair<T> to Pair<JSONNumber> is safe when the components have type JSONNumber."*
+> *"The Java compiler does not know how to prove that the cast from Pair\<T> to Pair\<JSONNumber> is safe when the components have type JSONNumber."*
 >
 > **Dịch:** **Thử dùng type argument tường minh cũng không được.** Compiler Java **không biết cách chứng minh rằng cast từ `Pair<T>` sang `Pair<JSONNumber>` là an toàn** khi các thành phần có type `JSONNumber`.
 

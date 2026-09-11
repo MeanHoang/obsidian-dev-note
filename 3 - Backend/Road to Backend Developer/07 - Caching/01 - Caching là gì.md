@@ -111,7 +111,7 @@ Tức là cache có mặt trong Web **từ trước cả khi REST được đặ
 >
 > "freshness lifetime" của một response là khoảng thời gian tính từ lúc nó được origin server sinh ra cho tới thời điểm hết hạn của nó. "explicit expiration time" là thời điểm mà origin server muốn rằng response đã lưu không được cache dùng tiếp nếu chưa validation thêm; còn "heuristic expiration time" là do chính cache tự gán khi không có explicit expiration time nào."
 >
-> ""age" của một response là khoảng thời gian đã trôi qua kể từ khi nó được origin server sinh ra, hoặc được validate thành công với origin server."
+> "age" của một response là khoảng thời gian đã trôi qua kể từ khi nó được origin server sinh ra, hoặc được validate thành công với origin server.
 
 Công thức quyết định, nguyên văn:
 
@@ -194,7 +194,7 @@ RFC 9111 dùng thuật ngữ "cache miss" khi nói về việc gộp request:
 > "The "cache key" is the information a cache uses to choose a response and is composed from, at a minimum, the request method and target URI used to retrieve the stored response; the method determines under which circumstances that response can be used to satisfy a subsequent request.  However, many HTTP caches in common use today only cache GET responses and therefore only use the URI as the cache key."
 
 🇻🇳 **Dịch**
-> ""cache key" là thông tin mà cache dùng để chọn ra một response; tối thiểu nó gồm request method và target URI đã dùng để lấy về response được lưu. Method quyết định response đó được dùng để phục vụ request sau trong hoàn cảnh nào. Tuy nhiên, nhiều HTTP cache phổ biến hiện nay chỉ cache response của GET, và vì vậy chỉ dùng URI làm cache key."
+> "cache key" là thông tin mà cache dùng để chọn ra một response; tối thiểu nó gồm request method và target URI đã dùng để lấy về response được lưu. Method quyết định response đó được dùng để phục vụ request sau trong hoàn cảnh nào. Tuy nhiên, nhiều HTTP cache phổ biến hiện nay chỉ cache response của GET, và vì vậy chỉ dùng URI làm cache key.
 
 > [!warning] Hai thuật ngữ KHÔNG có trong RFC 9111
 > - **"cache hit"** — RFC 9111 có dùng "cache miss" (§4, trích ở trên) nhưng **không** định nghĩa "cache hit". "Cache hit / cache miss" là **thuật ngữ ngành**: hit = tìm thấy và dùng được dữ liệu trong cache, miss = không.
@@ -373,10 +373,10 @@ Có một câu đùa nổi tiếng trong ngành. Nguồn ghi nhận đáng tin n
 Vì sao khó? Vì invalidation là bài toán **phân tán**: dữ liệu gốc đổi ở một chỗ, nhưng bản sao nằm rải rác ở nhiều cache mà bên ghi không kiểm soát được. RFC 9111 định nghĩa "invalidate" rất cụ thể:
 
 📖 **Nguyên văn** — RFC 9111, §4.4 Invalidating Stored Responses
-> ""Invalidate" means that the cache will either remove all stored responses whose target URI matches the given URI or mark them as "invalid" and in need of a mandatory validation before they can be sent in response to a subsequent request."
+> "Invalidate" means that the cache will either remove all stored responses whose target URI matches the given URI or mark them as "invalid" and in need of a mandatory validation before they can be sent in response to a subsequent request.
 
 🇻🇳 **Dịch**
-> ""Invalidate" nghĩa là cache sẽ hoặc **xoá** tất cả các response đã lưu có target URI khớp với URI đã cho, hoặc **đánh dấu chúng là "invalid"** và bắt buộc phải validation trước khi được gửi đi để trả lời một request về sau."
+> "Invalidate" nghĩa là cache sẽ hoặc **xoá** tất cả các response đã lưu có target URI khớp với URI đã cho, hoặc **đánh dấu chúng là "invalid"** và bắt buộc phải validation trước khi được gửi đi để trả lời một request về sau.
 
 📖 **Nguyên văn** — RFC 9111, §4.4
 > "Because unsafe request methods (Section 9.2.1 of [HTTP]) such as PUT, POST, or DELETE have the potential for changing state on the origin server, intervening caches are required to invalidate stored responses to keep their contents up to date.

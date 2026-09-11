@@ -507,10 +507,10 @@ Bạn có hộp sữa trong tủ lạnh.
 | `only-if-cached` | "indicates that the client only wishes to obtain a stored response. Caches that honor this request directive SHOULD, upon receiving it, respond with either a stored response consistent with the other constraints of the request or a 504 (Gateway Timeout) status code." | client chỉ muốn lấy response đã lưu; cache tuân thủ NÊN trả về hoặc response đã lưu phù hợp, hoặc status 504 | Chế độ offline: chấp nhận thất bại chứ không đi mạng |
 
 📖 **Nguyên văn** (RFC 9111 §5.2.1.5 — chi tiết `no-store` phía request)
-> ""MUST NOT store" in this context means that the cache MUST NOT intentionally store the information in non-volatile storage and MUST make a best-effort attempt to remove the information from volatile storage as promptly as possible after forwarding it. ... Note that if a request containing this directive is satisfied from a cache, the no-store request directive does not apply to the already stored response."
+> "MUST NOT store" in this context means that the cache MUST NOT intentionally store the information in non-volatile storage and MUST make a best-effort attempt to remove the information from volatile storage as promptly as possible after forwarding it. ... Note that if a request containing this directive is satisfied from a cache, the no-store request directive does not apply to the already stored response.
 
 🇻🇳 **Dịch**
-> ""KHÔNG ĐƯỢC lưu" trong ngữ cảnh này nghĩa là cache KHÔNG ĐƯỢC cố ý lưu thông tin vào bộ nhớ không bay hơi (non-volatile), và PHẢI nỗ lực hết sức để xoá thông tin khỏi bộ nhớ bay hơi (volatile) càng sớm càng tốt sau khi forward nó. ... Lưu ý rằng nếu một request chứa directive này được đáp ứng từ cache, thì request directive `no-store` KHÔNG áp dụng cho response vốn đã được lưu sẵn."
+> "KHÔNG ĐƯỢC lưu" trong ngữ cảnh này nghĩa là cache KHÔNG ĐƯỢC cố ý lưu thông tin vào bộ nhớ không bay hơi (non-volatile), và PHẢI nỗ lực hết sức để xoá thông tin khỏi bộ nhớ bay hơi (volatile) càng sớm càng tốt sau khi forward nó. ... Lưu ý rằng nếu một request chứa directive này được đáp ứng từ cache, thì request directive `no-store` KHÔNG áp dụng cho response vốn đã được lưu sẵn.
 
 ### 5.2. Response directives (§5.2.2)
 
@@ -837,18 +837,18 @@ Chốt lại khác biệt:
 > Một cache CÓ THỂ invalidate các URI khác khi nó nhận được status code không phải lỗi trong response cho một request method không an toàn (kể cả các method không rõ có an toàn hay không). Cụ thể, (các) URI trong header field response `Location` và `Content-Location` (nếu có) là ứng viên để invalidate; các URI khác có thể được phát hiện qua những cơ chế không đặc tả trong tài liệu này. Tuy nhiên, cache KHÔNG ĐƯỢC kích hoạt invalidation trong các điều kiện này nếu origin (Mục 4.3.1 của [HTTP]) của URI cần invalidate khác với origin của target URI (Mục 7.1 của [HTTP]). Điều này giúp ngăn các cuộc tấn công từ chối dịch vụ."
 
 📖 **Nguyên văn** (RFC 9111 §4.4)
-> ""Invalidate" means that the cache will either remove all stored responses whose target URI matches the given URI or mark them as "invalid" and in need of a mandatory validation before they can be sent in response to a subsequent request.
+> "Invalidate" means that the cache will either remove all stored responses whose target URI matches the given URI or mark them as "invalid" and in need of a mandatory validation before they can be sent in response to a subsequent request.
 >
 >    A "non-error response" is one with a 2xx (Successful) or 3xx (Redirection) status code.
 >
->    Note that this does not guarantee that all appropriate responses are invalidated globally; a state-changing request would only invalidate responses in the caches it travels through."
+>    Note that this does not guarantee that all appropriate responses are invalidated globally; a state-changing request would only invalidate responses in the caches it travels through.
 
 🇻🇳 **Dịch**
-> ""Invalidate" nghĩa là cache sẽ hoặc xoá tất cả các response đã lưu có target URI khớp với URI cho trước, hoặc đánh dấu chúng là "invalid" và bắt buộc phải validate trước khi có thể gửi ra trong response cho một request sau đó.
+> "Invalidate" nghĩa là cache sẽ hoặc xoá tất cả các response đã lưu có target URI khớp với URI cho trước, hoặc đánh dấu chúng là "invalid" và bắt buộc phải validate trước khi có thể gửi ra trong response cho một request sau đó.
 >
 > Một "non-error response" là response có status code 2xx (Successful) hoặc 3xx (Redirection).
 >
-> Lưu ý rằng điều này KHÔNG đảm bảo mọi response phù hợp đều bị invalidate trên toàn cầu; một request làm thay đổi trạng thái chỉ invalidate các response trong những cache mà nó đi xuyên qua."
+> Lưu ý rằng điều này KHÔNG đảm bảo mọi response phù hợp đều bị invalidate trên toàn cầu; một request làm thay đổi trạng thái chỉ invalidate các response trong những cache mà nó đi xuyên qua.
 
 > [!danger] Invalidation của HTTP không phải "purge toàn cầu"
 > Câu cuối của §4.4 là điểm dễ bị hiểu sai nhất trong vận hành. Một `POST /products/1` chỉ làm sạch cache ở **những tầng nó thực sự đi qua**. Một CDN edge node ở khu vực khác — nơi request POST đó không hề chạm tới — vẫn giữ nguyên bản cũ cho tới khi hết hạn.

@@ -19,7 +19,7 @@
 
 ## max và min
 
-> *"Other simple reductions are max and min that return the largest or smallest value. There is a twist—these methods return an Optional<T> value that either wraps the answer or indicates that there is none (because the stream happened to be empty). In the olden days, it was common to return null in such a situation. But that can lead to null pointer exceptions when it happens in an incompletely tested program. The Optional type is a better way of indicating a missing return value. We discuss the Optional type in detail in the next section."*
+> *"Other simple reductions are max and min that return the largest or smallest value. There is a twist—these methods return an Optional\<T> value that either wraps the answer or indicates that there is none (because the stream happened to be empty). In the olden days, it was common to return null in such a situation. But that can lead to null pointer exceptions when it happens in an incompletely tested program. The Optional type is a better way of indicating a missing return value. We discuss the Optional type in detail in the next section."*
 
 **Dịch:** Các reduction đơn giản khác là **`max`** và **`min`**, trả về **giá trị lớn nhất hoặc nhỏ nhất**. Có một điểm khác thường: các method này trả về **giá trị `Optional<T>`**, hoặc **bọc câu trả lời**, hoặc **báo rằng không có câu trả lời nào** (vì stream tình cờ rỗng). Ngày xưa người ta thường **trả về `null`** trong tình huống đó. Nhưng cách này **dẫn tới null pointer exception** khi xảy ra trong chương trình chưa được test kỹ. **Kiểu `Optional` là cách tốt hơn để báo hiệu một giá trị trả về bị thiếu.**
 

@@ -19,7 +19,7 @@
 
 **Dịch:** Mỗi khi bạn định nghĩa một generic type, **một raw type tương ứng được tự động cung cấp**. Tên của raw type đơn giản là **tên generic type đã bỏ đi type parameter**. Các type variable **bị xoá và thay bằng bounding type của chúng** (hoặc bằng **`Object`** với biến **không có bound**).
 
-> *"For example, the raw type for Pair<T> looks like this:"*
+> *"For example, the raw type for Pair\<T> looks like this:"*
 
 ```java
 public class Pair
@@ -43,7 +43,7 @@ public class Pair
 
 > *"Since T is an unbounded type variable, it is simply replaced by Object. The result is an ordinary class, just as you might have implemented it before generics were added to Java."*
 
-> *"Your programs may contain different kinds of Pair, such as Pair<String> or Pair<LocalDate>, but erasure turns them all into raw Pair types."*
+> *"Your programs may contain different kinds of Pair, such as Pair\<String> or Pair\<LocalDate>, but erasure turns them all into raw Pair types."*
 
 **Dịch:** Vì `T` là **type variable không có bound**, nó đơn giản **được thay bằng `Object`**. Kết quả là một **class thường**, đúng như bạn hẳn đã implement trước khi generic được thêm vào Java. Chương trình của bạn có thể chứa nhiều loại `Pair` khác nhau như `Pair<String>` hay `Pair<LocalDate>`, nhưng **erasure biến tất cả chúng thành raw type `Pair`**.
 
@@ -59,7 +59,7 @@ Pair<Employee>─┘
 
 ### Raw type khi có bound
 
-> *"The raw type replaces type variables with the first bound, or Object if no bounds are given. For example, the type variable in the class Pair<T> has no explicit bounds, hence the raw type replaces T with Object. Suppose we declare a slightly different type:"*
+> *"The raw type replaces type variables with the first bound, or Object if no bounds are given. For example, the type variable in the class Pair\<T> has no explicit bounds, hence the raw type replaces T with Object. Suppose we declare a slightly different type:"*
 
 ```java
 public class Interval<T extends Comparable & Serializable> implements Serializable
@@ -206,7 +206,7 @@ public void setSecond(Object second) { setSecond((LocalDate) second); }
 pair.setSecond(aDate)
 ```
 
-> *"The variable pair has declared type Pair<LocalDate>, and that type only has a single method called setSecond, namely setSecond(Object). The virtual machine calls that method on the object to which pair refers. That object is of type DateInterval. Therefore, the method DateInterval.setSecond(Object) is called. That method is the synthesized bridge method. It calls DateInterval.setSecond(LocalDate), which is what we want."*
+> *"The variable pair has declared type Pair\<LocalDate>, and that type only has a single method called setSecond, namely setSecond(Object). The virtual machine calls that method on the object to which pair refers. That object is of type DateInterval. Therefore, the method DateInterval.setSecond(Object) is called. That method is the synthesized bridge method. It calls DateInterval.setSecond(LocalDate), which is what we want."*
 
 **Dịch:** Biến `pair` có type khai báo là `Pair<LocalDate>`, và type đó **chỉ có một method tên `setSecond`**, tức `setSecond(Object)`. Virtual machine gọi method đó lên object mà `pair` trỏ tới. Object đó có type `DateInterval`. Do đó method **`DateInterval.setSecond(Object)`** được gọi — đó chính là **bridge method được sinh ra**. Nó gọi tiếp **`DateInterval.setSecond(LocalDate)`**, đúng thứ ta muốn.
 
@@ -371,7 +371,7 @@ var p = new Pair<String>("Hello", "World");
 if (p instanceof Pair(var a, var b)) System.out.println(a + " " + b.toUpperCase());
 ```
 
-> *"In the pattern, the type argument is inferred—here, as Pair<String>. You can also specify it explicitly:"*
+> *"In the pattern, the type argument is inferred—here, as Pair\<String>. You can also specify it explicitly:"*
 
 ```java
 p instanceof Pair<String>(var a, var b)

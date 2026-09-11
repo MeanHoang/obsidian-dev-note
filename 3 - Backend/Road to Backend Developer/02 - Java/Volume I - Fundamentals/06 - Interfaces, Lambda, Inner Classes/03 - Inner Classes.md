@@ -620,7 +620,7 @@ public void start(int interval, boolean beep)
 >
 > *"Note the double braces. The outer braces make an anonymous subclass of ArrayList. The inner braces are an object initialization block (see Chapter 4)."*
 >
-> *"In practice, this trick is rarely useful. More likely than not, the invite method is willing to accept any List<String>, and you can simply pass List.of("Harry", "Tony")."*
+> *"In practice, this trick is rarely useful. More likely than not, the invite method is willing to accept any List\<String>, and you can simply pass List.of("Harry", "Tony")."*
 >
 > **Dịch:** Mẹo sau, gọi là **double brace initialization**, tận dụng cú pháp inner class. Chú ý **hai lớp ngoặc nhọn**: **lớp ngoài tạo ra một anonymous subclass của `ArrayList`**, **lớp trong là một object initialization block** (xem Chapter 4).
 >

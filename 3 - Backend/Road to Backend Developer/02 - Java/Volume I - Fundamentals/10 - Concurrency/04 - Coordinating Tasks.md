@@ -26,7 +26,7 @@ public interface Callable<V>
 
 **Dịch:** [[01 - Running Threads|`Runnable`]] đóng gói một task chạy **bất đồng bộ**; bạn có thể hình dung nó như một **method bất đồng bộ không có parameter và không có giá trị trả về**. **`Callable` tương tự `Runnable`, nhưng nó trả về một giá trị.** [[01 - Interfaces|Interface]] `Callable` là một **parameterized type** ([[01 - Why Generic Programming|generic]]), **chỉ có một method là `call`**.
 
-> *"The type parameter is the type of the returned value. For example, a Callable<Integer> represents an asynchronous task that eventually returns an Integer object."*
+> *"The type parameter is the type of the returned value. For example, a Callable\<Integer> represents an asynchronous task that eventually returns an Integer object."*
 
 **Dịch:** **Type parameter chính là kiểu của giá trị trả về.** Ví dụ `Callable<Integer>` đại diện cho một task bất đồng bộ mà **rốt cuộc sẽ trả về một object `Integer`**.
 
@@ -34,7 +34,7 @@ public interface Callable<V>
 
 **Dịch:** **`Future` nắm giữ kết quả của một task bất đồng bộ.** Khi bạn lên lịch cho một task chạy, **bạn nhận về một object `Future`**. Dùng object `Future` đó, bạn **lấy được kết quả khi nó sẵn sàng**.
 
-> *"The Future<V> interface has the following methods:"*
+> *"The Future\<V> interface has the following methods:"*
 
 ```java
 V get()
@@ -224,7 +224,7 @@ Future<T> submit(Runnable task, T result)
 
 **Dịch:** Method `submit` thứ hai trả về `Future<?>`. Method `get` **block cho tới khi hoàn tất rồi trả về `null`**.
 
-> **Note (sách):** *"Other methods in the java.util.concurrent API return a Future<Void> instead of a Future<?>. For all practical purposes these types have the same function. You can use instances to query the task state and to block until the task completes, but there is no result value."*
+> **Note (sách):** *"Other methods in the java.util.concurrent API return a Future\<Void> instead of a Future<?>. For all practical purposes these types have the same function. You can use instances to query the task state and to block until the task completes, but there is no result value."*
 >
 > **Dịch:** Các method khác trong API `java.util.concurrent` trả về `Future<Void>` thay vì `Future<?>`. **Về mặt thực dụng, hai kiểu này có cùng chức năng.** Bạn dùng instance để **truy vấn trạng thái task và block tới khi task hoàn tất**, nhưng **không có giá trị kết quả**.
 
@@ -678,7 +678,7 @@ else
 
 **Dịch:** Ở đây ta bàn một ví dụ đơn giản hơn: **đếm xem bao nhiêu phần tử của một [[09 - Arrays|array]] thoả một tính chất nào đó**. Ta **cắt đôi array, tính số đếm của mỗi nửa, rồi cộng lại**.
 
-> *"To put the recursive computation in a form that is usable by the framework, supply a class that extends RecursiveTask<T> (if the computation produces a result of type T) or RecursiveAction (if it doesn't produce a result). Override the compute method to generate and invoke subtasks and to combine their results."*
+> *"To put the recursive computation in a form that is usable by the framework, supply a class that extends RecursiveTask\<T> (if the computation produces a result of type T) or RecursiveAction (if it doesn't produce a result). Override the compute method to generate and invoke subtasks and to combine their results."*
 
 ```java
 class Counter extends RecursiveTask<Integer>

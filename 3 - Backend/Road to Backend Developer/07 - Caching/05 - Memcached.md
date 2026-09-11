@@ -239,7 +239,7 @@ Toàn bộ mô tả dưới đây trích nguyên văn từ trang *Basic Text Pro
 | `gets` | "An alternative get command for using with CAS. Returns a CAS identifier (a unique 64bit number) with the item. Return this value with the cas command. If the item’s CAS value has changed since you gets‘ed it, it will not be stored." | Biến thể của `get` dùng cho CAS. Trả kèm một **CAS identifier** 64 bit. |
 | `delete` | "Removes an item from the cache, if it exists." | Xoá item khỏi cache, nếu nó tồn tại. |
 | `incr` / `decr` | "Increment and Decrement. If an item stored is the string representation of an unsigned 64bit integer, you may run incr or decr commands to modify that number. You may only incr by positive values, or decr by positive values. They do not accept negative values." … "If a value does not already exist, incr/decr will fail." | Tăng/giảm. Chỉ hoạt động nếu value là **biểu diễn chuỗi** của số nguyên 64 bit không dấu. Chỉ nhận giá trị dương. **Không tự khởi tạo** key chưa tồn tại. |
-| `touch` | "The \"touch\" command is used to update the expiration time of an existing item without fetching it." (`doc/protocol.txt`) | Cập nhật thời gian hết hạn của item mà **không cần lấy dữ liệu về**. |
+| `touch` | "The "touch" command is used to update the expiration time of an existing item without fetching it." (`doc/protocol.txt`) | Cập nhật thời gian hết hạn của item mà **không cần lấy dữ liệu về**. |
 | `stats` | "ye ‘ole basic stats command." | Lệnh thống kê cơ bản. |
 | `stats items` | "Returns some information, broken down by slab, about items stored in memcached." | Thông tin về item, chia theo **slab**. |
 | `stats slabs` | "Returns more information, broken down by slab, about items stored in memcached. More centered to performance of a slab rather than counts of particular items." | Thông tin thiên về hiệu năng của từng slab. |
@@ -247,10 +247,10 @@ Toàn bộ mô tả dưới đây trích nguyên văn từ trang *Basic Text Pro
 | `flush_all` | "Invalidate all existing cache items. Optionally takes a parameter, which means to invalidate all items after N seconds have passed." | Vô hiệu hoá toàn bộ item trong cache. |
 
 📖 **Nguyên văn** — *`touch` trong `doc/protocol.txt`*
-> "<exptime> is expiration time. Works the same as with the update commands (set/add/etc). This replaces the existing expiration time. If an existing item were to expire in 10 seconds, but then was touched with an expiration time of \"20\", the item would then expire in 20 seconds."
+> "\<exptime> is expiration time. Works the same as with the update commands (set/add/etc). This replaces the existing expiration time. If an existing item were to expire in 10 seconds, but then was touched with an expiration time of "20", the item would then expire in 20 seconds."
 
 🇻🇳 **Dịch**
-> "`<exptime>` (thời gian hết hạn). Hoạt động giống như với các lệnh cập nhật (`set`/`add`/v.v.). Nó **thay thế** thời gian hết hạn hiện có. Nếu một item sắp hết hạn sau 10 giây, rồi được `touch` với thời gian hết hạn là \"20\", thì item sẽ hết hạn sau 20 giây."
+> "`<exptime>` (thời gian hết hạn). Hoạt động giống như với các lệnh cập nhật (`set`/`add`/v.v.). Nó **thay thế** thời gian hết hạn hiện có. Nếu một item sắp hết hạn sau 10 giây, rồi được `touch` với thời gian hết hạn là "20", thì item sẽ hết hạn sau 20 giây."
 
 > [!danger] `flush_all` không giải phóng bộ nhớ
 > 📖 "This command does not pause the server, as it returns immediately. It does not free up or flush memory at all, it just causes all items to expire."
@@ -268,25 +268,25 @@ Toàn bộ mô tả dưới đây trích nguyên văn từ trang *Basic Text Pro
 Đây là tính năng ít người dùng nhưng lại là thứ duy nhất Memcached cho bạn để chống ghi đè khi có tranh chấp.
 
 📖 **Nguyên văn** — *doc/protocol.txt → Storage commands*
-> "\"cas\" is a check and set operation which means \"store this data but only if no one else has updated since I last fetched it.\""
+> "cas" is a check and set operation which means "store this data but only if no one else has updated since I last fetched it."
 >
-> "- <cas unique> is a unique 64-bit value of an existing entry.
->   Clients should use the value returned from the \"gets\" command
->   when issuing \"cas\" updates."
+> "- \<cas unique> is a unique 64-bit value of an existing entry.
+>   Clients should use the value returned from the "gets" command
+>   when issuing "cas" updates."
 
 🇻🇳 **Dịch**
-> "`cas` là một thao tác **check and set**, nghĩa là \"lưu dữ liệu này, nhưng chỉ khi chưa ai cập nhật nó kể từ lần tôi lấy về gần nhất\"."
+> "`cas` là một thao tác **check and set**, nghĩa là "lưu dữ liệu này, nhưng chỉ khi chưa ai cập nhật nó kể từ lần tôi lấy về gần nhất"."
 >
 > "`<cas unique>` là một giá trị 64 bit duy nhất của một entry đang tồn tại. Client nên dùng giá trị trả về từ lệnh `gets` khi phát lệnh `cas`."
 
 📖 **Nguyên văn** — *doc/protocol.txt → phản hồi của storage command*
-> "- \"STORED\r\n\", to indicate success.
+> "- "STORED\r\n", to indicate success.
 >
-> - \"NOT_STORED\r\n\" to indicate the data was not stored, but not because of an error. This normally means that the condition for an \"add\" or a \"replace\" command wasn't met.
+> - "NOT_STORED\r\n" to indicate the data was not stored, but not because of an error. This normally means that the condition for an "add" or a "replace" command wasn't met.
 >
-> - \"EXISTS\r\n\" to indicate that the item you are trying to store with a \"cas\" command has been modified since you last fetched it.
+> - "EXISTS\r\n" to indicate that the item you are trying to store with a "cas" command has been modified since you last fetched it.
 >
-> - \"NOT_FOUND\r\n\" to indicate that the item you are trying to store with a \"cas\" command did not exist."
+> - "NOT_FOUND\r\n" to indicate that the item you are trying to store with a "cas" command did not exist."
 
 🇻🇳 **Dịch**
 > "`STORED` — thành công.
@@ -467,7 +467,7 @@ Tài liệu `Performance and Efficiency` kết bằng câu "See LRU Documentatio
 > * Background thread cũng có thể điều khiển `lru_crawler`, nếu được bật."
 
 📖 **Nguyên văn** — *doc/new_lru.txt, mục tiêu*
-> "The primary goal is to better protect active items from \"scanning\". Items which are never hit again will flow from HOT, through COLD, and out the bottom. Items occasionally active (reaching COLD, but being hit before eviction), move to WARM. There they can stay relatively protected.
+> "The primary goal is to better protect active items from "scanning". Items which are never hit again will flow from HOT, through COLD, and out the bottom. Items occasionally active (reaching COLD, but being hit before eviction), move to WARM. There they can stay relatively protected.
 >
 > A secondary goal is to improve latency. The LRU locks are no longer used on most item reads, largely during sets and from the background thread."
 

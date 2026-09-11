@@ -368,7 +368,7 @@ rawList.add(new Date()); // checked list throws a ClassCastException
 
 **Dịch:** **Checked view phát hiện được vấn đề này.** Method `add` của view **kiểm tra object được chèn có thuộc class cho trước không**, và **ném ngay `ClassCastException` nếu không**. Lợi ích là **lỗi được báo đúng chỗ**.
 
-> **Caution (sách):** *"The checked views are limited by the runtime checks that the virtual machine can carry out. For example, if you have an ArrayList<Pair<String>>, you cannot protect it from inserting a Pair<Date> since the virtual machine has a single "raw" Pair class."*
+> **Caution (sách):** *"The checked views are limited by the runtime checks that the virtual machine can carry out. For example, if you have an ArrayList<Pair\<String>>, you cannot protect it from inserting a Pair\<Date> since the virtual machine has a single "raw" Pair class."*
 >
 > **Dịch:** Checked view **bị giới hạn bởi những phép kiểm tra runtime mà virtual machine thực hiện được**. Ví dụ, với `ArrayList<Pair<String>>`, bạn **không bảo vệ được nó khỏi việc chèn vào một `Pair<Date>`**, vì virtual machine **chỉ có một class `Pair` "raw" duy nhất**.
 

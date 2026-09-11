@@ -361,7 +361,7 @@ while (matcher.find())
 
 **Dịch:** Thường bạn **không muốn khớp toàn bộ input** với một regular expression, mà muốn **tìm một hoặc nhiều substring khớp trong input**. Dùng method **`find`** của class `Matcher` để **tìm phần khớp kế tiếp**. Nếu nó trả về `true` thì dùng **`start`/`end`** để biết **phạm vi phần khớp**, hoặc **`group` không tham số** để lấy **string đã khớp**. Cách này cho phép **xử lý lần lượt từng phần khớp**.
 
-> *"More elegantly, you can call the results method to get a Stream<MatchResult>. The MatchResult interface has methods group, start, and end, just like Matcher. (In fact, the Matcher class implements this interface.) Here is how you get a list of all matches:"*
+> *"More elegantly, you can call the results method to get a Stream\<MatchResult>. The MatchResult interface has methods group, start, and end, just like Matcher. (In fact, the Matcher class implements this interface.) Here is how you get a list of all matches:"*
 
 ```java
 List<String> matches = pattern.matcher(input)
@@ -372,7 +372,7 @@ List<String> matches = pattern.matcher(input)
 
 **Dịch:** **Thanh lịch hơn**, gọi method **`results`** để lấy một **`Stream<MatchResult>`**. Interface `MatchResult` có method **`group`, `start`, `end`** y như `Matcher` (thực tế **`Matcher` implement interface này**).
 
-> *"If you have the data in a file, you can use the Scanner.findAll method to get a Stream<MatchResult>, without first having to read the contents into a string. You can pass a Pattern or a pattern string:"*
+> *"If you have the data in a file, you can use the Scanner.findAll method to get a Stream\<MatchResult>, without first having to read the contents into a string. You can pass a Pattern or a pattern string:"*
 
 ```java
 var in = new Scanner(path, StandardCharsets.UTF_8);

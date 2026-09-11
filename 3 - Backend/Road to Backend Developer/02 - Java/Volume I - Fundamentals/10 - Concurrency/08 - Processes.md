@@ -19,7 +19,7 @@
 
 ## 10.8.1. Building a Process
 
-> *"Start by specifying the command that you want to execute. You can supply a List<String> or simply the strings that make up the command."*
+> *"Start by specifying the command that you want to execute. You can supply a List\<String> or simply the strings that make up the command."*
 
 ```java
 var builder = new ProcessBuilder("gcc", "myapp.c");
@@ -207,7 +207,7 @@ else
 
 **Dịch:** Thay vì chờ process kết thúc, bạn **cứ để nó chạy và thỉnh thoảng gọi `isAlive` để xem nó còn sống không**. Để **giết process, gọi `destroy` hoặc `destroyForcibly`**. **Khác biệt giữa hai lời gọi này phụ thuộc nền tảng**: trên **UNIX, cái trước kết thúc process bằng `SIGTERM`, cái sau bằng `SIGKILL`**. (**`supportsNormalTermination` trả về `true` nếu `destroy` kết thúc process bình thường được.**)
 
-> *"Finally, you can receive an asynchronous notification when the process has completed. The call process.onExit() yields a CompletableFuture<Process> that you can use to schedule any action."*
+> *"Finally, you can receive an asynchronous notification when the process has completed. The call process.onExit() yields a CompletableFuture\<Process> that you can use to schedule any action."*
 
 ```java
 process.onExit().thenAccept(
@@ -246,7 +246,7 @@ Stream<ProcessHandle> descendants = handle.descendants();
 
 **Dịch:** Với một process handle, bạn lấy được **process ID, process cha, các process con, và các process hậu duệ** của nó.
 
-> **Note (sách):** *"The Stream<ProcessHandle> instances that are returned by the allProcesses, children, and descendants methods are just snapshots in time. Any of the processes in the stream might be terminated by the time you get around to seeing them, and other processes may have started that are not in the stream."*
+> **Note (sách):** *"The Stream\<ProcessHandle> instances that are returned by the allProcesses, children, and descendants methods are just snapshots in time. Any of the processes in the stream might be terminated by the time you get around to seeing them, and other processes may have started that are not in the stream."*
 >
 > **Dịch:** Các instance `Stream<ProcessHandle>` mà `allProcesses`, `children`, `descendants` trả về **chỉ là ảnh chụp tại một thời điểm**. **Bất kỳ process nào trong stream đều có thể đã kết thúc vào lúc bạn kịp nhìn tới nó**, và **các process khác có thể đã start mà không có trong stream**.
 

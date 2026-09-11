@@ -7,7 +7,7 @@
 
 ## 1.13. Primitive Type Streams
 
-> *"So far, we have collected integers in a Stream<Integer>, even though it is clearly inefficient to wrap each integer into a wrapper object. The same is true for the other primitive types—double, float, long, short, char, byte, and boolean. The stream library has specialized types IntStream, LongStream, and DoubleStream that store primitive values directly, without using wrappers. If you want to store short, char, byte, and boolean, use an IntStream; for float, use a DoubleStream."*
+> *"So far, we have collected integers in a Stream\<Integer>, even though it is clearly inefficient to wrap each integer into a wrapper object. The same is true for the other primitive types—double, float, long, short, char, byte, and boolean. The stream library has specialized types IntStream, LongStream, and DoubleStream that store primitive values directly, without using wrappers. If you want to store short, char, byte, and boolean, use an IntStream; for float, use a DoubleStream."*
 
 **Dịch:** Từ đầu tới giờ ta gom số nguyên vào một `Stream<Integer>`, dù rõ ràng là **kém hiệu quả khi phải bọc mỗi số nguyên vào một wrapper object**. Tương tự với các primitive type khác — `double`, `float`, `long`, `short`, `char`, `byte`, `boolean`. Stream library có các **kiểu chuyên biệt `IntStream`, `LongStream`, `DoubleStream`** lưu **giá trị primitive trực tiếp, không dùng wrapper**. Nếu muốn lưu `short`, `char`, `byte`, `boolean` thì dùng **`IntStream`**; với `float` thì dùng **`DoubleStream`**.
 

@@ -627,7 +627,7 @@ var content = Files.readString(path, charset);
 List<String> lines = Files.readAllLines(path, charset);
 ```
 
-> *"If the file is large, process the lines lazily as a Stream<String>:"*
+> *"If the file is large, process the lines lazily as a Stream\<String>:"*
 
 ```java
 try (Stream<String> lines = Files.lines(path, charset))
@@ -683,7 +683,7 @@ try (var in = new BufferedReader(new InputStreamReader(inputStream, charset)))
 }
 ```
 
-> *"Nowadays, the BufferedReader class also has a lines method that yields a Stream<String>. However, unlike a Scanner, a BufferedReader has no methods for reading numbers."*
+> *"Nowadays, the BufferedReader class also has a lines method that yields a Stream\<String>. However, unlike a Scanner, a BufferedReader has no methods for reading numbers."*
 
 **Dịch:** Ở **các phiên bản Java đầu**, lựa chọn duy nhất để xử lý text input là class **`BufferedReader`**. Method **`readLine`** cho ra **một dòng text**, hoặc **`null`** khi không còn input. Ngày nay `BufferedReader` cũng có method **`lines`** cho ra `Stream<String>`. Tuy nhiên, **khác với `Scanner`, `BufferedReader` không có method đọc số**.
 

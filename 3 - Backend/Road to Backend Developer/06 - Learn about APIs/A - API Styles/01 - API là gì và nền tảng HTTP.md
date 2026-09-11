@@ -117,10 +117,10 @@ Method là nơi ngữ nghĩa của request nằm ở đó:
 **DELETE không đảm bảo xoá dữ liệu.** Đọc lại: "remove the association between the target resource and its current functionality".
 
 📖 **Nguyên văn** (RFC 9110 §9.3.5)
-> "In effect, this method is similar to the \"rm\" command in UNIX: it expresses a deletion operation on the URI mapping of the origin server rather than an expectation that the previously associated information be deleted."
+> "In effect, this method is similar to the "rm" command in UNIX: it expresses a deletion operation on the URI mapping of the origin server rather than an expectation that the previously associated information be deleted."
 
 🇻🇳 **Dịch**
-> "Trên thực tế, method này giống lệnh \"rm\" trong UNIX: nó diễn đạt một thao tác xoá trên ánh xạ URI của origin server, chứ không phải kỳ vọng rằng thông tin đã gắn với URI đó bị xoá đi."
+> "Trên thực tế, method này giống lệnh "rm" trong UNIX: nó diễn đạt một thao tác xoá trên ánh xạ URI của origin server, chứ không phải kỳ vọng rằng thông tin đã gắn với URI đó bị xoá đi."
 
 → Soft-delete (đánh dấu `deleted_at`) hoàn toàn hợp lệ với DELETE. Spec không đòi hỏi xoá vật lý.
 
@@ -168,10 +168,10 @@ Method là nơi ngữ nghĩa của request nằm ở đó:
 ### 4.1. Safe methods
 
 📖 **Nguyên văn** (RFC 9110 §9.2.1)
-> "Request methods are considered \"safe\" if their defined semantics are essentially read-only; i.e., the client does not request, and does not expect, any state change on the origin server as a result of applying a safe method to a target resource.  Likewise, reasonable use of a safe method is not expected to cause any harm, loss of property, or unusual burden on the origin server."
+> "Request methods are considered "safe" if their defined semantics are essentially read-only; i.e., the client does not request, and does not expect, any state change on the origin server as a result of applying a safe method to a target resource.  Likewise, reasonable use of a safe method is not expected to cause any harm, loss of property, or unusual burden on the origin server."
 
 🇻🇳 **Dịch**
-> "Các request method được coi là \"safe\" nếu ngữ nghĩa đã định nghĩa của chúng về cơ bản là chỉ-đọc; tức là client không yêu cầu, và cũng không kỳ vọng, bất kỳ thay đổi state nào ở origin server như hệ quả của việc áp một safe method lên một target resource. Tương tự, việc dùng một safe method một cách hợp lý được kỳ vọng là không gây ra thiệt hại, mất mát tài sản, hay gánh nặng bất thường nào cho origin server."
+> "Các request method được coi là "safe" nếu ngữ nghĩa đã định nghĩa của chúng về cơ bản là chỉ-đọc; tức là client không yêu cầu, và cũng không kỳ vọng, bất kỳ thay đổi state nào ở origin server như hệ quả của việc áp một safe method lên một target resource. Tương tự, việc dùng một safe method một cách hợp lý được kỳ vọng là không gây ra thiệt hại, mất mát tài sản, hay gánh nặng bất thường nào cho origin server."
 
 📖 **Nguyên văn** (RFC 9110 §9.2.1)
 > "Of the request methods defined by this specification, the GET, HEAD, OPTIONS, and TRACE methods are defined to be safe."
@@ -200,10 +200,10 @@ Chú ý câu tiếp theo — nó giải thích "safe" **không** có nghĩa là 
 Và cảnh báo trực diện nhất trong cả mục — dành riêng cho người thiết kế API:
 
 📖 **Nguyên văn** (RFC 9110 §9.2.1)
-> "For example, it is common for Web-based content editing software to use actions within query parameters, such as \"page?do=delete\".  If the purpose of such a resource is to perform an unsafe action, then the resource owner MUST disable or disallow that action when it is accessed using a safe request method.  Failure to do so will result in unfortunate side effects when automated processes perform a GET on every URI reference for the sake of link maintenance, pre-fetching, building a search index, etc."
+> "For example, it is common for Web-based content editing software to use actions within query parameters, such as "page?do=delete".  If the purpose of such a resource is to perform an unsafe action, then the resource owner MUST disable or disallow that action when it is accessed using a safe request method.  Failure to do so will result in unfortunate side effects when automated processes perform a GET on every URI reference for the sake of link maintenance, pre-fetching, building a search index, etc."
 
 🇻🇳 **Dịch**
-> "Ví dụ, phần mềm soạn thảo nội dung trên web hay đặt hành động vào query parameter, kiểu \"page?do=delete\". Nếu mục đích của một resource như vậy là thực hiện một hành động unsafe, thì chủ resource **BẮT BUỘC** phải vô hiệu hoá hoặc từ chối hành động đó khi nó được truy cập bằng một safe request method. Không làm vậy sẽ dẫn tới những side effect đáng tiếc khi các tiến trình tự động thực hiện GET lên mọi URI reference để bảo trì link, pre-fetch, xây index tìm kiếm, v.v."
+> "Ví dụ, phần mềm soạn thảo nội dung trên web hay đặt hành động vào query parameter, kiểu "page?do=delete". Nếu mục đích của một resource như vậy là thực hiện một hành động unsafe, thì chủ resource **BẮT BUỘC** phải vô hiệu hoá hoặc từ chối hành động đó khi nó được truy cập bằng một safe request method. Không làm vậy sẽ dẫn tới những side effect đáng tiếc khi các tiến trình tự động thực hiện GET lên mọi URI reference để bảo trì link, pre-fetch, xây index tìm kiếm, v.v."
 
 > [!danger] Bài học kinh điển
 > Đây chính là lý do một công cụ crawl/prefetch (hay đơn giản là bot của trình duyệt) có thể **xoá sạch dữ liệu** của một admin panel dùng `GET /admin?do=delete&id=…`. Bot chỉ làm đúng việc của nó: GET được spec bảo đảm là safe. Lỗi nằm ở người thiết kế API.
@@ -211,10 +211,10 @@ Và cảnh báo trực diện nhất trong cả mục — dành riêng cho ngư�
 ### 4.2. Idempotent methods
 
 📖 **Nguyên văn** (RFC 9110 §9.2.2)
-> "A request method is considered \"idempotent\" if the intended effect on the server of multiple identical requests with that method is the same as the effect for a single such request.  Of the request methods defined by this specification, PUT, DELETE, and safe request methods are idempotent."
+> "A request method is considered "idempotent" if the intended effect on the server of multiple identical requests with that method is the same as the effect for a single such request.  Of the request methods defined by this specification, PUT, DELETE, and safe request methods are idempotent."
 
 🇻🇳 **Dịch**
-> "Một request method được coi là \"idempotent\" nếu tác động **dự định** lên server của nhiều request giống hệt nhau dùng method đó bằng đúng tác động của **một** request như vậy. Trong số các request method mà đặc tả này định nghĩa, PUT, DELETE và các safe request method là idempotent."
+> "Một request method được coi là "idempotent" nếu tác động **dự định** lên server của nhiều request giống hệt nhau dùng method đó bằng đúng tác động của **một** request như vậy. Trong số các request method mà đặc tả này định nghĩa, PUT, DELETE và các safe request method là idempotent."
 
 📖 **Nguyên văn** (RFC 9110 §9.2.2)
 > "Idempotent methods are distinguished because the request can be repeated automatically if a communication failure occurs before the client is able to read the server's response.  For example, if a client sends a PUT request and the underlying connection is closed before any response is received, then the client can establish a new connection and retry the idempotent request.  It knows that repeating the request will have the same intended effect, even if the original request succeeded, though the response might differ."
@@ -257,10 +257,10 @@ Và cảnh báo trực diện nhất trong cả mục — dành riêng cho ngư�
 ### 4.3. Cacheable
 
 📖 **Nguyên văn** (RFC 9110 §3.8, định nghĩa "cacheable")
-> "A response is \"cacheable\" if a cache is allowed to store a copy of the response message for use in answering subsequent requests.  Even when a response is cacheable, there might be additional constraints placed by the client or by the origin server on when that cached response can be used for a particular request."
+> "A response is "cacheable" if a cache is allowed to store a copy of the response message for use in answering subsequent requests.  Even when a response is cacheable, there might be additional constraints placed by the client or by the origin server on when that cached response can be used for a particular request."
 
 🇻🇳 **Dịch**
-> "Một response là \"cacheable\" nếu cache được phép lưu một bản sao của response message đó để dùng trả lời các request về sau. Ngay cả khi một response là cacheable, client hoặc origin server vẫn có thể đặt thêm ràng buộc về thời điểm bản cache đó được dùng cho một request cụ thể."
+> "Một response là "cacheable" nếu cache được phép lưu một bản sao của response message đó để dùng trả lời các request về sau. Ngay cả khi một response là cacheable, client hoặc origin server vẫn có thể đặt thêm ràng buộc về thời điểm bản cache đó được dùng cho một request cụ thể."
 
 📖 **Nguyên văn** (RFC 9110 §9.2.3 Methods and Caching)
 > "For a cache to store and use a response, the associated method needs to explicitly allow caching and to detail under what conditions a response can be used to satisfy subsequent requests; a method definition that does not do so cannot be cached.  For additional requirements see [CACHING].
@@ -308,10 +308,10 @@ Ghi chú cách đọc bảng: RFC không liệt kê riêng "method nào không s
 ### 5.1. Resource
 
 📖 **Nguyên văn** (RFC 9110 §3.1 Resources)
-> "The target of an HTTP request is called a \"resource\".  HTTP does not limit the nature of a resource; it merely defines an interface that might be used to interact with resources.  Most resources are identified by a Uniform Resource Identifier (URI), as described in Section 4."
+> "The target of an HTTP request is called a "resource".  HTTP does not limit the nature of a resource; it merely defines an interface that might be used to interact with resources.  Most resources are identified by a Uniform Resource Identifier (URI), as described in Section 4."
 
 🇻🇳 **Dịch**
-> "Đối tượng đích của một HTTP request được gọi là một \"resource\". HTTP **không giới hạn bản chất** của resource; nó chỉ định nghĩa một interface có thể dùng để tương tác với các resource. Phần lớn resource được định danh bằng một Uniform Resource Identifier (URI), như mô tả ở mục 4."
+> "Đối tượng đích của một HTTP request được gọi là một "resource". HTTP **không giới hạn bản chất** của resource; nó chỉ định nghĩa một interface có thể dùng để tương tác với các resource. Phần lớn resource được định danh bằng một Uniform Resource Identifier (URI), như mô tả ở mục 4."
 
 📖 **Nguyên văn** (RFC 9110 §3.1)
 > "One design goal of HTTP is to separate resource identification from request semantics, which is made possible by vesting the request semantics in the request method (Section 9) and a few request-modifying header fields.  A resource cannot treat a request in a manner inconsistent with the semantics of the method of the request.  For example, though the URI of a resource might imply semantics that are not safe, a client can expect the resource to avoid actions that are unsafe when processing a request with a safe method (see Section 9.2.1)."
@@ -325,22 +325,22 @@ Ghi chú cách đọc bảng: RFC không liệt kê riêng "method nào không s
 ### 5.2. Representation
 
 📖 **Nguyên văn** (RFC 9110 §3.2 Representations)
-> "A \"representation\" is information that is intended to reflect a past, current, or desired state of a given resource, in a format that can be readily communicated via the protocol.  A representation consists of a set of representation metadata and a potentially unbounded stream of representation data (Section 8)."
+> "A "representation" is information that is intended to reflect a past, current, or desired state of a given resource, in a format that can be readily communicated via the protocol.  A representation consists of a set of representation metadata and a potentially unbounded stream of representation data (Section 8)."
 
 🇻🇳 **Dịch**
-> "Một \"representation\" là thông tin nhằm phản ánh state **quá khứ, hiện tại, hoặc mong muốn** của một resource nào đó, ở một định dạng có thể truyền đi dễ dàng qua protocol. Một representation gồm một tập representation metadata và một luồng representation data có thể dài vô hạn (mục 8)."
+> "Một "representation" là thông tin nhằm phản ánh state **quá khứ, hiện tại, hoặc mong muốn** của một resource nào đó, ở một định dạng có thể truyền đi dễ dàng qua protocol. Một representation gồm một tập representation metadata và một luồng representation data có thể dài vô hạn (mục 8)."
 
 📖 **Nguyên văn** (RFC 9110 §3.2)
-> "HTTP allows \"information hiding\" behind its uniform interface by defining communication with respect to a transferable representation of the resource state, rather than transferring the resource itself.  This allows the resource identified by a URI to be anything, including temporal functions like \"the current weather in Laguna Beach\", while potentially providing information that represents that resource at the time a message is generated [REST]."
+> "HTTP allows "information hiding" behind its uniform interface by defining communication with respect to a transferable representation of the resource state, rather than transferring the resource itself.  This allows the resource identified by a URI to be anything, including temporal functions like "the current weather in Laguna Beach", while potentially providing information that represents that resource at the time a message is generated [REST]."
 
 🇻🇳 **Dịch**
-> "HTTP cho phép \"che giấu thông tin\" sau interface đồng nhất của nó, bằng cách định nghĩa việc giao tiếp dựa trên một representation truyền đi được của state của resource, thay vì truyền đi chính bản thân resource. Điều này cho phép resource được định danh bởi một URI là **bất cứ thứ gì**, kể cả các hàm theo thời gian như \"thời tiết hiện tại ở Laguna Beach\", trong khi vẫn cung cấp được thông tin đại diện cho resource đó tại thời điểm message được sinh ra [REST]."
+> "HTTP cho phép "che giấu thông tin" sau interface đồng nhất của nó, bằng cách định nghĩa việc giao tiếp dựa trên một representation truyền đi được của state của resource, thay vì truyền đi chính bản thân resource. Điều này cho phép resource được định danh bởi một URI là **bất cứ thứ gì**, kể cả các hàm theo thời gian như "thời tiết hiện tại ở Laguna Beach", trong khi vẫn cung cấp được thông tin đại diện cho resource đó tại thời điểm message được sinh ra [REST]."
 
 📖 **Nguyên văn** (RFC 9110 §3.2)
-> "The uniform interface is similar to a window through which one can observe and act upon a thing only through the communication of messages to an independent actor on the other side.  A shared abstraction is needed to represent (\"take the place of\") the current or desired state of that thing in our communications."
+> "The uniform interface is similar to a window through which one can observe and act upon a thing only through the communication of messages to an independent actor on the other side.  A shared abstraction is needed to represent ("take the place of") the current or desired state of that thing in our communications."
 
 🇻🇳 **Dịch**
-> "Interface đồng nhất giống như một **cửa sổ**, qua đó người ta chỉ có thể quan sát và tác động lên một vật bằng cách trao đổi message với một tác nhân độc lập ở phía bên kia. Cần có một trừu tượng chung để đại diện (\"đứng thay chỗ cho\") state hiện tại hoặc state mong muốn của vật đó trong các trao đổi của chúng ta."
+> "Interface đồng nhất giống như một **cửa sổ**, qua đó người ta chỉ có thể quan sát và tác động lên một vật bằng cách trao đổi message với một tác nhân độc lập ở phía bên kia. Cần có một trừu tượng chung để đại diện ("đứng thay chỗ cho") state hiện tại hoặc state mong muốn của vật đó trong các trao đổi của chúng ta."
 
 💡 **Ví dụ đời sống — resource vs representation**
 
@@ -353,10 +353,10 @@ Hãy nghĩ tới **"nhiệt độ phòng khách nhà bạn"**.
 Đây là lý do câu "REST = mỗi row trong database là một resource" là hiểu sai. Resource là **khái niệm**, representation là **thứ bạn truyền đi**. Bảng trong database chỉ là chi tiết cài đặt bị giấu sau interface.
 
 📖 **Nguyên văn** (RFC 9110 §3.2)
-> "A target resource might be provided with, or be capable of generating, multiple representations that are each intended to reflect the resource's current state.  An algorithm, usually based on content negotiation (Section 12), would be used to select one of those representations as being most applicable to a given request.  This \"selected representation\" provides the data and metadata for evaluating conditional requests (Section 13) and constructing the content for 200 (OK), 206 (Partial Content), and 304 (Not Modified) responses to GET (Section 9.3.1)."
+> "A target resource might be provided with, or be capable of generating, multiple representations that are each intended to reflect the resource's current state.  An algorithm, usually based on content negotiation (Section 12), would be used to select one of those representations as being most applicable to a given request.  This "selected representation" provides the data and metadata for evaluating conditional requests (Section 13) and constructing the content for 200 (OK), 206 (Partial Content), and 304 (Not Modified) responses to GET (Section 9.3.1)."
 
 🇻🇳 **Dịch**
-> "Một target resource có thể được cấp cho, hoặc có khả năng sinh ra, **nhiều representation**, mỗi cái đều nhằm phản ánh state hiện tại của resource. Một thuật toán, thường dựa trên content negotiation (mục 12), sẽ được dùng để chọn ra một trong các representation đó là phù hợp nhất cho một request cụ thể. \"Selected representation\" này cung cấp data và metadata để đánh giá các conditional request (mục 13) và để dựng content cho các response 200 (OK), 206 (Partial Content) và 304 (Not Modified) của GET."
+> "Một target resource có thể được cấp cho, hoặc có khả năng sinh ra, **nhiều representation**, mỗi cái đều nhằm phản ánh state hiện tại của resource. Một thuật toán, thường dựa trên content negotiation (mục 12), sẽ được dùng để chọn ra một trong các representation đó là phù hợp nhất cho một request cụ thể. "Selected representation" này cung cấp data và metadata để đánh giá các conditional request (mục 13) và để dựng content cho các response 200 (OK), 206 (Partial Content) và 304 (Not Modified) của GET."
 
 → Đoạn này nối thẳng ba thứ lại: **nhiều representation → content negotiation chọn một → cái được chọn là căn cứ cho ETag / 304**. Cả mục 6 bên dưới xoay quanh dây chuyền này.
 
@@ -387,16 +387,16 @@ Hãy nghĩ tới **"nhiệt độ phòng khách nhà bạn"**.
 > "Khi response mang theo content, dù là báo thành công hay báo lỗi, origin server thường có nhiều cách khác nhau để biểu diễn thông tin đó; ví dụ ở các định dạng, ngôn ngữ, hoặc encoding khác nhau. Tương tự, người dùng hay user agent khác nhau có thể có khả năng, đặc tính, hoặc sở thích khác nhau, ảnh hưởng tới việc representation nào trong số có sẵn là phù hợp nhất để gửi đi. Vì lý do này, HTTP cung cấp các cơ chế cho content negotiation."
 
 📖 **Nguyên văn** (RFC 9110 §12)
-> "This specification defines three patterns of content negotiation that can be made visible within the protocol: \"proactive\" negotiation, where the server selects the representation based upon the user agent's stated preferences; \"reactive\" negotiation, where the server provides a list of representations for the user agent to choose from; and \"request content\" negotiation, where the user agent selects the representation for a future request based upon the server's stated preferences in past responses."
+> "This specification defines three patterns of content negotiation that can be made visible within the protocol: "proactive" negotiation, where the server selects the representation based upon the user agent's stated preferences; "reactive" negotiation, where the server provides a list of representations for the user agent to choose from; and "request content" negotiation, where the user agent selects the representation for a future request based upon the server's stated preferences in past responses."
 
 🇻🇳 **Dịch**
-> "Đặc tả này định nghĩa ba kiểu content negotiation có thể nhìn thấy được bên trong protocol: negotiation \"proactive\", trong đó **server chọn** representation dựa trên sở thích mà user agent đã nêu; negotiation \"reactive\", trong đó server đưa ra một **danh sách** representation để user agent chọn; và negotiation \"request content\", trong đó user agent chọn representation cho request tương lai dựa trên sở thích mà server đã nêu trong các response trước đó."
+> "Đặc tả này định nghĩa ba kiểu content negotiation có thể nhìn thấy được bên trong protocol: negotiation "proactive", trong đó **server chọn** representation dựa trên sở thích mà user agent đã nêu; negotiation "reactive", trong đó server đưa ra một **danh sách** representation để user agent chọn; và negotiation "request content", trong đó user agent chọn representation cho request tương lai dựa trên sở thích mà server đã nêu trong các response trước đó."
 
 📖 **Nguyên văn** (RFC 9110 §12.1 Proactive Negotiation)
-> "When content negotiation preferences are sent by the user agent in a request to encourage an algorithm located at the server to select the preferred representation, it is called \"proactive negotiation\" (a.k.a., \"server-driven negotiation\")."
+> "When content negotiation preferences are sent by the user agent in a request to encourage an algorithm located at the server to select the preferred representation, it is called "proactive negotiation" (a.k.a., "server-driven negotiation")."
 
 🇻🇳 **Dịch**
-> "Khi các sở thích content negotiation được user agent gửi trong một request nhằm thúc đẩy một thuật toán nằm ở phía server chọn ra representation được ưa thích, thì gọi là \"proactive negotiation\" (còn gọi là \"server-driven negotiation\")."
+> "Khi các sở thích content negotiation được user agent gửi trong một request nhằm thúc đẩy một thuật toán nằm ở phía server chọn ra representation được ưa thích, thì gọi là "proactive negotiation" (còn gọi là "server-driven negotiation")."
 
 Trong thực tế API, 99% trường hợp bạn gặp là **proactive negotiation** qua header `Accept`. Đây cũng là cơ chế chuẩn để làm versioning theo media type (`Accept: application/vnd.myapp.v2+json`) — dùng chính negotiation có sẵn của HTTP thay vì nhét version vào URL.
 
@@ -407,16 +407,16 @@ Trong thực tế API, 99% trường hợp bạn gặp là **proactive negotiati
 ### 6.1. Content-Type
 
 📖 **Nguyên văn** (RFC 9110 §8.3)
-> "The \"Content-Type\" header field indicates the media type of the associated representation: either the representation enclosed in the message content or the selected representation, as determined by the message semantics.  The indicated media type defines both the data format and how that data is intended to be processed by a recipient, within the scope of the received message semantics, after any content codings indicated by Content-Encoding are decoded."
+> "The "Content-Type" header field indicates the media type of the associated representation: either the representation enclosed in the message content or the selected representation, as determined by the message semantics.  The indicated media type defines both the data format and how that data is intended to be processed by a recipient, within the scope of the received message semantics, after any content codings indicated by Content-Encoding are decoded."
 
 🇻🇳 **Dịch**
-> "Header field \"Content-Type\" cho biết media type của representation liên quan: hoặc là representation nằm trong content của message, hoặc là selected representation, tuỳ theo ngữ nghĩa của message. Media type được chỉ ra định nghĩa cả **định dạng dữ liệu** lẫn **cách dữ liệu đó được mong đợi sẽ xử lý** bởi bên nhận, trong phạm vi ngữ nghĩa của message nhận được, sau khi mọi content coding chỉ ra bởi Content-Encoding đã được giải mã."
+> "Header field "Content-Type" cho biết media type của representation liên quan: hoặc là representation nằm trong content của message, hoặc là selected representation, tuỳ theo ngữ nghĩa của message. Media type được chỉ ra định nghĩa cả **định dạng dữ liệu** lẫn **cách dữ liệu đó được mong đợi sẽ xử lý** bởi bên nhận, trong phạm vi ngữ nghĩa của message nhận được, sau khi mọi content coding chỉ ra bởi Content-Encoding đã được giải mã."
 
 📖 **Nguyên văn** (RFC 9110 §8.3)
-> "A sender that generates a message containing content SHOULD generate a Content-Type header field in that message unless the intended media type of the enclosed representation is unknown to the sender.  If a Content-Type header field is not present, the recipient MAY either assume a media type of \"application/octet-stream\" ([RFC2046], Section 4.5.1) or examine the data to determine its type."
+> "A sender that generates a message containing content SHOULD generate a Content-Type header field in that message unless the intended media type of the enclosed representation is unknown to the sender.  If a Content-Type header field is not present, the recipient MAY either assume a media type of "application/octet-stream" ([RFC2046], Section 4.5.1) or examine the data to determine its type."
 
 🇻🇳 **Dịch**
-> "Bên gửi tạo ra một message có content **NÊN** sinh ra header field Content-Type trong message đó, trừ khi bên gửi không biết media type dự định của representation kèm theo. Nếu không có header field Content-Type, bên nhận **CÓ THỂ** hoặc giả định media type là \"application/octet-stream\", hoặc tự xem xét dữ liệu để xác định kiểu của nó."
+> "Bên gửi tạo ra một message có content **NÊN** sinh ra header field Content-Type trong message đó, trừ khi bên gửi không biết media type dự định của representation kèm theo. Nếu không có header field Content-Type, bên nhận **CÓ THỂ** hoặc giả định media type là "application/octet-stream", hoặc tự xem xét dữ liệu để xác định kiểu của nó."
 
 > [!warning] Thiếu Content-Type là lỗi thật, không phải chuyện nhỏ
 > Spec cho phép bên nhận đoán mò hoặc coi payload là binary thô. Nghĩa là JSON của bạn có thể bị đối tác parse sai một cách hợp lệ theo spec.
@@ -424,36 +424,36 @@ Trong thực tế API, 99% trường hợp bạn gặp là **proactive negotiati
 ### 6.2. Accept
 
 📖 **Nguyên văn** (RFC 9110 §12.5.1)
-> "The \"Accept\" header field can be used by user agents to specify their preferences regarding response media types.  For example, Accept header fields can be used to indicate that the request is specifically limited to a small set of desired types, as in the case of a request for an in-line image.
+> "The "Accept" header field can be used by user agents to specify their preferences regarding response media types.  For example, Accept header fields can be used to indicate that the request is specifically limited to a small set of desired types, as in the case of a request for an in-line image.
 >
 >    When sent by a server in a response, Accept provides information about which content types are preferred in the content of a subsequent request to the same resource."
 
 🇻🇳 **Dịch**
-> "Header field \"Accept\" có thể được user agent dùng để nêu sở thích của mình về media type của response. Ví dụ, header field Accept có thể dùng để cho biết request bị giới hạn cụ thể trong một tập nhỏ các kiểu mong muốn, như trong trường hợp request một ảnh in-line.
+> "Header field "Accept" có thể được user agent dùng để nêu sở thích của mình về media type của response. Ví dụ, header field Accept có thể dùng để cho biết request bị giới hạn cụ thể trong một tập nhỏ các kiểu mong muốn, như trong trường hợp request một ảnh in-line.
 >
 > Khi được server gửi trong một response, Accept cung cấp thông tin về những content type nào được ưa thích trong content của một request sau đó tới cùng resource."
 
 📖 **Nguyên văn** (RFC 9110 §12.5.1)
-> "The asterisk \"*\" character is used to group media types into ranges, with \"*/*\" indicating all media types and \"type/*\" indicating all subtypes of that type.  The media-range can include media type parameters that are applicable to that range."
+> "The asterisk "*" character is used to group media types into ranges, with "*/*" indicating all media types and "type/*" indicating all subtypes of that type.  The media-range can include media type parameters that are applicable to that range."
 
 🇻🇳 **Dịch**
-> "Ký tự dấu sao \"*\" được dùng để gom các media type thành các dải, với \"*/*\" nghĩa là mọi media type và \"type/*\" nghĩa là mọi subtype của kiểu đó. Media-range có thể kèm các parameter media type áp dụng cho dải đó."
+> "Ký tự dấu sao "*" được dùng để gom các media type thành các dải, với "*/*" nghĩa là mọi media type và "type/*" nghĩa là mọi subtype của kiểu đó. Media-range có thể kèm các parameter media type áp dụng cho dải đó."
 
 📖 **Nguyên văn** (RFC 9110 §12.5.1)
-> "Each media-range might be followed by optional applicable media type parameters (e.g., charset), followed by an optional \"q\" parameter for indicating a relative weight (Section 12.4.2)."
+> "Each media-range might be followed by optional applicable media type parameters (e.g., charset), followed by an optional "q" parameter for indicating a relative weight (Section 12.4.2)."
 
 🇻🇳 **Dịch**
-> "Mỗi media-range có thể được theo sau bởi các parameter media type tuỳ chọn phù hợp (ví dụ charset), rồi tới một parameter \"q\" tuỳ chọn để chỉ ra một **trọng số tương đối** (mục 12.4.2)."
+> "Mỗi media-range có thể được theo sau bởi các parameter media type tuỳ chọn phù hợp (ví dụ charset), rồi tới một parameter "q" tuỳ chọn để chỉ ra một **trọng số tương đối** (mục 12.4.2)."
 
 🇻🇳 Ví dụ đọc header `Accept: application/json;q=1.0, text/xml;q=0.5, */*;q=0.1` — client nói: ưu tiên nhất JSON, không có thì XML, cùng lắm thì gì cũng được.
 
 ### 6.3. Authorization
 
 📖 **Nguyên văn** (RFC 9110 §11.6.2)
-> "The \"Authorization\" header field allows a user agent to authenticate itself with an origin server -- usually, but not necessarily, after receiving a 401 (Unauthorized) response.  Its value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested."
+> "The "Authorization" header field allows a user agent to authenticate itself with an origin server -- usually, but not necessarily, after receiving a 401 (Unauthorized) response.  Its value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested."
 
 🇻🇳 **Dịch**
-> "Header field \"Authorization\" cho phép một user agent tự xác thực với origin server — thường là, nhưng không nhất thiết là, sau khi nhận một response 401 (Unauthorized). Giá trị của nó gồm credentials chứa thông tin xác thực của user agent cho realm của resource đang được request."
+> "Header field "Authorization" cho phép một user agent tự xác thực với origin server — thường là, nhưng không nhất thiết là, sau khi nhận một response 401 (Unauthorized). Giá trị của nó gồm credentials chứa thông tin xác thực của user agent cho realm của resource đang được request."
 
 📖 **Nguyên văn** (RFC 9110 §11.6.2)
 > "A proxy forwarding a request MUST NOT modify any Authorization header fields in that request.  See Section 3.5 of [CACHING] for details of and requirements pertaining to handling of the Authorization header field by HTTP caches."
@@ -467,10 +467,10 @@ Trong thực tế API, 99% trường hợp bạn gặp là **proactive negotiati
 ### 6.4. Cache-Control
 
 📖 **Nguyên văn** (RFC 9111 §5.2)
-> "The \"Cache-Control\" header field is used to list directives for caches along the request/response chain.  Cache directives are unidirectional, in that the presence of a directive in a request does not imply that the same directive is present or copied in the response."
+> "The "Cache-Control" header field is used to list directives for caches along the request/response chain.  Cache directives are unidirectional, in that the presence of a directive in a request does not imply that the same directive is present or copied in the response."
 
 🇻🇳 **Dịch**
-> "Header field \"Cache-Control\" được dùng để liệt kê các directive cho các cache dọc theo chuỗi request/response. Các cache directive là **một chiều**, ở chỗ sự có mặt của một directive trong request không hàm ý directive đó cũng có mặt hay được sao chép sang response."
+> "Header field "Cache-Control" được dùng để liệt kê các directive cho các cache dọc theo chuỗi request/response. Các cache directive là **một chiều**, ở chỗ sự có mặt của một directive trong request không hàm ý directive đó cũng có mặt hay được sao chép sang response."
 
 📖 **Nguyên văn** (RFC 9111 §5.2)
 > "A proxy, whether or not it implements a cache, MUST pass cache directives through in forwarded messages, regardless of their significance to that application, since the directives might apply to all recipients along the request/response chain.  It is not possible to target a directive to a specific cache."
@@ -484,10 +484,10 @@ Trong thực tế API, 99% trường hợp bạn gặp là **proactive negotiati
 ### 6.5. ETag
 
 📖 **Nguyên văn** (RFC 9110 §8.8.3)
-> "The \"ETag\" field in a response provides the current entity tag for the selected representation, as determined at the conclusion of handling the request.  An entity tag is an opaque validator for differentiating between multiple representations of the same resource, regardless of whether those multiple representations are due to resource state changes over time, content negotiation resulting in multiple representations being valid at the same time, or both.  An entity tag consists of an opaque quoted string, possibly prefixed by a weakness indicator."
+> "The "ETag" field in a response provides the current entity tag for the selected representation, as determined at the conclusion of handling the request.  An entity tag is an opaque validator for differentiating between multiple representations of the same resource, regardless of whether those multiple representations are due to resource state changes over time, content negotiation resulting in multiple representations being valid at the same time, or both.  An entity tag consists of an opaque quoted string, possibly prefixed by a weakness indicator."
 
 🇻🇳 **Dịch**
-> "Field \"ETag\" trong một response cung cấp entity tag hiện tại cho **selected representation**, được xác định vào lúc kết thúc xử lý request. Một entity tag là một **validator dạng opaque** dùng để phân biệt giữa nhiều representation của cùng một resource, bất kể việc có nhiều representation đó là do state của resource thay đổi theo thời gian, do content negotiation khiến nhiều representation cùng hợp lệ tại một thời điểm, hay cả hai. Một entity tag gồm một chuỗi trong dấu nháy có tính opaque, có thể có tiền tố là chỉ báo weak."
+> "Field "ETag" trong một response cung cấp entity tag hiện tại cho **selected representation**, được xác định vào lúc kết thúc xử lý request. Một entity tag là một **validator dạng opaque** dùng để phân biệt giữa nhiều representation của cùng một resource, bất kể việc có nhiều representation đó là do state của resource thay đổi theo thời gian, do content negotiation khiến nhiều representation cùng hợp lệ tại một thời điểm, hay cả hai. Một entity tag gồm một chuỗi trong dấu nháy có tính opaque, có thể có tiền tố là chỉ báo weak."
 
 📖 **Nguyên văn** (RFC 9110 §8.8.3)
 > "An entity tag can be more reliable for validation than a modification date in situations where it is inconvenient to store modification dates, where the one-second resolution of HTTP-date values is not sufficient, or where modification dates are not consistently maintained."
@@ -501,10 +501,10 @@ Trong thực tế API, 99% trường hợp bạn gặp là **proactive negotiati
 ### 6.6. If-None-Match
 
 📖 **Nguyên văn** (RFC 9110 §13.1.2)
-> "The \"If-None-Match\" header field makes the request method conditional on a recipient cache or origin server either not having any current representation of the target resource, when the field value is \"*\", or having a selected representation with an entity tag that does not match any of those listed in the field value."
+> "The "If-None-Match" header field makes the request method conditional on a recipient cache or origin server either not having any current representation of the target resource, when the field value is "*", or having a selected representation with an entity tag that does not match any of those listed in the field value."
 
 🇻🇳 **Dịch**
-> "Header field \"If-None-Match\" làm cho request method trở nên **có điều kiện**: điều kiện là cache bên nhận hoặc origin server hoặc không có representation hiện tại nào của target resource (khi giá trị field là \"*\"), hoặc có một selected representation mà entity tag của nó **không khớp** với bất kỳ tag nào liệt kê trong giá trị field."
+> "Header field "If-None-Match" làm cho request method trở nên **có điều kiện**: điều kiện là cache bên nhận hoặc origin server hoặc không có representation hiện tại nào của target resource (khi giá trị field là "*"), hoặc có một selected representation mà entity tag của nó **không khớp** với bất kỳ tag nào liệt kê trong giá trị field."
 
 📖 **Nguyên văn** (RFC 9110 §13.1.2)
 > "A recipient MUST use the weak comparison function when comparing entity tags for If-None-Match (Section 8.8.3.2), since weak entity tags can be used for cache validation even if there have been changes to the representation data."

@@ -519,7 +519,7 @@ table.setCellSelectionEnabled(true);
 
 ### 11.1.3.6. Sorting Rows
 
-> *"As you have seen in our first table example, it is easy to add row sorting to a JTable simply by calling the setAutoCreateRowSorter method. However, to have finer-grained control over the sorting behavior, install a TableRowSorter<M> object into a JTable and customize it. The type parameter M denotes the table model; it needs to be a subtype of the TableModel interface."*
+> *"As you have seen in our first table example, it is easy to add row sorting to a JTable simply by calling the setAutoCreateRowSorter method. However, to have finer-grained control over the sorting behavior, install a TableRowSorter\<M> object into a JTable and customize it. The type parameter M denotes the table model; it needs to be a subtype of the TableModel interface."*
 
 ```java
 var sorter = new TableRowSorter<TableModel>(model);

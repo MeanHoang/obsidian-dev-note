@@ -7,7 +7,7 @@
 
 ## 1.9. Collecting into Maps
 
-> *"Suppose you have a Stream<Person> and want to collect the elements into a map so that later you can look up people by their ID. The Collectors.toMap method has two function arguments that produce the map's keys and values. For example,"*
+> *"Suppose you have a Stream\<Person> and want to collect the elements into a map so that later you can look up people by their ID. The Collectors.toMap method has two function arguments that produce the map's keys and values. For example,"*
 
 ```java
 Map<Integer, String> idToName = people.collect(
@@ -58,7 +58,7 @@ Map<String, String> languageNames = locales.collect(
 
 ## Gom vào `Map<String, Set<String>>`
 
-> *"Now suppose we want to know all languages in a given country. Then we need a Map<String, Set<String>>. For example, the value for "Switzerland" is the set [French, German, Italian]. At first, we store a singleton set for each language. Whenever a new language is found for a given country, we form the union of the existing and the new set."*
+> *"Now suppose we want to know all languages in a given country. Then we need a Map<String, Set\<String>>. For example, the value for "Switzerland" is the set [French, German, Italian]. At first, we store a singleton set for each language. Whenever a new language is found for a given country, we form the union of the existing and the new set."*
 
 ```java
 Map<String, Set<String>> countryLanguageSets = locales.collect(

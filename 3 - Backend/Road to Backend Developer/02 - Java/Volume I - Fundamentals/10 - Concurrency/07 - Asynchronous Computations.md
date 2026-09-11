@@ -60,7 +60,7 @@ public CompletableFuture<String> readPage(URI uri)
 
 **Dịch:** Có sẵn method cho ra `CompletableFuture` thì tốt, nhưng **phần lớn thời gian bạn phải tự làm lấy**. Để **chạy một task bất đồng bộ và lấy về một `CompletableFuture`**, bạn **không submit nó thẳng vào một executor service** — thay vào đó, **gọi static method `CompletableFuture.supplyAsync`**. Nếu **bỏ qua executor thì task chạy trên một executor mặc định** (chính là executor mà **`ForkJoinPool.commonPool()`** trả về). **Thường thì bạn không muốn làm vậy.**
 
-> **Caution (sách):** *"Note that the first parameter of the supplyAsync method is a Supplier<T>, not a Callable<T>. Both interfaces describe functions with no parameters and return type T, but a Supplier function cannot throw a checked exception. As you can see from the code above, that was not an inspired choice."*
+> **Caution (sách):** *"Note that the first parameter of the supplyAsync method is a Supplier\<T>, not a Callable\<T>. Both interfaces describe functions with no parameters and return type T, but a Supplier function cannot throw a checked exception. As you can see from the code above, that was not an inspired choice."*
 >
 > **Dịch:** Lưu ý parameter đầu tiên của `supplyAsync` là **`Supplier<T>`, không phải `Callable<T>`**. Cả hai [[01 - Interfaces|interface]] đều mô tả **function không có parameter và trả về kiểu `T`**, nhưng **function `Supplier` không ném được checked exception**. Như thấy ở code trên, **đó không phải một lựa chọn xuất sắc**.
 
@@ -232,11 +232,11 @@ CompletableFuture<String> = readPage(uri).orTimeout(30, TimeUnit.SECONDS);
 
 ### Kết hợp nhiều future
 
-> *"Now let us turn to methods that combine multiple futures (see Table 10.4). The first three methods run a CompletableFuture<T> and a CompletableFuture<U> action concurrently and combine the results. The next three methods run two CompletableFuture<T> actions concurrently. As soon as one of them finishes, its result is passed on, and the other result is ignored."*
+> *"Now let us turn to methods that combine multiple futures (see Table 10.4). The first three methods run a CompletableFuture\<T> and a CompletableFuture<U> action concurrently and combine the results. The next three methods run two CompletableFuture\<T> actions concurrently. As soon as one of them finishes, its result is passed on, and the other result is ignored."*
 
 **Dịch:** Giờ xét các method **kết hợp nhiều future** (Bảng 10.4). **Ba method đầu chạy đồng thời một hành động `CompletableFuture<T>` và một `CompletableFuture<U>` rồi kết hợp kết quả.** **Ba method tiếp theo chạy đồng thời hai hành động `CompletableFuture<T>`** — **ngay khi một trong hai xong, kết quả của nó được truyền tiếp, còn kết quả kia bị bỏ qua**.
 
-> *"Finally, the static allOf and anyOf methods shown in Table 10.5 take a variable number of completable futures and yield a CompletableFuture<Void> that completes when all of them, or any one of them, completes. The allOf method does not yield a result. The anyOf method does not terminate the remaining tasks."*
+> *"Finally, the static allOf and anyOf methods shown in Table 10.5 take a variable number of completable futures and yield a CompletableFuture\<Void> that completes when all of them, or any one of them, completes. The allOf method does not yield a result. The anyOf method does not terminate the remaining tasks."*
 
 **Dịch:** Cuối cùng, các static method **`allOf` và `anyOf`** ở Bảng 10.5 **nhận một số lượng completable future biến thiên** và **cho ra một `CompletableFuture<Void>` hoàn tất khi tất cả chúng, hoặc bất kỳ cái nào trong chúng, hoàn tất**. **`allOf` không cho ra kết quả. `anyOf` không kết thúc các task còn lại.**
 
@@ -503,7 +503,7 @@ EventQueue.invokeLater(() -> label.setText(percentage + "% complete"));
 
 **Dịch:** Mỗi khi muốn làm việc gì đó trong worker thread, **hãy dựng một worker mới**. (**Mỗi object worker chỉ dành để dùng một lần.**) Rồi **gọi method `execute`**. Bạn thường gọi `execute` trên event dispatch thread, nhưng **đó không phải yêu cầu bắt buộc**.
 
-> *"It is assumed that a worker produces a result of some kind; therefore, SwingWorker<T, V> implements Future<T>. This result can be obtained by the get method of the Future interface. Since the get method blocks until the result is available, you don't want to call it immediately after calling execute. It is a good idea to call it only when you know that the work has been completed. Typically, you call get from the done method. (There is no requirement to call get. Sometimes, processing the progress data is all you need.)"*
+> *"It is assumed that a worker produces a result of some kind; therefore, SwingWorker<T, V> implements Future\<T>. This result can be obtained by the get method of the Future interface. Since the get method blocks until the result is available, you don't want to call it immediately after calling execute. It is a good idea to call it only when you know that the work has been completed. Typically, you call get from the done method. (There is no requirement to call get. Sometimes, processing the progress data is all you need.)"*
 
 **Dịch:** Người ta **giả định một worker cho ra một kết quả nào đó**; vì vậy **`SwingWorker<T, V>` implement `Future<T>`**. Kết quả này **lấy được bằng method `get` của interface `Future`**. Vì `get` **block cho tới khi có kết quả**, bạn **không nên gọi nó ngay sau khi gọi `execute`** — **nên gọi nó chỉ khi bạn biết công việc đã hoàn tất**. Thường thì **bạn gọi `get` từ trong method `done`**. (**Không bắt buộc phải gọi `get`** — đôi khi **xử lý dữ liệu tiến độ là đủ**.)
 
@@ -515,7 +515,7 @@ EventQueue.invokeLater(() -> label.setText(percentage + "% complete"));
 
 **Dịch:** Để **huỷ công việc đang chạy, dùng method `cancel` của interface `Future`**. Khi công việc bị huỷ, **`get` ném `CancellationException`**.
 
-> *"As already mentioned, the worker thread's call to publish will cause calls to process on the event dispatch thread. For efficiency, the results of several calls to publish may be batched up in a single call to process. The process method receives a List<V> containing all intermediate results."*
+> *"As already mentioned, the worker thread's call to publish will cause calls to process on the event dispatch thread. For efficiency, the results of several calls to publish may be batched up in a single call to process. The process method receives a List\<V> containing all intermediate results."*
 
 **Dịch:** Như đã nói, **lời gọi `publish` của worker thread sẽ gây ra các lời gọi `process` trên event dispatch thread**. **Vì hiệu năng, kết quả của nhiều lời gọi `publish` có thể được gom lại vào một lời gọi `process` duy nhất.** `process` **nhận một `List<V>` chứa mọi kết quả trung gian**.
 

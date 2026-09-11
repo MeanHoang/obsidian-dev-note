@@ -353,7 +353,7 @@ public static <E> boolean contains(Collection<E> c, Object obj)
 
 **Dịch:** Những người thiết kế framework thấy một số utility method **hữu ích tới mức framework nên cung cấp sẵn**, để người dùng API **khỏi phải phát minh lại bánh xe**. `contains` là một method như vậy.
 
-> *"In fact, the Collection<E> interface declares quite a few useful methods that all implementing classes must supply:"*
+> *"In fact, the Collection\<E> interface declares quite a few useful methods that all implementing classes must supply:"*
 
 ```java
 int size()

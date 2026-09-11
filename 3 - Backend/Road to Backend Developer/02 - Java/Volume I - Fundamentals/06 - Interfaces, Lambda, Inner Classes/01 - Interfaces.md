@@ -65,7 +65,7 @@ public interface Comparable
 > }
 > ```
 >
-> *"For example, a class that implements Comparable<Employee> must supply a method"*
+> *"For example, a class that implements Comparable\<Employee> must supply a method"*
 >
 > ```java
 > int compareTo(Employee other)
@@ -358,7 +358,7 @@ public class Employee implements Comparable<Employee>
 
 > **Note (sách):** *"According to the language standard: “The implementor must ensure sgn(x.compareTo(y)) = -sgn(y.compareTo(x)) for all x and y. (This implies that x.compareTo(y) must throw an exception if y.compareTo(x) throws an exception.)” Here, sgn is the sign of a number: sgn(n) is –1 if n is negative, 0 if n equals 0, and 1 if n is positive. In plain English, if you flip the arguments of compareTo, the sign (but not necessarily the actual value) of the result must also flip."*
 >
-> *"As with the equals method, problems can arise when inheritance comes into play. Since Manager extends Employee, it implements Comparable<Employee> and not Comparable<Manager>. If Manager chooses to override compareTo, it must be prepared to compare managers to employees. It can’t simply cast an employee to a manager:"*
+> *"As with the equals method, problems can arise when inheritance comes into play. Since Manager extends Employee, it implements Comparable\<Employee> and not Comparable\<Manager>. If Manager chooses to override compareTo, it must be prepared to compare managers to employees. It can’t simply cast an employee to a manager:"*
 >
 > ```java
 > class Manager extends Employee
@@ -888,7 +888,7 @@ class TimePrinter implements ActionListener
 
 ## 6.1.8. The Comparator Interface
 
-> *"In Section 6.1.1, you have seen how you can sort an array of objects, provided they are instances of classes that implement the Comparable interface. For example, you can sort an array of strings since the String class implements Comparable<String>, and the String.compareTo method compares strings in dictionary order."*
+> *"In Section 6.1.1, you have seen how you can sort an array of objects, provided they are instances of classes that implement the Comparable interface. For example, you can sort an array of strings since the String class implements Comparable\<String>, and the String.compareTo method compares strings in dictionary order."*
 
 > *"Now suppose we want to sort strings by increasing length, not in dictionary order. We can't have the String class implement the compareTo method in two ways—and at any rate, the String class isn't ours to modify."*
 
@@ -905,7 +905,7 @@ public interface Comparator<T>
 }
 ```
 
-> *"To compare strings by length, define a class that implements Comparator<String>:"*
+> *"To compare strings by length, define a class that implements Comparator\<String>:"*
 
 ```java
 class LengthComparator implements Comparator<String>

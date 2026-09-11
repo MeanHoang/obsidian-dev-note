@@ -86,10 +86,10 @@ CREATE TABLE weather (
 🇻🇳 Table `weather` lưu thời tiết theo thành phố; `--` là cú pháp comment trong SQL.
 
 📖 **Nguyên văn**
-> "White space (i.e., spaces, tabs, and newlines) can be used freely in SQL commands. That means you can type the command aligned differently than above, or even all on one line. Two dashes (\"--\") introduce comments. Whatever follows them is ignored up to the end of the line. SQL is case-insensitive about key words and identifiers, except when identifiers are double-quoted to preserve the case (not done above)."
+> "White space (i.e., spaces, tabs, and newlines) can be used freely in SQL commands. That means you can type the command aligned differently than above, or even all on one line. Two dashes ("--") introduce comments. Whatever follows them is ignored up to the end of the line. SQL is case-insensitive about key words and identifiers, except when identifiers are double-quoted to preserve the case (not done above)."
 
 🇻🇳 **Dịch**
-> "Khoảng trắng (dấu cách, tab, xuống dòng) có thể dùng thoải mái trong câu lệnh SQL. Nghĩa là bạn có thể gõ lệnh canh lề khác ở trên, hoặc thậm chí viết tất cả trên một dòng. Hai dấu gạch ngang (\"--\") mở đầu comment. Mọi thứ theo sau chúng bị bỏ qua cho tới hết dòng. SQL không phân biệt hoa thường với key word và identifier, trừ khi identifier được đặt trong dấu nháy kép để giữ nguyên chữ hoa thường (ví dụ trên không làm vậy)."
+> "Khoảng trắng (dấu cách, tab, xuống dòng) có thể dùng thoải mái trong câu lệnh SQL. Nghĩa là bạn có thể gõ lệnh canh lề khác ở trên, hoặc thậm chí viết tất cả trên một dòng. Hai dấu gạch ngang ("--") mở đầu comment. Mọi thứ theo sau chúng bị bỏ qua cho tới hết dòng. SQL không phân biệt hoa thường với key word và identifier, trừ khi identifier được đặt trong dấu nháy kép để giữ nguyên chữ hoa thường (ví dụ trên không làm vậy)."
 
 > [!tip]
 > 📖 "When you create many interrelated tables it is wise to choose a consistent naming pattern for the tables and columns. For instance, there is a choice of using singular or plural nouns for table names, both of which are favored by some theorist or other."
@@ -291,8 +291,8 @@ ALTER SEQUENCE tablename_colname_seq OWNED BY tablename.colname;
 > "Như vậy, ta đã tạo một column integer và sắp xếp để giá trị default của nó được gán từ một sequence generator. Một constraint `NOT NULL` được áp dụng để đảm bảo không thể insert giá trị null. (Trong hầu hết trường hợp bạn cũng sẽ muốn gắn thêm constraint `UNIQUE` hoặc `PRIMARY KEY` để tránh vô tình insert giá trị trùng, nhưng điều này không tự động.)"
 
 > [!warning]
-> 📖 "Because `smallserial`, `serial` and `bigserial` are implemented using sequences, there may be \"holes\" or gaps in the sequence of values which appears in the column, even if no rows are ever deleted. A value allocated from the sequence is still \"used up\" even if a row containing that value is never successfully inserted into the table column. This may happen, for example, if the inserting transaction rolls back."
-> 🇻🇳 "Vì `smallserial`, `serial` và `bigserial` được hiện thực bằng sequence, có thể xuất hiện \"lỗ hổng\" hay khoảng trống trong dãy giá trị của column, ngay cả khi không row nào bị xóa. Một giá trị đã cấp phát từ sequence vẫn bị coi là \"đã dùng\" kể cả khi row chứa giá trị đó chưa từng được insert thành công vào column. Điều này có thể xảy ra, ví dụ, khi transaction insert bị rollback."
+> 📖 "Because `smallserial`, `serial` and `bigserial` are implemented using sequences, there may be "holes" or gaps in the sequence of values which appears in the column, even if no rows are ever deleted. A value allocated from the sequence is still "used up" even if a row containing that value is never successfully inserted into the table column. This may happen, for example, if the inserting transaction rolls back."
+> 🇻🇳 "Vì `smallserial`, `serial` và `bigserial` được hiện thực bằng sequence, có thể xuất hiện "lỗ hổng" hay khoảng trống trong dãy giá trị của column, ngay cả khi không row nào bị xóa. Một giá trị đã cấp phát từ sequence vẫn bị coi là "đã dùng" kể cả khi row chứa giá trị đó chưa từng được insert thành công vào column. Điều này có thể xảy ra, ví dụ, khi transaction insert bị rollback."
 
 ---
 
@@ -756,10 +756,10 @@ CREATE TABLE t1 (
 🇻🇳 Foreign key ghép: cặp `(b, c)` phải khớp cặp `(c1, c2)` bên `other_table`.
 
 📖 **Nguyên văn**
-> "Sometimes it is useful for the \"other table\" of a foreign key constraint to be the same table; this is called a _self-referential_ foreign key. For example, if you want rows of a table to represent nodes of a tree structure, you could write"
+> "Sometimes it is useful for the "other table" of a foreign key constraint to be the same table; this is called a _self-referential_ foreign key. For example, if you want rows of a table to represent nodes of a tree structure, you could write"
 
 🇻🇳 **Dịch**
-> "Đôi khi \"table kia\" của một foreign key constraint lại chính là cùng table đó; điều này gọi là foreign key *self-referential* (tự tham chiếu). Ví dụ, nếu bạn muốn các row của một table biểu diễn các node của cấu trúc cây, bạn có thể viết:"
+> "Đôi khi "table kia" của một foreign key constraint lại chính là cùng table đó; điều này gọi là foreign key *self-referential* (tự tham chiếu). Ví dụ, nếu bạn muốn các row của một table biểu diễn các node của cấu trúc cây, bạn có thể viết:"
 
 ```sql
 CREATE TABLE tree (
@@ -845,10 +845,10 @@ CREATE TABLE order_items (
 #### Các action đầy đủ
 
 📖 **Nguyên văn**
-> "The default `ON DELETE` action is `ON DELETE NO ACTION`; this does not need to be specified. This means that the deletion in the referenced table is allowed to proceed. But the foreign-key constraint is still required to be satisfied, so this operation will usually result in an error. But checking of foreign-key constraints can also be deferred to later in the transaction (not covered in this chapter). In that case, the `NO ACTION` setting would allow other commands to \"fix\" the situation before the constraint is checked, for example by inserting another suitable row into the referenced table or by deleting the now-dangling rows from the referencing table."
+> "The default `ON DELETE` action is `ON DELETE NO ACTION`; this does not need to be specified. This means that the deletion in the referenced table is allowed to proceed. But the foreign-key constraint is still required to be satisfied, so this operation will usually result in an error. But checking of foreign-key constraints can also be deferred to later in the transaction (not covered in this chapter). In that case, the `NO ACTION` setting would allow other commands to "fix" the situation before the constraint is checked, for example by inserting another suitable row into the referenced table or by deleting the now-dangling rows from the referencing table."
 
 🇻🇳 **Dịch**
-> "Action `ON DELETE` mặc định là `ON DELETE NO ACTION`; không cần khai báo. Nghĩa là việc xóa ở table được tham chiếu được phép tiến hành. Nhưng foreign-key constraint vẫn phải được thỏa mãn, nên thao tác này thường sẽ dẫn tới lỗi. Tuy nhiên việc kiểm tra foreign-key constraint cũng có thể được hoãn (defer) tới cuối transaction (không nói tới trong chương này). Khi đó, thiết lập `NO ACTION` cho phép các lệnh khác \"sửa\" tình huống trước khi constraint được kiểm tra, ví dụ bằng cách insert một row phù hợp khác vào table được tham chiếu hoặc xóa các row đang lơ lửng ở table tham chiếu."
+> "Action `ON DELETE` mặc định là `ON DELETE NO ACTION`; không cần khai báo. Nghĩa là việc xóa ở table được tham chiếu được phép tiến hành. Nhưng foreign-key constraint vẫn phải được thỏa mãn, nên thao tác này thường sẽ dẫn tới lỗi. Tuy nhiên việc kiểm tra foreign-key constraint cũng có thể được hoãn (defer) tới cuối transaction (không nói tới trong chương này). Khi đó, thiết lập `NO ACTION` cho phép các lệnh khác "sửa" tình huống trước khi constraint được kiểm tra, ví dụ bằng cách insert một row phù hợp khác vào table được tham chiếu hoặc xóa các row đang lơ lửng ở table tham chiếu."
 
 📖 **Nguyên văn**
 > "`RESTRICT` is a stricter setting than `NO ACTION`. It prevents deletion of a referenced row. `RESTRICT` does not allow the check to be deferred until later in the transaction."

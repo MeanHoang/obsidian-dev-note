@@ -261,7 +261,7 @@ public static final int HEARTS = 1;
 
 **Dịch:** ⚠️ **Phải dùng dấu `#`, không phải dấu chấm**, để ngăn cách class với tên method hoặc biến. Bản thân Java compiler rất giỏi trong việc xác định các ý nghĩa khác nhau của dấu chấm (ngăn cách package, subpackage, class, inner class, method và biến). Nhưng **`javadoc` không thông minh bằng**, nên bạn **phải giúp nó**.
 
-> *"Constructors have the special name <init>, not the name of the class, such as"*
+> *"Constructors have the special name \<init>, not the name of the class, such as"*
 
 ```java
 @see com.horstmann.corejava.Employee#<init>()

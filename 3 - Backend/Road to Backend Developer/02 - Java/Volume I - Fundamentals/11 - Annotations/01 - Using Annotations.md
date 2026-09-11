@@ -250,7 +250,7 @@ public User getUser(@NonNull String userId)
 >
 > **Dịch:** `@NonNull` và `@Localized` là **một phần của Checker Framework**. Với framework này, bạn **đưa được các assertion vào chương trình**, chẳng hạn một parameter là non-null, hoặc một `String` đã được localize — tức đã **thích ứng với ngôn ngữ và cách dùng bản địa của người dùng**. Rồi một **static analysis tool** sẽ **kiểm tra xem các assertion đó có đúng** trong một khối source code cho trước hay không.
 
-> *"Now, suppose we have a parameter of type List<String>, and we want to express that all of the strings are non-null. That is where type use annotations come in. Place the annotation before the type argument: List<@NonNull String>"*
+> *"Now, suppose we have a parameter of type List\<String>, and we want to express that all of the strings are non-null. That is where type use annotations come in. Place the annotation before the type argument: List<@NonNull String>"*
 
 **Dịch:** Giờ giả sử ta có parameter kiểu `List<String>` và muốn diễn đạt rằng **mọi string trong đó đều non-null**. Đó là lúc **type use annotation** vào cuộc. **Đặt annotation trước type argument**: `List<@NonNull String>`.
 

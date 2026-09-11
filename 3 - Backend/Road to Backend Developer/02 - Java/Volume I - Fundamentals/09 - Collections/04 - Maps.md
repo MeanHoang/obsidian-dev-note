@@ -230,7 +230,7 @@ index.computeIfAbsent(term, k -> new TreeSet<>()).add(pageNumber);
 
 > **Caution (sách):** *"It is tempting to try changing k -> new TreeSet<>() into TreeSet::new, but that does not work. The function has a parameter k for the given key, which would be passed on to the constructor. Fortunately, there is no TreeSet constructor with a String parameter, and the code does not compile."*
 >
-> *"It could have been worse. Suppose you have a Map<Integer, ArrayList<String>> and call"*
+> *"It could have been worse. Suppose you have a Map<Integer, ArrayList\<String>> and call"*
 >
 > ```java
 > map.computeIfAbsent(n, ArrayList::new)
@@ -525,7 +525,7 @@ var personInCharge = new EnumMap<Weekday, Employee>(Weekday.class);
 
 **Dịch:** **`EnumMap`** là map có **key thuộc kiểu enumerated**. Nó được implement **đơn giản và hiệu quả dưới dạng một array các value**. Bạn **phải chỉ định kiểu key trong constructor**.
 
-> **Note (sách):** *"In the API documentation for EnumSet and EnumMap, you will see odd-looking type parameters of the form E extends Enum<E>. This simply means "E is an enumerated type." All enumerated types extend the generic Enum class. For example, Weekday extends Enum<Weekday>."*
+> **Note (sách):** *"In the API documentation for EnumSet and EnumMap, you will see odd-looking type parameters of the form E extends Enum\<E>. This simply means "E is an enumerated type." All enumerated types extend the generic Enum class. For example, Weekday extends Enum\<Weekday>."*
 >
 > **Dịch:** Trong tài liệu API của `EnumSet` và `EnumMap`, bạn sẽ thấy **type parameter trông kỳ quặc dạng `E extends Enum<E>`**. Nó đơn giản nghĩa là **"E là một kiểu enumerated"**. **Mọi kiểu enumerated đều extend class generic `Enum`** — ví dụ `Weekday extends Enum<Weekday>`.
 

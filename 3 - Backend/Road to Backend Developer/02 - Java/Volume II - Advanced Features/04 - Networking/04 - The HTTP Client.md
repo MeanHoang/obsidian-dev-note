@@ -151,7 +151,7 @@ ExecutorService executor = Executors.newCachedThreadPool();
 HttpClient client = HttpClient.newBuilder().executor(executor).build();
 ```
 
-> *"Build a request and then invoke the sendAsync method on the client. You receive a CompletableFuture<HttpResponse<T>>, where T is the type of the body handler. Use the CompletableFuture API as described in Chapter 12 of Volume I:"*
+> *"Build a request and then invoke the sendAsync method on the client. You receive a CompletableFuture<HttpResponse\<T>>, where T is the type of the body handler. Use the CompletableFuture API as described in Chapter 12 of Volume I:"*
 
 ```java
 HttpRequest request = HttpRequest.newBuilder().uri(uri).GET().build();

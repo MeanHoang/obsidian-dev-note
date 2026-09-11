@@ -179,7 +179,7 @@ public enum Size
 
 > *"The short program in Listing 5.12 demonstrates how to work with enumerated types."*
 
-> **Note (sách):** *"The Enum class has a type parameter that I have ignored for simplicity. For example, the enumerated type Size actually extends Enum<Size>. The type parameter is used in the compareTo method. (I discuss the compareTo method in Chapter 6 and type parameters in Chapter 8.)"*
+> **Note (sách):** *"The Enum class has a type parameter that I have ignored for simplicity. For example, the enumerated type Size actually extends Enum\<Size>. The type parameter is used in the compareTo method. (I discuss the compareTo method in Chapter 6 and type parameters in Chapter 8.)"*
 >
 > **Dịch:** Class `Enum` **có một type parameter mà tác giả bỏ qua cho gọn**. Ví dụ enumerated type `Size` **thực ra extend `Enum<Size>`**. Type parameter đó **được dùng trong method `compareTo`**. (`compareTo` bàn ở chương 6, type parameter ở chương 8.)
 

@@ -520,7 +520,7 @@ Từ các mục OWASP đã trích ở trên, vòng đời rút gọn:
 >
 > "- Stateless software should use double submit cookies"
 >
-> "- If an API-driven site can't use <form> tags, consider using custom request headers"
+> "- If an API-driven site can't use \<form> tags, consider using custom request headers"
 >
 > "- Implement at least one mitigation from Defense in Depth Mitigations section"
 >

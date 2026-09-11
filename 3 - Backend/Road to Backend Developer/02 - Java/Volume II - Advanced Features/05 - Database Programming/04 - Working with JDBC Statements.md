@@ -189,7 +189,7 @@ try (Connection conn = . . .)
 
 ## 5.4.3. Analyzing SQL Exceptions
 
-> *"Each SQLException has a chain of SQLException objects that are retrieved with the getNextException method. This exception chain is in addition to the "cause" chain of Throwable objects that every exception has. (See Volume I, Chapter 7 for details about Java exceptions.) One would need two nested loops to fully enumerate all these exceptions. Fortunately, the SQLException class has been enhanced to implement the Iterable<Throwable> interface. The iterator() method yields an Iterator<Throwable> that iterates through both chains: It starts by going through the cause chain of the first SQLException, then moves on to the next SQLException, and so on. You can simply use an enhanced for loop:"*
+> *"Each SQLException has a chain of SQLException objects that are retrieved with the getNextException method. This exception chain is in addition to the "cause" chain of Throwable objects that every exception has. (See Volume I, Chapter 7 for details about Java exceptions.) One would need two nested loops to fully enumerate all these exceptions. Fortunately, the SQLException class has been enhanced to implement the Iterable\<Throwable> interface. The iterator() method yields an Iterator\<Throwable> that iterates through both chains: It starts by going through the cause chain of the first SQLException, then moves on to the next SQLException, and so on. You can simply use an enhanced for loop:"*
 
 ```java
 for (Throwable t : sqlException)

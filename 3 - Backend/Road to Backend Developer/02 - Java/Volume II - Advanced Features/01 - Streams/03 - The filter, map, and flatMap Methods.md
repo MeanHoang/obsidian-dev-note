@@ -16,7 +16,7 @@ Stream<String> longWords = words.stream().filter(w -> w.length() > 12);
 
 **Dịch:** Một **stream transformation** sinh ra stream mà element **được dẫn xuất từ element của một stream khác**. Bạn đã thấy phép biến đổi `filter` cho ra stream mới **chỉ chứa các element khớp một điều kiện**.
 
-> *"The argument of filter is a Predicate<T>—that is, a function from T to boolean."*
+> *"The argument of filter is a Predicate\<T>—that is, a function from T to boolean."*
 
 **Dịch:** Argument của `filter` là một **`Predicate<T>`** — tức một **function từ `T` sang `boolean`**.
 
@@ -93,7 +93,7 @@ flatMap  : "your" ─► ["y","o","u","r"]   ─┐
                                              "y","o","u","r","b","o","a","t"
 ```
 
-> **Note (sách):** *"You will find a flatMap method in classes other than streams. It is a general concept in computer science. Suppose you have a generic type G (such as Stream) and functions f from some type T to G<U> and g from U to G<V>. Then you can compose them—that is, first apply f and then g, by using flatMap. This is a key idea in the theory of monads. But don't worry—you can use flatMap without knowing anything about monads."*
+> **Note (sách):** *"You will find a flatMap method in classes other than streams. It is a general concept in computer science. Suppose you have a generic type G (such as Stream) and functions f from some type T to G<U> and g from U to G\<V>. Then you can compose them—that is, first apply f and then g, by using flatMap. This is a key idea in the theory of monads. But don't worry—you can use flatMap without knowing anything about monads."*
 >
 > **Dịch:** Bạn sẽ gặp method `flatMap` ở **cả những class khác ngoài stream**. Nó là một **khái niệm tổng quát trong khoa học máy tính**. Giả sử bạn có một generic type `G` (như `Stream`) cùng function `f` từ kiểu `T` sang `G<U>` và `g` từ `U` sang `G<V>`. Khi đó bạn **kết hợp (compose) chúng được** — tức áp `f` trước rồi `g` — bằng cách dùng `flatMap`. Đây là **ý tưởng then chốt trong lý thuyết monad**. Nhưng đừng lo — bạn **dùng được `flatMap` mà không cần biết gì về monad**.
 

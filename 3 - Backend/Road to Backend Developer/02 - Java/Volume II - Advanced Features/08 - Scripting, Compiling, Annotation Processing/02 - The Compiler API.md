@@ -81,7 +81,7 @@ JavaCompiler.CompilationTask task = compiler.getTask(
 >
 > **Dịch:** Parameter `classes` **chỉ dùng cho annotation processing**. Trong trường hợp đó bạn còn phải gọi `task.processors(annotationProcessors)` với một **danh sách object `Processor`**. Xem [[06 - Source-Level Annotation Processing]].
 
-> *"The getTask method returns the task object but does not yet start the compilation process. The CompilationTask class extends Callable<Boolean>. You can pass it to an ExecutorService for concurrent execution, or you can just make a synchronous call:"*
+> *"The getTask method returns the task object but does not yet start the compilation process. The CompilationTask class extends Callable\<Boolean>. You can pass it to an ExecutorService for concurrent execution, or you can just make a synchronous call:"*
 
 ```java
 Boolean success = task.call();

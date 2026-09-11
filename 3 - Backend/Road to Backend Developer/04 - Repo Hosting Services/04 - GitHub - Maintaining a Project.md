@@ -40,11 +40,11 @@ Form tạo repository:
 
 📖 **Nguyên văn**
 > "All you really have to do here is provide a project name; the rest of the fields are completely optional.
-> For now, just click the "Create Repository" button, and boom — you have a new repository on GitHub, named <user>/<project_name>."
+> For now, just click the "Create Repository" button, and boom — you have a new repository on GitHub, named \<user>/\<project_name>."
 
 🇻🇳 **Dịch**
 > "Tất cả những gì bạn thực sự phải làm ở đây là đặt tên project; các field còn lại hoàn toàn tùy chọn.
-> Bây giờ, chỉ cần click nút "Create Repository", và bùm — bạn đã có một repository mới trên GitHub, tên là <user>/<project_name>."
+> Bây giờ, chỉ cần click nút "Create Repository", và bùm — bạn đã có một repository mới trên GitHub, tên là \<user>/\<project_name>."
 
 📖 **Nguyên văn**
 > "Since you have no code there yet, GitHub will show you instructions for how to create a brand-new Git repository, or connect an existing Git project."
@@ -55,11 +55,11 @@ Form tạo repository:
 ### Hai dạng URL truy cập
 
 📖 **Nguyên văn**
-> "Every project on GitHub is accessible over HTTPS as https://github.com/<user>/<project_name>, and over SSH as git@github.com:<user>/<project_name>.
+> "Every project on GitHub is accessible over HTTPS as https://github.com/\<user>/\<project_name>, and over SSH as git@github.com:\<user>/\<project_name>.
 > Git can fetch from and push to both of these URLs, but they are access-controlled based on the credentials of the user connecting to them."
 
 🇻🇳 **Dịch**
-> "Mọi project trên GitHub đều truy cập được qua HTTPS ở dạng https://github.com/<user>/<project_name>, và qua SSH ở dạng git@github.com:<user>/<project_name>.
+> "Mọi project trên GitHub đều truy cập được qua HTTPS ở dạng https://github.com/\<user>/\<project_name>, và qua SSH ở dạng git@github.com:\<user>/\<project_name>.
 > Git có thể fetch từ và push tới cả hai URL này, nhưng chúng được kiểm soát quyền truy cập dựa trên credentials của user đang kết nối."
 
 > [!note] Note (nguyên văn trong sách)
@@ -154,12 +154,12 @@ Repository giống một căn hộ. Ai cũng có thể đứng ngoài nhìn qua 
 > Nó cũng cho bạn vài URL mà bạn có thể dùng từ command line."
 
 📖 **Nguyên văn**
-> "If you notice the line that says git pull <url> patch-1, this is a simple way to merge in a remote branch without having to add a remote.
+> "If you notice the line that says git pull \<url> patch-1, this is a simple way to merge in a remote branch without having to add a remote.
 > We went over this quickly in Checking Out Remote Branches.
 > If you wish, you can create and switch to a topic branch and then run this command to merge in the Pull Request changes."
 
 🇻🇳 **Dịch**
-> "Nếu để ý dòng ghi git pull <url> patch-1, đây là cách đơn giản để merge một remote branch vào mà không cần add remote.
+> "Nếu để ý dòng ghi git pull \<url> patch-1, đây là cách đơn giản để merge một remote branch vào mà không cần add remote.
 > Chúng ta đã lướt qua điều này ở Checking Out Remote Branches.
 > Nếu muốn, bạn có thể tạo và switch sang một topic branch rồi chạy lệnh này để merge các thay đổi của Pull Request vào."
 
@@ -197,10 +197,10 @@ $ curl https://github.com/tonychacon/fade/pull/1.patch | git am
 *Figure 115. Responses to emails are included in the thread — nguồn: [GitHub - Maintaining a Project](https://git-scm.com/book/en/v2/GitHub-Maintaining-a-Project)*
 
 📖 **Nguyên văn**
-> "Once the code is in a place you like and want to merge it in, you can either pull the code down and merge it locally, either with the git pull <url> <branch> syntax we saw earlier, or by adding the fork as a remote and fetching and merging."
+> "Once the code is in a place you like and want to merge it in, you can either pull the code down and merge it locally, either with the git pull \<url> \<branch> syntax we saw earlier, or by adding the fork as a remote and fetching and merging."
 
 🇻🇳 **Dịch**
-> "Khi code đã ở trạng thái bạn ưng và muốn merge vào, bạn có thể kéo code về và merge local, hoặc bằng cú pháp git pull <url> <branch> đã thấy ở trên, hoặc bằng cách add fork đó làm remote rồi fetch và merge."
+> "Khi code đã ở trạng thái bạn ưng và muốn merge vào, bạn có thể kéo code về và merge local, hoặc bằng cú pháp git pull \<url> \<branch> đã thấy ở trên, hoặc bằng cách add fork đó làm remote rồi fetch và merge."
 
 📖 **Nguyên văn**
 > "If the merge is trivial, you can also just hit the "Merge" button on the GitHub site.
@@ -582,13 +582,13 @@ X-GitHub-Recipient-Address: tchacon@example.com
 
 📖 **Nguyên văn**
 > "There are a couple of interesting things here.
-> If you want to highlight or re-route emails to this particular project or even Pull Request, the information in Message-ID gives you all the data in <user>/<project>/<type>/<id> format.
-> If this was an issue, for example, the <type> field would have been "issues" rather than "pull"."
+> If you want to highlight or re-route emails to this particular project or even Pull Request, the information in Message-ID gives you all the data in \<user>/\<project>/\<type>/\<id> format.
+> If this was an issue, for example, the \<type> field would have been "issues" rather than "pull"."
 
 🇻🇳 **Dịch**
 > "Có vài điểm thú vị ở đây.
-> Nếu bạn muốn highlight hoặc định tuyến lại email theo project cụ thể này hay thậm chí theo Pull Request, thông tin trong Message-ID cho bạn toàn bộ dữ liệu theo định dạng <user>/<project>/<type>/<id>.
-> Nếu đây là một issue, ví dụ vậy, thì field <type> sẽ là "issues" thay vì "pull"."
+> Nếu bạn muốn highlight hoặc định tuyến lại email theo project cụ thể này hay thậm chí theo Pull Request, thông tin trong Message-ID cho bạn toàn bộ dữ liệu theo định dạng \<user>/\<project>/\<type>/\<id>.
+> Nếu đây là một issue, ví dụ vậy, thì field \<type> sẽ là "issues" thay vì "pull"."
 
 📖 **Nguyên văn**
 > "The List-Post and List-Unsubscribe fields mean that if you have a mail client that understands those, you can easily post to the list or "Unsubscribe" from the thread.

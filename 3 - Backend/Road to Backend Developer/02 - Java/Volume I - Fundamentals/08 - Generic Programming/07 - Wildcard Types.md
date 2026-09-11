@@ -21,7 +21,7 @@
 Pair<? extends Employee>
 ```
 
-> *"denotes any generic Pair type whose type parameter is a subclass of Employee, such as Pair<Manager>, but not Pair<String>."*
+> *"denotes any generic Pair type whose type parameter is a subclass of Employee, such as Pair\<Manager>, but not Pair\<String>."*
 
 **Dịch:** Trong một wildcard type, **type parameter được phép biến thiên**. Ví dụ wildcard type trên **chỉ bất kỳ generic type `Pair` nào có type parameter là subclass của `Employee`**, chẳng hạn `Pair<Manager>`, **nhưng không phải `Pair<String>`**.
 
@@ -36,13 +36,13 @@ public static void printBuddies(Pair<Employee> p)
 }
 ```
 
-> *"As you saw in the preceding section, you cannot pass a Pair<Manager> to that method, which is rather limiting. But the solution is simple—use a wildcard type:"*
+> *"As you saw in the preceding section, you cannot pass a Pair\<Manager> to that method, which is rather limiting. But the solution is simple—use a wildcard type:"*
 
 ```java
 public static void printBuddies(Pair<? extends Employee> p)
 ```
 
-> *"The type Pair<Manager> is a subtype of Pair<? extends Employee> (see Figure 8.3)."*
+> *"The type Pair\<Manager> is a subtype of Pair<? extends Employee> (see Figure 8.3)."*
 
 **Dịch:** Như đã thấy ở section trước — [[06 - Inheritance Rules for Generic Types]] — bạn **không truyền được `Pair<Manager>` vào method đó**, khá là gò bó. Nhưng cách giải quyết rất đơn giản: **dùng một wildcard type**. Type `Pair<Manager>` **là subtype của `Pair<? extends Employee>`**.
 
@@ -58,7 +58,7 @@ public static void printBuddies(Pair<? extends Employee> p)
    Pair<Manager>        Pair<Employee>
 ```
 
-> *"Can we use wildcards to corrupt a Pair<Manager> through a Pair<? extends Employee> reference?"*
+> *"Can we use wildcards to corrupt a Pair\<Manager> through a Pair<? extends Employee> reference?"*
 
 ```java
 var managerBuddies = new Pair<Manager>(ceo, cfo);
@@ -116,7 +116,7 @@ void setFirst(? super Manager)
 
 **Dịch:** Ngược lại, nếu gọi `getFirst` thì **không có bảo đảm nào về type của object trả về**. Bạn **chỉ gán được nó vào một `Object`**.
 
-> *"Here is a typical example. We have an array of managers and want to put the manager with the lowest and highest bonus into a Pair object. What kind of Pair? A Pair<Manager> is the obvious choice, but there are other possibilities. A Pair<Employee> should be fair game or, for that matter, a Pair<Object> (see Figure 8.4). The following method will accept any appropriate Pair:"*
+> *"Here is a typical example. We have an array of managers and want to put the manager with the lowest and highest bonus into a Pair object. What kind of Pair? A Pair\<Manager> is the obvious choice, but there are other possibilities. A Pair\<Employee> should be fair game or, for that matter, a Pair\<Object> (see Figure 8.4). The following method will accept any appropriate Pair:"*
 
 ```java
 public static void minmaxBonus(Manager[] a, Pair<? super Manager> result)
@@ -171,7 +171,7 @@ public interface Comparable<T>
 }
 ```
 
-> *"Here, the type variable indicates the type of the other parameter. For example, the String class implements Comparable<String>, and its compareTo method is declared as"*
+> *"Here, the type variable indicates the type of the other parameter. For example, the String class implements Comparable\<String>, and its compareTo method is declared as"*
 
 ```java
 public int compareTo(String other)
@@ -187,7 +187,7 @@ public int compareTo(String other)
 public static <T extends Comparable<T>> Pair<T> minmax(T[] a)
 ```
 
-> *"This looks more thorough than just using T extends Comparable, and it would work fine for many classes. For example, if you compute the minimum of a String array, then T is the type String, and String is a subtype of Comparable<String>. But we run into a problem when processing an array of LocalDate objects. As it happens, LocalDate implements ChronoLocalDate, and ChronoLocalDate extends Comparable<ChronoLocalDate>. Thus, LocalDate implements Comparable<ChronoLocalDate> but not Comparable<LocalDate>."*
+> *"This looks more thorough than just using T extends Comparable, and it would work fine for many classes. For example, if you compute the minimum of a String array, then T is the type String, and String is a subtype of Comparable\<String>. But we run into a problem when processing an array of LocalDate objects. As it happens, LocalDate implements ChronoLocalDate, and ChronoLocalDate extends Comparable\<ChronoLocalDate>. Thus, LocalDate implements Comparable\<ChronoLocalDate> but not Comparable\<LocalDate>."*
 
 **Dịch:** Giờ `Comparable` là generic type, có lẽ **ta nên làm tốt hơn với method `minmax` của class `ArrayAlg`**? Ta có thể khai báo nó như trên. Cách này **trông chỉn chu hơn** so với chỉ viết `T extends Comparable`, và **chạy tốt với nhiều class**. Ví dụ khi tính minimum của một array `String` thì `T` là type `String`, và `String` là subtype của `Comparable<String>`. Nhưng ta **gặp vấn đề khi xử lý array các object `LocalDate`**. Sự thể là `LocalDate` implement `ChronoLocalDate`, mà `ChronoLocalDate` extends `Comparable<ChronoLocalDate>`. Vậy nên **`LocalDate` implement `Comparable<ChronoLocalDate>` chứ không phải `Comparable<LocalDate>`**.
 
@@ -225,7 +225,7 @@ int compareTo(? super T)
 > staff.removeIf(oddHashCode);
 > ```
 >
-> *"You want to be able to pass a Predicate<Object>, not just a Predicate<Employee>. The super wildcard makes that possible."*
+> *"You want to be able to pass a Predicate\<Object>, not just a Predicate\<Employee>. The super wildcard makes that possible."*
 >
 > **Dịch:** Một công dụng phổ biến khác của supertype bound là **kiểu parameter của một functional interface** — xem [[02 - Lambda Expressions]]. Ví dụ interface `Collection` có method `removeIf`. Method này **xoá mọi phần tử thoả predicate đã cho**. Bạn muốn **truyền được cả `Predicate<Object>` chứ không chỉ `Predicate<Employee>`**. **Wildcard `super` làm điều đó khả thi.**
 
@@ -308,11 +308,11 @@ public static void swap(Pair<?> p) { swapHelper(p); }
 
 **Dịch:** Đó là vấn đề, vì ta cần **giữ tạm phần tử thứ nhất** khi hoán đổi. May thay, **có một cách giải quyết thú vị**: viết một **helper method** tên `swapHelper`. Lưu ý `swapHelper` **là generic method**, còn `swap` **thì không** — nó có **parameter cố định type `Pair<?>`**. Giờ ta **gọi được `swapHelper` từ `swap`**.
 
-> *"In this case, the parameter T of the swapHelper method captures the wildcard. It isn't known what type the wildcard denotes, but it is a definite type, and the definition of <T>swapHelper makes perfect sense when T denotes that type."*
+> *"In this case, the parameter T of the swapHelper method captures the wildcard. It isn't known what type the wildcard denotes, but it is a definite type, and the definition of \<T>swapHelper makes perfect sense when T denotes that type."*
 
 **Dịch:** Trong trường hợp này, **parameter `T` của method `swapHelper` "bắt" (capture) wildcard**. **Không biết wildcard chỉ type nào**, nhưng **nó là một type xác định**, và định nghĩa `<T> swapHelper` **hoàn toàn hợp lý khi `T` chỉ chính type đó**.
 
-> *"Of course, in this case, we were not compelled to use a wildcard. We could have directly implemented <T> void swap(Pair<T> p) as a generic method without wildcards. However, consider this example in which a wildcard type occurs naturally in the middle of a computation:"*
+> *"Of course, in this case, we were not compelled to use a wildcard. We could have directly implemented \<T> void swap(Pair\<T> p) as a generic method without wildcards. However, consider this example in which a wildcard type occurs naturally in the middle of a computation:"*
 
 ```java
 public static void maxminBonus(Manager[] a, Pair<? super Manager> result)
@@ -326,7 +326,7 @@ public static void maxminBonus(Manager[] a, Pair<? super Manager> result)
 
 **Dịch:** Dĩ nhiên trong trường hợp này **ta không bị buộc phải dùng wildcard** — có thể implement thẳng `<T> void swap(Pair<T> p)` như một generic method không wildcard. Tuy nhiên hãy xét ví dụ trên, nơi một **wildcard type xuất hiện một cách tự nhiên ở giữa quá trình tính toán**. Ở đây, **cơ chế wildcard capture là không thể tránh khỏi**.
 
-> *"Wildcard capture is only legal in very limited circumstances. The compiler must be able to guarantee that the wildcard represents a single definite type. For example, the T in ArrayList<Pair<T>> can never capture the wildcard in ArrayList<Pair<?>>. The array list might hold two Pair<?>, each of which has a different type for ?."*
+> *"Wildcard capture is only legal in very limited circumstances. The compiler must be able to guarantee that the wildcard represents a single definite type. For example, the T in ArrayList<Pair\<T>> can never capture the wildcard in ArrayList<Pair<?>>. The array list might hold two Pair<?>, each of which has a different type for ?."*
 
 **Dịch:** **Wildcard capture chỉ hợp lệ trong hoàn cảnh rất hạn chế.** Compiler **phải bảo đảm được rằng wildcard đại diện cho một type xác định duy nhất**. Ví dụ, `T` trong `ArrayList<Pair<T>>` **không bao giờ capture được wildcard trong `ArrayList<Pair<?>>`** — array list đó có thể chứa **hai `Pair<?>`, mỗi cái có một type khác nhau cho `?`**. Xem [[03 - Generic Array Lists]].
 

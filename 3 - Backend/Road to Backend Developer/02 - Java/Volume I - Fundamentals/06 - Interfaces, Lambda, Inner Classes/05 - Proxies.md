@@ -146,7 +146,7 @@ if (result >= 0) System.out.println(elements[result]);
 
 **Dịch:** Class `Integer` implement interface `Comparable`. Các object proxy **thuộc về một class được định nghĩa lúc runtime** (tên kiểu như **`$Proxy0`**). Class đó **cũng implement `Comparable`**, nhưng **method `compareTo` của nó gọi method `invoke` của handler thuộc object proxy**.
 
-> **Note (sách):** *"As you saw earlier in this chapter, the Integer class actually implements Comparable<Integer>. However, at runtime, all generic types are erased and the proxy is constructed with the class object for the raw Comparable class."*
+> **Note (sách):** *"As you saw earlier in this chapter, the Integer class actually implements Comparable\<Integer>. However, at runtime, all generic types are erased and the proxy is constructed with the class object for the raw Comparable class."*
 >
 > **Dịch:** Như đã thấy ở đầu chương, class `Integer` **thực ra implement `Comparable<Integer>`**. Tuy nhiên **lúc runtime mọi generic type đều bị xoá (erased)**, và proxy **được dựng với object class của `Comparable` dạng "raw"**.
 

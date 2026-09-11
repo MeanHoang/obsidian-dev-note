@@ -432,7 +432,7 @@ PosixFileAttributes attributes = Files.readAttributes(path, PosixFileAttributes.
 
 ## 2.4.6. Visiting Directory Entries
 
-> *"The static Files.list method returns a Stream<Path> that reads the entries of a directory. The directory is read lazily, making it possible to efficiently process directories with huge numbers of entries."*
+> *"The static Files.list method returns a Stream\<Path> that reads the entries of a directory. The directory is read lazily, making it possible to efficiently process directories with huge numbers of entries."*
 
 > *"Since reading a directory involves a system resource that needs to be closed, you should use a try block:"*
 
@@ -520,7 +520,7 @@ Files.walk(source).forEach(p ->
 
 ## 2.4.7. Using Directory Streams
 
-> *"As you saw in the preceding section, the Files.walk method produces a Stream<Path> that traverses the descendants of a directory. Sometimes, you need more fine-grained control over the traversal process. In that case, use the Files.newDirectoryStream object instead. It yields a DirectoryStream. Note that this is not a subinterface of java.util.stream.Stream but an interface that is specialized for directory traversal. It is a subinterface of Iterable so that you can use directory stream in an enhanced for loop. Here is the usage pattern:"*
+> *"As you saw in the preceding section, the Files.walk method produces a Stream\<Path> that traverses the descendants of a directory. Sometimes, you need more fine-grained control over the traversal process. In that case, use the Files.newDirectoryStream object instead. It yields a DirectoryStream. Note that this is not a subinterface of java.util.stream.Stream but an interface that is specialized for directory traversal. It is a subinterface of Iterable so that you can use directory stream in an enhanced for loop. Here is the usage pattern:"*
 
 ```java
 try (DirectoryStream<Path> entries = Files.newDirectoryStream(dir))
@@ -597,7 +597,7 @@ try (DirectoryStream<Path> entries = Files.newDirectoryStream(dir, "*.java"))
 
 **Dịch:** Nếu **bất kỳ method nào ném exception** thì việc duyệt **cũng bị kết thúc**, và **exception đó được ném ra từ method `walkFileTree`**.
 
-> **Note (sách):** *"The FileVisitor interface is a generic type, but it isn’t likely that you’ll ever want something other than a FileVisitor<Path>. The walkFileTree method is willing to accept a FileVisitor<? super Path>, but Path does not have an abundance of supertypes."*
+> **Note (sách):** *"The FileVisitor interface is a generic type, but it isn’t likely that you’ll ever want something other than a FileVisitor\<Path>. The walkFileTree method is willing to accept a FileVisitor<? super Path>, but Path does not have an abundance of supertypes."*
 >
 > **Dịch:** Interface `FileVisitor` là **generic type**, nhưng **khó có khả năng bạn muốn thứ gì khác `FileVisitor<Path>`**. Method `walkFileTree` **sẵn lòng nhận `FileVisitor<? super Path>`**, nhưng **`Path` không có nhiều supertype cho lắm**. (Xem [[07 - Wildcard Types|chương 8 Volume I]].)
 

@@ -634,7 +634,7 @@ long sum = map.reduceValuesToLong(threshold,
 
 **Dịch:** Giả sử bạn muốn **một set lớn, thread-safe thay vì một map**. **Không có class `ConcurrentHashSet`**, và bạn **đủ khôn để không thử tự tạo lấy một cái**. Dĩ nhiên bạn **dùng được `ConcurrentHashMap` với các giá trị giả**, nhưng khi đó **bạn có một map chứ không phải set**, và **không áp dụng được các thao tác của interface `Set`**.
 
-> *"The static newKeySet method yields a Set<K> that is actually a wrapper around a ConcurrentHashMap<K, Boolean>. (All map values are Boolean.TRUE, but you don't actually care since you just use it as a set.)"*
+> *"The static newKeySet method yields a Set\<K> that is actually a wrapper around a ConcurrentHashMap<K, Boolean>. (All map values are Boolean.TRUE, but you don't actually care since you just use it as a set.)"*
 
 ```java
 Set<String> words = ConcurrentHashMap.<String>newKeySet();

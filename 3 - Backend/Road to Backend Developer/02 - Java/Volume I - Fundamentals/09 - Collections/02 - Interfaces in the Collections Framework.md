@@ -131,7 +131,7 @@ E set(int index, E element)
 
 ### `SequencedCollection` (Java 21)
 
-> *"Java 21 introduces the SequencedCollection<E> interface that provides uniform access to the first and last element of a collection and reverse traversal."*
+> *"Java 21 introduces the SequencedCollection\<E> interface that provides uniform access to the first and last element of a collection and reverse traversal."*
 
 ```java
 E getFirst()

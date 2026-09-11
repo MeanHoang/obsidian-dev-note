@@ -103,7 +103,7 @@ Class cl3 = Double[].class;
 
 **Dịch:** **Cách thứ ba** để lấy object kiểu `Class` là một **lối viết tắt tiện lợi**: nếu `T` là **kiểu Java bất kỳ** (hoặc keyword `void`) thì **`T.class` là class object tương ứng**. Lưu ý object `Class` **thực chất mô tả một kiểu**, **có thể là class mà cũng có thể không**. Ví dụ `int` **không phải class**, nhưng `int.class` **vẫn là một object kiểu `Class`**.
 
-> **Note (sách):** *"The Class class is actually a generic class. For example, Employee.class is of type Class<Employee>. In this chapter, I'm not dwelling on this issue because it would further complicate an already abstract concept. For most practical purposes, you can ignore the type parameter and work with the raw Class type. See Chapter 8 for more information on the type parameter of Class."*
+> **Note (sách):** *"The Class class is actually a generic class. For example, Employee.class is of type Class\<Employee>. In this chapter, I'm not dwelling on this issue because it would further complicate an already abstract concept. For most practical purposes, you can ignore the type parameter and work with the raw Class type. See Chapter 8 for more information on the type parameter of Class."*
 >
 > **Dịch:** `Class` **thực ra là một generic class**: `Employee.class` có kiểu **`Class<Employee>`**. Chương này **không sa đà vào chuyện đó** vì sẽ **làm một khái niệm vốn đã trừu tượng thêm rối**. Với **hầu hết mục đích thực tế**, bạn **bỏ qua type parameter và làm việc với kiểu `Class` raw**.
 

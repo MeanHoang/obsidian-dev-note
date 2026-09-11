@@ -24,7 +24,7 @@ var staff = new Employee[actualSize];
 
 **Dịch:** Dĩ nhiên đoạn code này **chưa giải quyết trọn vẹn** vấn đề **sửa mảng động lúc runtime**: đặt kích thước xong thì **không đổi dễ dàng được**. Thay vào đó, Java xử lý tình huống phổ biến này bằng một class khác tên **`ArrayList`** — **giống mảng**, nhưng **tự động điều chỉnh capacity khi bạn thêm và bớt phần tử**, **không cần code thêm gì**.
 
-> *"ArrayList is a generic class with a type parameter. To specify the type of the element objects that the array list holds, you append a class name enclosed in angle brackets, such as ArrayList<Employee>. You will see in Chapter 8 how to define your own generic class, but you don't need to know any of those technicalities to use the ArrayList type."*
+> *"ArrayList is a generic class with a type parameter. To specify the type of the element objects that the array list holds, you append a class name enclosed in angle brackets, such as ArrayList\<Employee>. You will see in Chapter 8 how to define your own generic class, but you don't need to know any of those technicalities to use the ArrayList type."*
 
 **Dịch:** `ArrayList` là một **generic class có type parameter**. Để chỉ rõ **kiểu của các object phần tử** mà array list chứa, bạn **gắn thêm tên class trong ngoặc nhọn**, chẳng hạn `ArrayList<Employee>`. Cách **tự định nghĩa generic class** nằm ở chương 8, nhưng **không cần biết kỹ thuật đó để dùng kiểu `ArrayList`**.
 
@@ -52,7 +52,7 @@ ArrayList<Employee> staff = new ArrayList<>();
 
 **Dịch:** Trên là cách khai báo và dựng một array list chứa object `Employee`. Nên dùng keyword [[03 - Defining Your Own Classes|`var`]] để **tránh lặp lại tên class**. Nếu **không dùng `var`**, bạn **bỏ được type argument ở vế phải**.
 
-> *"This is called the "diamond" syntax because the empty brackets <> resemble a diamond. Use the diamond syntax together with the new operator. The compiler checks what happens to the new value. If it is assigned to a variable, passed into a method, or returned from a method, then the compiler checks the generic type of the variable, parameter, or method. It then places that type into the <>. In our example, the new ArrayList<>() is assigned to a variable of type ArrayList<Employee>. Therefore, the generic type is Employee."*
+> *"This is called the "diamond" syntax because the empty brackets <> resemble a diamond. Use the diamond syntax together with the new operator. The compiler checks what happens to the new value. If it is assigned to a variable, passed into a method, or returned from a method, then the compiler checks the generic type of the variable, parameter, or method. It then places that type into the <>. In our example, the new ArrayList<>() is assigned to a variable of type ArrayList\<Employee>. Therefore, the generic type is Employee."*
 
 **Dịch:** Đây gọi là **cú pháp "diamond"** vì cặp ngoặc rỗng `<>` **trông giống viên kim cương**. Dùng cú pháp diamond **cùng với toán tử `new`**. Compiler **xem giá trị mới được dùng làm gì**: nếu nó **được gán cho một biến, truyền vào một method, hoặc trả về từ một method** thì compiler **kiểm tra generic type của biến/parameter/method** đó rồi **đặt kiểu đó vào `<>`**.
 
@@ -62,7 +62,7 @@ ArrayList<Employee> staff = new ArrayList<>();
 > var elements = new ArrayList<>();
 > ```
 >
-> *"yields an ArrayList<Object>."*
+> *"yields an ArrayList\<Object>."*
 >
 > **Dịch:** Nếu khai báo `ArrayList` bằng `var` thì **đừng dùng cú pháp diamond**: khai báo trên **cho ra `ArrayList<Object>`**.
 
@@ -219,7 +219,7 @@ Employee e = a[i];
 > staff.set(i, "Harry Hacker");
 > ```
 >
-> *"compiles without so much as a warning, and you run into grief only when you retrieve the object and try to cast it. If you use an ArrayList<Employee> instead, the compiler will detect this error."*
+> *"compiles without so much as a warning, and you run into grief only when you retrieve the object and try to cast it. If you use an ArrayList\<Employee> instead, the compiler will detect this error."*
 >
 > **Dịch:** Khi chưa có generic class, method `get` của `ArrayList` raw **không còn lựa chọn nào ngoài trả về `Object`**, nên người gọi `get` **phải cast giá trị trả về về kiểu mong muốn**. `ArrayList` raw còn **hơi nguy hiểm**: method `add` và `set` của nó **nhận object thuộc bất kỳ kiểu nào**. Lời gọi trên **biên dịch trót lọt, không một lời cảnh báo**, và bạn **chỉ gặp khổ khi lấy object ra và cố cast**. Dùng `ArrayList<Employee>` thì **compiler phát hiện được lỗi này**.
 
@@ -287,7 +287,7 @@ for (int i = 0; i < staff.size(); i++)
 
 **Dịch:** Bạn dùng được [[07 - Control Flow|vòng lặp "for each"]] để **duyệt nội dung của array list** — hiệu quả giống hệt vòng `for` truyền thống ở trên.
 
-> *"Listing 5.7 is a modification of the EmployeeTest program of Chapter 4. The Employee[] array is replaced by an ArrayList<Employee>. Note the following changes:"*
+> *"Listing 5.7 is a modification of the EmployeeTest program of Chapter 4. The Employee[] array is replaced by an ArrayList\<Employee>. Note the following changes:"*
 > *"You don't have to specify the array size."*
 > *"You use add to add as many elements as you like."*
 > *"You use size() instead of length to count the number of elements."*
@@ -402,7 +402,7 @@ ArrayList<Employee> result = (ArrayList<Employee>) employeeDB.find(query);
 
 **Dịch:** **Dùng cast không làm cảnh báo biến mất** — bạn **nhận một cảnh báo khác**, báo rằng **cast đó gây hiểu lầm**.
 
-> *"This is the consequence of a somewhat unfortunate limitation of generic types in Java. For compatibility, the compiler translates all typed array lists into raw ArrayList objects after checking that the type rules were not violated. In a running program, all array lists are the same—there are no type parameters in the virtual machine. Thus, the casts (ArrayList) and (ArrayList<Employee>) carry out identical runtime checks."*
+> *"This is the consequence of a somewhat unfortunate limitation of generic types in Java. For compatibility, the compiler translates all typed array lists into raw ArrayList objects after checking that the type rules were not violated. In a running program, all array lists are the same—there are no type parameters in the virtual machine. Thus, the casts (ArrayList) and (ArrayList\<Employee>) carry out identical runtime checks."*
 
 **Dịch:** Đây là **hệ quả của một giới hạn khá đáng tiếc của generic type trong Java**. Vì **khả năng tương thích**, compiler **dịch mọi typed array list thành object `ArrayList` raw** sau khi kiểm tra rằng **quy tắc kiểu không bị vi phạm**. **Trong chương trình đang chạy, mọi array list đều như nhau — không có type parameter nào trong virtual machine.** Vì thế cast `(ArrayList)` và `(ArrayList<Employee>)` **thực hiện các kiểm tra runtime y hệt nhau**.
 

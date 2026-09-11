@@ -371,11 +371,11 @@ pg_restore -d dbname filename
 🇻🇳 Dump ở định dạng custom (nén, restore chọn lọc được) và khôi phục bằng pg_restore.
 
 📖 **Nguyên văn**
-> "Use pg_dump's parallel dump feature. To speed up the dump of a large database, you can use pg_dump's parallel mode. This will dump multiple tables at the same time. You can control the degree of parallelism with the `-j` parameter. Parallel dumps are only supported for the \"directory\" archive format."
+> "Use pg_dump's parallel dump feature. To speed up the dump of a large database, you can use pg_dump's parallel mode. This will dump multiple tables at the same time. You can control the degree of parallelism with the `-j` parameter. Parallel dumps are only supported for the "directory" archive format."
 > "pg_dump -j *num* -F d -f *out.dir* *dbname*"
 
 🇻🇳 **Dịch**
-> "Dùng tính năng parallel dump của pg_dump. Để tăng tốc dump một database lớn, bạn có thể dùng chế độ parallel của pg_dump. Nó sẽ dump nhiều table cùng lúc. Bạn kiểm soát mức độ song song bằng tham số `-j`. Parallel dump chỉ được hỗ trợ cho archive format \"directory\"."
+> "Dùng tính năng parallel dump của pg_dump. Để tăng tốc dump một database lớn, bạn có thể dùng chế độ parallel của pg_dump. Nó sẽ dump nhiều table cùng lúc. Bạn kiểm soát mức độ song song bằng tham số `-j`. Parallel dump chỉ được hỗ trợ cho archive format "directory"."
 > "`pg_dump -j số -F d -f thư_mục_out tên_db`"
 
 ## B6. pg_dumpall — backup cả cluster kèm role

@@ -7,7 +7,7 @@
 
 ## 1.7. The Optional Type
 
-> *"An Optional<T> object is a wrapper for either an object of type T or no object. In the former case, we say that the value is present. The Optional<T> type is intended as a safer alternative for a reference of type T that either refers to an object or is null. But it is only safer if you use it right. The next three sections shows you how."*
+> *"An Optional\<T> object is a wrapper for either an object of type T or no object. In the former case, we say that the value is present. The Optional\<T> type is intended as a safer alternative for a reference of type T that either refers to an object or is null. But it is only safer if you use it right. The next three sections shows you how."*
 
 **Dịch:** Một object `Optional<T>` là **wrapper** cho **hoặc một object kiểu `T`, hoặc không có object nào**. Ở trường hợp đầu, ta nói **giá trị là present (có mặt)**. Kiểu `Optional<T>` được thiết kế để thay thế **an toàn hơn** cho một reference kiểu `T` mà hoặc trỏ tới object, hoặc là `null`. Nhưng **nó chỉ an toàn hơn nếu bạn dùng đúng**.
 
@@ -176,7 +176,7 @@ value.someMethod();
 
 **Dịch:** Method `get` lấy element được bọc trong `Optional` nếu nó tồn tại, hoặc **ném `NoSuchElementException`** nếu không. Do đó cách viết trên **không an toàn hơn chút nào** so với cách viết cũ.
 
-> *"The isPresent method reports whether an Optional<T> object has a value. But"*
+> *"The isPresent method reports whether an Optional\<T> object has a value. But"*
 
 ```java
 if (optionalValue.isPresent()) optionalValue.get().someMethod();
@@ -249,7 +249,7 @@ public static Optional<Double> inverse(Double x)
 
 ## 1.7.6. Composing Optional Value Functions with flatMap
 
-> *"Suppose you have a method f yielding an Optional<T>, and the target type T has a method g yielding an Optional<U>. If they were normal methods, you could compose them by calling s.f().g(). But that composition doesn't work since s.f() has type Optional<T>, not T. Instead, call"*
+> *"Suppose you have a method f yielding an Optional\<T>, and the target type T has a method g yielding an Optional<U>. If they were normal methods, you could compose them by calling s.f().g(). But that composition doesn't work since s.f() has type Optional\<T>, not T. Instead, call"*
 
 ```java
 Optional<U> result = s.f().flatMap(T::g);
@@ -303,7 +303,7 @@ Optional<Double> result
 
 ## 1.7.7. Turning an Optional into a Stream
 
-> *"The stream method turns an Optional<T> into a Stream<T> with zero or one element. Sure, why not, but why would you ever want that?"*
+> *"The stream method turns an Optional\<T> into a Stream\<T> with zero or one element. Sure, why not, but why would you ever want that?"*
 
 **Dịch:** Method `stream` biến một `Optional<T>` thành một **`Stream<T>` có 0 hoặc 1 element**. Được thôi, nhưng **để làm gì mới được chứ?**
 
@@ -337,7 +337,7 @@ Stream<User> users = ids.map(Users::lookup)
 
 **Dịch:** Nhưng cách đó dùng `isPresent` và `get` — hai method **ta đã cảnh báo**. **Thanh lịch hơn** là gọi `flatMap(Optional::stream)`. Mỗi lời gọi `stream` trả về stream **0 hoặc 1 element**. `flatMap` **gộp tất cả lại**. Nghĩa là các user **không tồn tại đơn giản bị loại bỏ**.
 
-> **Note (sách):** *"In this section, we consider the happy scenario in which we have a method that returns an Optional value. These days, many methods return null when there is no valid result. Suppose Users.classicLookup(id) returns a User object or null, not an Optional<User>. Then you can of course filter out the null values:"*
+> **Note (sách):** *"In this section, we consider the happy scenario in which we have a method that returns an Optional value. These days, many methods return null when there is no valid result. Suppose Users.classicLookup(id) returns a User object or null, not an Optional\<User>. Then you can of course filter out the null values:"*
 >
 > ```java
 > Stream<User> users = ids.map(Users::classicLookup)

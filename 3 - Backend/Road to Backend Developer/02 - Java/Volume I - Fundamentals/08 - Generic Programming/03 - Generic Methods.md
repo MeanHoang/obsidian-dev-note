@@ -44,7 +44,7 @@ public static <T> T getMiddle(T... a)
 String middle = ArrayAlg.<String>getMiddle("John", "Q.", "Public");
 ```
 
-> *"In this case (and indeed in most cases), you can omit the <String> type parameter from the method call. The compiler has enough information to infer the method that you want. It matches the type of the arguments against the generic type T... and deduces that T must be String. That is, you can simply call"*
+> *"In this case (and indeed in most cases), you can omit the \<String> type parameter from the method call. The compiler has enough information to infer the method that you want. It matches the type of the arguments against the generic type T... and deduces that T must be String. That is, you can simply call"*
 
 ```java
 String middle = ArrayAlg.getMiddle("John", "Q.", "Public");
@@ -77,7 +77,7 @@ Xem [[04 - Object Wrappers and Autoboxing]] và [[01 - Interfaces]].
 >
 > **Dịch:** Peter von der Ahé gợi ý mẹo sau nếu bạn muốn **xem compiler suy ra type nào** cho một lời gọi generic method: **cố tình tạo ra lỗi rồi đọc kỹ thông báo lỗi**. Ví dụ, với lời gọi `ArrayAlg.getMiddle("Hello", 0, null)`, hãy **gán kết quả vào một `JButton`** — điều chắc chắn không thể đúng. Bạn sẽ nhận được báo cáo lỗi như trên. Nói cho dễ hiểu: bạn **gán được kết quả vào `Object`, `Serializable`, hoặc `Comparable`**.
 
-> **C++ Note (sách):** *"In C++, you place the type parameters after the method name. That can lead to nasty parsing ambiguities. For example, g(f<a,b>(c)) can mean "call g with the result of f<a,b>(c)," or "call g with the two boolean values f<a and b>(c).""*
+> **C++ Note (sách):** *"In C++, you place the type parameters after the method name. That can lead to nasty parsing ambiguities. For example, g(f<a,b>(c)) can mean "call g with the result of f<a,b>(c)," or "call g with the two boolean values f\<a and b>(c).""*
 >
 > **Dịch:** Trong C++, type parameter được đặt **sau tên method**. Điều đó dẫn tới **những mơ hồ khi phân tích cú pháp rất khó chịu**. Ví dụ `g(f<a,b>(c))` có thể nghĩa là "gọi `g` với kết quả của `f<a,b>(c)`", hoặc "gọi `g` với **hai giá trị boolean** `f<a` và `b>(c)`".
 
