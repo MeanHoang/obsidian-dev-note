@@ -123,7 +123,7 @@ Giống việc mỗi người đều có **bản photo đầy đủ** của cả
 
 ## Liên kết
 - Bài tiếp theo: [[02 - What is Git]]
-- Khái niệm "server", "client" đã nói ở [[01 - Introduction/01 - How does the internet work|How does the internet work]]
+- Khái niệm "server", "client" đã nói ở [[01 - How does the internet work]] (phần 01 - Introduction)
 
 ## Nguồn tham khảo
 - **Pro Git, 2nd Edition** — Scott Chacon, Ben Straub — §1.1 About Version Control: <https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control>
