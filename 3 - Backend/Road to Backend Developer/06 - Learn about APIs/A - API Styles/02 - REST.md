@@ -635,6 +635,8 @@ Liên hệ tới đoạn Fielding phê cookie (§6.3.4.2, đã trích ở Phần
 
 ## Liên kết
 
+- Bài trước: [[01 - API là gì và nền tảng HTTP]]
+- Bài kế: [[03 - JSON và JSON-API]]
 - [[01 - API là gì và nền tảng HTTP]] — resource, safe / idempotent method, nền tảng HTTP cho bài này
 - [[02 - What is HTTP]] — HTTP cơ bản: request/response, method, header, status code
 - [[07 - N+1 Problem]] — hệ quả hay gặp khi client REST phải gọi lần lượt nhiều endpoint con

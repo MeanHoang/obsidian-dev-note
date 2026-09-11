@@ -544,6 +544,8 @@ Mỗi ô dưới đây hoặc truy được về một câu trích trong bài, h
 ---
 
 ## Liên kết
+- Bài trước: [[05 - SOAP]]
+- Bài kế: [[07 - GraphQL]]
 - [[02 - REST]] — style đối lập: xoay quanh resource thay vì method; xem mục 2.1 và bảng so sánh mục 15
 - [[02 - What is HTTP]] — nền tảng HTTP; metadata của gRPC đóng vai trò tương tự header, và mục 13 nói về HTTP/2
 - [[07 - N+1 Problem]] — vấn đề nhiều round-trip nhỏ; streaming của gRPC là một hướng tiếp cận khác cho cùng nỗi đau

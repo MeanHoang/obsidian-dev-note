@@ -732,6 +732,8 @@ Hai ví dụ dưới đây **copy nguyên văn** từ RFC 9457 §3, không sửa
 
 ## Liên kết
 
+- Bài trước: [[03 - JSON và JSON-API]]
+- Bài kế: [[05 - SOAP]]
 - [[01 - API là gì và nền tảng HTTP]] — request/response, method, header: nền cho toàn bộ bài này
 - [[02 - What is HTTP]] — HTTP cơ bản đã học ở phần 01
 - [[13 - SQL Injection và Parameterized Query]] — lý do `detail` không được chứa thông tin debug nội bộ

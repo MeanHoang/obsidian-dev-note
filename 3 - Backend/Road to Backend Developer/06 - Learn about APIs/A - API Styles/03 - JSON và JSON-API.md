@@ -935,6 +935,8 @@ Bộ ba `title` / `detail` / `source.pointer` giống hệt cách một nhân vi
 ---
 
 ## Liên kết
+- Bài trước: [[02 - REST]]
+- Bài kế: [[04 - HTTP Status Code và thiết kế lỗi]]
 - [[11 - NULL, Hàm String, Date và JSON]] — kiểu `json` / `jsonb` trong PostgreSQL, nơi payload JSON được lưu trữ.
 - [[07 - N+1 Problem]] — N+1 ở tầng database; compound document + `include` là hình chiếu của cùng vấn đề đó lên tầng API.
 - [[02 - What is HTTP]] — `Content-Type`, `Accept`, content negotiation, các status code `400` / `406` / `415` mà JSON:API viện dẫn.

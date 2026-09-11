@@ -546,6 +546,8 @@ Ba thứ cuối chính là lý do các hệ thống ngân hàng, bảo hiểm, E
 
 ## Liên kết
 
+- Bài trước: [[04 - HTTP Status Code và thiết kế lỗi]]
+- Bài kế: [[06 - gRPC và Protocol Buffers]]
 - [[02 - REST]] — đối chiếu trực tiếp: SOAP là protocol, REST là architectural style; SOAP dùng một endpoint + operation trong body, REST dùng resource + HTTP method.
 - [[08 - OpenAPI Specification]] — WSDL là tiền thân của ý tưởng "contract máy đọc được"; OpenAPI làm điều tương tự cho REST.
 - [[02 - What is HTTP]] — HTTP là binding chuẩn mực duy nhất của SOAP 1.2; SOAP trên HTTP luôn là POST với `Content-Type: application/soap+xml`.

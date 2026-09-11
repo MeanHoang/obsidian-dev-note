@@ -550,6 +550,7 @@ Trong thực tế API, 99% trường hợp bạn gặp là **proactive negotiati
 
 ## Liên kết
 
+- Bài kế: [[02 - REST]]
 - [[02 - What is HTTP]] — HTTP nhập môn: request/response, status code, URL, HTTPS. Đọc lại nếu phần method/header ở trên còn lạ.
 - [[01 - How does the internet work]] — tầng bên dưới HTTP, giải thích vì sao "mất kết nối giữa chừng" là tình huống có thật và idempotent mới quan trọng đến vậy.
 - [[05 - DNS and how it works]] — cách một hostname trong URI của API được phân giải thành địa chỉ thật.

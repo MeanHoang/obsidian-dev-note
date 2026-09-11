@@ -77,7 +77,7 @@ Nghĩ tới **bản vẽ kỹ thuật của một ổ cắm điện**. Bạn kh�
 
 Ý tưởng "contract máy đọc được" không mới. Thế giới SOAP đã có sẵn nó từ đầu dưới dạng **WSDL** — xem [[05 - SOAP]]: mỗi SOAP service đi kèm một file WSDL mô tả operation, kiểu dữ liệu, endpoint, và từ WSDL người ta sinh ra client stub tự động.
 
-REST thì không: [[06 - REST]] / kiến trúc REST không quy định bất kỳ định dạng contract nào, nên suốt nhiều năm tài liệu REST API là văn bản viết tay. **OpenAPI lấp đúng khoảng trống đó** — đóng vai trò của WSDL, nhưng cho HTTP API kiểu REST, và viết bằng JSON/YAML thay vì XML.
+REST thì không: [[02 - REST]] / kiến trúc REST không quy định bất kỳ định dạng contract nào, nên suốt nhiều năm tài liệu REST API là văn bản viết tay. **OpenAPI lấp đúng khoảng trống đó** — đóng vai trò của WSDL, nhưng cho HTTP API kiểu REST, và viết bằng JSON/YAML thay vì XML.
 
 | | SOAP | REST + OpenAPI |
 |---|---|---|
@@ -976,8 +976,10 @@ Giống **bản vẽ nhà có mục "chú thích ký hiệu"**: thay vì vẽ l�
 
 ## Liên kết
 
+- Bài trước: [[07 - GraphQL]]
+- Bài kế: [[09 - So sánh API Styles và REST Security]]
 - [[05 - SOAP]] — WSDL: contract máy đọc được của thế giới SOAP, ý tưởng mà OpenAPI mang sang cho HTTP API
-- [[06 - REST]] — kiến trúc REST không quy định định dạng contract; OpenAPI là lớp bổ sung nằm ngoài
+- [[02 - REST]] — kiến trúc REST không quy định định dạng contract; OpenAPI là lớp bổ sung nằm ngoài
 - [[02 - What is HTTP]] — các HTTP method (`get`, `post`, `put`, `delete`...) mà Path Item Object dùng làm tên field, và HTTP status code trong Responses Object
 - [[11 - NULL, Hàm String, Date và JSON]] — JSON là định dạng dữ liệu nền cho cả OpenAPI document lẫn Schema Object
 - [[13 - SQL Injection và Parameterized Query]] — validate input theo schema là một lớp phòng thủ, nhưng không thay thế parameterized query
