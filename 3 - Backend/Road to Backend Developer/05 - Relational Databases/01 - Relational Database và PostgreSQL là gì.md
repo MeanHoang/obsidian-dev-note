@@ -421,7 +421,6 @@ Firestore là document database, không phải relational database, nên cách n
 ---
 
 ## Liên kết
-- Bài trước: [[00 - Tổng hợp (Relational Databases)]]
 - Bài kế: [[02 - Tables, Data Types và Constraints]]
 - Cross-link: [[02 - What is Git]] — đối lập với `dropdb`, thao tác trong Git gần như luôn khôi phục được
 

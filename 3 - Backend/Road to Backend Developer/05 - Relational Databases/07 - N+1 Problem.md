@@ -353,6 +353,7 @@ Không ghi tên API hay giới hạn cụ thể của Firestore ở đây vì ch
 
 ## Liên kết
 - Bài trước: [[06 - Database Migrations]]
+- Bài kế: [[08 - INSERT, UPDATE, DELETE]]
 - Liên quan: [[03 - Queries - SELECT, JOIN, Aggregate]] — cú pháp `SELECT`, `JOIN`, aggregate
 - Liên quan: [[04 - Indexes]] — index tăng tốc một query, nhưng không giảm số lượng query
 - Quay lại mục lục: [[00 - Tổng hợp (Relational Databases)]]
