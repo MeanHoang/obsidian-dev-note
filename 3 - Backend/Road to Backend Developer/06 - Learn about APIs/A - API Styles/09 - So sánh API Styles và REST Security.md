@@ -1021,6 +1021,7 @@ Vài mục trong Phần B ánh xạ trực tiếp vào công việc hằng ngày
 
 ## Liên kết
 
+- Bài kế: [[10 - Authentication vs Authorization]] (sang đợt B — Authentication)
 - Bài trước: [[08 - OpenAPI Specification]]
 - [[01 - API là gì và nền tảng HTTP]] — nền HTTP mà cả REST, SOAP, gRPC, GraphQL đều đứng lên
 - [[02 - REST]] — chi tiết 6 constraint của REST, bài này chỉ trích lại phần liên quan tới so sánh
