@@ -356,6 +356,20 @@ public class MemoryMapTest
 | **limit** | **vượt quá nó thì đọc/ghi là vô nghĩa** |
 | **mark** *(tuỳ chọn)* | để **lặp lại một phép đọc hoặc ghi** |
 
+**Figure 2.9: A buffer**
+
+```
+  already written/read   not yet written/read      off limits
+ ┌──────────────────────┬──────────────────────┬──────────────────┐
+ │                      │░░░░░░░░░░░░░░░░░░░░░░│▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓│
+ └──────────────────────┴──────────────────────┴──────────────────┘
+ ▲        ▲             ▲                      ▲                  ▲
+ │        │             │                      │                  │
+ 0      mark         position                limit             capacity
+                        └───────────┬──────────┘
+                                remaining
+```
+
 > *"These values fulfill the condition"*
 >
 > `0 ≤ mark ≤ position ≤ limit ≤ capacity`

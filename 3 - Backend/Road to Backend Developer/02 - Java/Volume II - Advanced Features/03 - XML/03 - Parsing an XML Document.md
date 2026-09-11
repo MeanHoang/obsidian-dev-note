@@ -77,6 +77,25 @@ Document doc = builder.parse(in);
 
 **Dịch:** Một object `Document` là **biểu diễn trong bộ nhớ của cấu trúc cây** của một XML document. Nó gồm các object mà class của chúng **implement interface `Node`** và các **subinterface** khác nhau của nó.
 
+**Figure 3.1: The `Node` interface and its subinterfaces**
+
+```
+Node
+ ├─△ Attr
+ ├─△ CharacterData
+ │    ├─△ Text
+ │    │    └─△ CDATASection
+ │    └─△ Comment
+ ├─△ Document
+ ├─△ DocumentType
+ ├─△ DocumentFragment
+ ├─△ Element
+ ├─△ Entity
+ ├─△ EntityReference
+ ├─△ Notation
+ └─△ ProcessingInstruction
+```
+
 > *"Start analyzing the contents of a document by calling the getDocumentElement method. It returns the root element."*
 
 ```java
@@ -136,13 +155,27 @@ for (int i = 0; i < children.getLength(); i++)
 
 **Dịch:** **Cẩn thận khi phân tích các con.** Bạn tưởng element `font` có **hai con**, nhưng parser báo là **năm**:
 
+> *"Figure 3.2 shows the DOM tree."*
+
+**Figure 3.2: A simple DOM tree**
+
 ```
-font
- ├── whitespace   (giữa <font> và <name>)
- ├── name
- ├── whitespace   (giữa </name> và <size>)
- ├── size
- └── whitespace   (giữa </size> và </font>)
+                        ┌──────────┐
+                        │ Document │
+                        └────┬─────┘
+                        ┌────┴─────┐
+                        │ Element  │
+                        │  <font>  │
+                        └────┬─────┘
+      ┌──────────┬───────────┼───────────┬──────────┐
+ ┌────┴─────┐┌───┴────┐ ┌────┴─────┐┌────┴───┐ ┌────┴─────┐
+ │ Text:    ││Element │ │ Text:    ││Element │ │ Text:    │
+ │whitespace││ <name> │ │whitespace││ <size> │ │whitespace│
+ └──────────┘└───┬────┘ └──────────┘└───┬────┘ └──────────┘
+             ┌───┴─────┐            ┌───┴────┐
+             │ Text:   │            │ Text:  │
+             │Helvetica│            │   36   │
+             └─────────┘            └────────┘
 ```
 
 > *"If you expect only subelements, you can ignore the whitespace:"*

@@ -92,7 +92,9 @@ KeyStoreLoginModule
 
 > *"A login policy consists of a sequence of login modules, each labeled required, sufficient, requisite, or optional. The meaning of these keywords is given by the following algorithm."*
 
-**Dịch:** Một **login policy** gồm **một dãy login module**, mỗi cái được gán nhãn **`required`, `sufficient`, `requisite`, hoặc `optional`**.
+**Dịch:** Một **login policy** gồm **một dãy login module**, mỗi cái được gán nhãn **`required`, `sufficient`, `requisite`, hoặc `optional`**. Ý nghĩa của các keyword này được cho bởi **thuật toán sau đây**.
+
+> ⚠️ **Lỗi của bản in (errata):** Sách hứa "*The meaning of these keywords is given by the following algorithm*" nhưng **phần thuật toán không được in ra**. Ở trang 568 của Core Java Volume II, 11th Edition, ngay sau câu này bản in nhảy thẳng sang đoạn "*A login authenticates a subject…*". Index của sách (mục `required keyword`, `sufficient keyword`, `requisite keyword`, `optional keyword`) cũng chỉ trỏ về đúng trang 568 này. Đã đối chiếu trực tiếp PDF gốc: **không có bảng, hình, hay đoạn nào khác trong sách giải nghĩa bốn keyword**. Vì vậy note **không bổ sung nội dung tự chế**; đây là chỗ khuyết của bản in, cần tra `javax.security.auth.login.Configuration` trong Java API documentation nếu muốn biết thuật toán.
 
 ### Subject và principal
 
@@ -715,6 +717,8 @@ public class JAASTest
     }
 }
 ```
+
+*Ghi chú: `JAASTest` tham chiếu class `JAASFrame`, nhưng **sách không in source của `JAASFrame`** — đã đối chiếu PDF gốc trang 580–581: sau Listing 10.13 là thẳng tới Listing 10.14 (`JAASTest.policy`) rồi Listing 10.15 (`jaas.config`). Code của `JAASFrame` chỉ có trong bộ source code đi kèm sách.*
 
 ### Listing 10.14 — `jaas/JAASTest.policy`
 

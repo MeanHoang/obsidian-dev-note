@@ -5,6 +5,14 @@
 
 ---
 
+## Mở đầu chương 4
+
+> *"We begin this chapter by reviewing basic networking concepts, then move on to writing Java programs that connect to network services. We will show you how network clients and servers are implemented. Finally, you will see how to send e-mail from a Java program and how to harvest information from a web server."*
+
+**Dịch:** Chúng ta bắt đầu chương này bằng việc **ôn lại các khái niệm networking cơ bản**, rồi chuyển sang viết chương trình Java **kết nối tới network service**. Chúng tôi sẽ chỉ cho bạn cách **network client và server được cài đặt**. Cuối cùng, bạn sẽ thấy cách **gửi e-mail từ một chương trình Java** và cách **thu thập thông tin từ một web server**.
+
+---
+
 ## 4.1. Connecting to a Server
 
 > *"In the following sections, you will connect to a server, first by hand and with telnet, and then with a Java program."*
@@ -48,6 +56,20 @@ telnet time-a.nist.gov 13
 > **Note (sách):** *"In network parlance, a port is not a physical device, but an abstraction facilitating communication between a server and a client (see Figure 4.2)."*
 >
 > **Dịch:** Trong thuật ngữ mạng, **port không phải một thiết bị vật lý**, mà là một **abstraction** giúp việc giao tiếp giữa server và client dễ dàng hơn.
+
+**Figure 4.2: A client connecting to a server port**
+
+```
+                 network packet                        ports on server
+                       │                                      │
+                       ▼                                   ┌──┴───┐
+ ┌────────┐  ┌─────────────┬────┬──────┐  ╭──────────╮     │  13  │   ┌────────┐
+ │ Client │  │ 129.6.15.28 │ 13 │ data │─►│ Internet │────►├──────┤   │ Server │
+ └────────┘  └─────────────┴────┴──────┘  ╰──────────╯     │  80  │   └────────┘
+                                                           ├──────┤  129.6.15.28
+                                                           │ ...  │
+                                                           └──────┘
+```
 
 > *"The server software is continuously running on the remote machine, waiting for any network traffic that wants to chat with port 13. When the operating system on the remote computer receives a network package that contains a request to connect to port number 13, it wakes up the listening server process and establishes the connection. The connection stays up until it is terminated by one of the parties."*
 

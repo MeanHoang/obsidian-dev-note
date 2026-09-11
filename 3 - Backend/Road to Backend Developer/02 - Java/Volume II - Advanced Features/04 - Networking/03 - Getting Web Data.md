@@ -526,6 +526,33 @@ public class URLConnectionTest
 
 **Dịch:** Chương trình **phía server** xử lý form data và **sinh ra một trang HTML khác** mà web server gửi trả về browser. Trang response có thể chứa **thông tin mới** (ví dụ trong chương trình tìm kiếm thông tin) hoặc **chỉ là một lời xác nhận**. Web browser sau đó **hiển thị trang response**.
 
+**Figure 4.8: Data flow during execution of a server-side program**
+
+```
+                                ┌────────────────────────────────────────────┐
+                                │                              ❹ program     │
+  ┌──────────┐   ┌──────────┐   │  ┌──────────┐                  produces    │
+  │  Form    │   │  Form    │   │  │  Reply   │◄────────┐          reply     │
+  │  page    │   │  data    │   │  │  page    │         │                    │
+  └────┬─────┘   └────┬─────┘   │  └────┬─────┘    ┌────┴────────┐           │
+       │              │         │       │          │ Server-side │           │
+  ❶ user         ❷ client       │       ▼          │  Program    │           │
+    clicks         sends        │  ┌──────────┐    └─────────────┘           │
+    Submit         form data    │  │   HTTP   │───►  ❸ server                │
+       │              │         │  │  server  │        starts                │
+       ▼              ▼         │  └────┬─────┘        program               │
+  ┌─────────────────────┐       │       │            ┌─────────────┐         │
+  │ Client web browser  │◄──────┴───────┘            │ Server-side │         │
+  └─────────────────────┘  ❺ server returns reply    │  Program    │         │
+       │                                             └─────────────┘         │
+  ❻ client displays reply                                                    │
+                                                     ┌─────────────┐         │
+                                                     │ Server-side │         │
+                                                     │  Program    │         │
+                                                     └─────────────┘  Server │
+                                └────────────────────────────────────────────┘
+```
+
 > *"We do not discuss the implementation of server-side programs in this book. Our interest is merely in writing client programs that interact with existing server-side programs."*
 
 **Dịch:** Sách **không bàn về việc implement chương trình phía server**. Mối quan tâm ở đây chỉ là **viết chương trình client tương tác với các chương trình phía server có sẵn**.

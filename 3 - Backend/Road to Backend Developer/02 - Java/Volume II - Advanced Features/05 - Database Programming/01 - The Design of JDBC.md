@@ -5,6 +5,26 @@
 
 ---
 
+## Mở đầu chương 5
+
+> *"In 1996, Sun released the first version of the JDBC API. This API lets programmers connect to a database to query or update it using the Structured Query Language (SQL). (SQL, usually pronounced "sequel," is an industry standard for relational database access.) JDBC has since become one of the most commonly used APIs in the Java library."*
+
+**Dịch:** Năm 1996, Sun phát hành phiên bản đầu tiên của **JDBC API**. API này cho phép lập trình viên kết nối tới database để truy vấn hoặc cập nhật nó bằng **Structured Query Language (SQL)**. (SQL, thường đọc là "sequel", là chuẩn công nghiệp cho việc truy cập relational database.) Từ đó tới nay JDBC đã trở thành **một trong những API được dùng nhiều nhất** trong thư viện Java.
+
+> *"JDBC has been updated several times. As this book is published, JDBC 4.3, the version included with Java 9, is the most current version."*
+
+**Dịch:** JDBC đã được cập nhật nhiều lần. Tại thời điểm cuốn sách này xuất bản, **JDBC 4.3** — phiên bản đi kèm Java 9 — là phiên bản mới nhất.
+
+> *"In this chapter, we will explain the key ideas behind JDBC. We will introduce you to (or refresh your memory of) SQL, the industry-standard Structured Query Language for relational databases. We will then provide enough details and examples to let you start using JDBC for common programming situations."*
+
+**Dịch:** Trong chương này, chúng ta sẽ giải thích **những ý tưởng chủ chốt đằng sau JDBC**. Chúng ta sẽ giới thiệu (hoặc nhắc lại) **SQL** — Structured Query Language chuẩn công nghiệp cho relational database. Sau đó cung cấp đủ chi tiết và ví dụ để bạn **bắt đầu dùng JDBC cho các tình huống lập trình thông thường**.
+
+> **Note (sách):** *"According to Oracle, JDBC is a trademarked term and not an acronym for Java Database Connectivity. It was named to be reminiscent of ODBC, a standard database API pioneered by Microsoft and since incorporated into the SQL standard."*
+>
+> **Dịch:** Theo Oracle, **JDBC là một thương hiệu đã đăng ký, không phải viết tắt** của "Java Database Connectivity". Nó được đặt tên để **gợi nhớ tới ODBC** — một API database chuẩn do Microsoft khởi xướng và về sau được đưa vào chuẩn SQL.
+
+---
+
 ## 5.1. The Design of JDBC
 
 > *"From the start, the developers of the Java technology were aware of the potential that Java showed for working with databases. In 1995, they began work on extending the standard Java library to deal with SQL access to databases. What they first hoped to do was to extend Java so that a program could talk to any random database using only "pure" Java. It didn't take them long to realize that this is an impossible task: There are simply too many databases out there, using too many protocols."*
@@ -109,13 +129,17 @@
 
 **Dịch:** Mô hình client/server truyền thống có **GUI phong phú ở client** và **database ở server**. Trong mô hình này, **JDBC driver được deploy trên client**.
 
+**Figure 5.1: A traditional client/server application**
+
 ```
-  ┌──────────────┐            ┌──────────────┐
-  │   Client     │            │   Server     │
-  │  GUI + JDBC  │───────────►│  Database    │
-  │   driver     │            │              │
-  └──────────────┘            └──────────────┘
-        Figure 5.1 — traditional client/server application
+                                     database protocol
+                                             │
+                                             ▼
+   ┌──────────────────┬──────────┐                 ╭──────────╮
+   │                  │          │                 │▔▔▔▔▔▔▔▔▔▔│
+   │      Client      │   JDBC   │◄───────────────►│ Database │
+   │                  │          │                 │  Server  │
+   └──────────────────┴──────────┘                 ╰──────────╯
 ```
 
 > *"However, nowadays it is far more common to have a three-tier model where the client application does not make database calls. Instead, it calls on a middleware layer on the server that in turn makes the database queries. The three-tier model has a couple of advantages. It separates visual presentation (on the client) from the business logic (in the middle tier) and the raw data (in the database). Therefore, it becomes possible to access the same data and the same business rules from multiple clients, such as a Java desktop application, a web browser, or a mobile app."*
@@ -126,13 +150,17 @@
 
 **Dịch:** Giao tiếp giữa client và tầng giữa **thường qua HTTP**. **JDBC quản lý giao tiếp giữa tầng giữa và database back-end**.
 
+**Figure 5.2: A three-tier application**
+
 ```
-  ┌──────────┐  HTTP   ┌──────────────┐  JDBC   ┌──────────┐
-  │  Client  │────────►│ Middle tier  │────────►│ Database │
-  │ (GUI/web)│         │(business     │         │          │
-  │          │         │  logic)      │         │          │
-  └──────────┘         └──────────────┘         └──────────┘
-        Figure 5.2 — three-tier application
+          HTTP, RMI, etc...                     database protocol
+                   │                                     │
+                   ▼                                     ▼
+   ┌───────────────┐      ┌────────────────┬────────┐        ╭──────────╮
+   │    Client     │      │   Middle tier  │        │        │▔▔▔▔▔▔▔▔▔▔│
+   │   (visual     │◄────►│   (business    │  JDBC  │◄──────►│ Database │
+   │ presentation) │      │     logic)     │        │        │  Server  │
+   └───────────────┘      └────────────────┴────────┘        ╰──────────╯
 ```
 
 ---

@@ -887,7 +887,7 @@ public Object getChild(Object parent, int index)
 }
 ```
 
-**Dịch:** Method `getChild` trả về **một object `Variable` mới** mô tả field ở index đã cho. `getType` và `getName` của class `Field` cho ra type và name của field. Nhờ reflection, đọc giá trị field bằng `f.get(parentValue)` — method đó **ném được `IllegalAccessException`**, nhưng ta đã **làm mọi field accessible trong constructor của `Variable`** nên thực tế điều đó không xảy ra. (Về exception, xem [[07 - Exceptions, Assertions, Logging]].)
+**Dịch:** Method `getChild` trả về **một object `Variable` mới** mô tả field ở index đã cho. `getType` và `getName` của class `Field` cho ra type và name của field. Nhờ reflection, đọc giá trị field bằng `f.get(parentValue)` — method đó **ném được `IllegalAccessException`**, nhưng ta đã **làm mọi field accessible trong constructor của `Variable`** nên thực tế điều đó không xảy ra. (Về exception, xem [[01 - Dealing with Errors|chương 7 Volume I]].)
 
 > *"These three methods reveal the structure of the object tree to the JTree component. The remaining methods are routine."*
 

@@ -145,18 +145,20 @@ public class Rectangle
 > *"The annotation processor should then generate the following source code:"*
 
 ```java
-public static String toString(Rectangle obj)
+// Bản in trang 487 in xám toàn bộ listing này (= "boilerplate"),
+// trừ 7 token in đen: Rectangle, "Rectangle", getTopLeft, width=, getWidth, height=, getHeight
+public static String toString(Rectangle obj)   // boilerplate, trừ Rectangle
 {
     var result = new StringBuilder();
-    result.append("Rectangle");
+    result.append("Rectangle");                // boilerplate, trừ Rectangle trong chuỗi
     result.append("[");
-    result.append(toString(obj.getTopLeft()));
+    result.append(toString(obj.getTopLeft())); // boilerplate, trừ getTopLeft
     result.append(",");
-    result.append("width=");
-    result.append(toString(obj.getWidth()));
+    result.append("width=");                   // boilerplate, trừ width=
+    result.append(toString(obj.getWidth()));   // boilerplate, trừ getWidth
     result.append(",");
-    result.append("height=");
-    result.append(toString(obj.getHeight()));
+    result.append("height=");                  // boilerplate, trừ height=
+    result.append(toString(obj.getHeight()));  // boilerplate, trừ getHeight
     result.append("]");
     return result.toString();
 }
@@ -164,7 +166,9 @@ public static String toString(Rectangle obj)
 
 > *"The "boilerplate" code is in gray. Here is an outline of the method that produces the toString method for a class with a given TypeElement:"*
 
-**Dịch:** Phần code **"boilerplate" được in xám** trong sách. *(Bản trích văn bản không giữ lại màu chữ, nên không phân biệt được phần xám.)* Dưới đây là **phác thảo method sinh ra method `toString`** cho một class ứng với một `TypeElement` cho trước.
+**Dịch:** Phần code **"boilerplate" được in xám** trong sách. Dưới đây là **phác thảo method sinh ra method `toString`** cho một class ứng với một `TypeElement` cho trước.
+
+> *(Bản trích văn bản không giữ màu chữ. Đối chiếu bản in trang 487: toàn bộ listing trên được in xám — tức là boilerplate — **trừ** đúng bảy token in đen: `Rectangle` trong `toString(Rectangle obj)`, `Rectangle` bên trong chuỗi `"Rectangle"`, `getTopLeft`, `width=`, `getWidth`, `height=`, `getHeight`. Đây chính là các phần phụ thuộc vào class được annotate, và là phần mà annotation processor phải sinh ra theo từng class; phần xám còn lại là khung cố định.)*
 
 ```java
 private void writeToStringMethod(PrintWriter out, TypeElement te)

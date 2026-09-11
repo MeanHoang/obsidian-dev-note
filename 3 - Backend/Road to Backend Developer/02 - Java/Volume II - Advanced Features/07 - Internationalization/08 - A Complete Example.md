@@ -683,25 +683,21 @@ retire=Alter: {0,number} Guthaben: {1,number,currency}
 
 ### Listing 7.11 — `retire/RetireStrings_zh.properties`
 
-> **Lưu ý về bản trích:** trong file text nguồn, mọi **giá trị tiếng Trung của Listing 7.11 đã bị mất** khi trích xuất PDF — chỉ còn lại các key rỗng cùng hai mảnh format string. Phần khôi phục được nguyên văn chỉ gồm:
-
 ```properties
-language=
-computeButton=
-savings=
-contrib=
-income=
-currentAge=
-retireAge=
-deathAge=
-inflationPercent=
-investPercent=
-retire=
-   : {0,number}
-   : {1,number,currency}
+language=语言
+computeButton=计算
+savings=既存
+contrib=每年存金
+income=退休收入
+currentAge=现龄
+retireAge=退休年龄
+deathAge=预期寿命
+inflationPercent=通货膨涨
+investPercent=投资报酬
+retire=年龄：{0,number} 总结：{1,number,currency}
 ```
 
-Cấu trúc key **giống hệt** Listing 7.9 và 7.10; chỉ phần value tiếng Trung là không đọc được từ bản trích.
+Cấu trúc key **giống hệt** Listing 7.9 và 7.10; chỉ phần value là được dịch sang tiếng Trung.
 
 ---
 

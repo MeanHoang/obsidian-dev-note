@@ -235,6 +235,8 @@ public class LocalDates
 | `Period plus(TemporalAmount amountToAdd)`<br>`Period minus(TemporalAmount amountToSubtract)` | *"yields an instant that is the given amount away from this Instant. The classes Duration and Period implement the TemporalAmount interface."* |
 | `Period with(Days\|Months\|Years)(int number)` | *"returns a new Period with the days, months, or years changed to the given number."* |
 
+> *(Chép nguyên văn bản in trang 363: mô tả của `Period plus`/`minus(TemporalAmount)` sách in là "yields an instant that is the given amount away from this Instant" dù đang nói về `Period` chứ không phải `Instant` — đây là typo của bản in.)*
+
 ---
 
 ## Bài kế tiếp

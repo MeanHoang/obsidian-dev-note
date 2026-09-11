@@ -5,6 +5,40 @@
 
 ---
 
+## Mở đầu chương 10
+
+> *"When Java technology first appeared on the scene, the excitement was not about a well-crafted programming language but about the possibility of safely executing applets delivered over the Internet. Obviously, serving executable applets is only practical when the recipients can be sure the code won't wreak havoc on their machines. Security therefore was and is a major concern of both the designers and the users of Java technology. This means that unlike other languages and systems, where security was implemented as an afterthought or as a reaction to break-ins, security mechanisms are an integral part of Java technology."*
+
+**Dịch:** Khi công nghệ Java mới xuất hiện, điều gây hào hứng **không phải** là một ngôn ngữ lập trình được chế tác kỹ, mà là **khả năng chạy applet an toàn** khi applet được phân phối qua Internet. Rõ ràng, phục vụ applet chạy được chỉ khả thi khi người nhận **chắc chắn rằng code sẽ không phá hoại máy của họ**. Vì vậy security đã và đang là mối bận tâm lớn của cả người thiết kế lẫn người dùng công nghệ Java. Điều này có nghĩa: khác với các ngôn ngữ và hệ thống khác — nơi security được cài thêm về sau như một suy nghĩ muộn hoặc như phản ứng với các vụ đột nhập — **các cơ chế security là một phần không tách rời của công nghệ Java**.
+
+> *"Three mechanisms help ensure safety:*
+> *• Language design features (bounds checking on arrays, no unchecked type conversions, no pointer arithmetic, and so on).*
+> *• An access control mechanism that controls what the code can do (file access, network access, and so on).*
+> *• Code signing, whereby code authors can use standard cryptographic algorithms to authenticate Java code. Then, the users of the code can determine exactly who created the code and whether the code has been altered after it was signed."*
+
+**Dịch:** Ba cơ chế giúp đảm bảo an toàn:
+- **Đặc điểm thiết kế ngôn ngữ** (kiểm tra biên của array, không có unchecked type conversion, không có số học con trỏ, v.v.).
+- **Cơ chế access control** kiểm soát code được phép làm gì (truy cập file, truy cập network, v.v.).
+- **Code signing**: tác giả code dùng các thuật toán mật mã chuẩn để **xác thực code Java**. Nhờ đó người dùng code xác định được **chính xác ai tạo ra code** và **code có bị thay đổi sau khi ký hay không**.
+
+> *"We will first discuss class loaders that check class files for integrity when they are loaded into the virtual machine. We will demonstrate how that mechanism can detect tampering with class files."*
+
+**Dịch:** Trước tiên ta bàn về **class loader** — thứ kiểm tra tính toàn vẹn của class file khi chúng được load vào virtual machine. Ta sẽ minh hoạ cơ chế đó **phát hiện việc can thiệp vào class file** như thế nào.
+
+> *"For maximum security, both the default mechanism for loading a class and a custom class loader need to work with a security manager class that controls what actions code can perform. You'll see in detail how to configure Java platform security."*
+
+**Dịch:** Để đạt security tối đa, cả cơ chế load class mặc định lẫn class loader tự viết đều cần phối hợp với một **class security manager** kiểm soát code được thực hiện hành động nào. Bạn sẽ thấy chi tiết cách cấu hình security của Java platform.
+
+> *"Finally, you'll see the cryptographic algorithms supplied in the java.security package, which enable code signing and user authentication."*
+
+**Dịch:** Cuối cùng, bạn sẽ thấy các **thuật toán mật mã** trong package `java.security`, thứ cho phép **code signing** và **user authentication**.
+
+> *"As always, we'll focus on those topics that are of greatest interest to application programmers. For an in-depth view, we recommend the book Inside Java™ 2 Platform Security: Architecture, API Design, and Implementation, Second Edition, by Li Gong, Gary Ellison, and Mary Dageforde (Prentice Hall, 2003)."*
+
+**Dịch:** Như thường lệ, sách tập trung vào các chủ đề mà **application programmer** quan tâm nhất. Muốn xem sâu hơn, sách khuyên đọc *Inside Java™ 2 Platform Security: Architecture, API Design, and Implementation, Second Edition* (Li Gong, Gary Ellison, Mary Dageforde, Prentice Hall, 2003).
+
+---
+
 ## 10.1. Class Loaders
 
 > *"A Java compiler converts source instructions into code for the Java virtual machine. The virtual machine code is stored in a class file with a .class extension. Each class file contains the definition and implementation code for one class or interface. In the following section, you will see how the virtual machine loads these class files."*
@@ -65,7 +99,7 @@ java.xml
 
 > *"as well as a number of JDK-internal modules."*
 
-**Dịch:** **Bootstrap class loader** load các platform class nằm trong các module kể trên, cùng với một số module nội bộ của JDK. (Về module xem [[12 - The Java Platform Module System]].)
+**Dịch:** **Bootstrap class loader** load các platform class nằm trong các module kể trên, cùng với một số module nội bộ của JDK. (Về module xem [[01 - The Module Concept|chương 12 Volume I]].)
 
 > *"There is no ClassLoader object corresponding to the bootstrap class loader. For example,"*
 
@@ -115,18 +149,34 @@ Class<?> cl = pluginLoader.loadClass("mypackage.MyClass");
 
 **Dịch:** Vì không chỉ định parent trong constructor của `URLClassLoader`, **parent của `pluginLoader` là system class loader**.
 
+**Figure 10.1: The class loader hierarchy**
+
 ```
-              bootstrap class loader
-                       │  (không có object ClassLoader)
-                       ▼
-              platform class loader
-                       │
-                       ▼
-               system class loader
-                       │
-                       ▼
-                  pluginLoader          ← URLClassLoader
+   ┌──────────────────┐              ╭──────────────╮
+   │    Bootstrap     │ ┄┄┄┄┄┄┄┄┄┄▶  │  JMOD files  │
+   │   class loader   │              ╰──────────────╯
+   └──────────────────┘
+            ▲
+            │
+   ┌──────────────────┐              ╭──────────────╮
+   │     Platform     │ ┄┄┄┄┄┄┄┄┄┄▶  │  JMOD files  │
+   │   class loader   │              ╰──────────────╯
+   └──────────────────┘
+            ▲
+            │
+   ┌──────────────────┐              ╭──────────────╮
+   │      System      │ ┄┄┄┄┄┄┄┄┄┄▶  │  class path/ │
+   │   class loader   │              │  module path │
+   └──────────────────┘              ╰──────────────╯
+            ▲
+            │
+   ┌──────────────────┐              ╭──────────────╮
+   │     A plugin     │ ┄┄┄┄┄┄┄┄┄┄▶  │  plugin.jar  │
+   │   class loader   │              ╰──────────────╯
+   └──────────────────┘
 ```
+
+*Mũi tên liền hướng lên = quan hệ parent (loader dưới có parent là loader trên). Mũi tên nét đứt = nguồn class file mà loader đó đọc. Các hình trụ bên phải trong bản in là biểu tượng kho dữ liệu.*
 
 > **Caution (sách):** *"Prior to Java 9, the system class loader was an instance of URLClassLoader. Some programmers used a cast to access the getURLs method, or added JAR files to the class path by calling the protected addURLs method through reflection. This is no longer possible."*
 >
@@ -197,13 +247,40 @@ Class<?> cl = loader.loadClass(className);
 
 **Dịch:** Giả sử application server load hai application khác nhau, mỗi cái đều có class tên `Util`. Vì **mỗi class được load bởi một class loader riêng**, hai class này **hoàn toàn tách biệt và không xung đột**.
 
+**Figure 10.2: Two class loaders load different classes with the same name.**
+
 ```
-  class loader A                 class loader B
-        │                              │
-        ▼                              ▼
-    Util (app 1)                   Util (app 2)
-        └──── cùng tên, KHÁC class ────┘
+                    ┌──────────────────┐
+                    │    Bootstrap     │
+                    │   class loader   │
+                    └──────────────────┘
+                             ▲
+                             │
+                    ┌──────────────────┐
+                    │    Extension     │
+                    │   class loader   │
+                    └──────────────────┘
+                             ▲
+                             │
+                    ┌──────────────────┐
+                    │      System      │
+                    │   class loader   │
+                    └──────────────────┘
+                       ▲            ▲
+              ┌────────┘            └────────┐
+   ┌──────────────────┐          ┌──────────────────┐
+   │   class loader   │          │   class loader   │
+   │        for       │          │        for       │
+   │  application #1  │          │  application #2  │
+   └──────────────────┘          └──────────────────┘
+             ┊                             ┊
+             ▼                             ▼
+   ╭──────────────────╮          ╭──────────────────╮
+   │    Util.class    │          │    Util.class    │
+   ╰──────────────────╯          ╰──────────────────╯
 ```
+
+*Bản in vẽ hộp "Extension class loader" (thuật ngữ trước Java 9, nay là platform class loader). Giữ nguyên theo hình in.*
 
 ---
 

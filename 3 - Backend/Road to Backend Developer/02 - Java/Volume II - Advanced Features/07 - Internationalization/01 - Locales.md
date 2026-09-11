@@ -5,6 +5,26 @@
 
 ---
 
+## Mở đầu chương 7
+
+> *"There's a big world out there; we hope that lots of its inhabitants will be interested in your software. The Internet, after all, effortlessly spans the barriers between countries. On the other hand, when you pay no attention to an international audience, you are putting up a barrier."*
+>
+> *"The Java programming language was the first language designed from the ground up to support internationalization. From the beginning, it had the one essential feature needed for effective internationalization: It used Unicode for all strings. Unicode support makes it easy to write Java programs that manipulate strings in most of the world's languages."*
+>
+> *"Many programmers believe that all they need to do to internationalize their application is to support Unicode and to translate the messages in the user interface. However, as this chapter demonstrates, there is a lot more to internationalizing programs than just Unicode support. Dates, times, currencies, even numbers are formatted differently in different parts of the world. You need an easy way to configure menu and button names, message strings, and keyboard shortcuts for different languages."*
+>
+> *"In this chapter, we will show you how to write internationalized Java programs and how to localize dates, times, numbers, text, and GUIs. We will show you the tools that Java offers for writing internationalized programs. We will close this chapter with a complete example—a retirement calculator with a user interface in English, German, and Chinese."*
+
+**Dịch:** Ngoài kia là một thế giới rộng lớn; chúng tôi hy vọng rất nhiều cư dân của nó sẽ quan tâm tới phần mềm của bạn. Suy cho cùng, Internet vượt qua các rào cản giữa các quốc gia một cách dễ dàng. Ngược lại, khi bạn không để tâm tới khán giả quốc tế, chính bạn đang dựng lên một rào cản.
+
+Java là **ngôn ngữ đầu tiên được thiết kế từ nền móng để hỗ trợ internationalization**. Ngay từ đầu nó đã có đặc tính cốt yếu cần cho internationalization hiệu quả: **dùng Unicode cho mọi string**. Nhờ hỗ trợ Unicode, viết chương trình Java thao tác string trong hầu hết ngôn ngữ trên thế giới trở nên dễ dàng.
+
+Nhiều lập trình viên tin rằng chỉ cần hỗ trợ Unicode và dịch các thông điệp trong user interface là đã internationalize xong ứng dụng. Tuy nhiên, như chương này cho thấy, **internationalize một chương trình còn nhiều việc hơn thế**. Ngày, giờ, tiền tệ, thậm chí cả số đều được format khác nhau ở các nơi khác nhau trên thế giới. Bạn cần một cách dễ dàng để cấu hình tên menu, tên button, chuỗi thông điệp và phím tắt cho từng ngôn ngữ.
+
+Trong chương này, chúng tôi sẽ chỉ cho bạn cách **viết chương trình Java internationalized** và cách **localize ngày, giờ, số, text và GUI**, cùng những công cụ Java cung cấp cho việc đó. Chương khép lại bằng một **ví dụ hoàn chỉnh** — một máy tính hưu trí với user interface bằng tiếng Anh, tiếng Đức và tiếng Trung.
+
+---
+
 ## 7.1. Locales
 
 > *"When you look at an application that is adapted to an international market, the most obvious difference you notice is the language. This observation is actually a bit too limiting for true internationalization, since countries can share a common language, but you might still need to do some work to make computer users of both countries happy. As Oscar Wilde famously said: "We have really everything in common with America nowadays, except, of course, language.""*

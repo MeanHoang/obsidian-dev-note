@@ -95,6 +95,30 @@ tony.setSecretary(harry);
 
 **Dịch:** Mỗi object `Manager` giờ chứa một **reference tới object `Employee`** mô tả thư ký. Dĩ nhiên **hai manager có thể dùng chung một thư ký**.
 
+**Figure 2.5: Two managers can share a mutual employee.**
+
+```
+                        ┌────────────────────────────────┐
+                        │            Employee            │
+                 ┌─────▶├────────────────────────────────┤◀──────┐
+                 │      │  name = │ "Harry Hacker" │     │       │
+                 │      └────────────────────────────────┘       │
+                 │                                               │
+  ┌───┐   ┌──────┴┐     ┌────────────────────────────────┐       │
+  │ ● │──▶│   ●   │     │             Manager            │       │
+  └───┘   ├───────┤     ├────────────────────────────────┤       │
+staff =   │   ●   │────▶│  name = │ "Carl Cracker" │     │       │
+          ├───────┤     │  secretary = │   ●   │─────────┼───────┤
+          │   ●   │──┐  └────────────────────────────────┘       │
+          └───────┘  │                                           │
+                     │  ┌────────────────────────────────┐       │
+                     │  │             Manager            │       │
+                     │  ├────────────────────────────────┤       │
+                     └─▶│  name = │ "Tony Tester" │      │       │
+                        │  secretary = │   ●   │─────────┼───────┘
+                        └────────────────────────────────┘
+```
+
 > *"Saving such a network of objects is a challenge. Of course, we cannot save and restore the memory addresses for the secretary objects. When an object is reloaded, it will likely occupy a completely different memory address than it originally did."*
 
 > *"Instead, each object is saved with the serial number—hence the name object serialization for this mechanism. Here is the algorithm:"*
@@ -110,6 +134,32 @@ tony.setSecretary(harry);
 | 1 | **Gán một serial number** cho mỗi object reference gặp phải |
 | 2 | Gặp một object reference **lần đầu** → **lưu data của object** ra output stream |
 | 3 | Nếu **đã lưu trước đó** → chỉ ghi *"giống hệt object đã lưu có serial number x"* |
+
+**Figure 2.6: An example of object serialization**
+
+```
+            Memory                                    File
+                                                        ⋮
+  ┌────────────────────────────┐      ┌──────────────────────────┐
+  │          Employee          │      │ serial number = 1        │
+  ├────────────────────────────┤      │ type = Employee          │
+  │ name = │ "Harry Hacker" │◀─┼──┐   │ name = "Harry Hacker"    │
+  └────────────────────────────┘  │   ├──────────────────────────┤
+                                  │   │ serial number = 2        │
+  ┌────────────────────────────┐  │   │ type = Manager           │
+  │          Manager           │  │   │ name = "Carl Cracker"    │
+  ├────────────────────────────┤  │   │ secretary = object 1     │
+  │ name = │ "Carl Cracker" │   │  │   ├──────────────────────────┤
+  │ secretary = │   ●   │───────┼──┤   │ serial number = 3        │
+  └────────────────────────────┘  │   │ type = Manager           │
+                                  │   │ name = "Tony Tester"     │
+  ┌────────────────────────────┐  │   │ secretary = object 1     │
+  │          Manager           │  │   └──────────────────────────┘
+  ├────────────────────────────┤  │                 ⋮
+  │ name = │ "Tony Tester" │    │  │
+  │ secretary = │   ●   │───────┼──┘
+  └────────────────────────────┘
+```
 
 > *"When reading the objects back, the procedure is reversed."*
 
@@ -743,6 +793,45 @@ class Employee implements Serializable // version 1.1
 > *"Here is an example. Suppose we have saved a number of employee records on disk, using the original version (1.0) of the class. Now we change the Employee class to version 2.0 by adding a data field called department. Figure 2.7 shows what happens when a 1.0 object is read into a program that uses 2.0 objects. The department field is set to null. Figure 2.8 shows the opposite scenario: A program using 1.0 objects reads a 2.0 object. The additional department field is ignored."*
 
 **Dịch:** Ví dụ: đã lưu một số record employee lên đĩa bằng **phiên bản gốc (1.0)** của class. Nay đổi class `Employee` sang **phiên bản 2.0** bằng cách **thêm data field `department`**. Khi một object **1.0 được đọc vào chương trình dùng object 2.0** thì **field `department` bị đặt `null`**. Ngược lại, chương trình dùng object 1.0 đọc một object 2.0 thì **field `department` thừa bị bỏ qua**.
+
+**Figure 2.7: Reading an object with fewer data fields**
+
+```
+ ┌──────────────┐                                    ┌──────────────┐
+ │ serialized   │        File          Memory        │ version 2.0  │
+ │ version 1.0  │                                    │              │
+ └──────┬───────┘                                    └───────┬──────┘
+        ┊                                                    ┊
+        ┊              ⋮                                     ┊
+        ┊     ┌──────────────────────┐   ┌───────────────────┴──────┐
+        ┊     │ serial number = ...  │   │        Employee          │
+        └┈┈┈┈▶│ type = Employee      │   ├──────────────────────────┤
+              │ name = "Harry Hacker"│   │ name =      │"Harry Hacker"│
+              │ salary = 35000.0     │   │ salary =    │ 35000.0     │
+              │ hireDay = 1989-01-15 │   │ hireDay =   │ 1989-01-15  │
+              └──────────────────────┘   │ department =│    null     │
+                     ⋮                   └──────────────────────────┘
+```
+
+**Figure 2.8: Reading an object with more data fields**
+
+```
+ ┌──────────────┐                                    ┌──────────────┐
+ │ serialized   │        File          Memory        │ version 1.0  │
+ │ version 2.0  │                                    │              │
+ └──────┬───────┘                                    └───────┬──────┘
+        ┊                                                    ┊
+        ┊              ⋮                                     ┊
+        ┊     ┌──────────────────────┐   ┌───────────────────┴──────┐
+        ┊     │ serial number = ...  │   │        Employee          │
+        └┈┈┈┈▶│ type = Employee      │   ├──────────────────────────┤
+              │ name = "Harry Hacker"│   │ name =    │"Harry Hacker"│
+              │ salary = 35000.0     │   │ salary =  │ 35000.0      │
+              │ hireDay = 1989-01-15 │   │ hireDay = │ 1989-01-15   │
+              │ department = "Finance"│  └──────────────────────────┘
+              └──────────────────────┘
+                     ⋮
+```
 
 > *"Is this process safe? It depends. Dropping a data field seems harmless—the recipient still has all the data that it knows how to manipulate. Setting a data field to null might not be so safe. Many classes work hard to initialize all data fields in all constructors to non-null values, so that the methods don’t have to be prepared to handle null data. It is up to the class designer to implement additional code in the readObject method to fix version incompatibilities or to make sure the methods are robust enough to handle null data."*
 

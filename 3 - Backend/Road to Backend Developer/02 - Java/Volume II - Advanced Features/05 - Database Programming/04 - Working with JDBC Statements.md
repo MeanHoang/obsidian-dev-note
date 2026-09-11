@@ -208,6 +208,34 @@ for (Throwable t : sqlException)
 
 **Dịch:** Các SQL exception được tổ chức thành **một cây inheritance**. Nhờ vậy bạn **catch được từng loại lỗi cụ thể theo cách không phụ thuộc vendor**.
 
+**Figure 5.5: SQL exception types**
+
+```
+SQLException
+ △
+ ├─ BatchUpdateException
+ ├─ SerialException
+ ├─ SQLTransientException
+ │    △
+ │    ├─ SQLTimeoutException
+ │    ├─ SQLTransactionRollbackException
+ │    └─ SQLTransientConnectionException
+ ├─ SQLClientInfoException
+ ├─ SQLRecoverableException
+ ├─ SQLWarning
+ ├─ SQLNonTransientException
+ │    △
+ │    ├─ SQLDataException
+ │    ├─ SQLFeatureNotSupportedException
+ │    ├─ SQLIntegrityConstraintViolationException
+ │    ├─ SQLSyntaxErrorException
+ │    ├─ SQLInvalidAuthorizationSpecException
+ │    └─ SQLNonTransientConnectionException
+ ├─ RowSetWarning
+ ├─ SyncFactoryException
+ └─ SyncProviderException
+```
+
 ### Warning
 
 > *"In addition, the database driver can report nonfatal conditions as warnings. You can retrieve warnings from connections, statements, and result sets. The SQLWarning class is a subclass of SQLException (even though a SQLWarning is not thrown as an exception). Call getSQLState and getErrorCode to get further information about the warnings. Similar to SQL exceptions, warnings are chained. To retrieve all warnings, use this loop:"*

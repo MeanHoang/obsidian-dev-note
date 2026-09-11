@@ -15,10 +15,18 @@
 
 **Dịch:** Bạn phải cung cấp một **XSLT stylesheet** mô tả việc **chuyển đổi XML document sang định dạng khác**. Một **XSLT processor** đọc **XML document** và **stylesheet** rồi **sinh ra output mong muốn**.
 
+**Figure 3.4: Applying XSL transformations**
+
 ```
-   XML document ──┐
-                  ├──►  XSLT processor  ──►  output
-   stylesheet ────┘
+  ┌────────────┐      ┌────────────┐      ┌──────────────────┐
+  │    XML     │─────▶│    XSLT    │─────▶│   Transformed    │
+  │  document  │      │  Processor │      │    document      │
+  └────────────┘      └─────▲──────┘      │ (HTML, text, ...)│
+                            │             └──────────────────┘
+                      ┌─────┴──────┐
+                      │   Style    │
+                      │   sheet    │
+                      └────────────┘
 ```
 
 > *"The XSLT specification is quite complex, and entire books have been written on the subject. We can’t possibly discuss all the features of XSLT, so we will just work through a representative example. You can find more information in the book Essential XML by Don Box et al. The XSLT specification is available at www.w3.org/TR/xslt."*

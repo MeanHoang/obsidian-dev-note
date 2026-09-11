@@ -524,18 +524,18 @@ job.print(doc, null);
 
 | Data Source | Data Type | MIME Type |
 |---|---|---|
-| `INPUT_STREAM` · `URL` · `BYTE_ARRAY` | `GIF` | `image/gif` |
-| | `JPEG` | `image/jpeg` |
-| | `PNG` | `image/png` |
+| `INPUT_STREAM` | `GIF` | `image/gif` |
+| `URL` | `JPEG` | `image/jpeg` |
+| `BYTE_ARRAY` | `PNG` | `image/png` |
 | | `POSTSCRIPT` | `application/postscript` |
 | | `PDF` | `application/pdf` |
-| | `TEXT_HML_HOST` | `text/html` (dùng encoding của host) |
+| | `TEXT_HML_HOST` | `text/html` (using host encoding) |
 | | `TEXT_HTML_US_ASCII` | `text/html; charset=us-ascii` |
 | | `TEXT_HTML_UTF_8` | `text/html; charset=utf-8` |
 | | `TEXT_HTML_UTF_16` | `text/html; charset=utf-16` |
 | | `TEXT_HTML_UTF_16LE` | `text/html; charset=utf-16le` (little-endian) |
 | | `TEXT_HTML_UTF_16BE` | `text/html; charset=utf-16be` (big-endian) |
-| | `TEXT_PLAIN_HOST` | `text/plain` (dùng encoding của host) |
+| | `TEXT_PLAIN_HOST` | `text/plain` (using host encoding) |
 | | `TEXT_PLAIN_US_ASCII` | `text/plain; charset=us-ascii` |
 | | `TEXT_PLAIN_UTF_8` | `text/plain; charset=utf-8` |
 | | `TEXT_PLAIN_UTF_16` | `text/plain; charset=utf-16` |
@@ -543,9 +543,14 @@ job.print(doc, null);
 | | `TEXT_PLAIN_UTF_16BE` | `text/plain; charset=utf-16be` (big-endian) |
 | | `PCL` | `application/vnd.hp-PCL` (Hewlett Packard Printer Control Language) |
 | | `AUTOSENSE` | `application/octet-stream` (raw printer data) |
-| `READER` · `CHAR_ARRAY` | `TEXT_HTML` | `text/html; charset=utf-16` |
+| `READER` | `TEXT_HTML` | `text/html; charset=utf-16` |
 | `STRING` | `TEXT_PLAIN` | `text/plain; charset=utf-16` |
-| `SERVICE_FORMATTED` | `PRINTABLE` · `PAGEABLE` · `RENDERABLE_IMAGE` | N/A |
+| `CHAR_ARRAY` | | |
+| `SERVICE_FORMATTED` | `PRINTABLE` | N/A |
+| | `PAGEABLE` | N/A |
+| | `RENDERABLE_IMAGE` | N/A |
+
+*Ghi chú: bảng trên bám đúng cách xếp hàng của bản in (trang 794). Cột "Data Source" trong sách chỉ điền ở một số hàng, các hàng còn lại để trống. Tên `TEXT_HML_HOST` là **typo của bản in** (đúng ra là `TEXT_HTML_HOST`) — giữ nguyên theo sách.*
 
 > *"Note that this printing process is quite different from that of the preceding section. There is no user interaction through print dialog boxes. For example, you can implement a server-side printing mechanism in which users submit print jobs through a web form."*
 
@@ -773,56 +778,71 @@ if (attributes.get(PrintQuality.class) == PrintQuality.HIGH)
 
 **Dịch:** Cột thứ hai liệt kê **superclass của class attribute** (ví dụ `IntegerSyntax` cho attribute `Copies`) hoặc **tập giá trị enumeration** với các attribute có tập giá trị hữu hạn.
 
-> ⚠️ **Ghi chú của người ghi note:** Trong bản trích văn bản, **bốn cột đánh dấu DA / PJA / PRA / PSA của Table 11.5 bị mất hoàn toàn** (chỉ còn tiêu đề cột trôi xuống cuối mỗi trang bảng). Bảng dưới đây vì vậy **chỉ giữ hai cột đọc được**.
+*DA = `DocAttribute`, PJA = `PrintJobAttribute`, PRA = `PrintRequestAttribute`, PSA = `PrintServiceAttribute`. Dấu ✔ = class attribute đó implement interface tương ứng (theo bản in trang 803–806).*
 
-| Attribute | Superclass hoặc Enumeration Constants |
-|---|---|
-| `Chromaticity` | `MONOCHROME`, `COLOR` |
-| `ColorSupported` | `SUPPORTED`, `NOT_SUPPORTED` |
-| `Compression` | `COMPRESS`, `DEFLATE`, `GZIP`, `NONE` |
-| `Copies` | `IntegerSyntax` |
-| `DateTimeAtCompleted` · `DateTimeAtCreation` · `DateTimeAtProcessing` | `DateTimeSyntax` |
-| `Destination` | `URISyntax` |
-| `DocumentName` | `TextSyntax` |
-| `Fidelity` | `FIDELITY_TRUE`, `FIDELITY_FALSE` |
-| `Finishings` | `NONE`, `STAPLE`, `EDGE_STITCH`, `BIND`, `SADDLE_STITCH`, `COVER`, … |
-| `JobHoldUntil` | `DateTimeSyntax` |
-| `JobImpressions` · `JobImpressionsCompleted` · `JobKOctets` · `JobKOctetsProcessed` · `JobMediaSheets` · `JobMediaSheetsCompleted` | `IntegerSyntax` |
-| `JobMessageFromOperator` · `JobName` · `JobOriginatingUserName` | `TextSyntax` |
-| `JobPriority` | `IntegerSyntax` |
-| `JobSheets` | `STANDARD`, `NONE` |
-| `JobState` | `ABORTED`, `CANCELED`, `COMPLETED`, `PENDING`, `PENDING_HELD`, `PROCESSING`, `PROCESSING_STOPPED` |
-| `JobStateReason` | `ABORTED_BY_SYSTEM`, `DOCUMENT_FORMAT_ERROR`, và nhiều hằng khác |
-| `JobStateReasons` | `HashSet` |
-| `MediaName` | `ISO_A4_WHITE`, `ISO_A4_TRANSPARENT`, `NA_LETTER_WHITE`, `NA_LETTER_TRANSPARENT` |
-| `MediaSize` | `ISO.A0`–`ISO.A10`, `ISO.B0`–`ISO.B10`, `ISO.C0`–`ISO.C10`, `NA.LETTER`, `NA.LEGAL`, và nhiều khổ giấy/phong bì khác |
-| `MediaSizeName` | `ISO_A0`–`ISO_A10`, `ISO_B0`–`ISO_B10`, `ISO_C0`–`ISO_C10`, `NA_LETTER`, `NA_LEGAL`, và nhiều tên khổ giấy/phong bì khác |
-| `MediaTray` | `TOP`, `MIDDLE`, `BOTTOM`, `SIDE`, `ENVELOPE`, `LARGE_CAPACITY`, `MAIN`, `MANUAL` |
-| `MultipleDocumentHandling` | `SINGLE_DOCUMENT`, `SINGLE_DOCUMENT_NEW_SHEET`, `SEPARATE_DOCUMENTS_COLLATED_COPIES`, `SEPARATE_DOCUMENTS_UNCOLLATED_COPIES` |
-| `NumberOfDocuments` · `NumberOfInterveningJobs` · `NumberUp` | `IntegerSyntax` |
-| `OrientationRequested` | `PORTRAIT`, `LANDSCAPE`, `REVERSE_PORTRAIT`, `REVERSE_LANDSCAPE` |
-| `OutputDeviceAssigned` | `TextSyntax` |
-| `PageRanges` | `SetOfInteger` |
-| `PagesPerMinute` · `PagesPerMinuteColor` | `IntegerSyntax` |
-| `PDLOverrideSupported` | `ATTEMPTED`, `NOT_ATTEMPTED` |
-| `PresentationDirection` | `TORIGHT_TOBOTTOM`, `TORIGHT_TOTOP`, `TOBOTTOM_TORIGHT`, `TOBOTTOM_TOLEFT`, `TOLEFT_TOBOTTOM`, `TOLEFT_TOTOP`, `TOTOP_TORIGHT`, `TOTOP_TOLEFT` |
-| `PrinterInfo` | `TextSyntax` |
-| `PrinterIsAcceptingJobs` | `ACCEPTING_JOBS`, `NOT_ACCEPTING_JOBS` |
-| `PrinterLocation` · `PrinterMakeAndModel` · `PrinterMessageFromOperator` | `TextSyntax` |
-| `PrinterMoreInfo` · `PrinterMoreInfoManufacturer` | `URISyntax` |
-| `PrinterName` | `TextSyntax` |
-| `PrinterResolution` | `ResolutionSyntax` |
-| `PrinterState` | `PROCESSING`, `IDLE`, `STOPPED`, `UNKNOWN` |
-| `PrinterStateReason` | `COVER_OPEN`, `FUSER_OVER_TEMP`, `MEDIA_JAM`, và nhiều hằng khác |
-| `PrinterStateReasons` | `HashMap` |
-| `PrinterURI` | `URISyntax` |
-| `PrintQuality` | `DRAFT`, `NORMAL`, `HIGH` |
-| `QueuedJobCount` | `IntegerSyntax` |
-| `ReferenceUriSchemesSupported` | `FILE`, `FTP`, `GOPHER`, `HTTP`, `HTTPS`, `NEWS`, `NNTP`, `WAIS` |
-| `RequestingUserName` | `TextSyntax` |
-| `Severity` | `ERROR`, `REPORT`, `WARNING` |
-| `SheetCollate` | `COLLATED`, `UNCOLLATED` |
-| `Sides` | `ONE_SIDED`, `DUPLEX` (= `TWO_SIDED_LONG_EDGE`), `TUMBLE` (= `TWO_SIDED_SHORT_EDGE`) |
+| Attribute | Superclass hoặc Enumeration Constants | DA | PJA | PRA | PSA |
+|---|---|:-:|:-:|:-:|:-:|
+| `Chromaticity` | `MONOCHROME`, `COLOR` | ✔ | ✔ | ✔ | |
+| `ColorSupported` | `SUPPORTED`, `NOT_SUPPORTED` | | | | ✔ |
+| `Compression` | `COMPRESS`, `DEFLATE`, `GZIP`, `NONE` | ✔ | | | |
+| `Copies` | `IntegerSyntax` | | ✔ | ✔ | |
+| `DateTimeAtCompleted` | `DateTimeSyntax` | | ✔ | | |
+| `DateTimeAtCreation` | `DateTimeSyntax` | | ✔ | | |
+| `DateTimeAtProcessing` | `DateTimeSyntax` | | ✔ | | |
+| `Destination` | `URISyntax` | | ✔ | ✔ | |
+| `DocumentName` | `TextSyntax` | ✔ | | | |
+| `Fidelity` | `FIDELITY_TRUE`, `FIDELITY_FALSE` | | ✔ | ✔ | |
+| `Finishings` | `NONE`, `STAPLE`, `EDGE_STITCH`, `BIND`, `SADDLE_STITCH`, `COVER`, … | ✔ | ✔ | ✔ | |
+| `JobHoldUntil` | `DateTimeSyntax` | | ✔ | ✔ | |
+| `JobImpressions` | `IntegerSyntax` | | ✔ | ✔ | |
+| `JobImpressionsCompleted` | `IntegerSyntax` | | ✔ | | |
+| `JobKOctets` | `IntegerSyntax` | | ✔ | ✔ | |
+| `JobKOctetsProcessed` | `IntegerSyntax` | | ✔ | | |
+| `JobMediaSheets` | `IntegerSyntax` | | ✔ | ✔ | |
+| `JobMediaSheetsCompleted` | `IntegerSyntax` | | ✔ | | |
+| `JobMessageFromOperator` | `TextSyntax` | | ✔ | | |
+| `JobName` | `TextSyntax` | | ✔ | ✔ | |
+| `JobOriginatingUserName` | `TextSyntax` | | ✔ | | |
+| `JobPriority` | `IntegerSyntax` | | ✔ | ✔ | |
+| `JobSheets` | `STANDARD`, `NONE` | | ✔ | ✔ | |
+| `JobState` | `ABORTED`, `CANCELED`, `COMPLETED`, `PENDING`, `PENDING_HELD`, `PROCESSING`, `PROCESSING_STOPPED` | | ✔ | | |
+| `JobStateReason` | `ABORTED_BY_SYSTEM`, `DOCUMENT_FORMAT_ERROR`, many others | | | | |
+| `JobStateReasons` | `HashSet` | | ✔ | | |
+| `MediaName` | `ISO_A4_WHITE`, `ISO_A4_TRANSPARENT`, `NA_LETTER_WHITE`, `NA_LETTER_TRANSPARENT` | ✔ | ✔ | ✔ | |
+| `MediaSize` | `ISO.A0`–`ISO.A10`, `ISO.B0`–`ISO.B10`, `ISO.C0`–`ISO.C10`, `NA.LETTER`, `NA.LEGAL`, various other paper and envelope sizes | | | | |
+| `MediaSizeName` | `ISO_A0`–`ISO_A10`, `ISO_B0`–`ISO_B10`, `ISO_C0`–`ISO_C10`, `NA_LETTER`, `NA_LEGAL`, various other paper and envelope size names | ✔ | ✔ | ✔ | |
+| `MediaTray` | `TOP`, `MIDDLE`, `BOTTOM`, `SIDE`, `ENVELOPE`, `LARGE_CAPACITY`, `MAIN`, `MANUAL` | ✔ | ✔ | ✔ | |
+| `MultipleDocumentHandling` | `SINGLE_DOCUMENT`, `SINGLE_DOCUMENT_NEW_SHEET`, `SEPARATE_DOCUMENTS_COLLATED_COPIES`, `SEPARATE_DOCUMENTS_UNCOLLATED_COPIES` | | ✔ | ✔ | |
+| `NumberOfDocuments` | `IntegerSyntax` | | ✔ | | |
+| `NumberOfInterveningJobs` | `IntegerSyntax` | | ✔ | | |
+| `NumberUp` | `IntegerSyntax` | ✔ | ✔ | ✔ | |
+| `OrientationRequested` | `PORTRAIT`, `LANDSCAPE`, `REVERSE_PORTRAIT`, `REVERSE_LANDSCAPE` | ✔ | ✔ | ✔ | |
+| `OutputDeviceAssigned` | `TextSyntax` | | ✔ | | |
+| `PageRanges` | `SetOfInteger` | ✔ | ✔ | ✔ | |
+| `PagesPerMinute` | `IntegerSyntax` | | | | ✔ |
+| `PagesPerMinuteColor` | `IntegerSyntax` | | | | ✔ |
+| `PDLOverrideSupported` | `ATTEMPTED`, `NOT_ATTEMPTED` | | | | ✔ |
+| `PresentationDirection` | `TORIGHT_TOBOTTOM`, `TORIGHT_TOTOP`, `TOBOTTOM_TORIGHT`, `TOBOTTOM_TOLEFT`, `TOLEFT_TOBOTTOM`, `TOLEFT_TOTOP`, `TOTOP_TORIGHT`, `TOTOP_TOLEFT` | | ✔ | ✔ | |
+| `PrinterInfo` | `TextSyntax` | | | | ✔ |
+| `PrinterIsAcceptingJobs` | `ACCEPTING_JOBS`, `NOT_ACCEPTING_JOBS` | | | | ✔ |
+| `PrinterLocation` | `TextSyntax` | | | | ✔ |
+| `PrinterMakeAndModel` | `TextSyntax` | | | | ✔ |
+| `PrinterMessageFromOperator` | `TextSyntax` | | | | ✔ |
+| `PrinterMoreInfo` | `URISyntax` | | | | ✔ |
+| `PrinterMoreInfoManufacturer` | `URISyntax` | | | | ✔ |
+| `PrinterName` | `TextSyntax` | | | | ✔ |
+| `PrinterResolution` | `ResolutionSyntax` | ✔ | ✔ | ✔ | |
+| `PrinterState` | `PROCESSING`, `IDLE`, `STOPPED`, `UNKNOWN` | | | | ✔ |
+| `PrinterStateReason` | `COVER_OPEN`, `FUSER_OVER_TEMP`, `MEDIA_JAM`, and many others | | | | |
+| `PrinterStateReasons` | `HashMap` | | | | |
+| `PrinterURI` | `URISyntax` | | | | ✔ |
+| `PrintQuality` | `DRAFT`, `NORMAL`, `HIGH` | ✔ | ✔ | ✔ | |
+| `QueuedJobCount` | `IntegerSyntax` | | | | ✔ |
+| `ReferenceUriSchemesSupported` | `FILE`, `FTP`, `GOPHER`, `HTTP`, `HTTPS`, `NEWS`, `NNTP`, `WAIS` | | | | |
+| `RequestingUserName` | `TextSyntax` | | | ✔ | |
+| `Severity` | `ERROR`, `REPORT`, `WARNING` | | | | |
+| `SheetCollate` | `COLLATED`, `UNCOLLATED` | ✔ | ✔ | ✔ | |
+| `Sides` | `ONE_SIDED`, `DUPLEX` (= `TWO_SIDED_LONG_EDGE`), `TUMBLE` (= `TWO_SIDED_SHORT_EDGE`) | ✔ | ✔ | ✔ | |
 
 > **Note (sách):** *"As you can see, there are lots of attributes, many of which are quite specialized. The source for most of the attributes is the Internet Printing Protocol 1.1 (RFC 2911)."*
 >

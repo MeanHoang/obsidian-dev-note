@@ -27,6 +27,49 @@
 >
 > **Dịch:** Trong C, **mọi array type này thực chất là từ đồng nghĩa kiểu của `jobject`**. Nhưng trong C++, chúng được **sắp thành một hệ thống phân cấp inheritance**. Kiểu **`jarray` biểu thị một array tổng quát**.
 
+**Figure 12.3: Inheritance hierarchy of array types**
+
+```
+   ┌──────────────┐
+   │   jobject    │
+   └──────────────┘
+          △
+          │
+   ┌──────────────┐
+   │    jarray    │
+   └──────────────┘
+          △
+          ├──────────▶ ┌────────────────┐
+          │            │  jobjectArray  │
+          │            └────────────────┘
+          ├──────────▶ ┌────────────────┐
+          │            │ jbooleanArray  │
+          │            └────────────────┘
+          ├──────────▶ ┌────────────────┐
+          │            │   jbyteArray   │
+          │            └────────────────┘
+          ├──────────▶ ┌────────────────┐
+          │            │   jcharArray   │
+          │            └────────────────┘
+          ├──────────▶ ┌────────────────┐
+          │            │  jshortArray   │
+          │            └────────────────┘
+          ├──────────▶ ┌────────────────┐
+          │            │   jintArray    │
+          │            └────────────────┘
+          ├──────────▶ ┌────────────────┐
+          │            │   jlongArray   │
+          │            └────────────────┘
+          ├──────────▶ ┌────────────────┐
+          │            │  jfloatArray   │
+          │            └────────────────┘
+          └──────────▶ ┌────────────────┐
+                       │  jdoubleArray  │
+                       └────────────────┘
+```
+
+*Bản in vẽ △ (tam giác rỗng, nét liền) = quan hệ extends: `jarray` extends `jobject`, và cả 9 array type cụ thể đều extends `jarray` qua cùng một trục dọc.*
+
 ---
 
 ## Độ dài array

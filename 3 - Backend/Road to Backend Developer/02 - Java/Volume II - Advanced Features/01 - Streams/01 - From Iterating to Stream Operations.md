@@ -5,6 +5,18 @@
 
 ---
 
+## Mở đầu chương 1
+
+> *"Compared to collections, streams provide a view of data that lets you specify computations at a higher conceptual level. With a stream, you specify what you want to have done, not how to do it. You leave the scheduling of operations to the implementation. For example, suppose you want to compute the average of a certain property. You specify the source of data and the property, and the stream library can then optimize the computation, for example by using multiple threads for computing sums and counts and combining the results."*
+>
+> *"In this chapter, you will learn how to use the Java stream library, which was introduced in Java 8, to process collections in a "what, not how" style."*
+
+**Dịch:** So với collection, stream cung cấp một **góc nhìn về dữ liệu** cho phép bạn đặc tả phép tính ở **mức khái niệm cao hơn**. Với stream, bạn nói **cái gì cần làm**, chứ không nói **làm như thế nào**. Bạn để việc **lập lịch các operation** cho phần implementation lo. Ví dụ, giả sử bạn muốn tính **giá trị trung bình của một property** nào đó. Bạn chỉ đặc tả **nguồn dữ liệu** và **property**, rồi stream library có thể **tối ưu hoá phép tính**, chẳng hạn bằng cách dùng **nhiều thread** để tính tổng và đếm rồi **gộp kết quả** lại.
+
+Trong chương này, bạn sẽ học cách dùng **Java stream library** — được giới thiệu từ **Java 8** — để xử lý collection theo phong cách **"what, not how"**.
+
+---
+
 ## 1.1. From Iterating to Stream Operations
 
 > *"When you process a collection, you usually iterate over its elements and do some work with each of them. For example, suppose we want to count all long words in a book. First, let's put them into a list:"*

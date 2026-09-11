@@ -5,6 +5,14 @@
 
 ---
 
+## Mở đầu chương 8
+
+> *"This chapter introduces three techniques for processing code. The scripting API lets you invoke code in a scripting language such as JavaScript or Groovy. You can use the compiler API when you want to compile Java code inside your application. Annotation processors operate on Java source or class files that contain annotations. As you will see, there are many applications for annotation processing, ranging from simple diagnostics to "bytecode engineering"—the insertion of bytecodes into class files or even running programs."*
+
+**Dịch:** Chương này giới thiệu **ba kỹ thuật xử lý code**. **Scripting API** cho phép bạn gọi code viết bằng một scripting language như JavaScript hay Groovy. Bạn dùng **compiler API** khi muốn **compile code Java ngay bên trong ứng dụng** của mình. **Annotation processor** làm việc trên **file source hoặc class file Java có chứa annotation**. Như bạn sẽ thấy, annotation processing có rất nhiều ứng dụng, từ chẩn đoán đơn giản cho tới **"bytecode engineering"** — chèn bytecode vào class file hoặc thậm chí vào chương trình đang chạy.
+
+---
+
 ## 8.1. Scripting for the Java Platform
 
 > *"A scripting language is a language that avoids the usual edit/compile/link/run cycle by interpreting the program text at runtime. Scripting languages have a number of advantages:"*

@@ -5,6 +5,40 @@
 
 ---
 
+## Mở đầu chương 12
+
+> *"While a "100% Pure Java" solution is nice in principle, there are situations in which you will want to write (or use) code in another language. Such code is usually called native code."*
+
+**Dịch:** Về nguyên tắc, một giải pháp **"100% Pure Java"** thì hay, nhưng có những tình huống bạn sẽ muốn viết (hoặc dùng) code bằng ngôn ngữ khác. Code như vậy thường được gọi là **native code**.
+
+> *"Particularly in the early days of Java, many people assumed that it would be a good idea to use C or C++ to speed up critical parts of a Java application. However, in practice, this was rarely useful. A presentation at the 1996 JavaOne conference showed this clearly. The developers of the cryptography library at Sun Microsystems reported that a pure Java platform implementation of their cryptographic functions was more than adequate. It was true that the code was not as fast as a C implementation would have been, but it turned out not to matter. The Java platform implementation was far faster than the network I/O. This turned out to be the real bottleneck."*
+
+**Dịch:** Đặc biệt trong những ngày đầu của Java, nhiều người cho rằng nên dùng C hoặc C++ để **tăng tốc các phần quan trọng** của ứng dụng Java. Tuy nhiên **trên thực tế điều này hiếm khi hữu ích**. Một bài trình bày tại hội nghị JavaOne 1996 cho thấy rõ điều đó. Các developer của thư viện cryptography ở Sun Microsystems báo cáo rằng bản implementation **thuần Java platform** cho các hàm mật mã của họ là **quá đủ**. Đúng là code không nhanh bằng bản C, nhưng **chuyện đó hoá ra không quan trọng**: bản Java platform vẫn **nhanh hơn nhiều so với network I/O** — và network I/O mới là nút thắt cổ chai thật sự.
+
+> *"Of course, there are drawbacks to going native. If a part of your application is written in another language, you must supply a separate native library for every platform you want to support. Code written in C or C++ offers no protection against overwriting memory through invalid pointer usage. It is easy to write native methods that corrupt your program or infect the operating system."*
+
+**Dịch:** Tất nhiên **dùng native có nhược điểm**. Nếu một phần ứng dụng viết bằng ngôn ngữ khác, bạn phải cung cấp **một native library riêng cho mỗi platform** muốn hỗ trợ. Code viết bằng C hoặc C++ **không có cơ chế bảo vệ** chống ghi đè bộ nhớ do dùng con trỏ sai. Rất dễ viết ra native method **làm hỏng chương trình hoặc lây nhiễm hệ điều hành**.
+
+> *"Thus, we suggest using native code only when you need to. In particular, there are three reasons why native code might be the right choice:*
+> *• Your application requires access to system features or devices that are not accessible through the Java platform.*
+> *• You have substantial amounts of tested and debugged code in another language, and you know how to port it to all desired target platforms.*
+> *• You have found, through benchmarking, that the Java code is much slower than the equivalent code in another language."*
+
+**Dịch:** Vì vậy sách khuyên **chỉ dùng native code khi thật sự cần**. Cụ thể, có ba lý do khiến native code có thể là lựa chọn đúng:
+- Ứng dụng cần **truy cập tính năng hệ thống hoặc thiết bị** mà Java platform không với tới được.
+- Bạn đã có **lượng lớn code đã test và debug** bằng ngôn ngữ khác, và biết cách port nó sang mọi target platform mong muốn.
+- Bạn đã **benchmark** và thấy code Java **chậm hơn nhiều** so với code tương đương ở ngôn ngữ khác.
+
+> *"The Java platform has an API for interoperating with native C code called the Java Native Interface (JNI). We'll discuss JNI programming in this chapter."*
+
+**Dịch:** Java platform có một API để **liên tác với native C code**, gọi là **Java Native Interface (JNI)**. Chương này bàn về lập trình JNI.
+
+> **C++ NOTE (sách):** *"You can also use C++ instead of C to write native methods. There are a few advantages—type checking is slightly stricter, and accessing the JNI functions is a bit more convenient. However, JNI does not support any mapping between Java and C++ classes."*
+>
+> **Dịch:** Bạn cũng có thể dùng **C++** thay cho C để viết native method. Có vài lợi thế — **type checking chặt hơn một chút**, và **truy cập các JNI function tiện hơn một chút**. Tuy nhiên, **JNI không hỗ trợ bất kỳ ánh xạ nào giữa class Java và class C++**.
+
+---
+
 ## 12.1 Calling a C Function from a Java Program
 
 > *"Suppose you have a C function that does something you like and, for one reason or another, you don't want to bother reimplementing it in Java. For the sake of illustration, we'll start with a simple C function that prints a greeting."*
@@ -236,6 +270,37 @@ class HelloNativeTest
 > *"After you compile and run this program, the message "Hello, Native World!" is displayed in a terminal window."*
 
 **Dịch:** Figure 12.1 tóm tắt quá trình xử lý native code. Sau khi compile và chạy chương trình, dòng chữ "Hello, Native World!" hiện ra trong cửa sổ terminal.
+
+**Figure 12.1: Processing native code**
+
+```
+   ╭──────────────╮
+   │  .java files │ ─────┐
+   ╰──────────────╯      │      ┌──────────┐      ╭──────────────╮
+                         ├────▶ │  javac   │ ───▶ │ .class files │
+   ╭──────────────╮      │      └──────────┘      ╰──────────────╯
+   │  .java file  │ ─────┘                               │
+   │  declaring   │                                      │
+   │native methods│                                      ▼
+   ╰──────────────╯                              ┌──────────────┐
+          │                                      │     java     │
+          ▼                                      │    virtual   │
+   ┌──────────────┐                              │    machine   │
+   │    javah     │                              └──────────────┘
+   └──────────────┘                                     ┊
+          │                                             ┊ System.loadLibrary
+          ▼                                             ┊
+   ╭──────────────╮      ┌──────────────┐               ▼
+   │    .h file   │ ───▶ │  C compiler  │      ╭──────────────╮
+   ╰──────────────╯      │  and linker  │ ───▶ │    shared    │
+   ╭──────────────╮      └──────────────┘      │    library   │
+   │   .c file    │ ───▶        ▲              ╰──────────────╯
+   │ implementing │             │
+   │native methods│─────────────┘
+   ╰──────────────╯
+```
+
+*Hình chữ nhật = công cụ; hình có góc gấp (tài liệu) = file. Mũi tên nét đứt `System.loadLibrary` là liên kết lúc chạy giữa virtual machine và shared library.*
 
 > **Note (sách):** *"If you run Linux, you must add the current directory to the library path. Either set the LD_LIBRARY_PATH environment variable:"*
 >

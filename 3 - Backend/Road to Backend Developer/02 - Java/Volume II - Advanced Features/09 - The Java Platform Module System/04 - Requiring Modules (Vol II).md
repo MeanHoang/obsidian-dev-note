@@ -70,15 +70,24 @@ module v2ch09.requiremod
 
 **Dịch:** Figure 9.1 cho thấy **module graph** với **node là các module**. **Cạnh** của graph — mũi tên nối các node — **hoặc là yêu cầu được khai báo**, **hoặc là yêu cầu ngầm định lên `java.base`** khi không khai báo gì.
 
-```
-   v2ch09.requiremod
-          │ requires
-          ▼
-     java.desktop ──requires──► java.datatransfer
-          │      └─requires──► java.prefs ──requires──► java.xml
-          └────────requires──► java.xml
+**Figure 9.1: The module graph of the Swing "Hello, Modular World" application**
 
-   (mọi module không khai báo gì đều có cạnh ngầm định tới java.base)
+```
+                    ( v2ch09.requiremod )
+                              │
+                              ▼
+                      ( java.desktop )
+                     ╱        │        ╲
+                    ╱         │         ╲
+                   ▼          │          ▼
+     ( java.datatransfer )    │      ( java.prefs )
+              ╲               │          ╱
+               ╲              ▼         ▼
+                ╲        ( java.xml )
+                 ╲            │
+                  ╲           │
+                   ▼          ▼
+                    ( java.base )
 ```
 
 > *"You cannot have cycles in the module graph—that is, a module cannot directly or indirectly require itself."*

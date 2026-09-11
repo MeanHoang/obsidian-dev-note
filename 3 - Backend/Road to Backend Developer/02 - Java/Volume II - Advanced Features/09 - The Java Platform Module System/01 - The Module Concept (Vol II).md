@@ -6,6 +6,22 @@
 
 ---
 
+## Mở đầu chương 9
+
+> *"An important characteristic of object-oriented programming is encapsulation. A class declaration consists of a public interface and a private implementation. A class can evolve by changing the implementation without affecting its users. A module system provides the same benefits for programming in the large. A module can make classes and packages selectively available so that its evolution can be controlled."*
+>
+> *"Several existing Java module systems rely on class loaders to isolate classes. However, Java 9 introduced a new system, called the Java Platform Module System, that is supported by the Java compiler and virtual machine. It was designed to modularize the large code base of the Java platform. You can, if you choose, use this system to modularize your own applications."*
+>
+> *"Whether or not you use Java platform modules in your own applications, you may be impacted by the modularized Java platform. This chapter shows you how to declare and use Java platform modules. You will also learn how to migrate your applications to work with the modularized Java platform and third-party modules."*
+
+**Dịch:** Một đặc tính quan trọng của lập trình hướng object là **encapsulation**. Một khai báo class gồm **public interface** và **private implementation**. Class có thể tiến hoá bằng cách **đổi implementation mà không ảnh hưởng tới người dùng nó**. **Module system mang lại đúng lợi ích đó cho lập trình quy mô lớn**: một module có thể **chọn lọc phơi bày class và package**, nhờ đó kiểm soát được sự tiến hoá của nó.
+
+Một số module system Java đã có dựa vào **class loader để cô lập class**. Tuy nhiên, **Java 9 giới thiệu một hệ thống mới — Java Platform Module System — được chính compiler và virtual machine của Java hỗ trợ**. Nó được thiết kế để **modular hoá code base khổng lồ của nền tảng Java**. Nếu muốn, bạn cũng có thể dùng hệ thống này để modular hoá ứng dụng của chính mình.
+
+Dù bạn có dùng Java platform module trong ứng dụng của mình hay không, **bạn vẫn có thể bị ảnh hưởng bởi nền tảng Java đã được modular hoá**. Chương này chỉ cho bạn cách **khai báo và dùng Java platform module**, đồng thời cách **migrate ứng dụng để chạy được với nền tảng Java modular hoá và với module của bên thứ ba**.
+
+---
+
 ## 9.1 The Module Concept
 
 ### Class rồi tới package

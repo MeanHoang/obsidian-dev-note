@@ -59,6 +59,30 @@ JNIEXPORT jstring JNICALL Java_HelloNative_getGreeting(JNIEnv* env, jclass cl)
 
 **Dịch:** Mọi lời gọi tới JNI function đều dùng **con trỏ `env`** — argument đầu tiên của mọi native method. `env` là **con trỏ trỏ tới một bảng các function pointer**. Do đó bạn **phải thêm tiền tố `(*env)->` vào mọi lời gọi JNI** để thực sự dereference function pointer đó. Hơn nữa, **`env` là parameter đầu tiên của mọi JNI function**.
 
+**Figure 12.2: The env pointer**
+
+```
+                                              ┌──────────────┐
+   env ┌──────────────┐    ┌──────────┐       │   reserved   │
+   ───▶│      ●───────┼───▶│    ●─────┼──────▶├──────────────┤
+       └──────────────┘    │          │       │   reserved   │
+                           │    ⋮     │       ├──────────────┤
+                           │          │       │   reserved   │
+                           └──────────┘       ├──────────────┤
+                                              │   reserved   │
+                                              ├──────────────┤
+                                              │  GetVersion  │ ───▶
+                                              ├──────────────┤
+                                              │ DefineClass  │ ───▶
+                                              ├──────────────┤
+                                              │  FindClass   │ ───▶
+                                              ├──────────────┤
+                                              │      ⋮       │
+                                              └──────────────┘
+```
+
+*`env` trỏ tới một con trỏ, con trỏ đó trỏ tới bảng function pointer. Bốn ô đầu bảng là `reserved`, sau đó là các entry `GetVersion`, `DefineClass`, `FindClass`, … mỗi entry lại trỏ ra hàm thật.*
+
 > **C++ Note (sách):** *"It is simpler to access JNI functions in C++. The C++ version of the JNIEnv class has inline member functions that take care of the function pointer lookup for you. For example, you can call the NewStringUTF function as"*
 >
 > ```cpp

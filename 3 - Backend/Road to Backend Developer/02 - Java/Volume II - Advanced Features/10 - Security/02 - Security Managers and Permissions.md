@@ -92,10 +92,32 @@ public void exit(int status)
 
 **Dịch:** **Từ Java 1.2**, Java platform có cơ chế **linh hoạt hơn nhiều**. Một **security policy ánh xạ code source sang tập permission**.
 
+**Figure 10.5: A security policy**
+
 ```
-   code source  ──────►  permission set
-   (code base
-    + certificates)
+   ┌─────────────────┐              ┌─────────────────────┐
+   │   Code Base1    │              │  Permission Set 1   │
+   ├─────────────────┤              │  ┌───────────────┐  │
+   │  code location  │ ───────────▶ │  │  permission   │  │
+   ├─────────────────┤              │  │      #1a      │  │
+   │  certificates   │              │  └───────────────┘  │
+   └─────────────────┘              │  ┌───────────────┐  │
+                                    │  │  permission   │  │
+                                    │  │      #1b      │  │
+                                    │  └───────────────┘  │
+                                    └─────────────────────┘
+
+   ┌─────────────────┐              ┌─────────────────────┐
+   │   Code Base2    │              │  Permission Set 2   │
+   ├─────────────────┤              │  ┌───────────────┐  │
+   │  code location  │ ───────────▶ │  │  permission   │  │
+   ├─────────────────┤              │  │      #2a      │  │
+   │  certificates   │              │  └───────────────┘  │
+   └─────────────────┘              │  ┌───────────────┐  │
+                                    │  │  permission   │  │
+                                    │  │      #2b      │  │
+                                    │  └───────────────┘  │
+                                    └─────────────────────┘
 ```
 
 > *"A code source is specified by a code base and a set of certificates. The code base specifies the origin of the code. For example, the code base of remote applet code is the HTTP URL from which the applet was loaded. The code base of code in a JAR file is the file's URL. A certificate, if present, is an assurance by some party that the code has not been tampered with. We'll cover certificates later in this chapter."*
@@ -121,6 +143,41 @@ permission java.io.FilePermission "/tmp/*", "read,write";
 > *"Figure 10.6 shows the hierarchy of the permission classes that were supplied with Java 1.2. Many more permission classes have been added in subsequent Java releases."*
 
 **Dịch:** Nhiều permission class nữa đã được thêm vào ở các bản Java sau.
+
+**Figure 10.6: A part of the hierarchy of permission classes**
+
+```
+                            ┌──────────────┐
+                            │  Permission  │
+                            └──────────────┘
+                                    △
+                                    │
+       ┌────────────────┬───────────┴───────────┬────────────────┐
+       │                │                       │                │
+┌──────────────┐ ┌──────────────┐        ┌──────────────┐ ┌──────────────┐
+│     All      │ │    Basic     │        │     File     │ │    Socket    │
+│  Permission  │ │  Permission  │        │  Permission  │ │  Permission  │
+└──────────────┘ └──────────────┘        └──────────────┘ └──────────────┘
+                        △
+                        │
+   ┌────┬────┬────┬────┬┴───┬────┬────┬────┬────┬────┐
+   │    │    │    │    │    │    │    │    │    │    │
+┌──────────────┐  │  ┌──────────────┐  │  ┌──────────────┐
+│    Audio     │  │  │     AWT      │  │  │     Net      │  …
+│  Permission  │  │  │  Permission  │  │  │  Permission  │
+└──────────────┘  │  └──────────────┘  │  └──────────────┘
+                  │                    │
+        ┌──────────────┐     ┌──────────────┐
+        │     Auth     │     │   Logging    │  …
+        │  Permission  │     │  Permission  │
+        └──────────────┘     └──────────────┘
+```
+
+Danh sách đầy đủ các subclass của `BasicPermission` trong hình (thứ tự trái → phải trên trục ngang của bản in): **AudioPermission, AuthPermission, AWTPermission, LoggingPermission, NetPermission, PropertyPermission, ReflectedPermission, RuntimePermission, SecurityPermission, SerializablePermission, SQLPermission**.
+
+*Hình in xếp 11 subclass này thành hai hàng so le (hàng trên: Audio, AWT, Net, Reflected, Security, SQL; hàng dưới: Auth, Logging, Property, Runtime, Serializable) — tất cả đều nối vào cùng một trục extends của `BasicPermission`. ASCII ở trên chỉ vẽ mẫu vài hộp cho đúng cấu trúc.*
+
+*Typo bản in: hộp ghi **"Reflected Permission"**; class thật trong thư viện là `java.lang.reflect.ReflectPermission`. Giữ nguyên nhãn theo sách.*
 
 ### Security check method chỉ là tiện lợi
 
@@ -650,7 +707,7 @@ public Set<String> badWordSet()
 
 > *"This code allows us to use the equals and containsAll methods to compare sets. As you saw in Chapter 9 of Volume I, the equals method of a set class finds two sets to be equal if they contain the same elements in any order. For example, the sets resulting from "sex,drugs,C++" and "C++,drugs,sex" are equal."*
 
-**Dịch:** Vì permission được mô tả bằng **một cặp string** trong policy file, permission class **phải sẵn sàng parse các string này**. Code trên cho phép dùng `equals` và `containsAll` để so sánh set. Như đã thấy ở [[09 - Collections]] của Volume I, method `equals` của một set class coi **hai set bằng nhau nếu chúng chứa cùng các phần tử, theo thứ tự bất kỳ**.
+**Dịch:** Vì permission được mô tả bằng **một cặp string** trong policy file, permission class **phải sẵn sàng parse các string này**. Code trên cho phép dùng `equals` và `containsAll` để so sánh set. Như đã thấy ở [[01 - The Java Collections Framework|chương 9]] của Volume I, method `equals` của một set class coi **hai set bằng nhau nếu chúng chứa cùng các phần tử, theo thứ tự bất kỳ**.
 
 > **Caution (sách):** *"Make sure that your permission class is a public class. The policy file loader cannot load classes with package visibility, and it silently ignores any classes it cannot find."*
 >

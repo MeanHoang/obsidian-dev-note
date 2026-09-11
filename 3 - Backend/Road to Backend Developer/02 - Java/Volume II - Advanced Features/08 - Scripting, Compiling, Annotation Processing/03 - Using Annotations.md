@@ -173,7 +173,23 @@ Field f = cl.getDeclaredField(fieldName);
 
 > *"Figure 8.1 shows how annotations are handled in this example."*
 
-> **Figure 8.1 — Processing annotations at runtime** *(hình ảnh trong sách, không tái hiện được từ bản trích văn bản)*
+**Figure 8.1: Processing annotations at runtime**
+
+```
+                                                          ┌──────────────────┐
+                                                          │ Program uses     │
+                                                          │ reflection API   │
+                                                          │ to process       │
+                                                          │ annotations      │
+                                                          └────────┬─────────┘
+                                                                   │
+                                                            ┌──────┘
+                                                            │
+ ┌─────────────────────┐    ┌────────────────┐    ┌─────────────────────┐    ┌───────────────────────┐
+ │ @ActionListenerFor  │───▶│ Java Compiler  │───▶│ @ActionListenerFor  │───▶│ Java Virtual Machine  │
+ └─────────────────────┘    └────────────────┘    └─────────────────────┘    └───────────────────────┘
+   Source File                                      Class File
+```
 
 > *"In this example, the annotations were processed at runtime. It is also possible to process them at the source level: A source code generator would then produce the code for adding the listeners. Alternatively, the annotations can be processed at the bytecode level: A bytecode editor could inject the calls to addActionListener into the frame constructor. This sounds complex, but libraries are available to make this task relatively straightforward. You can see an example in Section 8.7, "Bytecode Engineering," on p. 489."*
 

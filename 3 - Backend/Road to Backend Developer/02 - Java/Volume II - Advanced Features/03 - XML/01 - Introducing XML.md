@@ -5,6 +5,18 @@
 
 ---
 
+## Mở đầu chương 3
+
+> *"The preface of the book Essential XML by Don Box et al. (Addison-Wesley, 2000) stated only half-jokingly: "The Extensible Markup Language (XML) has replaced Java, Design Patterns, and Object Technology as the software industry's solution to world hunger." This kind of hype is long gone but, as you will see in this chapter, XML is still a very useful technology for describing structured information. XML tools make it easy to process and transform that information. However, XML is not a silver bullet. You need domain-specific standards and code libraries to use it effectively. Moreover, far from making Java obsolete, XML works very well with Java. Since the late 1990s, IBM, Apache, and others have been instrumental in producing high-quality Java libraries for XML processing. Many of these libraries have now been integrated into the Java platform."*
+>
+> *"This chapter introduces XML and covers the XML features of the Java library. As always, we'll point out along the way when using XML is justified—and when you have to take it with a grain of salt and try solving your problems the old-fashioned way: through good design and code."*
+
+**Dịch:** Lời nói đầu của cuốn *Essential XML* (Don Box và cộng sự, Addison-Wesley, 2000) từng nói nửa đùa nửa thật: *"Extensible Markup Language (XML) đã thay thế Java, Design Patterns và Object Technology để trở thành giải pháp của ngành phần mềm cho nạn đói toàn cầu."* Kiểu thổi phồng đó nay đã qua lâu, nhưng như bạn sẽ thấy trong chương này, **XML vẫn là một công nghệ rất hữu ích để mô tả thông tin có cấu trúc**. Các công cụ XML giúp **xử lý và biến đổi** thông tin đó dễ dàng. Tuy nhiên, **XML không phải "viên đạn bạc"**. Bạn cần **chuẩn đặc thù theo domain** và **thư viện code** để dùng nó hiệu quả. Hơn nữa, XML **không hề làm Java lỗi thời** — nó **làm việc rất ăn ý với Java**. Từ cuối thập niên 1990, IBM, Apache và nhiều bên khác đã đóng vai trò then chốt trong việc tạo ra các **thư viện Java chất lượng cao để xử lý XML**. Nhiều thư viện trong số đó nay **đã được tích hợp vào Java platform**.
+
+Chương này giới thiệu XML và trình bày các tính năng XML của thư viện Java. Như thường lệ, sách sẽ chỉ ra dọc đường **khi nào dùng XML là hợp lý** — và **khi nào nên dè chừng**, quay lại giải quyết vấn đề theo kiểu cũ: bằng **thiết kế tốt và code tốt**.
+
+---
+
 ## 3.1. Introducing XML
 
 ### Xuất phát điểm: property file

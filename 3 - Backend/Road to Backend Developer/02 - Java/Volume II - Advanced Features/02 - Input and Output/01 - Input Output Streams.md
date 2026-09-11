@@ -5,6 +5,14 @@
 
 ---
 
+## Mở đầu chương 2
+
+> *"In this chapter, we cover the Java Application Programming Interfaces (APIs) for input and output. You will learn how to access files and directories and how to read and write data in binary and text format. This chapter also shows you the object serialization mechanism that lets you store objects as easily as you can store text or numeric data. Next, we will turn to working with files and directories. We finish the chapter with a discussion of regular expressions, even though they are not actually related to input and output. We couldn't find a better place to handle that topic, and apparently neither could the Java team—the regular expression API specification was attached to a specification request for "new I/O" features."*
+
+**Dịch:** Chương này nói về **Java Application Programming Interface (API) cho input và output**. Bạn sẽ học cách **truy cập file và directory** và cách **đọc/ghi dữ liệu ở dạng binary và text**. Chương này cũng trình bày cơ chế **object serialization**, cho phép lưu object dễ dàng như lưu text hay số. Tiếp đó sẽ chuyển sang **làm việc với file và directory**. Kết chương là phần bàn về **regular expression**, dù thực ra nó **không liên quan gì tới input và output**. Tác giả không tìm được chỗ nào đặt tốt hơn cho chủ đề đó, và có vẻ **Java team cũng vậy** — bản đặc tả regular expression API được đính kèm vào một specification request cho các tính năng **"new I/O"**.
+
+---
+
 ## 2.1. Input/Output Streams
 
 > *"In the Java API, an object from which we can read a sequence of bytes is called an input stream. An object to which we can write a sequence of bytes is called an output stream. These sources and destinations of byte sequences can be—and often are—files, but they can also be network connections and even blocks of memory. The abstract classes InputStream and OutputStream are the basis for a hierarchy of input/output (I/O) classes."*
@@ -13,7 +21,7 @@
 
 > **Note (sách):** *"These input/output streams are unrelated to the streams that you saw in the preceding chapter. For clarity, we will use the terms input stream, output stream, or input/output stream whenever we discuss streams that are used for input and output."*
 >
-> **Dịch:** Những input/output stream này **không liên quan gì** tới stream ở chương trước ([[01 - Streams]]). Cho rõ ràng, sách sẽ dùng đúng các từ **input stream**, **output stream**, hoặc **input/output stream** khi nói về stream dùng cho input và output.
+> **Dịch:** Những input/output stream này **không liên quan gì** tới stream ở chương trước ([[01 - From Iterating to Stream Operations|chương 1 Streams]]). Cho rõ ràng, sách sẽ dùng đúng các từ **input stream**, **output stream**, hoặc **input/output stream** khi nói về stream dùng cho input và output.
 
 > *"Byte-oriented input/output streams are inconvenient for processing information stored in Unicode (recall that Unicode uses multiple bytes per character). Therefore, a separate hierarchy provides classes, inheriting from the abstract Reader and Writer classes, for processing Unicode characters. These classes have read and write operations that are based on two-byte char values (that is, UTF-16 code units) rather than byte values."*
 
@@ -149,6 +157,54 @@ if (bytesAvailable > 0)
 
 **Dịch:** `InputStream` và `OutputStream` cho phép đọc/ghi **từng byte và array byte**. Muốn đọc/ghi **string và number** thì cần **subclass mạnh hơn**. Ví dụ **`DataInputStream`** và **`DataOutputStream`** cho phép đọc/ghi **mọi kiểu primitive của Java ở dạng binary**. Cuối cùng là những input/output stream **làm việc có ích**; ví dụ **`ZipInputStream`** và **`ZipOutputStream`** đọc/ghi file ở **định dạng nén ZIP** quen thuộc.
 
+**Figure 2.1: Input and output stream hierarchy**
+
+```
+InputStream
+ ├─△ AudioInputStream
+ ├─△ ByteArrayInputStream
+ ├─△ FileInputStream
+ ├─△ PipedInputStream
+ ├─△ FilterInputStream
+ │    ├─△ BufferedInputStream
+ │    ├─△ CheckedInputStream
+ │    ├─△ CipherInputStream
+ │    ├─△ DigestInputStream
+ │    ├─△ InflaterInputStream
+ │    │    ├─△ GZIPInputStream
+ │    │    └─△ ZipInputStream
+ │    │         └─△ JarInputStream
+ │    ├─△ LineNumberInputStream
+ │    ├─△ ProgressMonitorInputStream
+ │    ├─△ PushbackInputStream
+ │    └─△ DataInputStream ┈┈▷ <<interface>> DataInput
+ ├─△ SequenceInputStream
+ ├─△ StringBufferInputStream
+ └─△ ObjectInputStream ┈┈▷ <<interface>> ObjectInput ──△ <<interface>> DataInput
+
+OutputStream
+ ├─△ ByteArrayOutputStream
+ ├─△ FileOutputStream
+ ├─△ FilterOutputStream
+ │    ├─△ BufferedOutputStream
+ │    ├─△ CheckedOutputStream
+ │    ├─△ CipherOutputStream
+ │    ├─△ DigestOutputStream
+ │    ├─△ DeflaterOutputStream
+ │    │    ├─△ GZIPOutputStream
+ │    │    └─△ ZipOutputStream
+ │    │         └─△ JarOutputStream
+ │    ├─△ PrintStream
+ │    └─△ DataOutputStream ┈┈▷ <<interface>> DataOutput
+ ├─△ PipedOutputStream
+ └─△ ObjectOutputStream ┈┈▷ <<interface>> ObjectOutput ──△ <<interface>> DataOutput
+
+RandomAccessFile ┈┈▷ <<interface>> DataInput
+RandomAccessFile ┈┈▷ <<interface>> DataOutput
+
+(△ + nét liền = extends · ┈▷ = implements)
+```
+
 > *"For Unicode text, on the other hand, you can use subclasses of the abstract classes Reader and Writer (see Figure 2.2). The basic methods of the Reader and Writer classes are similar to those of InputStream and OutputStream."*
 
 ```java
@@ -159,6 +215,31 @@ abstract void write(int c)
 > *"The read method returns either a UTF-16 code unit (as an integer between 0 and 65535) or -1 when you have reached the end of the file. The write method is called with a Unicode code unit. (See Volume I, Chapter 3 for a discussion of Unicode code units.)"*
 
 **Dịch:** Với **text Unicode**, dùng subclass của hai abstract class **`Reader`** và **`Writer`**. Method cơ bản của chúng tương tự `InputStream`/`OutputStream`. Method `read` trả về **một UTF-16 code unit** (số nguyên trong khoảng **0 đến 65535**) hoặc **`-1`** khi tới **cuối file**. Method `write` được gọi với **một Unicode code unit**. (Xem [[05 - Strings]] về code unit.)
+
+**Figure 2.2: Reader and writer hierarchy**
+
+```
+Reader
+ ├─△ BufferedReader
+ │    └─△ LineNumberReader
+ ├─△ CharArrayReader
+ ├─△ FilterReader
+ │    └─△ PushbackReader
+ ├─△ InputStreamReader
+ │    └─△ FileReader
+ ├─△ PipedReader
+ └─△ StringReader
+
+Writer
+ ├─△ BufferedWriter
+ ├─△ CharArrayWriter
+ ├─△ FilterWriter
+ ├─△ OutputStreamWriter
+ │    └─△ FileWriter
+ ├─△ PipedWriter
+ ├─△ PrintWriter
+ └─△ StringWriter
+```
 
 ### Bốn interface bổ sung
 
@@ -177,6 +258,24 @@ void flush()
 > *"respectively. The classes InputStream, OutputStream, Reader, and Writer all implement the Closeable interface."*
 
 **Dịch:** Có **bốn interface bổ sung**: `Closeable`, `Flushable`, `Readable`, `Appendable`. Hai interface đầu **rất đơn giản**, mỗi cái một method như trên. Cả bốn class `InputStream`, `OutputStream`, `Reader`, `Writer` đều **implement `Closeable`**.
+
+**Figure 2.3: The `Closeable`, `Flushable`, `Readable`, and `Appendable` interfaces**
+
+```
+InputStream   ┈┈▷ <<interface>> Closeable
+OutputStream  ┈┈▷ <<interface>> Closeable
+OutputStream  ┈┈▷ <<interface>> Flushable
+Reader        ┈┈▷ <<interface>> Closeable
+Reader        ┈┈▷ <<interface>> Readable
+Writer        ┈┈▷ <<interface>> Closeable
+Writer        ┈┈▷ <<interface>> Flushable
+Writer        ┈┈▷ <<interface>> Appendable
+StringBuilder ┈┈▷ <<interface>> Appendable
+CharBuffer    ┈┈▷ <<interface>> Appendable
+CharBuffer    ┈┈▷ <<interface>> Readable
+
+(┈▷ nét đứt = implements)
+```
 
 > **Note (sách):** *"The java.io.Closeable interface extends the java.lang.AutoCloseable interface. Therefore, you can use the try-with-resources statement with any Closeable. Why have two interfaces? The close method of the Closeable interface only throws an IOException, whereas the AutoCloseable.close method may throw any exception."*
 >
@@ -352,6 +451,22 @@ var din = new DataInputStream(zin);
 ```
 
 **Dịch:** Dĩ nhiên trong thư viện I/O của **ngôn ngữ khác**, những tiện nghi như buffering và lookahead **được lo tự động** — nên phải ghép stream filter trong Java thì **hơi phiền**. Nhưng khả năng **trộn và ghép các filter class** để dựng nên chuỗi input/output stream hữu ích lại cho ta **độ linh hoạt cực lớn**. Ví dụ đọc số từ **file ZIP nén** bằng chuỗi input stream trên.
+
+**Figure 2.4: A sequence of filtered input streams**
+
+```
+      ┌─────────────────┐   ┌────────────────┐   ┌─────────────────┐
+      │ DataInputStream │   │ ZipInputStream │   │ FileInputStream │
+      └────────┬────────┘   └───────┬────────┘   └────────┬────────┘
+               ┊                    ┊                     ┊
+   read      ┌─┴─┐                  ┊                     ┊
+ ───────────▶│   │      read      ┌─┴─┐                   ┊
+             │   │───────────────▶│   │      read       ┌─┴─┐
+             │   │                │   │────────────────▶│   │
+             │   │                │   │                 │   │
+             └─┬─┘                └─┬─┘                 └─┬─┘
+               ┊                    ┊                     ┊
+```
 
 ## API — `java.io.FileInputStream` (Java 1.0)
 

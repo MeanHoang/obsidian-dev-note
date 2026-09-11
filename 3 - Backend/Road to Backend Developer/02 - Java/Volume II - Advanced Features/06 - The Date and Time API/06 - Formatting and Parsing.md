@@ -36,6 +36,8 @@ String formatted = DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(apollo11launch)
 
 #### Table 6.1 — Predefined Formatters
 
+> *(Chép nguyên văn bản in trang 372: sách in offset `-0500` / `-05:00` trong cột Example, trong khi thân bài và Listing 6.4 dùng `-04:00` cho `America/New_York` ngày 16/07/1969 (EDT) — đây là typo của bản in.)*
+
 | Formatter | Description | Example |
 |---|---|---|
 | `BASIC_ISO_DATE` | Year, month, day, zone offset **without separators** | `19690716-0500` |
@@ -117,6 +119,8 @@ formatter = DateTimeFormatter.ofPattern("E yyyy-MM-dd HH:mm");
 > Về `String`, xem [[05 - Strings]].
 
 #### Table 6.3 — Commonly Used Formatting Symbols for Date/Time Formats
+
+> *(Chép nguyên văn bản in trang 374: sách in `DAY_OF_MONTH` là `d: 6, dd: 06` và `MINUTE_OF_HOUR` là `mm: 02`, trong khi ví dụ xuyên suốt là ngày 16 và phút 32 — đây là typo của bản in.)*
 
 | ChronoField or Purpose | Examples |
 |---|---|

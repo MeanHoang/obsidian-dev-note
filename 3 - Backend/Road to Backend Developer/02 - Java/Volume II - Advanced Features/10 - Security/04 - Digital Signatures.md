@@ -241,22 +241,34 @@ x: 146c09f881656cc6c51f27ea6c3a91b85ed1d70a
 
 **Dịch:** Alice viết message và **ký message digest bằng private key của mình**. Bob lấy một bản public key của Alice, rồi **dùng public key để xác minh chữ ký**. Nếu xác minh qua, Bob **chắc chắn hai điều**: (1) **message gốc chưa bị sửa**; (2) **message được ký bởi Alice** — người giữ private key khớp với public key mà Bob dùng để xác minh.
 
+**Figure 10.9: Public key signature exchange with DSA**
+
 ```
-   Alice                                       Bob
-   ─────                                       ───
-   message                                     message
-      │                                           │
-      ▼                                           ▼
-   message digest                             message digest
-      │                                           │
-      │ ký bằng PRIVATE key                       │
-      ▼                                           ▼
-   signature  ─────────── gửi ──────────►  verify bằng PUBLIC key
-                                                  │
-                                                  ▼
-                                   OK → message chưa bị sửa
-                                      + đúng là Alice ký
+   ┌─────────────────────────────────────────────────────────────┐
+   │  ┌──────────────────┐                                       │
+   │  │     Message      │                                       │
+   │  │  ──────────────  │ ╲                                     │
+   │  │  ──────────────  │  ╲      ┌──────────────────┐          │
+   │  │  ──────────────  │   ╲───▶ │       DSA        │          │
+   │  └──────────────────┘   ╱     │     signing      │ ─────┐   │
+   │  ┌──────────────────┐  ╱      │    algorithm     │      │   │
+   │  │    Signature     │ ╱   ┌─▶ └──────────────────┘      │   │
+   │  │  ──────────────  │     │                             │   │
+   │  └──────────────────┘     │                             │   │
+   │            ▲              │                             │   │
+   │            │        ⚿ DSA private key                   │   │
+   │            │                                            │   │
+   │            │        ⚿ Public key                        │   │
+   │            │              │                             │   │
+   │            │              │    ┌──────────────────┐     │   │
+   │            │              └──▶ │       DSA        │     │   │
+   │            └──────────────────▶│   verification   │ ──▶ ✓   │
+   │                                │    algorithm     │         │
+   │                                └──────────────────┘         │
+   └─────────────────────────────────────────────────────────────┘
 ```
+
+*Hình in dùng biểu tượng chìa khoá cho private key và public key; message + signature được đưa vào cả signing algorithm lẫn verification algorithm, kết quả verification là dấu ✓.*
 
 > *"You can see why the security of private keys is so important. If someone steals Alice's private key, or if a government can require her to turn it over, then she is in trouble. The thief or a government agent can now impersonate her by sending messages, such as money transfer instructions, that others will believe came from Alice."*
 
@@ -433,16 +445,53 @@ jar verified.
 
 **Dịch:** Cách giải quyết thông thường **rất đơn giản**: giả sử bạn và người lạ **có một người quen chung mà cả hai đều tin**. Người lạ **gặp trực tiếp người quen đó** và trao đĩa chứa public key. Người quen sau đó gặp bạn, **đảm bảo rằng anh ta đã gặp người lạ và người lạ đúng là làm cho công ty phần mềm nổi tiếng kia**, rồi đưa đĩa cho bạn. Như vậy **người quen bảo lãnh cho tính xác thực của người lạ**.
 
+**Figure 10.10: Authentication through a trusted intermediary**
+
+```
+                Private key                Public key file
+                    ⚿                    ┌──────────────┐
+     ☺                        Trusted    │      ⚿       │            ☺
+   Stranger        ⚿      ═══ channel ══▶└──────────────┘         Friend
+                Public key                       │
+                                                 │  Trusted
+                                                 │  channel
+                                                 ▼
+                                         ┌──────────────┐
+                              ☺          │      ⚿       │
+                             You         └──────────────┘
+```
+
 > *"In fact, your acquaintance does not actually need to meet you. Instead, he can use his private key to sign the stranger's public key file (see Figure 10.11). When you get the public key file, you verify the signature of your friend, and because you trust him, you are confident that he did check the stranger's credentials before applying his signature."*
 
 **Dịch:** Thực ra người quen **không cần gặp bạn**: anh ta **dùng private key của mình ký file public key của người lạ**. Khi nhận file public key, bạn **xác minh chữ ký của bạn mình**, và vì tin anh ta nên **yên tâm rằng anh ta đã kiểm tra giấy tờ của người lạ trước khi ký**.
 
+**Figure 10.11: Authentication through a trusted intermediary's signature**
+
 ```
-   người lạ  ── public key ──►  người quen (ký bằng private key)
-                                        │
-                                        ▼
-                                       bạn  ── verify chữ ký người quen
-                                             → tin public key của người lạ
+              Private key                  Key file          Private key
+                  ⚿                    ┌──────────────┐          ⚿
+    ☺                       Trusted    │      ⚿       │                    ☺
+ Stranger         ⚿     ═══ channel ══▶└──────────────┘          ⚿      Friend
+              Public key                       │              Public key
+                                               ▼                  ║
+                                        ┌──────────────┐          ║
+                                        │     Sign     │◀═════════╝
+                                        └──────────────┘        Trusted
+                                               │                channel
+                        Signed key file        ▼                    ║
+                                        ┌──────────────┐            ║
+                                        │      ⚿       │            ║
+                                        ├──────────────┤            ║
+                                        │      ⚿       │            ║
+                                        └──────────────┘            ║
+                                               │                    ║
+                                               ▼                    ║
+                                        ┌──────────────┐            ║
+                                        │    Verify    │◀═══════════╝
+                                        └──────────────┘
+                                            ☺      │
+                                           You     ▼
+                                                   ✓
 ```
 
 > *"However, you might not have a common acquaintance. Some trust models assume that there is always a "chain of trust"—a chain of mutual acquaintances—so that you trust every member of that chain. In practice, of course, that isn't always true. You might trust your friend, Alice, and you know that Alice trusts Bob, but you don't know Bob and aren't sure that you trust him."*

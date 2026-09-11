@@ -50,7 +50,7 @@ java --illegal-access=deny --add-exports java.sql.rowset/com.sun.rowset=ALL_UNNA
 
 **Dịch:** Khi đó, khởi chạy ứng dụng với flag **`--add-exports`**. Chỉ định **module và package muốn export**, cùng **module mà bạn muốn export package đó tới** — trong trường hợp này là **unnamed module**.
 
-> **Ghi chú của người viết note:** trong bản trích, ví dụ `--add-exports` ghi `ALL_UNNAMED` (gạch dưới) còn ví dụ `--add-opens` ngay dưới ghi `ALL-UNNAMED` (gạch nối). Cả hai đều được giữ **nguyên văn** như bản trích.
+> *(Chép nguyên văn bản in trang 518: `--add-exports java.sql.rowset/com.sun.rowset=ALL_UNNAMED` — dùng dấu gạch dưới, trong khi bản in trang 519 ở ví dụ `--add-opens` lại ghi `ALL-UNNAMED` với dấu gạch nối. Đã đối chiếu ảnh trang PDF: đây không phải lỗi bóc tách văn bản mà là typo của bản in; tên module đích đúng theo `java` launcher là `ALL-UNNAMED`.)*
 
 ### `--add-opens` — mở package cho reflection từ dòng lệnh
 
@@ -64,7 +64,7 @@ java --illegal-access=deny --add-exports java.sql.rowset/com.sun.rowset=ALL_UNNA
 
 | Flag | Công dụng |
 |---|---|
-| `--add-exports module/package=target` | **export** package của một module tới module đích (thường là `ALL_UNNAMED`) |
+| `--add-exports module/package=target` | **export** package của một module tới module đích (thường là `ALL-UNNAMED`) |
 | `--add-opens module/package=target` | **open** package cho **reflective access** tới module đích |
 
 ### File `@options` cho dòng lệnh dài

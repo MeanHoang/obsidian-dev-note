@@ -37,7 +37,7 @@ IntStream zeroToHundred = IntStream.rangeClosed(0, 100); // Upper bound is inclu
 
 ```java
 String sentence = "𝕆 is the set of octonions.";
-    // 𝕆 is the UTF-16 encoding of the letter , unicode U+1D546
+    // 𝕆 is the UTF-16 encoding of the letter 𝕆, unicode U+1D546
 IntStream codes = sentence.codePoints();
     // The stream with hex values 1D546 20 69 73 20 . . .
 ```

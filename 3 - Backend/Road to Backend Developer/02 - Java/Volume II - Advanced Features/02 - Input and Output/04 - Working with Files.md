@@ -599,7 +599,7 @@ try (DirectoryStream<Path> entries = Files.newDirectoryStream(dir, "*.java"))
 
 > **Note (sách):** *"The FileVisitor interface is a generic type, but it isn’t likely that you’ll ever want something other than a FileVisitor<Path>. The walkFileTree method is willing to accept a FileVisitor<? super Path>, but Path does not have an abundance of supertypes."*
 >
-> **Dịch:** Interface `FileVisitor` là **generic type**, nhưng **khó có khả năng bạn muốn thứ gì khác `FileVisitor<Path>`**. Method `walkFileTree` **sẵn lòng nhận `FileVisitor<? super Path>`**, nhưng **`Path` không có nhiều supertype cho lắm**. (Xem [[08 - Generic Programming]].)
+> **Dịch:** Interface `FileVisitor` là **generic type**, nhưng **khó có khả năng bạn muốn thứ gì khác `FileVisitor<Path>`**. Method `walkFileTree` **sẵn lòng nhận `FileVisitor<? super Path>`**, nhưng **`Path` không có nhiều supertype cho lắm**. (Xem [[07 - Wildcard Types|chương 8 Volume I]].)
 
 > *"A convenience class SimpleFileVisitor implements the FileVisitor interface. All methods except visitFileFailed do nothing and continue. The visitFileFailed method throws the exception that caused the failure, thereby terminating the visit."*
 

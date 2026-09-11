@@ -5,6 +5,18 @@
 
 ---
 
+## Mở đầu chương 6
+
+> *"Time flies like an arrow, and we can easily set a starting point and count forward and backward in seconds. So why is it so hard to deal with time? The problem is humans. All would be easy if we could just tell each other: "Meet me at 1523793600, and don't be late!" But we want time to relate to daylight and the seasons. That's where things get complicated."*
+
+**Dịch:** Thời gian trôi như một mũi tên, và ta dễ dàng đặt một mốc bắt đầu rồi **đếm tới đếm lui theo giây**. Vậy tại sao xử lý thời gian lại khó đến thế? **Vấn đề nằm ở con người.** Mọi thứ sẽ đơn giản nếu ta chỉ cần bảo nhau: *"Gặp tôi lúc 1523793600, đừng trễ nhé!"* Nhưng ta lại muốn thời gian **gắn với ánh sáng ban ngày và các mùa**. Đó là lúc mọi thứ trở nên phức tạp.
+
+> *"Java 1.0 had a Date class that was, in hindsight, naïve, and had most of its methods deprecated in Java 1.1 when a Calendar class was introduced. Its API wasn't stellar, its instances were mutable, and it didn't deal with issues such as leap seconds. The third time is a charm, and the java.time API introduced in Java 8 has remedied the flaws of the past and should serve us for quite some time. In this chapter, you will learn what makes time computations so vexing, and how the Date and Time API solves these issues."*
+
+**Dịch:** Java 1.0 có class `Date` mà nhìn lại thì khá **ngây thơ**, và phần lớn method của nó bị **deprecated ở Java 1.1** khi class `Calendar` ra đời. API của `Calendar` **không xuất sắc**, instance của nó **mutable**, và nó **không xử lý được các vấn đề như leap second**. Lần thứ ba mới là lần may mắn: **`java.time` API giới thiệu ở Java 8** đã khắc phục các khiếm khuyết trong quá khứ và sẽ phục vụ ta được khá lâu. Trong chương này, bạn sẽ học **điều gì khiến các phép tính thời gian phiền phức đến vậy**, và **Date and Time API giải quyết chúng ra sao**.
+
+---
+
 ## 6.1 The Time Line
 
 ### Giây được định nghĩa thế nào

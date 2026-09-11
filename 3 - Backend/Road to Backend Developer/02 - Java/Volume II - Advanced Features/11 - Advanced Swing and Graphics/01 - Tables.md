@@ -5,6 +5,14 @@
 
 ---
 
+## Mở đầu chương 11
+
+> *"In this chapter, we continue our discussion of the Swing user interface toolkit and AWT graphics from Volume I. We focus on techniques that are applicable to both client-side user interfaces and server-side generation of graphics and images. Swing has sophisticated components for rendering tables and trees. With the 2D graphics API, you can produce vector art of arbitrary complexity. The ImageIO API lets you manipulate raster images. Finally, you can use the printing API to generate printouts and PostScript files."*
+
+**Dịch:** Chương này tiếp nối phần bàn về **Swing user interface toolkit** và **AWT graphics** từ Volume I. Sách tập trung vào các kỹ thuật dùng được **cho cả user interface phía client lẫn việc sinh graphics và image phía server**. Swing có các component tinh vi để render **table** và **tree**. Với **2D graphics API**, bạn tạo được vector art **phức tạp tuỳ ý**. **ImageIO API** cho phép thao tác **raster image**. Cuối cùng, **printing API** dùng để sinh bản in và file PostScript.
+
+---
+
 ## 11.1. Tables
 
 > *"The JTable component displays a two-dimensional grid of objects. Tables are common in user interfaces, and the Swing team has put a lot of effort into the table control. Tables are inherently complex, but—perhaps more successfully than other Swing classes—the JTable component hides much of that complexity. You can produce fully functional tables with rich behavior by writing a few lines of code. You can also write more code and customize the display and behavior for your specific applications."*
@@ -624,7 +632,7 @@ sorter.setRowFilter(RowFilter.andFilter(List.of(
 
 > *"The RowFilter<M, I> class has two type parameters—the types for the model and for the row identifier. When dealing with tables, the model is always a subtype of TableModel and the identifier type is Integer. (At some point in the future, other components might also support row filtering. For example, to filter rows in a JTree, one might use a RowFilter<TreeModel, TreePath>.)"*
 
-**Dịch:** Class `RowFilter<M, I>` có **hai type parameter** — kiểu của **model** và kiểu của **row identifier**. Với table thì model **luôn là subtype của `TableModel`** và kiểu identifier là **`Integer`**. (Xem [[08 - Generic Programming]] về type parameter — sách nói tương lai các component khác cũng có thể hỗ trợ row filtering, ví dụ lọc dòng trong `JTree` có thể dùng `RowFilter<TreeModel, TreePath>`.)
+**Dịch:** Class `RowFilter<M, I>` có **hai type parameter** — kiểu của **model** và kiểu của **row identifier**. Với table thì model **luôn là subtype của `TableModel`** và kiểu identifier là **`Integer`**. (Xem [[07 - Wildcard Types|chương 8 Volume I]] về type parameter — sách nói tương lai các component khác cũng có thể hỗ trợ row filtering, ví dụ lọc dòng trong `JTree` có thể dùng `RowFilter<TreeModel, TreePath>`.)
 
 > *"A row filter must implement the method"*
 

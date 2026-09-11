@@ -182,7 +182,7 @@ secrand.setSeed(b);
 
 > *"If you don't seed the random number generator, it will compute its own 20-byte seed by launching threads, putting them to sleep, and measuring the exact time when they are awakened."*
 
-**Dịch:** Nếu bạn **không seed** random number generator, nó **tự tính seed 20 byte của mình** bằng cách **khởi động các thread, cho chúng ngủ, rồi đo thời điểm chính xác chúng thức dậy** (xem [[10 - Concurrency]]).
+**Dịch:** Nếu bạn **không seed** random number generator, nó **tự tính seed 20 byte của mình** bằng cách **khởi động các thread, cho chúng ngủ, rồi đo thời điểm chính xác chúng thức dậy** (xem [[01 - Running Threads|chương 10 Volume I]]).
 
 > **Note (sách):** *"This algorithm is not known to be safe. In the past, algorithms that relied on the timing of some components of the computer, such as hard disk access time, were shown not to be completely random."*
 >
