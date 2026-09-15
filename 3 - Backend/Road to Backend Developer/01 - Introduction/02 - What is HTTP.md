@@ -212,13 +212,13 @@ Request 2 (giỏ hàng) → rơi vào Server B → B ngơ ngác "Minh là ai???"
 
 Nhớ bài 01 (keep-alive, connection): đây là lý do các version ra đời.
 
-| Version             | Điểm chính                                                   | Vấn đề giải quyết                                                                                                                   |
-| ------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
-| **HTTP/0.9** (1991) | Chỉ có `GET`, trả HTML trần                                  | Sơ khai                                                                                                                             |
-| **HTTP/1.0** (1996) | Thêm **headers**, status code, method khác                   | Mở rộng được                                                                                                                        |
+| Version             | Điểm chính                                                   | Vấn đề giải quyết                                                                                                                  |
+| ------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **HTTP/0.9** (1991) | Chỉ có `GET`, trả HTML trần                                  | Sơ khai                                                                                                                            |
+| **HTTP/1.0** (1996) | Thêm **headers**, status code, method khác                   | Mở rộng được                                                                                                                       |
 | **HTTP/1.1** (1997) | **Keep-alive** (giữ connection), pipelining                  | Khỏi bắt tay TCP lại mỗi request ([[01 - How does the internet work#3.1. TCP vs UDP (tầng Transport) — điểm cốt lõi\|nhớ bài 01]]) |
-| **HTTP/2** (2015)   | **Multiplexing** — nhiều request song song trên 1 connection | Hết cảnh xếp hàng (head-of-line)                                                                                                    |
-| **HTTP/3** (2022)   | Chạy trên **UDP (QUIC)** thay TCP                            | Nhanh hơn, ít trễ khi mạng chập chờn                                                                                                |
+| **HTTP/2** (2015)   | **Multiplexing** — nhiều request song song trên 1 connection | Hết cảnh xếp hàng (head-of-line)                                                                                                   |
+| **HTTP/3** (2022)   | Chạy trên **UDP (QUIC)** thay TCP                            | Nhanh hơn, ít trễ khi mạng chập chờn                                                                                               |
 
 > Xu hướng: mỗi đời đều nhắm **giảm độ trễ + tái dùng kết nối tốt hơn**. Bản chất request/response, method, status code **vẫn giữ nguyên** qua mọi version — nên học kỹ mục 2–5 là dùng được hết.
 
