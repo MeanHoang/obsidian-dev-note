@@ -55,6 +55,7 @@ Index toàn bộ note về Firebase + Google Cloud, tổ chức theo 7 nhóm dù
 - [[0-Cloud Tasks]] — task queue HTTP, retry exponential backoff
 - [[1-Pub-Sub]] — event bus pub/sub, push vs pull, deduplication
 - [[2-Tasks vs Pub-Sub]] — *(chưa viết)* — khi nào dùng cái nào
+- [[3-Pub-Sub Message Ordering]] — ordering key: xử lý tuần tự per-entity, diệt race read-modify-write
 
 ### 04 - Storage & Hosting (file + static)
 - [[0-Cloud Storage]] — *(chưa viết)* — bucket, signed URL, lifecycle
