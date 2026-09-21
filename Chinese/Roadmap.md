@@ -137,7 +137,13 @@ Nguồn: [Kickstart your Chinese character learning with the 100 most common rad
 | A2 | **99** | HSK 2–3 | [A2 grammar points](https://resources.allsetlearning.com/chinese/grammar/A2_grammar_points) |
 | B1 | **143** | HSK 3–4 | [B1 grammar points](https://resources.allsetlearning.com/chinese/grammar/B1_grammar_points) |
 
-💭 Cách dùng: **mở đúng trang của cấp bạn đang học, làm từ trên xuống**. Mỗi điểm ngữ pháp → 1 note trong `Chinese/01 - Ngữ pháp/`. Không cần tự nghĩ ra thứ tự học.
+💭 **Cách dùng — đã điều chỉnh sau khi chốt giáo trình** (xem [[Tài liệu - chọn giáo trình]]):
+
+- **Xương sống là giáo trình New HSK 3.0 bản tiếng Việt** — nó quyết định học gì, theo thứ tự nào. Giáo trình đã sắp sẵn bài, người mới không nên tự sắp.
+- **Grammar Wiki là tài liệu tra cứu**, không phải syllabus: khi sách giải thích một điểm ngữ pháp chưa đủ rõ → mở đúng điểm đó trên wiki đọc thêm ví dụ.
+- Mỗi điểm ngữ pháp đã học → 1 note trong `Chinese/01 - Ngữ pháp/`.
+
+💭 Dùng bảng cấp bên dưới để biết **mình đang ở đâu trong bức tranh tổng**, và để **tick tiến độ** — không phải để học tuần tự từ trên xuống.
 
 ---
 
@@ -248,9 +254,9 @@ Nguồn: [Spaced repetition software: What it is and how to use it to learn Chin
 💭 *(Phần này là nhận định của mình — không trích từ nguồn nào ở trên, chọn theo mức phổ biến trong cộng đồng học tiếng Trung.)*
 
 **Bắt buộc:**
+- **Giáo trình New HSK 3.0 — bản tiếng Việt** ⭐ tài liệu chính, xem chi tiết & giá ở [[Tài liệu - chọn giáo trình]]. ⚠️ **Đừng mua nhầm bộ HSK Standard Course cũ** (bám HSK 2.0, thiếu ~một nửa từ vựng cấp thấp).
 - **Pleco** — từ điển Trung–Anh, tra bằng camera / nét vẽ. Miễn phí phần lõi.
 - **Anki** — SRS (dùng theo đúng nguyên tắc mục 6).
-- **Giáo trình HSK Standard Course** — 📖 Khanji School có nhắc giáo trình chính thức cho HSK 3.0 đang phát hành, ra mainland trước, quốc tế trong 2026 → nếu mua mới thì **check phiên bản 3.0**.
 
 **Nên có:** HelloChinese (người mới), Du Chinese (graded reader có audio), iTalki (tutor, từ giai đoạn 3), IME pinyin.
 
@@ -301,7 +307,8 @@ Chinese/
 
 ## 12. Việc làm ngay tuần này
 
-- [ ] Mở [A1 grammar points](https://resources.allsetlearning.com/chinese/grammar/A1_grammar_points) — bookmark, đây là syllabus của bạn
+- [ ] **Đặt mua combo giáo trình New HSK 3.0 cấp 1 + sổ tay (~297k)** — xem [[Tài liệu - chọn giáo trình]]
+- [ ] Bookmark [A1 grammar points](https://resources.allsetlearning.com/chinese/grammar/A1_grammar_points) làm tài liệu tra cứu
 - [ ] Cài Pleco + Anki, bật bàn phím pinyin
 - [ ] Học bảng thanh mẫu + vận mẫu → note đầu tiên trong `00 - Pinyin/`
 - [ ] Luyện 4 thanh với 妈/麻/马/骂, **tự ghi âm và so với audio gốc**
