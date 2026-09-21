@@ -1,6 +1,9 @@
 # 🇨🇳 Roadmap học tiếng Trung
 
 > Lộ trình từ số 0 → giao tiếp được + thi HSK. Cập nhật: 2026-09-21.
+>
+> File này là phần **học THẾ NÀO** — thời gian, phương pháp, Anki, routine.
+> Phần **học CÁI GÌ, theo thứ tự nào** tách sang [[Lộ trình kiến thức]].
 
 ## 📚 Nguồn của roadmap này
 
@@ -45,7 +48,7 @@ Roadmap không tự nghĩ ra. Xương sống lấy từ 4 nguồn dưới đây,
 | HSK 3 | ~280h | **~14 tháng** |
 | HSK 4 | ~480h | **~24 tháng** |
 
-⚠️ Và đây mới là con số cho **HSK 2.0**. HSK 3.0 tăng gần gấp đôi từ vựng cấp thấp (xem mục 2), nên **cấp 3 của HSK 3.0 (1.000 từ) gần với cấp 4 cũ (1.200 từ)** → thực tế cần ~20–24 tháng chứ không phải 14.
+✅ Bảng giờ này là của **HSK 2.0** — đúng chuẩn của bộ sách đã chọn ([[Sách - mua gì]]), nên áp thẳng được, không cần điều chỉnh.
 
 💭 **Kết luận thực dụng:** đừng đặt mục tiêu "1 năm giỏi tiếng Trung". Đặt mục tiêu **"1 năm đạt HSK 1–2 vững và nói được câu đơn"**, rồi tính tiếp. Roadmap bên dưới chia giai đoạn theo **năng lực**, không theo tháng, để bạn tự gắn lịch vào.
 
@@ -73,7 +76,9 @@ Roadmap không tự nghĩ ra. Xương sống lấy từ 4 nguồn dưới đây,
 
 > ⚠️ **Ngày áp dụng chính thức HSK 3.0: hai nguồn ghi khác nhau.** Khanji School ghi *"dự kiến có hiệu lực nửa cuối 2026"*, Hack Chinese ghi *"kỳ thi chuyển đổi ngày 13/12/2026"*. **Phải kiểm tra lại tại trang chính thức `chinesetest.cn` trước khi đăng ký thi** — đừng tin bảng này.
 
-💭 Quyết định: học theo **HSK 3.0**, nhưng tài liệu HSK 2.0 vẫn dùng tốt cho giai đoạn đầu vì từ vựng cơ bản trùng nhau nhiều.
+💭 **Quyết định đã chốt: học theo bộ Giáo trình chuẩn HSK (chuẩn 2.0)** — xem lý do và giá ở [[Sách - mua gì]]. Mọi mốc từ vựng trong file này dùng **cột HSK 2.0**.
+
+⚠️ Hệ quả cần nhớ: nếu sau này muốn **thi chứng chỉ theo chuẩn 3.0**, mỗi cấp phải bù thêm khoảng một nửa từ vựng. Cách bù đơn giản: **lùi một bậc** — học hết cấp 1+2 của bộ này (300 từ) ≈ đủ cho cấp 1 của HSK 3.0.
 
 ---
 
@@ -137,9 +142,9 @@ Nguồn: [Kickstart your Chinese character learning with the 100 most common rad
 | A2 | **99** | HSK 2–3 | [A2 grammar points](https://resources.allsetlearning.com/chinese/grammar/A2_grammar_points) |
 | B1 | **143** | HSK 3–4 | [B1 grammar points](https://resources.allsetlearning.com/chinese/grammar/B1_grammar_points) |
 
-💭 **Cách dùng — đã điều chỉnh sau khi chốt giáo trình** (xem [[Tài liệu - chọn giáo trình]]):
+💭 **Cách dùng — đã điều chỉnh sau khi chốt giáo trình** (xem [[Sách - mua gì]]):
 
-- **Xương sống là giáo trình New HSK 3.0 bản tiếng Việt** — nó quyết định học gì, theo thứ tự nào. Giáo trình đã sắp sẵn bài, người mới không nên tự sắp.
+- **Xương sống là bộ Giáo trình chuẩn HSK bản tiếng Việt** — nó quyết định học gì, theo thứ tự nào. Giáo trình đã sắp sẵn bài, người mới không nên tự sắp.
 - **Grammar Wiki là tài liệu tra cứu**, không phải syllabus: khi sách giải thích một điểm ngữ pháp chưa đủ rõ → mở đúng điểm đó trên wiki đọc thêm ví dụ.
 - Mỗi điểm ngữ pháp đã học → 1 note trong `Chinese/01 - Ngữ pháp/`.
 
@@ -254,7 +259,7 @@ Nguồn: [Spaced repetition software: What it is and how to use it to learn Chin
 💭 *(Phần này là nhận định của mình — không trích từ nguồn nào ở trên, chọn theo mức phổ biến trong cộng đồng học tiếng Trung.)*
 
 **Bắt buộc:**
-- **Giáo trình New HSK 3.0 — bản tiếng Việt** ⭐ tài liệu chính, xem chi tiết & giá ở [[Tài liệu - chọn giáo trình]]. ⚠️ **Đừng mua nhầm bộ HSK Standard Course cũ** (bám HSK 2.0, thiếu ~một nửa từ vựng cấp thấp).
+- **Giáo trình chuẩn HSK 1 + Sách bài tập** (bản tiếng Việt, Nhân Trí Việt) ⭐ tài liệu chính — 356.000₫, xem [[Sách - mua gì]].
 - **Pleco** — từ điển Trung–Anh, tra bằng camera / nét vẽ. Miễn phí phần lõi.
 - **Anki** — SRS (dùng theo đúng nguyên tắc mục 6).
 
@@ -307,7 +312,8 @@ Chinese/
 
 ## 12. Việc làm ngay tuần này
 
-- [ ] **Đặt mua combo giáo trình New HSK 3.0 cấp 1 + sổ tay (~297k)** — xem [[Tài liệu - chọn giáo trình]]
+- [ ] **Mua Giáo trình chuẩn HSK 1 + Sách bài tập (356k)** — xem [[Sách - mua gì]]
+- [ ] Tải **file đáp án miễn phí** tại [trang bộ sách Nhân Trí Việt](https://www.nhantriviet.com/GiaoTrinhChuanHSK)
 - [ ] Bookmark [A1 grammar points](https://resources.allsetlearning.com/chinese/grammar/A1_grammar_points) làm tài liệu tra cứu
 - [ ] Cài Pleco + Anki, bật bàn phím pinyin
 - [ ] Học bảng thanh mẫu + vận mẫu → note đầu tiên trong `00 - Pinyin/`

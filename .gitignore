@@ -1,3 +1,18 @@
 # Folder riêng tư, không đẩy lên git
 /Avada/
 /Daily/
+
+# --- Tài liệu nguồn: KHÔNG commit ---
+# Scan giáo trình + audio có bản quyền (BLCU Press / Nhân Trí Việt), và nặng:
+# riêng Chinese/ đã 4,7 GB, file lớn nhất 435 MB. GitHub chặn cứng file > 100 MB
+# nên còn mấy file này trong index là không push được.
+# Vault chỉ giữ ghi chú; sách và audio để local.
+*.pdf
+*.mp3
+*.m4a
+*.epub
+
+# Ảnh trang sách đã render
+**/pages/*.jpg
+
+.DS_Store
