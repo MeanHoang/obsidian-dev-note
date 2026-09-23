@@ -12,3 +12,5 @@ claude --dangerously-skip-permissions
 codex --dangerously-bypass-approvals-and-sandbox
 
 grok --yolo
+
+https://cge.edu.vn/kien-thuc/giao-trinh-chuan-hsk-la-gi.html
