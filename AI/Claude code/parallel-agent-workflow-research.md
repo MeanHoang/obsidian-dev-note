@@ -2,7 +2,7 @@
 
 > Research từ ~12 bài blog (Addy Osmani, Anthropic docs, cmux, Zed, Conductor)
 > về multi-agent orchestration, agent harness, parallel agent workflow.
-> Đã đối chiếu với [[Cải thiện AI harness - Vấn đề thực tế và lộ trình parallel agent tự kiểm]]
+> Đã đối chiếu với [[1.Cải thiện AI harness - Vấn đề thực tế và lộ trình parallel agent tự kiểm]]
 > để lọc ra **cái phù hợp với workflow Joy**, không phải lý thuyết chung chung.
 
 ---
