@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sơ đồ agent harness</title>
+<style>
+:root{
+  --bg:#f7f7f5; --card:#ffffff; --ink:#1d1d1f; --muted:#6b6b70; --line:#d9d9de; --line-strong:#9a9aa2;
+  --owner:#b42318; --owner-bg:#fdecea;
+  --parent:#1f4fd1; --parent-bg:#e8eefc;
+  --scout:#0f7a6b; --scout-bg:#e3f4f1;
+  --impl:#8a4b00; --impl-bg:#fbeedd;
+  --verify:#6b3fc4; --verify-bg:#efe8fb;
+  --review:#b0305f; --review-bg:#fbe7ef;
+  --gate:#c2410c; --gate-bg:#fff1e6;
+  --shelf-bg:#f1f1ee;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141416; --card:#1d1d20; --ink:#ececf0; --muted:#a0a0a8; --line:#34343a; --line-strong:#6a6a73;
+    --owner:#ff8a80; --owner-bg:#3a1d1b;
+    --parent:#8fb0ff; --parent-bg:#1c2640;
+    --scout:#5fd3c0; --scout-bg:#15302c;
+    --impl:#f0b36a; --impl-bg:#35281a;
+    --verify:#bda2ff; --verify-bg:#2a2140;
+    --review:#ff8fb8; --review-bg:#3a1c29;
+    --gate:#ffa266; --gate-bg:#3a2415;
+    --shelf-bg:#202024;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141416; --card:#1d1d20; --ink:#ececf0; --muted:#a0a0a8; --line:#34343a; --line-strong:#6a6a73;
+  --owner:#ff8a80; --owner-bg:#3a1d1b;
+  --parent:#8fb0ff; --parent-bg:#1c2640;
+  --scout:#5fd3c0; --scout-bg:#15302c;
+  --impl:#f0b36a; --impl-bg:#35281a;
+  --verify:#bda2ff; --verify-bg:#2a2140;
+  --review:#ff8fb8; --review-bg:#3a1c29;
+  --gate:#ffa266; --gate-bg:#3a2415;
+  --shelf-bg:#202024;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 16px 64px}
+h1{font-size:26px;margin:0 0 6px}
+h2{font-size:20px;margin:40px 0 10px}
+h3{font-size:16px;margin:22px 0 8px}
+p.lead{color:var(--muted);margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.scroll{overflow-x:auto}
+code{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--shelf-bg);padding:1px 5px;border-radius:4px}
+.key{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:13px;color:var(--muted)}
+.key span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:26px;height:0;border-top:2px solid var(--line-strong);display:inline-block}
+.sw.dash{border-top-style:dashed}
+.sw.gate{border-top:3px solid var(--gate)}
+ol.bluf{margin:0;padding-left:20px}
+ol.bluf li{margin:4px 0}
+
+/* flows */
+.flow{list-style:none;margin:0;padding:0;counter-reset:s}
+.flow li{position:relative;display:grid;grid-template-columns:34px 200px 1fr;gap:10px;align-items:start;padding:9px 0;border-top:1px solid var(--line)}
+.flow li:first-child{border-top:0}
+.flow li::before{counter-increment:s;content:counter(s);width:26px;height:26px;border-radius:50%;background:var(--shelf-bg);display:grid;place-items:center;font-size:13px;font-weight:600;color:var(--muted)}
+.flow li.loop{background:linear-gradient(90deg,var(--shelf-bg),transparent);}
+.flow li.sub{font-size:13px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.c-owner{color:var(--owner);background:var(--owner-bg)}
+.c-parent{color:var(--parent);background:var(--parent-bg)}
+.c-scout{color:var(--scout);background:var(--scout-bg)}
+.c-impl{color:var(--impl);background:var(--impl-bg)}
+.c-verify{color:var(--verify);background:var(--verify-bg)}
+.c-review{color:var(--review);background:var(--review-bg)}
+.gate{display:inline-block;font-size:12px;font-weight:700;color:var(--gate);background:var(--gate-bg);padding:1px 7px;border-radius:5px;margin-left:4px}
+.blk{font:12px ui-monospace,Menlo,monospace;color:var(--muted)}
+.loophead{font-size:13px;font-weight:600;color:var(--muted);padding:10px 0 2px;border-top:1px solid var(--line)}
+
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-top:1px solid var(--line)}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);border-top:0}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tabs button{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;border-radius:8px;cursor:pointer}
+.tabs button[aria-selected="true"]{border-color:var(--parent);color:var(--parent);background:var(--parent-bg);font-weight:600}
+.panel[hidden]{display:none}
+.note{font-size:13px;color:var(--muted);margin-top:10px}
+
+@media (max-width:640px){
+  .flow li{grid-template-columns:30px 1fr}
+  .flow li .chips{grid-column:2}
+  .flow li .what{grid-column:2}
+}
+
+/* svg text */
+svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;fill:var(--ink)}
+svg .t-muted{fill:var(--muted)}
+svg .t-mono{font-family:ui-monospace,Menlo,monospace}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Sơ đồ agent harness Joy</h1>
+<p class="lead">Nguồn: <code>Sổ tay harness.md</code> + <code>.claude/roles/*.md</code> + <code>.claude/workflow/blocks/K0–K7</code> (bản 29/09/2026, đã bỏ tracer, decider).</p>
+
+<div class="card">
+<ol class="bluf">
+  <li><b>Hình sao:</b> anh chỉ nói chuyện với <b>parent</b>. Parent giao việc cho từng sub agent, và sub agent chỉ trả kết quả về parent.</li>
+  <li><b>Sub agent không nói chuyện ngang với nhau.</b> Role nào cần việc của role khác thì trả về parent, để parent giao tiếp.</li>
+  <li>Mỗi lần giao việc, parent dán <b>file role</b> (<code>roles/&lt;role&gt;.md</code>) và <b>khối</b> sẽ chạy (<code>blocks/K*.md</code>) vào prompt.</li>
+  <li>Bộ nhớ chung của task nằm ở <code>.claude/ship/&lt;task&gt;/</code>. Parent giữ <code>progress.md</code> và <code>decisions.md</code>.</li>
+  <li>🚦 = parent dừng, báo anh, rồi kết thúc lượt. Im lặng không được tính là đồng ý.</li>
+</ol>
+</div>
+
+<h2>1. Ai nói chuyện với ai</h2>
+<div class="card scroll">
+<svg viewBox="0 0 960 640" style="min-width:760px;width:100%;height:auto" role="img" aria-label="Sơ đồ hình sao: anh ↔ parent ↔ 4 sub agent">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--line-strong)"/>
+    </marker>
+    <marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--gate)"/>
+    </marker>
+  </defs>
+
+  <!-- Owner -->
+  <rect x="370" y="14" width="220" height="62" rx="10" fill="var(--owner-bg)" stroke="var(--owner)" stroke-width="1.5"/>
+  <text x="480" y="41" text-anchor="middle" font-size="16" font-weight="700" style="fill:var(--owner)">Anh (owner)</text>
+  <text x="480" y="61" text-anchor="middle" font-size="12" class="t-muted">chỉ xuất hiện ở các 🚦</text>
+
+  <!-- worktree fence -->
+  <rect x="8" y="150" width="944" height="482" rx="14" fill="none" stroke="var(--line-strong)" stroke-dasharray="6 5"/>
+  <text x="24" y="622" font-size="12" class="t-muted">Worktree của 1 task (Orca) · hook chặn cứng mọi agent: branch-guard · memory-consent · block-translation-append · auto-lint · require-worktree-deps …</text>
+
+  <!-- owner <-> parent -->
+  <line x1="455" y1="78" x2="455" y2="156" stroke="var(--gate)" stroke-width="2.5" marker-end="url(#ahg)"/>
+  <line x1="505" y1="156" x2="505" y2="78" stroke="var(--gate)" stroke-width="2.5" marker-end="url(#ahg)"/>
+  <text x="440" y="112" text-anchor="end" font-size="12">lệnh: /bug-check, /joy-ship, "fix", "commit", "push"</text>
+  <text x="520" y="106" font-size="12" style="fill:var(--gate)" font-weight="600">🚦 báo ở gate:</text>
+  <text x="520" y="122" font-size="12" class="t-muted">verdict · Gate 1/2 · 2 ảnh sửa live</text>
+  <text x="520" y="138" font-size="12" class="t-muted">· trước commit · trước push</text>
+
+  <!-- Parent -->
+  <rect x="320" y="158" width="320" height="86" rx="12" fill="var(--parent-bg)" stroke="var(--parent)" stroke-width="2"/>
+  <text x="480" y="186" text-anchor="middle" font-size="17" font-weight="700" style="fill:var(--parent)">parent (session chính)</text>
+  <text x="480" y="206" text-anchor="middle" font-size="12">điều phối · tự mở file:line quan trọng để verify lại</text>
+  <text x="480" y="223" text-anchor="middle" font-size="12">hỏi anh · commit (K6) · ship khi bảo (K7)</text>
+  <text x="480" y="239" text-anchor="middle" font-size="11" class="t-muted">không tự code · không tự review diff của mình</text>
+
+  <!-- bus -->
+  <line x1="480" y1="246" x2="480" y2="300" stroke="var(--line-strong)" stroke-width="2"/>
+  <line x1="165" y1="300" x2="795" y2="300" stroke="var(--line-strong)" stroke-width="2"/>
+  <text x="492" y="272" font-size="12">↓ giao: file role + khối K*</text>
+  <text x="492" y="288" font-size="12" class="t-muted">↑ trả: bằng chứng (dạng cố định)</text>
+
+  <!-- 4 subagents: x = 75,285,495,705 ; w=180 -->
+  <g>
+    <line x1="165" y1="300" x2="165" y2="346" stroke="var(--line-strong)" stroke-width="2" marker-end="url(#ah)"/>
+    <rect x="75" y="348" width="180" height="118" rx="10" fill="var(--scout-bg)" stroke="var(--scout)" stroke-width="1.5"/>
+    <text x="165" y="372" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--scout)">scout</text>
+    <text x="165" y="391" text-anchor="middle" font-size="11" class="t-mono t-muted">K1 · feature 1a/2a</text>
+    <text x="165" y="412" text-anchor="middle" font-size="12">đọc code, setting, log</text>
+    <text x="165" y="428" text-anchor="middle" font-size="12">+ coupling ở surface mình</text>
+    <text x="165" y="452" text-anchor="middle" font-size="11" class="t-muted">bảng claim &#124; nguồn</text>
+  </g>
+  <g>
+    <line x1="375" y1="300" x2="375" y2="346" stroke="var(--line-strong)" stroke-width="2" marker-end="url(#ah)"/>
+    <rect x="285" y="348" width="180" height="118" rx="10" fill="var(--verify-bg)" stroke="var(--verify)" stroke-width="1.5"/>
+    <text x="375" y="372" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--verify)">verifier</text>
+    <text x="375" y="391" text-anchor="middle" font-size="11" class="t-mono t-muted">K2 · K3 · K4 · K7</text>
+    <text x="375" y="412" text-anchor="middle" font-size="12">ảnh trước / sau</text>
+    <text x="375" y="428" text-anchor="middle" font-size="12">test FAIL → PASS</text>
+    <text x="375" y="452" text-anchor="middle" font-size="11" class="t-muted">ảnh + output thô</text>
+  </g>
+  <g>
+    <line x1="585" y1="300" x2="585" y2="346" stroke="var(--line-strong)" stroke-width="2" marker-end="url(#ah)"/>
+    <rect x="495" y="348" width="180" height="118" rx="10" fill="var(--impl-bg)" stroke="var(--impl)" stroke-width="1.5"/>
+    <text x="585" y="372" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--impl)">implementer</text>
+    <text x="585" y="391" text-anchor="middle" font-size="11" class="t-mono t-muted">K3</text>
+    <text x="585" y="412" text-anchor="middle" font-size="12">viết code 1 bug / 1 phase</text>
+    <text x="585" y="428" text-anchor="middle" font-size="12">bê pattern có sẵn</text>
+    <text x="585" y="452" text-anchor="middle" font-size="11" class="t-muted">dùng agent team Joy</text>
+  </g>
+  <g>
+    <line x1="795" y1="300" x2="795" y2="346" stroke="var(--line-strong)" stroke-width="2" marker-end="url(#ah)"/>
+    <rect x="705" y="348" width="180" height="118" rx="10" fill="var(--review-bg)" stroke="var(--review)" stroke-width="1.5"/>
+    <text x="795" y="372" text-anchor="middle" font-size="15" font-weight="700" style="fill:var(--review)">reviewer</text>
+    <text x="795" y="391" text-anchor="middle" font-size="11" class="t-mono t-muted">K5 · 1 lần cuối lô</text>
+    <text x="795" y="412" text-anchor="middle" font-size="12">chạy /review của Joy</text>
+    <text x="795" y="428" text-anchor="middle" font-size="12">+ chuẩn riêng của anh</text>
+    <text x="795" y="452" text-anchor="middle" font-size="11" class="t-muted">finding file:line</text>
+  </g>
+  <!-- no sideways -->
+  <text x="480" y="492" text-anchor="middle" font-size="12" style="fill:var(--gate)" font-weight="600">✕ sub agent không gọi nhau, không hỏi anh, không commit</text>
+
+  <!-- shelf -->
+  <rect x="24" y="508" width="912" height="80" rx="10" fill="var(--shelf-bg)" stroke="var(--line)"/>
+  <text x="40" y="530" font-size="13" font-weight="700">.claude/ship/&lt;task&gt;/ · bộ nhớ chung của task</text>
+  <text x="40" y="552" font-size="12" class="t-mono">progress.md · decisions.md</text>
+  <text x="40" y="570" font-size="11" class="t-muted">parent ghi (checkbox + dòng NOW)</text>
+  <text x="300" y="552" font-size="12" class="t-mono">analysis.md · facts.md · plan.html</text>
+  <text x="300" y="570" font-size="11" class="t-muted">Gate 1/2 · scout điền facts khi được bảo</text>
+  <text x="600" y="552" font-size="12" class="t-mono">tmp/shots · mockups · logs</text>
+  <text x="600" y="570" font-size="11" class="t-muted">verifier ghi · xoá được</text>
+</svg>
+<div class="key">
+  <span><i class="sw gate"></i>kênh với anh (có gate 🚦)</span>
+  <span><i class="sw"></i>parent giao việc / nhận kết quả</span>
+  <span><i class="sw dash" style="border-color:var(--line-strong)"></i>ranh giới worktree + hook</span>
+</div>
+</div>
+
+<h2>2. Ba luồng: role nào chạy lúc nào</h2>
+<div class="card">
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-p="bug">/bug-check · bug merchant</button>
+    <button role="tab" aria-selected="false" data-p="stab">/joy-ship STABILIZE · bug tester</button>
+    <button role="tab" aria-selected="false" data-p="ship">/joy-ship SHIP · feature</button>
+  </div>
+
+  <div class="panel" id="p-bug">
+    <ol class="flow">
+      <li><div class="chips"><span class="chip c-parent">parent</span></div><div class="what"><b>Mở việc</b> <span class="blk">K0</span>: worktree từ <code>origin/master</code>, kiểm tra auth, tạo <code>.claude/ship/&lt;task&gt;/</code></div></li>
+      <li><div class="chips"><span class="chip c-scout">scout ×1</span><span class="chip c-scout">×3 song song nếu bug khó</span></div><div class="what"><b>3 chân bằng chứng</b> <span class="blk">K1</span>: vấn đề · code trên master · setting thật (MCP Joy → Chrome admin → Chrome storefront). Parent tự mở lại <code>file:line</code> quan trọng.</div></li>
+      <li><div class="chips"><span class="chip c-verify">verifier</span></div><div class="what"><b>Tái hiện</b> <span class="blk">K2</span>: FE thì chụp ảnh bug, BE thì viết test/script FAIL</div></li>
+      <li><div class="chips"><span class="chip c-parent">parent</span></div><div class="what"><b>Verdict</b> fix / skip / need-data / need-logging + số shop bị ảnh hưởng <span class="gate">🚦 dừng</span></div></li>
+      <li><div class="chips"><span class="chip c-verify">verifier</span></div><div class="what"><b>FE: sửa thử live</b> trên trình duyệt <span class="blk">K3 bước 1</span> → 2 ảnh <span class="gate">🚦 anh duyệt</span></div></li>
+      <li><div class="chips"><span class="chip c-impl">implementer</span></div><div class="what"><b>Code</b> <span class="blk">K3</span>, phải ghi rõ đã bê pattern từ <code>file:line</code> nào</div></li>
+      <li><div class="chips"><span class="chip c-verify">verifier</span></div><div class="what"><b>Xác nhận</b> <span class="blk">K4</span>: ảnh sau / test PASS (output thô)</div></li>
+      <li><div class="chips"><span class="chip c-review">reviewer</span></div><div class="what"><b>Review 1 vòng</b> <span class="blk">K5</span>: 1 sub agent chạy <code>/review</code> → parent tự verify lại từng finding</div></li>
+      <li><div class="chips"><span class="chip c-parent">parent</span></div><div class="what"><b>Commit</b> <span class="blk">K6</span>, chỉ file của task <span class="gate">🚦 chờ chữ "commit"</span></div></li>
+      <li><div class="chips"><span class="chip c-parent">parent</span><span class="chip c-verify">verifier</span></div><div class="what"><b>Ship</b> <span class="blk">K7</span>: push, MR, deploy, test lại staging, chỉ khi anh bảo <span class="gate">🚦</span></div></li>
+    </ol>
+    <p class="note">Fix lớn hoặc đụng nhiều surface → chuyển lên <code>/joy-ship</code> ngay trong worktree đó, mang theo chẩn đoán.</p>
+  </div>
+
+  <div class="panel" id="p-stab" hidden>
+    <ol class="flow">
+      <li><div class="chips"><span class="chip c-parent">parent</span></div><div class="what"><b>Mở việc + đọc danh sách bug</b> <span class="blk">K0</span> (Notion theo số bug)</div></li>
+    </ol>
+    <div class="loophead">↻ Lặp TỪNG bug, tuần tự (scout của các bug khác surface có thể đọc song song)</div>
+    <ol class="flow">
+      <li class="loop"><div class="chips"><span class="chip c-scout">scout</span></div><div class="what"><b>Bằng chứng</b> <span class="blk">K1</span> + <code>git log -S</code> tìm commit gây lỗi. Lỗi do master hoặc dev khác → báo commit + tác giả, không sửa.</div></li>
+      <li class="loop"><div class="chips"><span class="chip c-verify">verifier</span></div><div class="what"><b>Tái hiện</b> <span class="blk">K2</span>: ảnh bug / test FAIL</div></li>
+      <li class="loop"><div class="chips"><span class="chip c-verify">verifier</span><span class="chip c-impl">implementer</span></div><div class="what"><b>Sửa</b> <span class="blk">K3</span>: FE thì sửa thử live, 2 ảnh <span class="gate">🚦</span>, rồi code. BE thì code cho test PASS.</div></li>
+      <li class="loop"><div class="chips"><span class="chip c-verify">verifier</span></div><div class="what"><b>Xác nhận</b> <span class="blk">K4</span></div></li>
+      <li class="loop"><div class="chips"><span class="chip c-parent">parent</span></div><div class="what"><b>Commit bug đó</b> <span class="blk">K6</span> <span class="gate">🚦 "commit"</span></div></li>
+    </ol>
+    <div class="loophead">Hết lô</div>
+    <ol class="flow">
+      <li><div class="chips"><span class="chip c-review">reviewer</span></div><div class="what"><b>Review 1 lần</b> <span class="blk">K5</span> → mỗi finding sửa thành một commit riêng</div></li>
+      <li><div class="chips"><span class="chip c-parent">parent</span><span class="chip c-verify">verifier</span></div><div class="what"><b>Ship</b> <span class="blk">K7</span>, chỉ khi anh bảo <span class="gate">🚦</span></div></li>
+    </ol>
+  </div>
+
+  <div class="panel" id="p-ship" hidden>
+    <ol class="flow">
+      <li><div class="chips"><span class="chip c-scout">scout</span></div><div class="what"><b>1a: verify spec Notion</b>: chỉ tin phần mục tiêu, claim nào cũng phải có nguồn trong code</div></li>
+      <li><div class="chips"><span class="chip c-parent">parent</span></div><div class="what"><b>Gate 1: hiểu</b> → <code>analysis.md</code>, hỏi từng câu, chốt GOAL <span class="gate">🚦</span></div></li>
+      <li><div class="chips"><span class="chip c-scout">scout × mỗi surface</span></div><div class="what"><b>2a: gom facts</b> song song → <code>facts.md</code>. Mỗi scout tự soát coupling của surface mình: field-trigger loop, <code>pickFields</code>/<code>popupFields</code>, surface còn live, shop cũ, Firestore index</div></li>
+      <li><div class="chips"><span class="chip c-parent">parent</span></div><div class="what"><b>2b trade-off → 2c chia phase → 2d <code>plan.html</code></b> <span class="gate">🚦 Gate 2</span></div></li>
+    </ol>
+    <div class="loophead">↻ Lặp từng phase (phase độc lập có thể chạy song song)</div>
+    <ol class="flow">
+      <li class="loop"><div class="chips"><span class="chip c-impl">implementer</span></div><div class="what"><b>Code</b> <span class="blk">K3</span>. Gặp chuyện mới thì trả về parent: A trade-off · B Gate 1 sai <span class="gate">🚦</span> · C đổi hướng</div></li>
+      <li class="loop"><div class="chips"><span class="chip c-verify">verifier</span></div><div class="what"><b>Xác nhận</b> <span class="blk">K4</span>: ảnh / test</div></li>
+      <li class="loop"><div class="chips"><span class="chip c-parent">parent</span></div><div class="what"><b>Commit phase</b> <span class="blk">K6</span> <span class="gate">🚦 "commit"</span></div></li>
+    </ol>
+    <div class="loophead">Hết phase</div>
+    <ol class="flow">
+      <li><div class="chips"><span class="chip c-review">reviewer</span></div><div class="what"><b>Review 1 lần</b> <span class="blk">K5</span></div></li>
+      <li><div class="chips"><span class="chip c-parent">parent</span><span class="chip c-verify">verifier</span></div><div class="what"><b>Ship</b> <span class="blk">K7</span>, chỉ khi anh bảo <span class="gate">🚦</span></div></li>
+    </ol>
+  </div>
+</div>
+
+<h2>3. Mỗi role nhận gì, trả gì, cấm gì</h2>
+<div class="card scroll">
+<table style="min-width:680px">
+  <thead><tr><th>Role</th><th>Nhận từ parent</th><th>Trả về parent</th><th>Không được</th></tr></thead>
+  <tbody>
+    <tr><td><span class="chip c-scout">scout</span></td><td>report/spec, chân hoặc surface được giao, thứ tự đọc setting</td><td>bảng <code>claim | đúng/sai/chưa verify | nguồn</code> + câu query ra số</td><td>đề xuất cách sửa, gọi tool ghi, bấm Save</td></tr>
+    <tr><td><span class="chip c-verify">verifier</span></td><td>store + trạng thái, test target, bằng chứng K1</td><td>đường dẫn ảnh trong <code>tmp/shots</code> + output thô</td><td>sửa code production, ghi DB, nói "đã sửa" mà không có ảnh/output</td></tr>
+    <tr><td><span class="chip c-impl">implementer</span></td><td>K3, card phase hoặc bug, bằng chứng K1/K2, <code>decisions.md</code></td><td>file đã đổi, dòng pattern-reference, eslint, cuối output test</td><td><code>git add/commit/stash/reset</code>, sửa test cho qua, tự quyết khi gặp chuyện mới</td></tr>
+    <tr><td><span class="chip c-review">reviewer</span></td><td>diff, <code>progress.md</code>, <code>decisions.md</code></td><td>kết quả <code>/review</code> + finding theo chuẩn riêng</td><td>đọc lý do của implementer, dùng <code>code-reviewer</code> thay <code>/review</code>, flag lỗi có sẵn</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>4. Bộ tiêu chuẩn của role lớn dần thế nào</h2>
+<div class="card">
+<ol class="flow">
+  <li><div class="chips"><span class="chip c-owner">anh</span></div><div class="what">Sửa lưng một agent, ví dụ <i>"sao lại đặt tên chung chung thế"</i>.</div></li>
+  <li><div class="chips"><span class="chip c-parent">parent</span></div><div class="what">Soạn <b>1 dòng tiêu chuẩn</b> + role áp dụng, rồi hỏi: <i>"Thêm vào Standards của implementer: '…'?"</i> Không tự ghi, vì có hook <code>memory-consent</code>.</div></li>
+  <li><div class="chips"><span class="chip c-owner">anh</span></div><div class="what">Gật → dòng đó được ghi vào mục <code>## Standards</code> của <code>roles/&lt;role&gt;.md</code>, kèm ngày + câu gốc của anh.</div></li>
+  <li><div class="chips"><span class="chip c-parent">parent</span></div><div class="what">Lần giao việc sau, file role được dán vào prompt, nên sub agent đọc tiêu chuẩn ngay từ đầu.</div></li>
+  <li><div class="chips"><span class="chip c-parent">parent</span></div><div class="what">Dòng nào bị vi phạm <b>lần 2</b> → chuyển xuống hook hoặc test (chặn cứng).</div></li>
+</ol>
+</div>
+
+</div>
+<script>
+document.querySelectorAll('.tabs button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',String(x===b))});
+    document.querySelectorAll('.panel').forEach(function(p){p.hidden = p.id !== 'p-'+b.dataset.p});
+  });
+});
+</script>
+</body>
+</html>

@@ -12,14 +12,14 @@ Hướng dẫn setup Hermes trên **máy Mac công ty** để đạt đủ 10 d�
 
 ---
 ## 🧾 Bước 0: Chuẩn bị trước (hỏi lead nếu thiếu)
-| Cần gì | Dùng ở bước | Ghi chú |
-|---|---|---|
-| API key LLM (provider nào công ty cấp) | 2 | Chưa rõ công ty dùng provider nào → **hỏi lead** |
-| Slack xoxp cá nhân | 5 | Lấy tại `https://hrm.avada.net` |
-| Host email công ty + có cho IMAP/app password không | 6 | Google Workspace có thể bị admin tắt app password (**chưa verify** với IT Avada) |
-| Host GitLab công ty + Personal Access Token | 7 | Token scope `api` hoặc `read_api` |
-| Link database task Notion + tên field Priority/Deadline/SLA | 8 | Để agent đọc đúng cột |
-| Channel Slack nhận daily report | 10 | Lấy **channel ID** (bắt đầu bằng `C...`) |
+| Cần gì                                                      | Dùng ở bước | Ghi chú                                                                          |
+| ----------------------------------------------------------- | ----------- | -------------------------------------------------------------------------------- |
+| API key LLM (provider nào công ty cấp)                      | 2           | Chưa rõ công ty dùng provider nào → **hỏi lead**                                 |
+| Slack xoxp cá nhân                                          | 5           | Lấy tại `https://hrm.avada.net`                                                  |
+| Host email công ty + có cho IMAP/app password không         | 6           | Google Workspace có thể bị admin tắt app password (**chưa verify** với IT Avada) |
+| Host GitLab công ty + Personal Access Token                 | 7           | Token scope `api` hoặc `read_api`                                                |
+| Link database task Notion + tên field Priority/Deadline/SLA | 8           | Để agent đọc đúng cột                                                            |
+| Channel Slack nhận daily report                             | 10          | Lấy **channel ID** (bắt đầu bằng `C...`)                                         |
 
 > [!danger] ⛔ Quy tắc secret (bắt buộc theo yêu cầu)
 > Mọi token/key chỉ nằm trong `~/.hermes/.env` (chmod 600). **Không** paste vào Slack, email, Notion, log, commit Git. Không nhờ agent "in token ra để kiểm tra".
