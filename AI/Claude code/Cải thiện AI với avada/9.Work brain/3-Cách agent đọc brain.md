@@ -1,9 +1,12 @@
 ---
 tags: [work-brain]
-status: đề xuất
+status: bản cũ — đã bị note 7 thay
 ---
 
 # Cách agent đọc brain
+
+> [!warning] Bản cũ
+> Bản cũ. Xem [[7-Research và thiết kế lại]]: luật đặt ở `~/.claude/rules/` thay vì `@import`. Hai câu sai trong note này đã được sửa bên dưới.
 
 Quay về [[0-Tổng quan]]
 
@@ -28,15 +31,15 @@ Project-specific (Joy): ~/work-brain/knowledge/joy/ — read when working in a j
 Writing new lessons: see ~/work-brain/CLAUDE.md § Writing. Never edit me/ directly.
 ```
 
-## Thứ tự ưu tiên khi mâu thuẫn
-1. `CLAUDE.local.md` của project (ghi đè cá nhân theo repo)
-2. `CLAUDE.md` của project (luật team)
-3. Brain (`~/.claude/CLAUDE.md` → `me/`)
+## Khi hai chỗ mâu thuẫn
+~~Bản đầu ghi: `CLAUDE.local.md` thắng `CLAUDE.md`, `CLAUDE.md` thắng brain.~~ **Sai.** Tài liệu Claude Code nói các file được **nối vào nhau**, không file nào ghi đè file nào: "if two instructions contradict each other, Claude may pick one arbitrarily".
 
-Lý do: luật team của repo phải thắng thói quen chung. Brain chỉ lấp chỗ trống.
+→ Không trông vào thứ tự. Phải **xoá mâu thuẫn**: chạy `/doctor prompt-audit` sau khi viết brain.
+
+(`joy/CLAUDE.local.md` tự ghi "wins wherever the two disagree" là một lời dặn agent, không phải cơ chế của Claude Code.)
 
 ## Còn với auto-memory (`~/.claude/projects/*/memory`)?
-Claude Code vẫn tự ghi vào đó, không tắt được bằng brain. Đề xuất:
+Claude Code vẫn tự ghi vào đó. ~~Không tắt được.~~ **Sai:** đổi được chỗ ghi bằng `autoMemoryDirectory`, tắt được bằng `autoMemoryEnabled: false`. Note 7 giải thích vì sao chưa nên đổi. Đề xuất:
 - Coi auto-memory là **nháp tạm** của từng project.
 - Khi dọn ([[5-Giữ brain luôn mới]]), cái gì đáng giữ thì chép sang brain, rồi rút gọn file memory gốc.
 

@@ -21,7 +21,7 @@ Quay về [[0-Tổng quan]]
 | `-Users-avada-Documents-Obsidian-Vault` | 2 | "Anh làm Joy ở Avada" (trùng user profile) |
 | 18 thư mục `orca-workspaces` | **0** | Không có file memory nào |
 
-Ghi chú: 18 worktree Orca không ghi memory riêng → bài học trong worktree hiện **không** lọt vào đâu cả, trừ khi agent ghi thẳng vào thư mục `joy` (memory của `joy` được dùng chung cho worktree qua cấu hình project hiện tại — **chưa verify** cơ chế này).
+Ghi chú (đã verify qua tài liệu chính thức, xem [[7-Research và thiết kế lại]]): auto-memory chia theo **git repo**, mọi worktree dùng chung. Vì vậy 18 thư mục Orca có 0 file là đúng: bài học trong worktree vẫn ghi vào memory của `joy`. Còn `joy-2` là bản clone riêng → có memory riêng, bị tách khỏi `joy`.
 
 ## `~/.claude` (cấp toàn máy)
 - Không có `CLAUDE.md` → agent mở ngoài `joy` không biết gì về anh.

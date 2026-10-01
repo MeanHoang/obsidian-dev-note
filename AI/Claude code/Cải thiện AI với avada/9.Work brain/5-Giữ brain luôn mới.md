@@ -1,9 +1,12 @@
 ---
 tags: [work-brain]
-status: đề xuất
+status: bản cũ — đã bị note 7 thay
 ---
 
 # Giữ brain luôn mới
+
+> [!warning] Bản cũ
+> Bản cũ. Bỏ `inbox/`: hook `memory-consent` (chỉ chạy trong repo `joy` và worktree của nó) đã làm đúng việc "agent chỉ ghi khi anh bảo". Bảng thay thế ở [[7-Research và thiết kế lại]], mục "Giữ luôn mới".
 
 Quay về [[0-Tổng quan]]
 
