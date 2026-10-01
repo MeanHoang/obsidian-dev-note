@@ -13,7 +13,7 @@ status: live
 
 # Sổ tay harness Joy (cá nhân)
 
-> Trạng thái ngày **29/09/2026**. Lý do từng quyết định: [[3.Cải thiện AI harness]] · [[4.Các bước cải thiện harness]] · [[5.Cải thiện chạy đường dài cho tính năng lớn]] · [[6.Research cải thiện joy-ship]] · [[7.Phân tích superpowers]]. Sơ đồ: `Sơ đồ agent harness.html` (bản cũ, chưa vẽ lại theo `ship-*`).
+> Trạng thái ngày **29/09/2026**. Lý do từng quyết định: [[3.Cải thiện AI harness]] · [[4.Các bước cải thiện harness]] · [[5.Cải thiện chạy đường dài cho tính năng lớn]] · [[6.Research cải thiện joy-ship]] · [[7.Phân tích superpowers]] · [[8.Role product và ship-new]]. Sơ đồ: `Sơ đồ agent harness.html` (vẽ lại 29/09 theo bộ `ship-*`).
 > **Sửa harness ở repo gốc** `~/WebstormProjects/joy`, rồi chạy `/sync-harness` trong worktree.
 
 ---
@@ -22,6 +22,7 @@ status: live
 
 | Tình huống | Gõ |
 |---|---|
+| **App / dự án mới** từ một ý tưởng | `/ship-new` |
 | **Feature** từ Notion, cần hiểu + plan | `/ship <notion-url>` |
 | Feature lớn, **muốn treo máy** | `/ship …` → chốt Gate 1, 2 → nói **"move auto"** (chạy `/ship-auto`) |
 | **Việc nhỏ**: diff nói được trong 1 câu | `/ship-fix …` |
@@ -56,7 +57,7 @@ status: live
 | Lớp | Nằm ở | Git | Khi mâu thuẫn |
 |---|---|---|---|
 | **Team** (PM build) | `CLAUDE.md`, `.claude/agents`, `commands`, skill team, 6 hook | đã commit | — |
-| **Bộ `ship-*`** (của tôi, dùng được mọi project) | 7 skill `ship*`, `workflow/`, `roles/`, hook `ship-*`, script | untracked | — |
+| **Bộ `ship-*`** (của tôi, dùng được mọi project) | 8 skill `ship*`, `workflow/`, `roles/`, hook `ship-*`, script | untracked | — |
 | **Riêng Joy** (của tôi) | `CLAUDE.local.md`, `.claude/ship-profile.md`, `bug-check`, vài skill Joy | untracked | **thắng lớp team** |
 
 Cả lớp của tôi được ẩn bằng `.git/info/exclude`, nên không bao giờ lọt vào commit.
@@ -75,8 +76,8 @@ Cả lớp của tôi được ẩn bằng `.git/info/exclude`, nên không bao 
 ## 3. Bộ `ship-*`
 
 ### 3.1. Lõi và profile
-- **Lõi dùng chung** (không có chữ Joy): 7 skill `ship*`, `workflow/ship-core.md` (luật chung: chọn luồng, gate, `--note`, việc phát sinh, file của task, resume), khối `blocks/K0…K7`, `roles/`, `auto-decide.md`, `mode-cards/`, hook `ship-*`, script `ship-auto-run.sh`.
-- **Riêng Joy:** `.claude/ship-profile.md`, 12 mục: §1 repo · §2 surface · §3 đọc setting (Joy MCP → Chrome admin → storefront) · §4 store test + override storefront · §5 dev · §6 auth · §7 implementer + model · §8 lệnh review · §9 ship (GitLab, deploy) · §10 việc auto cấm tự quyết · §11 Standards riêng từng role · §12 ca dễ vỡ.
+- **Lõi dùng chung** (không có chữ Joy): 8 skill `ship*`, `workflow/ship-core.md` (luật chung: chọn luồng, gate, `--note`, việc phát sinh, file của task, resume), khối `blocks/K0…K7` + `P-product`, `roles/`, `auto-decide.md`, `mode-cards/`, hook `ship-*`, script `ship-auto-run.sh`.
+- **Riêng Joy:** `.claude/ship-profile.md`, 14 mục: §1 repo · §2 surface · §3 đọc setting (Joy MCP → Chrome admin → storefront) · §4 store test + override storefront · §5 dev · §6 auth · §7 implementer + model · §8 lệnh review · §9 ship (GitLab, deploy) · §10 việc auto cấm tự quyết · §11 Standards riêng từng role (có mục product) · §12 ca dễ vỡ · §13 bối cảnh sản phẩm (chúng ta là ai, người dùng, nguồn bằng chứng) · §14 giao diện cho mockup (Polaris admin, widget V4).
 - **Repo public [MeanHoang/my-ship](https://github.com/MeanHoang/my-ship)** chứa lõi (không có gì của Joy). Sửa harness ở Joy xong, muốn đồng bộ lên repo: `bash ~/WebstormProjects/joy/.claude/scripts/ship-export.sh <thư mục clone my-ship>` → xem `git diff` → commit → push. Script tự gỡ trích dẫn memory và mã ticket JOY. Project khác cài bằng `bash my-ship/install.sh <project>`.
 - Khối K và role chỉ ghi "xem **profile §N**". **Mang sang project khác** = copy lõi + viết `ship-profile.md` mới, giữ nguyên số mục. Danh sách file cần copy ở cuối `ship-core.md`.
 
@@ -92,19 +93,29 @@ Cả lớp của tôi được ẩn bằng `.git/info/exclude`, nên không bao 
 | **K5** Review | 1 lần cuối lô, chỉ còn 2 mức: `must-fix` (sai hành vi / lệch GOAL, được sửa) và `optional` (chỉ liệt kê) |
 | **K6** Commit | chờ chữ "commit"; chỉ file có tên trong `progress.md`; lúc xin commit hỏi luôn có thêm dòng tiêu chuẩn không |
 | **K7** Ship | push, MR, deploy, test lại sau pipeline, **chỉ khi tôi bảo** |
+| **P** Sản phẩm | role `product`, **chạy mù với bản BA**: **P1** hiện trạng + research (chỉ nhận mục tiêu; mỗi claim có nguồn + ngày, đoạn trích kết quả tìm kiếm không tính; tối đa 4 câu hỏi) → **P2** đề xuất v1 + **mockup 2–4 màn HTML** (parent mở cho anh) → **P3** bảng so với spec BA · **Decide** (thẻ quyết định: lựa chọn · đề xuất · fails if · cách thử rẻ nhất · điều gì làm đổi ý) |
 
 🚦 = AI dừng, chờ tôi.
 
 ### 3.3. Các luồng
 
+**`/ship-new`: app mới từ ý tưởng** (mode `NEW`)
+```
+Gate 0 🚦 Sản phẩm: role product P1 research → P2 đề xuất + mockup → product.md → Build/Reframe/Kill
+Gate 1 🚦 Stack + kiến trúc: 2–3 phương án (có phương án tối giản), tôi chọn → decisions.md
+Phase 0 🚦 Bộ khung chạy được: template chính thức, lint, 1 test thật, CI, 1 luồng end-to-end
+AI viết ship-profile.md 🚦 → từ đây mỗi feature đi /ship hoặc /ship-auto
+```
+
 **`/ship`: feature** (mode `SHIP`, hoặc `CONTINUE` khi branch đã có tiến độ)
 ```
+Sản phẩm 🚦: role product P1 hiện trạng + research → P2 đề xuất + mockup → P3 so với bản BA (anh chốt)
 Gate 1 🚦 Hiểu: analysis.md, hỏi từng câu, chốt GOAL
 Gate 2 🚦 Plan: 2a 1 scout gom facts → 2b chốt trade-off → 2c chia phase (tôi chọn thứ tự) → 2d plan.html (có mục "ca dễ vỡ")
 Mỗi phase: K3 → K4 → K6 🚦 commit
 Hết phase: K5 review 1 lần → K7 khi bảo
 ```
-Giữa chừng phát hiện mới: **A** trade-off kỹ thuật (hỏi) · **B** bản đồ Gate 1 sai (🚦) · **C** đổi hướng (chia lại phase).
+Giữa chừng phát hiện mới: **A** trade-off kỹ thuật (hỏi) · **B** bản đồ Gate 1 sai (🚦) · **C** đổi hướng (chia lại phase). B, C và trade-off làm đổi thứ người dùng thấy → kèm **thẻ Decide của role product**.
 
 **`/ship-auto`: treo máy sau Gate 2**
 1. Nói "move auto" → AI kiểm tra auth, đĩa, dev, Chrome → hỏi *"Cho chạy đến mấy giờ?"*.
@@ -151,6 +162,7 @@ K0 → K1 (3 chân) → K2 → VERDICT 🚦 → tôi nói "fix" → K3 → K4 �
 | Role | Việc | Khối | Model |
 |---|---|---|---|
 | **parent** (session chính) | điều phối, tự mở `file:line` để kiểm lại, hỏi tôi, commit; không tự code | K0, K6, K7, các gate | session của anh (phiên phase `/ship-auto` cũng vậy) |
+| product | đáng làm không, bản v1, cắt gì, mockup; research có nguồn; chạy mù với bản BA tới P3; chỉ đề xuất | P | **Opus** (đã cân nhắc Fable, không dùng) |
 | scout | đọc code / setting / log; mặc định 1 con | K1, 2a | **Opus** |
 | implementer | viết code, phải ghi pattern đã bê từ `file:line` nào | K3 | **Sonnet** (bị bác 2 lần → implementer mới chạy Opus) |
 | verifier | ảnh, test fail → pass, gỡ bản sửa | K2, K4 | **Sonnet** |
@@ -261,7 +273,7 @@ Claude in Chrome (đăng nhập `hoangtm@avadagroup.com`):
 ├── .claude/
 │   ├── ship-profile.md                mọi thứ riêng của Joy cho bộ ship-* (§1–§12)
 │   ├── settings.local.json            wiring hook của tôi
-│   ├── skills/ship*/                  7 skill ship (+ templates/ trong skills/ship)
+│   ├── skills/ship*/                  8 skill ship (+ templates/ trong skills/ship)
 │   ├── skills/bug-check, analyze-task, branch-focus, merge-branch, test-environments,
 │   │         deploy-extensions, joy-task-catchup, sync-harness, joy-disk-cleanup
 │   ├── workflow/ship-core.md          luật chung của bộ ship
@@ -281,4 +293,4 @@ Claude in Chrome (đăng nhập `hoangtm@avadagroup.com`):
 └── projects/…/memory/                 memory (chỉ ghi khi tôi bảo)
 ```
 
-**16 skill của tôi:** `ship` · `ship-auto` · `ship-bugs` · `ship-fix` · `ship-verify` · `ship-review` · `ship-board` · `bug-check` · `analyze-task` · `branch-focus` · `merge-branch` · `test-environments` · `deploy-extensions` · `joy-task-catchup` · `sync-harness` · `joy-disk-cleanup`
+**17 skill của tôi:** `ship` · `ship-new` · `ship-auto` · `ship-bugs` · `ship-fix` · `ship-verify` · `ship-review` · `ship-board` · `bug-check` · `analyze-task` · `branch-focus` · `merge-branch` · `test-environments` · `deploy-extensions` · `joy-task-catchup` · `sync-harness` · `joy-disk-cleanup`
