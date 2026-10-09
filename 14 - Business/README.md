@@ -14,3 +14,4 @@ Nơi học về business SaaS và các nghiệp vụ kinh doanh.
 | 3. Định giá (pricing) | `3 - Pricing` | [[Lenny - Pricing your SaaS product]], [[Lenny - Willingness to pay]] |
 | 4. Mô hình Shopify app | `4 - Shopify App Business` | [[Shopify - Revenue share]], [[Shopify Partner - How to earn]] |
 | 5. Business thời AI | `5 - Business thời AI` | [[Tổng hợp - Business thời AI]] |
+| 6. Tìm ý tưởng app từ hành vi người dùng | `6 - Phân tích hành vi ra ý tưởng app` | [[Ý tưởng app - Goal]] |
