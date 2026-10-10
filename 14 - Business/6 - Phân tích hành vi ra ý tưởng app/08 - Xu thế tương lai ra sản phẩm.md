@@ -369,6 +369,14 @@ Toàn bộ bảng dưới là ý tưởng do AI đề xuất, gom từ các ph�
 | 7   | Back office một người theo ngành | Một hộp thư cho người kinh doanh một mình trong một ngành (ví dụ chủ shop Shopify một người): AI soạn trả lời khách, đòi tiền, xử lý giao hàng; người duyệt; nhật ký AI đã làm gì | Người làm một mình phải trả tiền và nhảy qua lại quá nhiều công cụ, không biết các app AI làm gì với dữ liệu của mình                                    | Bản chung đã đông (Lindy, Zapier Agents, Notion AI). Bản riêng từng ngành còn thưa                                                                                          | Công ty một người               | Bây giờ        | Chợ app của ngành đó                                |
 | 8   | So sánh biểu giá điện            | Tải hoá đơn hoặc nối đồng hồ điện thông minh → so biểu giá, chương trình nhà máy điện ảo, gói thuê pin → chọn gói rẻ nhất; giải thích vì sao hoá đơn tăng sau khi lắp bơm nhiệt   | Nhà có pin, điện mặt trời, bơm nhiệt, xe điện đối mặt biểu giá rất rối (giờ cao điểm đắt hơn tới 92%), app của hãng thì không trung lập                  | App của nhà bán điện (Octopus), hãng pin, SolarQuotes. Chưa thấy công cụ trung lập mạnh                                                                                     | Điện khí hoá nhà ở              | Bây giờ        | Diễn đàn năng lượng, phí giới thiệu từ nhà bán điện |
 
+### Trạng thái kiểm tra từng ứng viên
+
+| # | Sản phẩm | Kết quả | Ngày |
+|---|---|---|---|
+| 1 | Agent Shelf (AI-ready) | ⛔ Dừng: không đủ mới, thuộc mảng GEO/AEO đã đông. Chi tiết ở folder `7 - App AI-ready cho cửa hàng online` | 2026-10-10 |
+| 2 | canimcp | ⛔ Đã có: [canimcp.dev](https://canimcp.dev) của Blues (cùng tên, cùng ý tưởng, nhận làm từ SEP-1814); [bộ kiểm thử chính thức](https://github.com/modelcontextprotocol/conformance) của MCP; [MCP Inspector](https://github.com/modelcontextprotocol/inspector) (khoảng 11.000 sao); [apify/mcp-client-capabilities](https://github.com/apify/mcp-client-capabilities). Đều miễn phí, mã nguồn mở | 2026-10-10 |
+| 3–8 | Còn lại | Chưa kiểm tra | |
+
 ## Nên tránh
 
 | Mảng | Lý do |

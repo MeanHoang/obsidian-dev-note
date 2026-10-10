@@ -1,5 +1,7 @@
 # 00 – Tổng quan: App AI-ready cho cửa hàng online
 
+> ⛔ **ĐÃ DỪNG (2026-10-10).** Lý do: ý tưởng không đủ mới. Đây là một nhánh của GEO/AEO (tối ưu để AI trích dẫn, giới thiệu), mảng đã nổi tiếng và đông: Profound, Peec; trên Shopify có ít nhất 15 app mới năm 2026 và Shopify tự làm; trên WooCommerce có Yoast, Rank Math, AIOSEO gắn nhãn AI. Phần khác biệt (không bịa, có nguồn, kiểm thuộc tính theo ngành) chỉ là tính năng, nền tảng hoặc plugin lớn dễ thêm vào; không có hào chắn. Giữ folder làm tài liệu tham khảo.
+
 Đi ra từ [[08 - Xu thế tương lai ra sản phẩm]] (ứng viên số 1). Chốt ngày 2026-10-10. Ban đầu chỉ nhắm Shopify, sau đổi sang **nhiều nền tảng**: Shopify chỉ là một trong nhiều nơi có shop, và là nơi khó vào nhất.
 
 > 📖 = trích nguồn. 💭 = nhận định AI. ⚠️ = chưa mở được trang gốc hoặc chưa kiểm tra.
