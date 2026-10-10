@@ -15,3 +15,4 @@ Nơi học về business SaaS và các nghiệp vụ kinh doanh.
 | 4. Mô hình Shopify app | `4 - Shopify App Business` | [[Shopify - Revenue share]], [[Shopify Partner - How to earn]] |
 | 5. Business thời AI | `5 - Business thời AI` | [[Tổng hợp - Business thời AI]] |
 | 6. Tìm ý tưởng app từ hành vi người dùng | `6 - Phân tích hành vi ra ý tưởng app` | [[Ý tưởng app - Goal]] |
+| 7. Phân tích app đã chọn: AI-ready cho cửa hàng online | `7 - App AI-ready cho cửa hàng online` | [[00 - Tổng quan]] |

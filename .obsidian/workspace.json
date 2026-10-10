@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "14 - Business/6 - Phân tích hành vi ra ý tưởng app/08 - Xu thế tương lai ra sản phẩm.md",
+                "file": "14 - Business/7 - App AI-ready cho cửa hàng online/01 - Vấn đề và tệp khách hàng.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "08 - Xu thế tương lai ra sản phẩm"
+              "title": "01 - Vấn đề và tệp khách hàng"
             }
           }
         ]
@@ -80,7 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 333.6545104980469
+    "width": 235.90908813476562
   },
   "right": {
     "id": "6006091cbda89653",
@@ -194,22 +194,35 @@
       "bases:Create new base": false
     }
   },
-  "active": "d6135ad17d5b3f9a",
+  "active": "5101c7f6d36baa11",
   "lastOpenFiles": [
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/07.1 - Lane 1 - Thương mại điện tử.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/Ý tưởng app - Goal.md.tmp.6292.9d032e090fa6",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/05 - Rủi ro và câu hỏi cần kiểm chứng.md.tmp.6292.1b63e7a4b01e",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/05 - Rủi ro và câu hỏi cần kiểm chứng.md.tmp.6292.8c40174cc7e5",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/05 - Rủi ro và câu hỏi cần kiểm chứng.md.tmp.6292.da9f7d948929",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/04 - Giải pháp và nghiệp vụ.md.tmp.6292.ec943f292e00",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/03 - Đối thủ.md.tmp.6292.bc54b308590b",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/03 - Đối thủ.md.tmp.6292.6e91908799f1",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/02 - Thị trường và cách AI đọc dữ liệu.md.tmp.6292.b6a5520bb939",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/00 - Tổng quan.md",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/02 - Thị trường và cách AI đọc dữ liệu.md.tmp.6292.aaf5f7e417c6",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/01 - Vấn đề và tệp khách hàng.md.tmp.6292.0e71f3aa2fd7",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/00 - Tổng quan.md.tmp.6292.e45b7d238efc",
     "14 - Business/6 - Phân tích hành vi ra ý tưởng app/08 - Xu thế tương lai ra sản phẩm.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/08 - Xu thế tương lai ra sản phẩm.md.tmp.6292.94fc41b10d46",
-    "r2.xml",
-    "r1.xml",
+    "14 - Business/7 - App AI-ready cho Shopify/00 - Tổng quan.md",
+    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/sedKGMGE1",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/05 - Rủi ro và câu hỏi cần kiểm chứng.md",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/04 - Giải pháp và nghiệp vụ.md",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/03 - Đối thủ.md",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/02 - Thị trường và cách AI đọc dữ liệu.md",
+    "14 - Business/7 - App AI-ready cho cửa hàng online/01 - Vấn đề và tệp khách hàng.md",
+    "14 - Business/7 - App AI-ready cho Shopify/05 - Rủi ro và câu hỏi cần kiểm chứng.md",
+    "14 - Business/7 - App AI-ready cho Shopify/04 - Giải pháp và nghiệp vụ.md",
+    "14 - Business/7 - App AI-ready cho Shopify/03 - Đối thủ.md",
+    "14 - Business/7 - App AI-ready cho Shopify/02 - Thị trường và cách AI đọc dữ liệu.md",
+    "14 - Business/7 - App AI-ready cho Shopify/01 - Vấn đề và tệp khách hàng.md",
+    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/07.1 - Lane 1 - Thương mại điện tử.md",
     "14 - Business/6 - Phân tích hành vi ra ý tưởng app/07.2 - Lane 2 - Dịch vụ địa phương.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/07 - Ngách theo thị trường.md.tmp.6292.0be6b3c9d874",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/07.5 - Lane 5 - Người dùng cá nhân theo nhóm.md.tmp.6292.e1e2d4aa75a3",
     "14 - Business/6 - Phân tích hành vi ra ý tưởng app/07.5 - Lane 5 - Người dùng cá nhân theo nhóm.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/07.4 - Lane 4 - Người làm nghề tự do.md.tmp.6292.f2c3620586bf",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/07.3 - Lane 3 - Chợ app nền tảng khác.md.tmp.6292.043cf724e5e3",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/07.2 - Lane 2 - Dịch vụ địa phương.md.tmp.6292.9eed84af8ed1",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/07.1 - Lane 1 - Thương mại điện tử.md.tmp.6292.abc958dfb9aa",
     "14 - Business/6 - Phân tích hành vi ra ý tưởng app/07.4 - Lane 4 - Người làm nghề tự do.md",
     "14 - Business/6 - Phân tích hành vi ra ý tưởng app/07.3 - Lane 3 - Chợ app nền tảng khác.md",
     "14 - Business/6 - Phân tích hành vi ra ý tưởng app/07 - Ngách theo thị trường.md",
@@ -219,18 +232,6 @@
     "README.md",
     "AI/Hermes Agent/Danh sách bot.md",
     "AI/Hermes Agent/2-Kế hoạch nhiều bot (mỗi bot 1 việc).md",
-    "AI/Claude code/Cải thiện AI với avada/9.Work brain/11-So sánh với brain khác.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/Ý tưởng app - Goal.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/04 - Ý tưởng app.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/03 - Nhu cầu con người.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/01 - Hiện tại.md",
-    "14 - Business/5 - Business thời AI/Tổng hợp - Business thời AI.md",
-    "AI/Claude code/Cải thiện AI với avada/9.Work brain/10-Học cách anh quyết định.md",
-    "AI/Hermes Agent/1-Setup Hermes Agentic Assistant (Team Dev 3).md",
-    "AI/Claude code/Cải thiện AI với avada/9.Work brain/9-Kết quả học bù.md",
-    "AI/Claude code/Cải thiện AI với avada/9.Work brain/8-Học liên tục.md",
-    "AI/Claude code/Cải thiện AI với avada/9.Work brain/7-Research và thiết kế lại.md",
-    "AI/Claude code/Cải thiện AI với avada/9.Work brain/6-Câu hỏi chốt.md",
     "AI/Claude code/Cải thiện AI với avada/8c.Mockup app chi tiêu/index.png",
     "3 - Backend/Road to Backend Developer/04 - Repo Hosting Services/assets/markdown-05-quote.png",
     "3 - Backend/Road to Backend Developer/04 - Repo Hosting Services/assets/your-profile.png",

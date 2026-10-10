@@ -24,6 +24,7 @@ Nguồn đọc ngày 2026-10-09.
 | 6 | [[06 - Vấn đề đời sống từ diễn đàn]] | Quét mọi lĩnh vực đời sống trên diễn đàn: vấn đề nào nóng nhất (cô đơn, kiệt sức, lừa đảo, tìm việc, rác AI, nuôi con) | ✅ (thiếu Reddit) |
 | 7 | [[07 - Ngách theo thị trường]] | Chia 5 lane thị trường (e-com, dịch vụ địa phương, chợ app khác, nghề tự do, nhóm cá nhân), tìm ngách hẹp kiểu Joy, mỗi vấn đề kèm ý tưởng sản phẩm, kiểm tra thực tế 6 sản phẩm top | ✅ chờ anh tự chấm, quyết có mở lại Shopify không |
 | 8 | [[08 - Xu thế tương lai ra sản phẩm]] | Đi ngược lại: thế giới dịch chuyển đi đâu 2026–2035 (agent, trợ lý AI, AI tìm kiếm, nội dung AI, già hoá, công việc, năng lượng) → cái gì phải có xung quanh → sản phẩm | ✅ chưa kiểm tra thực tế từng ứng viên |
+| 9 | Folder `7 - App AI-ready cho cửa hàng online` ([[00 - Tổng quan]]) | Chốt ứng viên 1 (bỏ phần đo, giữ phần sửa dữ liệu shop): thị trường, đối thủ, giải pháp, nghiệp vụ, rủi ro | ✅ chốt 2026-10-10, chờ kiểm chứng |
 
 Liên quan: [[Tổng hợp - Business thời AI]], [[11 - How to Get Startup Ideas]], [[14 - How to Get Your First Customers]].
 
