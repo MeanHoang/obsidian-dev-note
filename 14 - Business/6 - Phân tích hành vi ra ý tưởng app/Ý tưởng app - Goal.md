@@ -22,6 +22,7 @@ Nguồn đọc ngày 2026-10-09.
 | 4 | [[04 - Ý tưởng app]] | Chọn ý tưởng nào, ai dùng, tìm người dùng đầu tiên ở đâu | ✅ đề xuất: app học từ nguồn gốc song ngữ |
 | 5 | [[05 - Vấn đề chi tiết - Tự học]] | Đi sâu một lĩnh vực: người tự học kể khó khăn gì trên diễn đàn (Hacker News, Stack Exchange) | ✅ (thiếu Reddit vì bị chặn trên máy) |
 | 6 | [[06 - Vấn đề đời sống từ diễn đàn]] | Quét mọi lĩnh vực đời sống trên diễn đàn: vấn đề nào nóng nhất (cô đơn, kiệt sức, lừa đảo, tìm việc, rác AI, nuôi con) | ✅ (thiếu Reddit) |
+| 7 | [[07 - Ngách theo thị trường]] | Chia 5 lane thị trường (e-com, dịch vụ địa phương, chợ app khác, nghề tự do, nhóm cá nhân), tìm ngách hẹp kiểu Joy, mỗi vấn đề kèm ý tưởng sản phẩm | ✅ chờ anh quyết có mở lại Shopify không |
 
 Liên quan: [[Tổng hợp - Business thời AI]], [[11 - How to Get Startup Ideas]], [[14 - How to Get Your First Customers]].
 
