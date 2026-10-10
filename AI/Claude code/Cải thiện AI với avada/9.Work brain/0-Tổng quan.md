@@ -26,6 +26,7 @@ status: kế hoạch — chưa xây
 8. [[8-Học liên tục]] — cơ chế để brain tự tốt lên: 3 vòng học + học bù từ phiên cũ
 9. [[9-Kết quả học bù]] — 207 lần anh bực agent từ phiên cũ → 20 nhóm lỗi + 10 đề xuất chờ duyệt
 10. [[10-Học cách anh quyết định]] — anh chọn khác AI 36% số lần → sổ tiền lệ để auto tự quyết như anh
+11. [[11-So sánh với brain khác]] — 3 repo brain trên GitHub: mình giống gì, hơn gì, đã học thêm gì
 
 ## Lộ trình (sau khi anh chốt) — theo note 7
 1. Tạo `~/work-brain` + `git init`, bật plugin `claude-obsidian` ở đó, chạy `/wiki` dựng khung → kiểm: có `wiki/index.md`, `hot.md`, `log.md`.

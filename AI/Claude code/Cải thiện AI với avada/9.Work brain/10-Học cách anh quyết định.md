@@ -28,6 +28,7 @@ Script `overrides.py` quét transcript (chỉ còn tháng 9):
 → Trong 44 lần chọn rõ ràng, **16 lần (36%) anh chọn khác AI**.
 
 Vài ví dụ thật cho thấy anh có "gu" riêng:
+
 | Ngày | Tình huống | AI đề xuất | Anh chọn |
 |---|---|---|---|
 | 2026-09-09 | Áp design lên page đang published | Lưu nháp trước | Publish luôn |
@@ -132,8 +133,40 @@ Anh nói quyết định của anh thường dựa trên kiến thức đã note
   - Giải thích được nhiều → làm `principles.md` đáng công.
   - Giải thích được ít → tiền lệ quan trọng hơn, `principles.md` chỉ làm phụ.
 
-## 6. Việc cần làm (chờ anh duyệt)
-0. **Kiểm vault trước:** 16 lần anh chọn khác AI có bao nhiêu lần được note trong vault giải thích? Kết quả quyết định có làm `principles.md` không. Khoảng 15 phút, 1 subagent.
+## 6. Các cơ chế để AI học từ vault khi ra quyết định
+
+Ví von: vault như **thư viện 450 nghìn chữ**. Có 5 cách để người làm việc dùng thư viện đó, từ nhẹ đến nặng:
+
+| # | Cơ chế | Khi nào kiến thức được dùng | Cái gì được nạp | Ưu | Nhược |
+|---|---|---|---|---|---|
+| 1 | **Trang nguyên tắc** (`principles.md`): rút gọn kiểu Karpathy "compile, không re-derive" | Luôn có sẵn | 1 dòng/nguyên tắc + link note gốc | Rẻ, rõ, AI trích được | Phải ngồi rút; dễ sót |
+| 2 | **Skill theo việc**: biến 1 note quy trình thành skill. Ví dụ "Checklist 7 bước" → skill `feature-check` | Claude tự gọi khi task khớp mô tả (chỉ mô tả nằm sẵn trong context) | Cả quy trình, đúng lúc cần | Đúng thời điểm; tài liệu Claude Code khuyên "multi-step procedure → skill" | Chỉ hợp với note dạng quy trình/checklist |
+| 3 | **Luật theo loại file** (`paths:` trong rules) | Khi agent mở file khớp mẫu. Ví dụ nguyên tắc UI khi sửa `*.jsx`/`*.scss`; nguyên tắc kiến trúc khi sửa `packages/functions/**` | Vài dòng nguyên tắc của đúng mảng đó | Tự động, không tốn context khi không cần | Chưa kiểm: `paths:` có chạy ở `~/.claude/rules` không |
+| 4 | **Tra cứu lúc quyết định**: `wiki-query` / `wiki-retrieve` của plugin `claude-obsidian` (từ khoá + xếp hạng lại theo nghĩa) | Gặp quyết định → tra vault → lấy 3–5 đoạn liên quan | Đoạn trích có link nguồn | Dùng được cả 450 nghìn chữ, không cần rút gọn trước | Phải cài thêm (`bin/setup-retrieve.sh`, embedding); dễ kéo về kiến thức sách chứ không phải ý anh |
+| 5 | **Người phản biện** (subagent) trong `/ship-auto` | Trước mỗi quyết định không hiển nhiên | Tiền lệ + nguyên tắc + đoạn tra vault → chấm từng phương án, trích nguồn | Quyết định có lý do kiểm lại được; hợp với "anh kiểm ở cuối" | Tốn token mỗi lần quyết |
+
+**Em đề xuất kết hợp:**
+- **1 + 2 + 3** cho phần lõi: vài quy trình, nguyên tắc anh thật sự dùng. Rẻ, chạy mọi lúc.
+- **4** cho phần đuôi dài: những gì chưa rút gọn.
+- **5** chỉ bật trong `/ship-auto`, cho quyết định khó.
+- **Tiền lệ** (mục 3) đứng trên tất cả, vì đó là việc anh thật sự làm.
+
+## 7. Cải thiện quan trọng nhất: một bài kiểm "đoán quyết định của anh"
+Không chọn cơ chế bằng cảm giác. Dùng chính các quyết định cũ của anh làm **bài thi**:
+1. Lấy các lần anh đã chọn (hiện có 44 lần chọn rõ, trong đó 16 lần anh chọn khác AI).
+2. Che câu trả lời của anh đi. Cho AI quyết lại cùng tình huống theo từng cách:
+   - (a) không có gì thêm, như hiện nay;
+   - (b) có `principles.md`;
+   - (c) có tra cứu vault;
+   - (d) có sổ tiền lệ, nhưng không được dùng chính tiền lệ của câu đang thi.
+3. Đếm **% trùng với lựa chọn thật của anh**. Mốc hiện tại: AI trùng anh khoảng 64% (28/44).
+4. Cách nào nâng % trùng nhiều nhất thì giữ. Cách nào không nâng được thì bỏ, dù nghe hay.
+5. Mỗi khi thêm nguyên tắc, tiền lệ hay đổi cơ chế → chạy lại bài thi. % trùng là thước đo chính trước khi tin cho auto tự quyết. Ví dụ: chỉ bật auto cho loại quyết định mà AI đạt từ 90% trở lên. Ngưỡng này anh chọn, em không tự đặt.
+
+Bài thi này cũng trả lời câu hỏi ở mục 5: vault có giải thích được lựa chọn của anh không. Nếu (c) không nâng % trùng so với (a), thì vault chưa giúp được cho việc quyết định.
+
+## 8. Việc cần làm (chờ anh duyệt)
+0. **Dựng bài thi "đoán quyết định của anh"** (mục 7) từ 44 lần chọn rõ. Chạy cách (a) "không có gì" và cách (c) "tra vault" trước → biết ngay vault có giúp không. Khoảng 30 phút, 2–3 subagent.
 1. **Học bù:** chạy LLM trên 44 câu trả lời tự do và 180 quyết định trong `decisions.md` cũ → ra bản đầu của sổ tiền lệ. Khoảng 30 phút, 3–4 subagent.
 2. **Brain:** thêm `wiki/decisions/`, hook `PostToolUse(AskUserQuestion)`, mở rộng `session_end.py` và `/brain-review`.
 3. **Harness Joy (đụng file của anh nên cần duyệt riêng):**
