@@ -18,11 +18,11 @@ Quay về [[0-Tổng quan]] · Liên quan [[8-Học liên tục]], [[9-Kết qu�
 
 Script `overrides.py` quét transcript (chỉ còn tháng 9):
 
-| Nguồn | Số lần | Anh chọn khác AI |
-|---|---:|---:|
-| Hộp chọn có nhãn "(Recommended)" | 29 | **14** |
-| AI viết "Em đề xuất A", anh trả lời bằng chữ cái | 15 | **2** |
-| AI đề xuất, anh trả lời bằng câu tự do | 44 | chưa phân loại (cần LLM đọc) |
+| Nguồn                                                   |         Số lần |                   Anh chọn khác AI |
+| ------------------------------------------------------- | -------------: | ---------------------------------: |
+| Hộp chọn có nhãn "(Recommended)"                        |             29 |                             **14** |
+| AI viết "Em đề xuất A", anh trả lời bằng chữ cái        |             15 |                              **2** |
+| AI đề xuất, anh trả lời bằng câu tự do                  |             44 |       chưa phân loại (cần LLM đọc) |
 | `decisions.md` trong 15 task `/ship` cũ (mọi thời gian) | 180 quyết định | phần lớn không ghi "AI đề xuất gì" |
 
 → Trong 44 lần chọn rõ ràng, **16 lần (36%) anh chọn khác AI**.
