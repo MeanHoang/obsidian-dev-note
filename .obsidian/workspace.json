@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "14 - Business/6 - Phân tích hành vi ra ý tưởng app/09 - Phân tích theo flow.md",
+                "file": "AI/Jev - TypeSafe AI/01 - Jev là gì - System One vs System Two.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "09 - Phân tích theo flow"
-            }
-          },
-          {
-            "id": "7c162cbba7e61aa8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AI/Claude code/AI Office/4 - Yêu cầu chuẩn - Web giải quyết vấn đề gì.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "4 - Yêu cầu chuẩn - Web giải quyết vấn đề gì"
+              "title": "01 - Jev là gì - System One vs System Two"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -209,44 +194,44 @@
       "bases:Create new base": false
     }
   },
-  "active": "5101c7f6d36baa11",
+  "active": "d6135ad17d5b3f9a",
   "lastOpenFiles": [
-    "AI/Claude code/AI Office/5 - Pattern công ty AI (v3).md.tmp.16076.8b26a41d756a",
-    "AI/Claude code/AI Office/5 - Pattern công ty AI (v3).md.tmp.16076.e7c7d07b24d4",
-    "AI/Claude code/AI Office/5 - Pattern công ty AI (v3).md.tmp.16076.d80360f7ccec",
-    "AI/Claude code/AI Office/5 - Pattern công ty AI (v3).md.tmp.16076.6ce44ad59304",
-    "AI/Claude code/AI Office/5 - Pattern công ty AI (v3).md.tmp.16076.b5c8b404fde9",
-    "AI/Claude code/AI Office/5 - Pattern công ty AI (v3).md.tmp.16076.daf5ef71707f",
-    "AI/Claude code/AI Office/5 - Pattern công ty AI (v3).md.tmp.16076.fb1f2513e46b",
-    "AI/Claude code/AI Office/5 - Pattern công ty AI (v3).md.tmp.16076.68c567bc66dd",
-    "AI/Claude code/AI Office/mockup/ai-office-company.html",
-    "AI/Claude code/AI Office/5 - Pattern công ty AI (v3).md.tmp.16076.82fdcd227186",
-    "AI/Claude code/AI Office/5 - Pattern công ty AI (v3).md.tmp.16076.d56e0fcb01ac",
-    "AI/Claude code/AI Office/5 - Pattern công ty AI (v3).md",
-    "AI/Claude code/AI Office/3 - Hồ sơ phòng ban.md",
-    "AI/Claude code/AI Office/2 - Mockup UI.md",
-    "AI/Claude code/AI Office/1 - Phân tích yêu cầu.md",
-    "AI/Claude code/AI Office/4 - Yêu cầu chuẩn - Web giải quyết vấn đề gì.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/11 - App trung gian thợ và dịch vụ.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/11.1 - Thị trường Việt Nam.md",
-    "AI/Claude code/AI Office/0 - Ý tưởng tổng quan.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/11.2 - Thế giới và bài học.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/10.6 - Hẹn sửa chữa ba bên cho chủ nhà nhỏ.md",
-    "AI/Claude code/AI Office - Văn phòng AI cho my-ship.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/10.5 - Hồ sơ tình trạng nhà cho người thuê.md",
+    "14 - Business/8 - Kho pain point/04 - Gia đình, học tập, xã hội.md",
+    "14 - Business/8 - Kho pain point/04 - Gia đình, học tập, xã hội.md.tmp.7332.64a34fe19a2e",
+    "AI/Jev - TypeSafe AI/02 - Bên trong Jev - Kiến trúc, RLCD và calibration.md",
+    "AI/Jev - TypeSafe AI/01 - Jev là gì - System One vs System Two.md",
+    "AI/Jev - TypeSafe AI/00 - README.md",
+    "AI/Jev - TypeSafe AI/09 - Lab - Tự build ticket router.md",
+    "AI/Jev - TypeSafe AI/08 - Giới hạn, giá và rủi ro.md",
+    "AI/Jev - TypeSafe AI/07 - Ứng dụng thực tế.md",
+    "AI/Jev - TypeSafe AI/sedcSRXDg",
+    "AI/Jev - TypeSafe AI/09 - Lab - Tự build ticket router.md.tmp.17108.8ef6d9194de8",
+    "AI/Jev - TypeSafe AI/08 - Giới hạn, giá và rủi ro.md.tmp.17108.be798f83911b",
+    "AI/Jev - TypeSafe AI/07 - Ứng dụng thực tế.md.tmp.17108.906ab6ac8df1",
+    "AI/Jev - TypeSafe AI/06 - Jev vs LLM - Khi nào dùng cái nào.md",
+    "AI/Jev - TypeSafe AI/06 - Jev vs LLM - Khi nào dùng cái nào.md.tmp.17108.84d01543fb0d",
     "14 - Business/6 - Phân tích hành vi ra ý tưởng app/10.4 - Lịch trình cưới chung giữa các bên.md",
+    "AI/Jev - TypeSafe AI/05 - Patterns - 4 kiến trúc chuẩn.md",
+    "AI/Jev - TypeSafe AI/05 - Patterns - 4 kiến trúc chuẩn.md.tmp.17108.98ff668b5ea5",
+    "AI/Jev - TypeSafe AI/04 - Confidence - Đọc xác suất và đặt ngưỡng.md",
+    "AI/Jev - TypeSafe AI/04 - Confidence - Đọc xác suất và đặt ngưỡng.md.tmp.17108.b328cf9c9523",
+    "AI/Jev - TypeSafe AI/03 - API - State, Questions và 3 primitive.md",
+    "AI/Jev - TypeSafe AI/03 - API - State, Questions và 3 primitive.md.tmp.17108.d2670b985cf7",
+    "AI/Jev - TypeSafe AI/02 - Bên trong Jev - Kiến trúc, RLCD và calibration.md.tmp.17108.88922d050025",
+    "14 - Business/8 - Kho pain point/02 - Sức khoẻ, ăn uống, thể thao.md",
+    "14 - Business/8 - Kho pain point/01 - Tiền và mua sắm.md",
+    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/10.5 - Hồ sơ tình trạng nhà cho người thuê.md",
+    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/10.6 - Hẹn sửa chữa ba bên cho chủ nhà nhỏ.md",
+    "14 - Business/1 - Nền tảng business/The Personal MBA/Chương 1 - Value Creation.md",
+    "14 - Business/8 - Kho pain point/07 - Lời ước có app.md",
+    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/11.2 - Thế giới và bài học.md",
+    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/11.1 - Thị trường Việt Nam.md",
+    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/11 - App trung gian thợ và dịch vụ.md",
     "14 - Business/6 - Phân tích hành vi ra ý tưởng app/10.3 - Học bổng địa phương.md",
     "14 - Business/6 - Phân tích hành vi ra ý tưởng app/10.2 - Thu chứng từ có kiểm tra.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/10 - Đào sâu và gợi ý app.md",
     "14 - Business/6 - Phân tích hành vi ra ý tưởng app/10.1 - Sổ lãi lỗ nguồn khách cho thợ.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/09.7 - Nhu cầu đời sống.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/09.6 - Dịch vụ độc lập.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/09.5 - Văn phòng, tri thức.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/09.4 - Làm theo ca và gig.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/09.3 - Người đi làm (tìm việc, freelancer, thợ).md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/09.2 - Chủ shop.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/09.1 - Học sinh, sinh viên.md",
-    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/09 - Phân tích theo flow.md",
+    "14 - Business/6 - Phân tích hành vi ra ý tưởng app/10 - Đào sâu và gợi ý app.md",
+    "AI/Claude code/AI Office/4 - Yêu cầu chuẩn - Web giải quyết vấn đề gì.md",
     "AI/Claude code/Cải thiện AI với avada/8c.Mockup app chi tiêu/index.png",
     "3 - Backend/Road to Backend Developer/04 - Repo Hosting Services/assets/markdown-05-quote.png",
     "3 - Backend/Road to Backend Developer/04 - Repo Hosting Services/assets/your-profile.png",
