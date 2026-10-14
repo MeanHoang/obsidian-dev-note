@@ -6,7 +6,8 @@
 2. **Mục tiêu cao nhất: app có người dùng.** Ý tưởng nào không chỉ ra được ai sẽ dùng và tìm họ ở đâu thì loại.
 3. Ý tưởng đi ra từ **phân tích hành vi người dùng**: hôm nay họ làm gì → xu thế sắp tới → họ cần gì mà chưa ai đáp ứng.
 4. App cho **người dùng phổ thông**, không gắn Shopify (chốt 2026-10-09). Làm được bằng thứ anh đang dùng: JavaScript, Firebase/GCP.
-5. **Thị trường toàn cầu**, ưu tiên nơi người dùng chịu trả tiền (Bắc Mỹ, Tây Âu). Việt Nam chỉ giữ để so sánh vì người dùng đông nhưng ít trả tiền và chậm đổi hành vi (chốt 2026-10-09).
+5. **Việt Nam và Thế giới ngang nhau**, một app có thể bán được cả hai nơi (chốt 2026-10-12, thay cho bản 2026-10-09 "Việt Nam chỉ giữ để so sánh").
+6. **Bắt đầu từ một nhóm người hẹp**, không bắt đầu từ cả một lĩnh vực. Đã có app thì vẫn xét: tìm chỗ app hiện có còn dở mà mình làm tốt hơn được (chốt 2026-10-12, sau 2 lane thất bại cùng ngày).
 
 Nguồn đọc ngày 2026-10-09.
 
