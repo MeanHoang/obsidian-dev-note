@@ -33,6 +33,9 @@ Chưa mặc định app phải thay thế toàn bộ Slack hoặc email. Trướ
 | R10 | Có Thư ký dùng chung để hỗ trợ xây workflow và truyền lời tới các team/đội. |
 | R11 | Mỗi đội mặc định có PM làm đầu mối chat chính của người dùng. |
 | R12 | Chưa cần chốt toàn bộ role chuyên môn và thứ tự từng bước phát triển sản phẩm ở giai đoạn này. |
+| R13 | Giữ cơ chế `progress.md` của ship để lưu tiến trình bền vững và tiếp tục sau gián đoạn hoặc đổi agent. |
+| R14 | Có nhiều workflow; chọn workflow phù hợp khi giao việc. UI biên tập theo canvas kéo thả, nối khối như Shopify Flow. |
+| R15 | Nhân sự chọn agent chính và fallback, ví dụ Claude hết quota thì chuyển sang Codex; cơ chế vận hành chi tiết cần kiểm chứng khi triển khai. |
 
 ## 3. Mô hình tổ chức
 
@@ -435,3 +438,60 @@ Vì vậy đây là thay đổi mô hình tổ chức và quản lý context/ses
 - `Vấn đề và hướng đi mới.md`: yêu cầu gốc của anh.
 - `office.config.js`, `lib/server/parent.js`, `lib/server/sessions.js`: giới hạn app hiện tại.
 - `orca --help` và schema từ `orca agent-context --json`: các khả năng CLI được công bố trên máy, chưa thay thế kiểm thử tích hợp thực tế.
+
+
+## 19. Giữ cơ chế progress.md của ship — yêu cầu đã xác nhận
+
+Anh yêu cầu giữ cơ chế file Markdown lưu tiến trình của ship. Phần này bổ sung cho mục 10 và 14; chưa triển khai vào runtime và không thay đổi harness Joy.
+
+### 19.1. Hồ sơ của một lần thực hiện
+
+- `progress.md`: trạng thái hiện tại, checklist bám kế hoạch, bước tiếp theo, gate/câu hỏi đang chờ và tham chiếu kết quả.
+- `decisions.md`: ghi thêm các quyết định, người quyết định, lý do và phương án bị loại; giữ lịch sử thay vì viết lại như tiến độ.
+- Hồ sơ phân tích, sự thật đã kiểm chứng, kế hoạch và báo cáo: giữ vai trò tương ứng như ship; tên/định dạng chi tiết có thể cấu hình theo workflow.
+
+`progress.md` là bản thể hiện tiến độ của kế hoạch, không phải nhật ký hội thoại. Giữ ngắn, đúng một dòng NOW và không chép lại những gì có thể đọc từ git hoặc báo cáo kiểm thử.
+
+### 19.2. Tách tiến trình với workflow mẫu
+
+Workflow trong thư viện mô tả cách làm. Mỗi công việc/lần chạy giữ phiên bản workflow đã chọn và có hồ sơ tiến trình riêng.
+
+File tiến trình cần liên kết được tới project, workspace, công việc/lần chạy, phiên bản workflow, các task con và nhân sự/session đang được gán. Không dùng tên role hoặc session mới nhất trong thư mục để đoán người thực hiện.
+
+Đề xuất nơi lưu: thư mục hồ sơ của công việc gắn với workspace, có định danh riêng cho từng lần chạy. Đường dẫn cụ thể chưa chốt. Không lưu tiến trình riêng của mọi project chung vào thư mục source code của app AI Office.
+
+### 19.3. Công việc cha và con
+
+- Công việc cha có tiến trình tổng và liên kết tới các task/đội con.
+- Phần việc chạy độc lập có hồ sơ tiến trình riêng theo phạm vi được giao.
+- Task con hoàn thành không tự làm công việc cha hoàn thành: vẫn cần kiểm tra tích hợp và nghiệm thu mục tiêu tổng.
+- Không sao chép toàn bộ checklist con vào file cha; file cha thể hiện phần tổng, phụ thuộc và các điểm chặn.
+
+### 19.4. Quyền cập nhật và đồng bộ UI
+
+Đề xuất: PM hoặc bộ điều phối là bên ghi chính cho tiến trình của phạm vi mình quản lý. Các role bàn giao kết quả có cấu trúc và bằng chứng để cập nhật; tránh nhiều agent cùng sửa một file.
+
+UI trình bày tiến độ từ hồ sơ này. Câu trả lời gate trên UI phải được lưu vào quyết định và cập nhật trạng thái tương ứng trước khi tiếp tục công việc. Không có một trạng thái trong file và một trạng thái UI độc lập, tự chọn khi mâu thuẫn.
+
+Nếu có database/event log khi triển khai, cần chốt rõ nơi ghi chính và cơ chế xuất/đối chiếu Markdown. Yêu cầu giữ file tiến trình bền vững vẫn phải được đáp ứng; database không được biến nó thành báo cáo cũ không thể dùng để tiếp tục.
+
+Việc cập nhật trạng thái, quyết định và phát lệnh tiếp tục phải có khả năng phục hồi khi bị gián đoạn; không phát lại thao tác bên ngoài chỉ vì UI chưa nhận được xác nhận.
+
+### 19.5. Khôi phục hoặc fallback agent
+
+1. Đọc state, dòng NOW, gate đang chờ và phần việc chưa hoàn thành trong `progress.md`.
+2. Đọc các quyết định và kế hoạch liên quan.
+3. Đối chiếu với hiện trạng file/git, tác vụ còn chạy và bằng chứng đã có. Không đánh dấu hoàn thành chỉ dựa vào lời ghi trước đó.
+4. Xác định phần có thể tiếp tục và những gì cần hỏi lại.
+5. Ghi nhận session/agent tiếp nhận; giữ tham chiếu tới session trước và quyền đã được cấp.
+6. Tiếp tục đúng bước; gate chưa duyệt vẫn giữ chặn, không khởi động lại toàn bộ workflow.
+
+Nếu agent cũ hết quota đột ngột, PM/bộ điều phối dùng hồ sơ bền vững và hiện trạng để bàn giao; không phụ thuộc vào agent cũ còn khả năng viết bản tóm tắt cuối.
+
+### 19.6. Tiêu chí nghiệm thu bổ sung
+
+- [ ] Khởi động lại app vẫn đọc được đúng tiến trình và quyết định đang chờ.
+- [ ] Agent tiếp nhận đọc hồ sơ và tiếp tục đúng phần chưa xong, không chạy lại các thao tác đã hoàn thành.
+- [ ] Fallback Claude → Codex giữ mục tiêu, quyết định, quyền và gate của công việc.
+- [ ] UI và hồ sơ tiến trình không hiển thị hai kết luận trái nhau mà không báo cần đối chiếu.
+- [ ] PM tổng theo dõi được tiến trình con nhưng không xác nhận mục tiêu cha chỉ bằng số task đã xong.
