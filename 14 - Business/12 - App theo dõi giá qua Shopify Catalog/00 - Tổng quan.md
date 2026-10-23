@@ -3,7 +3,7 @@
 > 📖 = nguồn chính thức / tự gọi API. 💭 = nhận định AI. ⚠️ = nguồn phụ / chưa kiểm.
 > **Chốt ngày 2026-10-23 (anh chốt).** Đi ra từ [[11 - Hành vi mua qua AI kéo theo gì/00 - Bản đồ hệ quả|Bản đồ hệ quả]], mục "thương hiệu không thấy hàng mình trong kết quả AI".
 
-> ⛔ **ĐÃ DỪNG (2026-10-23, anh quyết).** Lý do: điều khoản API của Shopify (bản 2026-10-07) cấm thu thập dữ liệu tự động / dựng chỉ mục sản phẩm từ Catalog nếu không có đồng ý bằng văn bản của Shopify (mục 7). Bỏ Catalog thì app trùng ~10 app cào website đang có. Giữ folder làm tài liệu.
+> 🔁 **MỞ LẠI (2026-10-23, anh quyết làm tiếp).** Trước đó đã dừng vì: Lý do: điều khoản API của Shopify (bản 2026-10-07) cấm thu thập dữ liệu tự động / dựng chỉ mục sản phẩm từ Catalog nếu không có đồng ý bằng văn bản của Shopify (mục 7). Bỏ Catalog thì app trùng ~10 app cào website đang có. Giữ folder làm tài liệu.
 
 **App là gì:** Theo dõi giá các shop khác đang bán **cùng sản phẩm**, **báo cho merchant**, và **giúp đổi giá ngay** (theo luật merchant đặt).
 
