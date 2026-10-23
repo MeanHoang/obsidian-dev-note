@@ -18,3 +18,5 @@ Nơi học về business SaaS và các nghiệp vụ kinh doanh.
 | 7. Phân tích app đã chọn: AI-ready cho cửa hàng online | `7 - App AI-ready cho cửa hàng online` | [[00 - Tổng quan]] |
 | 9. Phân tích ý tưởng: App AR thử sản phẩm cho Shopify | `9 - App AR thử sản phẩm cho Shopify` | [[9 - App AR thử sản phẩm cho Shopify/00 - Tổng quan\|00 - Tổng quan]] |
 | 10. Phân tích ý tưởng: Loyalty trong mua sắm qua AI | `10 - Loyalty trong mua sắm qua AI` | [[10 - Loyalty trong mua sắm qua AI/00 - Tổng quan\|00 - Tổng quan]] |
+| 11. Hành vi mua qua AI kéo theo gì (bản đồ hệ quả) | `11 - Hành vi mua qua AI kéo theo gì` | [[11 - Hành vi mua qua AI kéo theo gì/00 - Bản đồ hệ quả\|00 - Bản đồ hệ quả]] |
+| 12. ⛔ Đã dừng: App theo dõi giá qua Shopify Catalog | `12 - App theo dõi giá qua Shopify Catalog` | [[12 - App theo dõi giá qua Shopify Catalog/00 - Tổng quan\|00 - Tổng quan]] |
