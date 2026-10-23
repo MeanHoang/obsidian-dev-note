@@ -30,10 +30,10 @@ Chủ đề xuyên suốt: **làm sao tin agent đủ để giao việc rồi đ
 | `00:00–05:53` | [[01 - Trust curve - Từ micromanage tới auto-merge]] | AI là pair, không phải chỗ outsource suy nghĩ. Biểu đồ trust curve, 1.000 PR/tháng |
 | `05:53–13:27` | [[02 - Verification skill và Feature map]] | Agent tự chạy app thật. Skill `control glass`, file feature map |
 | `13:27–23:28` | [[03 - Pstack - Biến lỗi agent thành skill và eval]] | Quan sát lỗi agent → skill. Eval = unit test cho skill, hill climb, judge agent |
-| `23:28–29:13` | [[04 - Local trước, cloud sau - Agent Benny]] | Bắt đầu local, rồi cloud agent. Benny tự reproduce bug report |
-| `29:13–35:21` | [[05 - Có nên rewrite - Greenfield và organic architecture]] | Brownfield vs greenfield, "human slop", 600 PR refactor Grockbot, kích thước PR |
-| `35:21–47:02` | [[06 - Các lớp enforcement - Hard constraint thắng soft rule]] | Kiến trúc Dune, CI cấm `useEffect`/comment, lớp cứng vs mềm, thoát "code review land" |
-| `47:02–55:05` | [[07 - Q&A - Token, ROI và team product]] | ROI token, PM/designer ship code qua Grockbot |
+| `23:28–29:28` | [[04 - Local trước, cloud sau - Agent Benny]] | Bắt đầu local, rồi cloud agent. Benny tự reproduce bug report |
+| `29:21–37:50` | [[05 - Có nên rewrite - Greenfield và organic architecture]] | Brownfield vs greenfield, "human slop", 600 PR refactor Grockbot, kích thước PR |
+| `37:42–47:43` | [[06 - Các lớp enforcement - Hard constraint thắng soft rule]] | Kiến trúc Dune, CI cấm `useEffect`/comment, lớp cứng vs mềm, thoát "code review land" |
+| `47:23–55:05` | [[07 - Q&A - Token, ROI và team product]] | ROI token, PM/designer ship code qua Grockbot |
 
 ---
 
