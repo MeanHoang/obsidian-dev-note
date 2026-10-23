@@ -3,16 +3,32 @@
 > 📖 = trích nguồn. 💭 = nhận định AI. ⚠️ = chưa kiểm chứng.
 > Ngày nghiên cứu: 2026-10-23. Nguồn ở bảng cuối note.
 
-**Kết luận trước:** 💭 **Không nên làm app AR "đa năng". Cái máy xem 3D/AR Shopify đã cho miễn phí. Chỗ đau thật là merchant không có file 3D đúng kích thước.** Nếu làm, hãy làm hẹp: đồ nội thất/trang trí, biến ảnh + kích thước của merchant thành mô hình 3D đúng tỉ lệ, đẩy thẳng vào product media của Shopify. Bắt đầu bằng hàng phẳng (tranh, thảm, gương) vì làm chính xác được ngay. Chưa đáng code: cần 2 tuần phỏng vấn merchant trước.
+## Hướng đã chốt (2026-10-23)
+
+**Tự xây trang AR "đặt đồ trong phòng" cho đồ nội thất, có thanh bên để đổi variant ngay trong cảnh (kiểu Amazon "View in Your Room"), rồi thêm đúng variant đang xem vào giỏ. Khách không rời trang sản phẩm, không cài app.**
+
+Vì sao chọn hướng này:
+1. 📖 Nút AR có sẵn của Shopify mở AR Quick Look (iOS) / Scene Viewer (Android). Đó là app hệ thống, chỉ hiện 1 file 3D, không chèn giao diện riêng được. Muốn thử variant khác, khách phải thoát ra, chọn lại, mở lại.
+2. 📖 "Ảnh → 3D" đã có app làm (AI 3D Model Generator miễn phí, 3Dify $9.99) và Shopify có demo quét 3D. Không đặt cược vào khâu làm file 3D. Xem [[9 - App AR thử sản phẩm cho Shopify/05 - Shopify tự làm AR tới đâu|05]].
+3. 💭 Đổi variant trong cảnh + nhiều món cùng lúc là thứ nút AR của Shopify không làm được, và đúng là cái Amazon làm trong app của họ.
+
+4. 📖 Shopify đang đưa việc mua sắm sang AI (UCP, ChatGPT, Gemini, Copilot) — xem [[9 - App AR thử sản phẩm cho Shopify/07 - Shopify và thế giới đang đi về đâu|07]]. → Chốt thêm (2026-10-23): **tài sản lõi là bộ dữ liệu 3D đúng kích thước gắn với variant**, dùng cho AR hôm nay, AI agent và kính sau này. Kế hoạch: [[9 - App AR thử sản phẩm cho Shopify/08 - Kế hoạch phát triển|08]].
+
+Kế hoạch và stack: [[9 - App AR thử sản phẩm cho Shopify/03 - Phương án MVP và đề xuất|03]], [[9 - App AR thử sản phẩm cho Shopify/06 - Stack công nghệ|06]].
+
+> Kết luận cũ (trước khi chốt, giữ để đối chiếu): làm app biến ảnh + số đo thành 3D đúng tỉ lệ, đẩy vào product media gốc. Bỏ vì khâu này đã có app làm và Shopify đang làm quét 3D.
 
 | Note | Nội dung |
 |---|---|
 | [[9 - App AR thử sản phẩm cho Shopify/00 - Tổng quan\|00 - Tổng quan]] | Đề bài gốc + kết luận |
 | [[9 - App AR thử sản phẩm cho Shopify/01 - Đối thủ và thị trường\|01 - Đối thủ và thị trường]] | App đang có trên Shopify App Store, giá, review |
 | [[9 - App AR thử sản phẩm cho Shopify/02 - Kỹ thuật làm được gì hôm nay\|02 - Kỹ thuật làm được gì hôm nay]] | Shopify hỗ trợ sẵn gì, WebAR trên iOS/Android, try-on quần áo |
-| [[9 - App AR thử sản phẩm cho Shopify/03 - Phương án MVP và đề xuất\|03 - Phương án MVP và đề xuất]] | So sánh A/B/C, 5 ý tưởng MVP, chọn 1 |
+| [[9 - App AR thử sản phẩm cho Shopify/03 - Phương án MVP và đề xuất\|03 - Phương án MVP và đề xuất]] | Hướng đã chốt, phạm vi MVP, lộ trình |
 | [[9 - App AR thử sản phẩm cho Shopify/04 - Rủi ro và kế hoạch kiểm chứng\|04 - Rủi ro và kế hoạch kiểm chứng]] | Lý do có thể thất bại, cách kiểm chứng trong 2 tuần |
 | [[9 - App AR thử sản phẩm cho Shopify/05 - Shopify tự làm AR tới đâu\|05 - Shopify tự làm AR tới đâu]] | Shopify làm AR từ 2018 tới giờ, chưa làm gì, app ảnh → 3D mới |
+| [[9 - App AR thử sản phẩm cho Shopify/06 - Stack công nghệ\|06 - Stack công nghệ]] | Stack đã chọn, lý do, phương án bỏ |
+| [[9 - App AR thử sản phẩm cho Shopify/07 - Shopify và thế giới đang đi về đâu\|07 - Shopify và thế giới đang đi về đâu]] | AI mua hộ (UCP), kính thông minh, chuẩn 3D, thư viện đang đi về đâu |
+| [[9 - App AR thử sản phẩm cho Shopify/08 - Kế hoạch phát triển\|08 - Kế hoạch phát triển]] | 7 bước, luật dừng, việc anh cần chuẩn bị |
 
 ---
 
